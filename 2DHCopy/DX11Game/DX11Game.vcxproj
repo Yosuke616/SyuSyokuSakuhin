@@ -165,13 +165,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mainApp.cpp" />
+    <ClCompile Include="Object.cpp" />
     <ClCompile Include="polygon.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="Shader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Component.h" />
     <ClInclude Include="mainApp.h" />
+    <ClInclude Include="Object.h" />
+    <ClInclude Include="ObjInfo.h" />
     <ClInclude Include="polygon.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.h" />
