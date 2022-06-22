@@ -22,6 +22,9 @@
     <Filter Include="オブジェクト">
       <UniqueIdentifier>{79cd1ba9-8857-4b64-8fe1-b5c3ff3fe732}</UniqueIdentifier>
     </Filter>
+    <Filter Include="コンポーネント">
+      <UniqueIdentifier>{72e9fc29-f660-4835-989e-1f60b93ade51}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DX11Game.rc">
@@ -49,6 +52,12 @@
     <ClCompile Include="SceneTitle.cpp">
       <Filter>シーン</Filter>
     </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectManager.cpp">
+      <Filter>マネージャー</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainApp.h">
@@ -72,8 +81,20 @@
     <ClInclude Include="SceneManager.h">
       <Filter>マネージャー</Filter>
     </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>コンポーネント</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjInfo.h">
+      <Filter>オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectManager.h">
+      <Filter>マネージャー</Filter>
+    </ClInclude>
     <ClInclude Include="SceneTitle.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>シーン</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
