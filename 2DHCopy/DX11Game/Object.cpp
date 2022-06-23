@@ -1,7 +1,3 @@
-/*
-
-*/
-
 //インクルード部
 #include "Object.h"
 #include "Component.h"

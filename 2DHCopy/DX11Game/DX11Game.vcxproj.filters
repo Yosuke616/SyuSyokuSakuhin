@@ -58,6 +58,12 @@
     <ClCompile Include="ObjectManager.cpp">
       <Filter>マネージャー</Filter>
     </ClCompile>
+    <ClCompile Include="ColliderComponent.cpp">
+      <Filter>コンポーネント</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformComponent.cpp">
+      <Filter>コンポーネント</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainApp.h">
@@ -95,6 +101,12 @@
     </ClInclude>
     <ClInclude Include="SceneTitle.h">
       <Filter>シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="ColliderComponent.h">
+      <Filter>コンポーネント</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformComponent.h">
+      <Filter>コンポーネント</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

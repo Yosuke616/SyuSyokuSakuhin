@@ -37,4 +37,7 @@ enum DRAW_ORDER {
 	MAX_DRAW_ORDER
 };
 
+//@@@@@ ディエックスちゃん ----------------------------------------
+#define PLAYER_NAME					("DXchan")
+
 #endif
