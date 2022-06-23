@@ -2,6 +2,7 @@
 #include "ObjectManager.h"
 #include "Component.h"
 #include "Object.h"
+#include "ColliderComponent.h"
 
 //静的メンバ変数
 ObjectManager* ObjectManager::m_pInstance = nullptr;	//インスタンス
@@ -99,6 +100,7 @@ void ObjectManager::Update() {
 		}
 	});
 	//当たり判定のリストの削除
+
 
 }
 

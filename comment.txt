@@ -1,0 +1,151 @@
+＜ヘッダーのコメントテンプレ―ト(最低限)＞
+/**
+ * @file	ファイル名
+ * @brief	○○ クラス定義
+ * @author	Shogo Shimizu
+ * @date	2022/00/00
+ *
+ * @details 詳細説明
+ * @note	補足説明とかメモ
+ */
+
+// ===== インクルードガード ===== //
+#ifndef ___機能名_H___
+#define ___機能名_H___
+
+// ===== インクルード ===== //
+
+// ===== クラス定義 ===== //
+/**
+ * @brief 簡単なクラスの説明
+ * @details 詳細なクラスの説明
+ */
+class CHoge
+{
+public:
+	/**
+	 * @brief コンストラクタ
+	 */
+	CHoge();
+
+	/**
+	 * @brief デストラクタ
+	 */
+	~CHoge();
+};
+
+#endif // !___機能名_H___
+
+
+
+
+
+＜doxygenで使えるコメントの付け方＞
+
+どれを使っても問題はない。混ぜて使うのもOK。
+
+/**
+ * ここにテキストを書く
+ */
+
+ /*!
+  * ここにテキストを書く
+  */
+
+///
+/// ここにテキストを書く
+///
+
+//!
+//! ここにテキストを書く
+//!
+
+＜ファイルへのコメント(ファイルヘッダー)＞
+
+/**
+ * @file doxygen_sample.cxx
+ * @brief ファイルの説明
+ * @author 作成者名
+ * @date 作成日
+ *
+ * @details 詳細説明
+ * @note 補足説明とかメモ
+ */
+
+ ＜関数へのコメント＞
+
+ /**
+  * @brief 要約説明
+  * @param 引数名 引数の説明
+  * @param 引数名 引数の説明
+  * @return 戻り値の型 戻り値の説明
+  * @sa 参照すべき関数を書けばリンクが貼れる
+  * @details 詳細な説明
+  */
+void func1(int arg1, int arg2)
+
+＜変数・定数・構造体・enumへのコメント＞
+
+/** 変数の説明 */
+int a = 0;	//! 変数へのコメント
+
+/** 定数の説明 */
+constexpr int const_a = 0;
+
+/** 構造体の説明 */
+struct structA{
+	int memberA;	/**< memberAの説明 */
+	int memberB;	/**< memberBの説明 */
+}
+
+/** enumの説明 */
+enum enumA{
+	memberA;	/**< memberAの説明 */
+	memberB;	/**< memberBの説明 */
+}
+
+＜マクロのコメント＞
+/** @def _TEST
+* @brief 簡単な説明
+* @details 詳細な説明
+*/
+ #define _TEST 0
+
+＜クラスのコメント＞
+
+/**
+ * @brief 簡単なクラスの説明
+ * @details 詳細なクラスの説明
+ */
+class ClassA
+{
+private:
+	//! 〇〇で使う変数
+	std::string str_;
+
+public:
+	/**
+	 * @brief コンストラクタの概要説明
+	 *
+	 * @param[in] str 引数の説明
+	 */
+	ClassA(const std::string &str) : str_(str){};
+
+	/**
+	 * @brief メソッド(メンバ関数)の概要説明
+	 *
+	 * @return std::string 戻り値の説明
+	 */
+	 std::string GetStr();
+
+};
+
+＜名前空間のコメント＞
+/**
+* @namespace NameSpaceA
+* @brief 簡単な説明
+* @detais 詳細な説明
+*/
+namespace NameSpaceA
+{
+}
