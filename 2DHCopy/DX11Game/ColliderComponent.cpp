@@ -3,6 +3,7 @@
 #include "ObjectManager.h"
 #include "Object.h"
 #include "ObjInfo.h"
+#include "TransformComponent.h"
 
 //静的メンバ変数
 /** @brief 当たり判定のリスト*/
@@ -12,7 +13,8 @@ std::list<Object*> CCollider::m_ColliderList;
 * @fn		CCollider::CCollider()
 * @brief	ただのコンストラクタそれ以上でも以下でもない
 */
-CCollider::CCollider(){
+CCollider::CCollider()
+	:m_pTransform(nullptr){
 	m_eUpdateOrder = COM_UPDATE_COLLIDER;		//コンポーネントリストの更新順序
 
 	m_CenterOffset = XMFLOAT2(0.0f,0.0f);
@@ -33,6 +35,8 @@ CCollider::~CCollider() {
 */
 void CCollider::Start() {
 	//コンポーネントの取得
+	//オブジェクトの座標の取得
+	m_pTransform = Parent->GetComponent<CTransform>();
 	
 	//当たり判定のリストに登録
 	AddColliderList(Parent);
@@ -73,6 +77,7 @@ void CCollider::Update() {
 		}
 
 		//当たり判定を取る対象の情報を取得
+		auto Other = OtherObject->GetComponent<CTransform>();
 
 		//2回目の衝突判定を避ける
 		bool bOnceHit = false;
@@ -89,7 +94,16 @@ void CCollider::Update() {
 		}
 
 		//x,y平面の当たり判定
-
+		if (this->CollisionRectToRectXY(
+			m_pTransform,Other,
+			XMFLOAT2(m_CollisionSize.x,m_CollisionSize.y),
+			XMFLOAT2(OtherCollider->m_CollisionSize.x,
+				OtherCollider->m_CollisionSize.y),
+			m_CenterOffset,
+			OtherCollider->m_CenterOffset)) {
+			//相手に当たったことを知らせる
+			OtherCollider->m_IntersectObjects.push_back(Parent);
+		}
 	}
 }
 
@@ -141,7 +155,7 @@ XMFLOAT3 CCollider::GetColliderSize() {
 * @return	(XMFLOAT2)	当たり判定の中心の座標の情報
 */
 XMFLOAT2 CCollider::GetCenterPos() {
-	return ;
+	return XMFLOAT2(m_pTransform->Pos.x + m_CenterOffset.x,m_pTransform->Pos.y + m_CenterOffset.y);
 }
 
 /**
@@ -239,6 +253,24 @@ bool CCollider::CollisionAABB(XMFLOAT3 Apos, XMFLOAT3 Bpos, XMFLOAT3 Asize, XMFL
 * @param	(XMFLOAT2)		もう片方のオブジェクトの中心のズレ
 * @return	(bool)			当たっているかどうかの真偽の判定
 */
+bool CCollider::CollisionRectToRectXY(CTransform* pA, CTransform* pB,
+								      XMFLOAT2 Asize, XMFLOAT2 Bsize,
+									  XMFLOAT2 Aoffset, XMFLOAT2 Boffset) {
+	//中心座標
+	XMFLOAT2 centerPosA = XMFLOAT2(pA->Pos.x + Aoffset.x,pA->Pos.y + Aoffset.y);
+	XMFLOAT2 centerPosB = XMFLOAT2(pB->Pos.x + Boffset.x,pB->Pos.y + Boffset.y);
+	XMFLOAT2 halfSizeA = XMFLOAT2(Asize.x / 2.0f,Asize.y / 2.0f);
+	XMFLOAT2 halfSizeB = XMFLOAT2(Bsize.x / 2.0f,Bsize.y / 2.0f);
+
+	if (centerPosB.x - halfSizeB.x < centerPosA.x + halfSizeA.x &&
+		centerPosA.x - halfSizeA.x < centerPosB.x + halfSizeB.x) {
+		if (centerPosB.y - halfSizeB.y < centerPosA.y + centerPosA.y &&
+			centerPosA.y - halfSizeA.y < centerPosB.y + halfSizeB.y) {
+			return true;
+		}
+	}
+	return false;
+}
 
 /**
 * @fn		CCollider::AddColliderList
