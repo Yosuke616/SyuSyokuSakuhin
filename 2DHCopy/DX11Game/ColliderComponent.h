@@ -19,6 +19,7 @@
 #include <vector>
 
 //前方宣言
+class CTransform;
 class ObjectManager;
 class Object;
 
@@ -27,7 +28,7 @@ class CCollider :public Component {
 private:
 	//メンバ変数
 	/** @brief 座標*/
-
+	CTransform*	m_pTransform;
 	/** @brief 当たり判定の大きさ*/	
 	XMFLOAT3 m_CollisionSize;
 	/** @brief モデル中心のズレ*/
@@ -51,7 +52,9 @@ private:
 	/** @brief 直方体と直方体の当たり判定*/
 	bool CollisionAABB(XMFLOAT3 Apos, XMFLOAT3 Asize, XMFLOAT3 Bpos, XMFLOAT3 Bsize);
 	/** @brief xy平面の当たり判定*/
-	bool CollisionRectToRectXY();
+	bool CollisionRectToRectXY(CTransform* pA,CTransform* pB,
+							   XMFLOAT2 Asize,XMFLOAT2 BSize,
+							   XMFLOAT2 Aoffset = XMFLOAT2(0.0f,0.0f),XMFLOAT2 Boffset = XMFLOAT2(0.0f,0.0f));
 
 protected:
 	//メンバ変数

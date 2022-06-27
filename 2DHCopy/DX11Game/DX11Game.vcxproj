@@ -165,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ColliderComponent.cpp" />
+    <ClCompile Include="Draw2DComponent.cpp" />
     <ClCompile Include="mainApp.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
@@ -177,6 +178,7 @@
   <ItemGroup>
     <ClInclude Include="ColliderComponent.h" />
     <ClInclude Include="Component.h" />
+    <ClInclude Include="Draw2DComponent.h" />
     <ClInclude Include="mainApp.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectManager.h" />

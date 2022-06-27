@@ -11,13 +11,15 @@
 */
 
 //===== インクルード ======
+#include "ObjectManager.h"
 
 //===== クラス定義 ======
 class Scene
 {
 protected:
 	//=== メンバ変数 ===
-
+	/** @brief オブジェクトの管理ポインタ*/
+	ObjectManager* m_pObjectManager;
 
 public:
 	//=== メンバ関数 ===

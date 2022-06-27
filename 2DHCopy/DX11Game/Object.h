@@ -97,7 +97,7 @@ public:
 		std::list<Component*>::iterator itr = ComponentList.begin();
 		for (auto&& com : ComponentList) {
 			//現在のオブジェクトの機能を取得
-			Component* buff = (Component* com);
+			Component* buff = (Component*)com;
 
 			//更新の優先度が同じとき、ループが抜ける
 			if (component->m_eUpdateOrder <= buff->m_eUpdateOrder) {

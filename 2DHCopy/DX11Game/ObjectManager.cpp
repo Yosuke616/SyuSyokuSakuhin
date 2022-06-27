@@ -85,6 +85,7 @@ void ObjectManager::Update() {
 	}
 
 	//衝突処理
+	CCollider::UpdateColliders();
 
 	//オブジェクト削除の確認
 	m_UpdateList.remove_if([](Object* pObj) {
@@ -100,7 +101,9 @@ void ObjectManager::Update() {
 		}
 	});
 	//当たり判定のリストの削除
-
+	CCollider::GetColliderList().remove_if([](Object* pObj) {
+		return pObj->GetDeleteFlag();
+	});
 
 }
 
@@ -125,6 +128,9 @@ void ObjectManager::UpdateEdit() {
 		else return false;
 	});
 	//当たり判定の削除フラグの確認
+	CCollider::GetColliderList().remove_if([](Object* pObj) {
+		return pObj->GetDeleteFlag();
+	});
 }
 
 /**

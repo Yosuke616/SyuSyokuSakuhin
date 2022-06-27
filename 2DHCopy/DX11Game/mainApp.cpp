@@ -303,6 +303,9 @@ HRESULT Init(HWND hWnd, BOOL bWindow)
 	dsd2.DepthEnable = FALSE;
 	g_pDevice->CreateDepthStencilState(&dsd2, &g_pDSS[1]);
 #pragma endregion
+	// ƒ|ƒŠƒSƒ“•\¦‰Šú‰»
+	hr = InitPolygon(g_pDevice);
+	if (FAILED(hr)) return hr;
 
 	// Imgui‰Šú‰»
 	//IMGUI_CHECKVERSION();
