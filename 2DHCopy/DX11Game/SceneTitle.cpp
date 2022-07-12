@@ -4,6 +4,7 @@
 
 #include "Object.h"
 #include "ObjectManager.h"
+#include "TextureManager.h"
 
 #include "Component.h"
 #include "TransformComponent.h"
@@ -23,6 +24,12 @@ SceneTitle::~SceneTitle() {
 void SceneTitle::Init() {
 	//管理クラスのインスタンスの取得
 	m_pObjectManager = ObjectManager::GetInstance();
+	
+	//テクスチャの読込
+	TextureManager* pTexManager = TextureManager::GetInstance();
+
+	//仮
+	pTexManager->AddTexture(PATH_TEX_KARI, KARI_TEX_NUM);
 
 	//オブジェクトの作成
 	//仮
@@ -31,8 +38,9 @@ void SceneTitle::Init() {
 	auto DrawBox = Box->AddComponent<CDraw2D>();
 	//設定仮
 	TransBox->SetPosition(25.0f,25.0f);
+	DrawBox->SetTexture(pTexManager->GetTexture(KARI_TEX_NUM));
 	DrawBox->SetSize(100.0f,100.0f);
-	DrawBox->SetColor(1.0f,0.0f,0.0f);
+	
 
 	m_pObjectManager->AddObject(Box);
 }

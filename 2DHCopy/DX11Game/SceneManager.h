@@ -18,6 +18,8 @@
 //—ñ‹“‘àéŒ¾(ƒV[ƒ“‘‰Á‚É”º‚¢’†g‚Í‘‚â‚µ‚Ä‚¢‚­)
 enum EScene {
 	SCENE_TITLE = 0,
+	SCENE_GAME,
+	SCENE_ENDING,
 
 	MAX_SCENE
 };
