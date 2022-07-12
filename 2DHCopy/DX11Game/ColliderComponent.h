@@ -1,5 +1,5 @@
 /**
-* @fn		ColliderComponent.h
+* @file		ColliderComponent.h
 * @brief	このコンポーネントを持つオブジェクトどうしが当たっているか判断する
 * @author	志水陽祐
 * @date		2022/6/22

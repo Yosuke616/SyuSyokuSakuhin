@@ -8,7 +8,15 @@
 #include"WinUser.h"
 #include "resource.h"
 #include "polygon.h"
+#include "AssimpModel.h"
+
 #include "SceneManager.h"
+#include "InputManager.h"
+#include "TextureManager.h"
+#include "ModelManager.h"
+
+#include "sceneGame.h"
+#include "ObjInfo.h"
 
 #include <process.h>
 
@@ -57,6 +65,8 @@ int							g_nCountFPS;					// FPSカウンタ
 
 //シーンマネージャー管理用
 SceneManager* g_pSceneManager = nullptr;
+InputManager*	g_pInputManager = nullptr;
+
 
 // メイン関数
 int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCmdShow)
@@ -307,6 +317,11 @@ HRESULT Init(HWND hWnd, BOOL bWindow)
 	hr = InitPolygon(g_pDevice);
 	if (FAILED(hr)) return hr;
 
+	// Assimp用シェーダ初期化
+	if (!CAssimpModel::InitShader(g_pDevice)) {
+		return E_FAIL;
+	}
+
 	// Imgui初期化
 	//IMGUI_CHECKVERSION();
 	//ImGui::CreateContext();
@@ -316,6 +331,13 @@ HRESULT Init(HWND hWnd, BOOL bWindow)
 	//// プラットフォーム/レンダラの初期化
 	//ImGui_ImplWin32_Init(g_hWnd);
 	//ImGui_ImplDX11_Init(g_pDevice, g_pDeviceContext);
+
+		//	入力の初期化
+	g_pInputManager = InputManager::Instance();
+	hr = g_pInputManager->Init();
+	if (FAILED(hr)) {
+		MessageBox(g_hWnd, _T("dinput初期化失敗"), NULL, MB_OK);
+	}
 
 	//シーンマネージャーの復活
 	g_pSceneManager = SceneManager::Instance();
@@ -334,6 +356,15 @@ void Uninit()
 	/*ImGui_ImplDX11_Shutdown();
 	ImGui_ImplWin32_Shutdown();
 	ImGui::DestroyContext();*/
+
+	//	入力終了処理
+	g_pInputManager->Uninit();
+
+	// Assimp用シェーダ終了処理
+	CAssimpModel::UninitShader();
+
+	// ポリゴン表示終了処理
+	UninitPolygon();
 
 	// 深度ステンシルステート解放
 	for (int i = 0; i < _countof(g_pDSS); ++i) {
@@ -366,6 +397,10 @@ void Uninit()
 // 更新処理
 void Update()
 {
+	//	入力更新
+	g_pInputManager->Update();	// 必ずUpdate関数の先頭で実行.
+
+
 #ifdef SCENE_CHANGE
 	InputManager* input = InputManager::Instance();
 	if (input->GetKeyTrigger(DIK_SPACE))

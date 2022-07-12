@@ -39,5 +39,6 @@ enum DRAW_ORDER {
 
 //@@@@@ ディエックスちゃん ----------------------------------------
 #define PLAYER_NAME					("DXchan")
+#define BLOCK_KARI					("Block")
 
 #endif
