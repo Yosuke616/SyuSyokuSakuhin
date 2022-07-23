@@ -5,10 +5,15 @@
 //
 //=============================================================================
 #include "mainApp.h"
-#include"WinUser.h"
+#include "WinUser.h"
 #include "resource.h"
 #include "polygon.h"
 #include "AssimpModel.h"
+#include "mesh.h"
+
+#include "imgui.h"
+#include "imgui_impl_win32.h"
+#include "imgui_impl_dx11.h"
 
 #include "SceneManager.h"
 #include "InputManager.h"
@@ -41,8 +46,10 @@ HRESULT Init(HWND hWnd, BOOL bWindow);											//	初期化
 void Uninit();																	//	終了
 void Update();																	//	更新
 void Draw();																	//	描画
-//extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(					//	Call from your application's message handler
-//HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
+//imgui
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(					//	Call from your application's message handler
+HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 
 //===== グローバル変数 =====
@@ -152,7 +159,7 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdL
 	MoveWindow(g_hWnd, 0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN), true);
 
 	//	カーソルを非表示
-	ShowCursor(FALSE);
+	ShowCursor(TRUE);
 
 	// DirectXの初期化(ウィンドウを作成してから行う)
 	if (FAILED(Init(g_hWnd, true)))
@@ -317,20 +324,26 @@ HRESULT Init(HWND hWnd, BOOL bWindow)
 	hr = InitPolygon(g_pDevice);
 	if (FAILED(hr)) return hr;
 
+	//メッシュ初期化
+	hr = InitMesh();
+	if (FAILED(hr)) {
+		return hr;
+	}
+
 	// Assimp用シェーダ初期化
 	if (!CAssimpModel::InitShader(g_pDevice)) {
 		return E_FAIL;
 	}
 
-	// Imgui初期化
-	//IMGUI_CHECKVERSION();
-	//ImGui::CreateContext();
-	//ImGuiIO& io = ImGui::GetIO(); (void)io;
-	//// カラーテーマ設定
-	//ImGui::StyleColorsDark();
-	//// プラットフォーム/レンダラの初期化
-	//ImGui_ImplWin32_Init(g_hWnd);
-	//ImGui_ImplDX11_Init(g_pDevice, g_pDeviceContext);
+	 //Imgui初期化
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
+	// カラーテーマ設定
+	ImGui::StyleColorsDark();
+	// プラットフォーム/レンダラの初期化
+	ImGui_ImplWin32_Init(g_hWnd);
+	ImGui_ImplDX11_Init(g_pDevice, g_pDeviceContext);
 
 		//	入力の初期化
 	g_pInputManager = InputManager::Instance();
@@ -353,12 +366,15 @@ void Uninit()
 	g_pSceneManager->Uninit();
 
 	// Imgui 終了
-	/*ImGui_ImplDX11_Shutdown();
+	ImGui_ImplDX11_Shutdown();
 	ImGui_ImplWin32_Shutdown();
-	ImGui::DestroyContext();*/
+	ImGui::DestroyContext();
 
 	//	入力終了処理
 	g_pInputManager->Uninit();
+
+	//メッシュ終了処理
+	UninitMesh();
 
 	// Assimp用シェーダ終了処理
 	CAssimpModel::UninitShader();
@@ -461,18 +477,18 @@ void Draw()
 
 #ifdef _DEBUG
 	//*** ImGui New Frame
-	//ImGui_ImplDX11_NewFrame();
-	//ImGui_ImplWin32_NewFrame();
-	//ImGui::NewFrame();
+	ImGui_ImplDX11_NewFrame();
+	ImGui_ImplWin32_NewFrame();
+	ImGui::NewFrame();
 
-	//using namespace ImGui;
-	//SetNextWindowSize(ImVec2(160, 160), ImGuiCond_FirstUseEver);				//	ウィンドウサイズ
-	//SetNextWindowPos(ImVec2(100, 100), ImGuiCond_FirstUseEver, ImVec2(0, 0));	//	座標(左上が(0,0))
-	//Begin("ImGuiTest");															//	
-	//Text("FPS : %d", (int)(GetIO().Framerate));									//	FPS
-	//XMFLOAT2 world = CalcWorldSize();
-	//Text("%.0f, %.0f", world.x, world.y);
-	//End();																		//	終了
+	using namespace ImGui;
+	SetNextWindowSize(ImVec2(160, 160), ImGuiCond_FirstUseEver);				//	ウィンドウサイズ
+	SetNextWindowPos(ImVec2(100, 100), ImGuiCond_FirstUseEver, ImVec2(0, 0));	//	座標(左上が(0,0))
+	Begin("ImGuiTest");															//	
+	Text("FPS : %d", (int)(GetIO().Framerate));									//	FPS
+	XMFLOAT2 world = CalcWorldSize();
+	Text("%.0f, %.0f", world.x, world.y);
+	End();																		//	終了
 #endif // _DEBUG
 
 	//シーン描画
@@ -482,8 +498,8 @@ void Draw()
 	SetZBuffer(false);
 	SetBlendState(BS_ALPHABLEND);
 #ifdef _DEBUG
-	//ImGui::Render();	//*** ImGui Render
-	//ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
+	ImGui::Render();	//*** ImGui Render
+	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 #endif // _DEBUG
 
 	// バックバッファとフロントバッファの入れ替え
@@ -494,8 +510,8 @@ void Draw()
 LRESULT CALLBACK WndProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
 	//	imguiプロシージャ
-	/*if (ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
-		return true;*/
+	if (ImGui_ImplWin32_WndProcHandler(hWnd, uMsg, wParam, lParam))
+		return true;
 
 	switch (uMsg) {
 	case WM_CREATE:					//----- ウィンドウが生成された
@@ -748,9 +764,17 @@ XMFLOAT2 CalcWorldSize()
 	XMFLOAT2 world;
 
 	// XY平面とスクリーン座標の交点算出
+		// XY平面とスクリーン座標の交点算出
+	CCamera* camera = CCamera::Get();
+	XMMATRIX view = DirectX::XMLoadFloat4x4(&camera->GetViewMatrix());
+	XMMATRIX prj = DirectX::XMLoadFloat4x4(&camera->GetProjMatrix());
 	XMFLOAT3 left_up;
 	XMFLOAT3 right_down;
 
+	//	左上
+	CalcScreenToXY(&left_up, -SCREEN_CENTER_X, SCREEN_CENTER_Y, SCREEN_WIDTH, SCREEN_HEIGHT, view, prj);
+	//	右下
+	CalcScreenToXY(&right_down, SCREEN_CENTER_X, -SCREEN_CENTER_Y, SCREEN_WIDTH, SCREEN_HEIGHT, view, prj);
 
 	//	スクリーンに映っているワールドの横幅と高さを求める
 	world.x = right_down.x - left_up.x;	//	右端のワールド座標 - 左端のワールド座標

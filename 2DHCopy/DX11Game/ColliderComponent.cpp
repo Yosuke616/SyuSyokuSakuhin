@@ -4,6 +4,8 @@
 #include "Object.h"
 #include "ObjInfo.h"
 #include "TransformComponent.h"
+#include "Draw2DComponent.h"
+#include "PlayerComponent.h"
 
 //静的メンバ変数
 /** @brief 当たり判定のリスト*/
@@ -288,8 +290,8 @@ void CCollider::AddColliderList(Object* pObject) {
 		else {
 			break;
 		}
-		m_ColliderList.insert(itr,pObject);
 	}
+	m_ColliderList.insert(itr,pObject);
 }
 
 /**
@@ -366,4 +368,3 @@ void CCollider::UpdateColliders() {
 
 	}
 }
-

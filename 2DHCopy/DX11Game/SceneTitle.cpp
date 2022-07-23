@@ -29,7 +29,7 @@ void SceneTitle::Init() {
 	TextureManager* pTexManager = TextureManager::GetInstance();
 
 	//仮
-	pTexManager->AddTexture(PATH_TEX_KARI, KARI_TEX_NUM);
+	pTexManager->AddTexture(PATH_TEX_DXCHAN_STAND, DXCHAN_STAND_TEX_NUM);
 
 	//オブジェクトの作成
 	//仮
@@ -38,7 +38,7 @@ void SceneTitle::Init() {
 	auto DrawBox = Box->AddComponent<CDraw2D>();
 	//設定仮
 	TransBox->SetPosition(25.0f,25.0f);
-	DrawBox->SetTexture(pTexManager->GetTexture(KARI_TEX_NUM));
+	DrawBox->SetTexture(pTexManager->GetTexture(DXCHAN_STAND_TEX_NUM));
 	DrawBox->SetSize(100.0f,100.0f);
 	
 
