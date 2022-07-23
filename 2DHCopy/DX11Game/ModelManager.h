@@ -17,6 +17,8 @@
 //‰¼
 #define KARIKARIMODEL			(0)
 #define PATH_MODEL_KARIKARI		("data/model/RosaRosa1.fbx")
+#define BLOCK_KARIKARI			(1)
+#define PATH_MODEL_BLOCKKARI	("data/model/BLOCK_KARI.fbx")
 
 //ƒNƒ‰ƒX’è‹`
 /**

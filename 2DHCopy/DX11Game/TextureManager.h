@@ -15,9 +15,12 @@
 
 //定数定義
 /** @brief 必要になってくるテクスチャをここに書いていく*/
-//(仮)
-#define KARI_TEX_NUM				(0)
-#define PATH_TEX_KARI				("data/texture/IMG_0905.png")
+//DXちゃん
+#define DXCHAN_STAND_TEX_NUM				(1000)
+#define PATH_TEX_DXCHAN_STAND				("data/texture/Stand_Def.PNG")
+
+#define DEBUG_BLOCK_NUM						(999)
+#define PATH_TEX_DEBUG_BLOCK				("data/texture/Debug.jpg")
 
 //クラス定義
 /**

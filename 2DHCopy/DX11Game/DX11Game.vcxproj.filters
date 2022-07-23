@@ -28,6 +28,15 @@
     <Filter Include="imgui">
       <UniqueIdentifier>{20810b08-23fa-4e44-95c8-b2ecc2228763}</UniqueIdentifier>
     </Filter>
+    <Filter Include="コンポーネント\必須システム">
+      <UniqueIdentifier>{f08fd2de-7ae4-486c-97fc-9f2006ad0ef7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="コンポーネント\創作システム">
+      <UniqueIdentifier>{5155dd4d-98ab-4e54-ba65-0f203596eb23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="コンポーネント\デバッグ">
+      <UniqueIdentifier>{85a8ecad-c1cb-4a0c-91d1-aee67c622f90}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DX11Game.rc">
@@ -61,15 +70,6 @@
     <ClCompile Include="ObjectManager.cpp">
       <Filter>マネージャー</Filter>
     </ClCompile>
-    <ClCompile Include="ColliderComponent.cpp">
-      <Filter>コンポーネント</Filter>
-    </ClCompile>
-    <ClCompile Include="TransformComponent.cpp">
-      <Filter>コンポーネント</Filter>
-    </ClCompile>
-    <ClCompile Include="Draw2DComponent.cpp">
-      <Filter>コンポーネント</Filter>
-    </ClCompile>
     <ClCompile Include="TextureManager.cpp">
       <Filter>マネージャー</Filter>
     </ClCompile>
@@ -100,9 +100,6 @@
     <ClCompile Include="imgui_widgets.cpp">
       <Filter>imgui</Filter>
     </ClCompile>
-    <ClCompile Include="TexScrollComponent.cpp">
-      <Filter>コンポーネント</Filter>
-    </ClCompile>
     <ClCompile Include="InputManager.cpp">
       <Filter>マネージャー</Filter>
     </ClCompile>
@@ -112,14 +109,41 @@
     <ClCompile Include="SceneGame.cpp">
       <Filter>シーン</Filter>
     </ClCompile>
-    <ClCompile Include="Draw3DComponent.cpp">
-      <Filter>コンポーネント</Filter>
-    </ClCompile>
     <ClCompile Include="ModelManager.cpp">
       <Filter>マネージャー</Filter>
     </ClCompile>
     <ClCompile Include="Animation.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="ColliderComponent.cpp">
+      <Filter>コンポーネント\必須システム</Filter>
+    </ClCompile>
+    <ClCompile Include="Draw2DComponent.cpp">
+      <Filter>コンポーネント\必須システム</Filter>
+    </ClCompile>
+    <ClCompile Include="Draw3DComponent.cpp">
+      <Filter>コンポーネント\必須システム</Filter>
+    </ClCompile>
+    <ClCompile Include="TexScrollComponent.cpp">
+      <Filter>コンポーネント\必須システム</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformComponent.cpp">
+      <Filter>コンポーネント\必須システム</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerComponent.cpp">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClCompile>
+    <ClCompile Include="SeeCollComponent.cpp">
+      <Filter>コンポーネント\デバッグ</Filter>
+    </ClCompile>
+    <ClCompile Include="mesh.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="DrawMeshComponent.cpp">
+      <Filter>コンポーネント\必須システム</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimMeshComponent.cpp">
+      <Filter>コンポーネント\創作システム</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -144,9 +168,6 @@
     <ClInclude Include="SceneManager.h">
       <Filter>マネージャー</Filter>
     </ClInclude>
-    <ClInclude Include="Component.h">
-      <Filter>コンポーネント</Filter>
-    </ClInclude>
     <ClInclude Include="Object.h">
       <Filter>オブジェクト</Filter>
     </ClInclude>
@@ -158,15 +179,6 @@
     </ClInclude>
     <ClInclude Include="SceneTitle.h">
       <Filter>シーン</Filter>
-    </ClInclude>
-    <ClInclude Include="ColliderComponent.h">
-      <Filter>コンポーネント</Filter>
-    </ClInclude>
-    <ClInclude Include="TransformComponent.h">
-      <Filter>コンポーネント</Filter>
-    </ClInclude>
-    <ClInclude Include="Draw2DComponent.h">
-      <Filter>コンポーネント</Filter>
     </ClInclude>
     <ClInclude Include="TextureManager.h">
       <Filter>マネージャー</Filter>
@@ -207,17 +219,11 @@
     <ClInclude Include="imstb_truetype.h">
       <Filter>imgui</Filter>
     </ClInclude>
-    <ClInclude Include="TexScrollComponent.h">
-      <Filter>コンポーネント</Filter>
-    </ClInclude>
     <ClInclude Include="sceneGame.h">
       <Filter>シーン</Filter>
     </ClInclude>
     <ClInclude Include="Light.h">
       <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Draw3dComponent.h">
-      <Filter>コンポーネント</Filter>
     </ClInclude>
     <ClInclude Include="ModelManager.h">
       <Filter>マネージャー</Filter>
@@ -225,5 +231,64 @@
     <ClInclude Include="Animation.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="ColliderComponent.h">
+      <Filter>コンポーネント\必須システム</Filter>
+    </ClInclude>
+    <ClInclude Include="Component.h">
+      <Filter>コンポーネント\必須システム</Filter>
+    </ClInclude>
+    <ClInclude Include="Draw2DComponent.h">
+      <Filter>コンポーネント\必須システム</Filter>
+    </ClInclude>
+    <ClInclude Include="Draw3dComponent.h">
+      <Filter>コンポーネント\必須システム</Filter>
+    </ClInclude>
+    <ClInclude Include="TexScrollComponent.h">
+      <Filter>コンポーネント\必須システム</Filter>
+    </ClInclude>
+    <ClInclude Include="TransformComponent.h">
+      <Filter>コンポーネント\必須システム</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerComponent.h">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClInclude>
+    <ClInclude Include="SeeCollComponent.h">
+      <Filter>コンポーネント\デバッグ</Filter>
+    </ClInclude>
+    <ClInclude Include="DrawMeshComponent.h">
+      <Filter>コンポーネント\必須システム</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimMeshComponent.h">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="VertexFade.hlsl">
+      <Filter>リソース ファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="Vertex2D.hlsl">
+      <Filter>リソース ファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="Vertex.hlsl">
+      <Filter>リソース ファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="PixelFade.hlsl">
+      <Filter>リソース ファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="Pixel2D.hlsl">
+      <Filter>リソース ファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="Pixel.hlsl">
+      <Filter>リソース ファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="AssimpVertex.hlsl">
+      <Filter>リソース ファイル</Filter>
+    </FxCompile>
+    <FxCompile Include="AssimpPixel.hlsl">
+      <Filter>リソース ファイル</Filter>
+    </FxCompile>
   </ItemGroup>
 </Project>

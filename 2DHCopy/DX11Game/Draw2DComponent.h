@@ -1,6 +1,7 @@
 /**
 * @fn		Draw2DComponent.h
 * @brief	2D描画をするコンポーネント
+* @detail	主にUI関係など画面で動かないものを描画するものだと思われる
 * @author	志水陽祐
 * @date		2022/6/22
 */
@@ -47,7 +48,8 @@ protected:
 	int m_nAnimSplitX;
 	/** @brief 縦のアニメーションの分割数*/
 	int m_nAnimSplitY;
-	
+
+
 	//メンバ関数
 
 public:
