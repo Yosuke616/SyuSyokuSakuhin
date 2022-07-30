@@ -43,10 +43,6 @@ void CCollider::Start() {
 	//当たり判定のリストに登録
 	AddColliderList(Parent);
 
-	//デバッグ用のモードを作る
-#ifdef _DEBUG
-
-#endif
 }
 
 /**
@@ -271,6 +267,7 @@ bool CCollider::CollisionRectToRectXY(CTransform* pA, CTransform* pB,
 			return true;
 		}
 	}
+
 	return false;
 }
 

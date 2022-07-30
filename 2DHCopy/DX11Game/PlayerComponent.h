@@ -19,6 +19,16 @@ class Object;
 class CCollider;
 class CDraw2D;
 
+/**列挙体宣言**/
+enum PLAYER_STATE {
+	IDLE_PLAYER = 0,
+	RUN_PLAYER,
+	JUMP_PLAYER,
+	FALL_PLAYER,
+
+	MAX_PLAYER
+};
+
 //クラス定義
 class CPlayer :public Component {
 private:
@@ -35,6 +45,10 @@ private:
 	XMFLOAT2 m_OldPos;
 	/** @brief 地上にいるかどうかのフラグ*/
 	bool m_bGround;
+	/** @brief プレイヤーの状態を判別する列挙体*/
+	PLAYER_STATE m_ePlayer;
+	/** @brief ジャンプを下かどうかのフラグ*/
+	bool m_bJump;
 
 	//メンバ関数
 
@@ -59,6 +73,8 @@ public:
 	void Draw() override;
 	/** @brief 衝突処理*/
 	void OnCollisionEnter(Object* pObject) override;
+	/** @brief プレイヤーの状態を変更するため*/
+	void SetPlayerState(PLAYER_STATE PlayerSta);
 };
 
 

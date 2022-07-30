@@ -17,6 +17,13 @@
 //定数定義
 #define KEY_MAX (256)
 
+/**列挙体宣言**/
+enum MOUSE_BUTTON {
+	MOUSE_L,	//左クリック
+	MOUSE_R,	//右クリック
+	MOSUE_C		//ホイール
+};
+
 //クラス定義
 class InputManager {
 private:
@@ -74,6 +81,13 @@ public:
 	bool GetKeyTrigger(unsigned char key);
 	/** @brief キーボードのリリース状態を取得*/
 	bool GetKeyRelease(unsigned char key);
+
+	/** @brief マウスのプレス状態を取得*/
+	bool GetMouseButton(MOUSE_BUTTON Btn);
+	/** @brief マウスのトリガー状態を取得*/
+	bool GetMouseTrigger(MOUSE_BUTTON Btn);
+	/** @brief マウスのリリース状態を取得*/
+	bool GetMouseRelease(MOUSE_BUTTON Btn);
 
 	/** @brief マウスの座標の取得*/
 	XMFLOAT2 GetMousePos() const;

@@ -51,7 +51,8 @@ SKIN SkinVert(VS_INPUT input)
 		// ボーン無し
 		output.Pos = Pos;
 		output.Norm = Norm;
-	} else {
+	}
+	else {
 		// ボーン0
 		uint uBone = input.Bone.x;
 		float fWeight = input.Weight.x;

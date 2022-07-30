@@ -1,7 +1,7 @@
 //=============================================================================
 //
 // カメラ クラス [Camera.cpp]
-// Author : SHIMIZU YOSUKE
+// Author : HIROHIKO HAMAYA
 //
 //=============================================================================
 #include "Camera.h"
@@ -18,7 +18,7 @@
 //*****************************************************************************
 namespace {
 	const float CAM_POS_P_X = 0.0f;					// カメラの視点初期位置(X座標)
-	const float CAM_POS_P_Y = 0.0f;					// カメラの視点初期位置(Y座標)
+	const float CAM_POS_P_Y = 40.0f;					// カメラの視点初期位置(Y座標)
 	const float CAM_POS_P_Z = -300.0f;				// カメラの視点初期位置(Z座標)
 	const float CAM_POS_R_X = 0.0f;					// カメラの注視点初期位置(X座標)
 	const float CAM_POS_R_Y = 0.0f;					// カメラの注視点初期位置(Y座標)
@@ -51,7 +51,7 @@ CCamera* CCamera::m_pCamera = &g_camera;			// 現在のカメラ
 
 // コンストラクタ
 CCamera::CCamera()
-	: m_pPosX(nullptr)
+	: m_pPosX(nullptr),m_pPosY(nullptr)
 	, m_vScrSize(SCREEN_WIDTH, SCREEN_HEIGHT)
 {
 	Init();
@@ -61,7 +61,7 @@ CCamera::CCamera()
 void CCamera::Init()
 {
 	m_vPos = XMFLOAT3(CAM_POS_P_X, CAM_POS_P_Y, CAM_POS_P_Z);	// 視点
-	m_vTarget = XMFLOAT3(25, 25, CAM_POS_R_Z);// 注視点
+	m_vTarget = XMFLOAT3(CAM_POS_R_X, CAM_POS_R_Y, CAM_POS_R_Z);// 注視点
 	m_vUp = XMFLOAT3(0.0f, 1.0f, 0.0f);							// 上方ベクトル
 	m_vSrcPos = m_vPos;
 	m_vDestPos = m_vPos;
@@ -122,11 +122,6 @@ void CCamera::Update()
 				m_vDestAngle.z -= 360.0f;
 			}
 		}
-
-		if (pInput->GetKeyPress(DIK_D)) {
-			m_vDestPos.x += 100.0f;
-		}
-
 		// 初期位置
 		if (pInput->GetKeyPress(DIK_HOME)) {
 			// リセット
@@ -164,10 +159,16 @@ void CCamera::Update()
 		m_vDestPos.y = m_vSrcPos.y;
 		m_vDestPos.z = m_vSrcPos.z;
 		if (m_pPosX)	m_vDestPos.x += *m_pPosX;
+		
+		//注視点に変更があった場合位置を加える
+		if (m_pPosY) {
+			m_vDestPos.y += *m_pPosY;
+		}
 
 #pragma endregion
 
 		// 基準とするオブジェクトがあった場合
+		//ゴールフラグや
 		if (!m_bZoom && m_pPosX)
 		{
 			m_vDestTarget.x = *m_pPosX;
@@ -177,6 +178,20 @@ void CCamera::Update()
 
 			// 注視点を徐々に移動先に近づける
 			m_vTarget.x = m_vTarget.x * 0.9f + m_vDestTarget.x * 0.1f;
+
+		}
+
+		// 基準とするオブジェクトがあった場合
+		if (m_pPosY) {
+			m_vDestTarget.y = *m_pPosY;
+
+			// 視点を徐々に移動先に近づける
+			m_vPos.y = m_vPos.y * 0.9f + m_vDestPos.y * 0.1f;
+
+			// 注視点を徐々に移動先に近づける
+			m_vTarget.y = m_vTarget.y * 0.9f + m_vDestTarget.y * 0.1f;
+
+
 
 		}
 
@@ -211,6 +226,16 @@ void CCamera::Update()
 			auto player = ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME);
 			if (player)	SetAxisX(&player->GetComponent<CTransform>()->Pos.x);
 
+		}
+
+		// y軸、ステージごとの上限や下限を超えない限りプレイヤーに追従し続ける
+		// 2022/7/26現在は条件は存在しない/**過ちのmistake**
+		if (1) {
+			//プレイヤーに注視点を合わせる
+			auto player = ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME);
+			if (player) {
+				SetAxisY(&player->GetComponent<CTransform>()->Pos.y);
+			}
 		}
 	}
 
@@ -270,7 +295,7 @@ void CCamera::Update()
 void CCamera::Draw()
 {
 #ifdef _DEBUG
-	/*using namespace ImGui;
+	using namespace ImGui;
 
 	SetNextWindowSize(ImVec2(120, 160), ImGuiCond_FirstUseEver);
 	SetNextWindowPos(ImVec2(0, 0), ImGuiCond_FirstUseEver, ImVec2(0, 0));
@@ -278,7 +303,7 @@ void CCamera::Draw()
 	Text("Pos    : %.0f %.0f %.0f", m_vPos.x, m_vPos.y, m_vPos.z);
 	Text("Target : %.0f %.0f %.0f", m_vTarget.x, m_vTarget.y, m_vTarget.z);
 	Text("Angle  : %.0f %.0f %.0f", m_vAngle.x, m_vAngle.y, m_vAngle.z);
-	End();*/
+	End();
 #endif // _DEBUG
 }
 
@@ -488,6 +513,23 @@ void CCamera::SetAxisX(float* px)
 	else return;
 
 	m_vDestPos.x = *px;
+}
+
+/**
+* @fn		CCamera::SetAxisY
+* @brief	カメラのY軸を他のオブジェクト依存させる
+* @param	(float*)	他オブジェクトのY座標
+*/
+void CCamera::SetAxisY(float* py) {
+	m_pPosY = py;
+	if (py) {
+		m_vPos.y = *py;
+	}
+	else {
+		return;
+	}
+
+	m_vDestPos.y = *py;
 }
 
 void CCamera::SetLimit(XMFLOAT2 limit)

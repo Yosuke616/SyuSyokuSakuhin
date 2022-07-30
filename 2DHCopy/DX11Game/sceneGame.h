@@ -16,7 +16,24 @@
 #include <vector>
 #include <unordered_map>
 
+/**前方宣言**/
+
+/*列挙体宣言***/
+/** @brief どのステージを読み込むかを決める*/
+enum Stage {
+	STAGE_1 = 1,
+
+	MAX_STAGE
+};
+
+//前方宣言
+class StageManager;
+
 //クラス定義
+/**
+* @brief		ゲームシーンの為のクラス
+* @detail		どのステージを読み込む、ゲームをするうえで必要な情報のみを読み込む
+*/
 class SceneGame :public Scene {
 private:
 	//メンバ変数
@@ -26,12 +43,14 @@ private:
 	std::vector<Scene*> m_GameSceneList;
 	/** @brief 現在どのシーンか*/
 	Scene* m_CurrentScene;
+	/** @brief どのステージか*/
+	Stage m_eStageState;
 
 	/** @brief 初期化したいシーン*/
 	Scene* m_pInitScene;
 
 	/** @brief ステージマネージャーを作る予定*/
-
+	StageManager* m_pStageManager;
 
 	//メンバ関数
 	/** @brief コンストラクタ*/
@@ -66,6 +85,12 @@ public:
 	void Update() override;
 	/** @brief 描画処理*/
 	void Draw() override;
+
+	/** @brief シーンの切替*/
+	void SetStage(Stage NextStage);
+	/** @brief シーン情報の取得*/
+	Stage GetStage();
+
 };
 
 #endif

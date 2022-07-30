@@ -16,6 +16,8 @@ class CCamera
 private:
 	//CTransform* m_pTransform;
 	float* m_pPosX;
+	/** @brief Y軸用の座標ポインタ 2022/7/26*/
+	float* m_pPosY;
 	bool m_bZoom;
 
 	XMFLOAT3 m_vPos;				// 視点
@@ -90,5 +92,7 @@ public:
 
 	//void SetTransform(CTransform* transform);	//	x,y,z固定
 	void SetAxisX(float* px);
+	/** @brief Y軸の注視点の設定をする 2022/7/26*/
+	void SetAxisY(float* py);
 
 };

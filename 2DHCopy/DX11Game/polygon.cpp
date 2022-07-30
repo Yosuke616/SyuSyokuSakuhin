@@ -166,7 +166,8 @@ void DrawPolygon(ID3D11DeviceContext* pDeviceContext)
 		mWorld *= XMMatrixTranslation(g_posTexFrame.x, g_posTexFrame.y, 0.0f);
 		// テクスチャ マトリックスに設定
 		XMStoreFloat4x4(&g_mTex, mWorld);
-	} else {
+	}
+	else {
 		// テクスチャ無し
 		g_mTex._44 = 0.0f;
 	}
@@ -207,10 +208,10 @@ void DrawPolygon(ID3D11DeviceContext* pDeviceContext)
 HRESULT MakeVertexPolygon(ID3D11Device* pDevice)
 {
 	// 頂点座標の設定
-	g_vertexWk[0].vtx = XMFLOAT3(-0.5f,  0.5f, 0.0f);
-	g_vertexWk[1].vtx = XMFLOAT3( 0.5f,  0.5f, 0.0f);
+	g_vertexWk[0].vtx = XMFLOAT3(-0.5f, 0.5f, 0.0f);
+	g_vertexWk[1].vtx = XMFLOAT3(0.5f, 0.5f, 0.0f);
 	g_vertexWk[2].vtx = XMFLOAT3(-0.5f, -0.5f, 0.0f);
-	g_vertexWk[3].vtx = XMFLOAT3( 0.5f, -0.5f, 0.0f);
+	g_vertexWk[3].vtx = XMFLOAT3(0.5f, -0.5f, 0.0f);
 
 	// 拡散反射光の設定
 	g_vertexWk[0].diffuse = g_colPolygon;

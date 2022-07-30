@@ -37,6 +37,9 @@
     <Filter Include="コンポーネント\デバッグ">
       <UniqueIdentifier>{85a8ecad-c1cb-4a0c-91d1-aee67c622f90}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ステージ">
+      <UniqueIdentifier>{f7641ce0-fe74-4a7f-aa4e-19946e52d226}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DX11Game.rc">
@@ -144,6 +147,24 @@
     </ClCompile>
     <ClCompile Include="AnimMeshComponent.cpp">
       <Filter>コンポーネント\創作システム</Filter>
+    </ClCompile>
+    <ClCompile Include="GravityComponent.cpp">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClCompile>
+    <ClCompile Include="StageManager.cpp">
+      <Filter>マネージャー</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceBase.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="FileManager.cpp">
+      <Filter>マネージャー</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceCSV.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneStage_1.cpp">
+      <Filter>ステージ</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -263,6 +284,24 @@
     </ClInclude>
     <ClInclude Include="AnimMeshComponent.h">
       <Filter>コンポーネント\創作システム</Filter>
+    </ClInclude>
+    <ClInclude Include="GravityComponent.h">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClInclude>
+    <ClInclude Include="StageManager.h">
+      <Filter>マネージャー</Filter>
+    </ClInclude>
+    <ClInclude Include="FileManager.h">
+      <Filter>マネージャー</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceCSV.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStage_1.h">
+      <Filter>ステージ</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

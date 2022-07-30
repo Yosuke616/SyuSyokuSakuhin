@@ -10,7 +10,8 @@
 * @brief	コンストラクタ・・・生きていたのか・・・
 */
 CAnimMesh::CAnimMesh() 
-	:m_nAnimCount(10),m_nFrame(10)
+	:m_nAnimCount(10)
+	,m_nFrame(10)
 	,m_bLoop(false){
 
 }
@@ -28,10 +29,10 @@ CAnimMesh::~CAnimMesh() {
 * @brief	頂点情報の作成
 */
 void CAnimMesh::CreateAnimVertex() {
-	//ワールドマトリックスの初期化
-	XMStoreFloat4x4(&m_Mesh.mtxWorld,XMMatrixIdentity());
+	// ワールドマトリックス初期化
+	XMStoreFloat4x4(&m_Mesh.mtxWorld, XMMatrixIdentity());
 
-	//一時的な頂点配列を作成
+	// 一時的な頂点配列を生成
 	m_Mesh.nNumVertex = 4;
 	VERTEX_3D* pVertexWk = new VERTEX_3D[m_Mesh.nNumVertex];
 	VERTEX_3D* pVtx = pVertexWk;
@@ -61,9 +62,7 @@ void CAnimMesh::CreateAnimVertex() {
 	delete[] pIndexWk;
 	delete[] pVertexWk;
 
-	if (FAILED(hr)) {
-		MessageBox(GetMainWnd(), _T("CreateEffectVertex"), NULL, MB_OK);
-	}
+	if (FAILED(hr)) MessageBox(GetMainWnd(), _T("CreateEffectVertex"), NULL, MB_OK);
 }
 
 /**
@@ -111,10 +110,8 @@ void CAnimMesh::Update() {
 void CAnimMesh::Draw() {
 	ID3D11DeviceContext* pDC = GetDeviceContext();
 
-	//光源の無効化
-	CLight::Get()->SetDisable();
-	//アルファブレンディング
-	SetBlendState(BS_ALPHABLEND);
+	CLight::Get()->SetDisable();	//	光源無効
+	SetBlendState(BS_ALPHABLEND);	//	αブレンディング有効
 
 	//	テクスチャ マトリクス更新
 	XMMATRIX mtxTex = XMMatrixScaling(1.0f / m_nSplitX, 1.0f / m_nSplitY, 1.0f);

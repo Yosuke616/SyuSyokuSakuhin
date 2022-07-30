@@ -1,10 +1,7 @@
-#ifndef _MAINAPP_H_
-#define _MAINAPP_H_
-
 //=============================================================================
 //
 // メイン処理 [main.h]
-// Author : YOSUKE SHIMIZU
+// Author : SHIMIZU YOUSUKE
 //
 //=============================================================================
 #pragma once
@@ -18,6 +15,8 @@
 #include <mmsystem.h>
 #include <d3d11.h>
 #include <DirectXMath.h>
+
+#include "resource.h"
 
 #include <math.h>
 // 本来はヘッダに書かない方が良い
@@ -139,6 +138,3 @@ ID3D11RenderTargetView* GetRenderTargetView();
 ID3D11DepthStencilView*	GetDepthStencilView();
 // スワップチェーン
 IDXGISwapChain*	GetSwapChain();
-
-
-#endif

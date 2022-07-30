@@ -12,7 +12,7 @@ CTransform::CTransform() {
 	Pos			= XMFLOAT3(0.0f,0.0f,0.0f);
 	Vel			= XMFLOAT3(0.0f,0.0f,0.0f);
 	Acc			= XMFLOAT3(0.0f,0.0f,0.0f);
-	Scale		= XMFLOAT3(0.0f,0.0f,0.0f);
+	Scale		= XMFLOAT3(1.0f,1.0f,1.0f);
 	Rotate		= XMFLOAT3(0.0f,0.0f,0.0f);
 }
 
@@ -37,6 +37,11 @@ void CTransform::Update() {
 	Pos.x += Vel.x;
 	Pos.y += Vel.y;
 	Pos.z += Vel.z;
+
+	//Œã‚ÅÁ‚·
+	if (Parent->GetName()== "Rosalina") {
+		Parent->GetComponent<CTransform>()->Rotate.y++;
+	}
 }
 
 /**

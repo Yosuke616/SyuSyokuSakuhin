@@ -15,10 +15,11 @@
 
 //定数定義
 //仮
-#define KARIKARIMODEL			(0)
-#define PATH_MODEL_KARIKARI		("data/model/RosaRosa1.fbx")
-#define BLOCK_KARIKARI			(1)
-#define PATH_MODEL_BLOCKKARI	("data/model/BLOCK_KARI.fbx")
+#define ROSALINA_MODEL_X		(0)
+#define PATH_ROSALINA_X			("data/model/RosalinaX.fbx")
+#define MINT_GREEN_BLOCK_NUM	(1)
+#define PATH_MINT_GREEN_BLOCK	("data/model/Mario_Block.fbx")
+
 
 //クラス定義
 /**
@@ -49,7 +50,7 @@ public:
 	/** @brief デストラクタ*/
 	~ModelManager();
 	/** @brief インスタンス化*/
-	static ModelManager* GettInstance();
+	static ModelManager* GetInstance();
 	/** @brief モデルマネージャーの解放*/
 	static void Uninit();
 	/** @brief モデルの追加*/
