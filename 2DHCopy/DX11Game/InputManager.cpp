@@ -302,6 +302,40 @@ bool InputManager::GetKeyRelease(unsigned char key) {
 }
 
 /**
+* @fn		InputManager::GetMouseButton
+* @brief	マウスのどのボタンが押されたか
+* @param	(MOUSE_BUTTON)	どのボタンが押されたかの情報
+* @return	(bool)	押されていたかどうかの真偽を返す
+*/
+bool InputManager::GetMouseButton(MOUSE_BUTTON Btn) {
+	return (m_CurrentMouseState.rgbButtons[Btn] & 0x80);
+}
+
+/**
+* @fn		InputManager::GetMouseTrigger
+* @brief	マウスが一度だけ押されたかのトリガー情報
+* @detail	前フレームにクリックされていないかつ現在クリックされた
+* @param	(MOUSE_BUTTON)	どのボタンが押されたかの情報
+* @return	(bool)	ボタンが押されたかの真偽 
+*/
+bool InputManager::GetMouseTrigger(MOUSE_BUTTON Btn) {
+	return (!(m_PrevMouseState.rgbButtons[Btn] & 0x80) &&
+			m_CurrentMouseState.rgbButtons[Btn] & 0x80);
+}
+
+/**
+* @fn		InputManager::GetMouseRelease
+* @brief	マウスのボタンが離されたかどうか
+* @detail	前フレームクリックされているかつ現在クリックされていない
+* @param	(MOUSE_BUTTON) どのボタンが離されたかの情報
+* @return	(bool)	離されたかどうかの真偽
+*/
+bool InputManager::GetMouseRelease(MOUSE_BUTTON Btn) {
+	return (m_PrevMouseState.rgbButtons[Btn] & 0x80 &&
+			!(m_CurrentMouseState.rgbButtons[Btn] & 0x80));
+}
+
+/**
 * @fn		InputManager::GetMousePos const
 * @brief	マウス座標の取得
 * @return	(XMFLOAT2)	画面上のどの座標にいるか

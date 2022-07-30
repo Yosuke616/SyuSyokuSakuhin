@@ -39,6 +39,19 @@ enum DRAW_ORDER {
 
 //@@@@@ ディエックスちゃん ----------------------------------------
 #define PLAYER_NAME					("DXchan")
-#define BLOCK_KARI					("Block")
+#define DXCHAN_SIZE_X				(100.0f)
+#define DXCHAN_SIZE_Y				(100.0f)
+#define DXCHAN_COLL_SIZE_X			(25.0f)
+#define DXCHAN_COLL_SIZE_Y			(80.0f)
+#define DXCHAN_COLL_SIZE_Z			(100.0f)
+
+//@@@@@ ブロックの基本情報 ----------------------------------------
+#define BLOCK_NAME					("Block")
+#define MAPCHIP_WIDTH				(10.0f)	
+#define MAPCHIP_HEIGHT				(10.0f)	
+#define MAPCHIP_Z					(10.0f)	
+#define BLOCK_COLL_SIZE_X			(43.5f)
+#define BLOCK_COLL_SIZE_Y			(43.5f)
+#define BLOCK_COLL_SIZE_Z			(50.0f)
 
 #endif

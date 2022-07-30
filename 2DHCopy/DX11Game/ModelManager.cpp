@@ -30,7 +30,7 @@ ModelManager::~ModelManager() {
 * @brief	インスタンス化
 * @return	(ModelManager*)	モデルマネージャーのポインタを返す
 */
-ModelManager* ModelManager::GettInstance() {
+ModelManager* ModelManager::GetInstance() {
 	if (!m_pInstance) {
 		m_pInstance = new ModelManager;
 	}

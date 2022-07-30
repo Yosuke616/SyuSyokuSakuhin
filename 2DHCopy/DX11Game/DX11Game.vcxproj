@@ -97,6 +97,8 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>..\..\DirectXTex;..\..\Assimp\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -112,6 +114,8 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>..\..\DirectXTex;..\..\Assimp\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <SDLCheck>true</SDLCheck>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -172,6 +176,8 @@
     <ClCompile Include="Draw2DComponent.cpp" />
     <ClCompile Include="Draw3DComponent.cpp" />
     <ClCompile Include="DrawMeshComponent.cpp" />
+    <ClCompile Include="FileManager.cpp" />
+    <ClCompile Include="GravityComponent.cpp" />
     <ClCompile Include="imgui.cpp" />
     <ClCompile Include="imgui_draw.cpp" />
     <ClCompile Include="imgui_impl_dx11.cpp" />
@@ -187,11 +193,15 @@
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="PlayerComponent.cpp" />
     <ClCompile Include="polygon.cpp" />
+    <ClCompile Include="ResourceBase.cpp" />
+    <ClCompile Include="ResourceCSV.cpp" />
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SceneStage_1.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="SeeCollComponent.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="StageManager.cpp" />
     <ClCompile Include="TexScrollComponent.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -207,6 +217,8 @@
     <ClInclude Include="Draw2DComponent.h" />
     <ClInclude Include="Draw3dComponent.h" />
     <ClInclude Include="DrawMeshComponent.h" />
+    <ClInclude Include="FileManager.h" />
+    <ClInclude Include="GravityComponent.h" />
     <ClInclude Include="imconfig.h" />
     <ClInclude Include="imgui.h" />
     <ClInclude Include="imgui_impl_dx11.h" />
@@ -226,12 +238,16 @@
     <ClInclude Include="PlayerComponent.h" />
     <ClInclude Include="polygon.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="ResourceBase.h" />
+    <ClInclude Include="ResourceCSV.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="sceneGame.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SceneStage_1.h" />
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="SeeCollComponent.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="StageManager.h" />
     <ClInclude Include="TexScrollComponent.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureManager.h" />

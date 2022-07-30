@@ -29,19 +29,19 @@ CDrawMesh::CDrawMesh()
 
 	m_Mesh.primitiveType = PT_TRIANGLESTRIP;
 
-	//ワールドマトリックス初期化
-	XMStoreFloat4x4(&m_Mesh.mtxWorld,XMMatrixIdentity());
+	// ワールドマトリックス初期化
+	XMStoreFloat4x4(&m_Mesh.mtxWorld, XMMatrixIdentity());
 
-	//位置・回転初期化
-	m_Mesh.pos = XMFLOAT3(0.0f,0.0f,0.0f);
-	m_Mesh.rot = XMFLOAT3(0.0f,0.0f,0.0f);
-	m_fNormal =  XMFLOAT3(0.0f,-1.0f,0.0f);
+	// 位置・回転の初期設定
+	m_Mesh.pos = XMFLOAT3(0.0f, 0.0f, 0.0f);
+	m_Mesh.rot = XMFLOAT3(0.0f, 0.0f, 0.0f);
+	m_fNormal = XMFLOAT3(0.0f, -1.0f, 0.0f);
 
-	//マテリアルの初期設定
-	m_Material.Diffuse  = M_DIFFUSE;
-	m_Material.Ambient  = M_AMBIENT;
+	// マテリアルの初期設定
+	m_Material.Diffuse = M_DIFFUSE;
+	m_Material.Ambient = M_AMBIENT;
 	m_Material.Specular = M_SPECULAR;
-	m_Material.Power    = M_POWER;
+	m_Material.Power = M_POWER;
 	m_Material.Emissive = M_EMISSIVE;
 	m_Mesh.pMaterial = &m_Material;
 }
@@ -62,10 +62,10 @@ CDrawMesh::~CDrawMesh() {
 void CDrawMesh::Start() {
 	m_pTransform = Parent->GetComponent<CTransform>();
 
-	//頂点情報の作成
+	// 頂点情報の作成
 	MakeVertex(
-		m_fWidth,m_fHeight,
-		m_fTexSizeX,m_fTexSizeZ,
+		m_fWidth, m_fHeight,
+		m_fTexSizeX, m_fTexSizeZ,
 		m_fNormal);
 
 	CDrawMesh::Update();
@@ -81,6 +81,7 @@ void CDrawMesh::Update() {
 	m_Mesh.pos.z = m_pTransform->Pos.z;
 	m_Mesh.rot = m_pTransform->Rotate;
 
+	// メッシュ更新
 	UpdateMesh(&m_Mesh);
 }
 
@@ -91,8 +92,8 @@ void CDrawMesh::Update() {
 void CDrawMesh::Draw() {
 	ID3D11DeviceContext* pDC = GetDeviceContext();
 
-	//メッシュの描画
-	DrawMesh(pDC,&m_Mesh);
+	// メッシュの描画
+	DrawMesh(pDC, &m_Mesh);
 }
 
 /**
@@ -109,25 +110,25 @@ HRESULT CDrawMesh::MakeVertex(
 	float fSizeBlockX, float fSizeVlockZ,
 	float fTexSizeX, float fTexSizeZ,
 	XMFLOAT3 normal) {
-	//プリミティブ種別設定
+	//	プリミティブ種別設定
 	m_Mesh.primitiveType = PT_LINE;
 
-	//頂点数の設定
+	//	頂点数の設定
 	m_Mesh.nNumVertex = (1 + 1) * (1 + 1);
 
-	//インデックス数の設定(縮退ポリゴン用を考慮する)
+	//	インデックス数の設定(縮退ポリゴン用を考慮する)
 	m_Mesh.nNumIndex = 8;
 
-	//頂点配列作成
+	//	頂点配列の作成
 	VERTEX_3D* pVertexWk = new VERTEX_3D[m_Mesh.nNumVertex];
 
-	//インデックス配列の作成
+	//	インデックス配列の作成
 	int* pIndexWk = new int[m_Mesh.nNumIndex];
 
-	//頂点配列の中身を埋める
+	//	頂点配列の中身を埋める
 	VERTEX_3D* pVtx = pVertexWk;
 
-	//頂点座標の設定
+	//	頂点座標の設定
 	pVtx[0].vtx.x = m_fWidth * -0.5f;
 	pVtx[1].vtx.x = m_fWidth * 0.5f;
 	pVtx[2].vtx.x = m_fWidth * 0.5f;
@@ -136,27 +137,26 @@ HRESULT CDrawMesh::MakeVertex(
 	pVtx[1].vtx.y = m_fHeight * -0.5f;
 	pVtx[2].vtx.y = m_fHeight * 0.5f;
 	pVtx[3].vtx.y = m_fHeight * -0.5f;
-	pVtx[0].vtx.z = 0.0f;
-	pVtx[1].vtx.z = 0.0f;
-	pVtx[2].vtx.z = 0.0f;
-	pVtx[3].vtx.z = 0.0f;
+	pVtx[0].vtx.z = 0.0f;	pVtx[1].vtx.z = 0.0f;	pVtx[2].vtx.z = 0.0f;  pVtx[3].vtx.z = 0.0f;
 
-	for (int z = 0;z < 2; ++z) {
-		for (int x = 0;x < 2;++x) {
-			//法線の設定
-			pVtx->nor = XMFLOAT3(normal.x,normal.y,normal.z);
+	for (int z = 0; z < 2; ++z)
+	{
+		for (int x = 0; x < 2; ++x)
+		{
+			//	法線の設定
+			pVtx->nor = XMFLOAT3(normal.x, normal.y, normal.z);
 
-			//反射光の設定
-			pVtx->diffuse = XMFLOAT4(1.0f,1.0f,1.0f,1.0f);
+			//	反射光の設定
+			pVtx->diffuse = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 
-			//テクスチャ座標の設定
+			//	テクスチャ座標の設定
 			pVtx->tex.x = fTexSizeX * x;
 			pVtx->tex.y = fTexSizeZ * z;
 			++pVtx;
 		}
 	}
 
-	//インデックスの配列の中身を埋める
+	//	インデックス配列の中身を埋める
 	int* pIdx = pIndexWk;
 	pIdx[0] = 0;
 	pIdx[1] = 2;
@@ -170,15 +170,17 @@ HRESULT CDrawMesh::MakeVertex(
 	pIdx[6] = 3;
 	pIdx[7] = 0;
 
-	//頂点バッファ/インデックスバッファ生成
-	HRESULT hr = MakeMeshVertex(GetDevice(),&m_Mesh,pVertexWk,pIndexWk);
 
-	//一次配列の解放
+	//	頂点バッファ/インデックス バッファ生成
+	HRESULT hr = MakeMeshVertex(GetDevice(), &m_Mesh, pVertexWk, pIndexWk);
+
+	//	一時配列の解放
 	delete[] pVertexWk;
 	delete[] pIndexWk;
 
-	if (FAILED(hr)) {
-		MessageBox(GetMainWnd(),_T("メッシュ作成失敗"),NULL,MB_OK);
+	if (FAILED(hr))
+	{
+		MessageBox(GetMainWnd(), _T("メッシュ作成失敗"), NULL, MB_OK);
 	}
 
 	return hr;
@@ -208,7 +210,7 @@ void CDrawMesh::SetTexture(ID3D11ShaderResourceView* pTexture) {
 	}
 	m_Mesh.pTexture = pTexture;
 	if (m_Mesh.pTexture) {
-		XMStoreFloat4x4(&m_Mesh.mtxTexture,XMMatrixIdentity());
+		XMStoreFloat4x4(&m_Mesh.mtxTexture, XMMatrixIdentity());
 	}
 }
 

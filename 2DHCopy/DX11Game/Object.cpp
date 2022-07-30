@@ -9,7 +9,14 @@ Object::Object()
 
 }
 
-
+/**
+* @fn		Object::Object(std::string szName, UPDATE_ORDER UpdateOrder, DRAW_ORDER DrawOrder)
+* @brief	オブジェクト生成時に使用するコンストラクタ
+* @param	(string)		オブジェクト名
+* @param	(UPDATE_ORDER)	オブジェクトの更新の順番
+* @param	(DRAW_ORDER)	オブジェクトの描画の順番
+* @detail	更新、描画の順番はObjectInfo.h
+*/
 Object::Object(std::string szName, UPDATE_ORDER UpdateOrder, DRAW_ORDER DrawOrder)
 	:m_bDelete(false){
 	m_szName = szName;				//名前の登録

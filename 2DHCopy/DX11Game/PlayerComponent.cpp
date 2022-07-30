@@ -8,14 +8,18 @@
 #include "TransformComponent.h"
 #include "Draw2DComponent.h"
 #include "ColliderComponent.h"
+#include "GravityComponent.h"
 #include "sceneGame.h"
 #include "Camera.h"
 
 //定数定義
 /** @brief*/
 #define MAX_PLAYER_GRAVITY		(1.0f)
-#define VALUE_JUMP_SPEED		(1.5f)
-#define VALUE_MOVE_SPEED		(1.0f)
+#define VALUE_JUMP_SPEED		(8.0f)
+#define VALUE_MOVE_SPEED		(1.5f)
+
+/**グローバル変数**/
+PLAYER_STATE g_ePlayer;
 
 /**
 * @fn		CPlayer::CPlayer
@@ -24,7 +28,9 @@
 */
 CPlayer::CPlayer() :
 	m_pPlayer(nullptr),m_pDraw2D(nullptr),m_pInput(nullptr),
-	m_OldPos(0.0f,0.0f),m_bGround(false){
+	m_OldPos(0.0f,0.0f),m_bGround(false),
+	m_bJump(false),
+	m_ePlayer(IDLE_PLAYER){
 	this->m_eUpdateOrder = COM_UPDATE_1;
 }
 
@@ -45,6 +51,7 @@ void CPlayer::Start() {
 	m_pPlayer = Parent->GetComponent<CTransform>();
 	m_pCollider = Parent->GetComponent<CCollider>();
 	m_pInput = InputManager::Instance();
+	g_ePlayer = m_ePlayer;
 }
 
 /**
@@ -52,29 +59,133 @@ void CPlayer::Start() {
 * @brief	更新処理
 */
 void CPlayer::Update() {
-	m_pPlayer->Vel = XMFLOAT3(0.0f,0.0f,0.0f);
 	m_OldPos = m_pCollider->GetCenterPos();
 
-	//キー入力で移動する
-	if (m_pInput->GetKeyPress(DIK_D)) {
-		//右移動
-		m_pPlayer->Vel.x = VALUE_MOVE_SPEED;
-	}
-	
-	if (m_pInput->GetKeyPress(DIK_A)) {
-		//左移動
-		m_pPlayer->Vel.x = -VALUE_MOVE_SPEED;
-	}
+	//ステータスの情報を更新する
+	m_ePlayer = g_ePlayer;
 
-	if (m_pInput->GetKeyPress(DIK_W)) {
+#if _DEBUG
+	if (m_pInput->GetKeyPress(DIK_UPARROW)) {
 		//上移動
-		m_pPlayer->Vel.y = VALUE_MOVE_SPEED;
+		m_pPlayer->Pos.y += 10.0f;
+	}	
+	if (m_pInput->GetKeyPress(DIK_DOWNARROW)) {
+		//下移動
+		m_pPlayer->Pos.y += -10.0f;
+	}
+	if (m_pInput->GetKeyPress(DIK_RIGHTARROW)) {
+		//右移動
+		m_pPlayer->Pos.x += 5.0f;
+	}
+	if (m_pInput->GetKeyPress(DIK_LEFTARROW)) {
+		//右移動
+		m_pPlayer->Pos.x += -5.0f;
+	}
+#endif
+
+	switch (m_ePlayer) {
+	case IDLE_PLAYER:
+		//特別なアクションを起こした場合、プレイヤーの状態を変える
+
+		//横移動はなしにする,縦は重力がかかる
+		m_pPlayer->Vel.x = 0.0f;
+
+		if (m_pInput->GetKeyPress(DIK_D)) {
+			//右移動
+			m_ePlayer = RUN_PLAYER;
+		}
+		else if (m_pInput->GetKeyPress(DIK_A)) {
+			//左移動
+			m_ePlayer = RUN_PLAYER;
+		}
+
+		//ジャンピング
+		if (m_ePlayer == IDLE_PLAYER) {
+			if (m_pInput->GetKeyPress(DIK_W)) {
+				//ステータスをジャンプに変える
+				m_ePlayer = JUMP_PLAYER;
+			}
+		}
+		break;
+
+	case RUN_PLAYER:
+		if (m_pInput->GetKeyPress(DIK_D)) {
+			m_pPlayer->Vel.x = VALUE_MOVE_SPEED;
+		}
+		else if (m_pInput->GetKeyPress(DIK_A)) {
+			//左移動
+			m_pPlayer->Vel.x = -VALUE_MOVE_SPEED;
+		}
+		else {
+			m_ePlayer = IDLE_PLAYER;
+		}
+
+		//ジャンピング	
+		if (m_pInput->GetKeyPress(DIK_W)) {
+			//ステータスをジャンプに変える
+			m_ePlayer = JUMP_PLAYER;
+		}
+	
+		break;
+
+	case JUMP_PLAYER:
+		////ある程度上げたらくわえた力を消す
+
+		//初速を加える
+		if (!m_bJump) {
+			//重力のコンポーネントの機能をオフにする
+			Parent->GetComponent<CGravity>()->SetUse(false);
+			m_pPlayer->Vel.y = VALUE_JUMP_SPEED;
+			m_bJump = true;
+		}
+		else {
+			m_pPlayer->Vel.y -= GRAVITY;
+			if (m_pPlayer->Vel.y < -MAX_VELOCITY) {
+				Parent->GetComponent<CGravity>()->SetUse(true);
+			}
+		}
+
+		//左右移動はできるようにしておく
+		if (m_pInput->GetKeyPress(DIK_D)) {
+			m_pPlayer->Vel.x = VALUE_MOVE_SPEED;
+		}
+		else if (m_pInput->GetKeyPress(DIK_A)) {
+			//左移動
+			m_pPlayer->Vel.x = -VALUE_MOVE_SPEED;
+		}
+		else {
+			m_pPlayer->Vel.x = 0.0f;
+		}
+
+		break;
+
+	case FALL_PLAYER:
+		//落下速度が無くなったらプレイヤーの状態を待機状態に戻す
+		if (m_pPlayer->Vel.y >= 0) {
+			m_ePlayer = IDLE_PLAYER;
+		}
+
+		//左右移動はできるようにしておく
+		if (m_pInput->GetKeyPress(DIK_D)) {
+			m_pPlayer->Vel.x = VALUE_MOVE_SPEED;
+		}
+		else if (m_pInput->GetKeyPress(DIK_A)) {
+			//左移動
+			m_pPlayer->Vel.x = -VALUE_MOVE_SPEED;
+		}
+		else {
+			m_pPlayer->Vel.x = 0.0f;
+		}
+
+		//落下フラグはオンにする
+		m_bJump = true;
+
+		break;
+	default: break;
 	}
 
-	if (m_pInput->GetKeyPress(DIK_S)) {
-		//下移動
-		m_pPlayer->Vel.y = -VALUE_MOVE_SPEED;
-	}
+	//プレイヤーの最新状態を保存する
+	g_ePlayer = m_ePlayer;
 
 	//速度の上限を決める
 	if (m_pPlayer->Vel.x > VALUE_MOVE_SPEED) {
@@ -83,12 +194,13 @@ void CPlayer::Update() {
 	if (m_pPlayer->Vel.x < -VALUE_MOVE_SPEED) {
 		m_pPlayer->Vel.x = -VALUE_MOVE_SPEED;
 	}
-	if (m_pPlayer->Vel.y > VALUE_MOVE_SPEED) {
+	if (m_pPlayer->Vel.y < -MAX_VELOCITY) {
+		m_pPlayer->Vel.y = -MAX_VELOCITY;
+	}
+
+	/*if (m_pPlayer->Vel.y > VALUE_MOVE_SPEED) {
 		m_pPlayer->Vel.y = VALUE_MOVE_SPEED;
-	}
-	if (m_pPlayer->Vel.y < -VALUE_MOVE_SPEED) {
-		m_pPlayer->Vel.y = -VALUE_MOVE_SPEED;
-	}
+	}*/
 }
 
 /**
@@ -107,6 +219,7 @@ void CPlayer::Draw() {
 	Begin("Player");
 	Text("Pos	  : %3.0f %3.0f %3.0f", m_pPlayer->Pos.x, m_pPlayer->Pos.y, m_pPlayer->Pos.z);
 	Text("Vel	  : %.0f %.0f", m_pPlayer->Vel.x, m_pPlayer->Vel.y);
+	Text("P_STATE : %d",g_ePlayer);
 	End();
 #endif // _DEBUG
 }
@@ -118,7 +231,7 @@ void CPlayer::Draw() {
 */
 void CPlayer::OnCollisionEnter(Object* pObject) {
 	//仮(ブロック)
-	if(pObject->GetName() == BLOCK_KARI){
+	if(pObject->GetName() == BLOCK_NAME){
 		//プレイヤーの情報を取得
 		auto Player = Parent->GetComponent<CCollider>();
 		auto PlayerPos = Player->GetCenterPos();
@@ -152,11 +265,21 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 			if (BlockUpLine <= m_OldPos.y - PlayerHalhSize.y &&					//前フレームはめり込んでいない
 							   PlayerPos.y - PlayerHalhSize.y < BlockUpLine) {	//現在のフレームはめり込んでいる
 				//yの速度をなくす
-				m_pPlayer->Pos.y = 0.0f;
+				m_pPlayer->Vel.y = 0.0f;
 
 				//座標補正
-				m_pPlayer->Pos.y = BlockUpLine + PlayerHalhSize.y - PlayerOffset.y;				
+				m_pPlayer->Pos.y = BlockUpLine + PlayerHalhSize.y - PlayerOffset.y;	
+
+				//プレイヤーの状態を地面に立っている状態に変える
+				m_ePlayer = IDLE_PLAYER;
+
+				//プレイヤーの最新状態を保存する
+				if (m_bJump == true) {
+					g_ePlayer = m_ePlayer;
+					m_bJump = false;
+				}
 			}
+			/** @brief 頭ごっつんこ状態である*/
 			else if (BlockDownLine >= m_OldPos.y + PlayerHalhSize.y &&	//前フレームはめり込んでいない
 				PlayerPos.y + PlayerHalhSize.y > BlockDownLine) {		//現在のフレームはめり込んでいる
 				   //yの速度をなくす
@@ -164,6 +287,14 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 				//座標補正
 				m_pPlayer->Pos.y = BlockDownLine - PlayerHalhSize.y - PlayerOffset.y;
 			}
+		}
+
+		//落下速度が一定を超えたら落下判定にする
+		if (m_pPlayer->Vel.y == -MAX_VELOCITY) {
+			int i = 1;
+		}
+		else {
+			int i = 1;
 		}
 
 		//中心座標のセット
@@ -192,5 +323,15 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 			}
 		}
 		return;
-	}	
+	}
+}
+
+/**
+* @fn		CPlayer::SetPlayerStatus
+* @brief	プレイヤーの状態をセットする
+* @detail	イベントの時にプレイヤーをストップしたり再開したり
+* @param	(PLAYER_STATUS)	指定したいプレイヤーの状態
+*/
+void CPlayer::SetPlayerState(PLAYER_STATE PlayerSta) {
+	m_ePlayer = g_ePlayer = PlayerSta;
 }

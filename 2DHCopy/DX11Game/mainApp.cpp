@@ -1,7 +1,7 @@
 //=============================================================================
 //
 // メイン処理 [main.cpp]
-// Author : RIKUTO NARITA
+// Author : SHIMIZU YOUSUKE
 //
 //=============================================================================
 #include "mainApp.h"
@@ -46,10 +46,8 @@ HRESULT Init(HWND hWnd, BOOL bWindow);											//	初期化
 void Uninit();																	//	終了
 void Update();																	//	更新
 void Draw();																	//	描画
-
-//imgui
 extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(					//	Call from your application's message handler
-HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+	HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
 
 //===== グローバル変数 =====
@@ -66,12 +64,11 @@ ID3D11BlendState*			g_pBlendState[MAX_BLENDSTATE];	// ブレンド ステート
 ID3D11Texture2D*			g_pDepthStencilTexture;			// Zバッファ用メモリ
 ID3D11DepthStencilView*		g_pDepthStencilView;			// Zバッファ
 ID3D11RasterizerState*		g_pRs[MAX_CULLMODE];			// ラスタライザ ステート
-ID3D11DepthStencilState*	g_pDSS[2];						// Zステンシル ステート
+ID3D11DepthStencilState*	g_pDSS[2];						// Z/ステンシル ステート
 
 int							g_nCountFPS;					// FPSカウンタ
 
-//シーンマネージャー管理用
-SceneManager* g_pSceneManager = nullptr;
+SceneManager*	g_pSceneManager = nullptr;
 InputManager*	g_pInputManager = nullptr;
 
 
@@ -119,10 +116,10 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdL
 	RECT rc = { 0, 0, SCREEN_WIDTH, SCREEN_HEIGHT };	//	画面サイズ
 	DWORD dwExStyle = 0;								//	ウィンドウの拡張スタイル
 	/*ウィンドウスタイル
-		①WS_OVERLAPPED			オーバーラップウィンドウはタイトルバーと枠
+		①WS_OVERLAPPED		オーバーラップウィンドウはタイトルバーと枠
 		②WS_CAPTION			タイトルバーを持つウィンドウを作成
 		③WS_SYSMENU			タイトルバー上にウィンドウメニューを持つウィンドウを作成
-		④WS_BORDER				細い境界線を持つウィンドウを作成
+		④WS_BORDER			細い境界線を持つウィンドウを作成
 		⑤WS_MINIMIZEBOX		最小化ボタンを持つウィンドウを作成
 		⑥WS_MAXIMIZEBOX		最大化ボタンを持つウィンドウを作成
 	*/
@@ -137,8 +134,8 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdL
 		CLASS_NAME,			//	関数の呼び出しにより作成されたウィンドウクラスの名前を表す文字列へのポインタ
 		WINDOW_NAME,		//	この文字列がタイトルバーに表示される
 		dwStyle,			//	ウィンドウスタイル（ウィンドウメニュー情報とかが入っている）
-		CW_USEDEFAULT,		//  ウィンドウの左座標
-		CW_USEDEFAULT,		//  ウィンドウの上座標
+		CW_USEDEFAULT,		// ウィンドウの左座標
+		CW_USEDEFAULT,		// ウィンドウの上座標
 		GetSystemMetrics(SM_CXSCREEN),	// ウィンドウ横幅
 		GetSystemMetrics(SM_CYSCREEN),	// ウィンドウ縦幅
 		nullptr,
@@ -159,7 +156,7 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdL
 	MoveWindow(g_hWnd, 0, 0, GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN), true);
 
 	//	カーソルを非表示
-	ShowCursor(TRUE);
+	//ShowCursor(FALSE);
 
 	// DirectXの初期化(ウィンドウを作成してから行う)
 	if (FAILED(Init(g_hWnd, true)))
@@ -320,22 +317,19 @@ HRESULT Init(HWND hWnd, BOOL bWindow)
 	dsd2.DepthEnable = FALSE;
 	g_pDevice->CreateDepthStencilState(&dsd2, &g_pDSS[1]);
 #pragma endregion
+
 	// ポリゴン表示初期化
 	hr = InitPolygon(g_pDevice);
 	if (FAILED(hr)) return hr;
 
-	//メッシュ初期化
+	// メッシュ初期化
 	hr = InitMesh();
-	if (FAILED(hr)) {
-		return hr;
-	}
+	if (FAILED(hr)) return hr;
 
 	// Assimp用シェーダ初期化
-	if (!CAssimpModel::InitShader(g_pDevice)) {
-		return E_FAIL;
-	}
+	if (!CAssimpModel::InitShader(g_pDevice)) return E_FAIL;
 
-	 //Imgui初期化
+	// Imgui初期化
 	IMGUI_CHECKVERSION();
 	ImGui::CreateContext();
 	ImGuiIO& io = ImGui::GetIO(); (void)io;
@@ -345,14 +339,12 @@ HRESULT Init(HWND hWnd, BOOL bWindow)
 	ImGui_ImplWin32_Init(g_hWnd);
 	ImGui_ImplDX11_Init(g_pDevice, g_pDeviceContext);
 
-		//	入力の初期化
+	//	入力の初期化
 	g_pInputManager = InputManager::Instance();
 	hr = g_pInputManager->Init();
-	if (FAILED(hr)) {
-		MessageBox(g_hWnd, _T("dinput初期化失敗"), NULL, MB_OK);
-	}
+	if (FAILED(hr))	MessageBox(g_hWnd, _T("dinput初期化失敗"), NULL, MB_OK);
 
-	//シーンマネージャーの復活
+	//	シーンマネージャー初期化
 	g_pSceneManager = SceneManager::Instance();
 	g_pSceneManager->Init();
 
@@ -362,7 +354,13 @@ HRESULT Init(HWND hWnd, BOOL bWindow)
 // 終了処理
 void Uninit()
 {
-	// シーン解放処理
+	//	モデル開放
+	ModelManager::Uninit();
+
+	//	テクスチャ開放
+	TextureManager::Uninit();
+
+	//	シーン開放処理
 	g_pSceneManager->Uninit();
 
 	// Imgui 終了
@@ -373,7 +371,7 @@ void Uninit()
 	//	入力終了処理
 	g_pInputManager->Uninit();
 
-	//メッシュ終了処理
+	// メッシュ終了処理
 	UninitMesh();
 
 	// Assimp用シェーダ終了処理
@@ -415,7 +413,6 @@ void Update()
 {
 	//	入力更新
 	g_pInputManager->Update();	// 必ずUpdate関数の先頭で実行.
-
 
 #ifdef SCENE_CHANGE
 	InputManager* input = InputManager::Instance();
@@ -459,11 +456,11 @@ void Update()
 	{
 		SceneGame::GetInstance()->SetSeason(WINTER_2);
 	}
-
 #endif // SCENE_CHANGE
 
-	//シーン更新
+	//	シーン更新
 	g_pSceneManager->Update();
+
 }
 
 // 描画処理
@@ -491,7 +488,8 @@ void Draw()
 	End();																		//	終了
 #endif // _DEBUG
 
-	//シーン描画
+
+	//	シーン描画
 	g_pSceneManager->Draw();
 
 	// Zバッファ無効(Zチェック無&Z更新無)
@@ -764,13 +762,11 @@ XMFLOAT2 CalcWorldSize()
 	XMFLOAT2 world;
 
 	// XY平面とスクリーン座標の交点算出
-		// XY平面とスクリーン座標の交点算出
 	CCamera* camera = CCamera::Get();
 	XMMATRIX view = DirectX::XMLoadFloat4x4(&camera->GetViewMatrix());
 	XMMATRIX prj = DirectX::XMLoadFloat4x4(&camera->GetProjMatrix());
 	XMFLOAT3 left_up;
 	XMFLOAT3 right_down;
-
 	//	左上
 	CalcScreenToXY(&left_up, -SCREEN_CENTER_X, SCREEN_CENTER_Y, SCREEN_WIDTH, SCREEN_HEIGHT, view, prj);
 	//	右下

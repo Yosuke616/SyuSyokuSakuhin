@@ -5,6 +5,8 @@
 #include "TextureManager.h"
 #include "InputManager.h"
 #include "ModelManager.h"
+#include "FileManager.h"
+#include "StageManager.h"
 #include "Object.h"
 #include "ObjInfo.h"
 #include "Camera.h"
@@ -21,6 +23,7 @@
 #include "SeeCollComponent.h"
 #include "DrawMeshComponent.h"
 #include "AnimMeshComponent.h"
+#include "GravityComponent.h"
 
 //静的メンバ変数
 SceneGame* SceneGame::m_pInstance = nullptr;
@@ -31,13 +34,15 @@ SceneGame* SceneGame::m_pInstance = nullptr;
 * @detail	追加したいステージ等はここで追加していく
 */
 SceneGame::SceneGame()
-	:m_bPauseMode(false), m_bEditMode(false) {
+	:m_bPauseMode(false), m_bEditMode(false) 
+	,m_pStageManager(nullptr){
 
 	//ここでステージをリストに追加していく
 	//ex).m_GameSceneList.push_back(new ??????());
+	//m_GameSceneList.push_back();
 
 	//最初のステージの設定
-
+	m_eStageState = STAGE_1;
 }
 
 /**
@@ -71,29 +76,58 @@ void SceneGame::Init() {
 
 	//管理クラスインスタンス取得
 	m_pObjectManager = ObjectManager::GetInstance();
-	ModelManager* pModelManager = ModelManager::GettInstance();
-	pModelManager->AddModel(PATH_MODEL_KARIKARI, KARIKARIMODEL);
-	pModelManager->AddModel(PATH_MODEL_BLOCKKARI, BLOCK_KARIKARI);
+	ModelManager* pModelManager = ModelManager::GetInstance();
+	pModelManager->AddModel(PATH_ROSALINA_X, ROSALINA_MODEL_X);
+	pModelManager->AddModel(PATH_MINT_GREEN_BLOCK, MINT_GREEN_BLOCK_NUM);
 
 	//テクスチャの読込
 	TextureManager* pTexManager = TextureManager::GetInstance();
 
-	//for (int i = 0;i < 10;i++) {
+	for (int i = 0;i < 10;i++) {
 		//モデル読込
-		Object* KARI3D = new Object(BLOCK_KARI, UPDATE_FIELD, DRAW_FIELD);
+		Object* KARI3D = new Object(BLOCK_NAME, UPDATE_FIELD, DRAW_FIELD);
 		auto BLO = KARI3D->AddComponent<CTransform>();
 		auto DRAW_BLO = KARI3D->AddComponent<CDraw3D>();
 		auto COLL_BLO = KARI3D->AddComponent<CCollider>();
 		KARI3D->AddComponent<CSeeColl>();
-		DRAW_BLO->SetModel(pModelManager->GetModel(BLOCK_KARIKARI));
+		DRAW_BLO->SetModel(pModelManager->GetModel(MINT_GREEN_BLOCK_NUM));
 
-		BLO->SetScale(10.0f, 10.0f, 10.0f);
+		BLO->SetScale(MAPCHIP_WIDTH, MAPCHIP_HEIGHT, MAPCHIP_Z);
 		BLO->SetVelocity(0.0f, 0.0f, 0.0f);
-		BLO->SetPosition(35, 0.0f, 0.0f);
+		BLO->SetPosition(35 + i * 40, -75.0f , 0.0f);
 		BLO->SetRotate(0.0f, 180.0f, 0.0f);
-		COLL_BLO->SetCollisionSize(70.0f, 70.0f, 70.0f);
+		COLL_BLO->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
 		m_pObjectManager->AddObject(KARI3D);
-	//}
+	}
+
+	//天井
+	for (int i = 0;i < 10;i++) {
+		//モデル読込
+		Object* KARI3D = new Object(BLOCK_NAME, UPDATE_FIELD, DRAW_FIELD);
+		auto BLO = KARI3D->AddComponent<CTransform>();
+		auto DRAW_BLO = KARI3D->AddComponent<CDraw3D>();
+		auto COLL_BLO = KARI3D->AddComponent<CCollider>();
+		KARI3D->AddComponent<CSeeColl>();
+		DRAW_BLO->SetModel(pModelManager->GetModel(MINT_GREEN_BLOCK_NUM));
+
+		BLO->SetScale(MAPCHIP_WIDTH, MAPCHIP_HEIGHT, MAPCHIP_Z);
+		BLO->SetVelocity(0.0f, 0.0f, 0.0f);
+		BLO->SetPosition(35 + i * 40, 75.0f + i * 40, 0.0f);
+		BLO->SetRotate(0.0f, 180.0f, 0.0f);
+		COLL_BLO->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
+		m_pObjectManager->AddObject(KARI3D);
+	}
+
+	Object* Rosa = new Object("Rosalina",UPDATE_PLAYER,DRAW_PLAYER);
+	auto Rosa_Tra = Rosa->AddComponent<CTransform>();
+	auto Rosa_Dra = Rosa->AddComponent<CDraw3D>();
+
+	Rosa_Dra->SetModel(pModelManager->GetModel(ROSALINA_MODEL_X));
+	Rosa_Tra->SetScale(15,15,15);
+	Rosa_Tra->SetVelocity(0.0f,0.0f,0.0f);
+	Rosa_Tra->SetPosition(-15,0);
+	m_pObjectManager->AddObject(Rosa);
+
 
 
 	//仮
@@ -106,42 +140,20 @@ void SceneGame::Init() {
 	auto DrawBox = Box->AddComponent<CAnimMesh>();
 	auto CollBox = Box->AddComponent<CCollider>();
 	Box->AddComponent<CPlayer>();
-	//Box->AddComponent<CSeeColl>();
+	Box->AddComponent<CGravity>();
+	Box->AddComponent<CSeeColl>();
 	//設定仮
-	TransBox->SetPosition(35.0f, 50.0f);
-	CollBox->SetCollisionSize(30.0f, 30.0f, 100.0f);
-	CollBox->SetOffset(7.4f, 0.0f);
-
 	DrawBox->SetTexture(pTexManager->GetTexture(DXCHAN_STAND_TEX_NUM));
-	DrawBox->SetSize(30.0f, 30.0f);
-	//DrawBox->SetAnimSplit(3,3);
-	//DrawBox->SetSwapFrame(10);
+	TransBox->SetPosition(35.0f, 50.0f);
+	CollBox->SetCollisionSize(DXCHAN_COLL_SIZE_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
+	//CollBox->SetOffset(-2.5f, 0.0f);
+
+	DrawBox->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_Y);
+	DrawBox->SetAnimSplit(3,3);
+	DrawBox->SetSwapFrame(3);
 	DrawBox->SetLoop(true);
 
-	m_pObjectManager->AddObject(Box);
-
-	/*CollBox->SetCollisionSize(350.0f,320.0f,100.0f);
-	CollBox->SetOffset(10.0f,75.0f);
-	CollBox->SetCollisionSize(10.0f, 60.0f, 100.0f);
-	CollBox->SetOffset(7.4f, 0.0f);*/
-
-	//Object* Box2 = new Object(PLAYER_NAME, UPDATE_PLAYER, DRAW_PLAYER);
-	//auto TransBox2 = Box2->AddComponent<CTransform>();
-	//auto DrawBox2 = Box2->AddComponent<CDraw3D>();
-	//auto CollBox2 = Box2->AddComponent<CCollider>();
-	//auto PlayBox2 = Box2->AddComponent<CPlayer>();
-	//Box2->AddComponent<CSeeColl>();
-	//DrawBox2->SetModel(pModelManager->GetModel(BLOCK_KARIKARI));
-
-	////設定仮
-	//TransBox2->SetScale(10.0f,10.0f,10.0f);
-	//TransBox2->SetPosition(50.0f, 50.0f);
-	//TransBox2->SetVelocity(0.0f, 0.0f, 0.0f);
-	//TransBox2->SetRotate(0.0f, 180.0f, 0.0f);
-	//CollBox2->SetCollisionSize(50.0f, 50.0f, 50.0f);
-
-	//m_pObjectManager->AddObject(Box2);
-	
+	m_pObjectManager->AddObject(Box);	
 }
 
 /**
@@ -175,7 +187,22 @@ void SceneGame::Update() {
 		m_pObjectManager->UpdateEdit();
 	}
 
+	//ここでプレイヤーの速度を見る
+	//下向きの速度がかかっていた場合落下判定とする
+	if (m_pObjectManager->GetGameObject(PLAYER_NAME)) {
+		auto Player = m_pObjectManager->GetGameObject(PLAYER_NAME);
+		if (Player->GetComponent<CTransform>()->Vel.y <= -MAX_VELOCITY) {
+			Player->GetComponent<CPlayer>()->SetPlayerState(FALL_PLAYER);
+		}
+	}
+
 #ifdef _DEBUG
+	//何かしらの処理をしたらステータスを変える
+	if (InputManager::Instance()->GetKeyTrigger(DIK_P)) {
+		auto Player = m_pObjectManager->GetGameObject(PLAYER_NAME);
+		Player->GetComponent<CPlayer>()->SetPlayerState(IDLE_PLAYER);
+	}
+
 	//	編集モードの切り替え
 	if (InputManager::Instance()->GetKeyTrigger(DIK_F12))
 	{
@@ -206,6 +233,32 @@ void SceneGame::Draw() {
 	//CCamera::Get()->Draw();
 #endif
 
+}
+
+/**
+* @fn		SceneGame::SetStage
+* @brief	ステージの切り替え
+* @param	(Stage)	次のステージ番号
+*/
+void SceneGame::SetStage(Stage NextStage) {
+	//例外処理
+	if (NextStage >= MAX_STAGE) {
+		MessageBox(GetMainWnd(), _T("ステージ切り替え失敗"), NULL, MB_OK);
+		return;
+	}
+
+	//現在のステージの終了
+
+	//ステージの切替
+}
+
+/** 
+* @fn		SceneGame::GetStage	
+* @brief	ステージの情報を取得する
+* @return	(Stage)	現在のステージ番号を返す
+*/
+Stage SceneGame::GetStage() {
+	return m_eStageState;
 }
 
 /**

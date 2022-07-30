@@ -63,6 +63,7 @@ void ObjectManager::Uninit() {
 	//リストをカラにする
 	m_UpdateList.clear();
 	m_DrawList.clear();
+	CCollider::GetColliderList().clear();
 
 	//このオブジェクトの削除
 	if (m_pInstance) {
