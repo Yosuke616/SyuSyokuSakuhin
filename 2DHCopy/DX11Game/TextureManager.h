@@ -16,11 +16,19 @@
 //定数定義
 /** @brief 必要になってくるテクスチャをここに書いていく*/
 //DXちゃん
-#define DXCHAN_STAND_TEX_NUM				(1000)
+#define DXCHAN_STAND_TEX_NUM				(0)
 #define PATH_TEX_DXCHAN_STAND				("data/texture/Stand_Def.PNG")
 
-#define DEBUG_BLOCK_NUM						(999)
+#define DEBUG_BLOCK_NUM						(1)
 #define PATH_TEX_DEBUG_BLOCK				("data/texture/Debug.jpg")
+
+//タイトル画面用
+#define TITLE_BACK_GROUND_NUM				(2)
+#define PATH_TEX_TITLE_BACK_GROUND			("data/texture/TitleBack.jpg")
+
+//ボタン
+#define TITLE_BUTTON_NUM					(3)
+#define PATH_TEX_TITLE_BUTTON				("data/texture/press_enter.png")
 
 //クラス定義
 /**

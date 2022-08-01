@@ -54,7 +54,7 @@ void SceneManager::Init() {
 	m_pSceneList.push_back(SceneGame::GetInstance());
 
 	//‰‚ß‚ÌƒV[ƒ“‚ğ‘I‘ğ‚·‚é
-	SetScene(SCENE_GAME);
+	SetScene(SCENE_TITLE);
 
 }
 

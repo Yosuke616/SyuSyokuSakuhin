@@ -183,7 +183,7 @@ std::string ResourceCSV::GetStr(int x,int y) {
 */
 int ResourceCSV::GetInt(int x, int y) {
 	//•¶Žš—ñ‚ðint‚É•ÏŠ·‚·‚é
-	return atoi(m_Grid[y][x].c_str);
+	return atoi(m_Grid[y][x].c_str());
 }
 
 /**
@@ -195,7 +195,7 @@ int ResourceCSV::GetInt(int x, int y) {
 */
 float ResourceCSV::GetFloat(int x,int y) {
 	//•¶Žš—ñ‚ðfloat‚É•Ï‚¦‚é
-	return (float)atof(m_Grid[y][x].c_str);
+	return (float)atof(m_Grid[y][x].c_str());
 }
 
 /**

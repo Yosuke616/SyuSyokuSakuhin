@@ -166,6 +166,12 @@
     <ClCompile Include="SceneStage_1.cpp">
       <Filter>ステージ</Filter>
     </ClCompile>
+    <ClCompile Include="OutOfRange.cpp">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuManager.cpp">
+      <Filter>マネージャー</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainApp.h">
@@ -302,6 +308,15 @@
     </ClInclude>
     <ClInclude Include="SceneStage_1.h">
       <Filter>ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="OutOfRange.h">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuManager.h">
+      <Filter>マネージャー</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuComponent.h">
+      <Filter>コンポーネント\創作システム</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -72,7 +72,7 @@ bool FileManager::Load(std::string fileName) {
 
 	//ƒf[ƒ^‚Ì“Ç
 	bool result = false;
-	result = pResource->Load(fileName.c_str);
+	result = pResource->Load(fileName.c_str());
 	if (!result) {
 		//“Ç‚İ‚ß‚È‚©‚Á‚½ê‡
 		delete pResource;

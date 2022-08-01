@@ -5,10 +5,17 @@
 #include "Object.h"
 #include "ObjectManager.h"
 #include "TextureManager.h"
+#include "ModelManager.h"
+#include "InputManager.h"
+#include "MenuManager.h"
+#include "imgui.h"
 
 #include "Component.h"
 #include "TransformComponent.h"
 #include "Draw2DComponent.h"
+#include "Draw3dComponent.h"
+
+/**定数定義**/
 
 //コンストラクタ
 SceneTitle::SceneTitle() {
@@ -24,29 +31,38 @@ SceneTitle::~SceneTitle() {
 void SceneTitle::Init() {
 	//管理クラスのインスタンスの取得
 	m_pObjectManager = ObjectManager::GetInstance();
-	
-	//テクスチャの読込
+	m_pMenuManager = MenuManager::GetInsutance();
 	TextureManager* pTexManager = TextureManager::GetInstance();
 
-	//仮
-	pTexManager->AddTexture(PATH_TEX_DXCHAN_STAND, DXCHAN_STAND_TEX_NUM);
+	//背景のテクスチャ
+	pTexManager->AddTexture(PATH_TEX_TITLE_BACK_GROUND, TITLE_BACK_GROUND_NUM);
+	//UI関係のテクスチャも追加する
+	pTexManager->AddTexture(PATH_TEX_TITLE_BUTTON, TITLE_BUTTON_NUM);
 
-	//オブジェクトの作成
-	//仮
-	Object* Box = new Object(PLAYER_NAME,UPDATE_PLAYER,DRAW_PLAYER);
-	auto TransBox = Box->AddComponent<CTransform>();
-	auto DrawBox = Box->AddComponent<CDraw2D>();
-	//設定仮
-	TransBox->SetPosition(25.0f,25.0f);
-	DrawBox->SetTexture(pTexManager->GetTexture(DXCHAN_STAND_TEX_NUM));
-	DrawBox->SetSize(100.0f,100.0f);
+#pragma region ---背景
+	//オブジェクトの生成
+	Object* objBG = new Object("BG",UPDATE_BG,DRAW_BG);
+	//コンポーネントの追加
+	objBG->AddComponent<CTransform>();
+	auto Draw_BG = objBG->AddComponent<CDraw2D>();
+	//オブジェクトの設定
+	Draw_BG->SetTexture(pTexManager->GetTexture(TITLE_BACK_GROUND_NUM));
+	Draw_BG->SetSize(SCREEN_WIDTH,SCREEN_HEIGHT);
+	//リストの追加
+	m_pObjectManager->AddObject(objBG);
+
+#pragma endregion
 	
-
-	m_pObjectManager->AddObject(Box);
+	//メニューの作成
+	m_pMenuManager->CreateTitleMenu();
+	
 }
 
 //終了処理
 void SceneTitle::Uninit() {
+	//メニューの終了
+	m_pMenuManager->Destroy();
+
 	//オブジェクトリストの終了処理
 	m_pObjectManager->Uninit();
 }
@@ -61,6 +77,9 @@ void SceneTitle::Update() {
 void SceneTitle::Draw(){
 	//オブジェクトリストの描画
 	m_pObjectManager->Draw();
+
+	//メニュー画面の更新
+	m_pMenuManager->Draw();
 }
 
 

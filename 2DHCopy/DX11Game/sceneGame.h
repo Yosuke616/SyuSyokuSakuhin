@@ -18,6 +18,9 @@
 
 /**前方宣言**/
 
+//前方宣言
+class StageManager;
+
 /*列挙体宣言***/
 /** @brief どのステージを読み込むかを決める*/
 enum Stage {
@@ -25,9 +28,6 @@ enum Stage {
 
 	MAX_STAGE
 };
-
-//前方宣言
-class StageManager;
 
 //クラス定義
 /**

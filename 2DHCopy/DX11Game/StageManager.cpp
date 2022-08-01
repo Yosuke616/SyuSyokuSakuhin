@@ -21,6 +21,7 @@
 #include "Draw2DComponent.h"
 #include "ModelManager.h"
 #include "GravityComponent.h"
+#include "OutOfRange.h"
 
 
 /**列挙体宣言**/
@@ -70,7 +71,7 @@ StageManager::StageManager()
 	m_WorldSize = CalcWorldSize();
 
 	//ステージ描画の起点
-	m_BasePos.x = -(m_WorldSize.x - MAPCHIP_WIDTH)  * 0.5f -MAPCHIP_WIDTH;
+	m_BasePos.x = -(m_WorldSize.x - MAPCHIP_WIDTH)  * 0.5f - MAPCHIP_WIDTH;
 	m_BasePos.y =  (m_WorldSize.y - MAPCHIP_HEIGHT) * 0.5f;
 }
 
@@ -205,7 +206,7 @@ void StageManager::Draw() {
 void StageManager::CreateStage(int stage_state) {
 	//ステージの読み込む(番号によって読み込むcsvを変更)
 	switch (stage_state) {
-	case STAGE_1:break;
+	case STAGE_1:this->Load(STAGE_1_CSV); break;
 	default:break;
 	}
 
@@ -218,7 +219,7 @@ void StageManager::CreateStage(int stage_state) {
 		for (int x = 0;x < (int)m_StageGrid[y].size();x++) {
 			Object* pObject;
 			//ブロック生成
-			pObject = CreateBlock(fBaseX,fBaseY,m_StageGrid[x][y],nBlockID);
+			pObject = CreateBlock(fBaseX,fBaseY,m_StageGrid[y][x],nBlockID);
 
 			//次のブロックの座標へ
 			fBaseX += MAPCHIP_WIDTH;
@@ -275,9 +276,12 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		auto trans    = obj->AddComponent<CTransform>();
 		auto draw	  = obj->AddComponent<CDraw3D>();
 		auto collider = obj->AddComponent<CCollider>();
+		obj->AddComponent<CSeeColl>();
+		obj->AddComponent<COutOfRange>();
 		//オブジェクトの設定
-		trans->SetPosition(fPosX,fPosY);
-		trans->SetScale(MAPCHIP_WIDTH,MAPCHIP_HEIGHT,MAPCHIP_Z);
+		draw->SetModel(pModelManager->GetModel(MINT_GREEN_BLOCK_NUM));
+		trans->SetPosition(fPosX,fPosY + 800);
+		trans->SetScale(BLOCK_SIZE_X, BLOCK_SIZE_Y, BLOCK_SIZE_Z);
 		collider->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
 		//オブジェクトマネージャーに追加
 		ObjectManager::GetInstance()->AddObject(obj);
@@ -353,7 +357,7 @@ void StageManager::UpdateShowObject(float fPosX,float fPosY) {
 
 	//モデルの設定
 	if (m_nMapSta == B_1) {
-		Transform->SetScale(MAPCHIP_WIDTH,MAPCHIP_HEIGHT,MAPCHIP_Z);
+		Transform->SetScale(BLOCK_SIZE_X, BLOCK_SIZE_Y, BLOCK_SIZE_Z);
 		ModelManager* pModelManager = ModelManager::GetInstance();
 		Draw->SetModel(pModelManager->GetModel(MINT_GREEN_BLOCK_NUM));
 	}
@@ -369,7 +373,7 @@ bool StageManager::Save(int Stage) {
 	//保存するCSVファイルを決める
 	std::string file;
 	switch (Stage) {
-	case STAGE_1:break;
+	case STAGE_1:file = STAGE_1_CSV; break;
 	default: break;
 	}
 
@@ -386,7 +390,7 @@ bool StageManager::Save(int Stage) {
 	}
 	else {
 		switch (Stage) {
-		case STAGE_1:break;
+		case STAGE_1:MessageBox(GetMainWnd(), L"Stage_1.csvに保存しました", _T("成功"), MB_OK); break;
 		default: break;
 		}
 	}

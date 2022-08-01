@@ -47,9 +47,11 @@ enum DRAW_ORDER {
 
 //@@@@@ ブロックの基本情報 ----------------------------------------
 #define BLOCK_NAME					("Block")
-#define MAPCHIP_WIDTH				(10.0f)	
-#define MAPCHIP_HEIGHT				(10.0f)	
-#define MAPCHIP_Z					(10.0f)	
+#define MAPCHIP_WIDTH				(40.0f)	
+#define MAPCHIP_HEIGHT				(40.0f)	
+#define BLOCK_SIZE_X				(10.0f)
+#define BLOCK_SIZE_Y				(10.0f)
+#define BLOCK_SIZE_Z				(10.0f)
 #define BLOCK_COLL_SIZE_X			(43.5f)
 #define BLOCK_COLL_SIZE_Y			(43.5f)
 #define BLOCK_COLL_SIZE_Z			(50.0f)
