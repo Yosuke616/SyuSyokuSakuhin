@@ -12,6 +12,7 @@
 
 //===== インクルード ======
 #include "ObjectManager.h"
+#include "MenuManager.h"
 
 //===== クラス定義 ======
 class Scene
@@ -20,6 +21,8 @@ protected:
 	//=== メンバ変数 ===
 	/** @brief オブジェクトの管理ポインタ*/
 	ObjectManager* m_pObjectManager;
+	/** @brief メニュー管理用のポインタ*/
+	MenuManager* m_pMenuManager;
 
 public:
 	//=== メンバ関数 ===

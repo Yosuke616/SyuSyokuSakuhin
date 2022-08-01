@@ -19,6 +19,8 @@
 #include "InputManager.h"
 #include "TextureManager.h"
 #include "ModelManager.h"
+#include "FileManager.h"
+#include "ResourceCSV.h"
 
 #include "sceneGame.h"
 #include "ObjInfo.h"
@@ -354,6 +356,9 @@ HRESULT Init(HWND hWnd, BOOL bWindow)
 // 終了処理
 void Uninit()
 {
+	//ファイルマネージャー解放
+	FileManager::Destroy();
+
 	//	モデル開放
 	ModelManager::Uninit();
 

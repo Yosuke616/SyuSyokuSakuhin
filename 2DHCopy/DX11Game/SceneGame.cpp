@@ -25,6 +25,9 @@
 #include "AnimMeshComponent.h"
 #include "GravityComponent.h"
 
+//ステージ関係のインクルード
+#include "SceneStage_1.h"
+
 //静的メンバ変数
 SceneGame* SceneGame::m_pInstance = nullptr;
 
@@ -38,11 +41,12 @@ SceneGame::SceneGame()
 	,m_pStageManager(nullptr){
 
 	//ここでステージをリストに追加していく
-	//ex).m_GameSceneList.push_back(new ??????());
-	//m_GameSceneList.push_back();
+	m_GameSceneList.push_back(new SceneStage_1());
+	m_GameSceneList.push_back(new SceneStage_1());
 
 	//最初のステージの設定
 	m_eStageState = STAGE_1;
+	m_CurrentScene = m_GameSceneList[m_eStageState];
 }
 
 /**
@@ -77,58 +81,12 @@ void SceneGame::Init() {
 	//管理クラスインスタンス取得
 	m_pObjectManager = ObjectManager::GetInstance();
 	ModelManager* pModelManager = ModelManager::GetInstance();
+	m_pStageManager = StageManager::GetInstance();
 	pModelManager->AddModel(PATH_ROSALINA_X, ROSALINA_MODEL_X);
 	pModelManager->AddModel(PATH_MINT_GREEN_BLOCK, MINT_GREEN_BLOCK_NUM);
 
 	//テクスチャの読込
 	TextureManager* pTexManager = TextureManager::GetInstance();
-
-	for (int i = 0;i < 10;i++) {
-		//モデル読込
-		Object* KARI3D = new Object(BLOCK_NAME, UPDATE_FIELD, DRAW_FIELD);
-		auto BLO = KARI3D->AddComponent<CTransform>();
-		auto DRAW_BLO = KARI3D->AddComponent<CDraw3D>();
-		auto COLL_BLO = KARI3D->AddComponent<CCollider>();
-		KARI3D->AddComponent<CSeeColl>();
-		DRAW_BLO->SetModel(pModelManager->GetModel(MINT_GREEN_BLOCK_NUM));
-
-		BLO->SetScale(MAPCHIP_WIDTH, MAPCHIP_HEIGHT, MAPCHIP_Z);
-		BLO->SetVelocity(0.0f, 0.0f, 0.0f);
-		BLO->SetPosition(35 + i * 40, -75.0f , 0.0f);
-		BLO->SetRotate(0.0f, 180.0f, 0.0f);
-		COLL_BLO->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
-		m_pObjectManager->AddObject(KARI3D);
-	}
-
-	//天井
-	for (int i = 0;i < 10;i++) {
-		//モデル読込
-		Object* KARI3D = new Object(BLOCK_NAME, UPDATE_FIELD, DRAW_FIELD);
-		auto BLO = KARI3D->AddComponent<CTransform>();
-		auto DRAW_BLO = KARI3D->AddComponent<CDraw3D>();
-		auto COLL_BLO = KARI3D->AddComponent<CCollider>();
-		KARI3D->AddComponent<CSeeColl>();
-		DRAW_BLO->SetModel(pModelManager->GetModel(MINT_GREEN_BLOCK_NUM));
-
-		BLO->SetScale(MAPCHIP_WIDTH, MAPCHIP_HEIGHT, MAPCHIP_Z);
-		BLO->SetVelocity(0.0f, 0.0f, 0.0f);
-		BLO->SetPosition(35 + i * 40, 75.0f + i * 40, 0.0f);
-		BLO->SetRotate(0.0f, 180.0f, 0.0f);
-		COLL_BLO->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
-		m_pObjectManager->AddObject(KARI3D);
-	}
-
-	Object* Rosa = new Object("Rosalina",UPDATE_PLAYER,DRAW_PLAYER);
-	auto Rosa_Tra = Rosa->AddComponent<CTransform>();
-	auto Rosa_Dra = Rosa->AddComponent<CDraw3D>();
-
-	Rosa_Dra->SetModel(pModelManager->GetModel(ROSALINA_MODEL_X));
-	Rosa_Tra->SetScale(15,15,15);
-	Rosa_Tra->SetVelocity(0.0f,0.0f,0.0f);
-	Rosa_Tra->SetPosition(-15,0);
-	m_pObjectManager->AddObject(Rosa);
-
-
 
 	//仮
 	pTexManager->AddTexture(PATH_TEX_DXCHAN_STAND, DXCHAN_STAND_TEX_NUM);
@@ -144,7 +102,7 @@ void SceneGame::Init() {
 	Box->AddComponent<CSeeColl>();
 	//設定仮
 	DrawBox->SetTexture(pTexManager->GetTexture(DXCHAN_STAND_TEX_NUM));
-	TransBox->SetPosition(35.0f, 50.0f);
+	TransBox->SetPosition(35.0f, 150.0f);
 	CollBox->SetCollisionSize(DXCHAN_COLL_SIZE_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
 	//CollBox->SetOffset(-2.5f, 0.0f);
 
@@ -154,6 +112,9 @@ void SceneGame::Init() {
 	DrawBox->SetLoop(true);
 
 	m_pObjectManager->AddObject(Box);	
+
+	//ステージを作る
+	m_pStageManager->CreateStage(m_eStageState);
 }
 
 /**
@@ -172,6 +133,9 @@ void SceneGame::Uninit() {
 void SceneGame::Update() {
 	//カメラの更新処理
 	CCamera::Get()->Update();
+
+	//ステージ更新
+	m_pStageManager->Update();
 
 	//ゲームモード
 	if (m_bEditMode == false) {
@@ -248,8 +212,14 @@ void SceneGame::SetStage(Stage NextStage) {
 	}
 
 	//現在のステージの終了
+	if (m_CurrentScene) {
+		m_CurrentScene->Uninit();
+	}
 
 	//ステージの切替
+	m_CurrentScene = m_GameSceneList[NextStage];
+	m_eStageState = NextStage;
+
 }
 
 /** 

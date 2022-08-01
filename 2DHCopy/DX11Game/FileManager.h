@@ -15,7 +15,7 @@
 
 /**定数定義**/
 //ステージ情報
-#define STAGE_1_CSV	("Asserts/Stage_1.csv")
+#define STAGE_1_CSV	("Assets/Stage_1.csv")
 /**クラス定義**/
 /**
 * @brief	アセットに存在するファイルを管理する		
