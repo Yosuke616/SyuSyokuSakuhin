@@ -22,6 +22,7 @@
 #include "ModelManager.h"
 #include "GravityComponent.h"
 #include "OutOfRange.h"
+#include "EnemyComponent.h"
 
 
 /**列挙体宣言**/
@@ -29,6 +30,7 @@
 enum MAP_CHIP{
 	N = -1,				//何もない
 	B_1 = 0,			//ブロック
+	ENEMY_1,			//敵
 
 
 	MAX_MAP_CHIP
@@ -276,19 +278,45 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		auto trans    = obj->AddComponent<CTransform>();
 		auto draw	  = obj->AddComponent<CDraw3D>();
 		auto collider = obj->AddComponent<CCollider>();
+		auto Range = obj->AddComponent<COutOfRange>();
 		obj->AddComponent<CSeeColl>();
-		obj->AddComponent<COutOfRange>();
 		//オブジェクトの設定
 		draw->SetModel(pModelManager->GetModel(MINT_GREEN_BLOCK_NUM));
 		trans->SetPosition(fPosX,fPosY + 800);
 		trans->SetScale(BLOCK_SIZE_X, BLOCK_SIZE_Y, BLOCK_SIZE_Z);
 		collider->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
+		Range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
 		//オブジェクトマネージャーに追加
 		ObjectManager::GetInstance()->AddObject(obj);
 
 		//ワールドマトリックスの更新
 		draw->Update();
 		
+		return obj;
+	}
+	else if(nState == ENEMY_1){
+		//オブジェクトの生成
+		Object* obj = new Object(ENEMY_NAME,UPDATE_MODEL,DRAW_MODEL);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDraw3D>();
+		auto collider = obj->AddComponent<CCollider>();
+		obj->AddComponent<CSeeColl>();
+		obj->AddComponent<COutOfRange>();
+		obj->AddComponent<CGravity>();
+		//敵専用のコンポーネントを追加する予定
+		obj->AddComponent<CEnemy>();
+		//オブジェクトの設定
+		draw->SetModel(pModelManager->GetModel(ROSALINA_MODEL_X));
+		trans->SetPosition(fPosX,fPosY + 850);//800
+		trans->SetScale(E_WALK_SIZE_X, E_WALK_SIZE_Y, E_WALK_SIZE_Z);
+		collider->SetCollisionSize(E_WALK_COLL_X, E_WALK_COLL_Y, E_WALK_COLL_Z);
+		//オブジェクトマネージャに追加
+		ObjectManager::GetInstance()->AddObject(obj);
+
+		//ワールドマトリックスの更新
+		draw->Update();
+
 		return obj;
 	}
 }

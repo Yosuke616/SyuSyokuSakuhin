@@ -7,6 +7,7 @@
 
 #include "TransformComponent.h"
 #include "Draw2DComponent.h"
+#include "AnimMeshComponent.h"
 #include "ColliderComponent.h"
 #include "GravityComponent.h"
 #include "sceneGame.h"
@@ -16,7 +17,8 @@
 /** @brief*/
 #define MAX_PLAYER_GRAVITY		(1.0f)
 #define VALUE_JUMP_SPEED		(8.0f)
-#define VALUE_MOVE_SPEED		(1.5f)
+#define VALUE_MOVE_SPEED		(2.0f)
+#define STAR_TIME				(180)
 
 /**グローバル変数**/
 PLAYER_STATE g_ePlayer;
@@ -28,8 +30,11 @@ PLAYER_STATE g_ePlayer;
 */
 CPlayer::CPlayer() :
 	m_pPlayer(nullptr),m_pDraw2D(nullptr),m_pInput(nullptr),
-	m_OldPos(0.0f,0.0f),m_bGround(false),
-	m_bJump(false),
+	m_OldPos(0.0f,0.0f),					//過去座標
+	m_nStar_Time(0),						//無敵時間
+	m_bGround(false),						//地上にいるかどうか
+	m_bJump(false),							//ジャンプしているかどうか
+	m_bPawer_UP(true),						//パワーアップしているか
 	m_ePlayer(IDLE_PLAYER){
 	this->m_eUpdateOrder = COM_UPDATE_1;
 }
@@ -47,11 +52,19 @@ CPlayer::~CPlayer() {
 * @brief	開始処理
 */
 void CPlayer::Start() {
-	m_pDraw2D = Parent->GetComponent<CDraw2D>();
+	m_pDraw2D = Parent->GetComponent<CAnimMesh>();
 	m_pPlayer = Parent->GetComponent<CTransform>();
 	m_pCollider = Parent->GetComponent<CCollider>();
 	m_pInput = InputManager::Instance();
 	g_ePlayer = m_ePlayer;
+	//パワーアップと無敵時間の初期化
+	m_bPawer_UP = true;
+	m_nStar_Time = 0;
+	//初めは右を向いている
+	m_bROL = true;
+	//どちらからヒットしたかを判別する(0は何にも当たっていない)
+	m_nHitVec = 0;
+
 }
 
 /**
@@ -63,6 +76,21 @@ void CPlayer::Update() {
 
 	//ステータスの情報を更新する
 	m_ePlayer = g_ePlayer;
+
+	//無敵状態だったら半透明にする
+	if (m_nStar_Time > 0) {
+		m_pDraw2D->SetColor(1.0f,0.0f,0.0f);
+		m_nStar_Time--;
+	}
+	else
+	{
+		m_pDraw2D->SetColor(1.0f,1.0f,1.0f);
+	}
+
+	//敵にヒットした場合吹き飛ばすためにプレイヤーの状態を変更する
+	if (m_nHitVec > 0) {
+		m_ePlayer = HIT_PLAYER;
+	}
 
 #if _DEBUG
 	if (m_pInput->GetKeyPress(DIK_UPARROW)) {
@@ -110,6 +138,7 @@ void CPlayer::Update() {
 
 	case RUN_PLAYER:
 		if (m_pInput->GetKeyPress(DIK_D)) {
+			//右移動
 			m_pPlayer->Vel.x = VALUE_MOVE_SPEED;
 		}
 		else if (m_pInput->GetKeyPress(DIK_A)) {
@@ -147,6 +176,7 @@ void CPlayer::Update() {
 
 		//左右移動はできるようにしておく
 		if (m_pInput->GetKeyPress(DIK_D)) {
+			//右移動
 			m_pPlayer->Vel.x = VALUE_MOVE_SPEED;
 		}
 		else if (m_pInput->GetKeyPress(DIK_A)) {
@@ -167,6 +197,7 @@ void CPlayer::Update() {
 
 		//左右移動はできるようにしておく
 		if (m_pInput->GetKeyPress(DIK_D)) {
+			//右移動
 			m_pPlayer->Vel.x = VALUE_MOVE_SPEED;
 		}
 		else if (m_pInput->GetKeyPress(DIK_A)) {
@@ -181,7 +212,38 @@ void CPlayer::Update() {
 		m_bJump = true;
 
 		break;
+
+	case HIT_PLAYER:
+		//敵にぶつかって吹き飛ばされた時の判定
+		//ぶつかった方向とは逆向きに速度を加える
+		//1:下から、2:上から、3:右から、4:左から
+
+		switch (m_nHitVec)
+		{
+		case 1:
+			//上方向に力を加える
+
+			break;
+		case 2:break;
+		case 3:break;
+		case 4:break;
+
+		default:break;
+		}
+		
+		break;
+
 	default: break;
+	}
+
+	//左右移動のボタンが押されていた場合左右のフラグを入れ替える
+	if (m_pInput->GetKeyPress(DIK_D)) {
+		//右向き
+		m_bROL = true;
+	}
+	else if (m_pInput->GetKeyPress(DIK_A)) {
+		//左向き
+		m_bROL = false;
 	}
 
 	//プレイヤーの最新状態を保存する
@@ -219,6 +281,7 @@ void CPlayer::Draw() {
 	Begin("Player");
 	Text("Pos	  : %3.0f %3.0f %3.0f", m_pPlayer->Pos.x, m_pPlayer->Pos.y, m_pPlayer->Pos.z);
 	Text("Vel	  : %.0f %.0f", m_pPlayer->Vel.x, m_pPlayer->Vel.y);
+	Text("RoL	  : %d",m_bROL);
 	Text("P_STATE : %d",g_ePlayer);
 	End();
 #endif // _DEBUG
@@ -230,6 +293,7 @@ void CPlayer::Draw() {
 * @param	(Object*)	相手方のオブジェクトのポインタ
 */
 void CPlayer::OnCollisionEnter(Object* pObject) {
+#pragma region ---BLOCK
 	//仮(ブロック)
 	if(pObject->GetName() == BLOCK_NAME){
 		//プレイヤーの情報を取得
@@ -324,6 +388,41 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 		}
 		return;
 	}
+#pragma endregion
+
+#pragma region ---ENEMY
+	//無敵時間の場合敵とは当たらない
+	if (m_nStar_Time <= 0) {
+		//敵と分類されるものに当たった場合
+		if (pObject->GetName() == ENEMY_NAME) {
+			//パワーアップ状態かそうでないかで処理内容を決める
+			if (m_bPawer_UP) {
+				//パワーアップしているということは強くなっているということである
+				//無敵カウントを増やす
+				m_nStar_Time = STAR_TIME;
+				//パワーアップ状態を解除する
+				m_bPawer_UP = false;
+				//吹き飛ばす向きを決める
+				m_nHitVec = CollEnemy(pObject);
+			}
+			else {
+				//当たったらミス状態である
+			}
+
+			//やりたいこと
+			//プレイヤーの状態で決める(パワーアップ状態かそうでないか)
+			//パワーアップ状態で無かったらミス判定
+			//そうでない場合は無敵時間を作りパワーダウンさせる
+
+			//ミス判定　プレイヤー以外のオブジェクトの更新を止めてミスのテクスチャを流す
+			//テクスチャを流し終えたらメニュー画面の表示(ゲームオーバーメニュー)
+			
+		
+		
+		}
+	}
+
+#pragma endregion
 }
 
 /**
@@ -334,4 +433,77 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 */
 void CPlayer::SetPlayerState(PLAYER_STATE PlayerSta) {
 	m_ePlayer = g_ePlayer = PlayerSta;
+}
+
+/**
+* @fn		Cplayer::CollEnemy
+* @brief	敵とどの向きから当たったかで吹き飛ばす方向を決める
+* @detail	1:下から、2:上から、3:右から、4:左から
+* @param	(Object*)	当たった敵の情報がはいいているポインタ
+* @return	(int)		どっちからあったかを返す
+*/
+int CPlayer::CollEnemy(Object* pObject) {
+	//プレイヤーの情報を取得
+	auto Player = Parent->GetComponent<CCollider>();
+	auto PlayerPos = Player->GetCenterPos();
+	auto PlayerSize = Player->GetColliderSize();
+	auto PlayerOffset = Player->GetOffSet();
+
+	//ぶつかったブロックの情報
+	auto Enemy = pObject->GetComponent<CCollider>();
+	auto EnemyPos = Enemy->GetCenterPos();
+	auto EnemySize = Enemy->GetColliderSize();
+	auto EnemyOffset = Enemy->GetOffSet();
+
+	//それぞれ半分の大きさを保存
+	XMFLOAT2 PlayerHalhSize = XMFLOAT2(PlayerSize.x * 0.5f, PlayerSize.y *0.5f);
+	XMFLOAT2 EnemyHalhSize = XMFLOAT2(EnemySize.x * 0.5f, EnemySize.y * 0.5f);
+
+	//ブロックの当たり判定の線
+	float EnemyLeftLine = EnemyPos.x - EnemyHalhSize.x;	//左端
+	float EnemyRightLine = EnemyPos.x + EnemyHalhSize.x;	//右端
+	float EnemyUpLine = EnemyPos.y + EnemyHalhSize.y;	//上端
+	float EnemyDownLine = EnemyPos.y - EnemyHalhSize.y;	//下端
+
+	/**
+	* @brief プレイヤーがブロックの中(左端と右端の中)にいた場合の処理
+	*/
+	if ((EnemyLeftLine < PlayerPos.x && PlayerPos.x < EnemyRightLine) ||
+		(EnemyLeftLine < PlayerPos.x - PlayerHalhSize.x && PlayerPos.x - PlayerHalhSize.x < EnemyRightLine) ||
+		(EnemyLeftLine < PlayerPos.x + PlayerHalhSize.x && PlayerPos.x + PlayerHalhSize.x < EnemyRightLine)) {
+
+		/** @brief プレイヤーが上に乗ったら*/
+		if (EnemyUpLine <= m_OldPos.y - PlayerHalhSize.y &&					//前フレームはめり込んでいない
+			PlayerPos.y - PlayerHalhSize.y < EnemyUpLine) {					//現在のフレームはめり込んでいる
+
+			return 1;
+		}
+		/** @brief 頭ごっつんこ状態である*/
+		else if (EnemyDownLine >= m_OldPos.y + PlayerHalhSize.y &&	//前フレームはめり込んでいない
+			PlayerPos.y + PlayerHalhSize.y > EnemyDownLine) {		//現在のフレームはめり込んでいる
+
+			return 2;
+		}
+	}
+
+	//中心座標のセット
+	PlayerPos = Player->GetCenterPos();
+
+	/** @brief プレイヤーがブロックの中(上端と下端の中)にいた場合の処理*/
+	if ((EnemyDownLine < PlayerPos.y && PlayerPos.y < EnemyUpLine) ||
+		(EnemyDownLine < PlayerPos.y - PlayerHalhSize.y && PlayerPos.y - PlayerHalhSize.y < EnemyUpLine) ||
+		(EnemyDownLine < PlayerPos.y + PlayerHalhSize.y && PlayerPos.y + PlayerHalhSize.y < EnemyUpLine)) {
+		//プレイヤーが右のブロックに当たった場合
+		if (EnemyLeftLine >= m_OldPos.x + PlayerHalhSize.x &&		//前フレームはめり込んでいない
+			PlayerPos.x + PlayerHalhSize.x > EnemyLeftLine) {		//現在のフレームはめり込んでいる
+
+			return 3;
+		}
+		else if (EnemyRightLine <= m_OldPos.x - PlayerHalhSize.x &&
+			PlayerPos.x - PlayerHalhSize.x < EnemyRightLine) {
+
+			return 4;
+		}
+	}
+	return 1;
 }

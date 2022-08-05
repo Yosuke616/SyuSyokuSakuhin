@@ -2,6 +2,7 @@
 #include "OutOfRange.h"
 #include "TransformComponent.h"
 #include "Camera.h"
+#include "EnemyComponent.h"
 
 /**
 * @fn		COutOfRange::COutOfRange
@@ -10,8 +11,8 @@
 COutOfRange::COutOfRange() 
 	:m_pTransform(nullptr){
 	//範囲内の設定
-	m_LimitRange.x = OUT_RANGE_X;
-	m_LimitRange.y = OUT_RANGE_Y;
+	m_LimitRange.x = ENEMY_OUT_RANGE_X;
+	m_LimitRange.y = ENEMY_OUT_RANGE_Y;
 }
 
 /** 
@@ -46,9 +47,18 @@ void COutOfRange::Update() {
 		Center.y + m_LimitRange.y < m_pTransform->Pos.y ||		// 画面外
 		Center.y - m_LimitRange.y > m_pTransform->Pos.y)		// 画面外
 	{ 
+		////動くものがあった場合ここで座標をいじる
+		//if (Parent->GetName() == "Enemy") {
+		//	//ここで最終的にいた場所を保存する
+		//	Parent->GetComponent<CEnemy>()->SetRangePos();
+		//	//次に画面内に入ったときに座標を更新できるようにフラグをオンにする
+		//	Parent->GetComponent<CEnemy>()->SetFirstTake(true);
+		//}
+
 		//機能の停止
 		Parent->StopUpdate();
 		Parent->StopDraw();
+
 
 		//このコンポーネントの更新フラグをオンにする
 		this->m_bUpdateFlag = true;
@@ -56,6 +66,15 @@ void COutOfRange::Update() {
 	else {
 		//更新を再開
 		Parent->Use();
+
+		////動くものは更新した後に座標を元に戻す
+		//if (Parent->GetName() == "Enemy") {	
+		//	//一度だけ座標をセットしたいのでフラグをOnOffする
+		//	if (Parent->GetComponent<CEnemy>()->GetFirstTake()) {
+		//		Parent->GetComponent<CTransform>()->Pos = Parent->GetComponent<CEnemy>()->GetRangePos();
+		//		Parent->GetComponent<CEnemy>()->SetFirstTake(false);
+		//	}
+		//}
 	}
 }
 

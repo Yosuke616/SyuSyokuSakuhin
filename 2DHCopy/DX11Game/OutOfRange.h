@@ -17,8 +17,10 @@ class CTransform;
 
 /**定数定義**/
 //===== マクロ定義 =====
-#define OUT_RANGE_X	(300.0f)
-#define OUT_RANGE_Y	(220.0f)
+#define ENEMY_OUT_RANGE_X	(300.0f)
+#define ENEMY_OUT_RANGE_Y	(220.0f)
+#define BLOCK_OUT_RANGE_X	(350.0f)
+#define BLOCK_OUT_RANGE_Y	(270.0f)
 
 /**クラス定義**/
 class COutOfRange :public Component {

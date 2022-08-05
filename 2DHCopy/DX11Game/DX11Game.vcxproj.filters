@@ -172,6 +172,9 @@
     <ClCompile Include="MenuManager.cpp">
       <Filter>マネージャー</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyComponent.cpp">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainApp.h">
@@ -315,7 +318,7 @@
     <ClInclude Include="MenuManager.h">
       <Filter>マネージャー</Filter>
     </ClInclude>
-    <ClInclude Include="MenuComponent.h">
+    <ClInclude Include="EnemyComponent.h">
       <Filter>コンポーネント\創作システム</Filter>
     </ClInclude>
   </ItemGroup>
