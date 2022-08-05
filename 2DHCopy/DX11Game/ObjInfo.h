@@ -52,8 +52,19 @@ enum DRAW_ORDER {
 #define BLOCK_SIZE_X				(10.0f)
 #define BLOCK_SIZE_Y				(10.0f)
 #define BLOCK_SIZE_Z				(10.0f)
-#define BLOCK_COLL_SIZE_X			(43.5f)
-#define BLOCK_COLL_SIZE_Y			(43.5f)
-#define BLOCK_COLL_SIZE_Z			(50.0f)
+#define BLOCK_COLL_SIZE_X			(38.5f)
+#define BLOCK_COLL_SIZE_Y			(38.5f)
+#define BLOCK_COLL_SIZE_Z			(45.0f)
+
+//@@@@@ 敵の基本情報 ----------------------------------------------
+//敵ごとに設定する値は変わってくる
+#define ENEMY_NAME					("Enemy")
+//歩く敵　所謂クリボー
+#define E_WALK_SIZE_X				(10.0f)
+#define E_WALK_SIZE_Y				(10.0f)
+#define E_WALK_SIZE_Z				(10.0f)
+#define E_WALK_COLL_X				(43.5f)
+#define E_WALK_COLL_Y				(43.5f)
+#define E_WALK_COLL_Z				(50.0f)
 
 #endif

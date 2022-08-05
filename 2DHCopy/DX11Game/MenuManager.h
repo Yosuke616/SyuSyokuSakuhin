@@ -36,6 +36,8 @@ private:
 	static MenuManager* m_pInstance;
 	/** @brief メニューリスト*/
 	std::list<Object*> m_MenuList;
+	/** @brief メニューリストの中身をいじるためのイテレーター*/
+	std::list<Object*>::iterator m_itr_Menu;
 	/** @brief 遅延時間*/
 	int m_nDelayCnt;
 	/** @brief 作成するメニュー*/
@@ -44,6 +46,11 @@ private:
 	//メンバ関数
 	/** @brief コンストラクタ*/
 	MenuManager();
+	/** @brief 選ばれているボタンの色を変えたり、
+			   ボタンを押されたらシーン遷移したりする関数*/
+	void SelectButton();
+	/** @brief 決定ボタンが押された場合の処理*/
+	void PushButton();
 
 protected:
 	//メンバ変数
@@ -76,6 +83,8 @@ public:
 	void AddMenu(Object* pMenuObject);
 	/** @brief メニューリストの取得*/
 	std::list<Object*>& GetMenuList();
+	/** @brief 作るメニューの番号を取得する*/
+	int GetCreateMenu();
 
 	/**作りたいメニューをここから下に追加していく**/
 	/** @brief タイトルメニュー*/

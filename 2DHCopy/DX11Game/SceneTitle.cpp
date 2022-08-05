@@ -54,6 +54,7 @@ void SceneTitle::Init() {
 #pragma endregion
 	
 	//メニューの作成
+	m_pMenuManager->Create(TITLE_STATE,-1);
 	m_pMenuManager->CreateTitleMenu();
 	
 }
@@ -71,6 +72,9 @@ void SceneTitle::Uninit() {
 void SceneTitle::Update() {
 	//オブジェクトリストの更新
 	m_pObjectManager->Update();
+
+	//メニュー画面の更新
+	m_pMenuManager->Update();
 }
 
 //描画処理
