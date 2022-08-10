@@ -12,13 +12,17 @@
 #include "GravityComponent.h"
 #include "sceneGame.h"
 #include "Camera.h"
+#include "SeeCollComponent.h"
+#include "AttackComponent.h"
 
 //定数定義
 /** @brief*/
-#define MAX_PLAYER_GRAVITY		(1.0f)
-#define VALUE_JUMP_SPEED		(8.0f)
-#define VALUE_MOVE_SPEED		(2.0f)
-#define STAR_TIME				(180)
+#define MAX_PLAYER_GRAVITY		(1.0f)	//プレイヤーに加わる重力の最大値	
+#define VALUE_JUMP_SPEED		(8.0f)	//ジャンプの速さ
+#define VALUE_MOVE_SPEED		(2.0f)	//移動スピード
+#define STAR_TIME				(180)	//無敵時間
+#define HIT_SPEED				(8.0f)	//ぶっ飛ばされた時の勢い
+#define KNOCK_BACK_PLAYER		(0.05f)	//戻す時間
 
 /**グローバル変数**/
 PLAYER_STATE g_ePlayer;
@@ -35,6 +39,7 @@ CPlayer::CPlayer() :
 	m_bGround(false),						//地上にいるかどうか
 	m_bJump(false),							//ジャンプしているかどうか
 	m_bPawer_UP(true),						//パワーアップしているか
+	m_pAttackObj(nullptr),					//攻撃判定用のオブジェクトを指せるポインタ
 	m_ePlayer(IDLE_PLAYER){
 	this->m_eUpdateOrder = COM_UPDATE_1;
 }
@@ -64,6 +69,14 @@ void CPlayer::Start() {
 	m_bROL = true;
 	//どちらからヒットしたかを判別する(0は何にも当たっていない)
 	m_nHitVec = 0;
+	//敵にヒットしたときに加える力の処理先の変数
+	m_bHitFlg = false;
+	//テクスチャを一度だけ変更するフラグはオフにしておく
+	m_bTexChange = false;
+	//攻撃フラグはオフにしておく
+	m_bAttack = false;
+	//攻撃時のクールタイム
+	m_nCoolTime = 0;
 
 }
 
@@ -73,6 +86,19 @@ void CPlayer::Start() {
 */
 void CPlayer::Update() {
 	m_OldPos = m_pCollider->GetCenterPos();
+
+	//左右移動のボタンが押されていた場合左右のフラグを入れ替える
+	if (m_pInput->GetKeyPress(DIK_D)) {
+		//右向き
+		m_bROL = true;
+	}
+	if (m_pInput->GetKeyPress(DIK_A)) {
+		//左向き
+		m_bROL = false;
+	}
+
+	//消す
+	bHitObj = false;
 
 	//ステータスの情報を更新する
 	m_ePlayer = g_ePlayer;
@@ -90,29 +116,20 @@ void CPlayer::Update() {
 	//敵にヒットした場合吹き飛ばすためにプレイヤーの状態を変更する
 	if (m_nHitVec > 0) {
 		m_ePlayer = HIT_PLAYER;
+		ChangeTexture();
 	}
 
-#if _DEBUG
-	if (m_pInput->GetKeyPress(DIK_UPARROW)) {
-		//上移動
-		m_pPlayer->Pos.y += 10.0f;
-	}	
-	if (m_pInput->GetKeyPress(DIK_DOWNARROW)) {
-		//下移動
-		m_pPlayer->Pos.y += -10.0f;
-	}
-	if (m_pInput->GetKeyPress(DIK_RIGHTARROW)) {
-		//右移動
-		m_pPlayer->Pos.x += 5.0f;
-	}
-	if (m_pInput->GetKeyPress(DIK_LEFTARROW)) {
-		//右移動
-		m_pPlayer->Pos.x += -5.0f;
+	//落下速度を0にする
+#ifdef _DEBUG
+	if (m_pInput->GetKeyTrigger(DIK_0)) {
+		m_pPlayer->Vel.y = 0;
 	}
 #endif
 
+
 	switch (m_ePlayer) {
 	case IDLE_PLAYER:
+#pragma region ---待機
 		//特別なアクションを起こした場合、プレイヤーの状態を変える
 
 		//横移動はなしにする,縦は重力がかかる
@@ -121,10 +138,12 @@ void CPlayer::Update() {
 		if (m_pInput->GetKeyPress(DIK_D)) {
 			//右移動
 			m_ePlayer = RUN_PLAYER;
+			ChangeTexture();
 		}
 		else if (m_pInput->GetKeyPress(DIK_A)) {
 			//左移動
 			m_ePlayer = RUN_PLAYER;
+			ChangeTexture();
 		}
 
 		//ジャンピング
@@ -132,11 +151,20 @@ void CPlayer::Update() {
 			if (m_pInput->GetKeyPress(DIK_W)) {
 				//ステータスをジャンプに変える
 				m_ePlayer = JUMP_PLAYER;
+				ChangeTexture();
 			}
 		}
-		break;
 
+		//攻撃する
+		if (m_pInput->GetKeyTrigger(DIK_SPACE)) {
+			//プレイヤーの状態を攻撃に変更する
+			m_ePlayer = ATTACK_PLAYER;
+			ChangeTexture();
+		}
+		break;
+#pragma endregion
 	case RUN_PLAYER:
+#pragma region ---移動
 		if (m_pInput->GetKeyPress(DIK_D)) {
 			//右移動
 			m_pPlayer->Vel.x = VALUE_MOVE_SPEED;
@@ -147,17 +175,36 @@ void CPlayer::Update() {
 		}
 		else {
 			m_ePlayer = IDLE_PLAYER;
+			ChangeTexture();
+		}
+
+		//速度でテクスチャを変える
+		if(m_pPlayer->Vel.x >= 0) {
+			m_bROL = true;
+			ChangeTexture();
+		}
+		else {
+			m_bROL = false;
+			ChangeTexture();
 		}
 
 		//ジャンピング	
 		if (m_pInput->GetKeyPress(DIK_W)) {
 			//ステータスをジャンプに変える
 			m_ePlayer = JUMP_PLAYER;
+			ChangeTexture();
+		}
+		//攻撃する
+		if (m_pInput->GetKeyTrigger(DIK_SPACE)) {
+			//プレイヤーの状態を攻撃に変更する
+			m_ePlayer = ATTACK_PLAYER;
+			ChangeTexture();
 		}
 	
 		break;
-
+#pragma endregion
 	case JUMP_PLAYER:
+#pragma region ---ジャンプ
 		////ある程度上げたらくわえた力を消す
 
 		//初速を加える
@@ -187,13 +234,83 @@ void CPlayer::Update() {
 			m_pPlayer->Vel.x = 0.0f;
 		}
 
-		break;
+		//攻撃する
+		if (m_pInput->GetKeyTrigger(DIK_SPACE)) {
+			//プレイヤーの状態を攻撃に変更する
+			m_ePlayer = ATTACK_PLAYER;
+			ChangeTexture();
+		}
 
+		break;
+#pragma endregion
+	case ATTACK_PLAYER:
+#pragma region ---攻撃
+		//クールタイムの場合は入れない
+		if(m_nCoolTime <= 0){
+			//フラグがオフだった場合、
+			//攻撃判定付きの見えないオブジェクトを生成する
+			if (!m_bAttack) {
+				CreateAttack();
+				m_bAttack = true;
+			}
+
+			//空中で攻撃した場合速さはそのままにする
+			if (m_bJump) {
+				//ジャンプの処理の継続をする
+				m_pPlayer->Vel.y -= GRAVITY;
+				if (m_pPlayer->Vel.y < -MAX_VELOCITY) {
+					Parent->GetComponent<CGravity>()->SetUse(true);
+				}
+
+				//空中攻撃
+				//左右移動をできるようにする(速さは遅い)
+				if (m_pInput->GetKeyPress(DIK_D)) {
+					m_pPlayer->Vel.x = VALUE_MOVE_SPEED;
+					//当たり判定も動かす
+					m_pAttackObj->GetComponent<CTransform>()->Vel.x = VALUE_MOVE_SPEED;
+				}
+				else if (m_pInput->GetKeyPress(DIK_A)) {
+					m_pPlayer->Vel.x = -VALUE_MOVE_SPEED;
+					m_pAttackObj->GetComponent<CTransform>()->Vel.x = -VALUE_MOVE_SPEED;
+				}
+			}
+			else {
+				//左右移動をできるようにする(速さは遅い)
+				if (m_pInput->GetKeyPress(DIK_D)) {
+					m_pPlayer->Vel.x = VALUE_MOVE_SPEED * 0.1;
+					//当たり判定も動かす
+					m_pAttackObj->GetComponent<CTransform>()->Vel.x = VALUE_MOVE_SPEED * 0.1;
+				}
+				else if (m_pInput->GetKeyPress(DIK_A)) {
+					m_pPlayer->Vel.x = -VALUE_MOVE_SPEED * 0.1;
+					m_pAttackObj->GetComponent<CTransform>()->Vel.x = -VALUE_MOVE_SPEED * 0.1;
+				}					
+			}
+		}
+		else {
+			//プレイヤーがジャンプしているかどうかでステータスを変える
+			if (m_bJump) {
+				m_ePlayer = JUMP_PLAYER;
+				ChangeTexture();
+			}
+			else {
+				m_ePlayer = IDLE_PLAYER;
+				ChangeTexture();			
+			}
+		}
+
+		break;
+#pragma endregion
 	case FALL_PLAYER:
+#pragma region ---落下
 		//落下速度が無くなったらプレイヤーの状態を待機状態に戻す
 		if (m_pPlayer->Vel.y >= 0) {
 			m_ePlayer = IDLE_PLAYER;
+			ChangeTexture();
 		}
+
+		//落下フラグはオンにする
+		m_bJump = true;
 
 		//左右移動はできるようにしておく
 		if (m_pInput->GetKeyPress(DIK_D)) {
@@ -207,54 +324,105 @@ void CPlayer::Update() {
 		else {
 			m_pPlayer->Vel.x = 0.0f;
 		}
-
-		//落下フラグはオンにする
-		m_bJump = true;
+		//攻撃する
+		if (m_pInput->GetKeyTrigger(DIK_SPACE)) {
+			//プレイヤーの状態を攻撃に変更する
+			m_ePlayer = ATTACK_PLAYER;
+			ChangeTexture();
+		}
 
 		break;
-
+#pragma endregion
 	case HIT_PLAYER:
-		//敵にぶつかって吹き飛ばされた時の判定
-		//ぶつかった方向とは逆向きに速度を加える
-		//1:下から、2:上から、3:右から、4:左から
+#pragma region ---ノックバック
+		//フラグがtrueなら飛ばす方向に向けて力を加える
+		if (!m_bHitFlg) {
+			//敵にぶつかって吹き飛ばされた時の判定
+			//ぶつかった方向とは逆向きに速度を加える
+			//1:下から、2:上から、3:右から、4:左から
+			switch (m_nHitVec)
+			{
+			case 1:
+				//上方向に力を加える
+				m_pPlayer->Vel.y = HIT_SPEED;
+				break;
+			case 2:
+				//下方向に力を加える
+				m_pPlayer->Vel.y = -HIT_SPEED;
+				break;
+			case 3:
+				//左方向に力を加える
+				m_pPlayer->Vel.x = -HIT_SPEED;
+				break;
+			case 4:
+				//右方向に力を加える
+				m_pPlayer->Vel.x = HIT_SPEED;
+				break;
 
-		switch (m_nHitVec)
-		{
-		case 1:
-			//上方向に力を加える
-
-			break;
-		case 2:break;
-		case 3:break;
-		case 4:break;
-
-		default:break;
+			default:break;
+			}	
+			//力を減らしていく処理に切り替える
+			m_bHitFlg = true;
+		}
+		//飛ばした方向とは逆方向に力を加えて速度を落としていく
+		else if (m_bHitFlg) {
+			switch (m_nHitVec) {
+			case 1:
+				m_pPlayer->Vel.y -= 0.1;
+				if (m_pPlayer->Vel.y <= 0.0f) {
+					m_nHitVec = 0;
+					m_bHitFlg = false;
+					m_ePlayer = FALL_PLAYER;
+				}
+				break;
+			case 2:
+				m_pPlayer->Vel.y += KNOCK_BACK_PLAYER;
+				if (m_pPlayer->Vel.y >= 0.0f) {
+					m_nHitVec = 0;
+					m_bHitFlg = false;
+					m_ePlayer = FALL_PLAYER;
+				}
+				break;
+			case 3:
+				m_pPlayer->Vel.x += KNOCK_BACK_PLAYER*5;
+				if (m_pPlayer->Vel.x >= 0.0f) {
+					m_nHitVec = 0;
+					m_bHitFlg = false;
+					m_ePlayer = FALL_PLAYER;
+				}
+				break;
+			case 4:
+				m_pPlayer->Vel.x -= KNOCK_BACK_PLAYER;
+				if (m_pPlayer->Vel.x <= 0.0f) {
+					m_nHitVec = 0;
+					m_bHitFlg = false;
+					m_ePlayer = FALL_PLAYER;
+				}
+				break;
+			default:break;
+			}
 		}
 		
 		break;
+#pragma endregion
 
 	default: break;
 	}
 
-	//左右移動のボタンが押されていた場合左右のフラグを入れ替える
-	if (m_pInput->GetKeyPress(DIK_D)) {
-		//右向き
-		m_bROL = true;
-	}
-	else if (m_pInput->GetKeyPress(DIK_A)) {
-		//左向き
-		m_bROL = false;
+	//攻撃のクールタイムはマイナスしておく
+	if (m_nCoolTime > 0) {
+		m_nCoolTime--;
 	}
 
 	//プレイヤーの最新状態を保存する
 	g_ePlayer = m_ePlayer;
 
 	//速度の上限を決める
-	if (m_pPlayer->Vel.x > VALUE_MOVE_SPEED) {
-		m_pPlayer->Vel.x = VALUE_MOVE_SPEED;
+	if (m_pPlayer->Vel.x > VALUE_MOVE_SPEED * 2) {
+		m_pPlayer->Vel.x = VALUE_MOVE_SPEED * 2;
 	}
-	if (m_pPlayer->Vel.x < -VALUE_MOVE_SPEED) {
-		m_pPlayer->Vel.x = -VALUE_MOVE_SPEED;
+	if (m_pPlayer->Vel.x < -VALUE_MOVE_SPEED * 2) {
+		m_pPlayer->Vel.x = -VALUE_MOVE_SPEED * 2;
 	}
 	if (m_pPlayer->Vel.y < -MAX_VELOCITY) {
 		m_pPlayer->Vel.y = -MAX_VELOCITY;
@@ -263,6 +431,59 @@ void CPlayer::Update() {
 	/*if (m_pPlayer->Vel.y > VALUE_MOVE_SPEED) {
 		m_pPlayer->Vel.y = VALUE_MOVE_SPEED;
 	}*/
+#if _DEBUG
+	if (m_pInput->GetKeyPress(DIK_UPARROW)) {
+		//上移動
+		m_pPlayer->Pos.y += 5.0f;
+	}	
+	if (m_pInput->GetKeyPress(DIK_DOWNARROW)) {
+		//下移動
+		m_pPlayer->Pos.y += -5.0f;
+	}
+	if (m_pInput->GetKeyPress(DIK_RIGHTARROW)) {
+		//右移動
+		m_pPlayer->Pos.x += 5.0f;
+	}
+	if (m_pInput->GetKeyPress(DIK_LEFTARROW)) {
+		//右移動
+		m_pPlayer->Pos.x += -5.0f;
+	}
+
+	//テクスチャの変更
+	if (m_pInput->GetKeyTrigger(DIK_1)) {
+		//デフォルトたち
+		m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_STAND_TEX_NUM));
+		m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_Y);
+		m_pDraw2D->SetAnimSplit(3,3);
+		m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_X, DXCHAN_COLL_SIZE_Y,DXCHAN_COLL_SIZE_Z);
+		m_pCollider->SetOffset(0.0f,0.0f);
+		Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(),m_pCollider->GetOffSet());
+	}
+	if (m_pInput->GetKeyTrigger(DIK_2)) {
+		//デフォルト走り
+		m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_RUN_TEX_NUM));
+		m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_RUN_Y);
+		m_pDraw2D->SetAnimSplit(7,2);
+		m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_RUN_X, DXCHAN_COLL_SIZE_Y,DXCHAN_COLL_SIZE_Z);
+		m_pCollider->SetOffset(DXCHAN_COLL_OFFSET_RUN_X, DXCHAN_COLL_OFFSET_RUN_Y);
+		Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(),m_pCollider->GetOffSet());
+	}
+	if (m_pInput->GetKeyTrigger(DIK_P)) {
+		g_ePlayer = IDLE_PLAYER;
+		m_nHitVec = 0;
+		m_bPawer_UP = true;
+		m_bTexChange = false;
+	}
+
+	//重力の有無
+	if (m_pInput->GetKeyTrigger(DIK_G)) {
+		Parent->GetComponent<CGravity>()->m_bUpdateFlag = false;
+	}
+	if (m_pInput->GetKeyTrigger(DIK_H)) {
+		Parent->GetComponent<CGravity>()->m_bUpdateFlag = true;
+	}
+
+#endif
 }
 
 /**
@@ -282,6 +503,7 @@ void CPlayer::Draw() {
 	Text("Pos	  : %3.0f %3.0f %3.0f", m_pPlayer->Pos.x, m_pPlayer->Pos.y, m_pPlayer->Pos.z);
 	Text("Vel	  : %.0f %.0f", m_pPlayer->Vel.x, m_pPlayer->Vel.y);
 	Text("RoL	  : %d",m_bROL);
+	Text("AnyHit  : %d",bHitObj);
 	Text("P_STATE : %d",g_ePlayer);
 	End();
 #endif // _DEBUG
@@ -293,6 +515,8 @@ void CPlayer::Draw() {
 * @param	(Object*)	相手方のオブジェクトのポインタ
 */
 void CPlayer::OnCollisionEnter(Object* pObject) {
+	//消す
+	bHitObj = true;
 #pragma region ---BLOCK
 	//仮(ブロック)
 	if(pObject->GetName() == BLOCK_NAME){
@@ -336,11 +560,14 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 
 				//プレイヤーの状態を地面に立っている状態に変える
 				m_ePlayer = IDLE_PLAYER;
+				
 
 				//プレイヤーの最新状態を保存する
 				if (m_bJump == true) {
 					g_ePlayer = m_ePlayer;
 					m_bJump = false;
+					Parent->GetComponent<CGravity>()->SetUse(true);
+					ChangeTexture();
 				}
 			}
 			/** @brief 頭ごっつんこ状態である*/
@@ -354,12 +581,12 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 		}
 
 		//落下速度が一定を超えたら落下判定にする
-		if (m_pPlayer->Vel.y == -MAX_VELOCITY) {
-			int i = 1;
-		}
-		else {
-			int i = 1;
-		}
+		//if (m_pPlayer->Vel.y == -MAX_VELOCITY) {
+		//	int i = 1;
+		//}
+		//else {
+		//	int i = 1;
+		//}
 
 		//中心座標のセット
 		PlayerPos = Player->GetCenterPos();
@@ -386,7 +613,6 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 				m_pPlayer->Pos.x = BlockRightLine + PlayerHalhSize.x - PlayerOffset.x;
 			}
 		}
-		return;
 	}
 #pragma endregion
 
@@ -397,13 +623,17 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 		if (pObject->GetName() == ENEMY_NAME) {
 			//パワーアップ状態かそうでないかで処理内容を決める
 			if (m_bPawer_UP) {
-				//パワーアップしているということは強くなっているということである
-				//無敵カウントを増やす
-				m_nStar_Time = STAR_TIME;
-				//パワーアップ状態を解除する
-				m_bPawer_UP = false;
 				//吹き飛ばす向きを決める
 				m_nHitVec = CollEnemy(pObject);
+
+				if (m_nHitVec) {
+					////パワーアップしているということは強くなっているということである
+					//無敵カウントを増やす
+					m_nStar_Time = STAR_TIME;
+					//パワーアップ状態を解除する
+					m_bPawer_UP = false;	
+					
+				}
 			}
 			else {
 				//当たったらミス状態である
@@ -421,7 +651,7 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 		
 		}
 	}
-
+	
 #pragma endregion
 }
 
@@ -436,74 +666,214 @@ void CPlayer::SetPlayerState(PLAYER_STATE PlayerSta) {
 }
 
 /**
-* @fn		Cplayer::CollEnemy
+* @fn		CPlayer::CollEnemy
 * @brief	敵とどの向きから当たったかで吹き飛ばす方向を決める
 * @detail	1:下から、2:上から、3:右から、4:左から
 * @param	(Object*)	当たった敵の情報がはいいているポインタ
 * @return	(int)		どっちからあったかを返す
 */
 int CPlayer::CollEnemy(Object* pObject) {
+#pragma region ---上下左右4方向からの当たり判定
+	////プレイヤーの情報を取得
+	//auto Player = Parent->GetComponent<CCollider>();
+	//auto PlayerPos = Player->GetCenterPos();
+	//auto PlayerSize = Player->GetColliderSize();
+	//auto PlayerOffset = Player->GetOffSet();
+
+	////ぶつかったブロックの情報
+	//auto Enemy = pObject->GetComponent<CCollider>();
+	//auto EnemyPos = Enemy->GetCenterPos();
+	//auto EnemySize = Enemy->GetColliderSize();
+	//auto EnemyOffset = Enemy->GetOffSet();
+
+	////それぞれ半分の大きさを保存
+	//XMFLOAT2 PlayerHalhSize = XMFLOAT2(PlayerSize.x * 0.5f, PlayerSize.y *0.5f);
+	//XMFLOAT2 EnemyHalhSize = XMFLOAT2(EnemySize.x * 0.5f, EnemySize.y * 0.5f);
+
+	////ブロックの当たり判定の線
+	//float EnemyLeftLine = EnemyPos.x - EnemyHalhSize.x;	//左端
+	//float EnemyRightLine = EnemyPos.x + EnemyHalhSize.x;	//右端
+	//float EnemyUpLine = EnemyPos.y + EnemyHalhSize.y;	//上端
+	//float EnemyDownLine = EnemyPos.y - EnemyHalhSize.y;	//下端
+
+	///** @brief プレイヤーがブロックの中(上端と下端の中)にいた場合の処理*/
+	//if ((EnemyDownLine < PlayerPos.y && PlayerPos.y < EnemyUpLine) ||
+	//	(EnemyDownLine < PlayerPos.y - PlayerHalhSize.y && PlayerPos.y - PlayerHalhSize.y < EnemyUpLine) ||
+	//	(EnemyDownLine < PlayerPos.y + PlayerHalhSize.y && PlayerPos.y + PlayerHalhSize.y < EnemyUpLine)) {
+	//	//プレイヤーが右のブロックに当たった場合
+	//	if (EnemyLeftLine >= m_OldPos.x + PlayerHalhSize.x &&		//前フレームはめり込んでいない
+	//		PlayerPos.x + PlayerHalhSize.x > EnemyLeftLine) {		//現在のフレームはめり込んでいる
+
+	//		return 3;
+	//	}
+	//	else if (EnemyRightLine <= m_OldPos.x - PlayerHalhSize.x &&
+	//		PlayerPos.x - PlayerHalhSize.x < EnemyRightLine) {
+
+	//		return 4;
+	//	}
+	//}
+
+	////中心座標のセット
+	//PlayerPos = Player->GetCenterPos();
+
+	///**
+	//* @brief プレイヤーがブロックの中(左端と右端の中)にいた場合の処理
+	//*/
+	//if ((EnemyLeftLine < PlayerPos.x && PlayerPos.x < EnemyRightLine) ||
+	//	(EnemyLeftLine < PlayerPos.x - PlayerHalhSize.x && PlayerPos.x - PlayerHalhSize.x < EnemyRightLine) ||
+	//	(EnemyLeftLine < PlayerPos.x + PlayerHalhSize.x && PlayerPos.x + PlayerHalhSize.x < EnemyRightLine)) {
+
+	//	/** @brief プレイヤーが上に乗ったら*/
+	//	if (EnemyUpLine <= m_OldPos.y - PlayerHalhSize.y &&					//前フレームはめり込んでいない
+	//		PlayerPos.y - PlayerHalhSize.y < EnemyUpLine) {					//現在のフレームはめり込んでいる
+
+	//		return 1;
+	//	}
+	//	/** @brief 頭ごっつんこ状態である*/
+	//	else if (EnemyDownLine >= m_OldPos.y + PlayerHalhSize.y &&	//前フレームはめり込んでいない
+	//		PlayerPos.y + PlayerHalhSize.y > EnemyDownLine) {		//現在のフレームはめり込んでいる
+
+	//		return 2;
+	//	}
+	//}
+
+	//return 0;
+#pragma endregion
+
+#pragma region ---ボックスでの当たり判定
 	//プレイヤーの情報を取得
 	auto Player = Parent->GetComponent<CCollider>();
 	auto PlayerPos = Player->GetCenterPos();
 	auto PlayerSize = Player->GetColliderSize();
 	auto PlayerOffset = Player->GetOffSet();
 
-	//ぶつかったブロックの情報
+	XMFLOAT2 PlayerHalfSize = XMFLOAT2(PlayerSize.x / 2.0f, PlayerSize.y / 2.0f);
+	//当たり判定の大きさを持ってくる
 	auto Enemy = pObject->GetComponent<CCollider>();
-	auto EnemyPos = Enemy->GetCenterPos();
-	auto EnemySize = Enemy->GetColliderSize();
-	auto EnemyOffset = Enemy->GetOffSet();
+	auto TEnemy = pObject->GetComponent<CTransform>();
+	XMFLOAT2 EnemyHalfSize = XMFLOAT2(Enemy->GetColliderSize().x / 2.0f,Enemy->GetColliderSize().y / 2.0f);
 
-	//それぞれ半分の大きさを保存
-	XMFLOAT2 PlayerHalhSize = XMFLOAT2(PlayerSize.x * 0.5f, PlayerSize.y *0.5f);
-	XMFLOAT2 EnemyHalhSize = XMFLOAT2(EnemySize.x * 0.5f, EnemySize.y * 0.5f);
+	if (Enemy->GetCenterPos().x - EnemyHalfSize.x + TEnemy->Vel.x < m_pCollider->GetCenterPos().x + PlayerHalfSize.x + m_pPlayer->Vel.x &&
+		m_pCollider->GetCenterPos().x - PlayerHalfSize.x + m_pPlayer->Vel.x < Enemy->GetCenterPos().x + EnemyHalfSize.x + TEnemy->Vel.x) {
 
-	//ブロックの当たり判定の線
-	float EnemyLeftLine = EnemyPos.x - EnemyHalhSize.x;	//左端
-	float EnemyRightLine = EnemyPos.x + EnemyHalhSize.x;	//右端
-	float EnemyUpLine = EnemyPos.y + EnemyHalhSize.y;	//上端
-	float EnemyDownLine = EnemyPos.y - EnemyHalhSize.y;	//下端
-
-	/**
-	* @brief プレイヤーがブロックの中(左端と右端の中)にいた場合の処理
-	*/
-	if ((EnemyLeftLine < PlayerPos.x && PlayerPos.x < EnemyRightLine) ||
-		(EnemyLeftLine < PlayerPos.x - PlayerHalhSize.x && PlayerPos.x - PlayerHalhSize.x < EnemyRightLine) ||
-		(EnemyLeftLine < PlayerPos.x + PlayerHalhSize.x && PlayerPos.x + PlayerHalhSize.x < EnemyRightLine)) {
-
-		/** @brief プレイヤーが上に乗ったら*/
-		if (EnemyUpLine <= m_OldPos.y - PlayerHalhSize.y &&					//前フレームはめり込んでいない
-			PlayerPos.y - PlayerHalhSize.y < EnemyUpLine) {					//現在のフレームはめり込んでいる
-
-			return 1;
-		}
-		/** @brief 頭ごっつんこ状態である*/
-		else if (EnemyDownLine >= m_OldPos.y + PlayerHalhSize.y &&	//前フレームはめり込んでいない
-			PlayerPos.y + PlayerHalhSize.y > EnemyDownLine) {		//現在のフレームはめり込んでいる
-
-			return 2;
-		}
-	}
-
-	//中心座標のセット
-	PlayerPos = Player->GetCenterPos();
-
-	/** @brief プレイヤーがブロックの中(上端と下端の中)にいた場合の処理*/
-	if ((EnemyDownLine < PlayerPos.y && PlayerPos.y < EnemyUpLine) ||
-		(EnemyDownLine < PlayerPos.y - PlayerHalhSize.y && PlayerPos.y - PlayerHalhSize.y < EnemyUpLine) ||
-		(EnemyDownLine < PlayerPos.y + PlayerHalhSize.y && PlayerPos.y + PlayerHalhSize.y < EnemyUpLine)) {
-		//プレイヤーが右のブロックに当たった場合
-		if (EnemyLeftLine >= m_OldPos.x + PlayerHalhSize.x &&		//前フレームはめり込んでいない
-			PlayerPos.x + PlayerHalhSize.x > EnemyLeftLine) {		//現在のフレームはめり込んでいる
+		if (Enemy->GetCenterPos().y - EnemyHalfSize.y + TEnemy->Vel.y < m_pCollider->GetCenterPos().y + PlayerHalfSize.y + m_pPlayer->Vel.y &&
+			m_pCollider->GetCenterPos().y - PlayerHalfSize.y + m_pPlayer->Vel.y < Enemy->GetCenterPos().y + EnemyHalfSize.y + TEnemy->Vel.y) {
 
 			return 3;
 		}
-		else if (EnemyRightLine <= m_OldPos.x - PlayerHalhSize.x &&
-			PlayerPos.x - PlayerHalhSize.x < EnemyRightLine) {
-
-			return 4;
-		}
 	}
-	return 1;
+	return 0;
+#pragma endregion
+}
+
+/**
+* @fn		CPlayer::ChangeTexture
+* @brief	プレイヤーのステータスが変わったとき、テクスチャを変える関数
+*/
+void CPlayer::ChangeTexture() {
+	//テクスチャを変更するフラグがオフになっていた場合にこの先に進める
+	if (!m_bTexChange) {
+		//どのテクスチャに変更するかはプレイヤーの状態を見て決める
+		switch (m_ePlayer) {
+		case IDLE_PLAYER:
+			//デフォルトたち
+			m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_STAND_TEX_NUM));
+			m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_Y);
+			m_pDraw2D->SetAnimSplit(3, 3);
+			m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
+			m_pCollider->SetOffset(0.0f, 0.0f);
+			Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
+			break;
+		case RUN_PLAYER: 
+			//左右でかえましょうね　
+			//デフォルト走り
+			m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_RUN_TEX_NUM));
+			m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_RUN_Y);
+			m_pDraw2D->SetAnimSplit(7, 2);
+			m_pDraw2D->SetVertex(m_bROL);
+			m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_RUN_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
+			m_pCollider->SetOffset(DXCHAN_COLL_OFFSET_RUN_X, DXCHAN_COLL_OFFSET_RUN_Y);
+			Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
+			break;
+		case DUSH_PLAYER:m_ePlayer = m_ePlayer; break;
+		case JUMP_PLAYER:m_ePlayer = m_ePlayer; break;
+		case FALL_PLAYER:m_ePlayer = m_ePlayer; break;
+		case HIT_PLAYER:
+			m_bTexChange = true;
+			break;
+		case MISS_PLAYER:break;
+		default:break;
+		}	
+	}
+}
+
+/**
+* @fn		CPlayer::CreateAttack
+* @brief	攻撃判定用のオブジェクトを生成する
+*/
+void CPlayer::CreateAttack() {
+	//オブジェクトの生成
+	Object* obj = new Object(ATTACK_NAME,UPDATE_PLAYER,DRAW_PLAYER);
+	//コンポーネントの追加
+	auto trans = obj->AddComponent<CTransform>();
+	auto draw = obj->AddComponent<CDrawMesh>();
+	auto coll = obj->AddComponent<CCollider>();
+	auto attack = obj->AddComponent<CAttack>();
+	obj->AddComponent<CSeeColl>();
+	//オブジェクトの設定　
+	draw->SetTexture(TextureManager::GetInstance()->GetTexture(DEBUG_BLOCK_NUM));
+	//誰の攻撃かを設定する
+	attack->SetAttackType(PLAYER_ATTACK);
+	attack->SetObject(ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME));
+	//左右で作り出す場所を変更する
+	if (m_bROL) {
+		trans->SetPosition(m_pPlayer->Pos.x+ OFFSET_DX_X,m_pPlayer->Pos.y + OFFSET_DX_Y);	
+	}
+	else {
+		trans->SetPosition(m_pPlayer->Pos.x - OFFSET_DX_X, m_pPlayer->Pos.y + OFFSET_DX_Y);
+	}
+	attack->SetRoL(m_bROL);
+
+	coll->SetCollisionSize(ATTACK_COLL_X, ATTACK_COLL_Y);
+	//オブジェクトマネージャーに追加
+	ObjectManager::GetInstance()->AddObject(obj);
+
+	//攻撃オブジェクトを指して置けるポインタで指しておく
+	m_pAttackObj = obj;
+}
+
+/**
+* @fn		CPlayer::GetPlayerROL
+* @brief	プレイヤーが左右どちらを向いているかを取得する関数
+* @return	(bool)	右ならばtrue、左ならfalseを返す
+*/
+bool CPlayer::GetPlayerROL() {
+	return m_bROL;
+}
+
+/**
+* @fn		CPlayer::SetCoolTime
+* @brief	攻撃後のクールタイムの設定
+* @param	(int)	どの位たったら次の攻撃に移れるか
+*/
+void CPlayer::SetCoolTime(int Cooltime) {
+	m_nCoolTime = Cooltime;
+}
+
+/**
+* @fn		CPlayer::SetAttackFlg
+* @brief	攻撃が再びできるようにするフラグ
+* @param	(bool)	攻撃していいよ
+*/
+void CPlayer::SetAttackFlg(bool Attack) {
+	m_bAttack = Attack;
+}
+
+/** 
+* @fn		CPlayer::GetPlayerJump
+* @brief	ジャンプしているかを取得する
+* @return	(bool)	
+*/
+bool CPlayer::GetPlayerJump() {
+	return m_bJump;
 }

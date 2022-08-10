@@ -51,7 +51,7 @@ void CSeeColl::Start() {
 	auto CollDraw = CollBox->AddComponent<CDrawMesh>();
 
 	//オブジェクトの設定
-	CollPos->SetPosition(m_pTransform->Pos.x, m_pTransform->Pos.y);
+	CollPos->SetPosition(m_pTransform->Pos.x + m_pColl->GetOffSet().x, m_pTransform->Pos.y + m_pColl->GetOffSet().y);
 	//当たり判定の大きさの取得
 	XMFLOAT3 CollSize = m_pColl->GetColliderSize();
 	CollDraw->SetSize(CollSize.x,CollSize.y);
@@ -68,13 +68,35 @@ void CSeeColl::Start() {
 * @brief	更新処理
 */
 void CSeeColl::Update() {
-	m_pObject->GetComponent<CTransform>()->Pos = Parent->GetComponent<CTransform>()->Pos;
+	m_pObject->GetComponent<CTransform>()->Pos.x = Parent->GetComponent<CTransform>()->Pos.x + Parent->GetComponent<CCollider>()->GetOffSet().x;
+	m_pObject->GetComponent<CTransform>()->Pos.y = Parent->GetComponent<CTransform>()->Pos.y + Parent->GetComponent<CCollider>()->GetOffSet().y;
 }
 
 /**
-* @fn		CSeeColl:Draw
+* @fn		CSeeColl::Draw
 * @brief	描画するための関数
 */
 void CSeeColl::Draw() {
 
+}
+
+/**
+* @fn		CSeeColl::SetCollBox
+* @brief	当たり判定描画の大きさの設定し直し
+* @param	(XMFLOAT3)	設定した大きさの数値
+*/
+void CSeeColl::SetCollBox(XMFLOAT3 CollSize,XMFLOAT2 Offset) {
+	//大きさの設定
+	m_pObject->GetComponent<CDrawMesh>()->SetSize(CollSize.x,CollSize.y);
+	//オフセットの設定
+	m_pObject->GetComponent<CTransform>()->SetPosition(Offset.x,Offset.y);
+	m_pObject->Start();
+}
+
+/**
+* @fn		CSeeColl::DeleteCollBox
+* @brief	当たり判定表示メッシュの削除
+*/
+void CSeeColl::DeleteCollBox() {
+	m_pObject->Delete();
 }

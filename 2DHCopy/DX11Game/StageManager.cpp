@@ -282,7 +282,7 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		obj->AddComponent<CSeeColl>();
 		//オブジェクトの設定
 		draw->SetModel(pModelManager->GetModel(MINT_GREEN_BLOCK_NUM));
-		trans->SetPosition(fPosX,fPosY + 800);
+		trans->SetPosition(fPosX,fPosY+770,0.0f);
 		trans->SetScale(BLOCK_SIZE_X, BLOCK_SIZE_Y, BLOCK_SIZE_Z);
 		collider->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
 		Range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
@@ -308,9 +308,10 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		obj->AddComponent<CEnemy>();
 		//オブジェクトの設定
 		draw->SetModel(pModelManager->GetModel(ROSALINA_MODEL_X));
-		trans->SetPosition(fPosX,fPosY + 850);//800
+		trans->SetPosition(fPosX,fPosY+800,0.0f);//800
 		trans->SetScale(E_WALK_SIZE_X, E_WALK_SIZE_Y, E_WALK_SIZE_Z);
 		collider->SetCollisionSize(E_WALK_COLL_X, E_WALK_COLL_Y, E_WALK_COLL_Z);
+		obj->GetComponent<CEnemy>()->SetEnemyType(ENEMY_WALK);
 		//オブジェクトマネージャに追加
 		ObjectManager::GetInstance()->AddObject(obj);
 

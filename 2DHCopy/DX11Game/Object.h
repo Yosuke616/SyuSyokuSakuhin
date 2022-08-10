@@ -61,6 +61,8 @@ public:
 	//ゲッター
 	DRAW_ORDER GetDrawOrder();				//そのオブジェクトの描画順の取得
 	UPDATE_ORDER GetUpdateOrder();			//そのオブジェクトの更新順の取得
+	/** @brief コンポーネントリストを得る*/
+	std::list<Component*> GetComponentList();
 
 	//セッター
 	void Delete();							//オブジェクトの削除

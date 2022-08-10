@@ -19,6 +19,20 @@ class CCollider;
 class CDraw3D;
 
 /**列挙体宣言**/
+//敵の種類
+enum ENEMY_TYPE {
+	ENEMY_WALK = 0,
+
+	MAX_ENEMY_TYPE
+};
+
+//敵の状態
+enum ENEMY_STATE {
+	ENEMY_DEFAULT = 0,
+	ENEMY_DELETE,
+
+	MAX_ENEMY_STATE
+};
 
 /**クラス定義**/
 /**
@@ -38,7 +52,13 @@ private:
 	bool m_bRightorLeft;
 	/** @brief 過去座標の保存*/
 	XMFLOAT2 m_OldPos;
-
+	/** @brief 敵の種類を管理する変数*/
+	ENEMY_TYPE m_eEnemy_Type;
+	/** @brief 敵の状態を管理する変数*/
+	ENEMY_STATE m_eEnemy_State;
+	/** @brief 一度だけコンポーネントの機能を停止する為の変数*/
+	bool m_bStopCom;
+	/** @brief プレイヤーの攻撃が右から当たったか左から当たったかを判別する*/
 
 	//メンバ関数
 
@@ -63,6 +83,8 @@ public:
 	void Draw()override;
 	/** @brief 当たり判定の処理*/
 	void OnCollisionEnter(Object* pObject)override;
+	/** @brief 敵の種類の設定*/
+	void SetEnemyType(ENEMY_TYPE type);
 };
 
 #endif

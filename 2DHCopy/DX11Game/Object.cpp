@@ -216,3 +216,11 @@ void Object::NoUse() {
 	}
 }
 
+/**
+* @fn		Object::GetComponentList
+* @brief	コンポーネントリストを取得する
+* @return	<Component*>	親が持っているコンポーネントが格納されているポインタを送る
+*/
+std::list<Component*> Object::GetComponentList() {
+	return ComponentList;
+}

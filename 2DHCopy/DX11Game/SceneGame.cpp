@@ -90,6 +90,8 @@ void SceneGame::Init() {
 
 	//仮
 	pTexManager->AddTexture(PATH_TEX_DXCHAN_STAND, DXCHAN_STAND_TEX_NUM);
+	pTexManager->AddTexture(PATH_TEX_DXCHAN_RUN, DXCHAN_RUN_TEX_NUM);
+	pTexManager->AddTexture(PATH_TEX_DEBUG_BLOCK, DEBUG_BLOCK_NUM);
 
 	//オブジェクトの作成
 	//仮
@@ -102,11 +104,12 @@ void SceneGame::Init() {
 	Box->AddComponent<CSeeColl>();
 	//設定仮
 	DrawBox->SetTexture(pTexManager->GetTexture(DXCHAN_STAND_TEX_NUM));
-	TransBox->SetPosition(35.0f, 150.0f);
+	TransBox->SetPosition(35.0f, 100.0f);
 	CollBox->SetCollisionSize(DXCHAN_COLL_SIZE_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
-	//CollBox->SetOffset(-2.5f, 0.0f);
+	CollBox->SetOffset(0.0f, 0.0f);
 
 	DrawBox->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_Y);
+	DrawBox->SetUVsize(XMFLOAT2(-1.0f,1.0f));
 	DrawBox->SetAnimSplit(3,3);
 	DrawBox->SetSwapFrame(3);
 	DrawBox->SetLoop(true);
@@ -157,6 +160,7 @@ void SceneGame::Update() {
 		auto Player = m_pObjectManager->GetGameObject(PLAYER_NAME);
 		if (Player->GetComponent<CTransform>()->Vel.y <= -MAX_VELOCITY) {
 			Player->GetComponent<CPlayer>()->SetPlayerState(FALL_PLAYER);
+			Player->GetComponent<CPlayer>()->ChangeTexture();
 		}
 	}
 

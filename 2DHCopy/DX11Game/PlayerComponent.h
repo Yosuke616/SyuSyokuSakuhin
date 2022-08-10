@@ -26,6 +26,7 @@ enum PLAYER_STATE {
 	RUN_PLAYER,			//横移動
 	DUSH_PLAYER,		//エアダッシュ見たいのを作りたい（作ってない）
 	JUMP_PLAYER,		//ジャンプしている
+	ATTACK_PLAYER,		//攻撃
 	FALL_PLAYER,		//落下している
 	HIT_PLAYER,			//敵にヒットしたとき
 	MISS_PLAYER,		//いわゆるゲームオーバー
@@ -59,12 +60,29 @@ private:
 	bool m_bPawer_UP;
 	/** @brief 無敵時間*/
 	int m_nStar_Time;
-	/** @brief 麦を向いているか左を向いているか(true)は右*/
+	/** @brief 右を向いているか左を向いているか(true)は右*/
 	bool m_bROL;
 	/** @brief どっちから当たったかを判別する(デフォルトは0)*/
 	int m_nHitVec;
+	/** @brief  ヒットしたとき一度だけ力を加えて速度を減らすためのフラグ*/
+	bool m_bHitFlg;
+	/** @brief プレイヤーのテクスチャを一度だけ変更するフラグ*/
+	bool m_bTexChange;
+	/** @brief 攻撃をしているかどうかの判定*/
+	bool m_bAttack;
+	/** @brief 攻撃と攻撃のクールタイム管理変数*/
+	int m_nCoolTime;
+	/** @brief 当たり判定用オブジェクトを指して置けるポインタ*/
+	Object* m_pAttackObj;
+
+	//物に当たっているかの判定(消す)
+	bool bHitObj = false;
 
 	//メンバ関数
+	/** @brief プレイヤーがどの方向から敵に当たったかを判別*/
+	int CollEnemy(Object* pObject);
+	/** @brief 攻撃ボタンが押された際に専用オブジェクトの生成*/
+	void CreateAttack();
 
 protected:
 	//メンバ変数
@@ -89,8 +107,16 @@ public:
 	void OnCollisionEnter(Object* pObject) override;
 	/** @brief プレイヤーの状態を変更するため*/
 	void SetPlayerState(PLAYER_STATE PlayerSta);
-	/** @brief プレイヤーがどの方向から敵に当たったかを判別*/
-	int CollEnemy(Object* pObject);
+	/** @brief プレイヤーのテクスチャを変更するための関数*/
+	void ChangeTexture();
+	/** @brief プレイヤーがどっちの方向を決めているかを*/
+	bool GetPlayerROL();
+	/** @brief 攻撃後のクールタイムを設定する*/
+	void SetCoolTime(int CoolTime);
+	/** @brief 再び攻撃できるようにする*/
+	void SetAttackFlg(bool Attack);
+	/** @brief プレイヤーがジャンプしているかを取得する*/
+	bool GetPlayerJump();
 };
 
 
