@@ -48,10 +48,12 @@ void CAnimMesh::CreateAnimVertex() {
 	pVtx[1].nor = XMFLOAT3(0.0f, 0.0f, -1.0f);
 	pVtx[2].nor = XMFLOAT3(0.0f, 0.0f, -1.0f);
 	pVtx[3].nor = XMFLOAT3(0.0f, 0.0f, -1.0f);
+	//ここの数値を返ればテクスチャの向きを変更できる
 	pVtx[0].tex = XMFLOAT2(0.0f, 0.0f);
 	pVtx[1].tex = XMFLOAT2(1.0f, 0.0f);
 	pVtx[2].tex = XMFLOAT2(0.0f, 1.0f);
 	pVtx[3].tex = XMFLOAT2(1.0f, 1.0f);
+
 	m_Mesh.nNumIndex = 4;
 	int* pIndexWk = new int[m_Mesh.nNumIndex];
 	pIndexWk[0] = 0;
@@ -211,3 +213,66 @@ void CAnimMesh::StartAnim(ID3D11ShaderResourceView* pTex,
 	ObjectManager::GetInstance()->AddObject(pAnim);
 }
 
+/**
+* @fn		CAnimMesh::SetMeshVerttex
+* @brief	テクスチャ入れ替えれたらいいな
+* @param	(ID3D11Device*)	何かWindowsのやつ
+* @param	(MESH*) 設定したいメッシュ
+* @param	(VERTEX_3D) 3D空間でのバーテックス情報
+* @return	(HERESULT)	ぶっちゃけ分かりません
+*/
+HRESULT CAnimMesh::SetMeshVertex(ID3D11Device* pDevice,MESH* pMesh,VERTEX_3D vertexWk[]) {
+	D3D11_BUFFER_DESC vbd;
+	ZeroMemory(&vbd, sizeof(vbd));
+	vbd.Usage = D3D11_USAGE_DYNAMIC;
+	vbd.ByteWidth = sizeof(VERTEX_3D) * pMesh->nNumVertex;
+	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
+	vbd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
+	vbd.MiscFlags = 0;
+	D3D11_SUBRESOURCE_DATA initData;
+	ZeroMemory(&initData, sizeof(initData));
+	initData.pSysMem = vertexWk;
+	HRESULT hr = pDevice->CreateBuffer(&vbd, &initData, &pMesh->pVertexBuffer);
+	if (FAILED(hr)) {
+		return hr;
+	}
+}
+
+/**
+* @fn		CAnimMesh::SetVertex
+* @brief	テクスチャを入れ替える準備
+*/
+void CAnimMesh::SetVertex(bool bRoL) {
+	m_Mesh.nNumVertex = 4;
+	VERTEX_3D* pVertexWk = new VERTEX_3D[m_Mesh.nNumVertex];
+	VERTEX_3D* pVtx = pVertexWk;
+
+	pVtx[0].vtx = XMFLOAT3(-0.5f, 0.5f, 0.0f);
+	pVtx[1].vtx = XMFLOAT3(0.5f, 0.5f, 0.0f);
+	pVtx[2].vtx = XMFLOAT3(-0.5f, -0.5f, 0.0f);
+	pVtx[3].vtx = XMFLOAT3(0.5f, -0.5f, 0.0f);
+	pVtx[0].diffuse = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	pVtx[1].diffuse = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	pVtx[2].diffuse = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	pVtx[3].diffuse = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	pVtx[0].nor = XMFLOAT3(0.0f, 0.0f, -1.0f);
+	pVtx[1].nor = XMFLOAT3(0.0f, 0.0f, -1.0f);
+	pVtx[2].nor = XMFLOAT3(0.0f, 0.0f, -1.0f);
+	pVtx[3].nor = XMFLOAT3(0.0f, 0.0f, -1.0f);
+
+	//ここで左右の向きを返れるようにする
+	if (bRoL) {
+		pVtx[0].tex = XMFLOAT2(0.0f, 0.0f);
+		pVtx[1].tex = XMFLOAT2(1.0f, 0.0f);
+		pVtx[2].tex = XMFLOAT2(0.0f, 1.0f);
+		pVtx[3].tex = XMFLOAT2(1.0f, 1.0f);
+	}
+	else {
+		pVtx[0].tex = XMFLOAT2(1.0f, 0.0f);
+		pVtx[1].tex = XMFLOAT2(0.0f, 0.0f);
+		pVtx[2].tex = XMFLOAT2(1.0f, 1.0f);
+		pVtx[3].tex = XMFLOAT2(0.0f, 1.0f);	
+	}
+
+	HRESULT hr = SetMeshVertex(GetDevice(),&m_Mesh, pVertexWk);
+}

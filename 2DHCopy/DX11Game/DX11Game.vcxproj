@@ -171,6 +171,7 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimMeshComponent.cpp" />
     <ClCompile Include="AssimpModel.cpp" />
+    <ClCompile Include="AttackComponent.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ColliderComponent.cpp" />
     <ClCompile Include="Draw2DComponent.cpp" />
@@ -214,6 +215,7 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimMeshComponent.h" />
     <ClInclude Include="AssimpModel.h" />
+    <ClInclude Include="AttackComponent.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ColliderComponent.h" />
     <ClInclude Include="Component.h" />

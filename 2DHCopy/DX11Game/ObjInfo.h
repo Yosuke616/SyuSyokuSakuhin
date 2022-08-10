@@ -41,9 +41,20 @@ enum DRAW_ORDER {
 #define PLAYER_NAME					("DXchan")
 #define DXCHAN_SIZE_X				(100.0f)
 #define DXCHAN_SIZE_Y				(100.0f)
+#define DXCHAN_SIZE_RUN_Y			(95.0f)
 #define DXCHAN_COLL_SIZE_X			(25.0f)
 #define DXCHAN_COLL_SIZE_Y			(80.0f)
 #define DXCHAN_COLL_SIZE_Z			(100.0f)
+#define DXCHAN_COLL_SIZE_RUN_X		(55.0f)
+#define DXCHAN_COLL_OFFSET_RUN_X	(-8.0f)
+#define DXCHAN_COLL_OFFSET_RUN_Y	(-2.0f)
+
+//攻撃用情報
+#define ATTACK_NAME					("Attack")
+#define OFFSET_DX_X					(25.0f)
+#define OFFSET_DX_Y					(25.0f)
+#define ATTACK_COLL_X				(30.0f)
+#define ATTACK_COLL_Y				(30.0f)
 
 //@@@@@ ブロックの基本情報 ----------------------------------------
 #define BLOCK_NAME					("Block")
@@ -52,8 +63,8 @@ enum DRAW_ORDER {
 #define BLOCK_SIZE_X				(10.0f)
 #define BLOCK_SIZE_Y				(10.0f)
 #define BLOCK_SIZE_Z				(10.0f)
-#define BLOCK_COLL_SIZE_X			(38.5f)
-#define BLOCK_COLL_SIZE_Y			(38.5f)
+#define BLOCK_COLL_SIZE_X			(43.5f)
+#define BLOCK_COLL_SIZE_Y			(43.5f)
 #define BLOCK_COLL_SIZE_Z			(45.0f)
 
 //@@@@@ 敵の基本情報 ----------------------------------------------
@@ -63,8 +74,8 @@ enum DRAW_ORDER {
 #define E_WALK_SIZE_X				(10.0f)
 #define E_WALK_SIZE_Y				(10.0f)
 #define E_WALK_SIZE_Z				(10.0f)
-#define E_WALK_COLL_X				(43.5f)
-#define E_WALK_COLL_Y				(43.5f)
+#define E_WALK_COLL_X				(38.5f)
+#define E_WALK_COLL_Y				(38.5f)
 #define E_WALK_COLL_Z				(50.0f)
 
 #endif

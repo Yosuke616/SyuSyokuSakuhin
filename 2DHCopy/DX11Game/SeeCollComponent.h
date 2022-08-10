@@ -38,10 +38,14 @@ public:
 	~CSeeColl();
 	/** @brief 初期化*/
 	void Start() override;
-	/** brief 更新処理*/
+	/** @brief 更新処理*/
 	void Update() override;
-	/** brief 描画処理*/
+	/** @brief 描画処理*/
 	void Draw() override;
+	/** @brief 当たり判定の大きさとズレの設定をしなおす関数*/
+	void SetCollBox(XMFLOAT3 CollSize,XMFLOAT2 OffSet);
+	/** @brief メッシュを削除する関数*/
+	void DeleteCollBox();
 };
 
 #endif

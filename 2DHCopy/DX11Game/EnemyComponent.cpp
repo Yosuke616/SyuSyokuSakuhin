@@ -21,7 +21,9 @@
 */
 CEnemy::CEnemy() 
 	:m_pTransform(nullptr),m_pDraw(nullptr),m_pCollider(nullptr)
-	,m_OldPos(0.0f,0.0f){
+	,m_OldPos(0.0f,0.0f)
+	,m_bStopCom(false)
+	,m_eEnemy_Type(ENEMY_WALK),m_eEnemy_State(ENEMY_DEFAULT){
 	this->m_eUpdateOrder = COM_UPDATE_1;
 }
 
@@ -42,6 +44,8 @@ void CEnemy::Start() {
 	m_pDraw		 = Parent->GetComponent<CDraw3D>();
 	m_pCollider	 = Parent->GetComponent<CCollider>();
 	m_bRightorLeft = true;
+	m_eEnemy_State = ENEMY_DEFAULT;
+	m_bStopCom = false;
 }
 
 /**
@@ -51,16 +55,53 @@ void CEnemy::Start() {
 void CEnemy::Update() {
 	//過去座標を更新する
 	m_OldPos = m_pCollider->GetCenterPos();
+	
+	switch (m_eEnemy_State)
+	{
+	case ENEMY_DEFAULT:
+		//敵の種類によって挙動を変えていく
+		switch (m_eEnemy_Type) {
+		case ENEMY_WALK:
+			//trueだったら左へ
+			if (m_bRightorLeft) {
+				//一生左に動き続ける人生
+				m_pTransform->Vel.x = -VALUE_MOVE_ENEMY;
+			}
+			else {
+				//右にも移動できる知能はあったらしい
+				m_pTransform->Vel.x = VALUE_MOVE_ENEMY;
+			}
+			break;
 
-	//trueだったら左へ
-	if (m_bRightorLeft) {
-		//一生左に動き続ける人生
-		m_pTransform->Vel.x = -VALUE_MOVE_ENEMY;
-	}else{
-		//右にも移動できる知能はあったらしい
-		m_pTransform->Vel.x = VALUE_MOVE_ENEMY;
+		default:break;
+		}
+		break;
+
+	case ENEMY_DELETE:
+		if (!m_bStopCom) {
+
+			//全てのコンポーネントの動きを停止する
+			//ただしCTransform、おめぇはだめだ
+			//Draw3D、おめーもだめだ
+			//このコンポーネントもだ
+			for (auto&& object : Parent->GetComponentList()) {
+				object->m_bUpdateFlag = false;
+			}
+			Parent->GetComponent<CTransform>()->m_bUpdateFlag = true;
+			Parent->GetComponent<CDraw3D>()->m_bUpdateFlag = true;
+			Parent->GetComponent<CEnemy>()->m_bUpdateFlag = true;
+
+
+			m_bStopCom = true;
+		}
+		//ポジションを変える(速度を変えた方が自然かも)
+		//プレイヤーの左右の向きを取得してプレイヤーの向いている方向に飛ばす
+		m_pTransform->Vel.x += 0.1f;
+		m_pTransform->Vel.y += 0.1f;
+
+		break;
+	default:break;
 	}
-
 }
 
 /**
@@ -87,6 +128,7 @@ void CEnemy::Draw() {
 */
 void CEnemy::OnCollisionEnter(Object* pObject) {
 	//仮(ブロック)
+#pragma region ---ブロック
 	if (pObject->GetName() == BLOCK_NAME) {
 		//敵の情報を取得
 		auto Enemy = Parent->GetComponent<CCollider>();
@@ -173,6 +215,40 @@ void CEnemy::OnCollisionEnter(Object* pObject) {
 				m_bRightorLeft = false;
 			}
 		}
-		return;
 	}
+#pragma endregion
+	//プレイヤーの攻撃
+	if (pObject->GetName() == ATTACK_NAME) {
+		//敵の情報を取得
+		auto Enemy = Parent->GetComponent<CCollider>();
+		auto EnemyPos = Enemy->GetCenterPos();
+		auto EnemySize = Enemy->GetColliderSize();
+		auto EnemyOffset = Enemy->GetOffSet();
+		//半分の大きさ
+		XMFLOAT2 EnemyHalhSize = XMFLOAT2(EnemySize.x * 0.5f, EnemySize.y *0.5f);
+
+		//当たり判定の情報
+		auto TAttack = pObject->GetComponent<CTransform>();
+		auto CAttack = pObject->GetComponent<CCollider>();
+		//半分の大きさ
+		XMFLOAT2 AttackHalfSize = XMFLOAT2(CAttack->GetColliderSize().x/2.0f,CAttack->GetColliderSize().y/2.0f);
+
+		if (CAttack->GetCenterPos().x - AttackHalfSize.x + TAttack->Vel.x < m_pCollider->GetCenterPos().x + EnemyHalhSize.x + m_pTransform->Vel.x &&
+			m_pCollider->GetCenterPos().x - EnemyHalhSize.x + m_pTransform->Vel.x < CAttack->GetCenterPos().x + AttackHalfSize.x + TAttack->Vel.x) {
+			if (CAttack->GetCenterPos().y - AttackHalfSize.y + TAttack->Vel.y < m_pCollider->GetCenterPos().y + EnemyHalhSize.y + m_pTransform->Vel.y &&
+				m_pCollider->GetCenterPos().y - EnemyHalhSize.y + m_pTransform->Vel.y < CAttack->GetCenterPos().y + AttackHalfSize.y + TAttack->Vel.y) {
+				//攻撃がヒットしたので敵オブジェクトを削除する
+				m_eEnemy_State = ENEMY_DELETE;
+			}
+		}
+	}
+}
+
+/**
+* @fn		CEnemy::SetEnemyType
+* @brief	敵の種類を決める関数(3種類くらい？)
+* @param	(ENEMY_TYPE) 敵の種類を決めてもらう
+*/
+void CEnemy::SetEnemyType(ENEMY_TYPE type) {
+	m_eEnemy_Type = type;
 }

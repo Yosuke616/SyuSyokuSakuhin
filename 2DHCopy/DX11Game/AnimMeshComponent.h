@@ -64,6 +64,11 @@ public:
 		int swap_frame = 1,
 		XMFLOAT3 color = XMFLOAT3(1.0f, 1.0f, 1.0f)
 		);
+	/** @brief テクスチャを反転させる準備*/
+	void SetVertex(bool bRoL);
+
+	/** @brief テクスチャを左右反転させる関数*/
+	HRESULT SetMeshVertex(ID3D11Device* pDevice, MESH* pMesh, VERTEX_3D vertexWk[]);
 
 };
 	
