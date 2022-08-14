@@ -9,6 +9,8 @@
 #include "GravityComponent.h"
 #include "sceneGame.h"
 #include "imgui.h"
+#include "AttackComponent.h"
+#include "SeeCollComponent.h"
 
 /**定数定義**/
 #define MAX_ENEMY_GRAVITY	(1.0f)
@@ -22,7 +24,7 @@
 CEnemy::CEnemy() 
 	:m_pTransform(nullptr),m_pDraw(nullptr),m_pCollider(nullptr)
 	,m_OldPos(0.0f,0.0f)
-	,m_bStopCom(false)
+	,m_bStopCom(false),m_bRoL(false),m_bStopVel(false)
 	,m_eEnemy_Type(ENEMY_WALK),m_eEnemy_State(ENEMY_DEFAULT){
 	this->m_eUpdateOrder = COM_UPDATE_1;
 }
@@ -46,6 +48,9 @@ void CEnemy::Start() {
 	m_bRightorLeft = true;
 	m_eEnemy_State = ENEMY_DEFAULT;
 	m_bStopCom = false;
+	m_bStopVel = false;
+	m_nBlink = 0;
+	m_nDeleteFlg = 0;
 }
 
 /**
@@ -91,13 +96,69 @@ void CEnemy::Update() {
 			Parent->GetComponent<CDraw3D>()->m_bUpdateFlag = true;
 			Parent->GetComponent<CEnemy>()->m_bUpdateFlag = true;
 
-
 			m_bStopCom = true;
+			
+			//急に吹き飛ばされた感を出すために速度は0にする
+			m_pTransform->Vel = XMFLOAT3(0.0f,0.0f,0.0f);
 		}
-		//ポジションを変える(速度を変えた方が自然かも)
-		//プレイヤーの左右の向きを取得してプレイヤーの向いている方向に飛ばす
-		m_pTransform->Vel.x += 0.1f;
-		m_pTransform->Vel.y += 0.1f;
+
+		if (!m_bStopVel) {
+			//ポジションを変える(速度を変えた方が自然かも)
+			//プレイヤーの左右の向きを取得してプレイヤーの向いている方向に飛ばす
+			if (m_bRoL) {
+				//右から攻撃された場合
+				m_pTransform->Vel.x += 1.75f;
+				m_pTransform->Vel.y += 2.0f;
+
+				//速度が一定数超えたらフラグを変える
+				if (m_pTransform->Vel.y > 10.0f) {
+					m_bStopVel = true;
+					m_pTransform->Vel.x = 0.0f;
+					m_pTransform->Vel.y = 0.0f;
+				}
+
+			}
+			else {
+				//左から攻撃された場合
+				m_pTransform->Vel.x -= 1.75f;
+				m_pTransform->Vel.y += 2.0f;
+
+				//速度が一定数超えたらフラグを変える
+				if (m_pTransform->Vel.y > 10.0f) {
+					m_bStopVel = true;
+					m_pTransform->Vel.x = 0.0f;
+					m_pTransform->Vel.y = 0.0f;
+				}
+			}		
+
+		}
+
+		//全てのてきが点滅するから変えないといけない
+
+		//点滅させてから消し去る
+		m_nBlink++;
+		//敵のYのスピードを2で割って偶数で表示
+		if (m_nBlink < 5) {
+			//消す
+			//モデルの色を変える
+			TAssimpMaterial* pMaterial = m_pDraw->GetModel()->GetMate();
+			pMaterial->Kd = XMFLOAT4(1.0f,0.0f,0.0f,0.0f);
+		}
+		else if(m_nBlink < 10){
+			//付ける
+			TAssimpMaterial* pMaterial = m_pDraw->GetModel()->GetMate();
+			pMaterial->Kd = XMFLOAT4(1.0f,0.0f,0.0f,1.0f);
+		}
+		else {
+			m_nBlink = 0;
+			m_nDeleteFlg++;
+		}
+
+		//削除フラグがたったら消す
+		if (m_nDeleteFlg > 5) {
+			Parent->Delete();
+			Parent->GetComponent<CSeeColl>()->DeleteCollBox();
+		}
 
 		break;
 	default:break;
@@ -229,16 +290,17 @@ void CEnemy::OnCollisionEnter(Object* pObject) {
 
 		//当たり判定の情報
 		auto TAttack = pObject->GetComponent<CTransform>();
-		auto CAttack = pObject->GetComponent<CCollider>();
+		auto cAttack = pObject->GetComponent<CCollider>();
 		//半分の大きさ
-		XMFLOAT2 AttackHalfSize = XMFLOAT2(CAttack->GetColliderSize().x/2.0f,CAttack->GetColliderSize().y/2.0f);
+		XMFLOAT2 AttackHalfSize = XMFLOAT2(cAttack->GetColliderSize().x/2.0f,cAttack->GetColliderSize().y/2.0f);
 
-		if (CAttack->GetCenterPos().x - AttackHalfSize.x + TAttack->Vel.x < m_pCollider->GetCenterPos().x + EnemyHalhSize.x + m_pTransform->Vel.x &&
-			m_pCollider->GetCenterPos().x - EnemyHalhSize.x + m_pTransform->Vel.x < CAttack->GetCenterPos().x + AttackHalfSize.x + TAttack->Vel.x) {
-			if (CAttack->GetCenterPos().y - AttackHalfSize.y + TAttack->Vel.y < m_pCollider->GetCenterPos().y + EnemyHalhSize.y + m_pTransform->Vel.y &&
-				m_pCollider->GetCenterPos().y - EnemyHalhSize.y + m_pTransform->Vel.y < CAttack->GetCenterPos().y + AttackHalfSize.y + TAttack->Vel.y) {
+		if (cAttack->GetCenterPos().x - AttackHalfSize.x + TAttack->Vel.x < m_pCollider->GetCenterPos().x + EnemyHalhSize.x + m_pTransform->Vel.x &&
+			m_pCollider->GetCenterPos().x - EnemyHalhSize.x + m_pTransform->Vel.x < cAttack->GetCenterPos().x + AttackHalfSize.x + TAttack->Vel.x) {
+			if (cAttack->GetCenterPos().y - AttackHalfSize.y + TAttack->Vel.y < m_pCollider->GetCenterPos().y + EnemyHalhSize.y + m_pTransform->Vel.y &&
+				m_pCollider->GetCenterPos().y - EnemyHalhSize.y + m_pTransform->Vel.y < cAttack->GetCenterPos().y + AttackHalfSize.y + TAttack->Vel.y) {
 				//攻撃がヒットしたので敵オブジェクトを削除する
 				m_eEnemy_State = ENEMY_DELETE;
+				m_bRoL = pObject->GetComponent<CAttack>()->GetAttackRoL();
 			}
 		}
 	}

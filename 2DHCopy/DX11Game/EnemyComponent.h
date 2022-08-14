@@ -59,6 +59,14 @@ private:
 	/** @brief 一度だけコンポーネントの機能を停止する為の変数*/
 	bool m_bStopCom;
 	/** @brief プレイヤーの攻撃が右から当たったか左から当たったかを判別する*/
+	bool m_bRoL;
+	/** @brief  途中で速度を切り上げるようにする*/
+	/** @detail trueにしてフラグをオンにする*/
+	bool m_bStopVel;
+	/** @brief 点滅用の変数*/
+	int m_nBlink;
+	/** @brief さよならオブジェクトする変数*/
+	int m_nDeleteFlg;
 
 	//メンバ関数
 

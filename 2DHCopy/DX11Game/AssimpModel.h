@@ -213,7 +213,6 @@ public:
 	void Release();							//	開放
 
 	void SetBoneMatrix(ID3D11DeviceContext* pDC, XMFLOAT4X4 mtxBone[]);	// ボーン マトリックス設定
-
 private:
 	bool SetupMesh(ID3D11Device* pDevice);	// 頂点バッファ/インデックス バッファ生成
 };
@@ -232,6 +231,7 @@ private:
 	TAssimpMaterial* m_pMaterial;		//	テクスチャのマテリアル情報
 	DirectX::XMFLOAT3 m_vBBox;			//	境界線ボックス
 	DirectX::XMFLOAT3 m_vCenter;		//	中心座標
+	TAssimpMaterial* m_pSaveMate;			//　マテリアルを保持しておくための変数
 
 	const aiScene* m_pScene;			//	アニメーションシーン
 	SceneAnimator* m_pAnimator;			//	アニメーション
@@ -264,6 +264,10 @@ public:
 	void Draw(ID3D11DeviceContext* pDC, DirectX::XMFLOAT4X4& mtxWorld, EByOpacity byOpacity = eNoAffect);
 	//	アニメーション用の描画
 	void DrawNode(ID3D11DeviceContext* pDC, aiNode* piNode, const aiMatrix4x4& piMatrix, EByOpacity byOpacity);
+	//マテリアルの保存
+	void SetMate(TAssimpMaterial* mate);
+	//敵マテリアルの取得
+	TAssimpMaterial* GetMate();
 
 	//	ワールドマトリックスの取得
 	DirectX::XMFLOAT4X4& GetWorldMatrix()
@@ -301,6 +305,11 @@ public:
 	DirectX::XMFLOAT3& GetCenter()
 	{
 		return m_vCenter;
+	}
+
+	//名前を取得する
+	constexpr const std::string& GetName() const {
+		return m_fname;
 	}
 
 private:

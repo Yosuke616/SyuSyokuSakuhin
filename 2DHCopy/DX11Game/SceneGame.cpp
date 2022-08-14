@@ -7,6 +7,7 @@
 #include "ModelManager.h"
 #include "FileManager.h"
 #include "StageManager.h"
+#include "SceneManager.h"
 #include "Object.h"
 #include "ObjInfo.h"
 #include "Camera.h"
@@ -82,6 +83,7 @@ void SceneGame::Init() {
 	m_pObjectManager = ObjectManager::GetInstance();
 	ModelManager* pModelManager = ModelManager::GetInstance();
 	m_pStageManager = StageManager::GetInstance();
+	m_pMenuManager = MenuManager::GetInsutance();
 	pModelManager->AddModel(PATH_ROSALINA_X, ROSALINA_MODEL_X);
 	pModelManager->AddModel(PATH_MINT_GREEN_BLOCK, MINT_GREEN_BLOCK_NUM);
 
@@ -140,10 +142,15 @@ void SceneGame::Update() {
 	//ステージ更新
 	m_pStageManager->Update();
 
+	//メニューの更新
+	//m_pMenuManager->Update();
+
 	//ゲームモード
 	if (m_bEditMode == false) {
 		if (m_bPauseMode == false) {
-			
+		}
+		else {		
+			m_pMenuManager->Update();
 		}
 
 		//ゲームオブジェクト更新
@@ -182,6 +189,12 @@ void SceneGame::Update() {
 		if (m_bEditMode == true)	CCamera::Get()->SetAxisX(nullptr);	//edit	プレイヤーから注視店を外す
 		else						CCamera::Get()->SetAxisX(&ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CTransform>()->Pos.x);	//game	プレイヤーを注視店に設定
 	}
+
+	//シーンのやり直し
+	if (InputManager::Instance()->GetKeyTrigger(DIK_Z)) {
+		//シーン遷移
+		SceneManager::Instance()->SetScene(SCENE_TITLE);
+	}
 #endif
 
 }
@@ -197,10 +210,14 @@ void SceneGame::Draw() {
 	m_pObjectManager->Draw();
 	SetZBuffer(false);
 
+	//ポーズ画面描画
+	if (m_bPauseMode) {
+		m_pMenuManager->Draw();
+	}
+
 #ifdef _DEBUG
 	//CCamera::Get()->Draw();
 #endif
-
 }
 
 /**
@@ -256,4 +273,13 @@ void SceneGame::Destroy() {
 		delete m_pInstance;
 		m_pInstance = nullptr;
 	}
+}
+
+/** 
+* @fn		SceneGame::SetPauseOOO
+* @brief	ポーズのオンオフを外部から決める
+* @param	(bool)	ポーズメニューを更新するかどうか
+*/
+void SceneGame::SetPauseOOO(bool ooo) {
+	m_bPauseMode = ooo;
 }

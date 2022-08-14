@@ -20,6 +20,10 @@ class Object;
 enum MENU_STATE {
 	STATE_NONE = 0,
 	TITLE_STATE,
+	PAUSE_STATE,
+	OPTION_STATE,
+	GAMECLEAR_STATE,
+	GAMEOVER_STATE,
 
 	MAX_MENU
 };
@@ -91,6 +95,8 @@ public:
 	void CreateTitleMenu();
 	/** @brief ポーズメニュー*/
 	void CreatePauseMenu();
+	/** @brief ゲームオーバーメニュー*/
+	void CreateGameOverMenu();
 };
 
 #endif

@@ -90,6 +90,8 @@ public:
 	void SetStage(Stage NextStage);
 	/** @brief シーン情報の取得*/
 	Stage GetStage();
+	/** @brief ポーズフラグをオンにする*/
+	void SetPauseOOO(bool ooo);
 
 };
 
