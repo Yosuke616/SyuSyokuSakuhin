@@ -66,8 +66,6 @@ private:
 	int m_nHitVec;
 	/** @brief  ヒットしたとき一度だけ力を加えて速度を減らすためのフラグ*/
 	bool m_bHitFlg;
-	/** @brief プレイヤーのテクスチャを一度だけ変更するフラグ*/
-	bool m_bTexChange;
 	/** @brief 攻撃をしているかどうかの判定*/
 	bool m_bAttack;
 	/** @brief 攻撃と攻撃のクールタイム管理変数*/

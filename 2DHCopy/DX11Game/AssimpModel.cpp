@@ -8,6 +8,7 @@
 #include "Texture.h"
 #include "Shader.h"
 #include "mainApp.h"
+#include "ModelManager.h"
 
 #ifdef _DEBUG
 #pragma comment(lib, "assimp-vc141-mtd")
@@ -495,6 +496,12 @@ void CAssimpMesh::Draw(ID3D11DeviceContext* pDC, XMFLOAT4X4& m44World, EByOpacit
 	TAssimpMaterial* pMaterial = m_pModel->GetMaterial();
 	if (!pMaterial)
 		pMaterial = &m_material;
+	//敵オブジェクトだったら保存しておく
+	//敵の種類を増やしていく
+	if (m_pModel == ModelManager::GetInstance()->GetModel(ROSALINA_MODEL_X)) {		
+		m_pModel->SetMate(pMaterial);
+	}
+
 	// 透明度による描画切替
 	switch (byOpacity)
 	{
@@ -507,6 +514,10 @@ void CAssimpMesh::Draw(ID3D11DeviceContext* pDC, XMFLOAT4X4& m44World, EByOpacit
 	default:
 		break;
 	}
+
+	//色変えたい
+	//pMaterial->Kd = XMFLOAT4(0.0f,0.0f,1.0f,1.0f);
+
 	// テクスチャフラグ
 	XMFLOAT4X4 mtxTexture = m_pModel->GetTextureMatrix();
 	XMUINT4 vFlags(0, 0, 0, 0);
@@ -597,7 +608,7 @@ double CAssimpModel::g_time;
 
 // コンストラクタ
 CAssimpModel::CAssimpModel()
-	: m_pMaterial(nullptr), m_pScene(nullptr), m_pAnimator(nullptr)
+	: m_pMaterial(nullptr), m_pScene(nullptr), m_pAnimator(nullptr),m_pSaveMate(nullptr)
 	, m_PrimitiveType(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST)
 	, m_bAnimation(true)
 {
@@ -1222,6 +1233,24 @@ void CAssimpModel::Draw(ID3D11DeviceContext* pDC, XMFLOAT4X4& mtxWorld, EByOpaci
 	// ノード単位で描画
 	aiMatrix4x4* piMatrix = (aiMatrix4x4*)&m_mtxWorld;
 	DrawNode(pDC, m_pScene->mRootNode, *piMatrix, byOpacity);
+}
+
+/**
+* @fn		CAssimpModel::SetMate
+* @brief	敵のマテリアルを保存する
+* @param	(TAssimpMaterial*)	マテリアルのポインタ
+*/
+void CAssimpModel::SetMate(TAssimpMaterial* mate) {
+	m_pSaveMate = mate;
+}
+
+/**
+* @fn		CAssimpModel::GetMate
+* @brief	敵マテリアルの取得
+* @return	(TAssimpMaterial*) な手リアルの入った情報
+*/
+TAssimpMaterial* CAssimpModel::GetMate() {
+	return m_pSaveMate;
 }
 
 #pragma endregion

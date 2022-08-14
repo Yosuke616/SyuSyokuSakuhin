@@ -54,6 +54,9 @@ void CAttack::Update() {
 	switch (m_eAttack)
 	{
 	case PLAYER_ATTACK:
+		//プレイヤーに合わせた速度を足す
+		Parent->GetComponent<CTransform>()->Vel = m_pObj->GetComponent<CTransform>()->Vel;
+
 		//オブジェクトを下に下げていく
 		Parent->GetComponent<CTransform>()->Pos.y -= 4.0f;
 
@@ -66,8 +69,6 @@ void CAttack::Update() {
 
 			//メッシュの削除
 			Parent->GetComponent<CSeeColl>()->DeleteCollBox();
-
-			//Parent = nullptr;
 
 			//プレイヤーの攻撃状態を変えるためのやつら
 			//クールタイムの設定

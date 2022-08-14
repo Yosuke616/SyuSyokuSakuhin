@@ -84,6 +84,10 @@ void MenuManager::Update() {
 			switch (m_nCreateMenu)
 			{
 			case TITLE_STATE: CreateTitleMenu(); break;
+			case PAUSE_STATE: CreatePauseMenu(); break;
+			case OPTION_STATE:break;
+			case GAMECLEAR_STATE:break;
+			case GAMEOVER_STATE:CreateGameOverMenu(); break;
 			default:break;
 			}
 	
@@ -110,7 +114,9 @@ void MenuManager::Update() {
 
 	//ここに選択されているボタンなどを選ぶ関数を追加する
 	//選ばれているボタンの色を変えるなど
-	SelectButton();
+	if (m_nDelayCnt == -1) {	
+		SelectButton();
+	}
 }
 
 /**
@@ -154,6 +160,9 @@ void MenuManager::Create(int state,int delayCnt) {
 void MenuManager::CreateTitleMenu() {
 	//オブジェクトリストの削除
 	DeleteMenu();
+
+	//タイトルが選ばれているようにする
+	m_nCreateMenu = TITLE_STATE;
 
 	//必要になってくるボタンを追加する
 	//仮
@@ -213,6 +222,69 @@ void MenuManager::CreateTitleMenu() {
 void MenuManager::CreatePauseMenu() {
 	//オブジェクトのリストの削除
 	DeleteMenu();
+	//オプションが選ばれているようにする
+	m_nCreateMenu = PAUSE_STATE;
+}
+
+/**
+* @fn		MenuManager::CreateGameOver
+* @brief	ゲームオーバーメニューの作成
+*/
+void MenuManager::CreateGameOverMenu() {
+	//オブジェクトリストの削除
+	DeleteMenu();
+	//ゲームオーバーが選ばれているようにする
+	m_nCreateMenu = GAMEOVER_STATE;
+
+	//必要になってくるボタンを追加する
+		//仮
+	Object* pButton = new Object("Button_Kari", UPDATE_UI, DRAW_UI);
+	//コンポーネントの追加
+	auto transButton = pButton->AddComponent<CTransform>();
+	auto drawButton = pButton->AddComponent<CDraw2D>();
+
+	//オブジェクトの設定
+	transButton->SetPosition(0.0f, 0.0f);
+	drawButton->SetTexture(TextureManager::GetInstance()->GetTexture(TITLE_BUTTON_NUM));
+	drawButton->SetSize(100.0f, 50.0f);
+
+	//メニューリストに追加
+	AddMenu(pButton);
+
+	//**********************************************************************************************
+	//仮
+	Object* pButton2 = new Object("Button_Kari2", UPDATE_UI, DRAW_UI);
+	//コンポーネントの追加
+	auto transButton2 = pButton2->AddComponent<CTransform>();
+	auto drawButton2 = pButton2->AddComponent<CDraw2D>();
+
+	//オブジェクトの設定
+	transButton2->SetPosition(0.0f, -50.0f);
+	drawButton2->SetTexture(TextureManager::GetInstance()->GetTexture(TITLE_BUTTON_NUM));
+	drawButton2->SetSize(100.0f, 50.0f);
+
+	//メニューリストに追加
+	AddMenu(pButton2);
+	//***************************************************************************************************
+
+	//**********************************************************************************************
+	//仮
+	Object* pButton3 = new Object("Button_Kari3", UPDATE_UI, DRAW_UI);
+	//コンポーネントの追加
+	auto transButton3 = pButton3->AddComponent<CTransform>();
+	auto drawButton3 = pButton3->AddComponent<CDraw2D>();
+
+	//オブジェクトの設定
+	transButton3->SetPosition(0.0f, -100.0f);
+	drawButton3->SetTexture(TextureManager::GetInstance()->GetTexture(TITLE_BUTTON_NUM));
+	drawButton3->SetSize(100.0f, 50.0f);
+
+	//メニューリストに追加
+	AddMenu(pButton3);
+	//***************************************************************************************************
+
+	//追加されたオブジェクトの初期化を行う
+	Start();
 }
 
 /**
@@ -303,9 +375,7 @@ void MenuManager::SelectButton() {
 		}
 	}
 
-
-	//選ばれたボタンの色を変える
-	switch (m_nCreateMenu) {
+	/*switch (m_nCreateMenu) {
 	case TITLE_STATE:
 		if ((*m_itr_Menu)->GetName() == "Button_Kari") {
 			(*m_itr_Menu)->GetComponent<CDraw2D>()->SetColor(0.0f,1.0f,0.0f);
@@ -314,11 +384,14 @@ void MenuManager::SelectButton() {
 		}
 		else  if ((*m_itr_Menu)->GetName() == "Button_Kari3") {
 			(*m_itr_Menu)->GetComponent<CDraw2D>()->SetColor(0.0f, 1.0f, 0.0f);
-		}
-		
+		}		
 		break;
+		
 	default:break;
-	}
+	}*/
+
+	//選ばれたボタンの色を変える
+	(*m_itr_Menu)->GetComponent<CDraw2D>()->SetColor(0.0f,1.0f,0.0f);
 
 	//決定ボタンが押された時の処理
 	if (InputManager::Instance()->GetKeyTrigger(DIK_RETURN)) {
@@ -338,10 +411,12 @@ void MenuManager::PushButton() {
 		if ((*m_itr_Menu)->GetName() == "Button_Kari") {
 			//シーン遷移
 			SceneManager::Instance()->SetScene(SCENE_GAME);
-		}
-		
+		}		
 		break;
-
+	case PAUSE_STATE:break;
+	case OPTION_STATE:break;
+	case GAMECLEAR_STATE:break;
+	case GAMEOVER_STATE:break;
 	default:break;
 	}
 }

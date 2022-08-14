@@ -71,8 +71,6 @@ void CPlayer::Start() {
 	m_nHitVec = 0;
 	//敵にヒットしたときに加える力の処理先の変数
 	m_bHitFlg = false;
-	//テクスチャを一度だけ変更するフラグはオフにしておく
-	m_bTexChange = false;
 	//攻撃フラグはオフにしておく
 	m_bAttack = false;
 	//攻撃時のクールタイム
@@ -111,12 +109,6 @@ void CPlayer::Update() {
 	else
 	{
 		m_pDraw2D->SetColor(1.0f,1.0f,1.0f);
-	}
-
-	//敵にヒットした場合吹き飛ばすためにプレイヤーの状態を変更する
-	if (m_nHitVec > 0) {
-		m_ePlayer = HIT_PLAYER;
-		ChangeTexture();
 	}
 
 	//落下速度を0にする
@@ -405,7 +397,28 @@ void CPlayer::Update() {
 		
 		break;
 #pragma endregion
+	case MISS_PLAYER:
+#pragma region ---ミス
+		//プレイヤー以外のオブジェクトをストップする
+		ObjectManager::GetInstance()->NoFunction();
+		Parent->Use();
+		//重力のコンポーネントを使えなくする
+		Parent->GetComponent<CGravity>()->SetUse(false);
+		//プレイヤーの速度を全て消す
+		Parent->GetComponent<CTransform>()->Vel = XMFLOAT3(0.0f,0.0f,0.0f);
 
+		//じかんがある程度たったらゲームオーバーのメニューを出現させる
+		//テクスチャが流し終わったら
+		MenuManager::GetInsutance()->Create(GAMEOVER_STATE,25);
+
+		//プレイヤーの更新を止める
+		Parent->StopUpdate();
+
+		//シーンゲームのオプションフラグをオンにする
+		SceneGame::GetInstance()->SetPauseOOO(true);
+
+
+#pragma endregion
 	default: break;
 	}
 
@@ -472,7 +485,6 @@ void CPlayer::Update() {
 		g_ePlayer = IDLE_PLAYER;
 		m_nHitVec = 0;
 		m_bPawer_UP = true;
-		m_bTexChange = false;
 	}
 
 	//重力の有無
@@ -482,7 +494,6 @@ void CPlayer::Update() {
 	if (m_pInput->GetKeyTrigger(DIK_H)) {
 		Parent->GetComponent<CGravity>()->m_bUpdateFlag = true;
 	}
-
 #endif
 }
 
@@ -632,17 +643,25 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 					m_nStar_Time = STAR_TIME;
 					//パワーアップ状態を解除する
 					m_bPawer_UP = false;	
-					
+					//プレイヤーのステータスを変える
+					//テクスチャも変える
+					m_ePlayer = HIT_PLAYER;
+					g_ePlayer = m_ePlayer;
+					ChangeTexture();
 				}
 			}
 			else {
 				//当たったらミス状態である
+				if (CollEnemy(pObject)) {
+					m_ePlayer = MISS_PLAYER;
+					g_ePlayer = m_ePlayer;
+					//テクスチャを変える
+					ChangeTexture();
+				}
 			}
 
 			//やりたいこと
-			//プレイヤーの状態で決める(パワーアップ状態かそうでないか)
 			//パワーアップ状態で無かったらミス判定
-			//そうでない場合は無敵時間を作りパワーダウンさせる
 
 			//ミス判定　プレイヤー以外のオブジェクトの更新を止めてミスのテクスチャを流す
 			//テクスチャを流し終えたらメニュー画面の表示(ゲームオーバーメニュー)
@@ -771,40 +790,36 @@ int CPlayer::CollEnemy(Object* pObject) {
 * @brief	プレイヤーのステータスが変わったとき、テクスチャを変える関数
 */
 void CPlayer::ChangeTexture() {
-	//テクスチャを変更するフラグがオフになっていた場合にこの先に進める
-	if (!m_bTexChange) {
-		//どのテクスチャに変更するかはプレイヤーの状態を見て決める
-		switch (m_ePlayer) {
-		case IDLE_PLAYER:
-			//デフォルトたち
-			m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_STAND_TEX_NUM));
-			m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_Y);
-			m_pDraw2D->SetAnimSplit(3, 3);
-			m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
-			m_pCollider->SetOffset(0.0f, 0.0f);
-			Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
-			break;
-		case RUN_PLAYER: 
-			//左右でかえましょうね　
-			//デフォルト走り
-			m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_RUN_TEX_NUM));
-			m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_RUN_Y);
-			m_pDraw2D->SetAnimSplit(7, 2);
-			m_pDraw2D->SetVertex(m_bROL);
-			m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_RUN_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
-			m_pCollider->SetOffset(DXCHAN_COLL_OFFSET_RUN_X, DXCHAN_COLL_OFFSET_RUN_Y);
-			Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
-			break;
-		case DUSH_PLAYER:m_ePlayer = m_ePlayer; break;
-		case JUMP_PLAYER:m_ePlayer = m_ePlayer; break;
-		case FALL_PLAYER:m_ePlayer = m_ePlayer; break;
-		case HIT_PLAYER:
-			m_bTexChange = true;
-			break;
-		case MISS_PLAYER:break;
-		default:break;
-		}	
-	}
+	//どのテクスチャに変更するかはプレイヤーの状態を見て決める
+	switch (m_ePlayer) {
+	case IDLE_PLAYER:
+		//デフォルトたち
+		m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_STAND_TEX_NUM));
+		m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_Y);
+		m_pDraw2D->SetAnimSplit(3, 3);
+		m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
+		m_pCollider->SetOffset(0.0f, 0.0f);
+		Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
+		break;
+	case RUN_PLAYER: 
+		//左右でかえましょうね　
+		//デフォルト走り
+		m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_RUN_TEX_NUM));
+		m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_RUN_Y);
+		m_pDraw2D->SetAnimSplit(7, 2);
+		m_pDraw2D->SetVertex(m_bROL);
+		m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_RUN_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
+		m_pCollider->SetOffset(DXCHAN_COLL_OFFSET_RUN_X, DXCHAN_COLL_OFFSET_RUN_Y);
+		Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
+		break;
+	case DUSH_PLAYER:m_ePlayer = m_ePlayer; break;
+	case JUMP_PLAYER:m_ePlayer = m_ePlayer; break;
+	case FALL_PLAYER:m_ePlayer = m_ePlayer; break;
+	case HIT_PLAYER:
+		break;
+	case MISS_PLAYER:break;
+	default:break;
+	}	
 }
 
 /**

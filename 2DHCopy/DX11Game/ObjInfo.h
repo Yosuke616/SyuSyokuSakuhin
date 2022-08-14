@@ -51,9 +51,9 @@ enum DRAW_ORDER {
 
 //攻撃用情報
 #define ATTACK_NAME					("Attack")
-#define OFFSET_DX_X					(25.0f)
+#define OFFSET_DX_X					(35.0f)
 #define OFFSET_DX_Y					(25.0f)
-#define ATTACK_COLL_X				(30.0f)
+#define ATTACK_COLL_X				(50.0f)
 #define ATTACK_COLL_Y				(30.0f)
 
 //@@@@@ ブロックの基本情報 ----------------------------------------
