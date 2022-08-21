@@ -20,6 +20,7 @@ class Object;
 enum MENU_STATE {
 	STATE_NONE = 0,
 	TITLE_STATE,
+	SELECT_STATE,
 	PAUSE_STATE,
 	OPTION_STATE,
 	GAMECLEAR_STATE,
@@ -46,6 +47,15 @@ private:
 	int m_nDelayCnt;
 	/** @brief 作成するメニュー*/
 	int m_nCreateMenu;
+	/** @brief ステージを表すオブジェクトを管理するためのリスト*/
+	std::list<Object*> m_StageObjList;
+	/** @brief ステージオブジェクトを触るためのイテレーター*/
+	std::list<Object*>::iterator m_itr_Stage;
+	/** @brief  ステージのオブジェクトが移動しきったら再び操作できるようにするフラグ*/
+	/** @detail trueで操作できない*/
+	bool m_bRestart;
+	/** @brief どれだけ移動したかを保存する変数*/
+	float m_fMoveObj;
 
 	//メンバ関数
 	/** @brief コンストラクタ*/
@@ -55,6 +65,11 @@ private:
 	void SelectButton();
 	/** @brief 決定ボタンが押された場合の処理*/
 	void PushButton();
+	/** @brief ステージセレクトを制御するための関数
+			   選んだステージに入ったりデータをロードしたりする*/
+	void StageSelect();
+	/** @brief 選択されたステージを読み込む関数*/
+	void StageIN();
 
 protected:
 	//メンバ変数
@@ -95,6 +110,8 @@ public:
 	void CreateTitleMenu();
 	/** @brief ポーズメニュー*/
 	void CreatePauseMenu();
+	/** @brief ステージセレクトメニュー*/
+	void CreateSelectMenu();
 	/** @brief ゲームオーバーメニュー*/
 	void CreateGameOverMenu();
 };

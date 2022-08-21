@@ -201,6 +201,7 @@
     <ClCompile Include="ResourceCSV.cpp" />
     <ClCompile Include="SceneGame.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SceneSelect.cpp" />
     <ClCompile Include="SceneStage_1.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="SeeCollComponent.cpp" />
@@ -251,6 +252,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="sceneGame.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SceneSelect.h" />
     <ClInclude Include="SceneStage_1.h" />
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="SeeCollComponent.h" />

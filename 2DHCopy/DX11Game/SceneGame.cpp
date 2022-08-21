@@ -96,7 +96,7 @@ void SceneGame::Init() {
 	pTexManager->AddTexture(PATH_TEX_DEBUG_BLOCK, DEBUG_BLOCK_NUM);
 
 	//オブジェクトの作成
-	//仮
+	//プレイヤー
 	Object* Box = new Object(PLAYER_NAME, UPDATE_PLAYER, DRAW_PLAYER);
 	auto TransBox = Box->AddComponent<CTransform>();
 	auto DrawBox = Box->AddComponent<CAnimMesh>();
@@ -165,10 +165,23 @@ void SceneGame::Update() {
 	//下向きの速度がかかっていた場合落下判定とする
 	if (m_pObjectManager->GetGameObject(PLAYER_NAME)) {
 		auto Player = m_pObjectManager->GetGameObject(PLAYER_NAME);
-		if (Player->GetComponent<CTransform>()->Vel.y <= -MAX_VELOCITY) {
-			Player->GetComponent<CPlayer>()->SetPlayerState(FALL_PLAYER);
-			Player->GetComponent<CPlayer>()->ChangeTexture();
+		//プレイヤーの状態を見て既にジャンプか落下だったら変更しない
+		if ((Player->GetComponent<CPlayer>()->GetPlayerSta() == FALL_PLAYER  ||
+			Player->GetComponent<CPlayer>()->GetPlayerSta() == JUMP_PLAYER   ||
+			Player->GetComponent<CPlayer>()->GetPlayerSta() == ATTACK_PLAYER ||
+			Player->GetComponent<CPlayer>()->GetPlayerSta() == DUSH_PLAYER	 ||
+			Player->GetComponent<CPlayer>()->GetPlayerSta() == MISS_PLAYER	 ||
+			Player->GetComponent<CPlayer>()->GetPlayerSta() == HIT_PLAYER)
+			) {
+		
 		}
+		else {
+			if (Player->GetComponent<CTransform>()->Vel.y <= -MAX_VELOCITY) {
+				Player->GetComponent<CPlayer>()->SetPlayerState(FALL_PLAYER);
+				Player->GetComponent<CPlayer>()->ChangeTexture();
+			}		
+		}
+
 	}
 
 #ifdef _DEBUG

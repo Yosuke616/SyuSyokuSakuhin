@@ -32,6 +32,9 @@ enum MAP_CHIP{
 	B_1 = 0,			//ブロック
 	ENEMY_1,			//敵
 
+	GOAL = 50,			//ゴール
+
+	MISS_COLL = 99,		//ミスブロック
 
 	MAX_MAP_CHIP
 };
@@ -319,6 +322,35 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		draw->Update();
 
 		return obj;
+	}
+	else if (nState == GOAL) {
+		//オブジェクトの生成
+		Object* obj;
+	}
+	else if (nState == MISS_COLL) {
+		//オブジェクトの生成(当たり判定のみ)
+		Object* obj = new Object("MISS_COLL",UPDATE_DEBUG,DRAW_DEBUG);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDrawMesh>();
+		auto collider = obj->AddComponent<CCollider>();
+		auto Range = obj->AddComponent<COutOfRange>();
+		obj->AddComponent<CSeeColl>();
+		//オブジェクトの設定
+		draw->SetTexture(pTextureManager->GetTexture(DEBUG_BLOCK_NUM));
+		draw->SetSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y);
+		//draw->SetLoop(true);
+		trans->SetPosition(fPosX, fPosY + 940, 0.0f);
+		collider->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
+		Range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
+
+		//ワールドマトリックスの更新
+		draw->Update();
+
+		return obj;
+
 	}
 }
 

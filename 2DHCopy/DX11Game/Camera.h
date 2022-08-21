@@ -24,6 +24,7 @@ private:
 	XMFLOAT3 m_vTarget;				// 注視点
 	XMFLOAT3 m_vUp;					// 上方ベクトル
 	XMFLOAT2 m_Limit;
+	XMFLOAT2 m_LimitY;				//Y軸方向の上限
 
 	XMFLOAT3 m_vSrcPos;				// 元の視点
 

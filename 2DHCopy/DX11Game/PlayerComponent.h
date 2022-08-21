@@ -76,6 +76,19 @@ private:
 	//物に当たっているかの判定(消す)
 	bool bHitObj = false;
 
+	/** @brief エアダッシュの長さ用のカウンタ*/
+	int m_nDushCnt;
+	/** @brief エアダッシュのクールタイム*/
+	int m_nDushCoolTime;
+	/** @brief  空中でのエアダッシュ制御*/
+	/** @detail trueでもう一度出せない*/
+	bool m_bAirDushFlg;
+	/** @brief  敵に当たってミスしたか落下死したか*/
+	/** @detail 敵に当たって死んだ場合false,落下死の場合true*/
+	bool m_bAirDead;
+	/** @brief 敵にぶつかり一定時間落下したらゲームオーバーメニューを出す*/
+	int m_nMissCnt;
+
 	//メンバ関数
 	/** @brief プレイヤーがどの方向から敵に当たったかを判別*/
 	int CollEnemy(Object* pObject);
@@ -115,6 +128,8 @@ public:
 	void SetAttackFlg(bool Attack);
 	/** @brief プレイヤーがジャンプしているかを取得する*/
 	bool GetPlayerJump();
+	/** @brief プレイヤーの状態を取得する関数*/
+	PLAYER_STATE GetPlayerSta();
 };
 
 

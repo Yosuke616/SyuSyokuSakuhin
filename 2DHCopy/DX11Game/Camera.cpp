@@ -94,6 +94,7 @@ void CCamera::Init()
 		XMConvertToRadians(m_fFovY), m_fAspectRatio, m_fNearZ, m_fFarZ));
 #pragma endregion
 	m_Limit = XMFLOAT2(0.0f, 100000.0f);
+	m_LimitY = XMFLOAT2(58.0f,1000.0f);
 
 
 	m_bZoom = false;
@@ -255,6 +256,7 @@ void CCamera::Update()
 		}
 	}
 
+	//X軸の話し
 	//	カメラの移動限界
 	if (!m_bZoom && m_vPos.x < m_Limit.x)
 	{
@@ -285,6 +287,21 @@ void CCamera::Update()
 	{
 		// スクロールを再開
 		CTexScroll::Scroll(true);
+	}
+
+	//Y軸の話し
+	//カメラ移動の限界
+	if (!m_bZoom && m_vPos.y < m_LimitY.x) {
+		//下に行きすぎたら
+		SetAxisY(nullptr);
+		m_vPos.y = m_Limit.x;
+		m_vTarget.y = m_LimitY.x;
+	}
+	else if (!m_bZoom && m_vPos.y > m_LimitY.y) {
+		//上に行きすぎたら
+		SetAxisY(nullptr);
+		m_vPos.y = m_LimitY.y;
+		m_vTarget.y = m_LimitY.y;
 	}
 
 	// マトリックスに更新

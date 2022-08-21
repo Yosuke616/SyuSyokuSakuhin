@@ -17,9 +17,10 @@
 
 //列挙隊宣言(シーン増加に伴い中身は増やしていく)
 enum EScene {
-	SCENE_TITLE = 0,
-	SCENE_GAME,
-	SCENE_ENDING,
+	SCENE_TITLE = 0,	//タイトル
+	SCENE_GAME,			//ゲーム
+	SCENE_SELECT,		//ステージセレクト
+	SCENE_ENDING,		//エンディング
 
 	MAX_SCENE
 };
