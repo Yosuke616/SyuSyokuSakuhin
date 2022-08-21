@@ -4,6 +4,7 @@
 //シーンが増えたら追加する
 #include "SceneTitle.h"
 #include "sceneGame.h"
+#include "SceneSelect.h"
 
 //追加されていったシーンの情報を追加していく
 
@@ -52,6 +53,7 @@ void SceneManager::Init() {
 	//必要なシーンをリストに追加していく
 	m_pSceneList.push_back(new SceneTitle());
 	m_pSceneList.push_back(SceneGame::GetInstance());
+	m_pSceneList.push_back(new StageSelect());
 
 	//初めのシーンを選択する
 	SetScene(SCENE_TITLE);

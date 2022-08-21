@@ -75,7 +75,16 @@ void CPlayer::Start() {
 	m_bAttack = false;
 	//攻撃時のクールタイム
 	m_nCoolTime = 0;
-
+	//エアダッシュの時間は0にしておく
+	m_nDushCnt = 0;
+	//エアダッシュのクールタイムは0にしておく
+	m_nDushCoolTime = 0;
+	//空中フラグはオフにしておく
+	m_bAirDushFlg = false;
+	//敵により死亡したか
+	m_bAirDead = false;
+	//ミスカウントは0にしておく
+	m_nMissCnt = 0;
 }
 
 /**
@@ -85,21 +94,25 @@ void CPlayer::Start() {
 void CPlayer::Update() {
 	m_OldPos = m_pCollider->GetCenterPos();
 
+	//ステータスの情報を更新する
+	m_ePlayer = g_ePlayer;
+
 	//左右移動のボタンが押されていた場合左右のフラグを入れ替える
-	if (m_pInput->GetKeyPress(DIK_D)) {
-		//右向き
-		m_bROL = true;
-	}
-	if (m_pInput->GetKeyPress(DIK_A)) {
-		//左向き
-		m_bROL = false;
+	//エアダッシュフラグしている最中は変わらないようにする
+	if (!(m_ePlayer == DUSH_PLAYER)) {
+		if (m_pInput->GetKeyPress(DIK_D)) {
+			//右向き
+			m_bROL = true;
+		}
+		if (m_pInput->GetKeyPress(DIK_A)) {
+			//左向き
+			m_bROL = false;
+		}	
 	}
 
 	//消す
 	bHitObj = false;
 
-	//ステータスの情報を更新する
-	m_ePlayer = g_ePlayer;
 
 	//無敵状態だったら半透明にする
 	if (m_nStar_Time > 0) {
@@ -136,6 +149,14 @@ void CPlayer::Update() {
 			//左移動
 			m_ePlayer = RUN_PLAYER;
 			ChangeTexture();
+		}
+
+		//エアダッシュ
+		if (m_pInput->GetKeyTrigger(DIK_E)) {
+			m_ePlayer = DUSH_PLAYER;
+			ChangeTexture();
+			//重力の機能をオフにする
+			Parent->GetComponent<CGravity>()->SetUse(false);
 		}
 
 		//ジャンピング
@@ -180,6 +201,14 @@ void CPlayer::Update() {
 			ChangeTexture();
 		}
 
+		//エアダッシュ
+		if (m_pInput->GetKeyTrigger(DIK_E)) {
+			m_ePlayer = DUSH_PLAYER;
+			ChangeTexture();
+			//重力の機能をオフにする
+			Parent->GetComponent<CGravity>()->SetUse(false);
+		}
+
 		//ジャンピング	
 		if (m_pInput->GetKeyPress(DIK_W)) {
 			//ステータスをジャンプに変える
@@ -193,6 +222,72 @@ void CPlayer::Update() {
 			ChangeTexture();
 		}
 	
+		break;
+
+#pragma endregion
+	case DUSH_PLAYER:
+#pragma region ---エアダッシュ
+		//クールタイムが明けたらできるようにする
+		if (m_nDushCoolTime <= 0) {
+			
+			//空中にいる場合
+			//プレイヤーに加わっている上下の力をなくす
+			if (m_bJump) {
+				m_pPlayer->Vel.y = 0.0f;
+			}
+
+			//エアダッシュし続ける時間の管理
+			m_nDushCnt++;
+			
+			//左右の向きでどっちに速度を加えるかを決める
+			if (m_bROL) {
+				m_pPlayer->Vel.x = VALUE_MOVE_SPEED * 2;
+			}
+			else {
+				m_pPlayer->Vel.x = -VALUE_MOVE_SPEED * 2;
+			}
+
+			//エアダッシュが終わったときの処理
+			//空中にいるかどうかでプレイヤーの状態は変える
+			if (m_nDushCnt > 30) {
+				if (m_bJump) {
+					//空中の場合
+					//プレイヤーの状態を落下状態にする
+					m_ePlayer = FALL_PLAYER;
+					//プレイヤーの速度を変える
+					m_pPlayer->Vel.x = 0.0f;
+					//プレイヤーの重力をオンにする
+					Parent->GetComponent<CGravity>()->SetUse(true);
+					//エアダッシュデフォルトに戻す(所謂初期化)
+					m_nDushCnt = 0;
+					//テクスチャの変更
+					ChangeTexture();
+					//クールタイムの設定
+					m_nDushCoolTime = 15;
+				}
+				else {
+					//地上の場合
+					//プレイヤーの状態をデフォルトに変更する
+					m_ePlayer = IDLE_PLAYER;
+					//プレイヤーの速度を変える
+					m_pPlayer->Vel.x = 0.0f;
+					//エアダッシュ時間をデフォルトに戻す(所謂初期化)
+					m_nDushCnt = 0;
+					//テクスチャの変更
+					ChangeTexture();
+					//クールタイムの設定
+					m_nDushCoolTime = 15;
+					//プレイヤーの重力をオンにする
+					Parent->GetComponent<CGravity>()->SetUse(true);
+				}
+			}	
+		}
+		else {
+			//明けてない場合デフォルト状態に戻す
+			m_ePlayer = IDLE_PLAYER;
+		}
+
+
 		break;
 #pragma endregion
 	case JUMP_PLAYER:
@@ -224,6 +319,19 @@ void CPlayer::Update() {
 		}
 		else {
 			m_pPlayer->Vel.x = 0.0f;
+		}
+
+		//エアダッシュ
+		//空中でのエアダッシュの処理は少し変える
+		if (m_pInput->GetKeyTrigger(DIK_E)) {
+			if (!m_bAirDushFlg) {
+				m_ePlayer = DUSH_PLAYER;
+				ChangeTexture();
+				//空中で二度使用できないようにする
+				m_bAirDushFlg = true;
+				//重力の機能をオフにする
+				Parent->GetComponent<CGravity>()->SetUse(false);
+			}
 		}
 
 		//攻撃する
@@ -316,6 +424,19 @@ void CPlayer::Update() {
 		else {
 			m_pPlayer->Vel.x = 0.0f;
 		}
+
+		//エアダッシュ
+		//こちらも空中でのエアダッシュなので処理を変える
+		if (m_pInput->GetKeyTrigger(DIK_E)) {
+			if (!m_bAirDushFlg) {
+				m_ePlayer = DUSH_PLAYER;
+				ChangeTexture();
+				m_bAirDushFlg = true;
+				//重力の機能をオフにする
+				Parent->GetComponent<CGravity>()->SetUse(false);			
+			}
+		}
+
 		//攻撃する
 		if (m_pInput->GetKeyTrigger(DIK_SPACE)) {
 			//プレイヤーの状態を攻撃に変更する
@@ -381,6 +502,18 @@ void CPlayer::Update() {
 					m_nHitVec = 0;
 					m_bHitFlg = false;
 					m_ePlayer = FALL_PLAYER;
+					//プレイヤーがパワーアップ状態ならパワーダウンさせる
+					if (m_bPawer_UP) {
+						//パワーアップ状態を解除する
+						m_bPawer_UP = false;					
+					}
+					else {
+						//ミス状態にする
+						m_pDraw2D->SetColor(1.0f, 1.0f, 1.0f);
+						m_ePlayer = MISS_PLAYER;
+						ChangeTexture();
+					}
+					
 				}
 				break;
 			case 4:
@@ -402,22 +535,47 @@ void CPlayer::Update() {
 		//プレイヤー以外のオブジェクトをストップする
 		ObjectManager::GetInstance()->NoFunction();
 		Parent->Use();
-		//重力のコンポーネントを使えなくする
-		Parent->GetComponent<CGravity>()->SetUse(false);
-		//プレイヤーの速度を全て消す
-		Parent->GetComponent<CTransform>()->Vel = XMFLOAT3(0.0f,0.0f,0.0f);
+		for (auto&& block:ObjectManager::GetInstance()->GetUpdateList()) {
+			if (block->GetName() == BLOCK_NAME) {
+				block->Use();
+			}
+		}
 
-		//じかんがある程度たったらゲームオーバーのメニューを出現させる
-		//テクスチャが流し終わったら
-		MenuManager::GetInsutance()->Create(GAMEOVER_STATE,25);
+		for (auto&& block : ObjectManager::GetInstance()->GetUpdateList()) {
+			if (block->GetName() == ENEMY_NAME) {
+				block->StopUpdate();
+			}
+		}
 
-		//プレイヤーの更新を止める
-		Parent->StopUpdate();
+		//落下死か敵により死亡か変更する
+		//trueで落下死
+		if (m_bAirDead) {
+			//落下死
+			//じかんがある程度たったらゲームオーバーのメニューを出現させる
+			MenuManager::GetInsutance()->Create(GAMEOVER_STATE, 25);
 
-		//シーンゲームのオプションフラグをオンにする
-		SceneGame::GetInstance()->SetPauseOOO(true);
+			//プレイヤーの更新を止める
+			Parent->StopUpdate();
 
+			//シーンゲームのオプションフラグをオンにする
+			SceneGame::GetInstance()->SetPauseOOO(true);
+		}
+		else {
+			//敵により死亡			
+			//ミスカウンターを増やし一定でゲームオーバーメニューを出す
+			m_nMissCnt++;
+			if (m_nMissCnt > 90) {
+				//じかんがある程度たったらゲームオーバーのメニューを出現させる
+				//テクスチャが流し終わったら
+				MenuManager::GetInsutance()->Create(GAMEOVER_STATE, 25);
 
+				//プレイヤーの更新を止める
+				Parent->StopUpdate();
+
+				//シーンゲームのオプションフラグをオンにする
+				SceneGame::GetInstance()->SetPauseOOO(true);
+			}
+		}
 #pragma endregion
 	default: break;
 	}
@@ -425,6 +583,10 @@ void CPlayer::Update() {
 	//攻撃のクールタイムはマイナスしておく
 	if (m_nCoolTime > 0) {
 		m_nCoolTime--;
+	}
+	//ダッシュのクールタイムもマイナスしておく
+	if (m_nDushCoolTime > 0) {
+		m_nDushCoolTime--;
 	}
 
 	//プレイヤーの最新状態を保存する
@@ -514,8 +676,9 @@ void CPlayer::Draw() {
 	Text("Pos	  : %3.0f %3.0f %3.0f", m_pPlayer->Pos.x, m_pPlayer->Pos.y, m_pPlayer->Pos.z);
 	Text("Vel	  : %.0f %.0f", m_pPlayer->Vel.x, m_pPlayer->Vel.y);
 	Text("RoL	  : %d",m_bROL);
-	Text("AnyHit  : %d",bHitObj);
 	Text("P_STATE : %d",g_ePlayer);
+	Text("DCool   : %d",m_nDushCoolTime);
+	Text("ADFlg   : %d",m_bAirDushFlg);
 	End();
 #endif // _DEBUG
 }
@@ -569,14 +732,51 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 				//座標補正
 				m_pPlayer->Pos.y = BlockUpLine + PlayerHalhSize.y - PlayerOffset.y;	
 
-				//プレイヤーの状態を地面に立っている状態に変える
-				m_ePlayer = IDLE_PLAYER;
+				//敵の攻撃にヒットしている場合状態は変えない
+				if (m_ePlayer == HIT_PLAYER||m_ePlayer == MISS_PLAYER) {
 				
+				}
+				else {
+					//プレイヤーの状態を地面に立っている状態に変える
+					m_ePlayer = IDLE_PLAYER;				
+				}
+				
+				//プレイヤーの状態がミスになっている場合ゲームオーバーにする
+				if (m_ePlayer == MISS_PLAYER) {
+					//プレイヤー以外のオブジェクトをストップする
+					ObjectManager::GetInstance()->NoFunction();
+					Parent->Use();
+					for (auto&& block : ObjectManager::GetInstance()->GetUpdateList()) {
+						if (block->GetName() == BLOCK_NAME) {
+							block->Use();
+						}
+					}
+
+					for (auto&& block : ObjectManager::GetInstance()->GetUpdateList()) {
+						if (block->GetName() == ENEMY_NAME) {
+							block->StopUpdate();
+						}
+					}
+
+					m_pDraw2D->SetColor(1.0f, 1.0f, 1.0f);
+
+					//じかんがある程度たったらゲームオーバーのメニューを出現させる
+					//テクスチャが流し終わったら
+					MenuManager::GetInsutance()->Create(GAMEOVER_STATE, 25);
+
+					//プレイヤーの更新を止める
+					Parent->StopUpdate();
+
+					//シーンゲームのオプションフラグをオンにする
+					SceneGame::GetInstance()->SetPauseOOO(true);
+
+				}
 
 				//プレイヤーの最新状態を保存する
 				if (m_bJump == true) {
 					g_ePlayer = m_ePlayer;
 					m_bJump = false;
+					m_bAirDushFlg = false;
 					Parent->GetComponent<CGravity>()->SetUse(true);
 					ChangeTexture();
 				}
@@ -640,9 +840,7 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 				if (m_nHitVec) {
 					////パワーアップしているということは強くなっているということである
 					//無敵カウントを増やす
-					m_nStar_Time = STAR_TIME;
-					//パワーアップ状態を解除する
-					m_bPawer_UP = false;	
+					m_nStar_Time = STAR_TIME;	
 					//プレイヤーのステータスを変える
 					//テクスチャも変える
 					m_ePlayer = HIT_PLAYER;
@@ -653,8 +851,12 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 			else {
 				//当たったらミス状態である
 				if (CollEnemy(pObject)) {
-					m_ePlayer = MISS_PLAYER;
+					//吹き飛ばす向きを決める
+					m_nHitVec = CollEnemy(pObject);
+					m_ePlayer = HIT_PLAYER;
 					g_ePlayer = m_ePlayer;
+					//無敵カウントを増やす
+					m_nStar_Time = 999;
 					//テクスチャを変える
 					ChangeTexture();
 				}
@@ -671,6 +873,15 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 		}
 	}
 	
+#pragma endregion
+
+#pragma region ---ミス判定
+	if (pObject->GetName() == "MISS_COLL") {
+		//やらないといけないこと
+		//ミス用のメニューを作成する
+		m_ePlayer = MISS_PLAYER;
+		g_ePlayer = m_ePlayer;
+	}
 #pragma endregion
 }
 
@@ -891,4 +1102,13 @@ void CPlayer::SetAttackFlg(bool Attack) {
 */
 bool CPlayer::GetPlayerJump() {
 	return m_bJump;
+}
+
+/**
+* @fn		CPlayer::GetPlayerSta
+* @brief	プレイヤーの状態を取得する
+* @return	(PLAYER_STATE)	現在のプレイヤーの状態を返す
+*/
+PLAYER_STATE CPlayer::GetPlayerSta() {
+	return g_ePlayer;
 }

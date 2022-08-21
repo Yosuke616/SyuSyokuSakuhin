@@ -10,6 +10,16 @@
 #include "sceneGame.h"
 #include "imgui.h"
 #include "SceneManager.h"
+#include "AnimMeshComponent.h"
+#include "ModelManager.h"
+#include "Draw3dComponent.h"
+
+/**定数定義**/
+/** @brief ステージ選択画面のオブジェクトが、
+		   どれだけの速度で移動するか*/
+#define STAGEOBJ_VEL	(2.0f)
+/** @brief どれだけ移動したかを制御する定数*/
+#define MAX_OBJ_MOVE	(150.0f)
 
 /**静的メンバ変数**/
 MenuManager* MenuManager::m_pInstance = nullptr;
@@ -69,6 +79,12 @@ void MenuManager::Start() {
 	}
 	//メニューリスト内のオブジェクトの初期化が終わったらイテレータを先頭に持ってくる
 	m_itr_Menu = m_MenuList.begin();
+	
+	//ステージ選択画面のみ初期化する
+	if (SceneManager::Instance()->GetScene() == SCENE_SELECT) {
+		m_bRestart = false;
+		m_fMoveObj = 0.0f;
+	}
 }
 
 /**
@@ -85,6 +101,7 @@ void MenuManager::Update() {
 			{
 			case TITLE_STATE: CreateTitleMenu(); break;
 			case PAUSE_STATE: CreatePauseMenu(); break;
+			case SELECT_STATE:break;
 			case OPTION_STATE:break;
 			case GAMECLEAR_STATE:break;
 			case GAMEOVER_STATE:CreateGameOverMenu(); break;
@@ -112,10 +129,23 @@ void MenuManager::Update() {
 		return pObj->GetDeleteFlag();
 	});
 
-	//ここに選択されているボタンなどを選ぶ関数を追加する
-	//選ばれているボタンの色を変えるなど
-	if (m_nDelayCnt == -1) {	
-		SelectButton();
+	/**シーンごとの処理を追加していく**/
+
+	/** @brief タイトルなど始めたりボタンを選ぶやつ*/
+	//応急処置としてシーンで入るようにする
+	if (SceneManager::Instance()->GetScene() == SCENE_TITLE ||
+		SceneManager::Instance()->GetScene() == SCENE_GAME) {	
+		//ここに選択されているボタンなどを選ぶ関数を追加する
+		//選ばれているボタンの色を変えるなど
+		if (m_nDelayCnt == -1) {	
+			SelectButton();
+		}	
+	}
+	/** @brief ステージセレクト専用の処理*/
+	if (SceneManager::Instance()->GetScene() == SCENE_SELECT) {
+		if (m_nDelayCnt == -1) {
+			StageSelect();
+		}
 	}
 }
 
@@ -153,6 +183,7 @@ void MenuManager::Create(int state,int delayCnt) {
 	m_nDelayCnt = delayCnt;
 }
 
+#pragma region ---タイトルメニュー作成
 /**
 * @fn		MenuManager::CreateTitleMenu
 * @brief	タイトルメニューの作成
@@ -214,7 +245,9 @@ void MenuManager::CreateTitleMenu() {
 	//追加されたオブジェクトの初期化を行う
 	Start();
 }
+#pragma endregion
 
+#pragma region ---ポーズメニュー作成
 /**
 * @fn		MenuManager::CeratePauseMenu
 * @brief	ポーズメニューの作成と表示
@@ -225,7 +258,98 @@ void MenuManager::CreatePauseMenu() {
 	//オプションが選ばれているようにする
 	m_nCreateMenu = PAUSE_STATE;
 }
+#pragma endregion
 
+#pragma region ---ステージセレクト
+/**
+* @fn		MenuManager::CreateSelectMenu
+* @brief	ステージセレクトメニューの作成
+*/
+void MenuManager::CreateSelectMenu() {
+	//オブジェクトリストの削除
+	DeleteMenu();
+	//ステージセレクトメニューが選ばれているようにする
+	m_nCreateMenu = SELECT_STATE;
+
+	//テクスチャマネージャー
+	TextureManager* pTexManager = TextureManager::GetInstance();
+	//モデルマネージャー
+	ModelManager* pModelManager = ModelManager::GetInstance();
+
+	//必要になってくるオブジェクトを生成する
+	//プレイヤー
+	Object* Box = new Object(PLAYER_NAME, UPDATE_PLAYER, DRAW_PLAYER);
+	auto TransBox = Box->AddComponent<CTransform>();
+	auto DrawBox = Box->AddComponent<CAnimMesh>();
+	//設定仮
+	DrawBox->SetTexture(pTexManager->GetTexture(DXCHAN_STAND_TEX_NUM));
+	TransBox->SetPosition(0.0f, -40.0f,-65.0f);
+
+	DrawBox->SetSize(DXCHAN_SIZE_X + 25, DXCHAN_SIZE_Y + 25);
+	DrawBox->SetUVsize(XMFLOAT2(-1.0f, 1.0f));
+	DrawBox->SetAnimSplit(3, 3);
+	DrawBox->SetSwapFrame(3);
+	DrawBox->SetLoop(true);
+
+	AddMenu(Box);
+
+	//ステージを表すオブジェクトの配置
+	//ステージ1
+	//オブジェクトの生成
+	Object* Stage1 = new Object("Stage_1",UPDATE_MODEL,DRAW_MODEL);
+	//コンポーネントの追加
+	auto T_Stage1 = Stage1->AddComponent<CTransform>();
+	auto D_Stage1 = Stage1->AddComponent<CDraw3D>();
+	//オブジェクトの設定
+	D_Stage1->SetModel(pModelManager->GetModel(ROSALINA_MODEL_X));
+	T_Stage1->SetPosition(0.0f,0.0f,-10);
+	T_Stage1->SetScale(50.0f,50.0f,50.0f);
+	T_Stage1->SetRotate(0.0f,180.0f,0.0f);
+	//オブジェクトマネージャーに追加
+	AddMenu(Stage1);
+	//ステージオブジェクトを管理するリストにも追加しておく
+	m_StageObjList.push_back(Stage1);
+
+	//ステージ2
+	Object* Stage2 = new Object("Stage_2", UPDATE_MODEL, DRAW_MODEL);
+	//コンポーネントの追加
+	auto T_Stage2 = Stage2->AddComponent<CTransform>();
+	auto D_Stage2 = Stage2->AddComponent<CDraw3D>();
+	//オブジェクトの設定
+	D_Stage2->SetModel(pModelManager->GetModel(ROSALINA_MODEL_X));
+	T_Stage2->SetPosition(150.0f, 0.0f, -10);
+	T_Stage2->SetScale(50.0f, 50.0f, 50.0f);
+	T_Stage2->SetRotate(0.0f, 180.0f, 0.0f);
+	//オブジェクトマネージャーに追加
+	AddMenu(Stage2);
+	//ステージオブジェクトを管理するリストにも追加しておく
+	m_StageObjList.push_back(Stage2);
+
+	//ステージ3
+	Object* Stage3 = new Object("Stage_3", UPDATE_MODEL, DRAW_MODEL);
+	//コンポーネントの追加
+	auto T_Stage3 = Stage3->AddComponent<CTransform>();
+	auto D_Stage3 = Stage3->AddComponent<CDraw3D>();
+	//オブジェクトの設定
+	D_Stage3->SetModel(pModelManager->GetModel(ROSALINA_MODEL_X));
+	T_Stage3->SetPosition(300.0f, 0.0f, -10);
+	T_Stage3->SetScale(50.0f, 50.0f, 50.0f);
+	T_Stage3->SetRotate(0.0f, 180.0f, 0.0f);
+	//オブジェクトマネージャーに追加
+	AddMenu(Stage3);
+	//ステージオブジェクトを管理するリストにも追加しておく
+	m_StageObjList.push_back(Stage3);
+
+	//追加されたオブジェクトの初期化
+	Start();
+
+	//ステージオブジェクトのリストを動かせるイテレーターは先頭を指しておく
+	m_itr_Stage = m_StageObjList.begin();
+
+}
+#pragma endregion
+
+#pragma region ---ゲームオーバーメニューの作成
 /**
 * @fn		MenuManager::CreateGameOver
 * @brief	ゲームオーバーメニューの作成
@@ -286,6 +410,7 @@ void MenuManager::CreateGameOverMenu() {
 	//追加されたオブジェクトの初期化を行う
 	Start();
 }
+#pragma endregion
 
 /**
 * @fn		MenuManager::AddMenu
@@ -410,8 +535,16 @@ void MenuManager::PushButton() {
 	case TITLE_STATE:
 		if ((*m_itr_Menu)->GetName() == "Button_Kari") {
 			//シーン遷移
-			SceneManager::Instance()->SetScene(SCENE_GAME);
-		}		
+			SceneManager::Instance()->SetScene(SCENE_SELECT);
+		}
+		else if ((*m_itr_Menu)->GetName() == "Button_Kari2") {
+			//ステージセレクトへ移動する
+			SceneManager::Instance()->SetScene(SCENE_SELECT);
+		}
+		else if ((*m_itr_Menu)->GetName() == "Button_Kari3"){
+			//ゲーム終了
+			PostMessage(GetMainWnd(), WM_CLOSE, 0, 0);
+		}
 		break;
 	case PAUSE_STATE:break;
 	case OPTION_STATE:break;
@@ -419,4 +552,137 @@ void MenuManager::PushButton() {
 	case GAMEOVER_STATE:break;
 	default:break;
 	}
+}
+
+/**
+* @fn
+* @brief
+* @detail
+*/
+void MenuManager::StageSelect() {
+	//イテレーターで選ばれている奴以外の大きさを変更する
+	for (auto&& obj : m_StageObjList) {
+		if ((*m_itr_Stage) == obj) {
+			//デフォルトの大きさにする
+			obj->GetComponent<CTransform>()->SetScale(50.0f, 50.0f, 50.0f);
+			continue;
+		}
+		obj->GetComponent<CTransform>()->SetScale(30.0f,30.0f,30.0f);
+	}
+
+	//操作不可能フラグがオフになっている場合操作できる
+	if (!m_bRestart) {
+		//ステージセレクトを右に動かす
+		if (InputManager::Instance()->GetKeyTrigger(DIK_D)) {
+
+			//操作不可能フラグを立てる
+			m_bRestart = true;
+			//作られているオブジェクトよりイテレーターが行かないようにする
+			std::list<Object*>::iterator itr = m_StageObjList.end();
+			itr--;
+			if (m_itr_Stage == itr) {
+				m_itr_Stage = itr;
+				//端っこだった場合すぐに操作できるようにする
+				m_bRestart = false;
+			}
+			else {
+				//選ばれているオブジェクトの変更
+				m_itr_Stage++;
+				//オブジェクトを左にスライドしていく
+				for (auto&& obj : m_StageObjList) {
+					obj->GetComponent<CTransform>()->Vel.x -= STAGEOBJ_VEL;
+				}
+				//プレイヤーのテクスチャを走っているものに変更する
+				Object* menuItr = nullptr;
+				for (auto&& obj : m_MenuList) {
+					if (obj->GetName() == PLAYER_NAME) {
+						menuItr = obj;
+					}
+				}
+				Object* player = menuItr;
+				player->GetComponent<CAnimMesh>()->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_RUN_TEX_NUM));
+				player->GetComponent<CAnimMesh>()->SetAnimSplit(7,2);
+				player->GetComponent<CAnimMesh>()->SetSize(DXCHAN_SIZE_X + 10, DXCHAN_SIZE_Y + 10);
+				player->GetComponent<CAnimMesh>()->SetVertex(true);
+			}
+		}
+		if (InputManager::Instance()->GetKeyTrigger(DIK_A)) {
+			//操作不可能フラグを立てる
+			m_bRestart = true;
+			//一番初めの値より下にいかにようにする
+			if (m_itr_Stage == m_StageObjList.begin()) {
+				m_itr_Stage = m_StageObjList.begin();
+				//端っこだった場合すぐに操作できるようにする
+				m_bRestart = false;
+			}
+			else {
+				//選ばれているオブジェクトの変更
+				m_itr_Stage--;
+				//オブジェクトを左にスライドしていく
+				for (auto&& obj : m_StageObjList) {
+					obj->GetComponent<CTransform>()->Vel.x += STAGEOBJ_VEL;
+				}
+				//プレイヤーのテクスチャを走っているものに変更する
+				Object* menuItr = nullptr;
+				for (auto&& obj : m_MenuList) {
+					if (obj->GetName() == PLAYER_NAME) {
+						menuItr = obj;
+					}
+				}
+				Object* player = menuItr;
+				player->GetComponent<CAnimMesh>()->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_RUN_TEX_NUM));
+				player->GetComponent<CAnimMesh>()->SetAnimSplit(7, 2);
+				player->GetComponent<CAnimMesh>()->SetSize(DXCHAN_SIZE_X + 10, DXCHAN_SIZE_Y + 10);
+				player->GetComponent<CAnimMesh>()->SetVertex(false);
+			}
+		}
+		//決定ボタンでステージに入れるようにする
+		if (InputManager::Instance()->GetKeyTrigger(DIK_RETURN)) {
+			StageIN();
+		}
+
+	}
+	else {
+		//ある程度移動したら速度を0にして再び移動できるようにする
+		m_fMoveObj += STAGEOBJ_VEL;
+		if (m_fMoveObj >= MAX_OBJ_MOVE) {
+			for (auto&& obj : m_StageObjList) {
+				obj->GetComponent<CTransform>()->Vel.x = 0.0f;
+			}
+			m_bRestart = false;
+			m_fMoveObj = 0.0f;
+			//プレイヤーのテクスチャを走っているものに変更する
+			Object* menuItr = nullptr;
+			for (auto&& obj : m_MenuList) {
+				if (obj->GetName() == PLAYER_NAME) {
+					menuItr = obj;
+				}
+			}
+			Object* player = menuItr;
+			player->GetComponent<CAnimMesh>()->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_STAND_TEX_NUM));
+			player->GetComponent<CAnimMesh>()->SetAnimSplit(3, 3);
+			player->GetComponent<CAnimMesh>()->SetSize(DXCHAN_SIZE_X + 25, DXCHAN_SIZE_Y + 25);
+			player->GetComponent<CAnimMesh>()->SetVertex(true);
+		}
+	}
+}
+
+/** 
+* @fn		MenuManager::StageIN
+* @brief	選ばれたステージによって読み込むステージを変える
+*/
+void MenuManager::StageIN() {
+	if ((*m_itr_Stage)->GetName() == "Stage_1") {
+		SceneGame::GetInstance()->SetStage(STAGE_1);
+		
+		int i = 1 + 1;
+	}
+	else if ((*m_itr_Stage)->GetName() == "Stage_2") {
+		int i = 1 + 1;
+	}
+	else if ((*m_itr_Stage)->GetName() == "Stage_3") {
+		int i = 1 + 1;
+	}
+	//シーン遷移
+	SceneManager::Instance()->SetScene(SCENE_GAME);
 }
