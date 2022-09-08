@@ -1,0 +1,775 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/imgui_impl_win32.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#typedef-members">型定義</a> &#124;
+<a href="#enum-members">列挙型</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">imgui_impl_win32.cpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="imgui_8h_source.html">imgui.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="imgui__impl__win32_8h_source.html">imgui_impl_win32.h</a>&quot;</code><br />
+<code>#include &lt;windows.h&gt;</code><br />
+<code>#include &lt;tchar.h&gt;</code><br />
+<code>#include &lt;dwmapi.h&gt;</code><br />
+<code>#include &lt;xinput.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+imgui_impl_win32.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__win32_8cpp__incl.png" border="0" usemap="#a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2imgui__impl__win32_8cpp" alt=""/></div>
+<map name="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2imgui__impl__win32_8cpp" id="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2imgui__impl__win32_8cpp">
+<area shape="rect" title=" " alt="" coords="418,5,599,61"/>
+<area shape="rect" href="imgui_8h.html" title=" " alt="" coords="242,184,306,211"/>
+<area shape="rect" href="imgui__impl__win32_8h.html" title=" " alt="" coords="260,109,395,136"/>
+<area shape="rect" title=" " alt="" coords="419,109,502,136"/>
+<area shape="rect" title=" " alt="" coords="527,109,589,136"/>
+<area shape="rect" title=" " alt="" coords="614,109,691,136"/>
+<area shape="rect" title=" " alt="" coords="716,109,784,136"/>
+<area shape="rect" href="imconfig_8h.html" title=" " alt="" coords="5,259,87,285"/>
+<area shape="rect" title=" " alt="" coords="111,259,168,285"/>
+<area shape="rect" title=" " alt="" coords="193,259,262,285"/>
+<area shape="rect" title=" " alt="" coords="287,259,355,285"/>
+<area shape="rect" title=" " alt="" coords="379,259,444,285"/>
+<area shape="rect" title=" " alt="" coords="469,259,538,285"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui___impl_win32___data.html">ImGui_ImplWin32_Data</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:ac7bef5d85e3dcd73eef56ad39ffc84a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#ac7bef5d85e3dcd73eef56ad39ffc84a9">WIN32_LEAN_AND_MEAN</a></td></tr>
+<tr class="separator:ac7bef5d85e3dcd73eef56ad39ffc84a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e4756c36e2ab0b0b13061a722d7dd1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#ac0e4756c36e2ab0b0b13061a722d7dd1">MAP_BUTTON</a>(NAV_NO,  BUTTON_ENUM)&#160;&#160;&#160;{ io.NavInputs[NAV_NO] = (gamepad.wButtons &amp; BUTTON_ENUM) ? 1.0f : 0.0f; }</td></tr>
+<tr class="separator:ac0e4756c36e2ab0b0b13061a722d7dd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb5084b87f1cecae595f6a70b5da263a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#adb5084b87f1cecae595f6a70b5da263a">MAP_ANALOG</a>(NAV_NO,  VALUE,  V0,  V1)&#160;&#160;&#160;{ float vn = (float)(VALUE - V0) / (float)(V1 - V0); if (vn &gt; 1.0f) vn = 1.0f; if (vn &gt; 0.0f &amp;&amp; io.NavInputs[NAV_NO] &lt; vn) io.NavInputs[NAV_NO] = vn; }</td></tr>
+<tr class="separator:adb5084b87f1cecae595f6a70b5da263a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b2918d422b3a1fe86a641f74818bb55"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a7b2918d422b3a1fe86a641f74818bb55">WM_MOUSEHWHEEL</a>&#160;&#160;&#160;0x020E</td></tr>
+<tr class="separator:a7b2918d422b3a1fe86a641f74818bb55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a454522b0cfb3a366cc14230e62be3e94"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a454522b0cfb3a366cc14230e62be3e94">DBT_DEVNODES_CHANGED</a>&#160;&#160;&#160;0x0007</td></tr>
+<tr class="separator:a454522b0cfb3a366cc14230e62be3e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a742997db6a6fe03581d2244ea085618e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a742997db6a6fe03581d2244ea085618e">_IsWindowsVistaOrGreater</a>()&#160;&#160;&#160;_IsWindowsVersionOrGreater(HIBYTE(0x0600), LOBYTE(0x0600), 0)</td></tr>
+<tr class="separator:a742997db6a6fe03581d2244ea085618e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8ca9bc7824bd084363ae25af2df8991"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#ae8ca9bc7824bd084363ae25af2df8991">_IsWindows8OrGreater</a>()&#160;&#160;&#160;_IsWindowsVersionOrGreater(HIBYTE(0x0602), LOBYTE(0x0602), 0)</td></tr>
+<tr class="separator:ae8ca9bc7824bd084363ae25af2df8991"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7befc644ed0e43855853f48c1045e9d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a7befc644ed0e43855853f48c1045e9d3">_IsWindows8Point1OrGreater</a>()&#160;&#160;&#160;_IsWindowsVersionOrGreater(HIBYTE(0x0603), LOBYTE(0x0603), 0)</td></tr>
+<tr class="separator:a7befc644ed0e43855853f48c1045e9d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b8cd4078bf40e54b53124033cf274a4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a2b8cd4078bf40e54b53124033cf274a4">_IsWindows10OrGreater</a>()&#160;&#160;&#160;_IsWindowsVersionOrGreater(HIBYTE(0x0A00), LOBYTE(0x0A00), 0)</td></tr>
+<tr class="separator:a2b8cd4078bf40e54b53124033cf274a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9272fbff584df35213a9076e900c24c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a9272fbff584df35213a9076e900c24c1">DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE</a>&#160;&#160;&#160;(DPI_AWARENESS_CONTEXT)-3</td></tr>
+<tr class="separator:a9272fbff584df35213a9076e900c24c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac007743843b15f477f33dc5c3dd0507a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#ac007743843b15f477f33dc5c3dd0507a">DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2</a>&#160;&#160;&#160;(DPI_AWARENESS_CONTEXT)-4</td></tr>
+<tr class="separator:ac007743843b15f477f33dc5c3dd0507a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+型定義</h2></td></tr>
+<tr class="memitem:ab894020cfaceec8e0a7e24a2b8cf003a"><td class="memItemLeft" align="right" valign="top">typedef DWORD(WINAPI *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#ab894020cfaceec8e0a7e24a2b8cf003a">PFN_XInputGetCapabilities</a>) (DWORD, DWORD, XINPUT_CAPABILITIES *)</td></tr>
+<tr class="separator:ab894020cfaceec8e0a7e24a2b8cf003a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0554b333dae0845c369b9d7234c695e9"><td class="memItemLeft" align="right" valign="top">typedef DWORD(WINAPI *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a0554b333dae0845c369b9d7234c695e9">PFN_XInputGetState</a>) (DWORD, XINPUT_STATE *)</td></tr>
+<tr class="separator:a0554b333dae0845c369b9d7234c695e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36d30a5f5f7942a50b272fa13058cf96"><td class="memItemLeft" align="right" valign="top">typedef HRESULT(WINAPI *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a36d30a5f5f7942a50b272fa13058cf96">PFN_SetProcessDpiAwareness</a>) (<a class="el" href="imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0">PROCESS_DPI_AWARENESS</a>)</td></tr>
+<tr class="separator:a36d30a5f5f7942a50b272fa13058cf96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a411247e61a6621babce2d06bb8a434db"><td class="memItemLeft" align="right" valign="top">typedef HRESULT(WINAPI *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a411247e61a6621babce2d06bb8a434db">PFN_GetDpiForMonitor</a>) (HMONITOR, <a class="el" href="imgui__impl__win32_8cpp.html#a6d3b6e6160452fd0315bf529461dadcf">MONITOR_DPI_TYPE</a>, UINT *, UINT *)</td></tr>
+<tr class="separator:a411247e61a6621babce2d06bb8a434db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4fd09e8ec8568aa443549a1286800b1"><td class="memItemLeft" align="right" valign="top">typedef DPI_AWARENESS_CONTEXT(WINAPI *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#ac4fd09e8ec8568aa443549a1286800b1">PFN_SetThreadDpiAwarenessContext</a>) (DPI_AWARENESS_CONTEXT)</td></tr>
+<tr class="separator:ac4fd09e8ec8568aa443549a1286800b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+列挙型</h2></td></tr>
+<tr class="memitem:a0b4072c3e306aab56e4b1f41f66ecfd0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0">PROCESS_DPI_AWARENESS</a> { <a class="el" href="imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0ab42f9fa8bef80716253ff5732f98d019">PROCESS_DPI_UNAWARE</a> = 0
+, <a class="el" href="imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0a2690b1d0f73cd71a24c38dbccc99be8b">PROCESS_SYSTEM_DPI_AWARE</a> = 1
+, <a class="el" href="imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0aad0077e9938715939b18fc533eeae097">PROCESS_PER_MONITOR_DPI_AWARE</a> = 2
+ }</td></tr>
+<tr class="separator:a0b4072c3e306aab56e4b1f41f66ecfd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d3b6e6160452fd0315bf529461dadcf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a6d3b6e6160452fd0315bf529461dadcf">MONITOR_DPI_TYPE</a> { <a class="el" href="imgui__impl__win32_8cpp.html#a6d3b6e6160452fd0315bf529461dadcfa75d3ba3b96559377e5cac23d6e380162">MDT_EFFECTIVE_DPI</a> = 0
+, <a class="el" href="imgui__impl__win32_8cpp.html#a6d3b6e6160452fd0315bf529461dadcfa7c555ba8472b1bcc44a2b8b7da7bc1c3">MDT_ANGULAR_DPI</a> = 1
+, <a class="el" href="imgui__impl__win32_8cpp.html#a6d3b6e6160452fd0315bf529461dadcfa3a8c01568cf5b17569b53587783e9851">MDT_RAW_DPI</a> = 2
+, <a class="el" href="imgui__impl__win32_8cpp.html#a6d3b6e6160452fd0315bf529461dadcfacf96ef9f03d6fbbef385b67cfbe2578f">MDT_DEFAULT</a> = MDT_EFFECTIVE_DPI
+ }</td></tr>
+<tr class="separator:a6d3b6e6160452fd0315bf529461dadcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a4221d0dc7d4977eb30970e1f5c2cca98"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a4221d0dc7d4977eb30970e1f5c2cca98">ImGui_ImplWin32_Init</a> (void *hwnd)</td></tr>
+<tr class="separator:a4221d0dc7d4977eb30970e1f5c2cca98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4eddd1969cc460312197f2df3dbc992a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a4eddd1969cc460312197f2df3dbc992a">ImGui_ImplWin32_Shutdown</a> ()</td></tr>
+<tr class="separator:a4eddd1969cc460312197f2df3dbc992a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4f55b90fdbd75a562d894d33f1909e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#ade4f55b90fdbd75a562d894d33f1909e">ImGui_ImplWin32_NewFrame</a> ()</td></tr>
+<tr class="separator:ade4f55b90fdbd75a562d894d33f1909e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25447e4d5d2cabecf54cb9a5c84e7cde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a25447e4d5d2cabecf54cb9a5c84e7cde">ImGui_ImplWin32_WndProcHandler</a> (HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam)</td></tr>
+<tr class="separator:a25447e4d5d2cabecf54cb9a5c84e7cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d68bc19ea52dbb5682b42f9a3316189"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a3d68bc19ea52dbb5682b42f9a3316189">DECLARE_HANDLE</a> (DPI_AWARENESS_CONTEXT)</td></tr>
+<tr class="separator:a3d68bc19ea52dbb5682b42f9a3316189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afda525ac1c8a2b4e357f19488f661014"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#afda525ac1c8a2b4e357f19488f661014">ImGui_ImplWin32_EnableDpiAwareness</a> ()</td></tr>
+<tr class="separator:afda525ac1c8a2b4e357f19488f661014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a765356269dc7e4f7f521d5f9c9bc42a5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a765356269dc7e4f7f521d5f9c9bc42a5">ImGui_ImplWin32_GetDpiScaleForMonitor</a> (void *monitor)</td></tr>
+<tr class="separator:a765356269dc7e4f7f521d5f9c9bc42a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63408fa92e0f85dcf74b27ba6b81f7f4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a63408fa92e0f85dcf74b27ba6b81f7f4">ImGui_ImplWin32_GetDpiScaleForHwnd</a> (void *hwnd)</td></tr>
+<tr class="separator:a63408fa92e0f85dcf74b27ba6b81f7f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a726a328080634cc7b808de6b7e1cec9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__win32_8cpp.html#a726a328080634cc7b808de6b7e1cec9e">ImGui_ImplWin32_EnableAlphaCompositing</a> (void *hwnd)</td></tr>
+<tr class="separator:a726a328080634cc7b808de6b7e1cec9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a2b8cd4078bf40e54b53124033cf274a4" name="a2b8cd4078bf40e54b53124033cf274a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b8cd4078bf40e54b53124033cf274a4">&#9670;&nbsp;</a></span>_IsWindows10OrGreater</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _IsWindows10OrGreater</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_IsWindowsVersionOrGreater(HIBYTE(0x0A00), LOBYTE(0x0A00), 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae8ca9bc7824bd084363ae25af2df8991" name="ae8ca9bc7824bd084363ae25af2df8991"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8ca9bc7824bd084363ae25af2df8991">&#9670;&nbsp;</a></span>_IsWindows8OrGreater</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _IsWindows8OrGreater</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_IsWindowsVersionOrGreater(HIBYTE(0x0602), LOBYTE(0x0602), 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7befc644ed0e43855853f48c1045e9d3" name="a7befc644ed0e43855853f48c1045e9d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7befc644ed0e43855853f48c1045e9d3">&#9670;&nbsp;</a></span>_IsWindows8Point1OrGreater</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _IsWindows8Point1OrGreater</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_IsWindowsVersionOrGreater(HIBYTE(0x0603), LOBYTE(0x0603), 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a742997db6a6fe03581d2244ea085618e" name="a742997db6a6fe03581d2244ea085618e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a742997db6a6fe03581d2244ea085618e">&#9670;&nbsp;</a></span>_IsWindowsVistaOrGreater</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define _IsWindowsVistaOrGreater</td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td>&#160;&#160;&#160;_IsWindowsVersionOrGreater(HIBYTE(0x0600), LOBYTE(0x0600), 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a454522b0cfb3a366cc14230e62be3e94" name="a454522b0cfb3a366cc14230e62be3e94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a454522b0cfb3a366cc14230e62be3e94">&#9670;&nbsp;</a></span>DBT_DEVNODES_CHANGED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DBT_DEVNODES_CHANGED&#160;&#160;&#160;0x0007</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9272fbff584df35213a9076e900c24c1" name="a9272fbff584df35213a9076e900c24c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9272fbff584df35213a9076e900c24c1">&#9670;&nbsp;</a></span>DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE&#160;&#160;&#160;(DPI_AWARENESS_CONTEXT)-3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac007743843b15f477f33dc5c3dd0507a" name="ac007743843b15f477f33dc5c3dd0507a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac007743843b15f477f33dc5c3dd0507a">&#9670;&nbsp;</a></span>DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DPI_AWARENESS_CONTEXT_PER_MONITOR_AWARE_V2&#160;&#160;&#160;(DPI_AWARENESS_CONTEXT)-4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adb5084b87f1cecae595f6a70b5da263a" name="adb5084b87f1cecae595f6a70b5da263a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb5084b87f1cecae595f6a70b5da263a">&#9670;&nbsp;</a></span>MAP_ANALOG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAP_ANALOG</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NAV_NO, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">VALUE, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">V0, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">V1&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ float vn = (float)(VALUE - V0) / (float)(V1 - V0); if (vn &gt; 1.0f) vn = 1.0f; if (vn &gt; 0.0f &amp;&amp; io.NavInputs[NAV_NO] &lt; vn) io.NavInputs[NAV_NO] = vn; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac0e4756c36e2ab0b0b13061a722d7dd1" name="ac0e4756c36e2ab0b0b13061a722d7dd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0e4756c36e2ab0b0b13061a722d7dd1">&#9670;&nbsp;</a></span>MAP_BUTTON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAP_BUTTON</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">NAV_NO, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">BUTTON_ENUM&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;{ io.NavInputs[NAV_NO] = (gamepad.wButtons &amp; BUTTON_ENUM) ? 1.0f : 0.0f; }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac7bef5d85e3dcd73eef56ad39ffc84a9" name="ac7bef5d85e3dcd73eef56ad39ffc84a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7bef5d85e3dcd73eef56ad39ffc84a9">&#9670;&nbsp;</a></span>WIN32_LEAN_AND_MEAN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WIN32_LEAN_AND_MEAN</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b2918d422b3a1fe86a641f74818bb55" name="a7b2918d422b3a1fe86a641f74818bb55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b2918d422b3a1fe86a641f74818bb55">&#9670;&nbsp;</a></span>WM_MOUSEHWHEEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WM_MOUSEHWHEEL&#160;&#160;&#160;0x020E</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">型定義詳解</h2>
+<a id="a411247e61a6621babce2d06bb8a434db" name="a411247e61a6621babce2d06bb8a434db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a411247e61a6621babce2d06bb8a434db">&#9670;&nbsp;</a></span>PFN_GetDpiForMonitor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef HRESULT(WINAPI * PFN_GetDpiForMonitor) (HMONITOR, <a class="el" href="imgui__impl__win32_8cpp.html#a6d3b6e6160452fd0315bf529461dadcf">MONITOR_DPI_TYPE</a>, UINT *, UINT *)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a36d30a5f5f7942a50b272fa13058cf96" name="a36d30a5f5f7942a50b272fa13058cf96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36d30a5f5f7942a50b272fa13058cf96">&#9670;&nbsp;</a></span>PFN_SetProcessDpiAwareness</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef HRESULT(WINAPI * PFN_SetProcessDpiAwareness) (<a class="el" href="imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0">PROCESS_DPI_AWARENESS</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac4fd09e8ec8568aa443549a1286800b1" name="ac4fd09e8ec8568aa443549a1286800b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4fd09e8ec8568aa443549a1286800b1">&#9670;&nbsp;</a></span>PFN_SetThreadDpiAwarenessContext</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef DPI_AWARENESS_CONTEXT(WINAPI * PFN_SetThreadDpiAwarenessContext) (DPI_AWARENESS_CONTEXT)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab894020cfaceec8e0a7e24a2b8cf003a" name="ab894020cfaceec8e0a7e24a2b8cf003a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab894020cfaceec8e0a7e24a2b8cf003a">&#9670;&nbsp;</a></span>PFN_XInputGetCapabilities</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef DWORD(WINAPI * PFN_XInputGetCapabilities) (DWORD, DWORD, XINPUT_CAPABILITIES *)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0554b333dae0845c369b9d7234c695e9" name="a0554b333dae0845c369b9d7234c695e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0554b333dae0845c369b9d7234c695e9">&#9670;&nbsp;</a></span>PFN_XInputGetState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef DWORD(WINAPI * PFN_XInputGetState) (DWORD, XINPUT_STATE *)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">列挙型詳解</h2>
+<a id="a6d3b6e6160452fd0315bf529461dadcf" name="a6d3b6e6160452fd0315bf529461dadcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d3b6e6160452fd0315bf529461dadcf">&#9670;&nbsp;</a></span>MONITOR_DPI_TYPE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="imgui__impl__win32_8cpp.html#a6d3b6e6160452fd0315bf529461dadcf">MONITOR_DPI_TYPE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a6d3b6e6160452fd0315bf529461dadcfa75d3ba3b96559377e5cac23d6e380162" name="a6d3b6e6160452fd0315bf529461dadcfa75d3ba3b96559377e5cac23d6e380162"></a>MDT_EFFECTIVE_DPI&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d3b6e6160452fd0315bf529461dadcfa7c555ba8472b1bcc44a2b8b7da7bc1c3" name="a6d3b6e6160452fd0315bf529461dadcfa7c555ba8472b1bcc44a2b8b7da7bc1c3"></a>MDT_ANGULAR_DPI&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d3b6e6160452fd0315bf529461dadcfa3a8c01568cf5b17569b53587783e9851" name="a6d3b6e6160452fd0315bf529461dadcfa3a8c01568cf5b17569b53587783e9851"></a>MDT_RAW_DPI&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6d3b6e6160452fd0315bf529461dadcfacf96ef9f03d6fbbef385b67cfbe2578f" name="a6d3b6e6160452fd0315bf529461dadcfacf96ef9f03d6fbbef385b67cfbe2578f"></a>MDT_DEFAULT&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a0b4072c3e306aab56e4b1f41f66ecfd0" name="a0b4072c3e306aab56e4b1f41f66ecfd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b4072c3e306aab56e4b1f41f66ecfd0">&#9670;&nbsp;</a></span>PROCESS_DPI_AWARENESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="imgui__impl__win32_8cpp.html#a0b4072c3e306aab56e4b1f41f66ecfd0">PROCESS_DPI_AWARENESS</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">列挙値</th></tr><tr><td class="fieldname"><a id="a0b4072c3e306aab56e4b1f41f66ecfd0ab42f9fa8bef80716253ff5732f98d019" name="a0b4072c3e306aab56e4b1f41f66ecfd0ab42f9fa8bef80716253ff5732f98d019"></a>PROCESS_DPI_UNAWARE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0b4072c3e306aab56e4b1f41f66ecfd0a2690b1d0f73cd71a24c38dbccc99be8b" name="a0b4072c3e306aab56e4b1f41f66ecfd0a2690b1d0f73cd71a24c38dbccc99be8b"></a>PROCESS_SYSTEM_DPI_AWARE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a0b4072c3e306aab56e4b1f41f66ecfd0aad0077e9938715939b18fc533eeae097" name="a0b4072c3e306aab56e4b1f41f66ecfd0aad0077e9938715939b18fc533eeae097"></a>PROCESS_PER_MONITOR_DPI_AWARE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a3d68bc19ea52dbb5682b42f9a3316189" name="a3d68bc19ea52dbb5682b42f9a3316189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d68bc19ea52dbb5682b42f9a3316189">&#9670;&nbsp;</a></span>DECLARE_HANDLE()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">DECLARE_HANDLE </td>
+          <td>(</td>
+          <td class="paramtype">DPI_AWARENESS_CONTEXT&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a726a328080634cc7b808de6b7e1cec9e" name="a726a328080634cc7b808de6b7e1cec9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a726a328080634cc7b808de6b7e1cec9e">&#9670;&nbsp;</a></span>ImGui_ImplWin32_EnableAlphaCompositing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImGui_ImplWin32_EnableAlphaCompositing </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hwnd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afda525ac1c8a2b4e357f19488f661014" name="afda525ac1c8a2b4e357f19488f661014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afda525ac1c8a2b4e357f19488f661014">&#9670;&nbsp;</a></span>ImGui_ImplWin32_EnableDpiAwareness()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImGui_ImplWin32_EnableDpiAwareness </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a63408fa92e0f85dcf74b27ba6b81f7f4" name="a63408fa92e0f85dcf74b27ba6b81f7f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63408fa92e0f85dcf74b27ba6b81f7f4">&#9670;&nbsp;</a></span>ImGui_ImplWin32_GetDpiScaleForHwnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ImGui_ImplWin32_GetDpiScaleForHwnd </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hwnd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__win32_8cpp_a63408fa92e0f85dcf74b27ba6b81f7f4_cgraph.png" border="0" usemap="#aimgui__impl__win32_8cpp_a63408fa92e0f85dcf74b27ba6b81f7f4_cgraph" alt=""/></div>
+<map name="aimgui__impl__win32_8cpp_a63408fa92e0f85dcf74b27ba6b81f7f4_cgraph" id="aimgui__impl__win32_8cpp_a63408fa92e0f85dcf74b27ba6b81f7f4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,209,47"/>
+<area shape="rect" href="imgui__impl__win32_8cpp.html#a765356269dc7e4f7f521d5f9c9bc42a5" title=" " alt="" coords="257,5,461,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a765356269dc7e4f7f521d5f9c9bc42a5" name="a765356269dc7e4f7f521d5f9c9bc42a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a765356269dc7e4f7f521d5f9c9bc42a5">&#9670;&nbsp;</a></span>ImGui_ImplWin32_GetDpiScaleForMonitor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ImGui_ImplWin32_GetDpiScaleForMonitor </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>monitor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__win32_8cpp_a765356269dc7e4f7f521d5f9c9bc42a5_icgraph.png" border="0" usemap="#aimgui__impl__win32_8cpp_a765356269dc7e4f7f521d5f9c9bc42a5_icgraph" alt=""/></div>
+<map name="aimgui__impl__win32_8cpp_a765356269dc7e4f7f521d5f9c9bc42a5_icgraph" id="aimgui__impl__win32_8cpp_a765356269dc7e4f7f521d5f9c9bc42a5_icgraph">
+<area shape="rect" title=" " alt="" coords="257,5,461,47"/>
+<area shape="rect" href="imgui__impl__win32_8cpp.html#a63408fa92e0f85dcf74b27ba6b81f7f4" title=" " alt="" coords="5,5,209,47"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4221d0dc7d4977eb30970e1f5c2cca98" name="a4221d0dc7d4977eb30970e1f5c2cca98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4221d0dc7d4977eb30970e1f5c2cca98">&#9670;&nbsp;</a></span>ImGui_ImplWin32_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGui_ImplWin32_Init </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>hwnd</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__win32_8cpp_a4221d0dc7d4977eb30970e1f5c2cca98_cgraph.png" border="0" usemap="#aimgui__impl__win32_8cpp_a4221d0dc7d4977eb30970e1f5c2cca98_cgraph" alt=""/></div>
+<map name="aimgui__impl__win32_8cpp_a4221d0dc7d4977eb30970e1f5c2cca98_cgraph" id="aimgui__impl__win32_8cpp_a4221d0dc7d4977eb30970e1f5c2cca98_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,153,32"/>
+<area shape="rect" href="namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="201,5,300,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__win32_8cpp_a4221d0dc7d4977eb30970e1f5c2cca98_icgraph.png" border="0" usemap="#aimgui__impl__win32_8cpp_a4221d0dc7d4977eb30970e1f5c2cca98_icgraph" alt=""/></div>
+<map name="aimgui__impl__win32_8cpp_a4221d0dc7d4977eb30970e1f5c2cca98_icgraph" id="aimgui__impl__win32_8cpp_a4221d0dc7d4977eb30970e1f5c2cca98_icgraph">
+<area shape="rect" title=" " alt="" coords="224,5,372,32"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="137,5,176,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ade4f55b90fdbd75a562d894d33f1909e" name="ade4f55b90fdbd75a562d894d33f1909e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4f55b90fdbd75a562d894d33f1909e">&#9670;&nbsp;</a></span>ImGui_ImplWin32_NewFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImGui_ImplWin32_NewFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__win32_8cpp_ade4f55b90fdbd75a562d894d33f1909e_cgraph.png" border="0" usemap="#aimgui__impl__win32_8cpp_ade4f55b90fdbd75a562d894d33f1909e_cgraph" alt=""/></div>
+<map name="aimgui__impl__win32_8cpp_ade4f55b90fdbd75a562d894d33f1909e_cgraph" id="aimgui__impl__win32_8cpp_ade4f55b90fdbd75a562d894d33f1909e_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,199,32"/>
+<area shape="rect" href="namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="247,5,345,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__win32_8cpp_ade4f55b90fdbd75a562d894d33f1909e_icgraph.png" border="0" usemap="#aimgui__impl__win32_8cpp_ade4f55b90fdbd75a562d894d33f1909e_icgraph" alt=""/></div>
+<map name="aimgui__impl__win32_8cpp_ade4f55b90fdbd75a562d894d33f1909e_icgraph" id="aimgui__impl__win32_8cpp_ade4f55b90fdbd75a562d894d33f1909e_icgraph">
+<area shape="rect" title=" " alt="" coords="236,5,429,32"/>
+<area shape="rect" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="137,5,188,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4eddd1969cc460312197f2df3dbc992a" name="a4eddd1969cc460312197f2df3dbc992a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eddd1969cc460312197f2df3dbc992a">&#9670;&nbsp;</a></span>ImGui_ImplWin32_Shutdown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImGui_ImplWin32_Shutdown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__win32_8cpp_a4eddd1969cc460312197f2df3dbc992a_icgraph.png" border="0" usemap="#aimgui__impl__win32_8cpp_a4eddd1969cc460312197f2df3dbc992a_icgraph" alt=""/></div>
+<map name="aimgui__impl__win32_8cpp_a4eddd1969cc460312197f2df3dbc992a_icgraph" id="aimgui__impl__win32_8cpp_a4eddd1969cc460312197f2df3dbc992a_icgraph">
+<area shape="rect" title=" " alt="" coords="240,5,428,32"/>
+<area shape="rect" href="main_app_8cpp.html#affc0f591b5f188f1b5cb4f20042e4766" title=" " alt="" coords="137,5,192,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a25447e4d5d2cabecf54cb9a5c84e7cde" name="a25447e4d5d2cabecf54cb9a5c84e7cde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25447e4d5d2cabecf54cb9a5c84e7cde">&#9670;&nbsp;</a></span>ImGui_ImplWin32_WndProcHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> LRESULT ImGui_ImplWin32_WndProcHandler </td>
+          <td>(</td>
+          <td class="paramtype">HWND&#160;</td>
+          <td class="paramname"><em>hwnd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">WPARAM&#160;</td>
+          <td class="paramname"><em>wParam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPARAM&#160;</td>
+          <td class="paramname"><em>lParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__win32_8cpp_a25447e4d5d2cabecf54cb9a5c84e7cde_cgraph.png" border="0" usemap="#aimgui__impl__win32_8cpp_a25447e4d5d2cabecf54cb9a5c84e7cde_cgraph" alt=""/></div>
+<map name="aimgui__impl__win32_8cpp_a25447e4d5d2cabecf54cb9a5c84e7cde_cgraph" id="aimgui__impl__win32_8cpp_a25447e4d5d2cabecf54cb9a5c84e7cde_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,235,57"/>
+<area shape="rect" href="namespace_im_gui.html#af557a6de5538099a0f6047eb994bbf42" title=" " alt="" coords="283,5,455,32"/>
+<area shape="rect" href="namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="319,56,418,83"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__win32_8cpp_a25447e4d5d2cabecf54cb9a5c84e7cde_icgraph.png" border="0" usemap="#aimgui__impl__win32_8cpp_a25447e4d5d2cabecf54cb9a5c84e7cde_icgraph" alt=""/></div>
+<map name="aimgui__impl__win32_8cpp_a25447e4d5d2cabecf54cb9a5c84e7cde_icgraph" id="aimgui__impl__win32_8cpp_a25447e4d5d2cabecf54cb9a5c84e7cde_icgraph">
+<area shape="rect" title=" " alt="" coords="261,5,491,32"/>
+<area shape="rect" href="main_app_8cpp.html#ae749e989b362e19783c7af4a2bf46c95" title=" " alt="" coords="137,5,213,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

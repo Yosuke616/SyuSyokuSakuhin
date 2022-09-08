@@ -1,0 +1,132 @@
+\hypertarget{_texture_manager_8h_source}{}\doxysection{Texture\+Manager.\+h}
+\label{_texture_manager_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/TextureManager.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/TextureManager.h}}
+\mbox{\hyperlink{_texture_manager_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_TEXTURE\_MANAGER\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_TEXTURE\_MANAGER\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{//インクルード部}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{//定数定義}}
+\DoxyCodeLine{18 \textcolor{comment}{}\textcolor{comment}{//DXちゃん}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define DXCHAN\_STAND\_TEX\_NUM                (500)}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define PATH\_TEX\_DXCHAN\_STAND               ("{}data/texture/Stand\_Def.PNG"{}})}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define DXCHAN\_RUN\_TEX\_NUM                  (501)}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define PATH\_TEX\_DXCHAN\_RUN                 ("{}data/texture/Run\_Def.PNG"{}})}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#define DEBUG\_BLOCK\_NUM                     (1)}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define PATH\_TEX\_DEBUG\_BLOCK                ("{}data/texture/Debug.jpg"{}})}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{//タイトル画面用}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define TITLE\_BACK\_GROUND\_NUM               (2)}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#define PATH\_TEX\_TITLE\_BACK\_GROUND          ("{}data/texture/TitleBack.jpg"{}})}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{//ボタン}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define TITLE\_BUTTON\_NUM                    (3)}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define PATH\_TEX\_TITLE\_BUTTON               ("{}data/texture/press\_enter.png"{}})}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{comment}{//フェード用テクスチャ}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define FEAD\_OUT\_NUM                        (4)}}
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#define PATH\_TEX\_FAID\_OUT                   ("{}data/texture/BlackOut.png"{}})}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{comment}{//UI関係}}
+\DoxyCodeLine{40 \textcolor{comment}{//スコア                                   }}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define SCORE\_TEX\_NUM                       (5)}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define PATH\_TEX\_SCORE                      ("{}data/texture/Score.png"{}})}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{comment}{//ハイスコア}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define MAX\_SCORE\_TEX\_NUM                   (6)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define PATH\_TEX\_MAX\_SCORE                  ("{}data/texture/highscore.png"{}})}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{comment}{//数字}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define NUMBER\_TEX\_NUM                      (7)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define PATH\_TEX\_NUMBER                     ("{}data/texture/Number.png"{}})}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{//ポーズボタン}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define PAUSE\_TEX\_NUM                       (8)}}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define PATH\_TEX\_PAUSE                      ("{}data/texture/Pause.png"{}})}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{comment}{//時間}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define TIME\_TEX\_NUM                        (9)}}
+\DoxyCodeLine{58 \textcolor{preprocessor}{\#define PATH\_TEX\_TIME                       ("{}data/texture/Time.png"{}})}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60 \textcolor{comment}{//プッシュA}}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define PUSH\_TEX\_NUM                        (10)}}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define PATH\_TEX\_PUSH                       ("{}data/texture/pushA.png"{}})}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{comment}{//タイトルへ}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define TO\_TITLE\_TEX\_NUM                    (11)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define PATH\_TEX\_TO\_TITLE                   ("{}data/texture/タイトルへ.png"{}})}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{comment}{//再開}}
+\DoxyCodeLine{69 \textcolor{preprocessor}{\#define RESUME\_TEX\_NUM                      (12)}}
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#define PATH\_TEX\_RESUME                     ("{}data/texture/再会.png"{}})}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{comment}{//オプション}}
+\DoxyCodeLine{73 \textcolor{preprocessor}{\#define OPTION\_TEX\_NUM                      (13)}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define PATH\_TEX\_OPTION                     ("{}data/texture/オプション.png"{}})}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{//初めから}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define BEGIN\_TEX\_NUM                       (14)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define PATH\_TEX\_BEGIN                      ("{}data/texture/初めから.png"{}})}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{//続きから}}
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#define CONTINUE\_TEX\_NUM                    (15)}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define PATH\_TEX\_CONTINUE                   ("{}data/texture/続きから.png"{}})}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{//ステージセレクト}}
+\DoxyCodeLine{85 \textcolor{preprocessor}{\#define STAGE\_SELECT\_TEX\_NUM                (16)}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define PATH\_TEX\_STAGE\_SELECT               ("{}data/texture/ステージセレクト.png"{}})}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 \textcolor{comment}{//終わる}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define END\_TEX\_NUM                         (17)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define PATH\_TEX\_END                        ("{}data/texture/終わる.png"{}})}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{comment}{//BGM}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define BGM\_TEX\_NUM                         (18)}}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define PATH\_TEX\_BGM                        ("{}data/texture/BYM.png"{}})}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{comment}{//SE}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define SE\_TEX\_NUM                          (19)}}
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#define PATH\_TEX\_SE                         ("{}data/texture/se.png"{}})}
+\DoxyCodeLine{99 }
+\DoxyCodeLine{100 \textcolor{comment}{//明るさ}}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define BRIGHTNESS\_TEX\_NUM                          (20)}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define PATH\_TEX\_BRIGHTNESS                 ("{}data/texture/明るさ.png"{}})}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{110 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{class_texture_manager}{TextureManager}} \{}
+\DoxyCodeLine{111 \textcolor{keyword}{private}:}
+\DoxyCodeLine{112     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{114 \textcolor{comment}{}    \textcolor{keyword}{static} \mbox{\hyperlink{class_texture_manager}{TextureManager}}* m\_pInstance;}
+\DoxyCodeLine{116     std::unordered\_map<int, ID3D11ShaderResourceView*> m\_TextureList;}
+\DoxyCodeLine{117 }
+\DoxyCodeLine{118     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{121     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{125 \textcolor{comment}{}    \mbox{\hyperlink{class_texture_manager_ad76abb178b37cedf4514eb0154349935}{TextureManager}}();}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{keyword}{public}:}
+\DoxyCodeLine{128     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{132 \textcolor{comment}{}    \mbox{\hyperlink{class_texture_manager_a001d6d74674961db79987e3222682576}{\string~TextureManager}}();}
+\DoxyCodeLine{134     \textcolor{keyword}{static} \mbox{\hyperlink{class_texture_manager}{TextureManager}}* \mbox{\hyperlink{class_texture_manager_ab73eee48ba8c35281558094e2f84013d}{GetInstance}}();}
+\DoxyCodeLine{136     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_texture_manager_ab2ef3139e30856ee768b2e98ec5259f5}{Uninit}}();}
+\DoxyCodeLine{138     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_texture_manager_acf80525b5a1e493b08426989d2940870}{AddTexture}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* pszFileName,\textcolor{keywordtype}{int} nTexID);}
+\DoxyCodeLine{140     ID3D11ShaderResourceView* \mbox{\hyperlink{class_texture_manager_a8448501f02d76a5c2362bbed98e89728}{GetTexture}}(\textcolor{keywordtype}{int} nTexID);}
+\DoxyCodeLine{142     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_texture_manager_a14eb42e81e5f2eda3ecf6f607bffc272}{EraseTexture}}(\textcolor{keywordtype}{int} nTexID);}
+\DoxyCodeLine{144     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_texture_manager_afbe079fdbf1dd84d61c32f4105eeda5c}{GetSize}}();}
+\DoxyCodeLine{145 \};}
+\DoxyCodeLine{146 }
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

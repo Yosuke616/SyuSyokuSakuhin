@@ -52,6 +52,9 @@ private:
 	/** @brief ステージマネージャーを作る予定*/
 	StageManager* m_pStageManager;
 
+	/** @brief クリアしたときにセレクト画面に戻すまでの時間*/
+	int m_nSelectCnt;
+
 	//メンバ関数
 	/** @brief コンストラクタ*/
 	SceneGame();

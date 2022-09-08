@@ -1,0 +1,204 @@
+\hypertarget{polygon_8cpp}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/polygon.cpp ファイル}
+\label{polygon_8cpp}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/polygon.cpp@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/polygon.cpp}}
+{\ttfamily \#include \char`\"{}polygon.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Shader.\+h\char`\"{}}\newline
+polygon.\+cpp の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{polygon_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{クラス}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_h_a_d_e_r___g_l_o_b_a_l}{SHADER\+\_\+\+GLOBAL}}
+\end{DoxyCompactItemize}
+\doxysubsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+HRESULT \mbox{\hyperlink{polygon_8cpp_a8bb589f707597d8419965799f063ad4e}{Init\+Polygon}} (ID3\+D11\+Device $\ast$p\+Device)
+\item 
+void \mbox{\hyperlink{polygon_8cpp_aa34cd60c6955287f7b7a0a47eaa3c4b1}{Uninit\+Polygon}} (void)
+\item 
+void \mbox{\hyperlink{polygon_8cpp_a955b016f8e9f038e703ba5e2c934eb58}{Update\+Polygon}} (void)
+\item 
+void \mbox{\hyperlink{polygon_8cpp_ade806e303d38d124b91852811a476280}{Draw\+Polygon}} (ID3\+D11\+Device\+Context $\ast$p\+Device\+Context)
+\item 
+void \mbox{\hyperlink{polygon_8cpp_a09ec1a31d3364db2c7be04093411f334}{Set\+Polygon\+Texture}} (ID3\+D11\+Shader\+Resource\+View $\ast$p\+Texture)
+\item 
+void \mbox{\hyperlink{polygon_8cpp_a057c09b269d256e117661ac5e0345e09}{Set\+Polygon\+Pos}} (float fX, float fY)
+\item 
+void \mbox{\hyperlink{polygon_8cpp_a4850bdbb9280839f6a9835ed1cf249d0}{Set\+Polygon\+Size}} (float f\+ScaleX, float f\+ScaleY)
+\item 
+void \mbox{\hyperlink{polygon_8cpp_a3752c520bd135a6bdcd36feff8e70e12}{Set\+Polygon\+Angle}} (float f\+Angle)
+\item 
+void \mbox{\hyperlink{polygon_8cpp_a585bb0396d5c1154b4b08e9878030a87}{Set\+Polygon\+UV}} (float fU, float fV)
+\item 
+void \mbox{\hyperlink{polygon_8cpp_affea2dff58b6549127a4eedb5674272c}{Set\+Polygon\+Frame\+Size}} (float f\+Width, float f\+Height)
+\item 
+void \mbox{\hyperlink{polygon_8cpp_aa2471fc9e2d03e78fa1106c5ca05751b}{Set\+Polygon\+Color}} (float f\+Red, float f\+Green, float f\+Blue)
+\item 
+void \mbox{\hyperlink{polygon_8cpp_a5534628f9b98f2e7c18f5d6424e123f8}{Set\+Polygon\+Alpha}} (float f\+Alpha)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{polygon_8cpp_ade806e303d38d124b91852811a476280}\label{polygon_8cpp_ade806e303d38d124b91852811a476280}} 
+\index{polygon.cpp@{polygon.cpp}!DrawPolygon@{DrawPolygon}}
+\index{DrawPolygon@{DrawPolygon}!polygon.cpp@{polygon.cpp}}
+\doxysubsubsection{\texorpdfstring{DrawPolygon()}{DrawPolygon()}}
+{\footnotesize\ttfamily void Draw\+Polygon (\begin{DoxyParamCaption}\item[{ID3\+D11\+Device\+Context $\ast$}]{p\+Device\+Context }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{polygon_8cpp_ade806e303d38d124b91852811a476280_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{polygon_8cpp_a8bb589f707597d8419965799f063ad4e}\label{polygon_8cpp_a8bb589f707597d8419965799f063ad4e}} 
+\index{polygon.cpp@{polygon.cpp}!InitPolygon@{InitPolygon}}
+\index{InitPolygon@{InitPolygon}!polygon.cpp@{polygon.cpp}}
+\doxysubsubsection{\texorpdfstring{InitPolygon()}{InitPolygon()}}
+{\footnotesize\ttfamily HRESULT Init\+Polygon (\begin{DoxyParamCaption}\item[{ID3\+D11\+Device $\ast$}]{p\+Device }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{polygon_8cpp_a8bb589f707597d8419965799f063ad4e_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{polygon_8cpp_a8bb589f707597d8419965799f063ad4e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{polygon_8cpp_a5534628f9b98f2e7c18f5d6424e123f8}\label{polygon_8cpp_a5534628f9b98f2e7c18f5d6424e123f8}} 
+\index{polygon.cpp@{polygon.cpp}!SetPolygonAlpha@{SetPolygonAlpha}}
+\index{SetPolygonAlpha@{SetPolygonAlpha}!polygon.cpp@{polygon.cpp}}
+\doxysubsubsection{\texorpdfstring{SetPolygonAlpha()}{SetPolygonAlpha()}}
+{\footnotesize\ttfamily void Set\+Polygon\+Alpha (\begin{DoxyParamCaption}\item[{float}]{f\+Alpha }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{polygon_8cpp_a5534628f9b98f2e7c18f5d6424e123f8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{polygon_8cpp_a3752c520bd135a6bdcd36feff8e70e12}\label{polygon_8cpp_a3752c520bd135a6bdcd36feff8e70e12}} 
+\index{polygon.cpp@{polygon.cpp}!SetPolygonAngle@{SetPolygonAngle}}
+\index{SetPolygonAngle@{SetPolygonAngle}!polygon.cpp@{polygon.cpp}}
+\doxysubsubsection{\texorpdfstring{SetPolygonAngle()}{SetPolygonAngle()}}
+{\footnotesize\ttfamily void Set\+Polygon\+Angle (\begin{DoxyParamCaption}\item[{float}]{f\+Angle }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{polygon_8cpp_a3752c520bd135a6bdcd36feff8e70e12_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{polygon_8cpp_aa2471fc9e2d03e78fa1106c5ca05751b}\label{polygon_8cpp_aa2471fc9e2d03e78fa1106c5ca05751b}} 
+\index{polygon.cpp@{polygon.cpp}!SetPolygonColor@{SetPolygonColor}}
+\index{SetPolygonColor@{SetPolygonColor}!polygon.cpp@{polygon.cpp}}
+\doxysubsubsection{\texorpdfstring{SetPolygonColor()}{SetPolygonColor()}}
+{\footnotesize\ttfamily void Set\+Polygon\+Color (\begin{DoxyParamCaption}\item[{float}]{f\+Red,  }\item[{float}]{f\+Green,  }\item[{float}]{f\+Blue }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{polygon_8cpp_aa2471fc9e2d03e78fa1106c5ca05751b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{polygon_8cpp_affea2dff58b6549127a4eedb5674272c}\label{polygon_8cpp_affea2dff58b6549127a4eedb5674272c}} 
+\index{polygon.cpp@{polygon.cpp}!SetPolygonFrameSize@{SetPolygonFrameSize}}
+\index{SetPolygonFrameSize@{SetPolygonFrameSize}!polygon.cpp@{polygon.cpp}}
+\doxysubsubsection{\texorpdfstring{SetPolygonFrameSize()}{SetPolygonFrameSize()}}
+{\footnotesize\ttfamily void Set\+Polygon\+Frame\+Size (\begin{DoxyParamCaption}\item[{float}]{f\+Width,  }\item[{float}]{f\+Height }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{polygon_8cpp_affea2dff58b6549127a4eedb5674272c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{polygon_8cpp_a057c09b269d256e117661ac5e0345e09}\label{polygon_8cpp_a057c09b269d256e117661ac5e0345e09}} 
+\index{polygon.cpp@{polygon.cpp}!SetPolygonPos@{SetPolygonPos}}
+\index{SetPolygonPos@{SetPolygonPos}!polygon.cpp@{polygon.cpp}}
+\doxysubsubsection{\texorpdfstring{SetPolygonPos()}{SetPolygonPos()}}
+{\footnotesize\ttfamily void Set\+Polygon\+Pos (\begin{DoxyParamCaption}\item[{float}]{fX,  }\item[{float}]{fY }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{polygon_8cpp_a057c09b269d256e117661ac5e0345e09_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{polygon_8cpp_a4850bdbb9280839f6a9835ed1cf249d0}\label{polygon_8cpp_a4850bdbb9280839f6a9835ed1cf249d0}} 
+\index{polygon.cpp@{polygon.cpp}!SetPolygonSize@{SetPolygonSize}}
+\index{SetPolygonSize@{SetPolygonSize}!polygon.cpp@{polygon.cpp}}
+\doxysubsubsection{\texorpdfstring{SetPolygonSize()}{SetPolygonSize()}}
+{\footnotesize\ttfamily void Set\+Polygon\+Size (\begin{DoxyParamCaption}\item[{float}]{f\+ScaleX,  }\item[{float}]{f\+ScaleY }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{polygon_8cpp_a4850bdbb9280839f6a9835ed1cf249d0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{polygon_8cpp_a09ec1a31d3364db2c7be04093411f334}\label{polygon_8cpp_a09ec1a31d3364db2c7be04093411f334}} 
+\index{polygon.cpp@{polygon.cpp}!SetPolygonTexture@{SetPolygonTexture}}
+\index{SetPolygonTexture@{SetPolygonTexture}!polygon.cpp@{polygon.cpp}}
+\doxysubsubsection{\texorpdfstring{SetPolygonTexture()}{SetPolygonTexture()}}
+{\footnotesize\ttfamily void Set\+Polygon\+Texture (\begin{DoxyParamCaption}\item[{ID3\+D11\+Shader\+Resource\+View $\ast$}]{p\+Texture }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{polygon_8cpp_a09ec1a31d3364db2c7be04093411f334_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{polygon_8cpp_a585bb0396d5c1154b4b08e9878030a87}\label{polygon_8cpp_a585bb0396d5c1154b4b08e9878030a87}} 
+\index{polygon.cpp@{polygon.cpp}!SetPolygonUV@{SetPolygonUV}}
+\index{SetPolygonUV@{SetPolygonUV}!polygon.cpp@{polygon.cpp}}
+\doxysubsubsection{\texorpdfstring{SetPolygonUV()}{SetPolygonUV()}}
+{\footnotesize\ttfamily void Set\+Polygon\+UV (\begin{DoxyParamCaption}\item[{float}]{fU,  }\item[{float}]{fV }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{polygon_8cpp_a585bb0396d5c1154b4b08e9878030a87_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{polygon_8cpp_aa34cd60c6955287f7b7a0a47eaa3c4b1}\label{polygon_8cpp_aa34cd60c6955287f7b7a0a47eaa3c4b1}} 
+\index{polygon.cpp@{polygon.cpp}!UninitPolygon@{UninitPolygon}}
+\index{UninitPolygon@{UninitPolygon}!polygon.cpp@{polygon.cpp}}
+\doxysubsubsection{\texorpdfstring{UninitPolygon()}{UninitPolygon()}}
+{\footnotesize\ttfamily void Uninit\+Polygon (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=333pt]{polygon_8cpp_aa34cd60c6955287f7b7a0a47eaa3c4b1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{polygon_8cpp_a955b016f8e9f038e703ba5e2c934eb58}\label{polygon_8cpp_a955b016f8e9f038e703ba5e2c934eb58}} 
+\index{polygon.cpp@{polygon.cpp}!UpdatePolygon@{UpdatePolygon}}
+\index{UpdatePolygon@{UpdatePolygon}!polygon.cpp@{polygon.cpp}}
+\doxysubsubsection{\texorpdfstring{UpdatePolygon()}{UpdatePolygon()}}
+{\footnotesize\ttfamily void Update\+Polygon (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+

@@ -1,0 +1,41 @@
+\hypertarget{_scene_8h_source}{}\doxysection{Scene.\+h}
+\label{_scene_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Scene.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Scene.h}}
+\mbox{\hyperlink{_scene_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_SCENE\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_SCENE\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/*}}
+\DoxyCodeLine{5 \textcolor{comment}{    作成者:YOSUKE SHIMIZU }}
+\DoxyCodeLine{6 \textcolor{comment}{    全てのシーンの元になる親クラス}}
+\DoxyCodeLine{7 \textcolor{comment}{    終わりの始まり}}
+\DoxyCodeLine{8 \textcolor{comment}{}}
+\DoxyCodeLine{9 \textcolor{comment}{    更新}}
+\DoxyCodeLine{10 \textcolor{comment}{    志水　作成開始　2022/6/3}}
+\DoxyCodeLine{11 \textcolor{comment}{*/}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{//===== インクルード ======}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_object_manager_8h}{ObjectManager.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_menu_manager_8h}{MenuManager.h}}"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//===== クラス定義 ======}}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_scene}{Scene}}}
+\DoxyCodeLine{19 \{}
+\DoxyCodeLine{20 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{21     \textcolor{comment}{//=== メンバ変数 ===}}
+\DoxyCodeLine{23 \textcolor{comment}{}    \mbox{\hyperlink{class_object_manager}{ObjectManager}}* \mbox{\hyperlink{class_scene_a6a70cba8ef8354ef1fa033685fa348a8}{m\_pObjectManager}};}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_menu_manager}{MenuManager}}* \mbox{\hyperlink{class_scene_af3bb137f44650bba2ab048c0ff0bd52d}{m\_pMenuManager}};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{public}:}
+\DoxyCodeLine{28     \textcolor{comment}{//=== メンバ関数 ===}}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_scene_ad10176d75a9cc0da56626f682d083507}{Scene}}() \{\}                         \textcolor{comment}{//  コンストラクタ}}
+\DoxyCodeLine{30     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_scene_aa0a5be58e2ee2d1fdafc5fb46b5e661e}{\string~Scene}}() \{\}                   \textcolor{comment}{//  (仮想関数)デストラクタ}}
+\DoxyCodeLine{31     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_ac3c4677dfd702a3ffd5ffadd3f1ac478}{Init}}() = 0;            \textcolor{comment}{//  (純粋仮想関数)初期化}}
+\DoxyCodeLine{32     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_aa94fb256b8a862aee810db4f1e8d56a4}{Uninit}}() = 0;            \textcolor{comment}{//  (純粋仮想関数)終了}}
+\DoxyCodeLine{33     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_ab99ec7aff3ed995985ddb764ffb78f8e}{Update}}() = 0;            \textcolor{comment}{//  (純粋仮想関数)更新}}
+\DoxyCodeLine{34     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_a8680672fd30bb4b345e6fab918e31ecd}{Draw}}() = 0;            \textcolor{comment}{//  (純粋仮想関数)描画}}
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

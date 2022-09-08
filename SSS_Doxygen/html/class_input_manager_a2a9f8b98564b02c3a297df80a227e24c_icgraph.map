@@ -1,0 +1,7 @@
+<map id="InputManager::GetKeyPress" name="InputManager::GetKeyPress">
+<area shape="rect" id="node1" title="キーボードのプレス状態を取得" alt="" coords="399,56,585,83"/>
+<area shape="rect" id="node2" href="$class_c_camera.html#a664debc0a2d44acea6112db076a520bf" title=" " alt="" coords="211,5,336,32"/>
+<area shape="rect" id="node4" href="$class_stage_manager.html#afe74bc34352fd78b5b8f2dfaf551a251" title="更新処理" alt="" coords="196,56,351,83"/>
+<area shape="rect" id="node5" href="$class_c_player.html#a4582a8020f6734842edea64909bd4b40" title="更新" alt="" coords="215,107,332,133"/>
+<area shape="rect" id="node3" href="$class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,31,148,57"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="クラス階層図" name="クラス階層図">
+<area shape="rect" id="node1" href="$class_resource_base.html" title="外部データを管理する @detail つまり外部データを管理すること" alt="" coords="5,5,112,32"/>
+<area shape="rect" id="node2" href="$class_resource_c_s_v.html" title="CSV読み込んじゃうよーん @detail 実際にファイルの中まで入り読み込んだり書き込んだりする" alt="" coords="160,5,264,32"/>
+</map>

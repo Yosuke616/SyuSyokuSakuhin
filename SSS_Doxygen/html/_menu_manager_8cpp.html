@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/MenuManager.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">MenuManager.cpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_menu_manager_8h_source.html">MenuManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_object_8h_source.html">Object.h</a>&quot;</code><br />
+<code>#include &lt;crtdbg.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_transform_component_8h_source.html">TransformComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_input_manager_8h_source.html">InputManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_draw2_d_component_8h_source.html">Draw2DComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_collider_component_8h_source.html">ColliderComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_texture_manager_8h_source.html">TextureManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="scene_game_8h_source.html">sceneGame.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="imgui_8h_source.html">imgui.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_scene_manager_8h_source.html">SceneManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_anim_mesh_component_8h_source.html">AnimMeshComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_model_manager_8h_source.html">ModelManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_draw3d_component_8h_source.html">Draw3dComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_obj_info_8h_source.html">ObjInfo.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_player_component_8h_source.html">PlayerComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_object_manager_8h_source.html">ObjectManager.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+MenuManager.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_menu_manager_8cpp__incl.png" border="0" usemap="#a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_menu_manager_8cpp" alt=""/></div>
+<map name="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_menu_manager_8cpp" id="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_menu_manager_8cpp">
+<area shape="rect" title=" " alt="" coords="741,5,923,61"/>
+<area shape="rect" href="_menu_manager_8h.html" title="メニューを操作したりするマネージャー" alt="" coords="397,333,512,360"/>
+<area shape="rect" href="_object_8h.html" title=" " alt="" coords="94,333,165,360"/>
+<area shape="rect" href="_obj_info_8h.html" title=" " alt="" coords="19,408,93,435"/>
+<area shape="rect" title=" " alt="" coords="1412,109,1481,136"/>
+<area shape="rect" href="_transform_component_8h.html" title=" " alt="" coords="414,184,570,211"/>
+<area shape="rect" href="_input_manager_8h.html" title="コントローラーやキーボード操作できるようにする" alt="" coords="1074,109,1185,136"/>
+<area shape="rect" href="_draw2_d_component_8h.html" title=" " alt="" coords="144,184,288,211"/>
+<area shape="rect" href="_collider_component_8h.html" title="このコンポーネントを持つオブジェクトどうしが当たっているか判断する" alt="" coords="594,184,737,211"/>
+<area shape="rect" href="_texture_manager_8h.html" title="テクスチャの情報を管理するマネージャー" alt="" coords="1527,184,1654,211"/>
+<area shape="rect" href="scene_game_8h.html" title="実はゲームシーンである" alt="" coords="1401,184,1503,211"/>
+<area shape="rect" href="_object_manager_8h.html" title=" " alt="" coords="189,333,310,360"/>
+<area shape="rect" href="imgui_8h.html" title=" " alt="" coords="2011,109,2075,136"/>
+<area shape="rect" href="_scene_manager_8h.html" title=" " alt="" coords="1256,184,1376,211"/>
+<area shape="rect" href="_anim_mesh_component_8h.html" title="テクスチャアニメーションを描画するコンポーネント" alt="" coords="879,109,1041,136"/>
+<area shape="rect" href="_model_manager_8h.html" title="モデルを管理するためのマネージャー" alt="" coords="1678,184,1797,211"/>
+<area shape="rect" href="_draw3d_component_8h.html" title=" " alt="" coords="761,184,903,211"/>
+<area shape="rect" href="_player_component_8h.html" title="プレイヤーの操作をするコンポーネント" alt="" coords="388,109,524,136"/>
+<area shape="rect" href="main_app_8h.html" title=" " alt="" coords="1007,408,1091,435"/>
+<area shape="rect" title=" " alt="" coords="230,408,269,435"/>
+<area shape="rect" title=" " alt="" coords="2111,483,2193,509"/>
+<area shape="rect" title=" " alt="" coords="1061,483,1123,509"/>
+<area shape="rect" title=" " alt="" coords="1148,483,1247,509"/>
+<area shape="rect" title=" " alt="" coords="1342,483,1410,509"/>
+<area shape="rect" title=" " alt="" coords="1801,483,1903,509"/>
+<area shape="rect" href="resource_8h.html" title=" " alt="" coords="867,483,949,509"/>
+<area shape="rect" title=" " alt="" coords="974,483,1037,509"/>
+<area shape="rect" title=" " alt="" coords="134,408,189,435"/>
+<area shape="rect" href="_component_8h.html" title=" " alt="" coords="443,259,541,285"/>
+<area shape="rect" title=" " alt="" coords="1113,184,1181,211"/>
+<area shape="rect" title=" " alt="" coords="1137,333,1193,360"/>
+<area shape="rect" title=" " alt="" coords="1658,259,1769,285"/>
+<area shape="rect" href="_scene_8h.html" title=" " alt="" coords="657,259,727,285"/>
+<area shape="rect" href="_assimp_model_8h.html" title=" " alt="" coords="1521,259,1633,285"/>
+<area shape="rect" title=" " alt="" coords="1405,333,1451,360"/>
+<area shape="rect" title=" " alt="" coords="1475,333,1615,360"/>
+<area shape="rect" title=" " alt="" coords="1640,333,1755,360"/>
+<area shape="rect" title=" " alt="" coords="1779,333,1930,360"/>
+<area shape="rect" href="_camera_8h.html" title=" " alt="" coords="1954,333,2033,360"/>
+<area shape="rect" href="_light_8h.html" title="ライトを設定するためのクラス" alt="" coords="1319,333,1380,360"/>
+<area shape="rect" href="imconfig_8h.html" title=" " alt="" coords="1821,184,1902,211"/>
+<area shape="rect" title=" " alt="" coords="1926,184,1983,211"/>
+<area shape="rect" title=" " alt="" coords="2008,184,2077,211"/>
+<area shape="rect" title=" " alt="" coords="2102,184,2170,211"/>
+<area shape="rect" title=" " alt="" coords="2194,184,2259,211"/>
+<area shape="rect" title=" " alt="" coords="2284,184,2353,211"/>
+<area shape="rect" href="_draw_mesh_component_8h.html" title=" " alt="" coords="928,184,1088,211"/>
+<area shape="rect" href="mesh_8h.html" title=" " alt="" coords="895,259,961,285"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a2b066b074a5a63307745ff85a83a4fa3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_menu_manager_8cpp.html#a2b066b074a5a63307745ff85a83a4fa3">STAGEOBJ_VEL</a>&#160;&#160;&#160;(2.0f)</td></tr>
+<tr class="memdesc:a2b066b074a5a63307745ff85a83a4fa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">ステージ選択画面のオブジェクトが、 どれだけの速度で移動するか  <a href="_menu_manager_8cpp.html#a2b066b074a5a63307745ff85a83a4fa3">[詳解]</a><br /></td></tr>
+<tr class="separator:a2b066b074a5a63307745ff85a83a4fa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23eeecdd60ef7d1dd104420dca15388b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_menu_manager_8cpp.html#a23eeecdd60ef7d1dd104420dca15388b">MAX_OBJ_MOVE</a>&#160;&#160;&#160;(150.0f)</td></tr>
+<tr class="memdesc:a23eeecdd60ef7d1dd104420dca15388b"><td class="mdescLeft">&#160;</td><td class="mdescRight">どれだけ移動したかを制御する定数  <a href="_menu_manager_8cpp.html#a23eeecdd60ef7d1dd104420dca15388b">[詳解]</a><br /></td></tr>
+<tr class="separator:a23eeecdd60ef7d1dd104420dca15388b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a23eeecdd60ef7d1dd104420dca15388b" name="a23eeecdd60ef7d1dd104420dca15388b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23eeecdd60ef7d1dd104420dca15388b">&#9670;&nbsp;</a></span>MAX_OBJ_MOVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_OBJ_MOVE&#160;&#160;&#160;(150.0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>どれだけ移動したかを制御する定数 </p>
+
+</div>
+</div>
+<a id="a2b066b074a5a63307745ff85a83a4fa3" name="a2b066b074a5a63307745ff85a83a4fa3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b066b074a5a63307745ff85a83a4fa3">&#9670;&nbsp;</a></span>STAGEOBJ_VEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STAGEOBJ_VEL&#160;&#160;&#160;(2.0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ステージ選択画面のオブジェクトが、 どれだけの速度で移動するか </p>
+<p >インクルード部 定数定義 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

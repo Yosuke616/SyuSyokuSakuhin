@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Animation.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Animation.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_animation_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//インクルードガード</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef _ANIMATION_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define  _ANIMATION_H_</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//インクルード部</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_component_8h.html">Component.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//前方宣言</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class </span><a class="code hl_class" href="class_c_draw3_d.html">CDraw3D</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//クラス定義</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_animation.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="class_animation.html">Animation</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"></span>    std::unordered_map&lt;int, double&gt; m_dStart;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    std::unordered_map&lt;int, double&gt; m_dEnd;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::unordered_map&lt;int, double&gt; m_dSpeed;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::unordered_map&lt;int, bool&gt; m_bLoop;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::unordered_map&lt;int, int&gt; m_nOrder;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    std::unordered_map&lt;int, bool&gt; m_bEnd;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">double</span> m_dCurrentAnimTime;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">int</span> m_nCurrentAnimState;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">bool</span> m_bIdle;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">bool</span> m_bAnimation;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_class" href="class_c_draw3_d.html">CDraw3D</a>* m_pDraw3D;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment"></span>    <a class="code hl_function" href="class_animation.html#a83f0a16cef7117f187ad596de38dd9d6">Animation</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_function" href="class_animation.html#a401b68793d4fbf48d481c030ee4b2a16">~Animation</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_animation.html#a0c6a4e940db84d4a6246fcb3ae773402">Update</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_animation.html#a708aaadcc89b683ae349666cbe9e27df">Draw</a>();</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_animation.html#a62fb5ac8de4add3dd87b5f23d65a1ccd">SetModel</a>(<a class="code hl_class" href="class_c_draw3_d.html">CDraw3D</a>* model);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_animation.html#a1a37908b77156028e7036f9d3c07e5f1">Play</a>(<span class="keywordtype">int</span> AnimState);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_animation.html#a87d73dfc88a366e086e0518328e1c1a0">Stop</a>();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_animation.html#aa243c086390d580e3ef98f526160995c">AddAnimation</a>(<span class="keywordtype">int</span> AnimID,<span class="keywordtype">double</span> start,<span class="keywordtype">double</span> end,<span class="keywordtype">double</span> loopStartFrame,<span class="keywordtype">bool</span> loop);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_animation.html#a0600d4ca9e8b7eeca72e31fc78251abd">SetLoop</a>(<span class="keywordtype">int</span> AnimID,<span class="keywordtype">bool</span> loop);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_animation.html#ac94f4663a797edb00c9a60cb59e74dac">SetPlaySpeed</a>(<span class="keywordtype">int</span> AnimID,<span class="keywordtype">double</span> speed);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_animation.html#a61dd177c4b20f9d560bd76199079bf5b">AnimEnd</a>(<span class="keywordtype">int</span> AnimID);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_animation.html#a229edf28387b4f8d007bd0c7354b4742">AlwaysAnimation</a>(<span class="keywordtype">bool</span> always);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>};</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_component_8h_html"><div class="ttname"><a href="_component_8h.html">Component.h</a></div></div>
+<div class="ttc" id="aclass_animation_html"><div class="ttname"><a href="class_animation.html">Animation</a></div><div class="ttdef"><b>Definition:</b> Animation.h:20</div></div>
+<div class="ttc" id="aclass_animation_html_a0600d4ca9e8b7eeca72e31fc78251abd"><div class="ttname"><a href="class_animation.html#a0600d4ca9e8b7eeca72e31fc78251abd">Animation::SetLoop</a></div><div class="ttdeci">void SetLoop(int AnimID, bool loop)</div><div class="ttdoc">ループ再生の設定</div><div class="ttdef"><b>Definition:</b> Animation.cpp:142</div></div>
+<div class="ttc" id="aclass_animation_html_a0c6a4e940db84d4a6246fcb3ae773402"><div class="ttname"><a href="class_animation.html#a0c6a4e940db84d4a6246fcb3ae773402">Animation::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">更新処理</div><div class="ttdef"><b>Definition:</b> Animation.cpp:34</div></div>
+<div class="ttc" id="aclass_animation_html_a1a37908b77156028e7036f9d3c07e5f1"><div class="ttname"><a href="class_animation.html#a1a37908b77156028e7036f9d3c07e5f1">Animation::Play</a></div><div class="ttdeci">void Play(int AnimState)</div><div class="ttdoc">再生</div><div class="ttdef"><b>Definition:</b> Animation.cpp:111</div></div>
+<div class="ttc" id="aclass_animation_html_a229edf28387b4f8d007bd0c7354b4742"><div class="ttname"><a href="class_animation.html#a229edf28387b4f8d007bd0c7354b4742">Animation::AlwaysAnimation</a></div><div class="ttdeci">void AlwaysAnimation(bool always)</div><div class="ttdoc">常に再生しているかどうか</div><div class="ttdef"><b>Definition:</b> Animation.cpp:178</div></div>
+<div class="ttc" id="aclass_animation_html_a401b68793d4fbf48d481c030ee4b2a16"><div class="ttname"><a href="class_animation.html#a401b68793d4fbf48d481c030ee4b2a16">Animation::~Animation</a></div><div class="ttdeci">~Animation()</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> Animation.cpp:26</div></div>
+<div class="ttc" id="aclass_animation_html_a61dd177c4b20f9d560bd76199079bf5b"><div class="ttname"><a href="class_animation.html#a61dd177c4b20f9d560bd76199079bf5b">Animation::AnimEnd</a></div><div class="ttdeci">bool AnimEnd(int AnimID)</div><div class="ttdoc">アニメーションが終わったかのフラグ</div><div class="ttdef"><b>Definition:</b> Animation.cpp:198</div></div>
+<div class="ttc" id="aclass_animation_html_a62fb5ac8de4add3dd87b5f23d65a1ccd"><div class="ttname"><a href="class_animation.html#a62fb5ac8de4add3dd87b5f23d65a1ccd">Animation::SetModel</a></div><div class="ttdeci">void SetModel(CDraw3D *model)</div><div class="ttdoc">モデルの設定</div><div class="ttdef"><b>Definition:</b> Animation.cpp:152</div></div>
+<div class="ttc" id="aclass_animation_html_a708aaadcc89b683ae349666cbe9e27df"><div class="ttname"><a href="class_animation.html#a708aaadcc89b683ae349666cbe9e27df">Animation::Draw</a></div><div class="ttdeci">void Draw()</div><div class="ttdoc">描画処理</div><div class="ttdef"><b>Definition:</b> Animation.cpp:98</div></div>
+<div class="ttc" id="aclass_animation_html_a83f0a16cef7117f187ad596de38dd9d6"><div class="ttname"><a href="class_animation.html#a83f0a16cef7117f187ad596de38dd9d6">Animation::Animation</a></div><div class="ttdeci">Animation()</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> Animation.cpp:15</div></div>
+<div class="ttc" id="aclass_animation_html_a87d73dfc88a366e086e0518328e1c1a0"><div class="ttname"><a href="class_animation.html#a87d73dfc88a366e086e0518328e1c1a0">Animation::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">停止</div><div class="ttdef"><b>Definition:</b> Animation.cpp:131</div></div>
+<div class="ttc" id="aclass_animation_html_aa243c086390d580e3ef98f526160995c"><div class="ttname"><a href="class_animation.html#aa243c086390d580e3ef98f526160995c">Animation::AddAnimation</a></div><div class="ttdeci">void AddAnimation(int AnimID, double start, double end, double loopStartFrame, bool loop)</div><div class="ttdoc">アニメーションの追加</div><div class="ttdef"><b>Definition:</b> Animation.cpp:165</div></div>
+<div class="ttc" id="aclass_animation_html_ac94f4663a797edb00c9a60cb59e74dac"><div class="ttname"><a href="class_animation.html#ac94f4663a797edb00c9a60cb59e74dac">Animation::SetPlaySpeed</a></div><div class="ttdeci">void SetPlaySpeed(int AnimID, double speed)</div><div class="ttdoc">再生速度の設定</div><div class="ttdef"><b>Definition:</b> Animation.cpp:188</div></div>
+<div class="ttc" id="aclass_c_draw3_d_html"><div class="ttname"><a href="class_c_draw3_d.html">CDraw3D</a></div><div class="ttdef"><b>Definition:</b> Draw3dComponent.h:22</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

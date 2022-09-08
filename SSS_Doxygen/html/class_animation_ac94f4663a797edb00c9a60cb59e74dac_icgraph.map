@@ -1,0 +1,4 @@
+<map id="Animation::SetPlaySpeed" name="Animation::SetPlaySpeed">
+<area shape="rect" id="node1" title="再生速度の設定" alt="" coords="220,5,391,32"/>
+<area shape="rect" id="node2" href="$class_c_draw3_d.html#adf63db5ebc5fd24b789a4bbd042c4a95" title="再生速度" alt="" coords="5,5,172,32"/>
+</map>

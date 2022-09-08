@@ -105,7 +105,7 @@ void SetZBuffer(bool bEnable);				//	深度バッファ有効無効制御
 void SetZWrite(bool bEnable);				//	深度バッファ更新有効無効制御
 
 
-#define 成田
+//#define 成田
 
 // スクリーン座標をワールド座標に変換
 XMVECTOR* CalcScreenToWorld(

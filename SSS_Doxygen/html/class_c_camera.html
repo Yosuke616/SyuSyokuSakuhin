@@ -1,0 +1,1084 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: CCamera クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="class_c_camera-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">CCamera クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_camera_8h_source.html">Camera.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a2eb95595766a84cb745ec00783595190"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a2eb95595766a84cb745ec00783595190">CCamera</a> ()</td></tr>
+<tr class="separator:a2eb95595766a84cb745ec00783595190"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d4ee70503ea51954543621268bfb295"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a7d4ee70503ea51954543621268bfb295">Init</a> ()</td></tr>
+<tr class="separator:a7d4ee70503ea51954543621268bfb295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a664debc0a2d44acea6112db076a520bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a664debc0a2d44acea6112db076a520bf">Update</a> ()</td></tr>
+<tr class="separator:a664debc0a2d44acea6112db076a520bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63f970e7d925755e787761d135b7dbd7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a63f970e7d925755e787761d135b7dbd7">Draw</a> ()</td></tr>
+<tr class="separator:a63f970e7d925755e787761d135b7dbd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3f7c288082765833d3ea4553a7cb84e"><td class="memItemLeft" align="right" valign="top">XMFLOAT4X4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#aa3f7c288082765833d3ea4553a7cb84e">CalcWorldMatrix</a> ()</td></tr>
+<tr class="separator:aa3f7c288082765833d3ea4553a7cb84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1b29f785bec590c800582864abfb2fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#ac1b29f785bec590c800582864abfb2fd">UpdateMatrix</a> ()</td></tr>
+<tr class="separator:ac1b29f785bec590c800582864abfb2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3068cc18259bf078ceb7d559a41ae5d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a3068cc18259bf078ceb7d559a41ae5d6">SetPos</a> (XMFLOAT3 &amp;vPos)</td></tr>
+<tr class="separator:a3068cc18259bf078ceb7d559a41ae5d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c0fab8dacb1965c6361fad9a9f32642"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a6c0fab8dacb1965c6361fad9a9f32642">SetPos</a> (float x, float y, float z)</td></tr>
+<tr class="separator:a6c0fab8dacb1965c6361fad9a9f32642"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7619961c5d0aa0818d8041f1bb50ad4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a7619961c5d0aa0818d8041f1bb50ad4b">SetTarget</a> (XMFLOAT3 &amp;vTarget)</td></tr>
+<tr class="separator:a7619961c5d0aa0818d8041f1bb50ad4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72fc86f29bc87413fe39116803bf878a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a72fc86f29bc87413fe39116803bf878a">SetTarget</a> (float x, float y, float z)</td></tr>
+<tr class="separator:a72fc86f29bc87413fe39116803bf878a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4106c9325f7a4db76f257b230756e56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#ad4106c9325f7a4db76f257b230756e56">SetUpVector</a> (XMFLOAT3 &amp;vUp)</td></tr>
+<tr class="separator:ad4106c9325f7a4db76f257b230756e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d4f16fd20a640cf1fe747100a87f0a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a9d4f16fd20a640cf1fe747100a87f0a5">SetUpVector</a> (float x, float y, float z)</td></tr>
+<tr class="separator:a9d4f16fd20a640cf1fe747100a87f0a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa89abb662e1058a2e2f0d6ee628c2b74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#aa89abb662e1058a2e2f0d6ee628c2b74">SetWorldMatrix</a> (XMFLOAT4X4 &amp;mtxWorld)</td></tr>
+<tr class="separator:aa89abb662e1058a2e2f0d6ee628c2b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1210d6c1d274bde0198cf28af414a787"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a1210d6c1d274bde0198cf28af414a787">SetFovY</a> (float fFovY)</td></tr>
+<tr class="separator:a1210d6c1d274bde0198cf28af414a787"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e219eeeae6b6d5a4f81107588841c87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a5e219eeeae6b6d5a4f81107588841c87">SetAspectRatio</a> (float fAspect)</td></tr>
+<tr class="separator:a5e219eeeae6b6d5a4f81107588841c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93d38558bd61734ddf07849d0276048e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a93d38558bd61734ddf07849d0276048e">SetRangeZ</a> (float fNearZ, float fFarZ)</td></tr>
+<tr class="separator:a93d38558bd61734ddf07849d0276048e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00af0fdc49e18b6087ef87205d6ddf03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a00af0fdc49e18b6087ef87205d6ddf03">SetLimit</a> (XMFLOAT2 limit)</td></tr>
+<tr class="separator:a00af0fdc49e18b6087ef87205d6ddf03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3006370e0b6250401ee797c120a24f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#ab3006370e0b6250401ee797c120a24f4">SetDestPos</a> (float CameraposZ)</td></tr>
+<tr class="separator:ab3006370e0b6250401ee797c120a24f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c938658ede08754ba4ffd9a3dd35ea3"><td class="memItemLeft" align="right" valign="top">XMFLOAT3 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a6c938658ede08754ba4ffd9a3dd35ea3">GetPos</a> ()</td></tr>
+<tr class="separator:a6c938658ede08754ba4ffd9a3dd35ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad6ea0c4224522c0b9cc84f7becdd198"><td class="memItemLeft" align="right" valign="top">XMFLOAT3 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#aad6ea0c4224522c0b9cc84f7becdd198">GetAngle</a> ()</td></tr>
+<tr class="separator:aad6ea0c4224522c0b9cc84f7becdd198"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb30390410d1da74734c7ff6406f1ecd"><td class="memItemLeft" align="right" valign="top">XMFLOAT4X4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#adb30390410d1da74734c7ff6406f1ecd">GetWorldMatrix</a> ()</td></tr>
+<tr class="separator:adb30390410d1da74734c7ff6406f1ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d42e5fecad0bcdab17124b402aa1575"><td class="memItemLeft" align="right" valign="top">XMFLOAT4X4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a1d42e5fecad0bcdab17124b402aa1575">GetViewMatrix</a> ()</td></tr>
+<tr class="separator:a1d42e5fecad0bcdab17124b402aa1575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99bbeae7433475a61979f603f439ab13"><td class="memItemLeft" align="right" valign="top">XMFLOAT4X4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a99bbeae7433475a61979f603f439ab13">GetProjMatrix</a> ()</td></tr>
+<tr class="separator:a99bbeae7433475a61979f603f439ab13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c6bd52c0adfd69f653404e93f7e5c86"><td class="memItemLeft" align="right" valign="top">float *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a0c6bd52c0adfd69f653404e93f7e5c86">GetAxisX</a> ()</td></tr>
+<tr class="separator:a0c6bd52c0adfd69f653404e93f7e5c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae82b8d4b214bd06f117c900b69fa0d76"><td class="memItemLeft" align="right" valign="top">const XMFLOAT3 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#ae82b8d4b214bd06f117c900b69fa0d76">GetLook</a> () const</td></tr>
+<tr class="separator:ae82b8d4b214bd06f117c900b69fa0d76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab45d2623675e194d6577de8f5898a8e8"><td class="memItemLeft" align="right" valign="top">const XMFLOAT3 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#ab45d2623675e194d6577de8f5898a8e8">GetUp</a> () const</td></tr>
+<tr class="separator:ab45d2623675e194d6577de8f5898a8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a567d3591eef1214a9ac46f37aacc6faf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a567d3591eef1214a9ac46f37aacc6faf">GetAspect</a> () const</td></tr>
+<tr class="separator:a567d3591eef1214a9ac46f37aacc6faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91c79d9cb36427542e1504244adf7298"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a91c79d9cb36427542e1504244adf7298">GetNearClip</a> () const</td></tr>
+<tr class="separator:a91c79d9cb36427542e1504244adf7298"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8de155ed4066592bc4b4bedb37a1b5c5"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a8de155ed4066592bc4b4bedb37a1b5c5">GetFarClip</a> () const</td></tr>
+<tr class="separator:a8de155ed4066592bc4b4bedb37a1b5c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cee4365487aa284b62baf0cf9185306"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a2cee4365487aa284b62baf0cf9185306">GetFOV</a> () const</td></tr>
+<tr class="separator:a2cee4365487aa284b62baf0cf9185306"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a828ac625f9c67b8927be3ccf2c6c4576"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_camera.html">CCamera</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a828ac625f9c67b8927be3ccf2c6c4576">operator=</a> (const <a class="el" href="class_c_camera.html">CCamera</a> &amp;camera)</td></tr>
+<tr class="separator:a828ac625f9c67b8927be3ccf2c6c4576"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad14e000a4787d825e27bb994b65860b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#aad14e000a4787d825e27bb994b65860b">SetAxisX</a> (float *px)</td></tr>
+<tr class="separator:aad14e000a4787d825e27bb994b65860b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f115992145660660e9f6a02a16f174b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a7f115992145660660e9f6a02a16f174b">SetAxisY</a> (float *py)</td></tr>
+<tr class="memdesc:a7f115992145660660e9f6a02a16f174b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Y軸の注視点の設定をする 2022/7/26  <a href="class_c_camera.html#a7f115992145660660e9f6a02a16f174b">[詳解]</a><br /></td></tr>
+<tr class="separator:a7f115992145660660e9f6a02a16f174b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a67560cf6a017ec3b8a59129be0d0100a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_c_camera.html">CCamera</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a67560cf6a017ec3b8a59129be0d0100a">Get</a> ()</td></tr>
+<tr class="separator:a67560cf6a017ec3b8a59129be0d0100a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1729d20502996e3a731024b1203aa647"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_camera.html#a1729d20502996e3a731024b1203aa647">Set</a> (<a class="el" href="class_c_camera.html">CCamera</a> *pCamera)</td></tr>
+<tr class="separator:a1729d20502996e3a731024b1203aa647"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a2eb95595766a84cb745ec00783595190" name="a2eb95595766a84cb745ec00783595190"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2eb95595766a84cb745ec00783595190">&#9670;&nbsp;</a></span>CCamera()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CCamera::CCamera </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_a2eb95595766a84cb745ec00783595190_cgraph.png" border="0" usemap="#aclass_c_camera_a2eb95595766a84cb745ec00783595190_cgraph" alt=""/></div>
+<map name="aclass_c_camera_a2eb95595766a84cb745ec00783595190_cgraph" id="aclass_c_camera_a2eb95595766a84cb745ec00783595190_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,144,32"/>
+<area shape="rect" href="class_c_camera.html#a7d4ee70503ea51954543621268bfb295" title=" " alt="" coords="192,5,293,32"/>
+<area shape="rect" href="class_c_camera.html#aa3f7c288082765833d3ea4553a7cb84e" title=" " alt="" coords="341,5,521,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aa3f7c288082765833d3ea4553a7cb84e" name="aa3f7c288082765833d3ea4553a7cb84e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3f7c288082765833d3ea4553a7cb84e">&#9670;&nbsp;</a></span>CalcWorldMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XMFLOAT4X4 &amp; CCamera::CalcWorldMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_aa3f7c288082765833d3ea4553a7cb84e_icgraph.png" border="0" usemap="#aclass_c_camera_aa3f7c288082765833d3ea4553a7cb84e_icgraph" alt=""/></div>
+<map name="aclass_c_camera_aa3f7c288082765833d3ea4553a7cb84e_icgraph" id="aclass_c_camera_aa3f7c288082765833d3ea4553a7cb84e_icgraph">
+<area shape="rect" title=" " alt="" coords="341,56,521,83"/>
+<area shape="rect" href="class_c_camera.html#a7d4ee70503ea51954543621268bfb295" title=" " alt="" coords="192,56,293,83"/>
+<area shape="rect" href="class_c_camera.html#a2eb95595766a84cb745ec00783595190" title=" " alt="" coords="5,5,144,32"/>
+<area shape="rect" href="class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="15,56,134,83"/>
+<area shape="rect" href="class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="15,107,134,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a63f970e7d925755e787761d135b7dbd7" name="a63f970e7d925755e787761d135b7dbd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63f970e7d925755e787761d135b7dbd7">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::Draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_a63f970e7d925755e787761d135b7dbd7_cgraph.png" border="0" usemap="#aclass_c_camera_a63f970e7d925755e787761d135b7dbd7_cgraph" alt=""/></div>
+<map name="aclass_c_camera_a63f970e7d925755e787761d135b7dbd7_cgraph" id="aclass_c_camera_a63f970e7d925755e787761d135b7dbd7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,604,119,631"/>
+<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="209,267,307,293"/>
+<area shape="rect" href="namespace_im_gui.html#a5479d93794a004c67ceb6d13f37c8254" title=" " alt="" coords="215,553,301,580"/>
+<area shape="rect" href="namespace_im_gui.html#afbccd31113430670b5ab2bf0d6f509bf" title=" " alt="" coords="168,604,348,631"/>
+<area shape="rect" href="namespace_im_gui.html#ab33717bb71ef5e393ae18656fc6b229d" title=" " alt="" coords="167,655,349,681"/>
+<area shape="rect" href="namespace_im_gui.html#a9e7b83611fe441d54fad2effb4bf4965" title=" " alt="" coords="213,731,303,757"/>
+<area shape="rect" href="namespace_im_gui.html#abca25f22c02e73d5eb2e9c72c4557813" title=" " alt="" coords="397,56,583,83"/>
+<area shape="rect" href="namespace_im_gui.html#a82204d8800dc3a072ddbcbd2aecc48ac" title=" " alt="" coords="631,56,793,83"/>
+<area shape="rect" href="imgui_8cpp.html#acd1b12694d0365b516bf7373f182eeee" title=" " alt="" coords="671,5,753,32"/>
+<area shape="rect" href="struct_im_gui_storage.html#aaf87a98ede89da09113b0189f6d878ca" title=" " alt="" coords="841,56,1015,83"/>
+<area shape="rect" href="struct_im_vector.html#a2d80e87e81b1b01143c8d8be93e6fde1" title=" " alt="" coords="873,528,983,555"/>
+<area shape="rect" href="struct_im_gui_stack_sizes.html#aff8cf412bfbdf0a936cae963c25fac55" title=" " alt="" coords="399,741,581,782"/>
+<area shape="rect" href="namespace_im_gui.html#af93bed3bce5475fe4d525d744f16aa20" title=" " alt="" coords="421,579,559,605"/>
+<area shape="rect" href="struct_im_vector.html#a3db7ce62d3c429effdb893fbf7148c1c" title=" " alt="" coords="1352,515,1491,541"/>
+<area shape="rect" href="namespace_im_gui.html#aef1c8a6e5a3c70cb10d03d2a2a66dfd8" title=" " alt="" coords="644,528,780,555"/>
+<area shape="rect" href="namespace_im_gui.html#a2ebcd048d1ca025fb972e1c2e920e3f3" title=" " alt="" coords="430,259,550,285"/>
+<area shape="rect" href="namespace_im_gui.html#ac452417b5004ca16a814a72cff153526" title=" " alt="" coords="841,680,1015,707"/>
+<area shape="rect" href="struct_im_draw_list_splitter.html#af3fc4bad2abca9e481d476d1877ba5be" title=" " alt="" coords="649,411,775,453"/>
+<area shape="rect" href="namespace_im_gui.html#ad29a3fc0cb5dfc7f9fc7224512ce90bf" title=" " alt="" coords="639,579,785,605"/>
+<area shape="rect" href="struct_im_draw_list.html#a2cb0295fcd3062bfedbebbad55865455" title=" " alt="" coords="1063,427,1287,453"/>
+<area shape="rect" href="struct_im_draw_list.html#a846714bb0321c6f1f908767abc8559e6" title=" " alt="" coords="1335,283,1508,309"/>
+<area shape="rect" href="struct_im_vector.html#a2f88ac70791f2da6d4168d7b29f38f1e" title=" " alt="" coords="871,376,985,403"/>
+<area shape="rect" href="struct_im_vector.html#ac371dd62e56ae486b1a5038cf07eee56" title=" " alt="" coords="869,325,987,352"/>
+<area shape="rect" href="struct_im_draw_list_splitter.html#ad3797b0755caa07f3d69a9e3566eb0e5" title=" " alt="" coords="1105,275,1244,317"/>
+<area shape="rect" href="struct_im_vector.html#aab5df48e0711a48bd12f3206e08c4108" title=" " alt="" coords="1556,283,1701,309"/>
+<area shape="rect" href="struct_im_draw_list.html#a44f40c59ca755f559020f5a7fa81103a" title=" " alt="" coords="845,579,1011,605"/>
+<area shape="rect" href="struct_im_draw_list.html#a8e51ddbe1f9732bc271ce807bec23f54" title=" " alt="" coords="1065,376,1284,403"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html#ad971435d81bc0b957cdb59f5d58eaacd" title=" " alt="" coords="635,309,789,336"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html#a9e4edc9f950bc9e35d5c3b3071dbc0df" title=" " alt="" coords="637,107,787,133"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html#affd606443a661cd0fcce0d381bc8cf98" title=" " alt="" coords="633,157,791,184"/>
+<area shape="rect" href="imgui_8cpp.html#ac4a6194720e9d693bc9d34e97d9465aa" title=" " alt="" coords="667,208,757,235"/>
+<area shape="rect" href="namespace_im_gui.html#aa548475d8f771ab6524d73d900a41198" title=" " alt="" coords="657,259,767,285"/>
+<area shape="rect" href="namespace_im_gui.html#aa4824a1b351c063b4aff9b9f4fb5fd4d" title=" " alt="" coords="631,360,793,387"/>
+<area shape="rect" href="struct_im_vector.html#a5a21f508086337de2f6739701d22f721" title=" " alt="" coords="875,173,981,200"/>
+<area shape="rect" href="struct_im_vector.html#ae2d401b4ec5f1113cdb8edb5a61a38f7" title=" " alt="" coords="873,107,983,133"/>
+<area shape="rect" href="namespace_im_gui.html#a10a0d6362178c2f743092f21e1b6cd20" title=" " alt="" coords="441,807,539,833"/>
+<area shape="rect" href="imgui_8cpp.html#a2e0022a073d369645a0daab17f823779" title=" " alt="" coords="652,781,772,808"/>
+<area shape="rect" href="namespace_im_gui.html#aae6420fec03511fd478d9108f31e6b5f" title=" " alt="" coords="659,832,765,859"/>
+<area shape="rect" href="namespace_im_gui.html#aaba5637199d31ea23d4d143b30a44aff" title=" " alt="" coords="843,832,1013,859"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a67560cf6a017ec3b8a59129be0d0100a" name="a67560cf6a017ec3b8a59129be0d0100a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67560cf6a017ec3b8a59129be0d0100a">&#9670;&nbsp;</a></span>Get()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_camera.html">CCamera</a> * CCamera::Get </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_a67560cf6a017ec3b8a59129be0d0100a_icgraph.png" border="0" usemap="#aclass_c_camera_a67560cf6a017ec3b8a59129be0d0100a_icgraph" alt=""/></div>
+<map name="aclass_c_camera_a67560cf6a017ec3b8a59129be0d0100a_icgraph" id="aclass_c_camera_a67560cf6a017ec3b8a59129be0d0100a_icgraph">
+<area shape="rect" title=" " alt="" coords="789,208,895,235"/>
+<area shape="rect" href="main_app_8cpp.html#a1ed2062f0707227a588cbd598ba2e562" title="スクリーンの映っているワールドの横幅と高さを計算する" alt="" coords="610,5,718,32"/>
+<area shape="rect" href="class_stage_manager.html#ae704cc0e6a00b5b94f4974869e1d90b8" title="描画処理" alt="" coords="593,56,735,83"/>
+<area shape="rect" href="class_c_anim_mesh.html#a45bca41fe56b3421b59058ce6d336366" title="描画処理" alt="" coords="599,107,729,133"/>
+<area shape="rect" href="class_c_assimp_mesh.html#a40ccc5aa52266d7673ba52e23aad20fa" title=" " alt="" coords="592,157,736,184"/>
+<area shape="rect" href="class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="605,208,723,235"/>
+<area shape="rect" href="class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="605,259,723,285"/>
+<area shape="rect" href="class_stage_manager.html#afe74bc34352fd78b5b8f2dfaf551a251" title="更新処理" alt="" coords="587,309,741,336"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="379,335,521,361"/>
+<area shape="rect" href="class_c_out_of_range.html#a6cf58e1026a25bc88dd598d2c10200f7" title="更新" alt="" coords="589,411,739,437"/>
+<area shape="rect" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="425,5,475,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="198,5,282,32"/>
+<area shape="rect" href="class_c_assimp_model.html#a883075480beae8196af8823ed71cd426" title=" " alt="" coords="361,157,539,184"/>
+<area shape="rect" href="class_c_assimp_model.html#aac69dd95631d620577c17670dbd37149" title=" " alt="" coords="167,157,313,184"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="5,157,119,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aad6ea0c4224522c0b9cc84f7becdd198" name="aad6ea0c4224522c0b9cc84f7becdd198"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad6ea0c4224522c0b9cc84f7becdd198">&#9670;&nbsp;</a></span>GetAngle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XMFLOAT3 &amp; CCamera::GetAngle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a567d3591eef1214a9ac46f37aacc6faf" name="a567d3591eef1214a9ac46f37aacc6faf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a567d3591eef1214a9ac46f37aacc6faf">&#9670;&nbsp;</a></span>GetAspect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CCamera::GetAspect </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0c6bd52c0adfd69f653404e93f7e5c86" name="a0c6bd52c0adfd69f653404e93f7e5c86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c6bd52c0adfd69f653404e93f7e5c86">&#9670;&nbsp;</a></span>GetAxisX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float * CCamera::GetAxisX </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_a0c6bd52c0adfd69f653404e93f7e5c86_icgraph.png" border="0" usemap="#aclass_c_camera_a0c6bd52c0adfd69f653404e93f7e5c86_icgraph" alt=""/></div>
+<map name="aclass_c_camera_a0c6bd52c0adfd69f653404e93f7e5c86_icgraph" id="aclass_c_camera_a0c6bd52c0adfd69f653404e93f7e5c86_icgraph">
+<area shape="rect" title=" " alt="" coords="369,5,508,32"/>
+<area shape="rect" href="class_c_camera.html#a664debc0a2d44acea6112db076a520bf" title=" " alt="" coords="196,5,321,32"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,5,148,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8de155ed4066592bc4b4bedb37a1b5c5" name="a8de155ed4066592bc4b4bedb37a1b5c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8de155ed4066592bc4b4bedb37a1b5c5">&#9670;&nbsp;</a></span>GetFarClip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CCamera::GetFarClip </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2cee4365487aa284b62baf0cf9185306" name="a2cee4365487aa284b62baf0cf9185306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cee4365487aa284b62baf0cf9185306">&#9670;&nbsp;</a></span>GetFOV()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CCamera::GetFOV </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae82b8d4b214bd06f117c900b69fa0d76" name="ae82b8d4b214bd06f117c900b69fa0d76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae82b8d4b214bd06f117c900b69fa0d76">&#9670;&nbsp;</a></span>GetLook()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const XMFLOAT3 &amp; CCamera::GetLook </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a91c79d9cb36427542e1504244adf7298" name="a91c79d9cb36427542e1504244adf7298"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91c79d9cb36427542e1504244adf7298">&#9670;&nbsp;</a></span>GetNearClip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CCamera::GetNearClip </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c938658ede08754ba4ffd9a3dd35ea3" name="a6c938658ede08754ba4ffd9a3dd35ea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c938658ede08754ba4ffd9a3dd35ea3">&#9670;&nbsp;</a></span>GetPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XMFLOAT3 &amp; CCamera::GetPos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_a6c938658ede08754ba4ffd9a3dd35ea3_icgraph.png" border="0" usemap="#aclass_c_camera_a6c938658ede08754ba4ffd9a3dd35ea3_icgraph" alt=""/></div>
+<map name="aclass_c_camera_a6c938658ede08754ba4ffd9a3dd35ea3_icgraph" id="aclass_c_camera_a6c938658ede08754ba4ffd9a3dd35ea3_icgraph">
+<area shape="rect" title=" " alt="" coords="785,55,913,81"/>
+<area shape="rect" href="class_c_assimp_mesh.html#a40ccc5aa52266d7673ba52e23aad20fa" title=" " alt="" coords="590,29,734,56"/>
+<area shape="rect" href="class_c_out_of_range.html#a6cf58e1026a25bc88dd598d2c10200f7" title="更新" alt="" coords="587,80,737,107"/>
+<area shape="rect" href="class_c_assimp_model.html#a883075480beae8196af8823ed71cd426" title=" " alt="" coords="361,29,539,56"/>
+<area shape="rect" href="class_c_assimp_model.html#aac69dd95631d620577c17670dbd37149" title=" " alt="" coords="167,29,313,56"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="5,29,119,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a99bbeae7433475a61979f603f439ab13" name="a99bbeae7433475a61979f603f439ab13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99bbeae7433475a61979f603f439ab13">&#9670;&nbsp;</a></span>GetProjMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XMFLOAT4X4 &amp; CCamera::GetProjMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_a99bbeae7433475a61979f603f439ab13_icgraph.png" border="0" usemap="#aclass_c_camera_a99bbeae7433475a61979f603f439ab13_icgraph" alt=""/></div>
+<map name="aclass_c_camera_a99bbeae7433475a61979f603f439ab13_icgraph" id="aclass_c_camera_a99bbeae7433475a61979f603f439ab13_icgraph">
+<area shape="rect" title=" " alt="" coords="779,43,943,69"/>
+<area shape="rect" href="main_app_8cpp.html#a1ed2062f0707227a588cbd598ba2e562" title="スクリーンの映っているワールドの横幅と高さを計算する" alt="" coords="605,12,713,39"/>
+<area shape="rect" href="class_c_assimp_mesh.html#a40ccc5aa52266d7673ba52e23aad20fa" title=" " alt="" coords="587,68,731,95"/>
+<area shape="rect" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="425,5,475,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="198,5,282,32"/>
+<area shape="rect" href="class_c_assimp_model.html#a883075480beae8196af8823ed71cd426" title=" " alt="" coords="361,80,539,107"/>
+<area shape="rect" href="class_c_assimp_model.html#aac69dd95631d620577c17670dbd37149" title=" " alt="" coords="167,80,313,107"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="5,80,119,107"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab45d2623675e194d6577de8f5898a8e8" name="ab45d2623675e194d6577de8f5898a8e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab45d2623675e194d6577de8f5898a8e8">&#9670;&nbsp;</a></span>GetUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const XMFLOAT3 &amp; CCamera::GetUp </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d42e5fecad0bcdab17124b402aa1575" name="a1d42e5fecad0bcdab17124b402aa1575"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d42e5fecad0bcdab17124b402aa1575">&#9670;&nbsp;</a></span>GetViewMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XMFLOAT4X4 &amp; CCamera::GetViewMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_a1d42e5fecad0bcdab17124b402aa1575_icgraph.png" border="0" usemap="#aclass_c_camera_a1d42e5fecad0bcdab17124b402aa1575_icgraph" alt=""/></div>
+<map name="aclass_c_camera_a1d42e5fecad0bcdab17124b402aa1575_icgraph" id="aclass_c_camera_a1d42e5fecad0bcdab17124b402aa1575_icgraph">
+<area shape="rect" title=" " alt="" coords="779,56,948,83"/>
+<area shape="rect" href="main_app_8cpp.html#a1ed2062f0707227a588cbd598ba2e562" title="スクリーンの映っているワールドの横幅と高さを計算する" alt="" coords="605,5,713,32"/>
+<area shape="rect" href="class_c_anim_mesh.html#a45bca41fe56b3421b59058ce6d336366" title="描画処理" alt="" coords="593,56,724,83"/>
+<area shape="rect" href="class_c_assimp_mesh.html#a40ccc5aa52266d7673ba52e23aad20fa" title=" " alt="" coords="587,107,731,133"/>
+<area shape="rect" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="425,5,475,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="198,5,282,32"/>
+<area shape="rect" href="class_c_assimp_model.html#a883075480beae8196af8823ed71cd426" title=" " alt="" coords="361,107,539,133"/>
+<area shape="rect" href="class_c_assimp_model.html#aac69dd95631d620577c17670dbd37149" title=" " alt="" coords="167,107,313,133"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="5,107,119,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adb30390410d1da74734c7ff6406f1ecd" name="adb30390410d1da74734c7ff6406f1ecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb30390410d1da74734c7ff6406f1ecd">&#9670;&nbsp;</a></span>GetWorldMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XMFLOAT4X4 &amp; CCamera::GetWorldMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d4ee70503ea51954543621268bfb295" name="a7d4ee70503ea51954543621268bfb295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d4ee70503ea51954543621268bfb295">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_a7d4ee70503ea51954543621268bfb295_cgraph.png" border="0" usemap="#aclass_c_camera_a7d4ee70503ea51954543621268bfb295_cgraph" alt=""/></div>
+<map name="aclass_c_camera_a7d4ee70503ea51954543621268bfb295_cgraph" id="aclass_c_camera_a7d4ee70503ea51954543621268bfb295_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,107,32"/>
+<area shape="rect" href="class_c_camera.html#aa3f7c288082765833d3ea4553a7cb84e" title=" " alt="" coords="155,5,335,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_a7d4ee70503ea51954543621268bfb295_icgraph.png" border="0" usemap="#aclass_c_camera_a7d4ee70503ea51954543621268bfb295_icgraph" alt=""/></div>
+<map name="aclass_c_camera_a7d4ee70503ea51954543621268bfb295_icgraph" id="aclass_c_camera_a7d4ee70503ea51954543621268bfb295_icgraph">
+<area shape="rect" title=" " alt="" coords="192,56,293,83"/>
+<area shape="rect" href="class_c_camera.html#a2eb95595766a84cb745ec00783595190" title=" " alt="" coords="5,5,144,32"/>
+<area shape="rect" href="class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="15,56,134,83"/>
+<area shape="rect" href="class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="15,107,134,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a828ac625f9c67b8927be3ccf2c6c4576" name="a828ac625f9c67b8927be3ccf2c6c4576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a828ac625f9c67b8927be3ccf2c6c4576">&#9670;&nbsp;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_camera.html">CCamera</a> &amp; CCamera::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_c_camera.html">CCamera</a> &amp;&#160;</td>
+          <td class="paramname"><em>camera</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1729d20502996e3a731024b1203aa647" name="a1729d20502996e3a731024b1203aa647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1729d20502996e3a731024b1203aa647">&#9670;&nbsp;</a></span>Set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::Set </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_c_camera.html">CCamera</a> *&#160;</td>
+          <td class="paramname"><em>pCamera</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5e219eeeae6b6d5a4f81107588841c87" name="a5e219eeeae6b6d5a4f81107588841c87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e219eeeae6b6d5a4f81107588841c87">&#9670;&nbsp;</a></span>SetAspectRatio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetAspectRatio </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fAspect</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aad14e000a4787d825e27bb994b65860b" name="aad14e000a4787d825e27bb994b65860b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad14e000a4787d825e27bb994b65860b">&#9670;&nbsp;</a></span>SetAxisX()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetAxisX </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>px</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_aad14e000a4787d825e27bb994b65860b_icgraph.png" border="0" usemap="#aclass_c_camera_aad14e000a4787d825e27bb994b65860b_icgraph" alt=""/></div>
+<map name="aclass_c_camera_aad14e000a4787d825e27bb994b65860b_icgraph" id="aclass_c_camera_aad14e000a4787d825e27bb994b65860b_icgraph">
+<area shape="rect" title=" " alt="" coords="369,31,507,57"/>
+<area shape="rect" href="class_c_camera.html#a664debc0a2d44acea6112db076a520bf" title=" " alt="" coords="196,5,321,32"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,31,148,57"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7f115992145660660e9f6a02a16f174b" name="a7f115992145660660e9f6a02a16f174b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f115992145660660e9f6a02a16f174b">&#9670;&nbsp;</a></span>SetAxisY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetAxisY </td>
+          <td>(</td>
+          <td class="paramtype">float *&#160;</td>
+          <td class="paramname"><em>py</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Y軸の注視点の設定をする 2022/7/26 </p>
+<p >カメラのY軸を他のオブジェクト依存させる</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(float*)</td><td>他オブジェクトのY座標 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_a7f115992145660660e9f6a02a16f174b_icgraph.png" border="0" usemap="#aclass_c_camera_a7f115992145660660e9f6a02a16f174b_icgraph" alt=""/></div>
+<map name="aclass_c_camera_a7f115992145660660e9f6a02a16f174b_icgraph" id="aclass_c_camera_a7f115992145660660e9f6a02a16f174b_icgraph">
+<area shape="rect" title="Y軸の注視点の設定をする 2022/7/26" alt="" coords="369,5,508,32"/>
+<area shape="rect" href="class_c_camera.html#a664debc0a2d44acea6112db076a520bf" title=" " alt="" coords="196,5,321,32"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,5,148,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab3006370e0b6250401ee797c120a24f4" name="ab3006370e0b6250401ee797c120a24f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3006370e0b6250401ee797c120a24f4">&#9670;&nbsp;</a></span>SetDestPos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetDestPos </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>CameraposZ</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1210d6c1d274bde0198cf28af414a787" name="a1210d6c1d274bde0198cf28af414a787"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1210d6c1d274bde0198cf28af414a787">&#9670;&nbsp;</a></span>SetFovY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetFovY </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fFovY</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a00af0fdc49e18b6087ef87205d6ddf03" name="a00af0fdc49e18b6087ef87205d6ddf03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00af0fdc49e18b6087ef87205d6ddf03">&#9670;&nbsp;</a></span>SetLimit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetLimit </td>
+          <td>(</td>
+          <td class="paramtype">XMFLOAT2&#160;</td>
+          <td class="paramname"><em>limit</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c0fab8dacb1965c6361fad9a9f32642" name="a6c0fab8dacb1965c6361fad9a9f32642"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c0fab8dacb1965c6361fad9a9f32642">&#9670;&nbsp;</a></span>SetPos() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetPos </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3068cc18259bf078ceb7d559a41ae5d6" name="a3068cc18259bf078ceb7d559a41ae5d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3068cc18259bf078ceb7d559a41ae5d6">&#9670;&nbsp;</a></span>SetPos() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetPos </td>
+          <td>(</td>
+          <td class="paramtype">XMFLOAT3 &amp;&#160;</td>
+          <td class="paramname"><em>vPos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93d38558bd61734ddf07849d0276048e" name="a93d38558bd61734ddf07849d0276048e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93d38558bd61734ddf07849d0276048e">&#9670;&nbsp;</a></span>SetRangeZ()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetRangeZ </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fNearZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fFarZ</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a72fc86f29bc87413fe39116803bf878a" name="a72fc86f29bc87413fe39116803bf878a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72fc86f29bc87413fe39116803bf878a">&#9670;&nbsp;</a></span>SetTarget() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetTarget </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7619961c5d0aa0818d8041f1bb50ad4b" name="a7619961c5d0aa0818d8041f1bb50ad4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7619961c5d0aa0818d8041f1bb50ad4b">&#9670;&nbsp;</a></span>SetTarget() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetTarget </td>
+          <td>(</td>
+          <td class="paramtype">XMFLOAT3 &amp;&#160;</td>
+          <td class="paramname"><em>vTarget</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9d4f16fd20a640cf1fe747100a87f0a5" name="a9d4f16fd20a640cf1fe747100a87f0a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d4f16fd20a640cf1fe747100a87f0a5">&#9670;&nbsp;</a></span>SetUpVector() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetUpVector </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>z</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4106c9325f7a4db76f257b230756e56" name="ad4106c9325f7a4db76f257b230756e56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4106c9325f7a4db76f257b230756e56">&#9670;&nbsp;</a></span>SetUpVector() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetUpVector </td>
+          <td>(</td>
+          <td class="paramtype">XMFLOAT3 &amp;&#160;</td>
+          <td class="paramname"><em>vUp</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa89abb662e1058a2e2f0d6ee628c2b74" name="aa89abb662e1058a2e2f0d6ee628c2b74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa89abb662e1058a2e2f0d6ee628c2b74">&#9670;&nbsp;</a></span>SetWorldMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::SetWorldMatrix </td>
+          <td>(</td>
+          <td class="paramtype">XMFLOAT4X4 &amp;&#160;</td>
+          <td class="paramname"><em>mtxWorld</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a664debc0a2d44acea6112db076a520bf" name="a664debc0a2d44acea6112db076a520bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a664debc0a2d44acea6112db076a520bf">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_a664debc0a2d44acea6112db076a520bf_cgraph.png" border="0" usemap="#aclass_c_camera_a664debc0a2d44acea6112db076a520bf_cgraph" alt=""/></div>
+<map name="aclass_c_camera_a664debc0a2d44acea6112db076a520bf_cgraph" id="aclass_c_camera_a664debc0a2d44acea6112db076a520bf_cgraph">
+<area shape="rect" title=" " alt="" coords="5,284,131,311"/>
+<area shape="rect" href="class_c_camera.html#a0c6bd52c0adfd69f653404e93f7e5c86" title=" " alt="" coords="215,5,354,32"/>
+<area shape="rect" href="class_object.html#a824beb41e45f1fdecc88c15e11983156" title=" " alt="" coords="207,56,362,83"/>
+<area shape="rect" href="class_object_manager.html#a2d2cfb3535474fc5ce136d06e2d3a8fb" title="名前からオブジェクトを特定する" alt="" coords="179,107,391,133"/>
+<area shape="rect" href="class_object_manager.html#ad2782406e7482eeddffd1941a810d6e6" title="objectマネージャーのインスタンス化" alt="" coords="191,157,379,184"/>
+<area shape="rect" href="class_scene_game.html#a5f5bb9169295264e15c157b98fc17776" title="インスタンス取得" alt="" coords="199,208,371,235"/>
+<area shape="rect" href="class_input_manager.html#a2a9f8b98564b02c3a297df80a227e24c" title="キーボードのプレス状態を取得" alt="" coords="191,259,378,285"/>
+<area shape="rect" href="class_input_manager.html#a53a27e2e25bec96173a4c7532515d10e" title="インスタンス生成" alt="" coords="206,309,363,336"/>
+<area shape="rect" href="class_scene_manager.html#a972ad174745419ebc980802a5f6e874e" title=" " alt="" coords="201,360,368,387"/>
+<area shape="rect" href="class_c_tex_scroll.html#ac5f44cfe10e58d2cb60e8f07b0189b36" title="?????????" alt="" coords="221,411,348,437"/>
+<area shape="rect" href="class_c_camera.html#aad14e000a4787d825e27bb994b65860b" title=" " alt="" coords="216,461,353,488"/>
+<area shape="rect" href="class_c_camera.html#a7f115992145660660e9f6a02a16f174b" title="Y軸の注視点の設定をする 2022/7/26" alt="" coords="215,512,354,539"/>
+<area shape="rect" href="class_c_camera.html#ac1b29f785bec590c800582864abfb2fd" title=" " alt="" coords="204,563,365,589"/>
+<area shape="rect" href="class_object_manager.html#a6fa9372c7c3a8da88412f4158ca3dfd9" title="コンストラクタ" alt="" coords="439,157,645,184"/>
+<area shape="rect" href="class_input_manager.html#a8be46886da639b26d67181c29dab6d6c" title="コンストラクタ" alt="" coords="449,309,635,336"/>
+<area shape="rect" href="class_scene_manager.html#a52085e6737c23b491c228e86781af808" title=" " alt="" coords="440,360,644,387"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_a664debc0a2d44acea6112db076a520bf_icgraph.png" border="0" usemap="#aclass_c_camera_a664debc0a2d44acea6112db076a520bf_icgraph" alt=""/></div>
+<map name="aclass_c_camera_a664debc0a2d44acea6112db076a520bf_icgraph" id="aclass_c_camera_a664debc0a2d44acea6112db076a520bf_icgraph">
+<area shape="rect" title=" " alt="" coords="196,5,321,32"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,5,148,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac1b29f785bec590c800582864abfb2fd" name="ac1b29f785bec590c800582864abfb2fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1b29f785bec590c800582864abfb2fd">&#9670;&nbsp;</a></span>UpdateMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCamera::UpdateMatrix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_camera_ac1b29f785bec590c800582864abfb2fd_icgraph.png" border="0" usemap="#aclass_c_camera_ac1b29f785bec590c800582864abfb2fd_icgraph" alt=""/></div>
+<map name="aclass_c_camera_ac1b29f785bec590c800582864abfb2fd_icgraph" id="aclass_c_camera_ac1b29f785bec590c800582864abfb2fd_icgraph">
+<area shape="rect" title=" " alt="" coords="369,5,531,32"/>
+<area shape="rect" href="class_c_camera.html#a664debc0a2d44acea6112db076a520bf" title=" " alt="" coords="196,5,321,32"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,5,148,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="_camera_8h_source.html">Camera.h</a></li>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="_camera_8cpp.html">Camera.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

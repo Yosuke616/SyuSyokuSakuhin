@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/imgui_impl_dx11.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">imgui_impl_dx11.cpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="imgui_8h_source.html">imgui.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="imgui__impl__dx11_8h_source.html">imgui_impl_dx11.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;d3d11.h&gt;</code><br />
+<code>#include &lt;d3dcompiler.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+imgui_impl_dx11.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__dx11_8cpp__incl.png" border="0" usemap="#a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2imgui__impl__dx11_8cpp" alt=""/></div>
+<map name="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2imgui__impl__dx11_8cpp" id="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2imgui__impl__dx11_8cpp">
+<area shape="rect" title=" " alt="" coords="355,5,537,61"/>
+<area shape="rect" href="imgui_8h.html" title=" " alt="" coords="242,184,306,211"/>
+<area shape="rect" href="imgui__impl__dx11_8h.html" title=" " alt="" coords="261,109,391,136"/>
+<area shape="rect" title=" " alt="" coords="415,109,477,136"/>
+<area shape="rect" title=" " alt="" coords="501,109,569,136"/>
+<area shape="rect" title=" " alt="" coords="593,109,696,136"/>
+<area shape="rect" href="imconfig_8h.html" title=" " alt="" coords="5,259,87,285"/>
+<area shape="rect" title=" " alt="" coords="111,259,168,285"/>
+<area shape="rect" title=" " alt="" coords="193,259,262,285"/>
+<area shape="rect" title=" " alt="" coords="287,259,355,285"/>
+<area shape="rect" title=" " alt="" coords="379,259,444,285"/>
+<area shape="rect" title=" " alt="" coords="469,259,538,285"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui___impl_d_x11___data.html">ImGui_ImplDX11_Data</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_v_e_r_t_e_x___c_o_n_s_t_a_n_t___b_u_f_f_e_r.html">VERTEX_CONSTANT_BUFFER</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ad49984e658afc491c9b16312cf6bdd5b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__dx11_8cpp.html#ad49984e658afc491c9b16312cf6bdd5b">ImGui_ImplDX11_RenderDrawData</a> (<a class="el" href="struct_im_draw_data.html">ImDrawData</a> *draw_data)</td></tr>
+<tr class="separator:ad49984e658afc491c9b16312cf6bdd5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef205e132b1e823fd6ab4c50e930ed4c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__dx11_8cpp.html#aef205e132b1e823fd6ab4c50e930ed4c">ImGui_ImplDX11_CreateDeviceObjects</a> ()</td></tr>
+<tr class="separator:aef205e132b1e823fd6ab4c50e930ed4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17219065c158199dda392d24b9b6e8a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__dx11_8cpp.html#a17219065c158199dda392d24b9b6e8a0">ImGui_ImplDX11_InvalidateDeviceObjects</a> ()</td></tr>
+<tr class="separator:a17219065c158199dda392d24b9b6e8a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bbf28d9c3bbd7f8159772f07289e848"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__dx11_8cpp.html#a6bbf28d9c3bbd7f8159772f07289e848">ImGui_ImplDX11_Init</a> (ID3D11Device *device, ID3D11DeviceContext *device_context)</td></tr>
+<tr class="separator:a6bbf28d9c3bbd7f8159772f07289e848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9731eb4cae116da513d6df90ff93387"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__dx11_8cpp.html#aa9731eb4cae116da513d6df90ff93387">ImGui_ImplDX11_Shutdown</a> ()</td></tr>
+<tr class="separator:aa9731eb4cae116da513d6df90ff93387"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac732cf6c340b83e31fefa09cf396ef91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="imgui__impl__dx11_8cpp.html#ac732cf6c340b83e31fefa09cf396ef91">ImGui_ImplDX11_NewFrame</a> ()</td></tr>
+<tr class="separator:ac732cf6c340b83e31fefa09cf396ef91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aef205e132b1e823fd6ab4c50e930ed4c" name="aef205e132b1e823fd6ab4c50e930ed4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef205e132b1e823fd6ab4c50e930ed4c">&#9670;&nbsp;</a></span>ImGui_ImplDX11_CreateDeviceObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGui_ImplDX11_CreateDeviceObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6bbf28d9c3bbd7f8159772f07289e848" name="a6bbf28d9c3bbd7f8159772f07289e848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bbf28d9c3bbd7f8159772f07289e848">&#9670;&nbsp;</a></span>ImGui_ImplDX11_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ImGui_ImplDX11_Init </td>
+          <td>(</td>
+          <td class="paramtype">ID3D11Device *&#160;</td>
+          <td class="paramname"><em>device</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11DeviceContext *&#160;</td>
+          <td class="paramname"><em>device_context</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__dx11_8cpp_a6bbf28d9c3bbd7f8159772f07289e848_cgraph.png" border="0" usemap="#aimgui__impl__dx11_8cpp_a6bbf28d9c3bbd7f8159772f07289e848_cgraph" alt=""/></div>
+<map name="aimgui__impl__dx11_8cpp_a6bbf28d9c3bbd7f8159772f07289e848_cgraph" id="aimgui__impl__dx11_8cpp_a6bbf28d9c3bbd7f8159772f07289e848_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,147,32"/>
+<area shape="rect" href="namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="195,5,293,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__dx11_8cpp_a6bbf28d9c3bbd7f8159772f07289e848_icgraph.png" border="0" usemap="#aimgui__impl__dx11_8cpp_a6bbf28d9c3bbd7f8159772f07289e848_icgraph" alt=""/></div>
+<map name="aimgui__impl__dx11_8cpp_a6bbf28d9c3bbd7f8159772f07289e848_icgraph" id="aimgui__impl__dx11_8cpp_a6bbf28d9c3bbd7f8159772f07289e848_icgraph">
+<area shape="rect" title=" " alt="" coords="224,5,365,32"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="137,5,176,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a17219065c158199dda392d24b9b6e8a0" name="a17219065c158199dda392d24b9b6e8a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17219065c158199dda392d24b9b6e8a0">&#9670;&nbsp;</a></span>ImGui_ImplDX11_InvalidateDeviceObjects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImGui_ImplDX11_InvalidateDeviceObjects </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac732cf6c340b83e31fefa09cf396ef91" name="ac732cf6c340b83e31fefa09cf396ef91"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac732cf6c340b83e31fefa09cf396ef91">&#9670;&nbsp;</a></span>ImGui_ImplDX11_NewFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImGui_ImplDX11_NewFrame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__dx11_8cpp_ac732cf6c340b83e31fefa09cf396ef91_icgraph.png" border="0" usemap="#aimgui__impl__dx11_8cpp_ac732cf6c340b83e31fefa09cf396ef91_icgraph" alt=""/></div>
+<map name="aimgui__impl__dx11_8cpp_ac732cf6c340b83e31fefa09cf396ef91_icgraph" id="aimgui__impl__dx11_8cpp_ac732cf6c340b83e31fefa09cf396ef91_icgraph">
+<area shape="rect" title=" " alt="" coords="236,5,423,32"/>
+<area shape="rect" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="137,5,188,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad49984e658afc491c9b16312cf6bdd5b" name="ad49984e658afc491c9b16312cf6bdd5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad49984e658afc491c9b16312cf6bdd5b">&#9670;&nbsp;</a></span>ImGui_ImplDX11_RenderDrawData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImGui_ImplDX11_RenderDrawData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_im_draw_data.html">ImDrawData</a> *&#160;</td>
+          <td class="paramname"><em>draw_data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__dx11_8cpp_ad49984e658afc491c9b16312cf6bdd5b_icgraph.png" border="0" usemap="#aimgui__impl__dx11_8cpp_ad49984e658afc491c9b16312cf6bdd5b_icgraph" alt=""/></div>
+<map name="aimgui__impl__dx11_8cpp_ad49984e658afc491c9b16312cf6bdd5b_icgraph" id="aimgui__impl__dx11_8cpp_ad49984e658afc491c9b16312cf6bdd5b_icgraph">
+<area shape="rect" title=" " alt="" coords="236,5,457,32"/>
+<area shape="rect" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="137,5,188,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa9731eb4cae116da513d6df90ff93387" name="aa9731eb4cae116da513d6df90ff93387"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9731eb4cae116da513d6df90ff93387">&#9670;&nbsp;</a></span>ImGui_ImplDX11_Shutdown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImGui_ImplDX11_Shutdown </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="imgui__impl__dx11_8cpp_aa9731eb4cae116da513d6df90ff93387_icgraph.png" border="0" usemap="#aimgui__impl__dx11_8cpp_aa9731eb4cae116da513d6df90ff93387_icgraph" alt=""/></div>
+<map name="aimgui__impl__dx11_8cpp_aa9731eb4cae116da513d6df90ff93387_icgraph" id="aimgui__impl__dx11_8cpp_aa9731eb4cae116da513d6df90ff93387_icgraph">
+<area shape="rect" title=" " alt="" coords="240,5,421,32"/>
+<area shape="rect" href="main_app_8cpp.html#affc0f591b5f188f1b5cb4f20042e4766" title=" " alt="" coords="137,5,192,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

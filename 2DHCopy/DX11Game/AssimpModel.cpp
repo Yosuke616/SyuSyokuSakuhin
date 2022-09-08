@@ -498,7 +498,7 @@ void CAssimpMesh::Draw(ID3D11DeviceContext* pDC, XMFLOAT4X4& m44World, EByOpacit
 		pMaterial = &m_material;
 	//敵オブジェクトだったら保存しておく
 	//敵の種類を増やしていく
-	if (m_pModel == ModelManager::GetInstance()->GetModel(ROSALINA_MODEL_X)) {		
+	if (m_pModel == ModelManager::GetInstance()->GetModel(WALK_ENEMY_MODEL_NUM)) {		
 		m_pModel->SetMate(pMaterial);
 	}
 

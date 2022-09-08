@@ -1,0 +1,173 @@
+\hypertarget{class_component}{}\doxysection{Component クラス}
+\label{class_component}\index{Component@{Component}}
+
+
+{\ttfamily \#include $<$Component.\+h$>$}
+
+
+
+Component の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_component__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Component 連携図\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_component__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_component_a1215dae17aa345fe79d5fa539452bebb}{Delete}} ()
+\item 
+bool \mbox{\hyperlink{class_component_a013bb7b3333811d796df2d4ab684bc3f}{Get\+Delete\+Flag}} ()
+\item 
+\mbox{\hyperlink{class_component_a8775db6d1a2c1afc2e77cd3c8f39da6f}{Component}} ()
+\item 
+virtual \mbox{\hyperlink{class_component_a2e9aa4348314d981f05f67397ad2f872}{$\sim$\+Component}} ()
+\item 
+virtual void \mbox{\hyperlink{class_component_a3f57807787e0015833ccffd83fb63d14}{Start}} ()
+\item 
+virtual void \mbox{\hyperlink{class_component_aaf2ce6dc5752072492f790ad4c7955bb}{Update}} ()
+\item 
+virtual void \mbox{\hyperlink{class_component_a8622ccd5f24035d48e33292717299313}{Draw}} ()
+\item 
+virtual void \mbox{\hyperlink{class_component_affb738998b25ee4b6be3719e020d16f2}{On\+Collision\+Enter}} (\mbox{\hyperlink{class_object}{Object}} $\ast$)
+\end{DoxyCompactItemize}
+\doxysubsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_object}{Object}} $\ast$ \mbox{\hyperlink{class_component_a3b174bab3a4da91c7c657ad6052ba78b}{Parent}} = nullptr
+\item 
+\mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28}{COMPONENT\+\_\+\+UPDATE\+\_\+\+ORDER}} \mbox{\hyperlink{class_component_af40a1a2240e4b0717804a6d60592d66e}{m\+\_\+e\+Update\+Order}} = \mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28a6baeaa21a04446e95dc80d51b3bbc927}{COM\+\_\+\+UPDATE\+\_\+1}}
+\item 
+bool \mbox{\hyperlink{class_component_a5a9e309d0a3ab72807e8998c28941518}{m\+\_\+b\+Draw\+Flag}} = true
+\item 
+bool \mbox{\hyperlink{class_component_a2c166a99c04988fb2ae53a70a7a6f4f1}{m\+\_\+b\+Update\+Flag}} = true
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_component_a8775db6d1a2c1afc2e77cd3c8f39da6f}\label{class_component_a8775db6d1a2c1afc2e77cd3c8f39da6f}} 
+\index{Component@{Component}!Component@{Component}}
+\index{Component@{Component}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Component()}{Component()}}
+{\footnotesize\ttfamily Component\+::\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_component_a2e9aa4348314d981f05f67397ad2f872}\label{class_component_a2e9aa4348314d981f05f67397ad2f872}} 
+\index{Component@{Component}!````~Component@{$\sim$Component}}
+\index{````~Component@{$\sim$Component}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{$\sim$Component()}{~Component()}}
+{\footnotesize\ttfamily virtual Component\+::$\sim$\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_component_a1215dae17aa345fe79d5fa539452bebb}\label{class_component_a1215dae17aa345fe79d5fa539452bebb}} 
+\index{Component@{Component}!Delete@{Delete}}
+\index{Delete@{Delete}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily void Component\+::\+Delete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_component_a8622ccd5f24035d48e33292717299313}\label{class_component_a8622ccd5f24035d48e33292717299313}} 
+\index{Component@{Component}!Draw@{Draw}}
+\index{Draw@{Draw}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily virtual void Component\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_c_out_of_range_a94c9046bd55118cedc702eb35aa9466d}{COut\+Of\+Range}}, \mbox{\hyperlink{class_c_anim_mesh_a45bca41fe56b3421b59058ce6d336366}{CAnim\+Mesh}}, \mbox{\hyperlink{class_c_draw2_d_ae0459d7b8afc61916d99070a9ef167ab}{CDraw2D}}, \mbox{\hyperlink{class_c_draw3_d_a4e807eb965451e20de9e2c0a2fe619fa}{CDraw3D}}, \mbox{\hyperlink{class_c_draw_mesh_a4d4c6a30bae2d1318802f1ebf5fb22cb}{CDraw\+Mesh}}, \mbox{\hyperlink{class_c_enemy_aefe3d898f9ac30f42ceac5c7d4979d2f}{CEnemy}}, \mbox{\hyperlink{class_c_player_a9f4de6ca09dfa30de3b06c9d548a0d8f}{CPlayer}}, \mbox{\hyperlink{class_c_see_coll_aede3402862cec9b72fef2fb50577478b}{CSee\+Coll}}, \mbox{\hyperlink{class_c_tex_scroll_a600ce1df5cdd43027083d7fbcb355bea}{CTex\+Scroll}}で再実装されています。
+
+\mbox{\Hypertarget{class_component_a013bb7b3333811d796df2d4ab684bc3f}\label{class_component_a013bb7b3333811d796df2d4ab684bc3f}} 
+\index{Component@{Component}!GetDeleteFlag@{GetDeleteFlag}}
+\index{GetDeleteFlag@{GetDeleteFlag}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{GetDeleteFlag()}{GetDeleteFlag()}}
+{\footnotesize\ttfamily bool Component\+::\+Get\+Delete\+Flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_component_a013bb7b3333811d796df2d4ab684bc3f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_component_affb738998b25ee4b6be3719e020d16f2}\label{class_component_affb738998b25ee4b6be3719e020d16f2}} 
+\index{Component@{Component}!OnCollisionEnter@{OnCollisionEnter}}
+\index{OnCollisionEnter@{OnCollisionEnter}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{OnCollisionEnter()}{OnCollisionEnter()}}
+{\footnotesize\ttfamily virtual void Component\+::\+On\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} $\ast$}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_c_enemy_a39e688989d08a7feec4f5517d28ed286}{CEnemy}}, \mbox{\hyperlink{class_c_out_of_range_a8dc6652f55b75059b2fed0a9dea9e934}{COut\+Of\+Range}}, \mbox{\hyperlink{class_c_player_abede91d4fa024fae2396593ce5532b17}{CPlayer}}で再実装されています。
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_component_affb738998b25ee4b6be3719e020d16f2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_component_a3f57807787e0015833ccffd83fb63d14}\label{class_component_a3f57807787e0015833ccffd83fb63d14}} 
+\index{Component@{Component}!Start@{Start}}
+\index{Start@{Start}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily virtual void Component\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_c_anim_mesh_a4477eb0930aba2ceb6ec3976aeaa28ae}{CAnim\+Mesh}}, \mbox{\hyperlink{class_c_attack_a18254cb0083b36ed25d28bd6bd89446c}{CAttack}}, \mbox{\hyperlink{class_c_collider_abf4ddce7c4496c1e2035f84e4650a2f3}{CCollider}}, \mbox{\hyperlink{class_c_draw2_d_a4556c5d5c6ea589c3f2bf385fd62bea8}{CDraw2D}}, \mbox{\hyperlink{class_c_draw3_d_addb8dd96fb70245aa3b9e5cdbe906148}{CDraw3D}}, \mbox{\hyperlink{class_c_draw_mesh_a6100f09bd115ce3f1c8a7e450600d4fc}{CDraw\+Mesh}}, \mbox{\hyperlink{class_c_enemy_abc3651c176dd9f5bf044e8f41adb0532}{CEnemy}}, \mbox{\hyperlink{class_c_gravity_a7aa81236f314c5c01ab63570d8df0a44}{CGravity}}, \mbox{\hyperlink{class_c_out_of_range_a733e14aa676e57181da0e943e3c26ff1}{COut\+Of\+Range}}, \mbox{\hyperlink{class_c_player_aad0dcf0dbb43561b5202fb20974e43a3}{CPlayer}}, \mbox{\hyperlink{class_c_see_coll_ab1cc85ed730b6ab2aeb7adfb6ee59230}{CSee\+Coll}}, \mbox{\hyperlink{class_c_tex_scroll_a623943f74c9504e53a50440dffae7b96}{CTex\+Scroll}}で再実装されています。
+
+\mbox{\Hypertarget{class_component_aaf2ce6dc5752072492f790ad4c7955bb}\label{class_component_aaf2ce6dc5752072492f790ad4c7955bb}} 
+\index{Component@{Component}!Update@{Update}}
+\index{Update@{Update}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Component\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{class_c_anim_mesh_a052d8884ad2a80967e09b28e46a4cafa}{CAnim\+Mesh}}, \mbox{\hyperlink{class_c_attack_a58d569ffdb3f1cccb5f48ca06b7840c8}{CAttack}}, \mbox{\hyperlink{class_c_collider_aebd65f77a9c4850eb29d703cec88152d}{CCollider}}, \mbox{\hyperlink{class_c_draw2_d_aafc929df900f5a322c9efa4373e0b8d9}{CDraw2D}}, \mbox{\hyperlink{class_c_draw3_d_aa42fcba7f1258571457c186292f91702}{CDraw3D}}, \mbox{\hyperlink{class_c_draw_mesh_a2371b08e617e08cf6420681f0f1dcd04}{CDraw\+Mesh}}, \mbox{\hyperlink{class_c_enemy_aac23422c9e7f8b091cd91de08b73b25f}{CEnemy}}, \mbox{\hyperlink{class_c_gravity_a1f1deaebcbdf0e23ca4f9ab3a6e057f9}{CGravity}}, \mbox{\hyperlink{class_c_out_of_range_a6cf58e1026a25bc88dd598d2c10200f7}{COut\+Of\+Range}}, \mbox{\hyperlink{class_c_player_a4582a8020f6734842edea64909bd4b40}{CPlayer}}, \mbox{\hyperlink{class_c_see_coll_a2f39451e348977f12f7b1168c06c996c}{CSee\+Coll}}, \mbox{\hyperlink{class_c_tex_scroll_a1ab093fcc89dc3130a59c01eb9f456a7}{CTex\+Scroll}}, \mbox{\hyperlink{class_c_transform_aee48dd10140f1955b4aa074c570ce101}{CTransform}}で再実装されています。
+
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{class_component_a5a9e309d0a3ab72807e8998c28941518}\label{class_component_a5a9e309d0a3ab72807e8998c28941518}} 
+\index{Component@{Component}!m\_bDrawFlag@{m\_bDrawFlag}}
+\index{m\_bDrawFlag@{m\_bDrawFlag}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{m\_bDrawFlag}{m\_bDrawFlag}}
+{\footnotesize\ttfamily bool Component\+::m\+\_\+b\+Draw\+Flag = true}
+
+\mbox{\Hypertarget{class_component_a2c166a99c04988fb2ae53a70a7a6f4f1}\label{class_component_a2c166a99c04988fb2ae53a70a7a6f4f1}} 
+\index{Component@{Component}!m\_bUpdateFlag@{m\_bUpdateFlag}}
+\index{m\_bUpdateFlag@{m\_bUpdateFlag}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{m\_bUpdateFlag}{m\_bUpdateFlag}}
+{\footnotesize\ttfamily bool Component\+::m\+\_\+b\+Update\+Flag = true}
+
+\mbox{\Hypertarget{class_component_af40a1a2240e4b0717804a6d60592d66e}\label{class_component_af40a1a2240e4b0717804a6d60592d66e}} 
+\index{Component@{Component}!m\_eUpdateOrder@{m\_eUpdateOrder}}
+\index{m\_eUpdateOrder@{m\_eUpdateOrder}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{m\_eUpdateOrder}{m\_eUpdateOrder}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28}{COMPONENT\+\_\+\+UPDATE\+\_\+\+ORDER}} Component\+::m\+\_\+e\+Update\+Order = \mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28a6baeaa21a04446e95dc80d51b3bbc927}{COM\+\_\+\+UPDATE\+\_\+1}}}
+
+\mbox{\Hypertarget{class_component_a3b174bab3a4da91c7c657ad6052ba78b}\label{class_component_a3b174bab3a4da91c7c657ad6052ba78b}} 
+\index{Component@{Component}!Parent@{Parent}}
+\index{Parent@{Parent}!Component@{Component}}
+\doxysubsubsection{\texorpdfstring{Parent}{Parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_object}{Object}}$\ast$ Component\+::\+Parent = nullptr}
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_component_8h}{Component.\+h}}\end{DoxyCompactItemize}

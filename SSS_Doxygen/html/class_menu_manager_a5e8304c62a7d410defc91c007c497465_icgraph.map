@@ -1,0 +1,5 @@
+<map id="MenuManager::Destroy" name="MenuManager::Destroy">
+<area shape="rect" id="node1" title="インスタンス破棄" alt="" coords="188,31,345,57"/>
+<area shape="rect" id="node2" href="$class_stage_select.html#a16880c0008a1b1a9b872eba7c41e1db3" title="終了処理" alt="" coords="5,5,140,32"/>
+<area shape="rect" id="node3" href="$class_scene_title.html#ad127eca154bbab43c1f32272ab1559d5" title=" " alt="" coords="11,56,135,83"/>
+</map>

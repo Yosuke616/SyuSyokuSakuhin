@@ -1,0 +1,4 @@
+<map id="ObjectManager::Uninit" name="ObjectManager::Uninit">
+<area shape="rect" id="node1" title="終了処理" alt="" coords="5,5,156,32"/>
+<area shape="rect" id="node2" href="$class_c_collider.html#a80714716239a3ede48cf2e6187cc423f" title="当たり判定を持っているオブジェクトのリストを取得" alt="" coords="204,5,371,32"/>
+</map>

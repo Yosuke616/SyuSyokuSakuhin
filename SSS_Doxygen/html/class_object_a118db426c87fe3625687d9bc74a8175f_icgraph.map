@@ -1,0 +1,6 @@
+<map id="Object::StopUpdate" name="Object::StopUpdate">
+<area shape="rect" id="node1" title="機能を停止する為の関数" alt="" coords="227,56,363,83"/>
+<area shape="rect" id="node2" href="$class_c_player.html#abede91d4fa024fae2396593ce5532b17" title="衝突処理" alt="" coords="5,5,179,32"/>
+<area shape="rect" id="node3" href="$class_c_out_of_range.html#a6cf58e1026a25bc88dd598d2c10200f7" title="更新" alt="" coords="17,56,167,83"/>
+<area shape="rect" id="node4" href="$class_c_player.html#a4582a8020f6734842edea64909bd4b40" title="更新" alt="" coords="33,107,151,133"/>
+</map>

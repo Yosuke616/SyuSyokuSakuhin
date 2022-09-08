@@ -1,0 +1,326 @@
+\hypertarget{class_c_collider}{}\doxysection{CCollider クラス}
+\label{class_c_collider}\index{CCollider@{CCollider}}
+
+
+{\ttfamily \#include $<$Collider\+Component.\+h$>$}
+
+
+
+CCollider の継承関係図\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_collider__inherit__graph}
+\end{center}
+\end{figure}
+
+
+CCollider 連携図\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_collider__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_collider_a96eef1228608297f21515cca60b18bfd}{CCollider}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_collider_a60d5cd42989d838fb6e9e80e4d7c99a9}{$\sim$\+CCollider}} () override
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_collider_abf4ddce7c4496c1e2035f84e4650a2f3}{Start}} () override
+\begin{DoxyCompactList}\small\item\em 初期化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_collider_aebd65f77a9c4850eb29d703cec88152d}{Update}} () override
+\begin{DoxyCompactList}\small\item\em 更新 \end{DoxyCompactList}\item 
+XMFLOAT2 \mbox{\hyperlink{class_c_collider_a25bca703b998946ae0325619727f247e}{Get\+Off\+Set}} ()
+\begin{DoxyCompactList}\small\item\em オブジェクトの中心のズレ \end{DoxyCompactList}\item 
+XMFLOAT3 \mbox{\hyperlink{class_c_collider_a098303a6144f11e6f966dea14e18288b}{Get\+Collider\+Size}} ()
+\begin{DoxyCompactList}\small\item\em 当たり判定の大きさの取得 \end{DoxyCompactList}\item 
+XMFLOAT2 \mbox{\hyperlink{class_c_collider_a392e4083a78be282a4dd0cb9fba52ff6}{Get\+Center\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em 当たり判定の中心の座標の取得 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_collider_a940b20263cfa9a6416d932c54fa413df}{Set\+Collision\+Size}} (float fx, float fy, float fz=0.\+0f)
+\begin{DoxyCompactList}\small\item\em 当たり判定の大きさの設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_collider_ae9057981540d7d56153c6271297697e6}{Set\+Offset}} (float fx, float fy)
+\begin{DoxyCompactList}\small\item\em 当たり判定の中心とオブジェクトの中心とのズレ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_c_collider_a5f312fa70b28ad693dca00429fa7310c}{Add\+Collider\+List}} (\mbox{\hyperlink{class_object}{Object}} $\ast$p\+Object)
+\begin{DoxyCompactList}\small\item\em 当たり判定リストに追加 \end{DoxyCompactList}\item 
+static std\+::list$<$ \mbox{\hyperlink{class_object}{Object}} $\ast$ $>$ \& \mbox{\hyperlink{class_c_collider_a80714716239a3ede48cf2e6187cc423f}{Get\+Collider\+List}} ()
+\begin{DoxyCompactList}\small\item\em 当たり判定を持っているオブジェクトのリストを取得 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_c_collider_a3cc514e5726fbd81149ee96526264256}{Update\+Colliders}} ()
+\begin{DoxyCompactList}\small\item\em 当たり判定を持っているオブジェクトたちの更新 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_collider_a96eef1228608297f21515cca60b18bfd}\label{class_c_collider_a96eef1228608297f21515cca60b18bfd}} 
+\index{CCollider@{CCollider}!CCollider@{CCollider}}
+\index{CCollider@{CCollider}!CCollider@{CCollider}}
+\doxysubsubsection{\texorpdfstring{CCollider()}{CCollider()}}
+{\footnotesize\ttfamily CCollider\+::\+CCollider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+ただのコンストラクタそれ以上でも以下でもない \mbox{\Hypertarget{class_c_collider_a60d5cd42989d838fb6e9e80e4d7c99a9}\label{class_c_collider_a60d5cd42989d838fb6e9e80e4d7c99a9}} 
+\index{CCollider@{CCollider}!````~CCollider@{$\sim$CCollider}}
+\index{````~CCollider@{$\sim$CCollider}!CCollider@{CCollider}}
+\doxysubsubsection{\texorpdfstring{$\sim$CCollider()}{~CCollider()}}
+{\footnotesize\ttfamily CCollider\+::$\sim$\+CCollider (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+デストラクタ 
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_collider_a5f312fa70b28ad693dca00429fa7310c}\label{class_c_collider_a5f312fa70b28ad693dca00429fa7310c}} 
+\index{CCollider@{CCollider}!AddColliderList@{AddColliderList}}
+\index{AddColliderList@{AddColliderList}!CCollider@{CCollider}}
+\doxysubsubsection{\texorpdfstring{AddColliderList()}{AddColliderList()}}
+{\footnotesize\ttfamily void CCollider\+::\+Add\+Collider\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} $\ast$}]{p\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+当たり判定リストに追加 
+
+当たり判定のリストに追加する
+
+
+\begin{DoxyParams}{引数}
+{\em (\+Object$\ast$)} & リストに追加するオブジェクトのポインタ \\
+\hline
+\end{DoxyParams}
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_collider_a5f312fa70b28ad693dca00429fa7310c_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_c_collider_a5f312fa70b28ad693dca00429fa7310c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_collider_a392e4083a78be282a4dd0cb9fba52ff6}\label{class_c_collider_a392e4083a78be282a4dd0cb9fba52ff6}} 
+\index{CCollider@{CCollider}!GetCenterPos@{GetCenterPos}}
+\index{GetCenterPos@{GetCenterPos}!CCollider@{CCollider}}
+\doxysubsubsection{\texorpdfstring{GetCenterPos()}{GetCenterPos()}}
+{\footnotesize\ttfamily XMFLOAT2 CCollider\+::\+Get\+Center\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+当たり判定の中心の座標の取得 
+
+当たり判定も中心座標を取得する
+
+\begin{DoxyReturn}{戻り値}
+(XMFLOAT2) 当たり判定の中心の座標の情報 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_collider_a392e4083a78be282a4dd0cb9fba52ff6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_collider_a80714716239a3ede48cf2e6187cc423f}\label{class_c_collider_a80714716239a3ede48cf2e6187cc423f}} 
+\index{CCollider@{CCollider}!GetColliderList@{GetColliderList}}
+\index{GetColliderList@{GetColliderList}!CCollider@{CCollider}}
+\doxysubsubsection{\texorpdfstring{GetColliderList()}{GetColliderList()}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{class_object}{Object}} $\ast$ $>$ \& CCollider\+::\+Get\+Collider\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+当たり判定を持っているオブジェクトのリストを取得 
+
+当たり判定のリストの取得
+
+\begin{DoxyReturn}{戻り値}
+(list$<$\+Object$\ast$$>$)\& 当たり判定の入ったオブジェクト型のリストのアドレスを返す 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_collider_a80714716239a3ede48cf2e6187cc423f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_collider_a098303a6144f11e6f966dea14e18288b}\label{class_c_collider_a098303a6144f11e6f966dea14e18288b}} 
+\index{CCollider@{CCollider}!GetColliderSize@{GetColliderSize}}
+\index{GetColliderSize@{GetColliderSize}!CCollider@{CCollider}}
+\doxysubsubsection{\texorpdfstring{GetColliderSize()}{GetColliderSize()}}
+{\footnotesize\ttfamily XMFLOAT3 CCollider\+::\+Get\+Collider\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+当たり判定の大きさの取得 
+
+当たり判定の大きさを取得する
+
+\begin{DoxyReturn}{戻り値}
+(XMFLOAT3) 当たり判定の大きさの情報 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_collider_a098303a6144f11e6f966dea14e18288b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_collider_a25bca703b998946ae0325619727f247e}\label{class_c_collider_a25bca703b998946ae0325619727f247e}} 
+\index{CCollider@{CCollider}!GetOffSet@{GetOffSet}}
+\index{GetOffSet@{GetOffSet}!CCollider@{CCollider}}
+\doxysubsubsection{\texorpdfstring{GetOffSet()}{GetOffSet()}}
+{\footnotesize\ttfamily XMFLOAT2 CCollider\+::\+Get\+Off\+Set (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+オブジェクトの中心のズレ 
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_collider_a25bca703b998946ae0325619727f247e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_collider_a940b20263cfa9a6416d932c54fa413df}\label{class_c_collider_a940b20263cfa9a6416d932c54fa413df}} 
+\index{CCollider@{CCollider}!SetCollisionSize@{SetCollisionSize}}
+\index{SetCollisionSize@{SetCollisionSize}!CCollider@{CCollider}}
+\doxysubsubsection{\texorpdfstring{SetCollisionSize()}{SetCollisionSize()}}
+{\footnotesize\ttfamily void CCollider\+::\+Set\+Collision\+Size (\begin{DoxyParamCaption}\item[{float}]{fx,  }\item[{float}]{fy,  }\item[{float}]{fz = {\ttfamily 0.0f} }\end{DoxyParamCaption})}
+
+
+
+当たり判定の大きさの設定 
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & 当たり判定の横幅 \\
+\hline
+{\em (float)} & 当たり判定の立幅 \\
+\hline
+{\em (float)} & 当たり判定の奥行 \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_collider_a940b20263cfa9a6416d932c54fa413df_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_collider_ae9057981540d7d56153c6271297697e6}\label{class_c_collider_ae9057981540d7d56153c6271297697e6}} 
+\index{CCollider@{CCollider}!SetOffset@{SetOffset}}
+\index{SetOffset@{SetOffset}!CCollider@{CCollider}}
+\doxysubsubsection{\texorpdfstring{SetOffset()}{SetOffset()}}
+{\footnotesize\ttfamily void CCollider\+::\+Set\+Offset (\begin{DoxyParamCaption}\item[{float}]{fx,  }\item[{float}]{fy }\end{DoxyParamCaption})}
+
+
+
+当たり判定の中心とオブジェクトの中心とのズレ 
+
+オブジェクトと当たり判定のずれを直すための関数
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & x方向のずれを直す \\
+\hline
+{\em (float)} & y方向のずれを直す \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_collider_ae9057981540d7d56153c6271297697e6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_collider_abf4ddce7c4496c1e2035f84e4650a2f3}\label{class_c_collider_abf4ddce7c4496c1e2035f84e4650a2f3}} 
+\index{CCollider@{CCollider}!Start@{Start}}
+\index{Start@{Start}!CCollider@{CCollider}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void CCollider\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+初期化 
+
+
+
+\mbox{\hyperlink{class_component_a3f57807787e0015833ccffd83fb63d14}{Component}}を再実装しています。
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_collider_abf4ddce7c4496c1e2035f84e4650a2f3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_collider_aebd65f77a9c4850eb29d703cec88152d}\label{class_c_collider_aebd65f77a9c4850eb29d703cec88152d}} 
+\index{CCollider@{CCollider}!Update@{Update}}
+\index{Update@{Update}!CCollider@{CCollider}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void CCollider\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新 
+
+
+
+\mbox{\hyperlink{class_component_aaf2ce6dc5752072492f790ad4c7955bb}{Component}}を再実装しています。
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{class_c_collider_aebd65f77a9c4850eb29d703cec88152d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_collider_a3cc514e5726fbd81149ee96526264256}\label{class_c_collider_a3cc514e5726fbd81149ee96526264256}} 
+\index{CCollider@{CCollider}!UpdateColliders@{UpdateColliders}}
+\index{UpdateColliders@{UpdateColliders}!CCollider@{CCollider}}
+\doxysubsubsection{\texorpdfstring{UpdateColliders()}{UpdateColliders()}}
+{\footnotesize\ttfamily void CCollider\+::\+Update\+Colliders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+当たり判定を持っているオブジェクトたちの更新 
+
+当たり判定リストに入っているオブジェクトの更新 呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_collider_a3cc514e5726fbd81149ee96526264256_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_collider_a3cc514e5726fbd81149ee96526264256_icgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_collider_component_8h}{Collider\+Component.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_collider_component_8cpp}{Collider\+Component.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,164 @@
+\hypertarget{class_scene}{}\doxysection{Scene クラス}
+\label{class_scene}\index{Scene@{Scene}}
+
+
+{\ttfamily \#include $<$Scene.\+h$>$}
+
+
+
+Scene の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Scene 連携図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{class_scene__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_ad10176d75a9cc0da56626f682d083507}{Scene}} ()
+\item 
+virtual \mbox{\hyperlink{class_scene_aa0a5be58e2ee2d1fdafc5fb46b5e661e}{$\sim$\+Scene}} ()
+\item 
+virtual void \mbox{\hyperlink{class_scene_ac3c4677dfd702a3ffd5ffadd3f1ac478}{Init}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_scene_aa94fb256b8a862aee810db4f1e8d56a4}{Uninit}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_scene_ab99ec7aff3ed995985ddb764ffb78f8e}{Update}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_scene_a8680672fd30bb4b345e6fab918e31ecd}{Draw}} ()=0
+\end{DoxyCompactItemize}
+\doxysubsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_object_manager}{Object\+Manager}} $\ast$ \mbox{\hyperlink{class_scene_a6a70cba8ef8354ef1fa033685fa348a8}{m\+\_\+p\+Object\+Manager}}
+\begin{DoxyCompactList}\small\item\em オブジェクトの管理ポインタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_menu_manager}{Menu\+Manager}} $\ast$ \mbox{\hyperlink{class_scene_af3bb137f44650bba2ab048c0ff0bd52d}{m\+\_\+p\+Menu\+Manager}}
+\begin{DoxyCompactList}\small\item\em メニュー管理用のポインタ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_scene_ad10176d75a9cc0da56626f682d083507}\label{class_scene_ad10176d75a9cc0da56626f682d083507}} 
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily Scene\+::\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_scene_aa0a5be58e2ee2d1fdafc5fb46b5e661e}\label{class_scene_aa0a5be58e2ee2d1fdafc5fb46b5e661e}} 
+\index{Scene@{Scene}!````~Scene@{$\sim$Scene}}
+\index{````~Scene@{$\sim$Scene}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{$\sim$Scene()}{~Scene()}}
+{\footnotesize\ttfamily virtual Scene\+::$\sim$\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_scene_a8680672fd30bb4b345e6fab918e31ecd}\label{class_scene_a8680672fd30bb4b345e6fab918e31ecd}} 
+\index{Scene@{Scene}!Draw@{Draw}}
+\index{Draw@{Draw}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily virtual void Scene\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\mbox{\hyperlink{class_scene_game_ac14f575125dcaf8cfd416f9512ee0107}{Scene\+Game}}, \mbox{\hyperlink{class_stage_select_a607ba8e951492ae25d5ff4942b029e27}{Stage\+Select}}, \mbox{\hyperlink{class_scene_stage__1_ac9844a1010ddb8028a971f6d8d6c7156}{Scene\+Stage\+\_\+1}}, \mbox{\hyperlink{class_scene_title_acc6b1370a2f20c20e7295d160d1ce6bb}{Scene\+Title}}で実装されています。
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_a8680672fd30bb4b345e6fab918e31ecd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_ac3c4677dfd702a3ffd5ffadd3f1ac478}\label{class_scene_ac3c4677dfd702a3ffd5ffadd3f1ac478}} 
+\index{Scene@{Scene}!Init@{Init}}
+\index{Init@{Init}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily virtual void Scene\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\mbox{\hyperlink{class_scene_game_a942c6131f3f4a831791f63a5091cccfe}{Scene\+Game}}, \mbox{\hyperlink{class_stage_select_a949e9de720f8072040e2f93bb586a0ba}{Stage\+Select}}, \mbox{\hyperlink{class_scene_stage__1_ab4bb4703f3f44eb4f5c49f44003627cf}{Scene\+Stage\+\_\+1}}, \mbox{\hyperlink{class_scene_title_a25a10fe18f8ff1f5a7e657cfe6eca671}{Scene\+Title}}で実装されています。
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_ac3c4677dfd702a3ffd5ffadd3f1ac478_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_aa94fb256b8a862aee810db4f1e8d56a4}\label{class_scene_aa94fb256b8a862aee810db4f1e8d56a4}} 
+\index{Scene@{Scene}!Uninit@{Uninit}}
+\index{Uninit@{Uninit}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Uninit()}{Uninit()}}
+{\footnotesize\ttfamily virtual void Scene\+::\+Uninit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\mbox{\hyperlink{class_scene_game_a8bd731734e28b5ddd1a23d50bfa56532}{Scene\+Game}}, \mbox{\hyperlink{class_stage_select_a16880c0008a1b1a9b872eba7c41e1db3}{Stage\+Select}}, \mbox{\hyperlink{class_scene_stage__1_a4a428b55aedbbba6d631eb68ab72c0f2}{Scene\+Stage\+\_\+1}}, \mbox{\hyperlink{class_scene_title_ad127eca154bbab43c1f32272ab1559d5}{Scene\+Title}}で実装されています。
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_aa94fb256b8a862aee810db4f1e8d56a4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_ab99ec7aff3ed995985ddb764ffb78f8e}\label{class_scene_ab99ec7aff3ed995985ddb764ffb78f8e}} 
+\index{Scene@{Scene}!Update@{Update}}
+\index{Update@{Update}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Scene\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\mbox{\hyperlink{class_scene_game_a39f13a210e99042a1361d958ead36686}{Scene\+Game}}, \mbox{\hyperlink{class_stage_select_aa2796a223f0c14a63523a725957de1ef}{Stage\+Select}}, \mbox{\hyperlink{class_scene_stage__1_a9a99ca5bb5d08e4acadcd5643a339c07}{Scene\+Stage\+\_\+1}}, \mbox{\hyperlink{class_scene_title_af1b28c5ab2cced3b7d8106ef0cd8b0ae}{Scene\+Title}}で実装されています。
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_ab99ec7aff3ed995985ddb764ffb78f8e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{class_scene_af3bb137f44650bba2ab048c0ff0bd52d}\label{class_scene_af3bb137f44650bba2ab048c0ff0bd52d}} 
+\index{Scene@{Scene}!m\_pMenuManager@{m\_pMenuManager}}
+\index{m\_pMenuManager@{m\_pMenuManager}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{m\_pMenuManager}{m\_pMenuManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_menu_manager}{Menu\+Manager}}$\ast$ Scene\+::m\+\_\+p\+Menu\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+メニュー管理用のポインタ 
+
+\mbox{\Hypertarget{class_scene_a6a70cba8ef8354ef1fa033685fa348a8}\label{class_scene_a6a70cba8ef8354ef1fa033685fa348a8}} 
+\index{Scene@{Scene}!m\_pObjectManager@{m\_pObjectManager}}
+\index{m\_pObjectManager@{m\_pObjectManager}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{m\_pObjectManager}{m\_pObjectManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_object_manager}{Object\+Manager}}$\ast$ Scene\+::m\+\_\+p\+Object\+Manager\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+オブジェクトの管理ポインタ 
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_scene_8h}{Scene.\+h}}\end{DoxyCompactItemize}

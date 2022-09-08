@@ -1,0 +1,5 @@
+<map id="StageManager::CreateBlock" name="StageManager::CreateBlock">
+<area shape="rect" id="node1" title="ステージオブジェクト生成(ゲームモード)" alt="" coords="407,5,592,32"/>
+<area shape="rect" id="node2" href="$class_stage_manager.html#ab85e84fb952cd4722400956dba68d2e3" title="地形生成" alt="" coords="172,5,359,32"/>
+<area shape="rect" id="node3" href="$class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="5,5,124,32"/>
+</map>

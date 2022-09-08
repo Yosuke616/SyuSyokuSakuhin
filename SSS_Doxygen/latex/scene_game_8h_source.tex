@@ -1,0 +1,74 @@
+\hypertarget{scene_game_8h_source}{}\doxysection{scene\+Game.\+h}
+\label{scene_game_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/sceneGame.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/sceneGame.h}}
+\mbox{\hyperlink{scene_game_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_SCENEGAME\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_SCENEGAME\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{//インクルード}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_scene_8h}{Scene.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_assimp_model_8h}{AssimpModel.h}}"{}}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{21 \textcolor{comment}{//前方宣言}}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{class_stage_manager}{StageManager}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 \textcolor{comment}{/*列挙体宣言***/}}
+\DoxyCodeLine{26 \textcolor{keyword}{enum} \mbox{\hyperlink{scene_game_8h_aca8133200c1122e29b87b314d82604eb}{Stage}} \{}
+\DoxyCodeLine{27     \mbox{\hyperlink{scene_game_8h_aca8133200c1122e29b87b314d82604eba25803a4ebec2ab0fe5bf2a12865929fc}{STAGE\_1}} = 1,}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \mbox{\hyperlink{scene_game_8h_aca8133200c1122e29b87b314d82604eba3a4fb0069b2e81d88f71808e21c0c9e7}{MAX\_STAGE}}}
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{37 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{class_scene_game}{SceneGame}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_scene}{Scene}} \{}
+\DoxyCodeLine{38 \textcolor{keyword}{private}:}
+\DoxyCodeLine{39     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{41 \textcolor{comment}{}    \textcolor{keyword}{static} \mbox{\hyperlink{class_scene_game}{SceneGame}}* m\_pInstance;}
+\DoxyCodeLine{43     std::vector<Scene*> m\_GameSceneList;}
+\DoxyCodeLine{45     \mbox{\hyperlink{class_scene}{Scene}}* m\_CurrentScene;}
+\DoxyCodeLine{47     \mbox{\hyperlink{scene_game_8h_aca8133200c1122e29b87b314d82604eb}{Stage}} m\_eStageState;}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{50     \mbox{\hyperlink{class_scene}{Scene}}* m\_pInitScene;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53     \mbox{\hyperlink{class_stage_manager}{StageManager}}* m\_pStageManager;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{int} m\_nSelectCnt;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{60 \textcolor{comment}{}    \mbox{\hyperlink{class_scene_game}{SceneGame}}();}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{63     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{keyword}{public}:}
+\DoxyCodeLine{68     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{70 \textcolor{comment}{}    \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_scene_game_aed823bf8cd7d8af96a3fb7422e49f21e}{m\_bEditMode}};}
+\DoxyCodeLine{72     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_scene_game_a1f4a26f2b3c7867ed3f7c1004470edda}{m\_bPauseMode}};}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{77 \textcolor{comment}{}    \textcolor{keyword}{static} \mbox{\hyperlink{class_scene_game}{SceneGame}}* \mbox{\hyperlink{class_scene_game_a5f5bb9169295264e15c157b98fc17776}{GetInstance}}();}
+\DoxyCodeLine{79     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_game_a6c9fcb1377d041cf0643bbc4965bb237}{Destroy}}();}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{82     \mbox{\hyperlink{class_scene_game_a137a0d207ed6421a6156993c25f85809}{\string~SceneGame}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{84     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_game_a942c6131f3f4a831791f63a5091cccfe}{Init}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{86     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_game_a8bd731734e28b5ddd1a23d50bfa56532}{Uninit}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_game_a39f13a210e99042a1361d958ead36686}{Update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_game_ac14f575125dcaf8cfd416f9512ee0107}{Draw}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_game_a40dd3b6c95346b5f374ae10a7b501103}{SetStage}}(\mbox{\hyperlink{scene_game_8h_aca8133200c1122e29b87b314d82604eb}{Stage}} NextStage);}
+\DoxyCodeLine{95     \mbox{\hyperlink{scene_game_8h_aca8133200c1122e29b87b314d82604eb}{Stage}} \mbox{\hyperlink{class_scene_game_af1edee33919a754f03a810d0057ea8b6}{GetStage}}();}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_game_aa8bccc8003c3084181f256c53a1f6160}{SetPauseOOO}}(\textcolor{keywordtype}{bool} ooo);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

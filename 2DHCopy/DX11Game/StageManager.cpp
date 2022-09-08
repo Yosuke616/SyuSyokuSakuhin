@@ -29,8 +29,12 @@
 /** @brief どのオブジェクトを配置するかを判別する*/
 enum MAP_CHIP{
 	N = -1,				//何もない
-	B_1 = 0,			//ブロック
-	ENEMY_1,			//敵
+	ENEMY_1 = 1,			//敵
+
+	//緑
+	B_1 = 10,			//ブロック(上部) 
+	GRASS_IN = 11,		//ブロック(内部)
+
 
 	GOAL = 50,			//ゴール
 
@@ -274,6 +278,7 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 	ModelManager* pModelManager = ModelManager::GetInstance();
 	TextureManager* pTextureManager = TextureManager::GetInstance();
 
+#pragma region ---緑ブロック
 	//ブロック
 	if (nState == B_1) {
 		Object* obj = new Object(BLOCK_NAME,UPDATE_FIELD,DRAW_FIELD);
@@ -297,6 +302,33 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		
 		return obj;
 	}
+#pragma endregion
+#pragma region ---土ブロック
+	//土ブロック
+	else if (nState == GRASS_IN) {
+		Object* obj = new Object(BLOCK_NAME, UPDATE_FIELD, DRAW_FIELD);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDraw3D>();
+		auto collider = obj->AddComponent<CCollider>();
+		auto Range = obj->AddComponent<COutOfRange>();
+		obj->AddComponent<CSeeColl>();
+		//オブジェクトの設定
+		draw->SetModel(pModelManager->GetModel(RARD_BLOCK_NUM));
+		trans->SetPosition(fPosX, fPosY + 770, 0.0f);
+		trans->SetScale(BLOCK_SIZE_X, BLOCK_SIZE_Y, BLOCK_SIZE_Z);
+		collider->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
+		Range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
+
+		//ワールドマトリックスの更新
+		draw->Update();
+
+		return obj;
+	}
+#pragma region ---歩く敵
+	//歩く敵
 	else if(nState == ENEMY_1){
 		//オブジェクトの生成
 		Object* obj = new Object(ENEMY_NAME,UPDATE_MODEL,DRAW_MODEL);
@@ -310,9 +342,10 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		//敵専用のコンポーネントを追加する予定
 		obj->AddComponent<CEnemy>();
 		//オブジェクトの設定
-		draw->SetModel(pModelManager->GetModel(ROSALINA_MODEL_X));
+		draw->SetModel(pModelManager->GetModel(WALK_ENEMY_MODEL_NUM));
 		trans->SetPosition(fPosX,fPosY+800,0.0f);//800
 		trans->SetScale(E_WALK_SIZE_X, E_WALK_SIZE_Y, E_WALK_SIZE_Z);
+		trans->SetRotate(0.0f,90.0f,0.0f);
 		collider->SetCollisionSize(E_WALK_COLL_X, E_WALK_COLL_Y, E_WALK_COLL_Z);
 		obj->GetComponent<CEnemy>()->SetEnemyType(ENEMY_WALK);
 		//オブジェクトマネージャに追加
@@ -323,10 +356,31 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 
 		return obj;
 	}
+#pragma endregion
+#pragma region ---ゴール
 	else if (nState == GOAL) {
 		//オブジェクトの生成
-		Object* obj;
+		Object* obj = new Object(GOAL_NAME,UPDATE_MODEL,DRAW_MODEL);
+		//コンポーネントの追加
+		auto trans	  = obj->AddComponent<CTransform>();
+		auto draw	  = obj->AddComponent<CDraw3D>();
+		auto collider = obj->AddComponent<CCollider>();
+		obj->AddComponent<COutOfRange>();
+		obj->AddComponent<CSeeColl>();
+		//オブジェクトの設定
+		draw->SetModel(pModelManager->GetModel(WALK_ENEMY_MODEL_NUM));
+		trans->SetPosition(fPosX, fPosY + 765, 0.0f);
+		trans->SetScale(E_WALK_SIZE_X, E_WALK_SIZE_Y, E_WALK_SIZE_Z);
+		collider->SetCollisionSize(E_WALK_COLL_X, E_WALK_COLL_Y, E_WALK_COLL_Z);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
+		//ワールドマトリックスの更新
+		draw->Update();
+
+		return obj;
 	}
+#pragma endregion
+#pragma region ---ミス判定
 	else if (nState == MISS_COLL) {
 		//オブジェクトの生成(当たり判定のみ)
 		Object* obj = new Object("MISS_COLL",UPDATE_DEBUG,DRAW_DEBUG);
@@ -350,8 +404,8 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		draw->Update();
 
 		return obj;
-
 	}
+#pragma endregion
 }
 
 /**

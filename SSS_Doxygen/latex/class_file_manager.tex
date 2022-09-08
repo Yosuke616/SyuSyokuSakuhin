@@ -1,0 +1,138 @@
+\hypertarget{class_file_manager}{}\doxysection{File\+Manager クラス}
+\label{class_file_manager}\index{FileManager@{FileManager}}
+
+
+アセットに存在するファイルを管理する ~\newline
+ @detail ステージごとに読込先を決めたりする  
+
+
+
+
+{\ttfamily \#include $<$File\+Manager.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_file_manager_abaed33b5b0c13b8a597db9335a1aacfa}{$\sim$\+File\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_file_manager_a25378464496678b23ffb038c39a614a9}{Load}} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em ロード \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_resource_base}{Resource\+Base}} $\ast$ \mbox{\hyperlink{class_file_manager_ae0c7f1fa9fa186ba9600f2e274130b16}{Get}} (std\+::string file\+Name)
+\begin{DoxyCompactList}\small\item\em データ取得 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_file_manager}{File\+Manager}} $\ast$ \mbox{\hyperlink{class_file_manager_a604802b6192958e9f9df590728a210d4}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em インスタンスの取得 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_file_manager_a2cac6ac5dc966241a4ec67f4daf36d46}{Destroy}} ()
+\begin{DoxyCompactList}\small\item\em インスタンスの破棄 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+アセットに存在するファイルを管理する ~\newline
+ @detail ステージごとに読込先を決めたりする 
+
+クラス定義 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_file_manager_abaed33b5b0c13b8a597db9335a1aacfa}\label{class_file_manager_abaed33b5b0c13b8a597db9335a1aacfa}} 
+\index{FileManager@{FileManager}!````~FileManager@{$\sim$FileManager}}
+\index{````~FileManager@{$\sim$FileManager}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$FileManager()}{~FileManager()}}
+{\footnotesize\ttfamily File\+Manager\+::$\sim$\+File\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+デストラクタ 
+
+デストラクタ、ついやっちゃうんだ 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_file_manager_a2cac6ac5dc966241a4ec67f4daf36d46}\label{class_file_manager_a2cac6ac5dc966241a4ec67f4daf36d46}} 
+\index{FileManager@{FileManager}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily void File\+Manager\+::\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+インスタンスの破棄 
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_manager_a2cac6ac5dc966241a4ec67f4daf36d46_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_file_manager_ae0c7f1fa9fa186ba9600f2e274130b16}\label{class_file_manager_ae0c7f1fa9fa186ba9600f2e274130b16}} 
+\index{FileManager@{FileManager}!Get@{Get}}
+\index{Get@{Get}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_resource_base}{Resource\+Base}} $\ast$ File\+Manager\+::\+Get (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+データ取得 
+
+データを取得する
+
+
+\begin{DoxyParams}{引数}
+{\em (string)} & どこのデータを取得するか \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(Resource\+Base$\ast$) 取得したデータを返す 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_manager_ae0c7f1fa9fa186ba9600f2e274130b16_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_file_manager_a604802b6192958e9f9df590728a210d4}\label{class_file_manager_a604802b6192958e9f9df590728a210d4}} 
+\index{FileManager@{FileManager}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_file_manager}{File\+Manager}} $\ast$ File\+Manager\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+インスタンスの取得 
+
+インスタンスを取得する 被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_file_manager_a604802b6192958e9f9df590728a210d4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_file_manager_a25378464496678b23ffb038c39a614a9}\label{class_file_manager_a25378464496678b23ffb038c39a614a9}} 
+\index{FileManager@{FileManager}!Load@{Load}}
+\index{Load@{Load}!FileManager@{FileManager}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily bool File\+Manager\+::\+Load (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})}
+
+
+
+ロード 
+
+ロードします 呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_file_manager_a25378464496678b23ffb038c39a614a9_cgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_file_manager_8h}{File\+Manager.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_file_manager_8cpp}{File\+Manager.\+cpp}}\end{DoxyCompactItemize}

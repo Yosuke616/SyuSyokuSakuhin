@@ -1,0 +1,46 @@
+\hypertarget{_file_manager_8h_source}{}\doxysection{File\+Manager.\+h}
+\label{_file_manager_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/FileManager.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/FileManager.h}}
+\mbox{\hyperlink{_file_manager_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_FILEMANAGER\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_FILEMANAGER\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_resource_base_8h}{ResourceBase.h}}"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{17 \textcolor{comment}{//ステージ情報}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define STAGE\_1\_CSV ("{}Assets/Stage\_1.csv"{}})}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_file_manager}{FileManager}} \{}
+\DoxyCodeLine{25 \textcolor{keyword}{private}:}
+\DoxyCodeLine{26     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{28 \textcolor{comment}{}    \textcolor{keyword}{using }ResourceMap = std::map<std::string,ResourceBase*>;}
+\DoxyCodeLine{30     \textcolor{keyword}{using }ResourceMapIt = ResourceMap::iterator;}
+\DoxyCodeLine{32     \textcolor{keyword}{using }ResourceMapPair = std::pair<std::string,ResourceBase*>;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{35     ResourceMap m\_Resources;}
+\DoxyCodeLine{37     \textcolor{keyword}{static} \mbox{\hyperlink{class_file_manager}{FileManager}}* m\_pInstance;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{41 \textcolor{comment}{}    \mbox{\hyperlink{class_file_manager}{FileManager}}();}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{44     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{public}:}
+\DoxyCodeLine{49     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{53 \textcolor{comment}{}    \textcolor{keyword}{static} \mbox{\hyperlink{class_file_manager}{FileManager}}* \mbox{\hyperlink{class_file_manager_a604802b6192958e9f9df590728a210d4}{GetInstance}}();}
+\DoxyCodeLine{55     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_file_manager_a2cac6ac5dc966241a4ec67f4daf36d46}{Destroy}}();}
+\DoxyCodeLine{57     \mbox{\hyperlink{class_file_manager_abaed33b5b0c13b8a597db9335a1aacfa}{\string~FileManager}}();}
+\DoxyCodeLine{59     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_file_manager_a25378464496678b23ffb038c39a614a9}{Load}}(std::string fileName);}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{62     \mbox{\hyperlink{class_resource_base}{ResourceBase}}* \mbox{\hyperlink{class_file_manager_ae0c7f1fa9fa186ba9600f2e274130b16}{Get}}(std::string fileName);}
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

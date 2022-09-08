@@ -1,0 +1,80 @@
+\hypertarget{_menu_manager_8h_source}{}\doxysection{Menu\+Manager.\+h}
+\label{_menu_manager_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/MenuManager.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/MenuManager.h}}
+\mbox{\hyperlink{_menu_manager_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_MENUMANAGER\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_MENUMANAGER\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_object}{Object}};}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{20 \textcolor{keyword}{enum} \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25}{MENU\_STATE}} \{}
+\DoxyCodeLine{21     \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25ac36e5c9ac597253191be83acf0b51d25}{STATE\_NONE}} = 0,}
+\DoxyCodeLine{22     \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a72690adb1ade0aac593f3e1514160687}{TITLE\_STATE}},}
+\DoxyCodeLine{23     \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a26cfbf6b4494b21047d9661df7b624f9}{SELECT\_STATE}},}
+\DoxyCodeLine{24     \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25ae59a46346df78761d7d0c246a06a324c}{PAUSE\_STATE}},}
+\DoxyCodeLine{25     \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a08f39dc823a8e3ea327a867b79b1d707}{OPTION\_STATE}},}
+\DoxyCodeLine{26     \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a41fe1fa3c3f42732434c66488788657f}{GAMECLEAR\_STATE}},}
+\DoxyCodeLine{27     \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25ab3746e5f3606c4c8a424331774843f29}{MISS\_STATE}},}
+\DoxyCodeLine{28     \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a2a9b04358b8ab454b5c51b74e14f31f2}{GAMEOVER\_STATE}},}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25aa777d74d726d771b24cd179950051c12}{MAX\_MENU}}}
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{38 \textcolor{keyword}{class }\mbox{\hyperlink{class_menu_manager}{MenuManager}} \{}
+\DoxyCodeLine{39 \textcolor{keyword}{private}:}
+\DoxyCodeLine{40     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{42 \textcolor{comment}{}    \textcolor{keyword}{static} \mbox{\hyperlink{class_menu_manager}{MenuManager}}* m\_pInstance;}
+\DoxyCodeLine{44     std::list<Object*> m\_MenuList;}
+\DoxyCodeLine{46     std::list<Object*>::iterator m\_itr\_Menu;}
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} m\_nDelayCnt;}
+\DoxyCodeLine{50     \textcolor{keywordtype}{int} m\_nCreateMenu;}
+\DoxyCodeLine{52     std::list<Object*> m\_StageObjList;}
+\DoxyCodeLine{54     std::list<Object*>::iterator m\_itr\_Stage;}
+\DoxyCodeLine{57     \textcolor{keywordtype}{bool} m\_bRestart;}
+\DoxyCodeLine{59     \textcolor{keywordtype}{float} m\_fMoveObj;}
+\DoxyCodeLine{61     \textcolor{keywordtype}{float} m\_fBlackAlpha;}
+\DoxyCodeLine{63     \textcolor{keywordtype}{int} m\_nChangeCnt;}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{67 \textcolor{comment}{}    \mbox{\hyperlink{class_menu_manager}{MenuManager}}();}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} SelectButton();}
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} PushButton();}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_stage_select}{StageSelect}}();}
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} StageIN();}
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} MissMenu();}
+\DoxyCodeLine{82 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{83     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{keyword}{public}:}
+\DoxyCodeLine{88     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{90 \textcolor{comment}{}    \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_menu_manager_ae31af6ff4d3a6572b25253a8a22fbc99}{m\_bOption}};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{94 \textcolor{comment}{}    \mbox{\hyperlink{class_menu_manager_a7ea926de3916450fd30baad4385c1490}{\string~MenuManager}}();}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_manager_ae92a51fc7b9b001c44f966cdeb907483}{Start}}();}
+\DoxyCodeLine{98     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_manager_aabc8f23d87e058b5c5b099a8c34a2af8}{Update}}();}
+\DoxyCodeLine{100     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_manager_a257fe839c85d81f74f2077bd0d7dbd63}{Draw}}();}
+\DoxyCodeLine{102     \textcolor{keyword}{static} \mbox{\hyperlink{class_menu_manager}{MenuManager}}* \mbox{\hyperlink{class_menu_manager_a659dcf3bbe0c9d9771ff15fff87bf449}{GetInsutance}}();}
+\DoxyCodeLine{104     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_manager_a5e8304c62a7d410defc91c007c497465}{Destroy}}();}
+\DoxyCodeLine{106     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_manager_ac9bdbdfc54c48873f16ebd9cf222d1b6}{Create}}(\textcolor{keywordtype}{int} state,\textcolor{keywordtype}{int} delayCnt = 1);}
+\DoxyCodeLine{108     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_manager_a72ca1a40cc8ebbe9aeb82da1e46575ad}{DeleteMenu}}();}
+\DoxyCodeLine{110     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_manager_ac1759aa35665506ebd7fb930bf2e4851}{AddMenu}}(\mbox{\hyperlink{class_object}{Object}}* pMenuObject);}
+\DoxyCodeLine{112     std::list<Object*>\& \mbox{\hyperlink{class_menu_manager_afc8e14dec3f86f4ffcefd1814a150bcd}{GetMenuList}}();}
+\DoxyCodeLine{114     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_menu_manager_a87435714da92d8abe47a1d9d833f1dde}{GetCreateMenu}}();}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{118     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_manager_a6b1c422b8f1d277d043fc9a309aaa8a0}{CreateTitleMenu}}();}
+\DoxyCodeLine{120     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_manager_ad519349168bf08237d1d37fc8333cfce}{CreatePauseMenu}}();}
+\DoxyCodeLine{122     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_manager_af6c63b05dda555dce5a7698c69b66f90}{CreateSelectMenu}}();}
+\DoxyCodeLine{124     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_manager_a9f2f549c8364364b698b7c99d5f52f23}{CreateMissMenu}}();}
+\DoxyCodeLine{126     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_manager_acf6c98482ac2231830e38616e8e565fa}{CreateGameOverMenu}}();}
+\DoxyCodeLine{127 \};}
+\DoxyCodeLine{128 }
+\DoxyCodeLine{129 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

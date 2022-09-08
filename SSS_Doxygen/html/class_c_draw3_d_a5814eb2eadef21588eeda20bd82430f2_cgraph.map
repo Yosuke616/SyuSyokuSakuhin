@@ -1,0 +1,4 @@
+<map id="CDraw3D::AnimEnd" name="CDraw3D::AnimEnd">
+<area shape="rect" id="node1" title="アニメーション終了" alt="" coords="5,5,143,32"/>
+<area shape="rect" id="node2" href="$class_animation.html#a61dd177c4b20f9d560bd76199079bf5b" title="アニメーションが終わったかのフラグ" alt="" coords="191,5,332,32"/>
+</map>

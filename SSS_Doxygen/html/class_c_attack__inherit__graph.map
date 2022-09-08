@@ -1,0 +1,4 @@
+<map id="CAttack" name="CAttack">
+<area shape="rect" id="node1" title="攻撃の動きを制御する @detail 攻撃を行った者のよって挙動を変える" alt="" coords="15,80,84,107"/>
+<area shape="rect" id="node2" href="$class_component.html" title=" " alt="" coords="5,5,93,32"/>
+</map>

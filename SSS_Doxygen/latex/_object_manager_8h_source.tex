@@ -1,0 +1,66 @@
+\hypertarget{_object_manager_8h_source}{}\doxysection{Object\+Manager.\+h}
+\label{_object_manager_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ObjectManager.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ObjectManager.h}}
+\mbox{\hyperlink{_object_manager_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef \_OBJECT\_MANAGER\_H\_}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define \_OBJECT\_MANAGER\_H\_}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{//インクルード部}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{comment}{//前方宣言}}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_object}{Object}};}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{27 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{class_object_manager}{ObjectManager}} \{}
+\DoxyCodeLine{28 \textcolor{keyword}{private}:}
+\DoxyCodeLine{29     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{31 \textcolor{comment}{}    std::list<Object*>      m\_UpdateList;}
+\DoxyCodeLine{33     std::list<Object*>      m\_DrawList;}
+\DoxyCodeLine{35     \textcolor{keyword}{static} \mbox{\hyperlink{class_object_manager}{ObjectManager}}*  m\_pInstance;}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{40     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{42 \textcolor{comment}{}    \mbox{\hyperlink{class_object_manager_a6fa9372c7c3a8da88412f4158ca3dfd9}{ObjectManager}}();}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{public}:}
+\DoxyCodeLine{47     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{51 \textcolor{comment}{}    \textcolor{keyword}{static} \mbox{\hyperlink{class_object_manager}{ObjectManager}}* \mbox{\hyperlink{class_object_manager_ad2782406e7482eeddffd1941a810d6e6}{GetInstance}}();}
+\DoxyCodeLine{53     \mbox{\hyperlink{class_object_manager_a25b057e6d1e60c9cbeb29d41923d8c2c}{\string~ObjectManager}}();}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_a5f9b18526a4036b3d05af0b2bbbbd6a9}{Start}}();}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_ac6035906749a40ec3a1d685ebed11c89}{Update}}();}
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_a86d895e6def5ee60d8d29d2c475f8962}{UpdateEdit}}();}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_ac054fcf6fa043ed24a88265e6f25bc15}{Draw}}();}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_ab14b919449101fdecbbafe794d907cc9}{Uninit}}();}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_a9d66ba3c6343372fc166ea36658cc555}{AddObject}}(\mbox{\hyperlink{class_object}{Object}}* pObject);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_acda2c452bc4f964230a77eeae7b8ca50}{DeleteObjectByName}}(std::string pszName,std::list<Object*>\& list);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{72     std::list<Object*> \mbox{\hyperlink{class_object_manager_ada37bd39a9803c3eb2af4a02c2f3e0f5}{GetObjectList}}(std::string name);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_a8fccb8957af5d1067a7c1cfacd02507b}{NoFunction}}();}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_a2e73d06b466d1baf8a8dfb2951abcbce}{Resume}}();}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80     \textcolor{comment}{//getter}}
+\DoxyCodeLine{82 \textcolor{comment}{}    \mbox{\hyperlink{class_object}{Object}}* \mbox{\hyperlink{class_object_manager_a2d2cfb3535474fc5ce136d06e2d3a8fb}{GetGameObject}}(std::string name);}
+\DoxyCodeLine{84     std::list<Object*>\& \mbox{\hyperlink{class_object_manager_ae32f7c13ff2140a856102a0c3603e909}{GetUpdateList}}();}
+\DoxyCodeLine{86     std::list<Object*>\& \mbox{\hyperlink{class_object_manager_a50176158bccc6597cda4601a2afec9d4}{GetDrawList}}();}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{89     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_manager_a4f095ab64eb81a813c79980dd1fab368}{GetGameObjects}}(std::string name,std::list<Object*>\& resultList);}
+\DoxyCodeLine{90 \};}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

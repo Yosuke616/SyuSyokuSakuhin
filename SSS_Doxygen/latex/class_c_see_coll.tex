@@ -1,0 +1,177 @@
+\hypertarget{class_c_see_coll}{}\doxysection{CSee\+Coll クラス}
+\label{class_c_see_coll}\index{CSeeColl@{CSeeColl}}
+
+
+{\ttfamily \#include $<$See\+Coll\+Component.\+h$>$}
+
+
+
+CSee\+Coll の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_see_coll__inherit__graph}
+\end{center}
+\end{figure}
+
+
+CSee\+Coll 連携図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_see_coll__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_see_coll_a666931cef18b945511227417cfae2f6d}{CSee\+Coll}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_see_coll_a6513517867063db7b21542b640f468f1}{$\sim$\+CSee\+Coll}} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_see_coll_ab1cc85ed730b6ab2aeb7adfb6ee59230}{Start}} () override
+\begin{DoxyCompactList}\small\item\em 初期化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_see_coll_a2f39451e348977f12f7b1168c06c996c}{Update}} () override
+\begin{DoxyCompactList}\small\item\em 更新処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_see_coll_aede3402862cec9b72fef2fb50577478b}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em 描画処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_see_coll_a011da70b78c290c626c94e1e1f65dd81}{Set\+Coll\+Box}} (XMFLOAT3 Coll\+Size, XMFLOAT2 Off\+Set)
+\begin{DoxyCompactList}\small\item\em 当たり判定の大きさとズレの設定をしなおす関数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_see_coll_a31d917994b761882fef54dc6b296a844}{Delete\+Coll\+Box}} ()
+\begin{DoxyCompactList}\small\item\em メッシュを削除する関数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_see_coll_a666931cef18b945511227417cfae2f6d}\label{class_c_see_coll_a666931cef18b945511227417cfae2f6d}} 
+\index{CSeeColl@{CSeeColl}!CSeeColl@{CSeeColl}}
+\index{CSeeColl@{CSeeColl}!CSeeColl@{CSeeColl}}
+\doxysubsubsection{\texorpdfstring{CSeeColl()}{CSeeColl()}}
+{\footnotesize\ttfamily CSee\+Coll\+::\+CSee\+Coll (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+ココココンストラクタ \mbox{\Hypertarget{class_c_see_coll_a6513517867063db7b21542b640f468f1}\label{class_c_see_coll_a6513517867063db7b21542b640f468f1}} 
+\index{CSeeColl@{CSeeColl}!````~CSeeColl@{$\sim$CSeeColl}}
+\index{````~CSeeColl@{$\sim$CSeeColl}!CSeeColl@{CSeeColl}}
+\doxysubsubsection{\texorpdfstring{$\sim$CSeeColl()}{~CSeeColl()}}
+{\footnotesize\ttfamily CSee\+Coll\+::$\sim$\+CSee\+Coll (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+デストラクタ 
+
+これは誰が何と言おうとデストラクタだ 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_see_coll_a31d917994b761882fef54dc6b296a844}\label{class_c_see_coll_a31d917994b761882fef54dc6b296a844}} 
+\index{CSeeColl@{CSeeColl}!DeleteCollBox@{DeleteCollBox}}
+\index{DeleteCollBox@{DeleteCollBox}!CSeeColl@{CSeeColl}}
+\doxysubsubsection{\texorpdfstring{DeleteCollBox()}{DeleteCollBox()}}
+{\footnotesize\ttfamily void CSee\+Coll\+::\+Delete\+Coll\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+メッシュを削除する関数 
+
+当たり判定表示メッシュの削除 呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_c_see_coll_a31d917994b761882fef54dc6b296a844_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_see_coll_aede3402862cec9b72fef2fb50577478b}\label{class_c_see_coll_aede3402862cec9b72fef2fb50577478b}} 
+\index{CSeeColl@{CSeeColl}!Draw@{Draw}}
+\index{Draw@{Draw}!CSeeColl@{CSeeColl}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void CSee\+Coll\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+描画処理 
+
+描画するための関数 
+
+\mbox{\hyperlink{class_component_a8622ccd5f24035d48e33292717299313}{Component}}を再実装しています。
+
+\mbox{\Hypertarget{class_c_see_coll_a011da70b78c290c626c94e1e1f65dd81}\label{class_c_see_coll_a011da70b78c290c626c94e1e1f65dd81}} 
+\index{CSeeColl@{CSeeColl}!SetCollBox@{SetCollBox}}
+\index{SetCollBox@{SetCollBox}!CSeeColl@{CSeeColl}}
+\doxysubsubsection{\texorpdfstring{SetCollBox()}{SetCollBox()}}
+{\footnotesize\ttfamily void CSee\+Coll\+::\+Set\+Coll\+Box (\begin{DoxyParamCaption}\item[{XMFLOAT3}]{Coll\+Size,  }\item[{XMFLOAT2}]{Off\+Set }\end{DoxyParamCaption})}
+
+
+
+当たり判定の大きさとズレの設定をしなおす関数 
+
+当たり判定描画の大きさの設定し直し
+
+
+\begin{DoxyParams}{引数}
+{\em (\+XMFLOAT3)} & 設定した大きさの数値 \\
+\hline
+\end{DoxyParams}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{class_c_see_coll_a011da70b78c290c626c94e1e1f65dd81_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_see_coll_ab1cc85ed730b6ab2aeb7adfb6ee59230}\label{class_c_see_coll_ab1cc85ed730b6ab2aeb7adfb6ee59230}} 
+\index{CSeeColl@{CSeeColl}!Start@{Start}}
+\index{Start@{Start}!CSeeColl@{CSeeColl}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void CSee\+Coll\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+初期化 
+
+初期化する 
+
+\mbox{\hyperlink{class_component_a3f57807787e0015833ccffd83fb63d14}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_see_coll_ab1cc85ed730b6ab2aeb7adfb6ee59230_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_see_coll_a2f39451e348977f12f7b1168c06c996c}\label{class_c_see_coll_a2f39451e348977f12f7b1168c06c996c}} 
+\index{CSeeColl@{CSeeColl}!Update@{Update}}
+\index{Update@{Update}!CSeeColl@{CSeeColl}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void CSee\+Coll\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新処理 
+
+
+
+\mbox{\hyperlink{class_component_aaf2ce6dc5752072492f790ad4c7955bb}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_c_see_coll_a2f39451e348977f12f7b1168c06c996c_cgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_see_coll_component_8h}{See\+Coll\+Component.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_see_coll_component_8cpp}{See\+Coll\+Component.\+cpp}}\end{DoxyCompactItemize}

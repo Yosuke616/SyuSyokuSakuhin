@@ -1,0 +1,5 @@
+<map id="SceneGame::SetStage" name="SceneGame::SetStage">
+<area shape="rect" id="node1" title="シーンの切替" alt="" coords="5,31,161,57"/>
+<area shape="rect" id="node2" href="$main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="210,5,309,32"/>
+<area shape="rect" id="node3" href="$class_scene.html#aa94fb256b8a862aee810db4f1e8d56a4" title=" " alt="" coords="209,56,309,83"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="TextureManager::AddTexture" name="TextureManager::AddTexture">
+<area shape="rect" id="node1" title="テクスチャの追加" alt="" coords="656,183,845,209"/>
+<area shape="rect" id="node2" href="$class_menu_manager.html#a9f2f549c8364364b698b7c99d5f52f23" title="ミスメニュー" alt="" coords="397,56,608,83"/>
+<area shape="rect" id="node7" href="$class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="443,107,562,133"/>
+<area shape="rect" id="node8" href="$class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="443,157,562,184"/>
+<area shape="rect" id="node9" href="$class_scene_stage__1.html#ab4bb4703f3f44eb4f5c49f44003627cf" title="初期化" alt="" coords="437,208,569,235"/>
+<area shape="rect" id="node10" href="$class_scene_title.html#a25a10fe18f8ff1f5a7e657cfe6eca671" title=" " alt="" coords="449,259,557,285"/>
+<area shape="rect" id="node11" href="$class_c_see_coll.html#ab1cc85ed730b6ab2aeb7adfb6ee59230" title="初期化" alt="" coords="447,309,559,336"/>
+<area shape="rect" id="node3" href="$class_menu_manager.html#aabc8f23d87e058b5c5b099a8c34a2af8" title="更新処理" alt="" coords="196,56,349,83"/>
+<area shape="rect" id="node4" href="$class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node5" href="$class_stage_select.html#aa2796a223f0c14a63523a725957de1ef" title="更新処理" alt="" coords="5,56,148,83"/>
+<area shape="rect" id="node6" href="$class_scene_title.html#af1b28c5ab2cced3b7d8106ef0cd8b0ae" title=" " alt="" coords="11,107,143,133"/>
+</map>

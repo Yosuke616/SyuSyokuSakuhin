@@ -1,0 +1,43 @@
+\hypertarget{_gravity_component_8h_source}{}\doxysection{Gravity\+Component.\+h}
+\label{_gravity_component_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/GravityComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/GravityComponent.h}}
+\mbox{\hyperlink{_gravity_component_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_GRAVITY\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_GRAVITY\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define GRAVITY (0.3f)}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define MAX\_VELOCITY (7.5f)}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_transform}{CTransform}};}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_gravity}{CGravity}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{26 \textcolor{keyword}{private}:}
+\DoxyCodeLine{27     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{29 \textcolor{comment}{}    \mbox{\hyperlink{class_c_transform}{CTransform}}* m\_pTransform;}
+\DoxyCodeLine{31     \textcolor{keywordtype}{bool} m\_bUse;}
+\DoxyCodeLine{32     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{35     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{44 \textcolor{comment}{}    \mbox{\hyperlink{class_c_gravity_ac7d0cc8646470ab3e6e982b262345548}{CGravity}}();}
+\DoxyCodeLine{46     \mbox{\hyperlink{class_c_gravity_a8b8ce7156cca222b272db211685046a4}{\string~CGravity}}();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_gravity_a7aa81236f314c5c01ab63570d8df0a44}{Start}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_gravity_a1f1deaebcbdf0e23ca4f9ab3a6e057f9}{Update}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_gravity_a88fc956c356601cf81582a54f658fd01}{SetUse}}(\textcolor{keywordtype}{bool} use);}
+\DoxyCodeLine{55 \};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

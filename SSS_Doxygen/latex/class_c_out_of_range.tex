@@ -1,0 +1,179 @@
+\hypertarget{class_c_out_of_range}{}\doxysection{COut\+Of\+Range クラス}
+\label{class_c_out_of_range}\index{COutOfRange@{COutOfRange}}
+
+
+{\ttfamily \#include $<$Out\+Of\+Range.\+h$>$}
+
+
+
+COut\+Of\+Range の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{class_c_out_of_range__inherit__graph}
+\end{center}
+\end{figure}
+
+
+COut\+Of\+Range 連携図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{class_c_out_of_range__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_out_of_range_aa7337b93f62a7297d4e674b3492152c1}{COut\+Of\+Range}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_out_of_range_af7e0d86e82145da8de96d4e4351aff20}{$\sim$\+COut\+Of\+Range}} () override
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_out_of_range_a733e14aa676e57181da0e943e3c26ff1}{Start}} () override
+\begin{DoxyCompactList}\small\item\em 初期化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_out_of_range_a6cf58e1026a25bc88dd598d2c10200f7}{Update}} () override
+\begin{DoxyCompactList}\small\item\em 更新 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_out_of_range_a94c9046bd55118cedc702eb35aa9466d}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em 描画 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_out_of_range_a8dc6652f55b75059b2fed0a9dea9e934}{On\+Collision\+Enter}} (\mbox{\hyperlink{class_object}{Object}} $\ast$p\+Object) override
+\begin{DoxyCompactList}\small\item\em 衝突判定の処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_out_of_range_a95c09a3839cc1bab5aaa363f743f6ef5}{Set\+Limit\+Range}} (float x, float y)
+\begin{DoxyCompactList}\small\item\em 描画する範囲の設定 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+クラス定義 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_out_of_range_aa7337b93f62a7297d4e674b3492152c1}\label{class_c_out_of_range_aa7337b93f62a7297d4e674b3492152c1}} 
+\index{COutOfRange@{COutOfRange}!COutOfRange@{COutOfRange}}
+\index{COutOfRange@{COutOfRange}!COutOfRange@{COutOfRange}}
+\doxysubsubsection{\texorpdfstring{COutOfRange()}{COutOfRange()}}
+{\footnotesize\ttfamily COut\+Of\+Range\+::\+COut\+Of\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+そんなコンストラクタで大丈夫か？
+
+インクルード部 \mbox{\Hypertarget{class_c_out_of_range_af7e0d86e82145da8de96d4e4351aff20}\label{class_c_out_of_range_af7e0d86e82145da8de96d4e4351aff20}} 
+\index{COutOfRange@{COutOfRange}!````~COutOfRange@{$\sim$COutOfRange}}
+\index{````~COutOfRange@{$\sim$COutOfRange}!COutOfRange@{COutOfRange}}
+\doxysubsubsection{\texorpdfstring{$\sim$COutOfRange()}{~COutOfRange()}}
+{\footnotesize\ttfamily COut\+Of\+Range\+::$\sim$\+COut\+Of\+Range (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+デストラクタ 
+
+一番いいデストラクタをくれ 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_out_of_range_a94c9046bd55118cedc702eb35aa9466d}\label{class_c_out_of_range_a94c9046bd55118cedc702eb35aa9466d}} 
+\index{COutOfRange@{COutOfRange}!Draw@{Draw}}
+\index{Draw@{Draw}!COutOfRange@{COutOfRange}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void COut\+Of\+Range\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+描画 
+
+描画処理 
+
+\mbox{\hyperlink{class_component_a8622ccd5f24035d48e33292717299313}{Component}}を再実装しています。
+
+\mbox{\Hypertarget{class_c_out_of_range_a8dc6652f55b75059b2fed0a9dea9e934}\label{class_c_out_of_range_a8dc6652f55b75059b2fed0a9dea9e934}} 
+\index{COutOfRange@{COutOfRange}!OnCollisionEnter@{OnCollisionEnter}}
+\index{OnCollisionEnter@{OnCollisionEnter}!COutOfRange@{COutOfRange}}
+\doxysubsubsection{\texorpdfstring{OnCollisionEnter()}{OnCollisionEnter()}}
+{\footnotesize\ttfamily void COut\+Of\+Range\+::\+On\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} $\ast$}]{p\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+衝突判定の処理 
+
+衝突判定の処理 @detail 内装はないそうです
+
+
+\begin{DoxyParams}{引数}
+{\em (\+Object$\ast$)} & 衝突したオブジェクトの情報 \\
+\hline
+\end{DoxyParams}
+
+
+\mbox{\hyperlink{class_component_affb738998b25ee4b6be3719e020d16f2}{Component}}を再実装しています。
+
+\mbox{\Hypertarget{class_c_out_of_range_a95c09a3839cc1bab5aaa363f743f6ef5}\label{class_c_out_of_range_a95c09a3839cc1bab5aaa363f743f6ef5}} 
+\index{COutOfRange@{COutOfRange}!SetLimitRange@{SetLimitRange}}
+\index{SetLimitRange@{SetLimitRange}!COutOfRange@{COutOfRange}}
+\doxysubsubsection{\texorpdfstring{SetLimitRange()}{SetLimitRange()}}
+{\footnotesize\ttfamily void COut\+Of\+Range\+::\+Set\+Limit\+Range (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y }\end{DoxyParamCaption})}
+
+
+
+描画する範囲の設定 
+
+範囲の設定 @detail 個別で範囲を設定したいときに必要になってくるのでしょう
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & 横の範囲の設定 \\
+\hline
+{\em (float)} & 縦の範囲の設定 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_out_of_range_a733e14aa676e57181da0e943e3c26ff1}\label{class_c_out_of_range_a733e14aa676e57181da0e943e3c26ff1}} 
+\index{COutOfRange@{COutOfRange}!Start@{Start}}
+\index{Start@{Start}!COutOfRange@{COutOfRange}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void COut\+Of\+Range\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+初期化 
+
+
+
+\mbox{\hyperlink{class_component_a3f57807787e0015833ccffd83fb63d14}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_c_out_of_range_a733e14aa676e57181da0e943e3c26ff1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_out_of_range_a6cf58e1026a25bc88dd598d2c10200f7}\label{class_c_out_of_range_a6cf58e1026a25bc88dd598d2c10200f7}} 
+\index{COutOfRange@{COutOfRange}!Update@{Update}}
+\index{Update@{Update}!COutOfRange@{COutOfRange}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void COut\+Of\+Range\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新 
+
+更新処理 @detail カメラを基準にし、一定以上離れたらオブジェクトの機能を停止する 
+
+\mbox{\hyperlink{class_component_aaf2ce6dc5752072492f790ad4c7955bb}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{class_c_out_of_range_a6cf58e1026a25bc88dd598d2c10200f7_cgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_out_of_range_8h}{Out\+Of\+Range.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_out_of_range_8cpp}{Out\+Of\+Range.\+cpp}}\end{DoxyCompactItemize}

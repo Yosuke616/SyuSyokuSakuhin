@@ -1,0 +1,68 @@
+\hypertarget{_draw3d_component_8h_source}{}\doxysection{Draw3d\+Component.\+h}
+\label{_draw3d_component_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Draw3dComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Draw3dComponent.h}}
+\mbox{\hyperlink{_draw3d_component_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_DRAW\_3D\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_DRAW\_3D\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{//インクルード部}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_assimp_model_8h}{AssimpModel.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//前方宣言}}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_transform}{CTransform}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_animation}{Animation}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_draw3_d}{CDraw3D}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{23 \textcolor{keyword}{private}:}
+\DoxyCodeLine{24     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{26 \textcolor{comment}{}    \mbox{\hyperlink{class_c_assimp_model}{CAssimpModel}}* m\_model;}
+\DoxyCodeLine{28     XMFLOAT4X4 m\_mtxWorld;}
+\DoxyCodeLine{30     \mbox{\hyperlink{class_c_transform}{CTransform}}* m\_pTransform;}
+\DoxyCodeLine{32     \mbox{\hyperlink{struct_t_assimp_material}{TAssimpMaterial}}* m\_pMaterial;}
+\DoxyCodeLine{34     \mbox{\hyperlink{class_animation}{Animation}}* m\_pAnim;}
+\DoxyCodeLine{36     \textcolor{comment}{//TAssimpMaterial m\_Material;}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{41     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{public}:}
+\DoxyCodeLine{46     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{50 \textcolor{comment}{}    \mbox{\hyperlink{class_c_draw3_d_a30b1dae598c1ec3fbe3efff98e79e685}{CDraw3D}}();}
+\DoxyCodeLine{52     \mbox{\hyperlink{class_c_draw3_d_a45182dc96f7fe2a4d3b0fa29d3e0718a}{\string~CDraw3D}}();}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw3_d_addb8dd96fb70245aa3b9e5cdbe906148}{Start}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw3_d_aa42fcba7f1258571457c186292f91702}{Update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw3_d_a4e807eb965451e20de9e2c0a2fe619fa}{Draw}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61     XMFLOAT4X4* \mbox{\hyperlink{class_c_draw3_d_a63f9c9eb68c44bb1f835b32291eb7f45}{GetWorldPos}}();}
+\DoxyCodeLine{63     XMFLOAT3 \mbox{\hyperlink{class_c_draw3_d_af77f20b203075d3a4d15150746a6d147}{GetBox}}();}
+\DoxyCodeLine{65     \mbox{\hyperlink{class_c_assimp_model}{CAssimpModel}}* \mbox{\hyperlink{class_c_draw3_d_aa40308d47c671597d32b2c330305f5ef}{GetModel}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw3_d_a318190747f42c6d63bf01f58ba766e2f}{SetModel}}(\mbox{\hyperlink{class_c_assimp_model}{CAssimpModel}}* model);}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw3_d_a44862b532ef21b2abb943995f990519a}{SetPrimitiveType}}(D3D\_PRIMITIVE\_TOPOLOGY type);}
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw3_d_a0a63bace263206c8bcb7106a46358d0b}{SetTexture}}(ID3D11ShaderResourceView* pTexture);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{75     \textcolor{comment}{//double GetAnimDuration();}}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{comment}{//アニメーション}}
+\DoxyCodeLine{79 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw3_d_af6183b17704f3859819a4e6823d0a418}{AddAnimation}}(\textcolor{keywordtype}{int} AnimID, \textcolor{keywordtype}{double} \mbox{\hyperlink{class_c_draw3_d_addb8dd96fb70245aa3b9e5cdbe906148}{Start}}, \textcolor{keywordtype}{double} end, \textcolor{keywordtype}{bool} loop, \textcolor{keywordtype}{double} loopStartFrame = -\/1);}
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw3_d_a3dd93b96e4f10365c473a3e848c6ef31}{Play}}(\textcolor{keywordtype}{int} AnimID);}
+\DoxyCodeLine{83     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw3_d_a8b860e3975e265ac0c28e438181d38cb}{SetAnimTime}}(\textcolor{keywordtype}{double} dTime);}
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw3_d_a870d18c4146e25de9aaafdddd3d91c92}{AlwaysAnimation}}(\textcolor{keywordtype}{bool} always);}
+\DoxyCodeLine{87     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw3_d_adf63db5ebc5fd24b789a4bbd042c4a95}{SetPlaySpeed}}(\textcolor{keywordtype}{int} AnimID,\textcolor{keywordtype}{double} speed);}
+\DoxyCodeLine{89     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw3_d_ab72bfb7b7fede9117219afbb9a5784cd}{Absolute}}(\textcolor{keywordtype}{int} AnimID,\textcolor{keywordtype}{bool} \mbox{\hyperlink{class_c_draw3_d_ab72bfb7b7fede9117219afbb9a5784cd}{Absolute}});}
+\DoxyCodeLine{91     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_c_draw3_d_a5814eb2eadef21588eeda20bd82430f2}{AnimEnd}}(\textcolor{keywordtype}{int} AnimID);}
+\DoxyCodeLine{92 \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

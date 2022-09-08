@@ -1,0 +1,8 @@
+<map id="CAssimpModel::SetAnimTime" name="CAssimpModel::SetAnimTime">
+<area shape="rect" id="node1" title=" " alt="" coords="5,56,201,83"/>
+<area shape="rect" id="node2" href="$class_scene_animator.html#ac2fca81d4eb40a272065b5cf032db38b" title=" " alt="" coords="249,56,423,83"/>
+<area shape="rect" id="node3" href="$class_anim_evaluator.html#ad54be6d3b474ab3753b12c6996bc2852" title=" " alt="" coords="503,5,665,32"/>
+<area shape="rect" id="node4" href="$class_anim_evaluator.html#a2924e71632d97c009d30179756704a57" title=" " alt="" coords="471,56,697,83"/>
+<area shape="rect" id="node5" href="$class_scene_animator.html#a8d108ebc1aee4a86d162accc0e40ebe7" title=" " alt="" coords="472,131,696,157"/>
+<area shape="rect" id="node6" href="$class_scene_animator.html#aaffdfbd7ebf7787f81f6f48e1466da3a" title=" " alt="" coords="745,123,919,165"/>
+</map>

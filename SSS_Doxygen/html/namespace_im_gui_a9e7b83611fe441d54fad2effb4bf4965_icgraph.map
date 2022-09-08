@@ -1,0 +1,25 @@
+<map id="ImGui::Text" name="ImGui::Text">
+<area shape="rect" id="node1" title=" " alt="" coords="504,284,593,311"/>
+<area shape="rect" id="node2" href="$namespace_im_gui.html#afad90b366b6471e3b13175c0ebeb26c8" title=" " alt="" coords="277,5,409,32"/>
+<area shape="rect" id="node3" href="$namespace_im_gui.html#ae0207d60728f7e6a47dbcd1d7d84e3cb" title=" " alt="" coords="265,56,422,83"/>
+<area shape="rect" id="node5" href="$namespace_im_gui.html#ad843ddd00b2e6f8182c2bac52bcd9bdc" title=" " alt="" coords="231,107,456,133"/>
+<area shape="rect" id="node6" href="$namespace_im_gui.html#a8c2ed9f140c90d8eaca1e2cfd8f46142" title=" " alt="" coords="241,157,446,184"/>
+<area shape="rect" id="node8" href="$class_c_camera.html#a63f970e7d925755e787761d135b7dbd7" title=" " alt="" coords="287,208,400,235"/>
+<area shape="rect" id="node9" href="$main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="318,259,369,285"/>
+<area shape="rect" id="node11" href="$class_menu_manager.html#a257fe839c85d81f74f2077bd0d7dbd63" title="描画処理" alt="" coords="273,309,414,336"/>
+<area shape="rect" id="node15" href="$class_stage_manager.html#ae704cc0e6a00b5b94f4974869e1d90b8" title="描画処理" alt="" coords="272,360,415,387"/>
+<area shape="rect" id="node16" href="$class_c_enemy.html#aefe3d898f9ac30f42ceac5c7d4979d2f" title="描画処理" alt="" coords="289,411,398,437"/>
+<area shape="rect" id="node17" href="$class_c_player.html#a9f4de6ca09dfa30de3b06c9d548a0d8f" title="描画" alt="" coords="291,461,396,488"/>
+<area shape="rect" id="node18" href="$namespace_im_gui.html#afe7a28c6eb52fff3cc27d5a698fea4ff" title=" " alt="" coords="251,512,436,539"/>
+<area shape="rect" id="node19" href="$namespace_im_gui.html#a1b3324308e43eeded5c3599fa0f03e85" title=" " alt="" coords="295,563,392,589"/>
+<area shape="rect" id="node4" href="$namespace_im_gui.html#acab51ec2b39577845309f24535381038" title=" " alt="" coords="18,56,170,83"/>
+<area shape="rect" id="node7" href="$namespace_im_gui.html#afcb602554925c5409977f0fb39f77e5d" title=" " alt="" coords="5,157,183,184"/>
+<area shape="rect" id="node10" href="$main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="52,233,136,260"/>
+<area shape="rect" id="node12" href="$class_scene_game.html#ac14f575125dcaf8cfd416f9512ee0107" title="描画処理" alt="" coords="29,284,159,311"/>
+<area shape="rect" id="node13" href="$class_stage_select.html#a607ba8e951492ae25d5ff4942b029e27" title="描画処理" alt="" coords="29,335,159,361"/>
+<area shape="rect" id="node14" href="$class_scene_title.html#acc6b1370a2f20c20e7295d160d1ce6bb" title=" " alt="" coords="34,385,154,412"/>
+<area shape="rect" id="node20" href="$struct_im_color.html#a95206b688dcc03f725790538c74f4526" title=" " alt="" coords="35,487,153,513"/>
+<area shape="rect" id="node21" href="$struct_im_color.html#a4f4fc53e0676d50404d6d5ffcf16637f" title=" " alt="" coords="13,537,175,564"/>
+<area shape="rect" id="node22" href="$struct_im_color.html#a10f1de242f13c93f8be64545e4cbcb0a" title=" " alt="" coords="9,588,179,615"/>
+<area shape="rect" id="node23" href="$struct_im_color.html#afcff20160db703b956d56e5a9fa88e24" title=" " alt="" coords="33,639,155,665"/>
+</map>

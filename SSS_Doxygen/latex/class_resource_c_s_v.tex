@@ -1,0 +1,352 @@
+\hypertarget{class_resource_c_s_v}{}\doxysection{Resource\+CSV クラス}
+\label{class_resource_c_s_v}\index{ResourceCSV@{ResourceCSV}}
+
+
+CSV読み込んじゃうよーん @detail 実際にファイルの中まで入り読み込んだり書き込んだりする  
+
+
+
+
+{\ttfamily \#include $<$Resource\+CSV.\+h$>$}
+
+
+
+Resource\+CSV の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_resource_c_s_v__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Resource\+CSV 連携図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_resource_c_s_v__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_resource_c_s_v_ad11513c6b6d36b549d1ad9445383bc17}{Resource\+CSV}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_resource_c_s_v_a420e90e5a36275584797e7731f20d732}{$\sim$\+Resource\+CSV}} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_resource_c_s_v_ad5a14cd107aea62537ec3d7c624edab1}{Load}} (std\+::string file\+Name) override
+\begin{DoxyCompactList}\small\item\em ロード \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_resource_c_s_v_abf8512be9116981588d5930e08f7881d}{Save}} (std\+::string file\+Name) override
+\begin{DoxyCompactList}\small\item\em セーブ \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_resource_c_s_v_a66e674d2e116f338e816f03d5bf1ce39}{Get\+Str}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em セルの場所に入っている文字の取得 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_resource_c_s_v_a94d56d83495dec3c0f618146a29ef059}{Get\+Int}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em セルに記入されている文字を数値で取得 \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_resource_c_s_v_a771e7a65d1f09a4d9216c529e45ecf74}{Get\+Float}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em セルに記入されている文字を数値(float型)で取得 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_resource_c_s_v_a00d7764b5c481597e4747ef3afa66a71}{Get\+Row\+Size}} ()
+\begin{DoxyCompactList}\small\item\em 行の数を取得 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_resource_c_s_v_a6d4e6e00df2fe2ad283e13c8ff8df464}{Get\+Column\+Size}} (int row)
+\begin{DoxyCompactList}\small\item\em 列の数を取得 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_resource_c_s_v_a34c1e609a23c9c1dee6aed5dd3da886f}{Set\+Str}} (int x, int y, std\+::string str)
+\begin{DoxyCompactList}\small\item\em セルに文字を入力する \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_resource_c_s_v_a2f1dc7d3c7b55b6450b5070a91fb78f1}{Set\+Int}} (int x, int y, int num)
+\begin{DoxyCompactList}\small\item\em セルに数値を入力する \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_resource_c_s_v_a1d429d8ac3516f0f17e0b1e243f667a3}{Set\+Float}} (int x, int y, float num)
+\begin{DoxyCompactList}\small\item\em セルに数値(小数点込み)を入力する \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_resource_c_s_v_a6bca9e20ccaa3a8cd5bbc3aa047bb3c3}{Set\+Row\+Size}} (int Size)
+\begin{DoxyCompactList}\small\item\em 行の数を指定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_resource_c_s_v_a1208b23460cea14e9d4433fb5f03d0fd}{Set\+Column\+Size}} (int row, int size)
+\begin{DoxyCompactList}\small\item\em 列の数を指定 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+CSV読み込んじゃうよーん @detail 実際にファイルの中まで入り読み込んだり書き込んだりする 
+
+インクルードガード インクルード部 クラス定義 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_resource_c_s_v_ad11513c6b6d36b549d1ad9445383bc17}\label{class_resource_c_s_v_ad11513c6b6d36b549d1ad9445383bc17}} 
+\index{ResourceCSV@{ResourceCSV}!ResourceCSV@{ResourceCSV}}
+\index{ResourceCSV@{ResourceCSV}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{ResourceCSV()}{ResourceCSV()}}
+{\footnotesize\ttfamily Resource\+CSV\+::\+Resource\+CSV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+癖になってるんだよね、コンストラクタするの
+
+インクルード部 \mbox{\Hypertarget{class_resource_c_s_v_a420e90e5a36275584797e7731f20d732}\label{class_resource_c_s_v_a420e90e5a36275584797e7731f20d732}} 
+\index{ResourceCSV@{ResourceCSV}!````~ResourceCSV@{$\sim$ResourceCSV}}
+\index{````~ResourceCSV@{$\sim$ResourceCSV}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{$\sim$ResourceCSV()}{~ResourceCSV()}}
+{\footnotesize\ttfamily Resource\+CSV\+::$\sim$\+Resource\+CSV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+デストラクタ 
+
+デストラクタお前はここで消えねばならん・・・わかるな 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_resource_c_s_v_a6d4e6e00df2fe2ad283e13c8ff8df464}\label{class_resource_c_s_v_a6d4e6e00df2fe2ad283e13c8ff8df464}} 
+\index{ResourceCSV@{ResourceCSV}!GetColumnSize@{GetColumnSize}}
+\index{GetColumnSize@{GetColumnSize}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{GetColumnSize()}{GetColumnSize()}}
+{\footnotesize\ttfamily int Resource\+CSV\+::\+Get\+Column\+Size (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})}
+
+
+
+列の数を取得 
+
+列の数を取得するよ
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & 何行目かの数値 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(int) どのくらいあったかを返す 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_resource_c_s_v_a771e7a65d1f09a4d9216c529e45ecf74}\label{class_resource_c_s_v_a771e7a65d1f09a4d9216c529e45ecf74}} 
+\index{ResourceCSV@{ResourceCSV}!GetFloat@{GetFloat}}
+\index{GetFloat@{GetFloat}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{GetFloat()}{GetFloat()}}
+{\footnotesize\ttfamily float Resource\+CSV\+::\+Get\+Float (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+セルに記入されている文字を数値(float型)で取得 
+
+セルの文字をfloatで取得
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & 横の数 \\
+\hline
+{\em (int)} & 縦の数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(float) 返す数値(it浮動小数点) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_resource_c_s_v_a94d56d83495dec3c0f618146a29ef059}\label{class_resource_c_s_v_a94d56d83495dec3c0f618146a29ef059}} 
+\index{ResourceCSV@{ResourceCSV}!GetInt@{GetInt}}
+\index{GetInt@{GetInt}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{GetInt()}{GetInt()}}
+{\footnotesize\ttfamily int Resource\+CSV\+::\+Get\+Int (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+セルに記入されている文字を数値で取得 
+
+セルの文字列を数値に変える
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & 横の数 \\
+\hline
+{\em (int)} & 縦の数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(int) 返す数値 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_resource_c_s_v_a00d7764b5c481597e4747ef3afa66a71}\label{class_resource_c_s_v_a00d7764b5c481597e4747ef3afa66a71}} 
+\index{ResourceCSV@{ResourceCSV}!GetRowSize@{GetRowSize}}
+\index{GetRowSize@{GetRowSize}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{GetRowSize()}{GetRowSize()}}
+{\footnotesize\ttfamily int Resource\+CSV\+::\+Get\+Row\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+行の数を取得 
+
+行の数を取得す
+
+\begin{DoxyReturn}{戻り値}
+(int) 何行あったか返す 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_resource_c_s_v_a66e674d2e116f338e816f03d5bf1ce39}\label{class_resource_c_s_v_a66e674d2e116f338e816f03d5bf1ce39}} 
+\index{ResourceCSV@{ResourceCSV}!GetStr@{GetStr}}
+\index{GetStr@{GetStr}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{GetStr()}{GetStr()}}
+{\footnotesize\ttfamily std\+::string Resource\+CSV\+::\+Get\+Str (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+セルの場所に入っている文字の取得 
+
+セルの縦横比を貰う
+
+ゲッター
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & 横の数 \\
+\hline
+{\em (int)} & 縦の数 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+指定の場所の文字情報を返す(中に誰もいませんよ) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_resource_c_s_v_ad5a14cd107aea62537ec3d7c624edab1}\label{class_resource_c_s_v_ad5a14cd107aea62537ec3d7c624edab1}} 
+\index{ResourceCSV@{ResourceCSV}!Load@{Load}}
+\index{Load@{Load}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily bool Resource\+CSV\+::\+Load (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+ロード 
+
+
+
+\mbox{\hyperlink{class_resource_base_ad8337e8e6d8573e89d878708961b0e36}{Resource\+Base}}を実装しています。
+
+\mbox{\Hypertarget{class_resource_c_s_v_abf8512be9116981588d5930e08f7881d}\label{class_resource_c_s_v_abf8512be9116981588d5930e08f7881d}} 
+\index{ResourceCSV@{ResourceCSV}!Save@{Save}}
+\index{Save@{Save}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily bool Resource\+CSV\+::\+Save (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+セーブ 
+
+CSVファイルに書き込む
+
+
+\begin{DoxyParams}{引数}
+{\em (string)} & 読込先の名前 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(bool) 無事に書き込めたかどうか 
+\end{DoxyReturn}
+
+
+\mbox{\hyperlink{class_resource_base_a5dab32ff9037185279b127e1055b25bb}{Resource\+Base}}を実装しています。
+
+\mbox{\Hypertarget{class_resource_c_s_v_a1208b23460cea14e9d4433fb5f03d0fd}\label{class_resource_c_s_v_a1208b23460cea14e9d4433fb5f03d0fd}} 
+\index{ResourceCSV@{ResourceCSV}!SetColumnSize@{SetColumnSize}}
+\index{SetColumnSize@{SetColumnSize}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{SetColumnSize()}{SetColumnSize()}}
+{\footnotesize\ttfamily void Resource\+CSV\+::\+Set\+Column\+Size (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+
+列の数を指定 
+
+列の数を設定
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & 行の指定 \\
+\hline
+{\em (int)} & どの位の大きさを設定 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_resource_c_s_v_a1d429d8ac3516f0f17e0b1e243f667a3}\label{class_resource_c_s_v_a1d429d8ac3516f0f17e0b1e243f667a3}} 
+\index{ResourceCSV@{ResourceCSV}!SetFloat@{SetFloat}}
+\index{SetFloat@{SetFloat}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{SetFloat()}{SetFloat()}}
+{\footnotesize\ttfamily void Resource\+CSV\+::\+Set\+Float (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{float}]{num }\end{DoxyParamCaption})}
+
+
+
+セルに数値(小数点込み)を入力する 
+
+セルに実数を入れる
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & 横の数 \\
+\hline
+{\em (int)} & 縦の数 \\
+\hline
+{\em (float)} & 入れたい実数 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_resource_c_s_v_a2f1dc7d3c7b55b6450b5070a91fb78f1}\label{class_resource_c_s_v_a2f1dc7d3c7b55b6450b5070a91fb78f1}} 
+\index{ResourceCSV@{ResourceCSV}!SetInt@{SetInt}}
+\index{SetInt@{SetInt}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{SetInt()}{SetInt()}}
+{\footnotesize\ttfamily void Resource\+CSV\+::\+Set\+Int (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+セルに数値を入力する 
+
+セルの中に数値を入れる
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & 横の数 \\
+\hline
+{\em (int)} & 縦の数 \\
+\hline
+{\em (int)} & 入れたい数値 \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_resource_c_s_v_a2f1dc7d3c7b55b6450b5070a91fb78f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_resource_c_s_v_a6bca9e20ccaa3a8cd5bbc3aa047bb3c3}\label{class_resource_c_s_v_a6bca9e20ccaa3a8cd5bbc3aa047bb3c3}} 
+\index{ResourceCSV@{ResourceCSV}!SetRowSize@{SetRowSize}}
+\index{SetRowSize@{SetRowSize}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{SetRowSize()}{SetRowSize()}}
+{\footnotesize\ttfamily void Resource\+CSV\+::\+Set\+Row\+Size (\begin{DoxyParamCaption}\item[{int}]{Size }\end{DoxyParamCaption})}
+
+
+
+行の数を指定 
+
+行の数を設定
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & どの位の数に設定 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_resource_c_s_v_a34c1e609a23c9c1dee6aed5dd3da886f}\label{class_resource_c_s_v_a34c1e609a23c9c1dee6aed5dd3da886f}} 
+\index{ResourceCSV@{ResourceCSV}!SetStr@{SetStr}}
+\index{SetStr@{SetStr}!ResourceCSV@{ResourceCSV}}
+\doxysubsubsection{\texorpdfstring{SetStr()}{SetStr()}}
+{\footnotesize\ttfamily void Resource\+CSV\+::\+Set\+Str (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{std\+::string}]{str }\end{DoxyParamCaption})}
+
+
+
+セルに文字を入力する 
+
+セルに文字を入れる
+
+セッター
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & 横の数 \\
+\hline
+{\em (int)} & 縦の数 \\
+\hline
+{\em (string)} & 入れたい文字列 \\
+\hline
+\end{DoxyParams}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_resource_c_s_v_8h}{Resource\+CSV.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_resource_c_s_v_8cpp}{Resource\+CSV.\+cpp}}\end{DoxyCompactItemize}

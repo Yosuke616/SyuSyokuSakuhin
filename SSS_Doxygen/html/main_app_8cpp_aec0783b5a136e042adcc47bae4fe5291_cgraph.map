@@ -1,0 +1,10 @@
+<map id="Update" name="Update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,107,68,133"/>
+<area shape="rect" id="node2" href="$class_scene_game.html#a5f5bb9169295264e15c157b98fc17776" title="インスタンス取得" alt="" coords="125,5,297,32"/>
+<area shape="rect" id="node3" href="$class_input_manager.html#a81fb24c5c224f98ece4c2153c20fbd6e" title="キーボードのトリガー状態を取得" alt="" coords="116,56,307,83"/>
+<area shape="rect" id="node4" href="$class_input_manager.html#a53a27e2e25bec96173a4c7532515d10e" title="インスタンス生成" alt="" coords="133,107,290,133"/>
+<area shape="rect" id="node6" href="$class_input_manager.html#aa5480931dba2720e7d80dd00a53adae0" title="更新" alt="" coords="137,157,286,184"/>
+<area shape="rect" id="node7" href="$class_scene_manager.html#a63dcf65832d6a2c190bf496d9a3b00a3" title=" " alt="" coords="132,208,291,235"/>
+<area shape="rect" id="node5" href="$class_input_manager.html#a8be46886da639b26d67181c29dab6d6c" title="コンストラクタ" alt="" coords="355,107,541,133"/>
+<area shape="rect" id="node8" href="$class_scene.html#ab99ec7aff3ed995985ddb764ffb78f8e" title=" " alt="" coords="394,208,502,235"/>
+</map>

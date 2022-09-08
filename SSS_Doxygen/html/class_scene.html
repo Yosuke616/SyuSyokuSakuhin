@@ -1,0 +1,389 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: Scene クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="class_scene-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">Scene クラス<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_scene_8h_source.html">Scene.h</a>&gt;</code></p>
+<div class="dynheader">
+Scene の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene__inherit__graph.png" border="0" usemap="#a_scene_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_scene_inherit__map" id="a_scene_inherit__map">
+<area shape="rect" title=" " alt="" coords="279,5,338,32"/>
+<area shape="rect" href="class_scene_game.html" title="ゲームシーンの為のクラス @detail どのステージを読み込む、ゲームをするうえで必要な情報のみを読み込む" alt="" coords="5,80,100,107"/>
+<area shape="rect" href="class_scene_stage__1.html" title=" " alt="" coords="125,80,231,107"/>
+<area shape="rect" href="class_scene_stage__2.html" title=" " alt="" coords="255,80,362,107"/>
+<area shape="rect" href="class_scene_title.html" title=" " alt="" coords="386,80,469,107"/>
+<area shape="rect" href="class_stage_select.html" title="ステージ選択用のクラス @detail 色々" alt="" coords="493,80,586,107"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+Scene 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene__coll__graph.png" border="0" usemap="#a_scene_coll__map" alt="Collaboration graph"/></div>
+<map name="a_scene_coll__map" id="a_scene_coll__map">
+<area shape="rect" title=" " alt="" coords="105,95,163,121"/>
+<area shape="rect" href="class_object_manager.html" title="生成されたオブジェクトを管理するクラス" alt="" coords="5,5,116,32"/>
+<area shape="rect" href="class_menu_manager.html" title="メニューの状態を管理するクラス @detail シーンごとに用意するメニューを変えたりする" alt="" coords="157,5,261,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ad10176d75a9cc0da56626f682d083507"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ad10176d75a9cc0da56626f682d083507">Scene</a> ()</td></tr>
+<tr class="separator:ad10176d75a9cc0da56626f682d083507"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0a5be58e2ee2d1fdafc5fb46b5e661e"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aa0a5be58e2ee2d1fdafc5fb46b5e661e">~Scene</a> ()</td></tr>
+<tr class="separator:aa0a5be58e2ee2d1fdafc5fb46b5e661e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c4677dfd702a3ffd5ffadd3f1ac478"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478">Init</a> ()=0</td></tr>
+<tr class="separator:ac3c4677dfd702a3ffd5ffadd3f1ac478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94fb256b8a862aee810db4f1e8d56a4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aa94fb256b8a862aee810db4f1e8d56a4">Uninit</a> ()=0</td></tr>
+<tr class="separator:aa94fb256b8a862aee810db4f1e8d56a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab99ec7aff3ed995985ddb764ffb78f8e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ab99ec7aff3ed995985ddb764ffb78f8e">Update</a> ()=0</td></tr>
+<tr class="separator:ab99ec7aff3ed995985ddb764ffb78f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8680672fd30bb4b345e6fab918e31ecd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a8680672fd30bb4b345e6fab918e31ecd">Draw</a> ()=0</td></tr>
+<tr class="separator:a8680672fd30bb4b345e6fab918e31ecd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a6a70cba8ef8354ef1fa033685fa348a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_object_manager.html">ObjectManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a6a70cba8ef8354ef1fa033685fa348a8">m_pObjectManager</a></td></tr>
+<tr class="memdesc:a6a70cba8ef8354ef1fa033685fa348a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">オブジェクトの管理ポインタ  <a href="class_scene.html#a6a70cba8ef8354ef1fa033685fa348a8">[詳解]</a><br /></td></tr>
+<tr class="separator:a6a70cba8ef8354ef1fa033685fa348a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3bb137f44650bba2ab048c0ff0bd52d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_menu_manager.html">MenuManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#af3bb137f44650bba2ab048c0ff0bd52d">m_pMenuManager</a></td></tr>
+<tr class="memdesc:af3bb137f44650bba2ab048c0ff0bd52d"><td class="mdescLeft">&#160;</td><td class="mdescRight">メニュー管理用のポインタ  <a href="class_scene.html#af3bb137f44650bba2ab048c0ff0bd52d">[詳解]</a><br /></td></tr>
+<tr class="separator:af3bb137f44650bba2ab048c0ff0bd52d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="ad10176d75a9cc0da56626f682d083507" name="ad10176d75a9cc0da56626f682d083507"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad10176d75a9cc0da56626f682d083507">&#9670;&nbsp;</a></span>Scene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Scene::Scene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa0a5be58e2ee2d1fdafc5fb46b5e661e" name="aa0a5be58e2ee2d1fdafc5fb46b5e661e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0a5be58e2ee2d1fdafc5fb46b5e661e">&#9670;&nbsp;</a></span>~Scene()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Scene::~Scene </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a8680672fd30bb4b345e6fab918e31ecd" name="a8680672fd30bb4b345e6fab918e31ecd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8680672fd30bb4b345e6fab918e31ecd">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Scene::Draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_scene_game.html#ac14f575125dcaf8cfd416f9512ee0107">SceneGame</a>, <a class="el" href="class_stage_select.html#a607ba8e951492ae25d5ff4942b029e27">StageSelect</a>, <a class="el" href="class_scene_stage__1.html#ac9844a1010ddb8028a971f6d8d6c7156">SceneStage_1</a>, <a class="el" href="class_scene_title.html#acc6b1370a2f20c20e7295d160d1ce6bb">SceneTitle</a>で実装されています。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_a8680672fd30bb4b345e6fab918e31ecd_icgraph.png" border="0" usemap="#aclass_scene_a8680672fd30bb4b345e6fab918e31ecd_icgraph" alt=""/></div>
+<map name="aclass_scene_a8680672fd30bb4b345e6fab918e31ecd_icgraph" id="aclass_scene_a8680672fd30bb4b345e6fab918e31ecd_icgraph">
+<area shape="rect" title=" " alt="" coords="431,5,527,32"/>
+<area shape="rect" href="class_scene_manager.html#a313955e916bc50c0e8cb5d3cf2ed2664" title=" " alt="" coords="236,5,383,32"/>
+<area shape="rect" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="137,5,188,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac3c4677dfd702a3ffd5ffadd3f1ac478" name="ac3c4677dfd702a3ffd5ffadd3f1ac478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3c4677dfd702a3ffd5ffadd3f1ac478">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Scene::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe">SceneGame</a>, <a class="el" href="class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba">StageSelect</a>, <a class="el" href="class_scene_stage__1.html#ab4bb4703f3f44eb4f5c49f44003627cf">SceneStage_1</a>, <a class="el" href="class_scene_title.html#a25a10fe18f8ff1f5a7e657cfe6eca671">SceneTitle</a>で実装されています。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_ac3c4677dfd702a3ffd5ffadd3f1ac478_icgraph.png" border="0" usemap="#aclass_scene_ac3c4677dfd702a3ffd5ffadd3f1ac478_icgraph" alt=""/></div>
+<map name="aclass_scene_ac3c4677dfd702a3ffd5ffadd3f1ac478_icgraph" id="aclass_scene_ac3c4677dfd702a3ffd5ffadd3f1ac478_icgraph">
+<area shape="rect" title=" " alt="" coords="637,31,721,57"/>
+<area shape="rect" href="class_scene_manager.html#a38b987d7f23fed149e20c534a0cf848e" title=" " alt="" coords="415,31,589,57"/>
+<area shape="rect" href="class_scene_manager.html#a2682ac5e419812cb1eeab1fec6a1ce86" title=" " alt="" coords="228,5,363,32"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="224,56,367,83"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="137,5,176,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa94fb256b8a862aee810db4f1e8d56a4" name="aa94fb256b8a862aee810db4f1e8d56a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa94fb256b8a862aee810db4f1e8d56a4">&#9670;&nbsp;</a></span>Uninit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Scene::Uninit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_scene_game.html#a8bd731734e28b5ddd1a23d50bfa56532">SceneGame</a>, <a class="el" href="class_stage_select.html#a16880c0008a1b1a9b872eba7c41e1db3">StageSelect</a>, <a class="el" href="class_scene_stage__1.html#a4a428b55aedbbba6d631eb68ab72c0f2">SceneStage_1</a>, <a class="el" href="class_scene_title.html#ad127eca154bbab43c1f32272ab1559d5">SceneTitle</a>で実装されています。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_aa94fb256b8a862aee810db4f1e8d56a4_icgraph.png" border="0" usemap="#aclass_scene_aa94fb256b8a862aee810db4f1e8d56a4_icgraph" alt=""/></div>
+<map name="aclass_scene_aa94fb256b8a862aee810db4f1e8d56a4_icgraph" id="aclass_scene_aa94fb256b8a862aee810db4f1e8d56a4_icgraph">
+<area shape="rect" title=" " alt="" coords="637,56,737,83"/>
+<area shape="rect" href="class_scene_manager.html#a38b987d7f23fed149e20c534a0cf848e" title=" " alt="" coords="415,31,589,57"/>
+<area shape="rect" href="class_scene_game.html#a40dd3b6c95346b5f374ae10a7b501103" title="シーンの切替" alt="" coords="424,81,580,108"/>
+<area shape="rect" href="class_scene_manager.html#a2682ac5e419812cb1eeab1fec6a1ce86" title=" " alt="" coords="228,5,363,32"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="224,56,367,83"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="137,5,176,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab99ec7aff3ed995985ddb764ffb78f8e" name="ab99ec7aff3ed995985ddb764ffb78f8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab99ec7aff3ed995985ddb764ffb78f8e">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Scene::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686">SceneGame</a>, <a class="el" href="class_stage_select.html#aa2796a223f0c14a63523a725957de1ef">StageSelect</a>, <a class="el" href="class_scene_stage__1.html#a9a99ca5bb5d08e4acadcd5643a339c07">SceneStage_1</a>, <a class="el" href="class_scene_title.html#af1b28c5ab2cced3b7d8106ef0cd8b0ae">SceneTitle</a>で実装されています。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_ab99ec7aff3ed995985ddb764ffb78f8e_icgraph.png" border="0" usemap="#aclass_scene_ab99ec7aff3ed995985ddb764ffb78f8e_icgraph" alt=""/></div>
+<map name="aclass_scene_ab99ec7aff3ed995985ddb764ffb78f8e_icgraph" id="aclass_scene_ab99ec7aff3ed995985ddb764ffb78f8e_icgraph">
+<area shape="rect" title=" " alt="" coords="455,5,563,32"/>
+<area shape="rect" href="class_scene_manager.html#a63dcf65832d6a2c190bf496d9a3b00a3" title=" " alt="" coords="248,5,407,32"/>
+<area shape="rect" href="main_app_8cpp.html#aec0783b5a136e042adcc47bae4fe5291" title=" " alt="" coords="137,5,200,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="af3bb137f44650bba2ab048c0ff0bd52d" name="af3bb137f44650bba2ab048c0ff0bd52d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3bb137f44650bba2ab048c0ff0bd52d">&#9670;&nbsp;</a></span>m_pMenuManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_menu_manager.html">MenuManager</a>* Scene::m_pMenuManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>メニュー管理用のポインタ </p>
+
+</div>
+</div>
+<a id="a6a70cba8ef8354ef1fa033685fa348a8" name="a6a70cba8ef8354ef1fa033685fa348a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a70cba8ef8354ef1fa033685fa348a8">&#9670;&nbsp;</a></span>m_pObjectManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_object_manager.html">ObjectManager</a>* Scene::m_pObjectManager</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>オブジェクトの管理ポインタ </p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="_scene_8h_source.html">Scene.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

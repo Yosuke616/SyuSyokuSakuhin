@@ -1,0 +1,9 @@
+<map id="CDraw3D::SetAnimTime" name="CDraw3D::SetAnimTime">
+<area shape="rect" id="node1" title="アニメーションの再生フレーム設定" alt="" coords="5,56,168,83"/>
+<area shape="rect" id="node2" href="$class_c_assimp_model.html#a46d9b841367394d10bb887e2ccb370f7" title=" " alt="" coords="216,56,412,83"/>
+<area shape="rect" id="node3" href="$class_scene_animator.html#ac2fca81d4eb40a272065b5cf032db38b" title=" " alt="" coords="460,56,633,83"/>
+<area shape="rect" id="node4" href="$class_anim_evaluator.html#ad54be6d3b474ab3753b12c6996bc2852" title=" " alt="" coords="713,5,876,32"/>
+<area shape="rect" id="node5" href="$class_anim_evaluator.html#a2924e71632d97c009d30179756704a57" title=" " alt="" coords="681,56,908,83"/>
+<area shape="rect" id="node6" href="$class_scene_animator.html#a8d108ebc1aee4a86d162accc0e40ebe7" title=" " alt="" coords="683,131,907,157"/>
+<area shape="rect" id="node7" href="$class_scene_animator.html#aaffdfbd7ebf7787f81f6f48e1466da3a" title=" " alt="" coords="956,123,1129,165"/>
+</map>

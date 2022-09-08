@@ -1,0 +1,41 @@
+\hypertarget{_light_8h_source}{}\doxysection{Light.\+h}
+\label{_light_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Light.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Light.h}}
+\mbox{\hyperlink{_light_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_LIGHT\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_LIGHT\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{//インクルード部}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_light}{CLight}}}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     \textcolor{comment}{//=== メンバ変数 ===}}
+\DoxyCodeLine{19 \textcolor{keyword}{private}:}
+\DoxyCodeLine{21     XMFLOAT4 m\_diffuse; }
+\DoxyCodeLine{23     XMFLOAT4 m\_ambient;     }
+\DoxyCodeLine{25     XMFLOAT4 m\_specular;    }
+\DoxyCodeLine{27     XMFLOAT3 m\_direction;}
+\DoxyCodeLine{29     \textcolor{keywordtype}{bool} m\_bEnable;     }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32     \textcolor{comment}{//=== メンバ関数 ===}}
+\DoxyCodeLine{33 \textcolor{keyword}{public}:}
+\DoxyCodeLine{35     \mbox{\hyperlink{class_c_light_a6428960cf198a7a9644e3146cf59f82e}{CLight}}();                             }
+\DoxyCodeLine{37     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_light_adf6778ad94bf5d111523f7468540c3c8}{Init}}();                    }
+\DoxyCodeLine{39     XMFLOAT4\& \mbox{\hyperlink{class_c_light_a837bec6973025bfd74f8c9d45ee4583b}{GetDiffuse}}();                   }
+\DoxyCodeLine{41     XMFLOAT4\& \mbox{\hyperlink{class_c_light_ab8f6c373c7391407739f71ef8317ff48}{GetAmbient}}();                   }
+\DoxyCodeLine{43     XMFLOAT4\& \mbox{\hyperlink{class_c_light_a2e39622934de7ca6b477a1a8a17acee2}{GetSpecular}}();             }
+\DoxyCodeLine{45     XMFLOAT3\& \mbox{\hyperlink{class_c_light_ae4b6c1b4ae9b9379e34bda0284bb1940}{GetDir}}();                       }
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_light_ac7b7c97931e49a5ee4cddd829dea43e8}{SetEnable}}(\textcolor{keywordtype}{bool} bEnable = \textcolor{keyword}{true});   }
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_light_a9518a3f2ef3e82b0f839f28541c06d42}{SetDisable}}(\textcolor{keywordtype}{bool} bDisable = \textcolor{keyword}{true});    }
+\DoxyCodeLine{50 }
+\DoxyCodeLine{52     \textcolor{keyword}{static} \mbox{\hyperlink{class_c_light}{CLight}}* \mbox{\hyperlink{class_c_light_a4a80a6d18305f88d251970b4f84ed1c4}{Get}}();                  }
+\DoxyCodeLine{53 \};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,21 +1,21 @@
-/**
+ï»¿/**
 * @file		TextureManager.h
-* @brief	ƒeƒNƒXƒ`ƒƒ‚Ìî•ñ‚ğŠÇ—‚·‚éƒ}ƒl[ƒWƒƒ[
-* @author	u…—z—S
+* @brief	ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®æƒ…å ±ã‚’ç®¡ç†ã™ã‚‹ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼
+* @author	å¿—æ°´é™½ç¥
 * @date		2022/6/28
 */
 
-//ƒCƒ“ƒNƒ‹[ƒhƒK[ƒh
+//ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰ã‚¬ãƒ¼ãƒ‰
 #ifndef _TEXTURE_MANAGER_H_
 #define _TEXTURE_MANAGER_H_
 
-//ƒCƒ“ƒNƒ‹[ƒh•”
+//ã‚¤ãƒ³ã‚¯ãƒ«ãƒ¼ãƒ‰éƒ¨
 #include <unordered_map>
 #include "mainApp.h"
 
-//’è”’è‹`
-/** @brief •K—v‚É‚È‚Á‚Ä‚­‚éƒeƒNƒXƒ`ƒƒ‚ğ‚±‚±‚É‘‚¢‚Ä‚¢‚­*/
-//DX‚¿‚á‚ñ
+//å®šæ•°å®šç¾©
+/** @brief å¿…è¦ã«ãªã£ã¦ãã‚‹ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’ã“ã“ã«æ›¸ã„ã¦ã„ã*/
+//DXã¡ã‚ƒã‚“
 #define DXCHAN_STAND_TEX_NUM				(500)
 #define PATH_TEX_DXCHAN_STAND				("data/texture/Stand_Def.PNG")
 #define DXCHAN_RUN_TEX_NUM					(501)
@@ -24,53 +24,123 @@
 #define DEBUG_BLOCK_NUM						(1)
 #define PATH_TEX_DEBUG_BLOCK				("data/texture/Debug.jpg")
 
-//ƒ^ƒCƒgƒ‹‰æ–Ê—p
+//ã‚¿ã‚¤ãƒˆãƒ«ç”»é¢ç”¨
 #define TITLE_BACK_GROUND_NUM				(2)
 #define PATH_TEX_TITLE_BACK_GROUND			("data/texture/TitleBack.jpg")
 
-//ƒ{ƒ^ƒ“
+//ãƒœã‚¿ãƒ³
 #define TITLE_BUTTON_NUM					(3)
 #define PATH_TEX_TITLE_BUTTON				("data/texture/press_enter.png")
 
-//ƒNƒ‰ƒX’è‹`
+//ãƒ•ã‚§ãƒ¼ãƒ‰ç”¨ãƒ†ã‚¯ã‚¹ãƒãƒ£
+#define FEAD_OUT_NUM						(4)
+#define PATH_TEX_FAID_OUT					("data/texture/BlackOut.png")
+
+//UIé–¢ä¿‚
+//ã‚¹ã‚³ã‚¢									
+#define SCORE_TEX_NUM						(5)
+#define PATH_TEX_SCORE						("data/texture/Score.png")
+
+//ãƒã‚¤ã‚¹ã‚³ã‚¢
+#define MAX_SCORE_TEX_NUM					(6)
+#define PATH_TEX_MAX_SCORE					("data/texture/highscore.png")
+
+//æ•°å­—
+#define NUMBER_TEX_NUM						(7)
+#define PATH_TEX_NUMBER						("data/texture/Number.png")
+
+//ãƒãƒ¼ã‚ºãƒœã‚¿ãƒ³
+#define PAUSE_TEX_NUM						(8)
+#define PATH_TEX_PAUSE						("data/texture/Pause.png")
+
+//æ™‚é–“
+#define TIME_TEX_NUM						(9)
+#define PATH_TEX_TIME						("data/texture/Time.png")
+
+//ãƒ—ãƒƒã‚·ãƒ¥A
+#define PUSH_TEX_NUM						(10)
+#define PATH_TEX_PUSH						("data/texture/pushA.png")
+
+//ã‚¿ã‚¤ãƒˆãƒ«ã¸
+#define TO_TITLE_TEX_NUM					(11)
+#define PATH_TEX_TO_TITLE					("data/texture/ã‚¿ã‚¤ãƒˆãƒ«ã¸.png")
+
+//å†é–‹
+#define RESUME_TEX_NUM						(12)
+#define PATH_TEX_RESUME						("data/texture/å†ä¼š.png")
+
+//ã‚ªãƒ—ã‚·ãƒ§ãƒ³
+#define OPTION_TEX_NUM						(13)
+#define PATH_TEX_OPTION						("data/texture/ã‚ªãƒ•ã‚šã‚·ãƒ§ãƒ³.png")
+
+//åˆã‚ã‹ã‚‰
+#define BEGIN_TEX_NUM						(14)
+#define PATH_TEX_BEGIN						("data/texture/åˆã‚ã‹ã‚‰.png")
+
+//ç¶šãã‹ã‚‰
+#define CONTINUE_TEX_NUM					(15)
+#define PATH_TEX_CONTINUE					("data/texture/ç¶šãã‹ã‚‰.png")
+
+//ã‚¹ãƒ†ãƒ¼ã‚¸ã‚»ãƒ¬ã‚¯ãƒˆ
+#define STAGE_SELECT_TEX_NUM				(16)
+#define PATH_TEX_STAGE_SELECT				("data/texture/ã‚¹ãƒ†ãƒ¼ã‚¸ã‚»ãƒ¬ã‚¯ãƒˆ.png")
+
+//çµ‚ã‚ã‚‹
+#define END_TEX_NUM							(17)
+#define PATH_TEX_END						("data/texture/çµ‚ã‚ã‚‹.png")
+
+//BGM
+#define BGM_TEX_NUM							(18)
+#define PATH_TEX_BGM						("data/texture/BYM.png")
+
+//SE
+#define SE_TEX_NUM							(19)
+#define PATH_TEX_SE							("data/texture/se.png")
+
+//æ˜ã‚‹ã•
+#define BRIGHTNESS_TEX_NUM							(20)
+#define PATH_TEX_BRIGHTNESS					("data/texture/æ˜ã‚‹ã•.png")
+
+
+//ã‚¯ãƒ©ã‚¹å®šç¾©
 /**
 * @class	TextureManager
-* @brief	ƒeƒNƒXƒ`ƒƒ‚ğŠÇ—‚·‚éƒNƒ‰ƒX
+* @brief	ãƒ†ã‚¯ã‚¹ãƒãƒ£ã‚’ç®¡ç†ã™ã‚‹ã‚¯ãƒ©ã‚¹
 */
 class TextureManager {
 private:
-	//ƒƒ“ƒo•Ï”
-	/** @brief ƒCƒ“ƒXƒ^ƒ“ƒX—p•Ï”*/
+	//ãƒ¡ãƒ³ãƒå¤‰æ•°
+	/** @brief ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ç”¨å¤‰æ•°*/
 	static TextureManager* m_pInstance;
-	/** @brief ƒeƒNƒXƒ`ƒƒƒŠƒXƒg*/
+	/** @brief ãƒ†ã‚¯ã‚¹ãƒãƒ£ãƒªã‚¹ãƒˆ*/
 	std::unordered_map<int, ID3D11ShaderResourceView*> m_TextureList;
 
-	//ƒƒ“ƒoŠÖ”
+	//ãƒ¡ãƒ³ãƒé–¢æ•°
 
 protected:
-	//ƒƒ“ƒo•Ï”
+	//ãƒ¡ãƒ³ãƒå¤‰æ•°
 
-	//ƒƒ“ƒoŠÖ”
-	/** @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^*/
+	//ãƒ¡ãƒ³ãƒé–¢æ•°
+	/** @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿*/
 	TextureManager();
 
 public:
-	//ƒƒ“ƒo•Ï”
+	//ãƒ¡ãƒ³ãƒå¤‰æ•°
 
-	//ƒƒ“ƒoŠÖ”
-	/** @brief ƒfƒXƒgƒ‰ƒNƒ^*/
+	//ãƒ¡ãƒ³ãƒé–¢æ•°
+	/** @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿*/
 	~TextureManager();
-	/** @brief ƒCƒ“ƒXƒ^ƒ“ƒX‰»*/
+	/** @brief ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹åŒ–*/
 	static TextureManager* GetInstance();
-	/** @brief I—¹ˆ—*/
+	/** @brief çµ‚äº†å‡¦ç†*/
 	static void Uninit();
-	/** @brief ƒeƒNƒXƒ`ƒƒ‚Ì’Ç‰Á*/
+	/** @brief ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®è¿½åŠ */
 	bool AddTexture(const char* pszFileName,int nTexID);
-	/** @brief ƒeƒNƒXƒ`ƒƒæ“¾*/
+	/** @brief ãƒ†ã‚¯ã‚¹ãƒãƒ£å–å¾—*/
 	ID3D11ShaderResourceView* GetTexture(int nTexID);
-	/** @brief ƒeƒNƒXƒ`ƒƒíœ*/
+	/** @brief ãƒ†ã‚¯ã‚¹ãƒãƒ£å‰Šé™¤*/
 	bool EraseTexture(int nTexID);
-	/** @brief “Ç‚İ‚ñ‚¾ƒeƒNƒXƒ`ƒƒ‚Ì”*/
+	/** @brief èª­ã¿è¾¼ã‚“ã ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®æ•°*/
 	int GetSize();
 };
 

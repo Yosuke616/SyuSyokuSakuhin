@@ -1,0 +1,17 @@
+<map id="CPlayer::ChangeTexture" name="CPlayer::ChangeTexture">
+<area shape="rect" id="node1" title="プレイヤーのテクスチャを変更するための関数" alt="" coords="5,259,168,285"/>
+<area shape="rect" id="node2" href="$class_c_collider.html#a098303a6144f11e6f966dea14e18288b" title="当たり判定の大きさの取得" alt="" coords="227,5,399,32"/>
+<area shape="rect" id="node3" href="$class_object.html#a824beb41e45f1fdecc88c15e11983156" title=" " alt="" coords="235,56,390,83"/>
+<area shape="rect" id="node4" href="$class_texture_manager.html#ab73eee48ba8c35281558094e2f84013d" title="インスタンス化" alt="" coords="216,107,409,133"/>
+<area shape="rect" id="node6" href="$class_c_collider.html#a25bca703b998946ae0325619727f247e" title="オブジェクトの中心のズレ" alt="" coords="243,157,382,184"/>
+<area shape="rect" id="node7" href="$class_texture_manager.html#a8448501f02d76a5c2362bbed98e89728" title="テクスチャ取得" alt="" coords="219,208,406,235"/>
+<area shape="rect" id="node8" href="$class_c_draw_mesh.html#ad989ef32cc5e683f4a645e29bb7c9801" title="分割数設定" alt="" coords="225,259,401,285"/>
+<area shape="rect" id="node9" href="$class_c_collider.html#a940b20263cfa9a6416d932c54fa413df" title="当たり判定の大きさの設定" alt="" coords="224,309,401,336"/>
+<area shape="rect" id="node10" href="$class_c_collider.html#ae9057981540d7d56153c6271297697e6" title="当たり判定の中心とオブジェクトの中心とのズレ" alt="" coords="245,360,381,387"/>
+<area shape="rect" id="node11" href="$class_c_draw_mesh.html#a480544454f885653c931a7b9f8d9163b" title="マスの大きさ" alt="" coords="239,411,386,437"/>
+<area shape="rect" id="node12" href="$class_c_draw_mesh.html#ab2e186b97bd1ac5d706665804d1ebe5d" title="テクスチャのセット" alt="" coords="231,461,394,488"/>
+<area shape="rect" id="node13" href="$class_c_anim_mesh.html#a68647db370f06e36abc97eab88ac1563" title="テクスチャを反転させる準備" alt="" coords="233,512,392,539"/>
+<area shape="rect" id="node5" href="$class_texture_manager.html#ad76abb178b37cedf4514eb0154349935" title="コンストラクタ" alt="" coords="457,107,673,133"/>
+<area shape="rect" id="node14" href="$main_app_8cpp.html#a965053cc7c41d010d359091035281310" title=" " alt="" coords="525,487,606,513"/>
+<area shape="rect" id="node15" href="$class_c_anim_mesh.html#a0f9791e44799f2dedda3756fbec20bba" title="テクスチャを左右反転させる関数" alt="" coords="470,537,661,564"/>
+</map>

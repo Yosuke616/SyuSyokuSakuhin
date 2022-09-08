@@ -1,0 +1,55 @@
+\hypertarget{_model_manager_8h_source}{}\doxysection{Model\+Manager.\+h}
+\label{_model_manager_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ModelManager.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ModelManager.h}}
+\mbox{\hyperlink{_model_manager_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef \_MODEL\_MANAGER\_H\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define \_MODEL\_MANAGER\_H\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{//インクルード部}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_assimp_model_8h}{AssimpModel.h}}"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{//定数定義}}
+\DoxyCodeLine{17 \textcolor{comment}{//仮}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define WALK\_ENEMY\_MODEL\_NUM        (0)}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define PATH\_WALK\_ENEMY         ("{}data/model/WalkEnemy.fbx"{}})}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define MINT\_GREEN\_BLOCK\_NUM    (1)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define PATH\_MINT\_GREEN\_BLOCK   ("{}data/model/Grass\_Block.fbx"{}})}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define RARD\_BLOCK\_NUM          (2)}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define PATH\_RARD\_BLOCK         ("{}data/model/Rard\_Block.fbx"{}})}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{31 \textcolor{comment}{}\textcolor{keyword}{class }\mbox{\hyperlink{class_model_manager}{ModelManager}} \{}
+\DoxyCodeLine{32 \textcolor{keyword}{private}:}
+\DoxyCodeLine{33     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{35 \textcolor{comment}{}    \textcolor{keyword}{static} \mbox{\hyperlink{class_model_manager}{ModelManager}}* m\_pInstance;}
+\DoxyCodeLine{37     std::unordered\_map<int, CAssimpModel*>  m\_ModelList;}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{42     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{46 \textcolor{comment}{}    \mbox{\hyperlink{class_model_manager_a9b0d22b1baf59c5b566e82fcd8ca424a}{ModelManager}}();}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 \textcolor{keyword}{public}:}
+\DoxyCodeLine{49     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{53 \textcolor{comment}{}    \mbox{\hyperlink{class_model_manager_a93f4eea50036cc5453014234aa921c7c}{\string~ModelManager}}();}
+\DoxyCodeLine{55     \textcolor{keyword}{static} \mbox{\hyperlink{class_model_manager}{ModelManager}}* \mbox{\hyperlink{class_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436}{GetInstance}}();}
+\DoxyCodeLine{57     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_model_manager_af9fece7e0c5509069f854acb15c50abe}{Uninit}}();}
+\DoxyCodeLine{59     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_model_manager_a83cb97219f91ba9799cef863f129ce8c}{AddModel}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* pszFileName,\textcolor{keywordtype}{int} nModelID);}
+\DoxyCodeLine{61     \mbox{\hyperlink{class_c_assimp_model}{CAssimpModel}}* \mbox{\hyperlink{class_model_manager_ae7a58155fc4e317ae505ebd1e3a1f667}{GetModel}}(\textcolor{keywordtype}{int} nModelID);}
+\DoxyCodeLine{63     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_model_manager_ac1ca2c166728b973a8efd2218d27caff}{EraseModel}}(\textcolor{keywordtype}{int} nModelID);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \};}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

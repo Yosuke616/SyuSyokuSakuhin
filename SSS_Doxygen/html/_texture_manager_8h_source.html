@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/TextureManager.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">TextureManager.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_texture_manager_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//インクルードガード</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef _TEXTURE_MANAGER_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define _TEXTURE_MANAGER_H_</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//インクルード部</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="main_app_8h.html">mainApp.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//定数定義</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"></span><span class="comment">//DXちゃん</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a8c1eb3a78191fc875848f01da2c4cee0">   19</a></span><span class="preprocessor">#define DXCHAN_STAND_TEX_NUM                (500)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#ad2ffb8a682a74e2f479d1d80b9953c2a">   20</a></span><span class="preprocessor">#define PATH_TEX_DXCHAN_STAND               (&quot;data/texture/Stand_Def.PNG&quot;</span>)</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#adfc79f189187a128d8d5d30a2b7c6bd5">   21</a></span><span class="preprocessor">#define DXCHAN_RUN_TEX_NUM                  (501)</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#aca6ab7f486d550bf642be802447001b4">   22</a></span><span class="preprocessor">#define PATH_TEX_DXCHAN_RUN                 (&quot;data/texture/Run_Def.PNG&quot;</span>)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#afcc88c3d1cca87ccbc15ff30ce762fb9">   24</a></span><span class="preprocessor">#define DEBUG_BLOCK_NUM                     (1)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a41ec9d87ae2ec61d1b39b2cfd44f5952">   25</a></span><span class="preprocessor">#define PATH_TEX_DEBUG_BLOCK                (&quot;data/texture/Debug.jpg&quot;</span>)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//タイトル画面用</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a4258bc05f47149341c9621969197a037">   28</a></span><span class="preprocessor">#define TITLE_BACK_GROUND_NUM               (2)</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#ab11db4d7c23fffe5c9b60201915163e7">   29</a></span><span class="preprocessor">#define PATH_TEX_TITLE_BACK_GROUND          (&quot;data/texture/TitleBack.jpg&quot;</span>)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">//ボタン</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#aea503ce005f65cee8c3ae840196d4684">   32</a></span><span class="preprocessor">#define TITLE_BUTTON_NUM                    (3)</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#adacd1009dfd5ef22d7d8718f2ca6688f">   33</a></span><span class="preprocessor">#define PATH_TEX_TITLE_BUTTON               (&quot;data/texture/press_enter.png&quot;</span>)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment">//フェード用テクスチャ</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a7d8cbda2983f97cb07441d4368197499">   36</a></span><span class="preprocessor">#define FEAD_OUT_NUM                        (4)</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a68c1995d9717f93b0a8d1373c730a366">   37</a></span><span class="preprocessor">#define PATH_TEX_FAID_OUT                   (&quot;data/texture/BlackOut.png&quot;</span>)</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="comment">//UI関係</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">//スコア                                   </span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a9f46607feee2ca50792bfc55f3e25271">   41</a></span><span class="preprocessor">#define SCORE_TEX_NUM                       (5)</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a894c18ca176763901b712b4d69db6215">   42</a></span><span class="preprocessor">#define PATH_TEX_SCORE                      (&quot;data/texture/Score.png&quot;</span>)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">//ハイスコア</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a46416a9dfae90c178413409c1bf67171">   45</a></span><span class="preprocessor">#define MAX_SCORE_TEX_NUM                   (6)</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a7c84b60ed498962fcbe275f95834a44b">   46</a></span><span class="preprocessor">#define PATH_TEX_MAX_SCORE                  (&quot;data/texture/highscore.png&quot;</span>)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">//数字</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#aec10e7163f5aa4803958a8d8ecb60334">   49</a></span><span class="preprocessor">#define NUMBER_TEX_NUM                      (7)</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#af9513fa815e989d62aa7e4c47d32485c">   50</a></span><span class="preprocessor">#define PATH_TEX_NUMBER                     (&quot;data/texture/Number.png&quot;</span>)</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">//ポーズボタン</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a7dd2854a5544252c18735f5a392c33cf">   53</a></span><span class="preprocessor">#define PAUSE_TEX_NUM                       (8)</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#aaf25b0f52c83f2850a46226646aaf4aa">   54</a></span><span class="preprocessor">#define PATH_TEX_PAUSE                      (&quot;data/texture/Pause.png&quot;</span>)</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">//時間</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a0adb2176c9874a01d97fb9c4a767363b">   57</a></span><span class="preprocessor">#define TIME_TEX_NUM                        (9)</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#acb8f5e228503243ba1a3f9c7e4947ba0">   58</a></span><span class="preprocessor">#define PATH_TEX_TIME                       (&quot;data/texture/Time.png&quot;</span>)</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">//プッシュA</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a700ad2d48873ef8606a78ac378f572a9">   61</a></span><span class="preprocessor">#define PUSH_TEX_NUM                        (10)</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#ae74be7b7f3a2069ebcd8cc7c2da806b8">   62</a></span><span class="preprocessor">#define PATH_TEX_PUSH                       (&quot;data/texture/pushA.png&quot;</span>)</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">//タイトルへ</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a1933db8fcea718f8f52e432dd01d96bd">   65</a></span><span class="preprocessor">#define TO_TITLE_TEX_NUM                    (11)</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a14fa94a8d69324cfddd203312863f19f">   66</a></span><span class="preprocessor">#define PATH_TEX_TO_TITLE                   (&quot;data/texture/タイトルへ.png&quot;</span>)</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">//再開</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a94e57a8b867249b1d640559eecff107d">   69</a></span><span class="preprocessor">#define RESUME_TEX_NUM                      (12)</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a5acb3264d288a3d5765a36de7b263a8b">   70</a></span><span class="preprocessor">#define PATH_TEX_RESUME                     (&quot;data/texture/再会.png&quot;</span>)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">//オプション</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a98efb0cdce672af55227628e3b879c2d">   73</a></span><span class="preprocessor">#define OPTION_TEX_NUM                      (13)</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#ac633d669983264803e1213e42338a04b">   74</a></span><span class="preprocessor">#define PATH_TEX_OPTION                     (&quot;data/texture/オプション.png&quot;</span>)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">//初めから</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a9bb67f6bccc9047519526fc30d0b3122">   77</a></span><span class="preprocessor">#define BEGIN_TEX_NUM                       (14)</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a321d0c93007a33733797c7d6a7869682">   78</a></span><span class="preprocessor">#define PATH_TEX_BEGIN                      (&quot;data/texture/初めから.png&quot;</span>)</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">//続きから</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#af5c89d369083a220f1d00be25ac2bdeb">   81</a></span><span class="preprocessor">#define CONTINUE_TEX_NUM                    (15)</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#ac36efc7c79cdb528a69b56ce3c786af9">   82</a></span><span class="preprocessor">#define PATH_TEX_CONTINUE                   (&quot;data/texture/続きから.png&quot;</span>)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">//ステージセレクト</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a11a7e01b4ff0c1cfed1ceac73cffd72a">   85</a></span><span class="preprocessor">#define STAGE_SELECT_TEX_NUM                (16)</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#aac762d3cf8ec39f08004d690e771956d">   86</a></span><span class="preprocessor">#define PATH_TEX_STAGE_SELECT               (&quot;data/texture/ステージセレクト.png&quot;</span>)</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="comment">//終わる</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a3902a57c0a82c31dd13fcb1a884b1786">   89</a></span><span class="preprocessor">#define END_TEX_NUM                         (17)</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a3c06a3ebcb9d439572fa83b002b2850a">   90</a></span><span class="preprocessor">#define PATH_TEX_END                        (&quot;data/texture/終わる.png&quot;</span>)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="comment">//BGM</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#aa2bc464903cc8ef8d64c6b46e77ab20e">   93</a></span><span class="preprocessor">#define BGM_TEX_NUM                         (18)</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#aa6a0746e39176393de12e58845626589">   94</a></span><span class="preprocessor">#define PATH_TEX_BGM                        (&quot;data/texture/BYM.png&quot;</span>)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">//SE</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#ae8f68c40434a5f4e7b2cfa53f121b44b">   97</a></span><span class="preprocessor">#define SE_TEX_NUM                          (19)</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a7482a63ba418afe1ed649bd958fc5d52">   98</a></span><span class="preprocessor">#define PATH_TEX_SE                         (&quot;data/texture/se.png&quot;</span>)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">//明るさ</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a4c716283fc9acefcfa3001c4812fbe3d">  101</a></span><span class="preprocessor">#define BRIGHTNESS_TEX_NUM                          (20)</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="_texture_manager_8h.html#a117f5fc19661312560945f5c7bc1cf3a">  102</a></span><span class="preprocessor">#define PATH_TEX_BRIGHTNESS                 (&quot;data/texture/明るさ.png&quot;</span>)</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">//クラス定義</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="class_texture_manager.html">  110</a></span><span class="comment"></span><span class="keyword">class </span><a class="code hl_class" href="class_texture_manager.html">TextureManager</a> {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span><span class="comment"></span>    <span class="keyword">static</span> <a class="code hl_class" href="class_texture_manager.html">TextureManager</a>* m_pInstance;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    std::unordered_map&lt;int, ID3D11ShaderResourceView*&gt; m_TextureList;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="comment"></span>    <a class="code hl_function" href="class_texture_manager.html#ad76abb178b37cedf4514eb0154349935">TextureManager</a>();</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment"></span>    <a class="code hl_function" href="class_texture_manager.html#a001d6d74674961db79987e3222682576">~TextureManager</a>();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_texture_manager.html">TextureManager</a>* <a class="code hl_function" href="class_texture_manager.html#ab73eee48ba8c35281558094e2f84013d">GetInstance</a>();</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_texture_manager.html#ab2ef3139e30856ee768b2e98ec5259f5">Uninit</a>();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_texture_manager.html#acf80525b5a1e493b08426989d2940870">AddTexture</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pszFileName,<span class="keywordtype">int</span> nTexID);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    ID3D11ShaderResourceView* <a class="code hl_function" href="class_texture_manager.html#a8448501f02d76a5c2362bbed98e89728">GetTexture</a>(<span class="keywordtype">int</span> nTexID);</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_texture_manager.html#a14eb42e81e5f2eda3ecf6f607bffc272">EraseTexture</a>(<span class="keywordtype">int</span> nTexID);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_texture_manager.html#afbe079fdbf1dd84d61c32f4105eeda5c">GetSize</a>();</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>};</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_texture_manager_html"><div class="ttname"><a href="class_texture_manager.html">TextureManager</a></div><div class="ttdoc">テクスチャを管理するクラス</div><div class="ttdef"><b>Definition:</b> TextureManager.h:110</div></div>
+<div class="ttc" id="aclass_texture_manager_html_a001d6d74674961db79987e3222682576"><div class="ttname"><a href="class_texture_manager.html#a001d6d74674961db79987e3222682576">TextureManager::~TextureManager</a></div><div class="ttdeci">~TextureManager()</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:22</div></div>
+<div class="ttc" id="aclass_texture_manager_html_a14eb42e81e5f2eda3ecf6f607bffc272"><div class="ttname"><a href="class_texture_manager.html#a14eb42e81e5f2eda3ecf6f607bffc272">TextureManager::EraseTexture</a></div><div class="ttdeci">bool EraseTexture(int nTexID)</div><div class="ttdoc">テクスチャ削除</div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:114</div></div>
+<div class="ttc" id="aclass_texture_manager_html_a8448501f02d76a5c2362bbed98e89728"><div class="ttname"><a href="class_texture_manager.html#a8448501f02d76a5c2362bbed98e89728">TextureManager::GetTexture</a></div><div class="ttdeci">ID3D11ShaderResourceView * GetTexture(int nTexID)</div><div class="ttdoc">テクスチャ取得</div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:91</div></div>
+<div class="ttc" id="aclass_texture_manager_html_ab2ef3139e30856ee768b2e98ec5259f5"><div class="ttname"><a href="class_texture_manager.html#ab2ef3139e30856ee768b2e98ec5259f5">TextureManager::Uninit</a></div><div class="ttdeci">static void Uninit()</div><div class="ttdoc">終了処理</div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:44</div></div>
+<div class="ttc" id="aclass_texture_manager_html_ab73eee48ba8c35281558094e2f84013d"><div class="ttname"><a href="class_texture_manager.html#ab73eee48ba8c35281558094e2f84013d">TextureManager::GetInstance</a></div><div class="ttdeci">static TextureManager * GetInstance()</div><div class="ttdoc">インスタンス化</div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:33</div></div>
+<div class="ttc" id="aclass_texture_manager_html_acf80525b5a1e493b08426989d2940870"><div class="ttname"><a href="class_texture_manager.html#acf80525b5a1e493b08426989d2940870">TextureManager::AddTexture</a></div><div class="ttdeci">bool AddTexture(const char *pszFileName, int nTexID)</div><div class="ttdoc">テクスチャの追加</div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:58</div></div>
+<div class="ttc" id="aclass_texture_manager_html_ad76abb178b37cedf4514eb0154349935"><div class="ttname"><a href="class_texture_manager.html#ad76abb178b37cedf4514eb0154349935">TextureManager::TextureManager</a></div><div class="ttdeci">TextureManager()</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:14</div></div>
+<div class="ttc" id="aclass_texture_manager_html_afbe079fdbf1dd84d61c32f4105eeda5c"><div class="ttname"><a href="class_texture_manager.html#afbe079fdbf1dd84d61c32f4105eeda5c">TextureManager::GetSize</a></div><div class="ttdeci">int GetSize()</div><div class="ttdoc">読み込んだテクスチャの数</div><div class="ttdef"><b>Definition:</b> TextureManager.cpp:133</div></div>
+<div class="ttc" id="amain_app_8h_html"><div class="ttname"><a href="main_app_8h.html">mainApp.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

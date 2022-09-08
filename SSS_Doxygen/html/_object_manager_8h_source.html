@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ObjectManager.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">ObjectManager.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_object_manager_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//インクルードガード</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifndef _OBJECT_MANAGER_H_</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define _OBJECT_MANAGER_H_</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//インクルード部</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//前方宣言</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span><a class="code hl_class" href="class_object.html">Object</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">//クラス定義</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_object_manager.html">   27</a></span><span class="comment"></span><span class="keyword">class </span><a class="code hl_class" href="class_object_manager.html">ObjectManager</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"></span>    std::list&lt;Object*&gt;      m_UpdateList;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    std::list&lt;Object*&gt;      m_DrawList;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_object_manager.html">ObjectManager</a>*   m_pInstance;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment"></span>    <a class="code hl_function" href="class_object_manager.html#a6fa9372c7c3a8da88412f4158ca3dfd9">ObjectManager</a>();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"></span>    <span class="keyword">static</span> <a class="code hl_class" href="class_object_manager.html">ObjectManager</a>* <a class="code hl_function" href="class_object_manager.html#ad2782406e7482eeddffd1941a810d6e6">GetInstance</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_function" href="class_object_manager.html#a25b057e6d1e60c9cbeb29d41923d8c2c">~ObjectManager</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_object_manager.html#a5f9b18526a4036b3d05af0b2bbbbd6a9">Start</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_object_manager.html#ac6035906749a40ec3a1d685ebed11c89">Update</a>();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_object_manager.html#a86d895e6def5ee60d8d29d2c475f8962">UpdateEdit</a>();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_object_manager.html#ac054fcf6fa043ed24a88265e6f25bc15">Draw</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_object_manager.html#ab14b919449101fdecbbafe794d907cc9">Uninit</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_object_manager.html#a9d66ba3c6343372fc166ea36658cc555">AddObject</a>(<a class="code hl_class" href="class_object.html">Object</a>* pObject);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_object_manager.html#acda2c452bc4f964230a77eeae7b8ca50">DeleteObjectByName</a>(std::string pszName,std::list&lt;Object*&gt;&amp; list);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    std::list&lt;Object*&gt; <a class="code hl_function" href="class_object_manager.html#ada37bd39a9803c3eb2af4a02c2f3e0f5">GetObjectList</a>(std::string name);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_object_manager.html#a8fccb8957af5d1067a7c1cfacd02507b">NoFunction</a>();</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_object_manager.html#a2e73d06b466d1baf8a8dfb2951abcbce">Resume</a>();</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="comment">//getter</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="comment"></span>    <a class="code hl_class" href="class_object.html">Object</a>* <a class="code hl_function" href="class_object_manager.html#a2d2cfb3535474fc5ce136d06e2d3a8fb">GetGameObject</a>(std::string name);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    std::list&lt;Object*&gt;&amp; <a class="code hl_function" href="class_object_manager.html#ae32f7c13ff2140a856102a0c3603e909">GetUpdateList</a>();</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    std::list&lt;Object*&gt;&amp; <a class="code hl_function" href="class_object_manager.html#a50176158bccc6597cda4601a2afec9d4">GetDrawList</a>();</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_object_manager.html#a4f095ab64eb81a813c79980dd1fab368">GetGameObjects</a>(std::string name,std::list&lt;Object*&gt;&amp; resultList);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>};</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aclass_object_html"><div class="ttname"><a href="class_object.html">Object</a></div><div class="ttdef"><b>Definition:</b> Object.h:21</div></div>
+<div class="ttc" id="aclass_object_manager_html"><div class="ttname"><a href="class_object_manager.html">ObjectManager</a></div><div class="ttdoc">生成されたオブジェクトを管理するクラス</div><div class="ttdef"><b>Definition:</b> ObjectManager.h:27</div></div>
+<div class="ttc" id="aclass_object_manager_html_a25b057e6d1e60c9cbeb29d41923d8c2c"><div class="ttname"><a href="class_object_manager.html#a25b057e6d1e60c9cbeb29d41923d8c2c">ObjectManager::~ObjectManager</a></div><div class="ttdeci">~ObjectManager()</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:22</div></div>
+<div class="ttc" id="aclass_object_manager_html_a2d2cfb3535474fc5ce136d06e2d3a8fb"><div class="ttname"><a href="class_object_manager.html#a2d2cfb3535474fc5ce136d06e2d3a8fb">ObjectManager::GetGameObject</a></div><div class="ttdeci">Object * GetGameObject(std::string name)</div><div class="ttdoc">名前からオブジェクトを特定する</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:224</div></div>
+<div class="ttc" id="aclass_object_manager_html_a2e73d06b466d1baf8a8dfb2951abcbce"><div class="ttname"><a href="class_object_manager.html#a2e73d06b466d1baf8a8dfb2951abcbce">ObjectManager::Resume</a></div><div class="ttdeci">void Resume()</div><div class="ttdoc">更新を再開する関数</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:264</div></div>
+<div class="ttc" id="aclass_object_manager_html_a4f095ab64eb81a813c79980dd1fab368"><div class="ttname"><a href="class_object_manager.html#a4f095ab64eb81a813c79980dd1fab368">ObjectManager::GetGameObjects</a></div><div class="ttdeci">void GetGameObjects(std::string name, std::list&lt; Object * &gt; &amp;resultList)</div><div class="ttdoc">名前が一致しているオブジェクトリストを追加する</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:276</div></div>
+<div class="ttc" id="aclass_object_manager_html_a50176158bccc6597cda4601a2afec9d4"><div class="ttname"><a href="class_object_manager.html#a50176158bccc6597cda4601a2afec9d4">ObjectManager::GetDrawList</a></div><div class="ttdeci">std::list&lt; Object * &gt; &amp; GetDrawList()</div><div class="ttdoc">描画リストの取得</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:199</div></div>
+<div class="ttc" id="aclass_object_manager_html_a5f9b18526a4036b3d05af0b2bbbbd6a9"><div class="ttname"><a href="class_object_manager.html#a5f9b18526a4036b3d05af0b2bbbbd6a9">ObjectManager::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">初期化処理</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:44</div></div>
+<div class="ttc" id="aclass_object_manager_html_a6fa9372c7c3a8da88412f4158ca3dfd9"><div class="ttname"><a href="class_object_manager.html#a6fa9372c7c3a8da88412f4158ca3dfd9">ObjectManager::ObjectManager</a></div><div class="ttdeci">ObjectManager()</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:14</div></div>
+<div class="ttc" id="aclass_object_manager_html_a86d895e6def5ee60d8d29d2c475f8962"><div class="ttname"><a href="class_object_manager.html#a86d895e6def5ee60d8d29d2c475f8962">ObjectManager::UpdateEdit</a></div><div class="ttdeci">void UpdateEdit()</div><div class="ttdoc">ステージ作成時の更新処理</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:116</div></div>
+<div class="ttc" id="aclass_object_manager_html_a8fccb8957af5d1067a7c1cfacd02507b"><div class="ttname"><a href="class_object_manager.html#a8fccb8957af5d1067a7c1cfacd02507b">ObjectManager::NoFunction</a></div><div class="ttdeci">void NoFunction()</div><div class="ttdoc">更新を停止する関数</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:254</div></div>
+<div class="ttc" id="aclass_object_manager_html_a9d66ba3c6343372fc166ea36658cc555"><div class="ttname"><a href="class_object_manager.html#a9d66ba3c6343372fc166ea36658cc555">ObjectManager::AddObject</a></div><div class="ttdeci">void AddObject(Object *pObject)</div><div class="ttdoc">オブジェクトを追加する</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:156</div></div>
+<div class="ttc" id="aclass_object_manager_html_ab14b919449101fdecbbafe794d907cc9"><div class="ttname"><a href="class_object_manager.html#ab14b919449101fdecbbafe794d907cc9">ObjectManager::Uninit</a></div><div class="ttdeci">void Uninit()</div><div class="ttdoc">終了処理</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:57</div></div>
+<div class="ttc" id="aclass_object_manager_html_ac054fcf6fa043ed24a88265e6f25bc15"><div class="ttname"><a href="class_object_manager.html#ac054fcf6fa043ed24a88265e6f25bc15">ObjectManager::Draw</a></div><div class="ttdeci">void Draw()</div><div class="ttdoc">描画処理</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:142</div></div>
+<div class="ttc" id="aclass_object_manager_html_ac6035906749a40ec3a1d685ebed11c89"><div class="ttname"><a href="class_object_manager.html#ac6035906749a40ec3a1d685ebed11c89">ObjectManager::Update</a></div><div class="ttdeci">void Update()</div><div class="ttdoc">更新処理</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:82</div></div>
+<div class="ttc" id="aclass_object_manager_html_acda2c452bc4f964230a77eeae7b8ca50"><div class="ttname"><a href="class_object_manager.html#acda2c452bc4f964230a77eeae7b8ca50">ObjectManager::DeleteObjectByName</a></div><div class="ttdeci">void DeleteObjectByName(std::string pszName, std::list&lt; Object * &gt; &amp;list)</div><div class="ttdoc">名前検索でオブジェクトを削除する</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:209</div></div>
+<div class="ttc" id="aclass_object_manager_html_ad2782406e7482eeddffd1941a810d6e6"><div class="ttname"><a href="class_object_manager.html#ad2782406e7482eeddffd1941a810d6e6">ObjectManager::GetInstance</a></div><div class="ttdeci">static ObjectManager * GetInstance()</div><div class="ttdoc">objectマネージャーのインスタンス化</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:31</div></div>
+<div class="ttc" id="aclass_object_manager_html_ada37bd39a9803c3eb2af4a02c2f3e0f5"><div class="ttname"><a href="class_object_manager.html#ada37bd39a9803c3eb2af4a02c2f3e0f5">ObjectManager::GetObjectList</a></div><div class="ttdeci">std::list&lt; Object * &gt; GetObjectList(std::string name)</div><div class="ttdoc">名前が一致したオブジェクトをリストに追加</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:240</div></div>
+<div class="ttc" id="aclass_object_manager_html_ae32f7c13ff2140a856102a0c3603e909"><div class="ttname"><a href="class_object_manager.html#ae32f7c13ff2140a856102a0c3603e909">ObjectManager::GetUpdateList</a></div><div class="ttdeci">std::list&lt; Object * &gt; &amp; GetUpdateList()</div><div class="ttdoc">更新リストの取得</div><div class="ttdef"><b>Definition:</b> ObjectManager.cpp:191</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

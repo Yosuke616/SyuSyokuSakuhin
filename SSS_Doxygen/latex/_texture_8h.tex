@@ -1,0 +1,50 @@
+\hypertarget{_texture_8h}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\+Texture.h ファイル}
+\label{_texture_8h}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Texture.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Texture.h}}
+{\ttfamily \#include $<$d3d11.\+h$>$}\newline
+{\ttfamily \#include $<$Direct\+XTex.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Texture.\+h の依存先関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=287pt]{_texture_8h__incl}
+\end{center}
+\end{figure}
+被依存関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_texture_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+HRESULT \mbox{\hyperlink{_texture_8h_afcaffa5f8dab5bca3ea654e37d680359}{Create\+Texture\+From\+Memory}} (\+\_\+\+In\+\_\+ ID3\+D11\+Device $\ast$d3d\+Device, \+\_\+\+In\+\_\+bytecount\+\_\+(wic\+Data\+Size) const uint8\+\_\+t $\ast$wic\+Data, \+\_\+\+In\+\_\+ size\+\_\+t wic\+Data\+Size, \+\_\+\+Out\+\_\+opt\+\_\+ ID3\+D11\+Shader\+Resource\+View $\ast$$\ast$texture\+View, \+\_\+\+Out\+\_\+opt\+\_\+ Direct\+X\+::\+Tex\+Metadata $\ast$p\+Tex\+Info=nullptr)
+\item 
+HRESULT \mbox{\hyperlink{_texture_8h_aa315bdea3021fa9e47e8d13e0b63d0dd}{Create\+Texture\+From\+File}} (\+\_\+\+In\+\_\+ ID3\+D11\+Device $\ast$d3d\+Device, \+\_\+\+In\+\_\+z\+\_\+ const wchar\+\_\+t $\ast$sz\+File\+Name, \+\_\+\+Out\+\_\+opt\+\_\+ ID3\+D11\+Shader\+Resource\+View $\ast$$\ast$texture\+View, \+\_\+\+Out\+\_\+opt\+\_\+ Direct\+X\+::\+Tex\+Metadata $\ast$p\+Tex\+Info=nullptr)
+\item 
+HRESULT \mbox{\hyperlink{_texture_8h_a4a098ccd088439ff5f19118eb10d3ed4}{Create\+Texture\+From\+File}} (\+\_\+\+In\+\_\+ ID3\+D11\+Device $\ast$d3d\+Device, \+\_\+\+In\+\_\+z\+\_\+ const char $\ast$sz\+File\+Name, \+\_\+\+Out\+\_\+opt\+\_\+ ID3\+D11\+Shader\+Resource\+View $\ast$$\ast$texture\+View, \+\_\+\+Out\+\_\+opt\+\_\+ Direct\+X\+::\+Tex\+Metadata $\ast$p\+Tex\+Info=nullptr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{_texture_8h_a4a098ccd088439ff5f19118eb10d3ed4}\label{_texture_8h_a4a098ccd088439ff5f19118eb10d3ed4}} 
+\index{Texture.h@{Texture.h}!CreateTextureFromFile@{CreateTextureFromFile}}
+\index{CreateTextureFromFile@{CreateTextureFromFile}!Texture.h@{Texture.h}}
+\doxysubsubsection{\texorpdfstring{CreateTextureFromFile()}{CreateTextureFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily HRESULT Create\+Texture\+From\+File (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+ ID3\+D11\+Device $\ast$}]{d3d\+Device,  }\item[{\+\_\+\+In\+\_\+z\+\_\+ const char $\ast$}]{sz\+File\+Name,  }\item[{\+\_\+\+Out\+\_\+opt\+\_\+ ID3\+D11\+Shader\+Resource\+View $\ast$$\ast$}]{texture\+View,  }\item[{\+\_\+\+Out\+\_\+opt\+\_\+ Direct\+X\+::\+Tex\+Metadata $\ast$}]{p\+Tex\+Info = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_texture_8h_aa315bdea3021fa9e47e8d13e0b63d0dd}\label{_texture_8h_aa315bdea3021fa9e47e8d13e0b63d0dd}} 
+\index{Texture.h@{Texture.h}!CreateTextureFromFile@{CreateTextureFromFile}}
+\index{CreateTextureFromFile@{CreateTextureFromFile}!Texture.h@{Texture.h}}
+\doxysubsubsection{\texorpdfstring{CreateTextureFromFile()}{CreateTextureFromFile()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily HRESULT Create\+Texture\+From\+File (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+ ID3\+D11\+Device $\ast$}]{d3d\+Device,  }\item[{\+\_\+\+In\+\_\+z\+\_\+ const wchar\+\_\+t $\ast$}]{sz\+File\+Name,  }\item[{\+\_\+\+Out\+\_\+opt\+\_\+ ID3\+D11\+Shader\+Resource\+View $\ast$$\ast$}]{texture\+View,  }\item[{\+\_\+\+Out\+\_\+opt\+\_\+ Direct\+X\+::\+Tex\+Metadata $\ast$}]{p\+Tex\+Info = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{_texture_8h_afcaffa5f8dab5bca3ea654e37d680359}\label{_texture_8h_afcaffa5f8dab5bca3ea654e37d680359}} 
+\index{Texture.h@{Texture.h}!CreateTextureFromMemory@{CreateTextureFromMemory}}
+\index{CreateTextureFromMemory@{CreateTextureFromMemory}!Texture.h@{Texture.h}}
+\doxysubsubsection{\texorpdfstring{CreateTextureFromMemory()}{CreateTextureFromMemory()}}
+{\footnotesize\ttfamily HRESULT Create\+Texture\+From\+Memory (\begin{DoxyParamCaption}\item[{\+\_\+\+In\+\_\+ ID3\+D11\+Device $\ast$}]{d3d\+Device,  }\item[{\+\_\+\+In\+\_\+bytecount\+\_\+(wic\+Data\+Size) const uint8\+\_\+t $\ast$}]{wic\+Data,  }\item[{\+\_\+\+In\+\_\+ size\+\_\+t}]{wic\+Data\+Size,  }\item[{\+\_\+\+Out\+\_\+opt\+\_\+ ID3\+D11\+Shader\+Resource\+View $\ast$$\ast$}]{texture\+View,  }\item[{\+\_\+\+Out\+\_\+opt\+\_\+ Direct\+X\+::\+Tex\+Metadata $\ast$}]{p\+Tex\+Info = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+

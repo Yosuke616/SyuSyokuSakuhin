@@ -47,6 +47,12 @@ CDraw3D::~CDraw3D() {
 void CDraw3D::Start() {
 	//オブジェクトの座標を取得
 	m_pTransform = Parent->GetComponent<CTransform>();
+
+	/*if (m_model)
+	{
+		auto material = m_model->GetMate();
+		m_Material = *material;
+	}*/
 }
 
 /**

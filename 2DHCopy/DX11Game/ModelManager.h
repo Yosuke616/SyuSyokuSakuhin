@@ -15,10 +15,12 @@
 
 //定数定義
 //仮
-#define ROSALINA_MODEL_X		(0)
-#define PATH_ROSALINA_X			("data/model/RosalinaX.fbx")
+#define WALK_ENEMY_MODEL_NUM		(0)
+#define PATH_WALK_ENEMY			("data/model/WalkEnemy.fbx")
 #define MINT_GREEN_BLOCK_NUM	(1)
-#define PATH_MINT_GREEN_BLOCK	("data/model/Mario_Block.fbx")
+#define PATH_MINT_GREEN_BLOCK	("data/model/Grass_Block.fbx")
+#define RARD_BLOCK_NUM			(2)
+#define PATH_RARD_BLOCK			("data/model/Rard_Block.fbx")
 
 
 //クラス定義

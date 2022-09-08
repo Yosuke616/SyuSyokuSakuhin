@@ -1,0 +1,53 @@
+\hypertarget{_anim_mesh_component_8h_source}{}\doxysection{Anim\+Mesh\+Component.\+h}
+\label{_anim_mesh_component_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/AnimMeshComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/AnimMeshComponent.h}}
+\mbox{\hyperlink{_anim_mesh_component_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_ANIM\_MESH\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_ANIM\_MESH\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_draw_mesh_component_8h}{DrawMeshComponent.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_anim_mesh}{CAnimMesh}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_c_draw_mesh}{CDrawMesh}} \{}
+\DoxyCodeLine{21 \textcolor{keyword}{private}:}
+\DoxyCodeLine{22     \textcolor{comment}{/*メンバ変数*/}}
+\DoxyCodeLine{24     \textcolor{keywordtype}{int} m\_nFrame;}
+\DoxyCodeLine{26     \textcolor{keywordtype}{int} m\_nAnimCount;}
+\DoxyCodeLine{28     \textcolor{keywordtype}{bool} m\_bLoop;}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{comment}{/*メンバ関数*/}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} CreateAnimVertex();}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{35     \textcolor{comment}{/*メンバ変数*/}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \textcolor{comment}{/*メンバ関数*/}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 \textcolor{keyword}{public}:}
+\DoxyCodeLine{40     \textcolor{comment}{/*メンバ変数*/}}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42     \textcolor{comment}{/*メンバ関数*/}}
+\DoxyCodeLine{44     \mbox{\hyperlink{class_c_anim_mesh_a415518ac092141649c127b0de0ecc452}{CAnimMesh}}();}
+\DoxyCodeLine{46     \mbox{\hyperlink{class_c_anim_mesh_afbe874e6310b66e4a50537b0a9073cc4}{\string~CAnimMesh}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_anim_mesh_a4477eb0930aba2ceb6ec3976aeaa28ae}{Start}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_anim_mesh_a052d8884ad2a80967e09b28e46a4cafa}{Update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_anim_mesh_a45bca41fe56b3421b59058ce6d336366}{Draw}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_anim_mesh_a5c35d445c9ff445130cadabb575e2f13}{SetSwapFrame}}(\textcolor{keywordtype}{int} nCount);}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_anim_mesh_a9966dcb8778d3474050f9d8bfc8addfd}{SetLoop}}(\textcolor{keywordtype}{bool} loop);}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_anim_mesh_a3a4e680b70558835fa7ddcc60aca06fa}{StartAnim}}(ID3D11ShaderResourceView* pTex,}
+\DoxyCodeLine{62         XMFLOAT3 pos, XMFLOAT2 size, \textcolor{keywordtype}{int} split\_x, \textcolor{keywordtype}{int} split\_y,}
+\DoxyCodeLine{63         \textcolor{keywordtype}{bool} loop,}
+\DoxyCodeLine{64         \textcolor{keywordtype}{int} swap\_frame = 1,}
+\DoxyCodeLine{65         XMFLOAT3 color = XMFLOAT3(1.0f, 1.0f, 1.0f)}
+\DoxyCodeLine{66         );}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_anim_mesh_a68647db370f06e36abc97eab88ac1563}{SetVertex}}(\textcolor{keywordtype}{bool} bRoL);}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{71     HRESULT \mbox{\hyperlink{class_c_anim_mesh_a0f9791e44799f2dedda3756fbec20bba}{SetMeshVertex}}(ID3D11Device* pDevice, \mbox{\hyperlink{struct_m_e_s_h}{MESH}}* pMesh, \mbox{\hyperlink{struct_v_e_r_t_e_x__3_d}{VERTEX\_3D}} vertexWk[]);}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \};}
+\DoxyCodeLine{74     }
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

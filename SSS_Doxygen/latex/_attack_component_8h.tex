@@ -1,0 +1,71 @@
+\hypertarget{_attack_component_8h}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\+Attack\+Component.h ファイル}
+\label{_attack_component_8h}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/AttackComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/AttackComponent.h}}
+
+
+プレイヤーや敵の攻撃を処理する関数  
+
+
+{\ttfamily \#include \char`\"{}Component.\+h\char`\"{}}\newline
+Attack\+Component.\+h の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_attack_component_8h__incl}
+\end{center}
+\end{figure}
+被依存関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_attack_component_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{クラス}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_c_attack}{CAttack}}
+\begin{DoxyCompactList}\small\item\em 攻撃の動きを制御する @detail 攻撃を行った者のよって挙動を変える \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3}{WHO\+\_\+\+ATTACK}} \{ \mbox{\hyperlink{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3a74595371199e3faa61f50a8ed87fc2ac}{NONE\+\_\+\+ATTACK}} = 0
+, \mbox{\hyperlink{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3ac8b70a6068adfe66f08cda4193dd9e06}{PLAYER\+\_\+\+ATTACK}}
+, \mbox{\hyperlink{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3afdf6498aa65691370d71c0f9234cc657}{MAX\+\_\+\+WHO\+\_\+\+ATTACK}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+プレイヤーや敵の攻撃を処理する関数 
+
+\begin{DoxyAuthor}{著者}
+志水陽祐 
+\end{DoxyAuthor}
+\begin{DoxyDate}{日付}
+2022/8/10 
+\end{DoxyDate}
+
+
+\doxysubsection{列挙型詳解}
+\mbox{\Hypertarget{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3}\label{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3}} 
+\index{AttackComponent.h@{AttackComponent.h}!WHO\_ATTACK@{WHO\_ATTACK}}
+\index{WHO\_ATTACK@{WHO\_ATTACK}!AttackComponent.h@{AttackComponent.h}}
+\doxysubsubsection{\texorpdfstring{WHO\_ATTACK}{WHO\_ATTACK}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3}{WHO\+\_\+\+ATTACK}}}
+
+列挙体宣言 誰が攻撃しているかを判別する列挙体 \begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONE\_ATTACK@{NONE\_ATTACK}!AttackComponent.h@{AttackComponent.h}}\index{AttackComponent.h@{AttackComponent.h}!NONE\_ATTACK@{NONE\_ATTACK}}}\mbox{\Hypertarget{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3a74595371199e3faa61f50a8ed87fc2ac}\label{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3a74595371199e3faa61f50a8ed87fc2ac}} 
+NONE\+\_\+\+ATTACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PLAYER\_ATTACK@{PLAYER\_ATTACK}!AttackComponent.h@{AttackComponent.h}}\index{AttackComponent.h@{AttackComponent.h}!PLAYER\_ATTACK@{PLAYER\_ATTACK}}}\mbox{\Hypertarget{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3ac8b70a6068adfe66f08cda4193dd9e06}\label{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3ac8b70a6068adfe66f08cda4193dd9e06}} 
+PLAYER\+\_\+\+ATTACK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_WHO\_ATTACK@{MAX\_WHO\_ATTACK}!AttackComponent.h@{AttackComponent.h}}\index{AttackComponent.h@{AttackComponent.h}!MAX\_WHO\_ATTACK@{MAX\_WHO\_ATTACK}}}\mbox{\Hypertarget{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3afdf6498aa65691370d71c0f9234cc657}\label{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3afdf6498aa65691370d71c0f9234cc657}} 
+MAX\+\_\+\+WHO\+\_\+\+ATTACK&\\
+\hline
+
+\end{DoxyEnumFields}

@@ -1,0 +1,104 @@
+\hypertarget{struct_scene_anim_node}{}\doxysection{Scene\+Anim\+Node 構造体}
+\label{struct_scene_anim_node}\index{SceneAnimNode@{SceneAnimNode}}
+
+
+{\ttfamily \#include $<$Assimp\+Model.\+h$>$}
+
+
+
+Scene\+Anim\+Node 連携図\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{struct_scene_anim_node__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_scene_anim_node_acbdc9742cb9d4ffc39f4d3b58d034aa0}{Scene\+Anim\+Node}} ()
+\item 
+\mbox{\hyperlink{struct_scene_anim_node_a3ddbb91122ad13a4a8d7c839b2e54637}{Scene\+Anim\+Node}} (const std\+::string \&p\+Name)
+\item 
+\mbox{\hyperlink{struct_scene_anim_node_a4465a5d22cc91fd3f43c214eef705923}{$\sim$\+Scene\+Anim\+Node}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{struct_scene_anim_node_a4cc01a226d64e0ac718ffabbb6ed65b2}{m\+Name}}
+\item 
+\mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}} $\ast$ \mbox{\hyperlink{struct_scene_anim_node_a3a75388ee393454556ce0e6e1e1b4919}{m\+Parent}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}} $\ast$ $>$ \mbox{\hyperlink{struct_scene_anim_node_af16fb617186c6c9adb89bba202b30e76}{m\+Children}}
+\item 
+ai\+Matrix4x4 \mbox{\hyperlink{struct_scene_anim_node_ae9ff6d83be1cb60b2023295a7b022f7e}{m\+Local\+Transform}}
+\item 
+ai\+Matrix4x4 \mbox{\hyperlink{struct_scene_anim_node_ac18443902c82c855826c3f9d2bb832f5}{m\+Global\+Transform}}
+\item 
+int \mbox{\hyperlink{struct_scene_anim_node_a8a6f36f3d8e851a688e99de47e9e9741}{m\+Channel\+Index}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{struct_scene_anim_node_acbdc9742cb9d4ffc39f4d3b58d034aa0}\label{struct_scene_anim_node_acbdc9742cb9d4ffc39f4d3b58d034aa0}} 
+\index{SceneAnimNode@{SceneAnimNode}!SceneAnimNode@{SceneAnimNode}}
+\index{SceneAnimNode@{SceneAnimNode}!SceneAnimNode@{SceneAnimNode}}
+\doxysubsubsection{\texorpdfstring{SceneAnimNode()}{SceneAnimNode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Scene\+Anim\+Node\+::\+Scene\+Anim\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_scene_anim_node_a3ddbb91122ad13a4a8d7c839b2e54637}\label{struct_scene_anim_node_a3ddbb91122ad13a4a8d7c839b2e54637}} 
+\index{SceneAnimNode@{SceneAnimNode}!SceneAnimNode@{SceneAnimNode}}
+\index{SceneAnimNode@{SceneAnimNode}!SceneAnimNode@{SceneAnimNode}}
+\doxysubsubsection{\texorpdfstring{SceneAnimNode()}{SceneAnimNode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Scene\+Anim\+Node\+::\+Scene\+Anim\+Node (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{p\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_scene_anim_node_a4465a5d22cc91fd3f43c214eef705923}\label{struct_scene_anim_node_a4465a5d22cc91fd3f43c214eef705923}} 
+\index{SceneAnimNode@{SceneAnimNode}!````~SceneAnimNode@{$\sim$SceneAnimNode}}
+\index{````~SceneAnimNode@{$\sim$SceneAnimNode}!SceneAnimNode@{SceneAnimNode}}
+\doxysubsubsection{\texorpdfstring{$\sim$SceneAnimNode()}{~SceneAnimNode()}}
+{\footnotesize\ttfamily Scene\+Anim\+Node\+::$\sim$\+Scene\+Anim\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{struct_scene_anim_node_a8a6f36f3d8e851a688e99de47e9e9741}\label{struct_scene_anim_node_a8a6f36f3d8e851a688e99de47e9e9741}} 
+\index{SceneAnimNode@{SceneAnimNode}!mChannelIndex@{mChannelIndex}}
+\index{mChannelIndex@{mChannelIndex}!SceneAnimNode@{SceneAnimNode}}
+\doxysubsubsection{\texorpdfstring{mChannelIndex}{mChannelIndex}}
+{\footnotesize\ttfamily int Scene\+Anim\+Node\+::m\+Channel\+Index}
+
+\mbox{\Hypertarget{struct_scene_anim_node_af16fb617186c6c9adb89bba202b30e76}\label{struct_scene_anim_node_af16fb617186c6c9adb89bba202b30e76}} 
+\index{SceneAnimNode@{SceneAnimNode}!mChildren@{mChildren}}
+\index{mChildren@{mChildren}!SceneAnimNode@{SceneAnimNode}}
+\doxysubsubsection{\texorpdfstring{mChildren}{mChildren}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}}$\ast$$>$ Scene\+Anim\+Node\+::m\+Children}
+
+\mbox{\Hypertarget{struct_scene_anim_node_ac18443902c82c855826c3f9d2bb832f5}\label{struct_scene_anim_node_ac18443902c82c855826c3f9d2bb832f5}} 
+\index{SceneAnimNode@{SceneAnimNode}!mGlobalTransform@{mGlobalTransform}}
+\index{mGlobalTransform@{mGlobalTransform}!SceneAnimNode@{SceneAnimNode}}
+\doxysubsubsection{\texorpdfstring{mGlobalTransform}{mGlobalTransform}}
+{\footnotesize\ttfamily ai\+Matrix4x4 Scene\+Anim\+Node\+::m\+Global\+Transform}
+
+\mbox{\Hypertarget{struct_scene_anim_node_ae9ff6d83be1cb60b2023295a7b022f7e}\label{struct_scene_anim_node_ae9ff6d83be1cb60b2023295a7b022f7e}} 
+\index{SceneAnimNode@{SceneAnimNode}!mLocalTransform@{mLocalTransform}}
+\index{mLocalTransform@{mLocalTransform}!SceneAnimNode@{SceneAnimNode}}
+\doxysubsubsection{\texorpdfstring{mLocalTransform}{mLocalTransform}}
+{\footnotesize\ttfamily ai\+Matrix4x4 Scene\+Anim\+Node\+::m\+Local\+Transform}
+
+\mbox{\Hypertarget{struct_scene_anim_node_a4cc01a226d64e0ac718ffabbb6ed65b2}\label{struct_scene_anim_node_a4cc01a226d64e0ac718ffabbb6ed65b2}} 
+\index{SceneAnimNode@{SceneAnimNode}!mName@{mName}}
+\index{mName@{mName}!SceneAnimNode@{SceneAnimNode}}
+\doxysubsubsection{\texorpdfstring{mName}{mName}}
+{\footnotesize\ttfamily std\+::string Scene\+Anim\+Node\+::m\+Name}
+
+\mbox{\Hypertarget{struct_scene_anim_node_a3a75388ee393454556ce0e6e1e1b4919}\label{struct_scene_anim_node_a3a75388ee393454556ce0e6e1e1b4919}} 
+\index{SceneAnimNode@{SceneAnimNode}!mParent@{mParent}}
+\index{mParent@{mParent}!SceneAnimNode@{SceneAnimNode}}
+\doxysubsubsection{\texorpdfstring{mParent}{mParent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}}$\ast$ Scene\+Anim\+Node\+::m\+Parent}
+
+
+
+この構造体詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_assimp_model_8h}{Assimp\+Model.\+h}}\end{DoxyCompactItemize}

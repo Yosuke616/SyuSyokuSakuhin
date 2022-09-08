@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/SceneSelect.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">SceneSelect.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_scene_select_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef _SCENE_SELECT_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define _SCENE_SELECT_H_</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_scene_8h.html">Scene.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_stage_select.html">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="class_stage_select.html">StageSelect</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_scene.html">Scene</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">//ベクターの二次元配列</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"></span>    <span class="keyword">using </span>Cell = int;                   </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">using </span>Column = std::vector&lt;Cell&gt;;   </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">using </span>Row = std::vector&lt;Column&gt;;    </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">static</span> Row m_StageGrid;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"></span>    <span class="comment">//static bool Load();</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment"></span>    <span class="comment">//static bool Save();</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"></span>    <a class="code hl_function" href="class_stage_select.html#a4b1fc47d562c9a987744f32bc686f3cb">StageSelect</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_function" href="class_stage_select.html#afa42139ae1249d720814cd39db54e637">~StageSelect</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba">Init</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_stage_select.html#a16880c0008a1b1a9b872eba7c41e1db3">Uninit</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_stage_select.html#aa2796a223f0c14a63523a725957de1ef">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_stage_select.html#a607ba8e951492ae25d5ff4942b029e27">Draw</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">//static bool GetSelectAble(int stage_num);</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="comment"></span>    <span class="comment">//static Row GetSelectGrid();</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"></span>    <span class="comment">//static bool NewGame();</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="comment"></span>    <span class="comment">//static bool SaveClearInfo(int nStage);</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_scene_8h_html"><div class="ttname"><a href="_scene_8h.html">Scene.h</a></div></div>
+<div class="ttc" id="aclass_scene_html"><div class="ttname"><a href="class_scene.html">Scene</a></div><div class="ttdef"><b>Definition:</b> Scene.h:19</div></div>
+<div class="ttc" id="aclass_stage_select_html"><div class="ttname"><a href="class_stage_select.html">StageSelect</a></div><div class="ttdoc">ステージ選択用のクラス @detail 色々</div><div class="ttdef"><b>Definition:</b> SceneSelect.h:21</div></div>
+<div class="ttc" id="aclass_stage_select_html_a16880c0008a1b1a9b872eba7c41e1db3"><div class="ttname"><a href="class_stage_select.html#a16880c0008a1b1a9b872eba7c41e1db3">StageSelect::Uninit</a></div><div class="ttdeci">void Uninit() override</div><div class="ttdoc">終了処理</div><div class="ttdef"><b>Definition:</b> SceneSelect.cpp:105</div></div>
+<div class="ttc" id="aclass_stage_select_html_a4b1fc47d562c9a987744f32bc686f3cb"><div class="ttname"><a href="class_stage_select.html#a4b1fc47d562c9a987744f32bc686f3cb">StageSelect::StageSelect</a></div><div class="ttdeci">StageSelect()</div><div class="ttdoc">‍**</div><div class="ttdef"><b>Definition:</b> SceneSelect.cpp:31</div></div>
+<div class="ttc" id="aclass_stage_select_html_a607ba8e951492ae25d5ff4942b029e27"><div class="ttname"><a href="class_stage_select.html#a607ba8e951492ae25d5ff4942b029e27">StageSelect::Draw</a></div><div class="ttdeci">void Draw() override</div><div class="ttdoc">描画処理</div><div class="ttdef"><b>Definition:</b> SceneSelect.cpp:127</div></div>
+<div class="ttc" id="aclass_stage_select_html_a949e9de720f8072040e2f93bb586a0ba"><div class="ttname"><a href="class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba">StageSelect::Init</a></div><div class="ttdeci">void Init() override</div><div class="ttdoc">初期化処理</div><div class="ttdef"><b>Definition:</b> SceneSelect.cpp:47</div></div>
+<div class="ttc" id="aclass_stage_select_html_aa2796a223f0c14a63523a725957de1ef"><div class="ttname"><a href="class_stage_select.html#aa2796a223f0c14a63523a725957de1ef">StageSelect::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdoc">更新処理</div><div class="ttdef"><b>Definition:</b> SceneSelect.cpp:116</div></div>
+<div class="ttc" id="aclass_stage_select_html_afa42139ae1249d720814cd39db54e637"><div class="ttname"><a href="class_stage_select.html#afa42139ae1249d720814cd39db54e637">StageSelect::~StageSelect</a></div><div class="ttdeci">~StageSelect() override</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> SceneSelect.cpp:39</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

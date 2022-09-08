@@ -93,7 +93,7 @@ void CCamera::Init()
 	XMStoreFloat4x4(&m_mtxProj, XMMatrixPerspectiveFovLH(
 		XMConvertToRadians(m_fFovY), m_fAspectRatio, m_fNearZ, m_fFarZ));
 #pragma endregion
-	m_Limit = XMFLOAT2(0.0f, 100000.0f);
+	m_Limit = XMFLOAT2(0.0f, 3650.0f);
 	m_LimitY = XMFLOAT2(58.0f,1000.0f);
 
 

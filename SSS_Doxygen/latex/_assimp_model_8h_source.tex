@@ -1,0 +1,341 @@
+\hypertarget{_assimp_model_8h_source}{}\doxysection{Assimp\+Model.\+h}
+\label{_assimp_model_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/AssimpModel.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/AssimpModel.h}}
+\mbox{\hyperlink{_assimp_model_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{// Assimpライブラリ用モデルクラス定義 [AssimpModel.h]}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define NOMINMAX}}
+\DoxyCodeLine{4 \textcolor{comment}{//\#define D3DCOMPILER}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <windows.h>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <d3d11.h>}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <DirectXMath.h>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifdef D3DCOMPILER}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <d3dcompiler.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <assimp/Importer.hpp>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <assimp/scene.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <assimp/postprocess.h>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_camera_8h}{Camera.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_light_8h}{Light.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{// マクロ}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifndef SAFE\_RELEASE}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define SAFE\_RELEASE(p)         \{if(p)\{(p)-\/>Release();(p)=nullptr;\}\}}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#ifndef SAFE\_DELETE}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#define SAFE\_DELETE(p)          \{if(p)\{delete p;(p)=nullptr;\}\}}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#ifndef SAFE\_DELETE\_ARRAY}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define SAFE\_DELETE\_ARRAY(p)    \{if(p)\{delete[]p;(p)=nullptr;\}\}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{comment}{// 定数}}
+\DoxyCodeLine{32 \textcolor{keyword}{enum} \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}{EByOpacity}} \{}
+\DoxyCodeLine{33     \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a35cbb98affb6d66c253aefeb9d4078bc}{eNoAffect}} = 0,     \textcolor{comment}{// 全て}}
+\DoxyCodeLine{34     \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a8636b2bf1064b0f26ca0c06300df0bb3}{eOpacityOnly}},       \textcolor{comment}{// 不透明のみ}}
+\DoxyCodeLine{35     \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3afde1bd452d55c5a4b848035beb5ed0b4}{eTransparentOnly}},   \textcolor{comment}{// 透明のみ}}
+\DoxyCodeLine{36 \};}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{comment}{// マテリアル}}
+\DoxyCodeLine{39 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_t_assimp_material}{TAssimpMaterial}} \{}
+\DoxyCodeLine{40     DirectX::XMFLOAT4   \mbox{\hyperlink{struct_t_assimp_material_a511f8e613282ad3c64a4dba4bf7291bc}{Ka}};       \textcolor{comment}{// アンビエント+テクスチャ有無}}
+\DoxyCodeLine{41     DirectX::XMFLOAT4   \mbox{\hyperlink{struct_t_assimp_material_ae98a6bf2908c705bca8c54953758a6e8}{Kd}};       \textcolor{comment}{// ディフューズ}}
+\DoxyCodeLine{42     DirectX::XMFLOAT4   \mbox{\hyperlink{struct_t_assimp_material_a93f2462dbb0d89f77ebb9e8112ce12a4}{Ks}};       \textcolor{comment}{// スペキュラ+スペキュラ強度}}
+\DoxyCodeLine{43     DirectX::XMFLOAT4   \mbox{\hyperlink{struct_t_assimp_material_a5bc4c96dfeba35666add969d84aeaa62}{Ke}};       \textcolor{comment}{// エミッシブ}}
+\DoxyCodeLine{44     ID3D11ShaderResourceView*   \mbox{\hyperlink{struct_t_assimp_material_a3c0575a45e45ab10efaf2b66cf96dae6}{pTexture}};       \textcolor{comment}{// 拡散テクスチャ}}
+\DoxyCodeLine{45     ID3D11ShaderResourceView*   \mbox{\hyperlink{struct_t_assimp_material_a5d3877a5b5fe2b3387a10d4d9949bfb3}{pTexSpecular}};   \textcolor{comment}{// 鏡面反射テクスチャ}}
+\DoxyCodeLine{46     ID3D11ShaderResourceView*   \mbox{\hyperlink{struct_t_assimp_material_a6c47b9dd44fb45af58c0f65d2e636c0b}{pTexEmmisive}};   \textcolor{comment}{// 発光テクスチャ}}
+\DoxyCodeLine{47     ID3D11ShaderResourceView*   \mbox{\hyperlink{struct_t_assimp_material_a04ef19c3c7fb10705ed604c5edff1762}{pTexTransparent}};\textcolor{comment}{// 透過テクスチャ}}
+\DoxyCodeLine{48     \mbox{\hyperlink{struct_t_assimp_material_ad699818c9b8629cddd58c8fdbe048ac2}{TAssimpMaterial}}()}
+\DoxyCodeLine{49     \{}
+\DoxyCodeLine{50         \mbox{\hyperlink{struct_t_assimp_material_a511f8e613282ad3c64a4dba4bf7291bc}{Ka}} = DirectX::XMFLOAT4(0, 0, 0, 0);       \textcolor{comment}{// アンビエント+テクスチャ有無}}
+\DoxyCodeLine{51         \mbox{\hyperlink{struct_t_assimp_material_ae98a6bf2908c705bca8c54953758a6e8}{Kd}} = DirectX::XMFLOAT4(1, 1, 1, 1);       \textcolor{comment}{// ディフューズ}}
+\DoxyCodeLine{52         \mbox{\hyperlink{struct_t_assimp_material_a93f2462dbb0d89f77ebb9e8112ce12a4}{Ks}} = DirectX::XMFLOAT4(0, 0, 0, 0);       \textcolor{comment}{// スペキュラ+スペキュラ強度}}
+\DoxyCodeLine{53         \mbox{\hyperlink{struct_t_assimp_material_a5bc4c96dfeba35666add969d84aeaa62}{Ke}} = DirectX::XMFLOAT4(0, 0, 0, 0);       \textcolor{comment}{// エミッシブ}}
+\DoxyCodeLine{54         \mbox{\hyperlink{struct_t_assimp_material_a3c0575a45e45ab10efaf2b66cf96dae6}{pTexture}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{55         \mbox{\hyperlink{struct_t_assimp_material_a6c47b9dd44fb45af58c0f65d2e636c0b}{pTexEmmisive}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{56         \mbox{\hyperlink{struct_t_assimp_material_a5d3877a5b5fe2b3387a10d4d9949bfb3}{pTexSpecular}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{57         \mbox{\hyperlink{struct_t_assimp_material_a04ef19c3c7fb10705ed604c5edff1762}{pTexTransparent}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{58     \}}
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_t_assimp_material_acc0cb588c61731a1d7510d24b55e3d16}{Release}}()}
+\DoxyCodeLine{60     \{}
+\DoxyCodeLine{61         \mbox{\hyperlink{main_app_8h_a2bc549675ca29f733709b4656d22d52a}{SAFE\_RELEASE}}(\mbox{\hyperlink{struct_t_assimp_material_a04ef19c3c7fb10705ed604c5edff1762}{pTexTransparent}});}
+\DoxyCodeLine{62         \mbox{\hyperlink{main_app_8h_a2bc549675ca29f733709b4656d22d52a}{SAFE\_RELEASE}}(\mbox{\hyperlink{struct_t_assimp_material_a5d3877a5b5fe2b3387a10d4d9949bfb3}{pTexSpecular}});}
+\DoxyCodeLine{63         \mbox{\hyperlink{main_app_8h_a2bc549675ca29f733709b4656d22d52a}{SAFE\_RELEASE}}(\mbox{\hyperlink{struct_t_assimp_material_a6c47b9dd44fb45af58c0f65d2e636c0b}{pTexEmmisive}});}
+\DoxyCodeLine{64         \mbox{\hyperlink{main_app_8h_a2bc549675ca29f733709b4656d22d52a}{SAFE\_RELEASE}}(\mbox{\hyperlink{struct_t_assimp_material_a3c0575a45e45ab10efaf2b66cf96dae6}{pTexture}});}
+\DoxyCodeLine{65     \}}
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{comment}{// 頂点情報}}
+\DoxyCodeLine{69 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_t_assimp_vertex}{TAssimpVertex}} \{}
+\DoxyCodeLine{70     DirectX::XMFLOAT3   \mbox{\hyperlink{struct_t_assimp_vertex_ac19537958a952a250171d6b6c04739f8}{vPos}};   \textcolor{comment}{// 頂点位置}}
+\DoxyCodeLine{71     DirectX::XMFLOAT3   \mbox{\hyperlink{struct_t_assimp_vertex_a9ce3268ee83dca73f88c15f41eb27779}{vNorm}}; \textcolor{comment}{// 頂点法線}}
+\DoxyCodeLine{72     DirectX::XMFLOAT2   \mbox{\hyperlink{struct_t_assimp_vertex_ab03179bf7596bf1bf4dcab18a6015e1e}{vTex}};   \textcolor{comment}{// UV座標}}
+\DoxyCodeLine{73     UINT        \mbox{\hyperlink{struct_t_assimp_vertex_af38e762f6d06da938d244d3a6529251b}{uBoneIndex}}[4];    \textcolor{comment}{// ボーン番号}}
+\DoxyCodeLine{74     \textcolor{keywordtype}{float}       \mbox{\hyperlink{struct_t_assimp_vertex_a63960fd74899bd4b638ce99589799558}{fBoneWeight}}[4];  \textcolor{comment}{// ボーン重み}}
+\DoxyCodeLine{75     \mbox{\hyperlink{struct_t_assimp_vertex_a2220e347f2863439cc43832ce48cbb02}{TAssimpVertex}}()}
+\DoxyCodeLine{76     \{}
+\DoxyCodeLine{77         \mbox{\hyperlink{struct_t_assimp_vertex_ac19537958a952a250171d6b6c04739f8}{vPos}} = DirectX::XMFLOAT3(0, 0, 0);}
+\DoxyCodeLine{78         \mbox{\hyperlink{struct_t_assimp_vertex_a9ce3268ee83dca73f88c15f41eb27779}{vNorm}} = DirectX::XMFLOAT3(0, 0, -\/1);}
+\DoxyCodeLine{79         \mbox{\hyperlink{struct_t_assimp_vertex_ab03179bf7596bf1bf4dcab18a6015e1e}{vTex}} = DirectX::XMFLOAT2(0, 0);}
+\DoxyCodeLine{80         \mbox{\hyperlink{struct_t_assimp_vertex_af38e762f6d06da938d244d3a6529251b}{uBoneIndex}}[0] = \mbox{\hyperlink{struct_t_assimp_vertex_af38e762f6d06da938d244d3a6529251b}{uBoneIndex}}[1] = \mbox{\hyperlink{struct_t_assimp_vertex_af38e762f6d06da938d244d3a6529251b}{uBoneIndex}}[2] = \mbox{\hyperlink{struct_t_assimp_vertex_af38e762f6d06da938d244d3a6529251b}{uBoneIndex}}[3] = 0;}
+\DoxyCodeLine{81         \mbox{\hyperlink{struct_t_assimp_vertex_a63960fd74899bd4b638ce99589799558}{fBoneWeight}}[0] = \mbox{\hyperlink{struct_t_assimp_vertex_a63960fd74899bd4b638ce99589799558}{fBoneWeight}}[1] = \mbox{\hyperlink{struct_t_assimp_vertex_a63960fd74899bd4b638ce99589799558}{fBoneWeight}}[2] = \mbox{\hyperlink{struct_t_assimp_vertex_a63960fd74899bd4b638ce99589799558}{fBoneWeight}}[3] = 0.0f;}
+\DoxyCodeLine{82     \}}
+\DoxyCodeLine{83 \};}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \textcolor{comment}{// アニメ評価クラス}}
+\DoxyCodeLine{86 \textcolor{keyword}{class }\mbox{\hyperlink{class_anim_evaluator}{AnimEvaluator}} \{}
+\DoxyCodeLine{87 \textcolor{keyword}{public}:}
+\DoxyCodeLine{88     \mbox{\hyperlink{class_anim_evaluator_a271264baf8bdbb2ca6169be7f2067c59}{AnimEvaluator}}(\textcolor{keyword}{const} aiAnimation* pAnim);}
+\DoxyCodeLine{89     \mbox{\hyperlink{class_anim_evaluator_a451b9f7bcf5153122792e633273fcf17}{\string~AnimEvaluator}}();}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_anim_evaluator_ad54be6d3b474ab3753b12c6996bc2852}{Evaluate}}(\textcolor{keywordtype}{double} pTime);}
+\DoxyCodeLine{92     \textcolor{keyword}{const} std::vector<aiMatrix4x4>\& \mbox{\hyperlink{class_anim_evaluator_a2924e71632d97c009d30179756704a57}{GetTransformations}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_anim_evaluator_a0748de3a9daa9a12756100a78909820a}{mTransforms}}; \}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{95     \textcolor{keyword}{const} aiAnimation* \mbox{\hyperlink{class_anim_evaluator_a9f9e8bd760507f14cc98319f7bcfb4ec}{mAnim}};}
+\DoxyCodeLine{96     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_anim_evaluator_a974658f2259e0cbe7319fab473f24494}{mLastTime}};}
+\DoxyCodeLine{97     std::vector<std::tuple<unsigned int, unsigned int, unsigned int> > \mbox{\hyperlink{class_anim_evaluator_a688bbe03c4d441482b61f27c44269113}{mLastPositions}};}
+\DoxyCodeLine{98     std::vector<aiMatrix4x4> \mbox{\hyperlink{class_anim_evaluator_a0748de3a9daa9a12756100a78909820a}{mTransforms}};}
+\DoxyCodeLine{99 \};}
+\DoxyCodeLine{100 }
+\DoxyCodeLine{101 \textcolor{comment}{// シーン ノード情報(追加データ有のツリー構造)}}
+\DoxyCodeLine{102 \textcolor{comment}{// (一部のコンパイラではpublicでなければならない)}}
+\DoxyCodeLine{103 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_scene_anim_node}{SceneAnimNode}} \{}
+\DoxyCodeLine{104     std::string \mbox{\hyperlink{struct_scene_anim_node_a4cc01a226d64e0ac718ffabbb6ed65b2}{mName}};}
+\DoxyCodeLine{105     \mbox{\hyperlink{struct_scene_anim_node}{SceneAnimNode}}* \mbox{\hyperlink{struct_scene_anim_node_a3a75388ee393454556ce0e6e1e1b4919}{mParent}};}
+\DoxyCodeLine{106     std::vector<SceneAnimNode*> \mbox{\hyperlink{struct_scene_anim_node_af16fb617186c6c9adb89bba202b30e76}{mChildren}};}
+\DoxyCodeLine{107 }
+\DoxyCodeLine{108     \textcolor{comment}{// 直近のローカル変換マトリックス}}
+\DoxyCodeLine{109     aiMatrix4x4 \mbox{\hyperlink{struct_scene_anim_node_ae9ff6d83be1cb60b2023295a7b022f7e}{mLocalTransform}};}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{comment}{// 直近のワールド変換マトリックス}}
+\DoxyCodeLine{112     aiMatrix4x4 \mbox{\hyperlink{struct_scene_anim_node_ac18443902c82c855826c3f9d2bb832f5}{mGlobalTransform}};}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114     \textcolor{comment}{// 現在のチャネル配列インデックス。アニメーション無しの場合は-\/1。}}
+\DoxyCodeLine{115     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_scene_anim_node_a8a6f36f3d8e851a688e99de47e9e9741}{mChannelIndex}};}
+\DoxyCodeLine{116 }
+\DoxyCodeLine{117     \textcolor{comment}{// デフォルト コンストラクタ}}
+\DoxyCodeLine{118     \mbox{\hyperlink{struct_scene_anim_node_acbdc9742cb9d4ffc39f4d3b58d034aa0}{SceneAnimNode}}() : \mbox{\hyperlink{struct_scene_anim_node_a4cc01a226d64e0ac718ffabbb6ed65b2}{mName}}()}
+\DoxyCodeLine{119         , \mbox{\hyperlink{struct_scene_anim_node_a3a75388ee393454556ce0e6e1e1b4919}{mParent}}(nullptr)}
+\DoxyCodeLine{120         , \mbox{\hyperlink{struct_scene_anim_node_af16fb617186c6c9adb89bba202b30e76}{mChildren}}()}
+\DoxyCodeLine{121         , \mbox{\hyperlink{struct_scene_anim_node_ae9ff6d83be1cb60b2023295a7b022f7e}{mLocalTransform}}()}
+\DoxyCodeLine{122         , \mbox{\hyperlink{struct_scene_anim_node_ac18443902c82c855826c3f9d2bb832f5}{mGlobalTransform}}()}
+\DoxyCodeLine{123         , \mbox{\hyperlink{struct_scene_anim_node_a8a6f36f3d8e851a688e99de47e9e9741}{mChannelIndex}}(-\/1)}
+\DoxyCodeLine{124     \{}
+\DoxyCodeLine{125         \textcolor{comment}{// (空)}}
+\DoxyCodeLine{126     \}}
+\DoxyCodeLine{127 }
+\DoxyCodeLine{128     \textcolor{comment}{// 名前を伴うコンストラクタ}}
+\DoxyCodeLine{129     \mbox{\hyperlink{struct_scene_anim_node_a3ddbb91122ad13a4a8d7c839b2e54637}{SceneAnimNode}}(\textcolor{keyword}{const} std::string\& pName) : \mbox{\hyperlink{struct_scene_anim_node_a4cc01a226d64e0ac718ffabbb6ed65b2}{mName}}(pName)}
+\DoxyCodeLine{130         , \mbox{\hyperlink{struct_scene_anim_node_a3a75388ee393454556ce0e6e1e1b4919}{mParent}}(nullptr)}
+\DoxyCodeLine{131         , \mbox{\hyperlink{struct_scene_anim_node_af16fb617186c6c9adb89bba202b30e76}{mChildren}}()}
+\DoxyCodeLine{132         , \mbox{\hyperlink{struct_scene_anim_node_ae9ff6d83be1cb60b2023295a7b022f7e}{mLocalTransform}}()}
+\DoxyCodeLine{133         , \mbox{\hyperlink{struct_scene_anim_node_ac18443902c82c855826c3f9d2bb832f5}{mGlobalTransform}}()}
+\DoxyCodeLine{134         , \mbox{\hyperlink{struct_scene_anim_node_a8a6f36f3d8e851a688e99de47e9e9741}{mChannelIndex}}(-\/1)}
+\DoxyCodeLine{135     \{}
+\DoxyCodeLine{136         \textcolor{comment}{// (空)}}
+\DoxyCodeLine{137     \}}
+\DoxyCodeLine{138 }
+\DoxyCodeLine{139     \textcolor{comment}{// デストラクタ}}
+\DoxyCodeLine{140     \mbox{\hyperlink{struct_scene_anim_node_a4465a5d22cc91fd3f43c214eef705923}{\string~SceneAnimNode}}()}
+\DoxyCodeLine{141     \{}
+\DoxyCodeLine{142         \textcolor{keywordflow}{for} (std::vector<SceneAnimNode*>::iterator it = \mbox{\hyperlink{struct_scene_anim_node_af16fb617186c6c9adb89bba202b30e76}{mChildren}}.begin(); it != \mbox{\hyperlink{struct_scene_anim_node_af16fb617186c6c9adb89bba202b30e76}{mChildren}}.end(); ++it) \{}
+\DoxyCodeLine{143             \textcolor{keyword}{delete} *it;}
+\DoxyCodeLine{144         \}}
+\DoxyCodeLine{145     \}}
+\DoxyCodeLine{146 \};}
+\DoxyCodeLine{147 }
+\DoxyCodeLine{148 \textcolor{comment}{// アニメーション ノード マトリックス生成クラス}}
+\DoxyCodeLine{149 \textcolor{keyword}{class }\mbox{\hyperlink{class_scene_animator}{SceneAnimator}} \{}
+\DoxyCodeLine{150 \textcolor{keyword}{public}:}
+\DoxyCodeLine{151     \mbox{\hyperlink{class_scene_animator_ad3f0975b87a7b83e6a53bb932dc87c5c}{SceneAnimator}}(\textcolor{keyword}{const} aiScene* pScene, \textcolor{keywordtype}{size\_t} pAnimIndex = 0);}
+\DoxyCodeLine{152     \mbox{\hyperlink{class_scene_animator_a204cb5b04afb15e6223e1b0f016d12fc}{\string~SceneAnimator}}();}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_animator_a248309cdd1e5c8af66247aa14b174609}{SetAnimIndex}}(\textcolor{keywordtype}{size\_t} pAnimIndex);}
+\DoxyCodeLine{155     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_animator_ac2fca81d4eb40a272065b5cf032db38b}{Calculate}}(\textcolor{keywordtype}{double} pTime);}
+\DoxyCodeLine{156     \textcolor{keyword}{const} aiMatrix4x4\& \mbox{\hyperlink{class_scene_animator_adf22ac0c0965e279fd4f387c3f4ad251}{GetLocalTransform}}(\textcolor{keyword}{const} aiNode* node) \textcolor{keyword}{const};}
+\DoxyCodeLine{157     \textcolor{keyword}{const} aiMatrix4x4\& \mbox{\hyperlink{class_scene_animator_a89b285b3575fac7c84497f9bf11e26b6}{GetGlobalTransform}}(\textcolor{keyword}{const} aiNode* node) \textcolor{keyword}{const};}
+\DoxyCodeLine{158     \textcolor{keyword}{const} std::vector<aiMatrix4x4>\& \mbox{\hyperlink{class_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd}{GetBoneMatrices}}(\textcolor{keyword}{const} aiNode* pNode, \textcolor{keywordtype}{size\_t} pMeshIndex = 0);}
+\DoxyCodeLine{159 }
+\DoxyCodeLine{160     \textcolor{keywordtype}{size\_t} \mbox{\hyperlink{class_scene_animator_a1b61268735c0568e1d924ec06e963711}{CurrentAnimIndex}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_scene_animator_aedfbb1934b8d1517e9159b8687caee52}{mCurrentAnimIndex}}; \}}
+\DoxyCodeLine{161 }
+\DoxyCodeLine{162     aiAnimation* \mbox{\hyperlink{class_scene_animator_a5dc86bae39f8f27bf3134d5bcba57746}{CurrentAnim}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{163         \textcolor{keywordflow}{return} \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(\mbox{\hyperlink{class_scene_animator_aedfbb1934b8d1517e9159b8687caee52}{mCurrentAnimIndex}}) < \mbox{\hyperlink{class_scene_animator_a703fc706e63c10a1ef75cf8a3dfed416}{mScene}}-\/>mNumAnimations ? \mbox{\hyperlink{class_scene_animator_a703fc706e63c10a1ef75cf8a3dfed416}{mScene}}-\/>mAnimations[\mbox{\hyperlink{class_scene_animator_aedfbb1934b8d1517e9159b8687caee52}{mCurrentAnimIndex}}] : \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{164     \}}
+\DoxyCodeLine{165 }
+\DoxyCodeLine{166 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{167     \mbox{\hyperlink{struct_scene_anim_node}{SceneAnimNode}}* \mbox{\hyperlink{class_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706}{CreateNodeTree}}(aiNode* pNode, \mbox{\hyperlink{struct_scene_anim_node}{SceneAnimNode}}* pParent);}
+\DoxyCodeLine{168     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7}{UpdateTransforms}}(\mbox{\hyperlink{struct_scene_anim_node}{SceneAnimNode}}* pNode, \textcolor{keyword}{const} std::vector<aiMatrix4x4>\& pTransforms);}
+\DoxyCodeLine{169     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_animator_aaffdfbd7ebf7787f81f6f48e1466da3a}{CalculateGlobalTransform}}(\mbox{\hyperlink{struct_scene_anim_node}{SceneAnimNode}}* pInternalNode);}
+\DoxyCodeLine{170 }
+\DoxyCodeLine{171 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{172     \textcolor{keyword}{const} aiScene* \mbox{\hyperlink{class_scene_animator_a703fc706e63c10a1ef75cf8a3dfed416}{mScene}};}
+\DoxyCodeLine{173     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_scene_animator_aedfbb1934b8d1517e9159b8687caee52}{mCurrentAnimIndex}};}
+\DoxyCodeLine{174     \mbox{\hyperlink{class_anim_evaluator}{AnimEvaluator}}* \mbox{\hyperlink{class_scene_animator_afd737ef660b4114be402cd567dedaac7}{mAnimEvaluator}};}
+\DoxyCodeLine{175     \mbox{\hyperlink{struct_scene_anim_node}{SceneAnimNode}}* \mbox{\hyperlink{class_scene_animator_a694333451821b062ab247b37a98a4611}{mRootNode}};}
+\DoxyCodeLine{176     \textcolor{keyword}{typedef} std::map<const aiNode*, SceneAnimNode*> \mbox{\hyperlink{class_scene_animator_abf59dd7ff4da461f2eb419ab6bcc8862}{NodeMap}};}
+\DoxyCodeLine{177     \mbox{\hyperlink{class_scene_animator_abf59dd7ff4da461f2eb419ab6bcc8862}{NodeMap}} \mbox{\hyperlink{class_scene_animator_a87d87fdbf5eab87efbdf2d27795912a5}{mNodesByName}};}
+\DoxyCodeLine{178     \textcolor{keyword}{typedef} std::map<const char*, const aiNode*> \mbox{\hyperlink{class_scene_animator_a25f41ade8381d9d5576393617212529f}{BoneMap}};}
+\DoxyCodeLine{179     \mbox{\hyperlink{class_scene_animator_a25f41ade8381d9d5576393617212529f}{BoneMap}} \mbox{\hyperlink{class_scene_animator_a8ac26b55c6ea416360ce3eb63feae895}{mBoneNodesByName}};}
+\DoxyCodeLine{180     std::vector<aiMatrix4x4> \mbox{\hyperlink{class_scene_animator_a4414fe0325b0a9f85863b4bb41c433c8}{mTransforms}};}
+\DoxyCodeLine{181 \};}
+\DoxyCodeLine{182 }
+\DoxyCodeLine{183 \textcolor{comment}{// メッシュ クラス}}
+\DoxyCodeLine{184 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_assimp_model}{CAssimpModel}};}
+\DoxyCodeLine{185 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_assimp_mesh}{CAssimpMesh}}}
+\DoxyCodeLine{186 \{}
+\DoxyCodeLine{187 \textcolor{keyword}{private}:}
+\DoxyCodeLine{188     \mbox{\hyperlink{class_c_assimp_model}{CAssimpModel}}* m\_pModel;                 \textcolor{comment}{//  モデルクラス}}
+\DoxyCodeLine{189     std::vector<TAssimpVertex> m\_aVertex;   \textcolor{comment}{//  頂点情報}}
+\DoxyCodeLine{190     std::vector<UINT> m\_aIndex;             \textcolor{comment}{//  頂点のインデックス}}
+\DoxyCodeLine{191     \mbox{\hyperlink{struct_t_assimp_material}{TAssimpMaterial}} m\_material;              \textcolor{comment}{//  マテリアル情報}}
+\DoxyCodeLine{192     ID3D11Buffer* m\_pVertexBuffer;          \textcolor{comment}{//  頂点バッファ}}
+\DoxyCodeLine{193     ID3D11Buffer* m\_pIndexBuffer;           \textcolor{comment}{//  インデックスバッファ}}
+\DoxyCodeLine{194     ID3D11Buffer* m\_pConstantBuffer0;       \textcolor{comment}{//  ???}}
+\DoxyCodeLine{195     ID3D11Buffer* m\_pConstantBuffer1;       \textcolor{comment}{//  ???}}
+\DoxyCodeLine{196 }
+\DoxyCodeLine{197     ID3D11Buffer* m\_pConstantBufferBone;    \textcolor{comment}{//  ???}}
+\DoxyCodeLine{198 }
+\DoxyCodeLine{199 \textcolor{keyword}{public}:}
+\DoxyCodeLine{200 }
+\DoxyCodeLine{201     \mbox{\hyperlink{class_c_assimp_mesh_a0407c0d669b67e0c5ea916b9afe7fd90}{CAssimpMesh}}(ID3D11Device* pDevice,       \textcolor{comment}{//  コンストラクタ}}
+\DoxyCodeLine{202         \mbox{\hyperlink{class_c_assimp_model}{CAssimpModel}}* pModel,}
+\DoxyCodeLine{203         std::vector<TAssimpVertex> aVertex,}
+\DoxyCodeLine{204         std::vector<UINT> aIndex,}
+\DoxyCodeLine{205         \mbox{\hyperlink{struct_t_assimp_material}{TAssimpMaterial}}\& material);}
+\DoxyCodeLine{206 }
+\DoxyCodeLine{207     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_c_assimp_mesh_abf56aff36d7b748bf11036ae9ca87cf6}{\string~CAssimpMesh}}();                 \textcolor{comment}{//  デストラクタ}}
+\DoxyCodeLine{208 }
+\DoxyCodeLine{209     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa}{Draw}}(ID3D11DeviceContext* pDC,     \textcolor{comment}{//  描画}}
+\DoxyCodeLine{210         DirectX::XMFLOAT4X4\& mtxWorld,}
+\DoxyCodeLine{211         \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}{EByOpacity}} byOpacity = \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a35cbb98affb6d66c253aefeb9d4078bc}{eNoAffect}});}
+\DoxyCodeLine{212 }
+\DoxyCodeLine{213     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_mesh_a0b61f1fe42a80555d2f6e286016762b5}{Release}}();                          \textcolor{comment}{//  開放}}
+\DoxyCodeLine{214 }
+\DoxyCodeLine{215     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_mesh_aa23f916538ebc325071af295bc54c0ba}{SetBoneMatrix}}(ID3D11DeviceContext* pDC, XMFLOAT4X4 mtxBone[]);    \textcolor{comment}{// ボーン マトリックス設定}}
+\DoxyCodeLine{216 \textcolor{keyword}{private}:}
+\DoxyCodeLine{217     \textcolor{keywordtype}{bool} SetupMesh(ID3D11Device* pDevice);  \textcolor{comment}{// 頂点バッファ/インデックス バッファ生成}}
+\DoxyCodeLine{218 \};}
+\DoxyCodeLine{219 }
+\DoxyCodeLine{220 \textcolor{comment}{// モデル クラス}}
+\DoxyCodeLine{221 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_assimp_model}{CAssimpModel}}}
+\DoxyCodeLine{222 \{}
+\DoxyCodeLine{223 \textcolor{keyword}{private}:}
+\DoxyCodeLine{224     std::string m\_directory;            \textcolor{comment}{//  ファイル読み込みのパス}}
+\DoxyCodeLine{225     std::string m\_fname;                \textcolor{comment}{//  ファイル読み込みのパス}}
+\DoxyCodeLine{226     std::string m\_ext;                  \textcolor{comment}{//  ファイル読み込みのパス}}
+\DoxyCodeLine{227     std::vector<CAssimpMesh> m\_aMesh;   \textcolor{comment}{//  3Dメッシュリスト}}
+\DoxyCodeLine{228     std::string m\_textype;}
+\DoxyCodeLine{229     DirectX::XMFLOAT4X4 m\_mtxTexture;   \textcolor{comment}{//  テクスチャ マトリックス}}
+\DoxyCodeLine{230     DirectX::XMFLOAT4X4 m\_mtxWorld;     \textcolor{comment}{//  ワールドマ トリックス}}
+\DoxyCodeLine{231     \mbox{\hyperlink{struct_t_assimp_material}{TAssimpMaterial}}* m\_pMaterial;        \textcolor{comment}{//  テクスチャのマテリアル情報}}
+\DoxyCodeLine{232     DirectX::XMFLOAT3 m\_vBBox;          \textcolor{comment}{//  境界線ボックス}}
+\DoxyCodeLine{233     DirectX::XMFLOAT3 m\_vCenter;        \textcolor{comment}{//  中心座標}}
+\DoxyCodeLine{234     \mbox{\hyperlink{struct_t_assimp_material}{TAssimpMaterial}}* m\_pSaveMate;            \textcolor{comment}{//　マテリアルを保持しておくための変数}}
+\DoxyCodeLine{235 }
+\DoxyCodeLine{236     \textcolor{keyword}{const} aiScene* m\_pScene;            \textcolor{comment}{//  アニメーションシーン}}
+\DoxyCodeLine{237     \mbox{\hyperlink{class_scene_animator}{SceneAnimator}}* m\_pAnimator;            \textcolor{comment}{//  アニメーション}}
+\DoxyCodeLine{238     \textcolor{keywordtype}{double} m\_dCurrent;}
+\DoxyCodeLine{239     \textcolor{keywordtype}{double} m\_dLastPlaying;}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241     \textcolor{keyword}{static} ID3D11InputLayout* m\_pVertexLayout;}
+\DoxyCodeLine{242     \textcolor{keyword}{static} ID3D11VertexShader* m\_pVertexShader;}
+\DoxyCodeLine{243     \textcolor{keyword}{static} ID3D11PixelShader* m\_pPixelShader;}
+\DoxyCodeLine{244     \textcolor{keyword}{static} ID3D11SamplerState* m\_pSampleLinear;}
+\DoxyCodeLine{245 }
+\DoxyCodeLine{246     \textcolor{comment}{//***追加}}
+\DoxyCodeLine{247     D3D\_PRIMITIVE\_TOPOLOGY m\_PrimitiveType; \textcolor{comment}{//  プリミティブ}}
+\DoxyCodeLine{248 }
+\DoxyCodeLine{249     \textcolor{keywordtype}{bool} m\_bAnimation;}
+\DoxyCodeLine{250 \textcolor{keyword}{public}:}
+\DoxyCodeLine{251     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_model_ac56e88cd4c0856b4c24deef96d674154}{SetAnimation}}(\textcolor{keywordtype}{bool} bAnimation);}
+\DoxyCodeLine{252     \textcolor{keyword}{static} \textcolor{keywordtype}{double} \mbox{\hyperlink{class_c_assimp_model_a007941bb336a88ff1112802f56e5ce2e}{g\_time}};}
+\DoxyCodeLine{253     \mbox{\hyperlink{class_c_assimp_model_af51e2d0b62a9326ff40d0560d1f8bd52}{CAssimpModel}}();                                             \textcolor{comment}{//  コンストラクタ}}
+\DoxyCodeLine{254     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_c_assimp_model_a47021ba66220589ade70afa85feea3cd}{\string~CAssimpModel}}();                                   \textcolor{comment}{//  デストラクタ}}
+\DoxyCodeLine{255     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_c_assimp_model_a4a7771d2c4afcde3d4dd26cb73e983e1}{InitShader}}(ID3D11Device* pDevice);                \textcolor{comment}{//  シェーダー初期化}}
+\DoxyCodeLine{256     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_model_ab706c8c7d9065532874d87122e37f8bb}{UninitShader}}();                                 \textcolor{comment}{//  シェーダー終了}}
+\DoxyCodeLine{257 }
+\DoxyCodeLine{258     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_model_a8309052c015d8844e85277fa82810ba3}{SetPrimitiveType}}(D3D\_PRIMITIVE\_TOPOLOGY type);         \textcolor{comment}{//  プリミティブの設定（追加）}}
+\DoxyCodeLine{259     DirectX::XMFLOAT4X4\& \mbox{\hyperlink{class_c_assimp_model_ab79b6874ddc2bd8a9b691c8ddaceea26}{GetTextureMatrix}}();                    \textcolor{comment}{//  テクスチャマトリックスの取得}}
+\DoxyCodeLine{260     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_model_addafb779ff18d9d02ece0c85debd17a0}{SetTextureMatrix}}(DirectX::XMFLOAT4X4\& mtxTexture);     \textcolor{comment}{//  テクスチャマトリックスの設定}}
+\DoxyCodeLine{261     \textcolor{comment}{//  モデル読み込み}}
+\DoxyCodeLine{262     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_c_assimp_model_a75759219911dbbc1072687f680a187ec}{Load}}(ID3D11Device* pDevice, ID3D11DeviceContext* pDC, std::string filename);}
+\DoxyCodeLine{263     \textcolor{comment}{//  描画}}
+\DoxyCodeLine{264     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_model_aac69dd95631d620577c17670dbd37149}{Draw}}(ID3D11DeviceContext* pDC, DirectX::XMFLOAT4X4\& mtxWorld, \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}{EByOpacity}} byOpacity = \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a35cbb98affb6d66c253aefeb9d4078bc}{eNoAffect}});}
+\DoxyCodeLine{265     \textcolor{comment}{//  アニメーション用の描画}}
+\DoxyCodeLine{266     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_model_a883075480beae8196af8823ed71cd426}{DrawNode}}(ID3D11DeviceContext* pDC, aiNode* piNode, \textcolor{keyword}{const} aiMatrix4x4\& piMatrix, \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}{EByOpacity}} byOpacity);}
+\DoxyCodeLine{267     \textcolor{comment}{//マテリアルの保存}}
+\DoxyCodeLine{268     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_model_ae1efd6c2fae09f8626f1bfce806d38ff}{SetMate}}(\mbox{\hyperlink{struct_t_assimp_material}{TAssimpMaterial}}* mate);}
+\DoxyCodeLine{269     \textcolor{comment}{//敵マテリアルの取得}}
+\DoxyCodeLine{270     \mbox{\hyperlink{struct_t_assimp_material}{TAssimpMaterial}}* \mbox{\hyperlink{class_c_assimp_model_a689c87a4798e9ccb0cf4ff540543f94f}{GetMate}}();}
+\DoxyCodeLine{271 }
+\DoxyCodeLine{272     \textcolor{comment}{//  ワールドマトリックスの取得}}
+\DoxyCodeLine{273     DirectX::XMFLOAT4X4\& \mbox{\hyperlink{class_c_assimp_model_ad5c088fc33fd15c8f36d66053f4b0cb1}{GetWorldMatrix}}()}
+\DoxyCodeLine{274     \{}
+\DoxyCodeLine{275         \textcolor{keywordflow}{return} m\_mtxWorld;}
+\DoxyCodeLine{276     \}}
+\DoxyCodeLine{277     \textcolor{comment}{//  マテリアルの設定}}
+\DoxyCodeLine{278     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_model_a07167f899d4215e860f8c3f4de456ada}{SetMaterial}}(\mbox{\hyperlink{struct_t_assimp_material}{TAssimpMaterial}}* pMaterial)}
+\DoxyCodeLine{279     \{}
+\DoxyCodeLine{280         m\_pMaterial = pMaterial;}
+\DoxyCodeLine{281     \}}
+\DoxyCodeLine{282     \textcolor{comment}{//  マテリアルの取得}}
+\DoxyCodeLine{283     \mbox{\hyperlink{struct_t_assimp_material}{TAssimpMaterial}}* \mbox{\hyperlink{class_c_assimp_model_a059efb51145989e578702f2e0055b3ca}{GetMaterial}}()}
+\DoxyCodeLine{284     \{}
+\DoxyCodeLine{285         \textcolor{keywordflow}{return} m\_pMaterial;}
+\DoxyCodeLine{286     \}}
+\DoxyCodeLine{287     \textcolor{comment}{//  アニメーションの有無}}
+\DoxyCodeLine{288     \mbox{\hyperlink{class_scene_animator}{SceneAnimator}}* \mbox{\hyperlink{class_c_assimp_model_af4ad20743bce27a7103050ca0a9045c1}{HasAnimation}}()}
+\DoxyCodeLine{289     \{}
+\DoxyCodeLine{290         \textcolor{keywordflow}{return} m\_pAnimator;}
+\DoxyCodeLine{291     \}}
+\DoxyCodeLine{292 }
+\DoxyCodeLine{293     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_model_adad1c76eb6e46f04d1cb182acd8f2c17}{SetAnimIndex}}(\textcolor{keywordtype}{int} nAnimIndex);              \textcolor{comment}{//  アニメーションインデックスの取得}}
+\DoxyCodeLine{294     UINT \mbox{\hyperlink{class_c_assimp_model_afe814cf074d8e2995264793033dd428e}{GetAnimCount}}();                            \textcolor{comment}{//  アニメーション セット数取得}}
+\DoxyCodeLine{295     \textcolor{keywordtype}{double} \mbox{\hyperlink{class_c_assimp_model_adb38220b105ac49b618cd5d201a67821}{GetAnimDuration}}(\textcolor{keywordtype}{int} nAnimIndex = -\/1); \textcolor{comment}{//???   /* -\/1:現在のアニメ */}}
+\DoxyCodeLine{296     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_model_a46d9b841367394d10bb887e2ccb370f7}{SetAnimTime}}(\textcolor{keywordtype}{double} dTime);                  \textcolor{comment}{//  アニメーション再生フレームの設定}}
+\DoxyCodeLine{297     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_assimp_model_a9875e0478db4afca70de506809f88381}{Release}}();                                  \textcolor{comment}{//  メッシュ、マテリアルの開放}}
+\DoxyCodeLine{298 }
+\DoxyCodeLine{299     \textcolor{comment}{//  モデルを包む最小限の立方体のサイズ}}
+\DoxyCodeLine{300     DirectX::XMFLOAT3\& \mbox{\hyperlink{class_c_assimp_model_ade037d59becd013cff978addf7ce0ac9}{GetBBox}}()}
+\DoxyCodeLine{301     \{}
+\DoxyCodeLine{302         \textcolor{keywordflow}{return} m\_vBBox;}
+\DoxyCodeLine{303     \}}
+\DoxyCodeLine{304     \textcolor{comment}{//  モデルの中心座標の取得}}
+\DoxyCodeLine{305     DirectX::XMFLOAT3\& \mbox{\hyperlink{class_c_assimp_model_a77d527a3813e206d2e20015ad5ffe701}{GetCenter}}()}
+\DoxyCodeLine{306     \{}
+\DoxyCodeLine{307         \textcolor{keywordflow}{return} m\_vCenter;}
+\DoxyCodeLine{308     \}}
+\DoxyCodeLine{309 }
+\DoxyCodeLine{310     \textcolor{comment}{//名前を取得する}}
+\DoxyCodeLine{311     \textcolor{keyword}{constexpr} \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{class_c_assimp_model_a1c0b33a4e0b1f897820b5283a9376456}{GetName}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{312         \textcolor{keywordflow}{return} m\_fname;}
+\DoxyCodeLine{313     \}}
+\DoxyCodeLine{314 }
+\DoxyCodeLine{315 \textcolor{keyword}{private}:}
+\DoxyCodeLine{316     \textcolor{keywordtype}{void} ScaleAsset();                                      \textcolor{comment}{//  境界ボックス計算}}
+\DoxyCodeLine{317     \textcolor{keywordtype}{void} CalculateBounds(aiNode* piNode,                    \textcolor{comment}{//  ノード毎に頂点座標の最大最小値をチェック}}
+\DoxyCodeLine{318         aiVector3D* p\_avOut,}
+\DoxyCodeLine{319         \textcolor{keyword}{const} aiMatrix4x4\& piMatrix);}
+\DoxyCodeLine{320     \textcolor{keywordtype}{void} processNode(ID3D11Device* pDevice, aiNode* node);  \textcolor{comment}{//  全メッシュ取り込み}}
+\DoxyCodeLine{321     \mbox{\hyperlink{class_c_assimp_mesh}{CAssimpMesh}} processMesh(ID3D11Device* pDevice,           \textcolor{comment}{//  メッシュ展開}}
+\DoxyCodeLine{322         aiMesh* mesh);}
+\DoxyCodeLine{323     \mbox{\hyperlink{struct_t_assimp_material}{TAssimpMaterial}} loadMaterial(ID3D11Device* pDevice,      \textcolor{comment}{//  マテリアル読込}}
+\DoxyCodeLine{324         aiMaterial* mat,}
+\DoxyCodeLine{325         aiMesh* mesh);}
+\DoxyCodeLine{326     std::string determineTextureType(aiMaterial* mat);      \textcolor{comment}{//  テクスチャ タイプ決定}}
+\DoxyCodeLine{327     \textcolor{keywordtype}{int} getTextureIndex(aiString* str);                     \textcolor{comment}{//  テクスチャ インデックス取得}}
+\DoxyCodeLine{328     ID3D11ShaderResourceView* getTextureFromModel(          \textcolor{comment}{//  モデル データ内包テクスチャ読込}}
+\DoxyCodeLine{329         ID3D11Device* pDevice, \textcolor{keywordtype}{int} textureindex);}
+\DoxyCodeLine{330     \textcolor{keywordtype}{void} LoadTexture(                                       \textcolor{comment}{//  テクスチャ読み込み}}
+\DoxyCodeLine{331         ID3D11Device* pDevice,}
+\DoxyCodeLine{332         aiString\& szPath,}
+\DoxyCodeLine{333         ID3D11ShaderResourceView** ppTexture);}
+\DoxyCodeLine{334     \textcolor{keywordtype}{bool} HasAlphaPixels(ID3D11ShaderResourceView* pTexture);\textcolor{comment}{//   テクスチャのアルファ有無}}
+\DoxyCodeLine{335 \};}
+
+\end{DoxyCode}

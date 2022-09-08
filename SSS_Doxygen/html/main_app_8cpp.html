@@ -1,0 +1,1604 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/mainApp.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">mainApp.cpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="main_app_8h_source.html">mainApp.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_win_user_8h_source.html">WinUser.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="resource_8h_source.html">resource.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="polygon_8h_source.html">polygon.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_assimp_model_8h_source.html">AssimpModel.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mesh_8h_source.html">mesh.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="imgui_8h_source.html">imgui.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="imgui__impl__win32_8h_source.html">imgui_impl_win32.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="imgui__impl__dx11_8h_source.html">imgui_impl_dx11.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_scene_manager_8h_source.html">SceneManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_input_manager_8h_source.html">InputManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_texture_manager_8h_source.html">TextureManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_model_manager_8h_source.html">ModelManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_file_manager_8h_source.html">FileManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_resource_c_s_v_8h_source.html">ResourceCSV.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="scene_game_8h_source.html">sceneGame.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_obj_info_8h_source.html">ObjInfo.h</a>&quot;</code><br />
+<code>#include &lt;process.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+mainApp.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp__incl.png" border="0" usemap="#a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2main_app_8cpp" alt=""/></div>
+<map name="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2main_app_8cpp" id="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2main_app_8cpp">
+<area shape="rect" title=" " alt="" coords="1203,5,1384,61"/>
+<area shape="rect" href="main_app_8h.html" title=" " alt="" coords="1293,333,1377,360"/>
+<area shape="rect" href="resource_8h.html" title=" " alt="" coords="519,408,601,435"/>
+<area shape="rect" href="_win_user_8h.html" title=" " alt="" coords="621,109,704,136"/>
+<area shape="rect" href="polygon_8h.html" title=" " alt="" coords="975,109,1054,136"/>
+<area shape="rect" href="_assimp_model_8h.html" title=" " alt="" coords="1799,184,1911,211"/>
+<area shape="rect" href="mesh_8h.html" title=" " alt="" coords="1078,109,1143,136"/>
+<area shape="rect" href="imgui_8h.html" title=" " alt="" coords="228,184,292,211"/>
+<area shape="rect" href="imgui__impl__win32_8h.html" title=" " alt="" coords="454,109,589,136"/>
+<area shape="rect" href="imgui__impl__dx11_8h.html" title=" " alt="" coords="203,109,333,136"/>
+<area shape="rect" href="_scene_manager_8h.html" title=" " alt="" coords="1964,109,2084,136"/>
+<area shape="rect" href="_input_manager_8h.html" title="コントローラーやキーボード操作できるようにする" alt="" coords="1167,109,1278,136"/>
+<area shape="rect" href="_texture_manager_8h.html" title="テクスチャの情報を管理するマネージャー" alt="" coords="1302,109,1429,136"/>
+<area shape="rect" href="_model_manager_8h.html" title="モデルを管理するためのマネージャー" alt="" coords="1453,109,1571,136"/>
+<area shape="rect" href="_file_manager_8h.html" title="CSVとか読み込んだり書き込んだりするやつ" alt="" coords="2601,184,2705,211"/>
+<area shape="rect" href="_resource_c_s_v_8h.html" title="CSVの中身を実際にのぞいたりするやつ" alt="" coords="2729,184,2844,211"/>
+<area shape="rect" href="scene_game_8h.html" title="実はゲームシーンである" alt="" coords="1763,109,1866,136"/>
+<area shape="rect" href="_obj_info_8h.html" title=" " alt="" coords="2210,109,2283,136"/>
+<area shape="rect" title=" " alt="" coords="2307,109,2386,136"/>
+<area shape="rect" title=" " alt="" coords="1760,408,1843,435"/>
+<area shape="rect" title=" " alt="" coords="1390,408,1453,435"/>
+<area shape="rect" title=" " alt="" coords="1180,408,1279,435"/>
+<area shape="rect" title=" " alt="" coords="2009,408,2077,435"/>
+<area shape="rect" title=" " alt="" coords="2171,408,2274,435"/>
+<area shape="rect" title=" " alt="" coords="1303,408,1366,435"/>
+<area shape="rect" title=" " alt="" coords="367,184,470,211"/>
+<area shape="rect" title=" " alt="" coords="507,259,576,285"/>
+<area shape="rect" title=" " alt="" coords="495,184,593,211"/>
+<area shape="rect" title=" " alt="" coords="618,184,707,211"/>
+<area shape="rect" title=" " alt="" coords="732,184,815,211"/>
+<area shape="rect" title=" " alt="" coords="839,184,899,211"/>
+<area shape="rect" title=" " alt="" coords="2477,259,2523,285"/>
+<area shape="rect" title=" " alt="" coords="2548,259,2604,285"/>
+<area shape="rect" title=" " alt="" coords="1633,259,1773,285"/>
+<area shape="rect" title=" " alt="" coords="1797,259,1912,285"/>
+<area shape="rect" title=" " alt="" coords="1458,259,1609,285"/>
+<area shape="rect" href="_camera_8h.html" title=" " alt="" coords="1937,259,2015,285"/>
+<area shape="rect" href="_light_8h.html" title="ライトを設定するためのクラス" alt="" coords="1372,259,1433,285"/>
+<area shape="rect" href="imconfig_8h.html" title=" " alt="" coords="319,259,401,285"/>
+<area shape="rect" title=" " alt="" coords="425,259,482,285"/>
+<area shape="rect" title=" " alt="" coords="43,259,111,285"/>
+<area shape="rect" title=" " alt="" coords="135,259,201,285"/>
+<area shape="rect" title=" " alt="" coords="225,259,295,285"/>
+<area shape="rect" href="_scene_8h.html" title=" " alt="" coords="2026,184,2097,211"/>
+<area shape="rect" href="_object_manager_8h.html" title=" " alt="" coords="2331,259,2453,285"/>
+<area shape="rect" href="_menu_manager_8h.html" title="メニューを操作したりするマネージャー" alt="" coords="2040,259,2155,285"/>
+<area shape="rect" title=" " alt="" coords="2711,333,2766,360"/>
+<area shape="rect" title=" " alt="" coords="1077,184,1145,211"/>
+<area shape="rect" title=" " alt="" coords="1322,184,1433,211"/>
+<area shape="rect" href="_resource_base_8h.html" title="外部から読み込むデータを管理" alt="" coords="2679,259,2798,285"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a79f2713d570c7065f61a160134ea765b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a79f2713d570c7065f61a160134ea765b">CLASS_NAME</a>&#160;&#160;&#160;_T(&quot;AppClass&quot;)</td></tr>
+<tr class="separator:a79f2713d570c7065f61a160134ea765b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d6acae8f9b752a5d85795baf1005907"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a2d6acae8f9b752a5d85795baf1005907">WINDOW_NAME</a>&#160;&#160;&#160;_T(&quot;就職作品&quot;)</td></tr>
+<tr class="separator:a2d6acae8f9b752a5d85795baf1005907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:ae749e989b362e19783c7af4a2bf46c95"><td class="memItemLeft" align="right" valign="top">LRESULT CALLBACK&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#ae749e989b362e19783c7af4a2bf46c95">WndProc</a> (HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)</td></tr>
+<tr class="separator:ae749e989b362e19783c7af4a2bf46c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae01825b499ec5e42f84e564d8d35bca1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#ae01825b499ec5e42f84e564d8d35bca1">OnCreate</a> (HWND hWnd, LPCREATESTRUCT lpcs)</td></tr>
+<tr class="separator:ae01825b499ec5e42f84e564d8d35bca1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaee41532409857c32654e8a1a30d4e7"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#acaee41532409857c32654e8a1a30d4e7">CreateBackBuffer</a> ()</td></tr>
+<tr class="separator:acaee41532409857c32654e8a1a30d4e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad810adfaf29a77c9c136b3403d77c77c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#ad810adfaf29a77c9c136b3403d77c77c">ReleaseBackBuffer</a> ()</td></tr>
+<tr class="separator:ad810adfaf29a77c9c136b3403d77c77c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93e37d33930b82ad41bc9c9cb472f300"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300">Init</a> (HWND hWnd, BOOL bWindow)</td></tr>
+<tr class="separator:a93e37d33930b82ad41bc9c9cb472f300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affc0f591b5f188f1b5cb4f20042e4766"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#affc0f591b5f188f1b5cb4f20042e4766">Uninit</a> ()</td></tr>
+<tr class="separator:affc0f591b5f188f1b5cb4f20042e4766"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec0783b5a136e042adcc47bae4fe5291"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#aec0783b5a136e042adcc47bae4fe5291">Update</a> ()</td></tr>
+<tr class="separator:aec0783b5a136e042adcc47bae4fe5291"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5cf0d8d37b6b17224867eb397c9a16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16">Draw</a> ()</td></tr>
+<tr class="separator:a3d5cf0d8d37b6b17224867eb397c9a16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87a3f9652a75339308cf5fd5699ef1fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> LRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a87a3f9652a75339308cf5fd5699ef1fd">ImGui_ImplWin32_WndProcHandler</a> (HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)</td></tr>
+<tr class="separator:a87a3f9652a75339308cf5fd5699ef1fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa31d4ec34bb3eea7f1fa53fa75b1e339"><td class="memItemLeft" align="right" valign="top">int WINAPI&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339">_tWinMain</a> (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPTSTR lpCmdLine, int nCmdShow)</td></tr>
+<tr class="separator:aa31d4ec34bb3eea7f1fa53fa75b1e339"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92550af168fdc15968f87992fd9d07c5"><td class="memItemLeft" align="right" valign="top">HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5">GetMainWnd</a> ()</td></tr>
+<tr class="separator:a92550af168fdc15968f87992fd9d07c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d863781ee8f3f820ea4ad9e52f78d9"><td class="memItemLeft" align="right" valign="top">HINSTANCE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#aa9d863781ee8f3f820ea4ad9e52f78d9">GetInstance</a> ()</td></tr>
+<tr class="separator:aa9d863781ee8f3f820ea4ad9e52f78d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a965053cc7c41d010d359091035281310"><td class="memItemLeft" align="right" valign="top">ID3D11Device *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a965053cc7c41d010d359091035281310">GetDevice</a> ()</td></tr>
+<tr class="separator:a965053cc7c41d010d359091035281310"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76385629cd459c9e0fcda690542edb07"><td class="memItemLeft" align="right" valign="top">ID3D11DeviceContext *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a76385629cd459c9e0fcda690542edb07">GetDeviceContext</a> ()</td></tr>
+<tr class="separator:a76385629cd459c9e0fcda690542edb07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b19b33f1a7f58f261e0025ec2fc66c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a9b19b33f1a7f58f261e0025ec2fc66c3">SetZBuffer</a> (bool bEnable)</td></tr>
+<tr class="separator:a9b19b33f1a7f58f261e0025ec2fc66c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6376c6224e7273eb750a7fde2aea342d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a6376c6224e7273eb750a7fde2aea342d">SetZWrite</a> (bool bEnable)</td></tr>
+<tr class="separator:a6376c6224e7273eb750a7fde2aea342d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15367d15c1324ebba192218982bffe3e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a15367d15c1324ebba192218982bffe3e">SetBlendState</a> (int nBlendState)</td></tr>
+<tr class="separator:a15367d15c1324ebba192218982bffe3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55437f177885a57508f99619a3a7a19f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a55437f177885a57508f99619a3a7a19f">SetCullMode</a> (int nCullMode)</td></tr>
+<tr class="separator:a55437f177885a57508f99619a3a7a19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45b6acf4c6f99b1092ca0ab4bba46b07"><td class="memItemLeft" align="right" valign="top">XMVECTOR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a45b6acf4c6f99b1092ca0ab4bba46b07">CalcScreenToWorld</a> (XMVECTOR *pout, float Sx, float Sy, float fZ, int Screen_w, int Screen_h, XMMATRIX View, XMMATRIX Prj)</td></tr>
+<tr class="separator:a45b6acf4c6f99b1092ca0ab4bba46b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33762d19fee3469aebc3f8a7a724bcf9"><td class="memItemLeft" align="right" valign="top">XMVECTOR *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a33762d19fee3469aebc3f8a7a724bcf9">CalcScreenToXY</a> (XMFLOAT3 *pout, float Sx, float Sy, int Screen_w, int Screen_h, XMMATRIX View, XMMATRIX Prj)</td></tr>
+<tr class="separator:a33762d19fee3469aebc3f8a7a724bcf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ed2062f0707227a588cbd598ba2e562"><td class="memItemLeft" align="right" valign="top">XMFLOAT2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a1ed2062f0707227a588cbd598ba2e562">CalcWorldSize</a> ()</td></tr>
+<tr class="memdesc:a1ed2062f0707227a588cbd598ba2e562"><td class="mdescLeft">&#160;</td><td class="mdescRight">スクリーンの映っているワールドの横幅と高さを計算する  <a href="main_app_8cpp.html#a1ed2062f0707227a588cbd598ba2e562">[詳解]</a><br /></td></tr>
+<tr class="separator:a1ed2062f0707227a588cbd598ba2e562"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad019e0e7e14e8aa9a83bbbf95930ed81"><td class="memItemLeft" align="right" valign="top">ID3D11RenderTargetView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#ad019e0e7e14e8aa9a83bbbf95930ed81">GetRenderTargetView</a> ()</td></tr>
+<tr class="separator:ad019e0e7e14e8aa9a83bbbf95930ed81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cd40119cdaa763b483dfba6942eaa3e"><td class="memItemLeft" align="right" valign="top">ID3D11DepthStencilView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a5cd40119cdaa763b483dfba6942eaa3e">GetDepthStencilView</a> ()</td></tr>
+<tr class="separator:a5cd40119cdaa763b483dfba6942eaa3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafdc26c1149a90863283c7f26dfa89fa"><td class="memItemLeft" align="right" valign="top">IDXGISwapChain *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#aafdc26c1149a90863283c7f26dfa89fa">GetSwapChain</a> ()</td></tr>
+<tr class="separator:aafdc26c1149a90863283c7f26dfa89fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:af6e451d84715c224b60977594e800b81"><td class="memItemLeft" align="right" valign="top">HWND&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#af6e451d84715c224b60977594e800b81">g_hWnd</a></td></tr>
+<tr class="separator:af6e451d84715c224b60977594e800b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af03f36c7876ed17a936f00434a9236c4"><td class="memItemLeft" align="right" valign="top">HINSTANCE&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#af03f36c7876ed17a936f00434a9236c4">g_hInst</a></td></tr>
+<tr class="separator:af03f36c7876ed17a936f00434a9236c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f992b136a900bca3ed6e5150c6a038f"><td class="memItemLeft" align="right" valign="top">ID3D11Device *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a2f992b136a900bca3ed6e5150c6a038f">g_pDevice</a></td></tr>
+<tr class="separator:a2f992b136a900bca3ed6e5150c6a038f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5052854e8f64231a4af1c35cdae5ebe"><td class="memItemLeft" align="right" valign="top">ID3D11DeviceContext *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#ab5052854e8f64231a4af1c35cdae5ebe">g_pDeviceContext</a></td></tr>
+<tr class="separator:ab5052854e8f64231a4af1c35cdae5ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdc838bdb97168171051e526b8f49d12"><td class="memItemLeft" align="right" valign="top">IDXGISwapChain *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#abdc838bdb97168171051e526b8f49d12">g_pSwapChain</a></td></tr>
+<tr class="separator:abdc838bdb97168171051e526b8f49d12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a795f24bde22c97c4ed279a717ff38beb"><td class="memItemLeft" align="right" valign="top">ID3D11RenderTargetView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a795f24bde22c97c4ed279a717ff38beb">g_pRenderTargetView</a></td></tr>
+<tr class="separator:a795f24bde22c97c4ed279a717ff38beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad11c6e200f8d1bdde7dcefece0598700"><td class="memItemLeft" align="right" valign="top">UINT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#ad11c6e200f8d1bdde7dcefece0598700">g_uSyncInterval</a> = 0</td></tr>
+<tr class="separator:ad11c6e200f8d1bdde7dcefece0598700"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7895c23be6d0815d09494d2cde87745"><td class="memItemLeft" align="right" valign="top">ID3D11BlendState *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#ab7895c23be6d0815d09494d2cde87745">g_pBlendState</a> [<a class="el" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a2dd3f4c2cf1b7fa074bc5126ce663ba4">MAX_BLENDSTATE</a>]</td></tr>
+<tr class="separator:ab7895c23be6d0815d09494d2cde87745"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9590216690dd67144afc00948867e31"><td class="memItemLeft" align="right" valign="top">ID3D11Texture2D *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#ab9590216690dd67144afc00948867e31">g_pDepthStencilTexture</a></td></tr>
+<tr class="separator:ab9590216690dd67144afc00948867e31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad94e21ad0f12a5e475e54263844e77f5"><td class="memItemLeft" align="right" valign="top">ID3D11DepthStencilView *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#ad94e21ad0f12a5e475e54263844e77f5">g_pDepthStencilView</a></td></tr>
+<tr class="separator:ad94e21ad0f12a5e475e54263844e77f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1650a47a0e794abae08ef7b3c88c3000"><td class="memItemLeft" align="right" valign="top">ID3D11RasterizerState *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a1650a47a0e794abae08ef7b3c88c3000">g_pRs</a> [<a class="el" href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaac9e43ef91a95b9f6a68480609e3cb2c1">MAX_CULLMODE</a>]</td></tr>
+<tr class="separator:a1650a47a0e794abae08ef7b3c88c3000"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16c31ec5dc59b21e26902e7de80b9627"><td class="memItemLeft" align="right" valign="top">ID3D11DepthStencilState *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a16c31ec5dc59b21e26902e7de80b9627">g_pDSS</a> [2]</td></tr>
+<tr class="separator:a16c31ec5dc59b21e26902e7de80b9627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ff492dab767ebe3921c804121362998"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a3ff492dab767ebe3921c804121362998">g_nCountFPS</a></td></tr>
+<tr class="separator:a3ff492dab767ebe3921c804121362998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62feac2b19fd7df9a0f0680e576d369c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scene_manager.html">SceneManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#a62feac2b19fd7df9a0f0680e576d369c">g_pSceneManager</a> = nullptr</td></tr>
+<tr class="separator:a62feac2b19fd7df9a0f0680e576d369c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcb863a0484c7e63a94f94443c75e4e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_input_manager.html">InputManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_app_8cpp.html#abcb863a0484c7e63a94f94443c75e4e4">g_pInputManager</a> = nullptr</td></tr>
+<tr class="separator:abcb863a0484c7e63a94f94443c75e4e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a79f2713d570c7065f61a160134ea765b" name="a79f2713d570c7065f61a160134ea765b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79f2713d570c7065f61a160134ea765b">&#9670;&nbsp;</a></span>CLASS_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CLASS_NAME&#160;&#160;&#160;_T(&quot;AppClass&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2d6acae8f9b752a5d85795baf1005907" name="a2d6acae8f9b752a5d85795baf1005907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d6acae8f9b752a5d85795baf1005907">&#9670;&nbsp;</a></span>WINDOW_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define WINDOW_NAME&#160;&#160;&#160;_T(&quot;就職作品&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aa31d4ec34bb3eea7f1fa53fa75b1e339" name="aa31d4ec34bb3eea7f1fa53fa75b1e339"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa31d4ec34bb3eea7f1fa53fa75b1e339">&#9670;&nbsp;</a></span>_tWinMain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int WINAPI _tWinMain </td>
+          <td>(</td>
+          <td class="paramtype">HINSTANCE&#160;</td>
+          <td class="paramname"><em>hInstance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">HINSTANCE&#160;</td>
+          <td class="paramname"><em>hPrevInstance</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPTSTR&#160;</td>
+          <td class="paramname"><em>lpCmdLine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nCmdShow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_aa31d4ec34bb3eea7f1fa53fa75b1e339_cgraph.png" border="0" usemap="#amain_app_8cpp_aa31d4ec34bb3eea7f1fa53fa75b1e339_cgraph" alt=""/></div>
+<map name="amain_app_8cpp_aa31d4ec34bb3eea7f1fa53fa75b1e339_cgraph" id="amain_app_8cpp_aa31d4ec34bb3eea7f1fa53fa75b1e339_cgraph">
+<area shape="rect" title=" " alt="" coords="5,1703,89,1729"/>
+<area shape="rect" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="150,411,201,437"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="156,1120,195,1147"/>
+<area shape="rect" href="main_app_8cpp.html#affc0f591b5f188f1b5cb4f20042e4766" title=" " alt="" coords="148,1703,203,1729"/>
+<area shape="rect" href="main_app_8cpp.html#aec0783b5a136e042adcc47bae4fe5291" title=" " alt="" coords="144,2083,207,2109"/>
+<area shape="rect" href="main_app_8cpp.html#ae749e989b362e19783c7af4a2bf46c95" title=" " alt="" coords="137,2133,213,2160"/>
+<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="323,5,421,32"/>
+<area shape="rect" href="main_app_8cpp.html#a1ed2062f0707227a588cbd598ba2e562" title="スクリーンの映っているワールドの横幅と高さを計算する" alt="" coords="318,56,426,83"/>
+<area shape="rect" href="class_scene_manager.html#a313955e916bc50c0e8cb5d3cf2ed2664" title=" " alt="" coords="299,107,445,133"/>
+<area shape="rect" href="namespace_im_gui.html#a5479d93794a004c67ceb6d13f37c8254" title=" " alt="" coords="329,157,415,184"/>
+<area shape="rect" href="namespace_im_gui.html#ab73131dc44b1267dac04f0c2bb0af983" title=" " alt="" coords="301,208,443,235"/>
+<area shape="rect" href="namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="567,968,666,995"/>
+<area shape="rect" href="imgui__impl__dx11_8cpp.html#ac732cf6c340b83e31fefa09cf396ef91" title=" " alt="" coords="279,309,465,336"/>
+<area shape="rect" href="imgui__impl__dx11_8cpp.html#ad49984e658afc491c9b16312cf6bdd5b" title=" " alt="" coords="261,360,483,387"/>
+<area shape="rect" href="imgui__impl__win32_8cpp.html#ade4f55b90fdbd75a562d894d33f1909e" title=" " alt="" coords="275,411,469,437"/>
+<area shape="rect" href="namespace_im_gui.html#ab3f1fc018f903b7ad79fd10663375774" title=" " alt="" coords="309,461,435,488"/>
+<area shape="rect" href="namespace_im_gui.html#ab51a164f547317c16c441f1599e3946d" title=" " alt="" coords="319,512,425,539"/>
+<area shape="rect" href="main_app_8cpp.html#a15367d15c1324ebba192218982bffe3e" title=" " alt="" coords="319,765,425,792"/>
+<area shape="rect" href="namespace_im_gui.html#afbccd31113430670b5ab2bf0d6f509bf" title=" " alt="" coords="282,563,462,589"/>
+<area shape="rect" href="namespace_im_gui.html#ab33717bb71ef5e393ae18656fc6b229d" title=" " alt="" coords="281,613,463,640"/>
+<area shape="rect" href="main_app_8cpp.html#a9b19b33f1a7f58f261e0025ec2fc66c3" title=" " alt="" coords="331,664,413,691"/>
+<area shape="rect" href="namespace_im_gui.html#a9e7b83611fe441d54fad2effb4bf4965" title=" " alt="" coords="327,715,417,741"/>
+<area shape="rect" href="main_app_8cpp.html#acaee41532409857c32654e8a1a30d4e7" title=" " alt="" coords="311,1019,433,1045"/>
+<area shape="rect" href="namespace_im_gui.html#a4ff6c9ad05a0eba37ce1b5ff1607810a" title=" " alt="" coords="299,1069,445,1096"/>
+<area shape="rect" href="imgui__impl__dx11_8cpp.html#a6bbf28d9c3bbd7f8159772f07289e848" title=" " alt="" coords="301,968,443,995"/>
+<area shape="rect" href="imgui__impl__win32_8cpp.html#a4221d0dc7d4977eb30970e1f5c2cca98" title=" " alt="" coords="298,1120,446,1147"/>
+<area shape="rect" href="class_input_manager.html#a42d9a422a057aa3e072bea0519849664" title="初期化" alt="" coords="309,1171,435,1197"/>
+<area shape="rect" href="class_scene_manager.html#a2682ac5e419812cb1eeab1fec6a1ce86" title=" " alt="" coords="305,1373,439,1400"/>
+<area shape="rect" href="mesh_8cpp.html#afd09c8aac5c23c7b70e88571ccf966b3" title=" " alt="" coords="337,1272,407,1299"/>
+<area shape="rect" href="polygon_8cpp.html#a8bb589f707597d8419965799f063ad4e" title=" " alt="" coords="329,1323,415,1349"/>
+<area shape="rect" href="class_c_assimp_model.html#a4a7771d2c4afcde3d4dd26cb73e983e1" title=" " alt="" coords="284,816,460,843"/>
+<area shape="rect" href="class_input_manager.html#a53a27e2e25bec96173a4c7532515d10e" title="インスタンス生成" alt="" coords="293,1981,451,2008"/>
+<area shape="rect" href="class_scene_manager.html#a972ad174745419ebc980802a5f6e874e" title=" " alt="" coords="289,867,455,893"/>
+<area shape="rect" href="namespace_im_gui.html#a26c67fc14081b359566d5e135cd8c767" title=" " alt="" coords="293,917,451,944"/>
+<area shape="rect" href="class_scene_game.html#a5f5bb9169295264e15c157b98fc17776" title="インスタンス取得" alt="" coords="531,1728,703,1755"/>
+<area shape="rect" href="class_file_manager.html#a2cac6ac5dc966241a4ec67f4daf36d46" title="インスタンスの破棄" alt="" coords="299,1677,445,1704"/>
+<area shape="rect" href="namespace_im_gui.html#ab9132deece575023170cd8e681d0581d" title=" " alt="" coords="295,1728,449,1755"/>
+<area shape="rect" href="imgui__impl__dx11_8cpp.html#aa9731eb4cae116da513d6df90ff93387" title=" " alt="" coords="281,1779,463,1805"/>
+<area shape="rect" href="imgui__impl__win32_8cpp.html#a4eddd1969cc460312197f2df3dbc992a" title=" " alt="" coords="278,1829,466,1856"/>
+<area shape="rect" href="main_app_8cpp.html#ad810adfaf29a77c9c136b3403d77c77c" title=" " alt="" coords="306,1880,438,1907"/>
+<area shape="rect" href="class_input_manager.html#adbed7acd819d7c75a97c728028b067d5" title="終了" alt="" coords="301,1931,443,1957"/>
+<area shape="rect" href="class_model_manager.html#af9fece7e0c5509069f854acb15c50abe" title="モデルマネージャーの解放" alt="" coords="298,2032,446,2059"/>
+<area shape="rect" href="class_scene_manager.html#ae3ff21f2261fc50f1e860cf7fc3a2108" title=" " alt="" coords="297,1424,447,1451"/>
+<area shape="rect" href="class_texture_manager.html#ab2ef3139e30856ee768b2e98ec5259f5" title="終了処理" alt="" coords="294,1475,450,1501"/>
+<area shape="rect" href="mesh_8cpp.html#a4412ab7873323890dcf6d1a34aa95380" title=" " alt="" coords="329,1525,415,1552"/>
+<area shape="rect" href="polygon_8cpp.html#aa34cd60c6955287f7b7a0a47eaa3c4b1" title=" " alt="" coords="321,1576,423,1603"/>
+<area shape="rect" href="class_c_assimp_model.html#ab706c8c7d9065532874d87122e37f8bb" title=" " alt="" coords="276,1627,468,1653"/>
+<area shape="rect" href="class_input_manager.html#a81fb24c5c224f98ece4c2153c20fbd6e" title="キーボードのトリガー状態を取得" alt="" coords="277,2133,467,2160"/>
+<area shape="rect" href="class_input_manager.html#aa5480931dba2720e7d80dd00a53adae0" title="更新" alt="" coords="297,2184,447,2211"/>
+<area shape="rect" href="class_scene_manager.html#a63dcf65832d6a2c190bf496d9a3b00a3" title=" " alt="" coords="293,2235,451,2261"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a45b6acf4c6f99b1092ca0ab4bba46b07" name="a45b6acf4c6f99b1092ca0ab4bba46b07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45b6acf4c6f99b1092ca0ab4bba46b07">&#9670;&nbsp;</a></span>CalcScreenToWorld()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XMVECTOR * CalcScreenToWorld </td>
+          <td>(</td>
+          <td class="paramtype">XMVECTOR *&#160;</td>
+          <td class="paramname"><em>pout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Sx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Sy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>fZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Screen_w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Screen_h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">XMMATRIX&#160;</td>
+          <td class="paramname"><em>View</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">XMMATRIX&#160;</td>
+          <td class="paramname"><em>Prj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a45b6acf4c6f99b1092ca0ab4bba46b07_icgraph.png" border="0" usemap="#amain_app_8cpp_a45b6acf4c6f99b1092ca0ab4bba46b07_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_a45b6acf4c6f99b1092ca0ab4bba46b07_icgraph" id="amain_app_8cpp_a45b6acf4c6f99b1092ca0ab4bba46b07_icgraph">
+<area shape="rect" title=" " alt="" coords="697,56,835,83"/>
+<area shape="rect" href="main_app_8cpp.html#a33762d19fee3469aebc3f8a7a724bcf9" title=" " alt="" coords="531,56,649,83"/>
+<area shape="rect" href="main_app_8cpp.html#a1ed2062f0707227a588cbd598ba2e562" title="スクリーンの映っているワールドの横幅と高さを計算する" alt="" coords="351,5,459,32"/>
+<area shape="rect" href="class_stage_manager.html#ae704cc0e6a00b5b94f4974869e1d90b8" title="描画処理" alt="" coords="334,56,477,83"/>
+<area shape="rect" href="class_stage_manager.html#afe74bc34352fd78b5b8f2dfaf551a251" title="更新処理" alt="" coords="328,107,483,133"/>
+<area shape="rect" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="183,5,234,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="137,107,280,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a33762d19fee3469aebc3f8a7a724bcf9" name="a33762d19fee3469aebc3f8a7a724bcf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33762d19fee3469aebc3f8a7a724bcf9">&#9670;&nbsp;</a></span>CalcScreenToXY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">XMVECTOR * CalcScreenToXY </td>
+          <td>(</td>
+          <td class="paramtype">XMFLOAT3 *&#160;</td>
+          <td class="paramname"><em>pout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Sx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>Sy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Screen_w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>Screen_h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">XMMATRIX&#160;</td>
+          <td class="paramname"><em>View</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">XMMATRIX&#160;</td>
+          <td class="paramname"><em>Prj</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a33762d19fee3469aebc3f8a7a724bcf9_cgraph.png" border="0" usemap="#amain_app_8cpp_a33762d19fee3469aebc3f8a7a724bcf9_cgraph" alt=""/></div>
+<map name="amain_app_8cpp_a33762d19fee3469aebc3f8a7a724bcf9_cgraph" id="amain_app_8cpp_a33762d19fee3469aebc3f8a7a724bcf9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,124,32"/>
+<area shape="rect" href="main_app_8cpp.html#a45b6acf4c6f99b1092ca0ab4bba46b07" title=" " alt="" coords="172,5,309,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a33762d19fee3469aebc3f8a7a724bcf9_icgraph.png" border="0" usemap="#amain_app_8cpp_a33762d19fee3469aebc3f8a7a724bcf9_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_a33762d19fee3469aebc3f8a7a724bcf9_icgraph" id="amain_app_8cpp_a33762d19fee3469aebc3f8a7a724bcf9_icgraph">
+<area shape="rect" title=" " alt="" coords="531,56,649,83"/>
+<area shape="rect" href="main_app_8cpp.html#a1ed2062f0707227a588cbd598ba2e562" title="スクリーンの映っているワールドの横幅と高さを計算する" alt="" coords="351,5,459,32"/>
+<area shape="rect" href="class_stage_manager.html#ae704cc0e6a00b5b94f4974869e1d90b8" title="描画処理" alt="" coords="334,56,477,83"/>
+<area shape="rect" href="class_stage_manager.html#afe74bc34352fd78b5b8f2dfaf551a251" title="更新処理" alt="" coords="328,107,483,133"/>
+<area shape="rect" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="183,5,234,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="137,107,280,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1ed2062f0707227a588cbd598ba2e562" name="a1ed2062f0707227a588cbd598ba2e562"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed2062f0707227a588cbd598ba2e562">&#9670;&nbsp;</a></span>CalcWorldSize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CalcWorldSize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>スクリーンの映っているワールドの横幅と高さを計算する </p>
+<dl class="section return"><dt>戻り値</dt><dd>XMFLOAT2 スクリーンの映っているワールドの横幅と高さ </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a1ed2062f0707227a588cbd598ba2e562_cgraph.png" border="0" usemap="#amain_app_8cpp_a1ed2062f0707227a588cbd598ba2e562_cgraph" alt=""/></div>
+<map name="amain_app_8cpp_a1ed2062f0707227a588cbd598ba2e562_cgraph" id="amain_app_8cpp_a1ed2062f0707227a588cbd598ba2e562_cgraph">
+<area shape="rect" title="スクリーンの映っているワールドの横幅と高さを計算する" alt="" coords="5,81,113,108"/>
+<area shape="rect" href="main_app_8cpp.html#a33762d19fee3469aebc3f8a7a724bcf9" title=" " alt="" coords="187,5,305,32"/>
+<area shape="rect" href="class_c_camera.html#a67560cf6a017ec3b8a59129be0d0100a" title=" " alt="" coords="193,56,299,83"/>
+<area shape="rect" href="class_c_camera.html#a99bbeae7433475a61979f603f439ab13" title=" " alt="" coords="164,107,328,133"/>
+<area shape="rect" href="class_c_camera.html#a1d42e5fecad0bcdab17124b402aa1575" title=" " alt="" coords="161,157,331,184"/>
+<area shape="rect" href="main_app_8cpp.html#a45b6acf4c6f99b1092ca0ab4bba46b07" title=" " alt="" coords="379,5,516,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a1ed2062f0707227a588cbd598ba2e562_icgraph.png" border="0" usemap="#amain_app_8cpp_a1ed2062f0707227a588cbd598ba2e562_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_a1ed2062f0707227a588cbd598ba2e562_icgraph" id="amain_app_8cpp_a1ed2062f0707227a588cbd598ba2e562_icgraph">
+<area shape="rect" title="スクリーンの映っているワールドの横幅と高さを計算する" alt="" coords="236,5,344,32"/>
+<area shape="rect" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="137,5,188,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acaee41532409857c32654e8a1a30d4e7" name="acaee41532409857c32654e8a1a30d4e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaee41532409857c32654e8a1a30d4e7">&#9670;&nbsp;</a></span>CreateBackBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT CreateBackBuffer </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_acaee41532409857c32654e8a1a30d4e7_icgraph.png" border="0" usemap="#amain_app_8cpp_acaee41532409857c32654e8a1a30d4e7_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_acaee41532409857c32654e8a1a30d4e7_icgraph" id="amain_app_8cpp_acaee41532409857c32654e8a1a30d4e7_icgraph">
+<area shape="rect" title=" " alt="" coords="224,5,347,32"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="137,5,176,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3d5cf0d8d37b6b17224867eb397c9a16" name="a3d5cf0d8d37b6b17224867eb397c9a16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d5cf0d8d37b6b17224867eb397c9a16">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16_cgraph.png" border="0" usemap="#amain_app_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16_cgraph" alt=""/></div>
+<map name="amain_app_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16_cgraph" id="amain_app_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16_cgraph">
+<area shape="rect" title=" " alt="" coords="5,883,56,909"/>
+<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="166,81,263,108"/>
+<area shape="rect" href="main_app_8cpp.html#a1ed2062f0707227a588cbd598ba2e562" title="スクリーンの映っているワールドの横幅と高さを計算する" alt="" coords="161,183,269,209"/>
+<area shape="rect" href="class_scene_manager.html#a313955e916bc50c0e8cb5d3cf2ed2664" title=" " alt="" coords="141,368,288,395"/>
+<area shape="rect" href="namespace_im_gui.html#a5479d93794a004c67ceb6d13f37c8254" title=" " alt="" coords="171,503,258,529"/>
+<area shape="rect" href="namespace_im_gui.html#ab73131dc44b1267dac04f0c2bb0af983" title=" " alt="" coords="144,705,285,732"/>
+<area shape="rect" href="namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="417,1161,515,1188"/>
+<area shape="rect" href="imgui__impl__dx11_8cpp.html#ac732cf6c340b83e31fefa09cf396ef91" title=" " alt="" coords="121,807,308,833"/>
+<area shape="rect" href="imgui__impl__dx11_8cpp.html#ad49984e658afc491c9b16312cf6bdd5b" title=" " alt="" coords="104,857,325,884"/>
+<area shape="rect" href="imgui__impl__win32_8cpp.html#ade4f55b90fdbd75a562d894d33f1909e" title=" " alt="" coords="118,959,311,985"/>
+<area shape="rect" href="namespace_im_gui.html#ab3f1fc018f903b7ad79fd10663375774" title=" " alt="" coords="403,1111,529,1137"/>
+<area shape="rect" href="namespace_im_gui.html#ab51a164f547317c16c441f1599e3946d" title=" " alt="" coords="162,1263,267,1289"/>
+<area shape="rect" href="main_app_8cpp.html#a15367d15c1324ebba192218982bffe3e" title=" " alt="" coords="161,1060,268,1087"/>
+<area shape="rect" href="namespace_im_gui.html#afbccd31113430670b5ab2bf0d6f509bf" title=" " alt="" coords="125,1111,305,1137"/>
+<area shape="rect" href="namespace_im_gui.html#ab33717bb71ef5e393ae18656fc6b229d" title=" " alt="" coords="123,1161,306,1188"/>
+<area shape="rect" href="main_app_8cpp.html#a9b19b33f1a7f58f261e0025ec2fc66c3" title=" " alt="" coords="173,1212,256,1239"/>
+<area shape="rect" href="namespace_im_gui.html#a9e7b83611fe441d54fad2effb4bf4965" title=" " alt="" coords="170,756,259,783"/>
+<area shape="rect" href="namespace_im_gui.html#abca25f22c02e73d5eb2e9c72c4557813" title=" " alt="" coords="373,31,559,57"/>
+<area shape="rect" href="namespace_im_gui.html#a82204d8800dc3a072ddbcbd2aecc48ac" title=" " alt="" coords="609,5,772,32"/>
+<area shape="rect" href="imgui_8cpp.html#acd1b12694d0365b516bf7373f182eeee" title=" " alt="" coords="649,56,732,83"/>
+<area shape="rect" href="struct_im_gui_storage.html#aaf87a98ede89da09113b0189f6d878ca" title=" " alt="" coords="823,5,996,32"/>
+<area shape="rect" href="main_app_8cpp.html#a33762d19fee3469aebc3f8a7a724bcf9" title=" " alt="" coords="407,183,525,209"/>
+<area shape="rect" href="class_c_camera.html#a67560cf6a017ec3b8a59129be0d0100a" title=" " alt="" coords="413,233,519,260"/>
+<area shape="rect" href="class_c_camera.html#a99bbeae7433475a61979f603f439ab13" title=" " alt="" coords="384,81,548,108"/>
+<area shape="rect" href="class_c_camera.html#a1d42e5fecad0bcdab17124b402aa1575" title=" " alt="" coords="381,132,551,159"/>
+<area shape="rect" href="main_app_8cpp.html#a45b6acf4c6f99b1092ca0ab4bba46b07" title=" " alt="" coords="622,183,759,209"/>
+<area shape="rect" href="class_scene.html#a8680672fd30bb4b345e6fab918e31ecd" title=" " alt="" coords="418,284,514,311"/>
+<area shape="rect" href="struct_im_vector.html#a2d80e87e81b1b01143c8d8be93e6fde1" title=" " alt="" coords="854,397,965,424"/>
+<area shape="rect" href="struct_im_gui_stack_sizes.html#aff8cf412bfbdf0a936cae963c25fac55" title=" " alt="" coords="375,386,557,427"/>
+<area shape="rect" href="namespace_im_gui.html#af93bed3bce5475fe4d525d744f16aa20" title=" " alt="" coords="397,503,535,529"/>
+<area shape="rect" href="struct_im_vector.html#a3db7ce62d3c429effdb893fbf7148c1c" title=" " alt="" coords="1044,473,1183,500"/>
+<area shape="rect" href="namespace_im_gui.html#aef1c8a6e5a3c70cb10d03d2a2a66dfd8" title=" " alt="" coords="623,385,759,412"/>
+<area shape="rect" href="namespace_im_gui.html#a2ebcd048d1ca025fb972e1c2e920e3f3" title=" " alt="" coords="406,705,526,732"/>
+<area shape="rect" href="namespace_im_gui.html#ac452417b5004ca16a814a72cff153526" title=" " alt="" coords="823,553,996,580"/>
+<area shape="rect" href="struct_im_draw_list_splitter.html#af3fc4bad2abca9e481d476d1877ba5be" title=" " alt="" coords="627,487,754,529"/>
+<area shape="rect" href="namespace_im_gui.html#ad29a3fc0cb5dfc7f9fc7224512ce90bf" title=" " alt="" coords="617,436,764,463"/>
+<area shape="rect" href="struct_im_vector.html#a2f88ac70791f2da6d4168d7b29f38f1e" title=" " alt="" coords="852,1111,967,1137"/>
+<area shape="rect" href="struct_im_draw_list.html#a44f40c59ca755f559020f5a7fa81103a" title=" " alt="" coords="826,347,993,373"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html#ad971435d81bc0b957cdb59f5d58eaacd" title=" " alt="" coords="614,604,767,631"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html#a9e4edc9f950bc9e35d5c3b3071dbc0df" title=" " alt="" coords="615,655,766,681"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html#affd606443a661cd0fcce0d381bc8cf98" title=" " alt="" coords="611,705,770,732"/>
+<area shape="rect" href="imgui_8cpp.html#ac4a6194720e9d693bc9d34e97d9465aa" title=" " alt="" coords="645,756,736,783"/>
+<area shape="rect" href="namespace_im_gui.html#aa548475d8f771ab6524d73d900a41198" title=" " alt="" coords="635,807,746,833"/>
+<area shape="rect" href="namespace_im_gui.html#aa4824a1b351c063b4aff9b9f4fb5fd4d" title=" " alt="" coords="609,857,772,884"/>
+<area shape="rect" href="namespace_im_gui.html#a61ced7f0dd38c604e895400a2e5eeeb2" title=" " alt="" coords="607,1212,775,1239"/>
+<area shape="rect" href="struct_im_draw_data_builder.html#a5306e78438b48a74f2d65d0e10d36d53" title=" " alt="" coords="396,1314,536,1355"/>
+<area shape="rect" href="namespace_im_gui.html#a246c37da45e88a12ade440a0feacb4ee" title=" " alt="" coords="404,1212,528,1239"/>
+<area shape="rect" href="namespace_im_gui.html#a10a0d6362178c2f743092f21e1b6cd20" title=" " alt="" coords="417,933,515,960"/>
+<area shape="rect" href="imgui_8cpp.html#a2e0022a073d369645a0daab17f823779" title=" " alt="" coords="631,1009,751,1036"/>
+<area shape="rect" href="namespace_im_gui.html#aae6420fec03511fd478d9108f31e6b5f" title=" " alt="" coords="638,908,743,935"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16_icgraph.png" border="0" usemap="#amain_app_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16_icgraph" id="amain_app_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16_icgraph">
+<area shape="rect" title=" " alt="" coords="137,5,188,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5cd40119cdaa763b483dfba6942eaa3e" name="a5cd40119cdaa763b483dfba6942eaa3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5cd40119cdaa763b483dfba6942eaa3e">&#9670;&nbsp;</a></span>GetDepthStencilView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D11DepthStencilView * GetDepthStencilView </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a965053cc7c41d010d359091035281310" name="a965053cc7c41d010d359091035281310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a965053cc7c41d010d359091035281310">&#9670;&nbsp;</a></span>GetDevice()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D11Device * GetDevice </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a965053cc7c41d010d359091035281310_icgraph.png" border="0" usemap="#amain_app_8cpp_a965053cc7c41d010d359091035281310_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_a965053cc7c41d010d359091035281310_icgraph" id="amain_app_8cpp_a965053cc7c41d010d359091035281310_icgraph">
+<area shape="rect" title=" " alt="" coords="913,183,995,209"/>
+<area shape="rect" href="class_model_manager.html#a83cb97219f91ba9799cef863f129ce8c" title="モデルの追加" alt="" coords="684,81,857,108"/>
+<area shape="rect" href="class_texture_manager.html#acf80525b5a1e493b08426989d2940870" title="テクスチャの追加" alt="" coords="676,157,865,184"/>
+<area shape="rect" href="mesh_8cpp.html#afd09c8aac5c23c7b70e88571ccf966b3" title=" " alt="" coords="735,233,806,260"/>
+<area shape="rect" href="class_c_anim_mesh.html#a68647db370f06e36abc97eab88ac1563" title="テクスチャを反転させる準備" alt="" coords="691,309,850,336"/>
+<area shape="rect" href="class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="463,5,582,32"/>
+<area shape="rect" href="class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="463,56,582,83"/>
+<area shape="rect" href="class_scene_stage__1.html#ab4bb4703f3f44eb4f5c49f44003627cf" title="初期化" alt="" coords="457,107,589,133"/>
+<area shape="rect" href="class_menu_manager.html#a9f2f549c8364364b698b7c99d5f52f23" title="ミスメニュー" alt="" coords="417,157,628,184"/>
+<area shape="rect" href="class_scene_title.html#a25a10fe18f8ff1f5a7e657cfe6eca671" title=" " alt="" coords="469,208,577,235"/>
+<area shape="rect" href="class_c_see_coll.html#ab1cc85ed730b6ab2aeb7adfb6ee59230" title="初期化" alt="" coords="467,259,579,285"/>
+<area shape="rect" href="class_menu_manager.html#aabc8f23d87e058b5c5b099a8c34a2af8" title="更新処理" alt="" coords="206,157,359,184"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,107,148,133"/>
+<area shape="rect" href="class_stage_select.html#aa2796a223f0c14a63523a725957de1ef" title="更新処理" alt="" coords="5,157,148,184"/>
+<area shape="rect" href="class_scene_title.html#af1b28c5ab2cced3b7d8106ef0cd8b0ae" title=" " alt="" coords="11,208,143,235"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="503,309,542,336"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="241,309,325,336"/>
+<area shape="rect" href="class_c_player.html#a74a2ae35e6ee85f5d8db25b65fe61062" title="プレイヤーのテクスチャを変更するための関数" alt="" coords="441,360,604,387"/>
+<area shape="rect" href="class_c_player.html#abede91d4fa024fae2396593ce5532b17" title="衝突処理" alt="" coords="196,360,369,387"/>
+<area shape="rect" href="class_c_player.html#a4582a8020f6734842edea64909bd4b40" title="更新" alt="" coords="224,411,341,437"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a76385629cd459c9e0fcda690542edb07" name="a76385629cd459c9e0fcda690542edb07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76385629cd459c9e0fcda690542edb07">&#9670;&nbsp;</a></span>GetDeviceContext()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D11DeviceContext * GetDeviceContext </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a76385629cd459c9e0fcda690542edb07_icgraph.png" border="0" usemap="#amain_app_8cpp_a76385629cd459c9e0fcda690542edb07_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_a76385629cd459c9e0fcda690542edb07_icgraph" id="amain_app_8cpp_a76385629cd459c9e0fcda690542edb07_icgraph">
+<area shape="rect" title=" " alt="" coords="407,157,533,184"/>
+<area shape="rect" href="class_model_manager.html#a83cb97219f91ba9799cef863f129ce8c" title="モデルの追加" alt="" coords="185,56,359,83"/>
+<area shape="rect" href="class_c_anim_mesh.html#a45bca41fe56b3421b59058ce6d336366" title="描画処理" alt="" coords="207,107,337,133"/>
+<area shape="rect" href="class_c_draw2_d.html#ae0459d7b8afc61916d99070a9ef167ab" title="描画処理" alt="" coords="215,157,329,184"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="215,208,329,235"/>
+<area shape="rect" href="class_c_draw_mesh.html#a4d4c6a30bae2d1318802f1ebf5fb22cb" title="描画" alt="" coords="207,259,337,285"/>
+<area shape="rect" href="class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="12,5,131,32"/>
+<area shape="rect" href="class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="12,56,131,83"/>
+<area shape="rect" href="class_scene_stage__1.html#ab4bb4703f3f44eb4f5c49f44003627cf" title="初期化" alt="" coords="5,107,137,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa9d863781ee8f3f820ea4ad9e52f78d9" name="aa9d863781ee8f3f820ea4ad9e52f78d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d863781ee8f3f820ea4ad9e52f78d9">&#9670;&nbsp;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HINSTANCE GetInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_aa9d863781ee8f3f820ea4ad9e52f78d9_icgraph.png" border="0" usemap="#amain_app_8cpp_aa9d863781ee8f3f820ea4ad9e52f78d9_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_aa9d863781ee8f3f820ea4ad9e52f78d9_icgraph" id="amain_app_8cpp_aa9d863781ee8f3f820ea4ad9e52f78d9_icgraph">
+<area shape="rect" title=" " alt="" coords="803,58,895,84"/>
+<area shape="rect" href="class_input_manager.html#a42d9a422a057aa3e072bea0519849664" title="初期化" alt="" coords="627,7,753,34"/>
+<area shape="rect" href="_shader_8cpp.html#a5ee0de25e2acc6f04a0d2d8d8f4d49e9" title=" " alt="" coords="630,58,750,84"/>
+<area shape="rect" href="_shader_8cpp.html#a4eb484569643960e7a2603c5f6947964" title=" " alt="" coords="625,108,755,135"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="137,83,176,110"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,83,89,110"/>
+<area shape="rect" href="_shader_8cpp.html#a137594b6594f3352656703bfeeba1bbe" title=" " alt="" coords="453,58,573,84"/>
+<area shape="rect" href="_shader_8cpp.html#a527141b482968e801ee13fbbc9f6d9ee" title=" " alt="" coords="467,108,558,135"/>
+<area shape="rect" href="mesh_8cpp.html#afd09c8aac5c23c7b70e88571ccf966b3" title=" " alt="" coords="277,58,347,84"/>
+<area shape="rect" href="polygon_8cpp.html#a8bb589f707597d8419965799f063ad4e" title=" " alt="" coords="269,108,355,135"/>
+<area shape="rect" href="class_c_assimp_model.html#a4a7771d2c4afcde3d4dd26cb73e983e1" title=" " alt="" coords="224,159,400,186"/>
+<area shape="rect" href="_shader_8cpp.html#abfb7e9d65a1539676dee993428d8e9e7" title=" " alt="" coords="448,159,577,186"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a92550af168fdc15968f87992fd9d07c5" name="a92550af168fdc15968f87992fd9d07c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92550af168fdc15968f87992fd9d07c5">&#9670;&nbsp;</a></span>GetMainWnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HWND GetMainWnd </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a92550af168fdc15968f87992fd9d07c5_icgraph.png" border="0" usemap="#amain_app_8cpp_a92550af168fdc15968f87992fd9d07c5_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_a92550af168fdc15968f87992fd9d07c5_icgraph" id="amain_app_8cpp_a92550af168fdc15968f87992fd9d07c5_icgraph">
+<area shape="rect" title=" " alt="" coords="861,259,960,285"/>
+<area shape="rect" href="class_model_manager.html#a83cb97219f91ba9799cef863f129ce8c" title="モデルの追加" alt="" coords="639,81,813,108"/>
+<area shape="rect" href="_shader_8cpp.html#a5ee0de25e2acc6f04a0d2d8d8f4d49e9" title=" " alt="" coords="666,208,786,235"/>
+<area shape="rect" href="_shader_8cpp.html#a4eb484569643960e7a2603c5f6947964" title=" " alt="" coords="661,259,791,285"/>
+<area shape="rect" href="class_scene_manager.html#a38b987d7f23fed149e20c534a0cf848e" title=" " alt="" coords="639,309,813,336"/>
+<area shape="rect" href="class_scene_game.html#a40dd3b6c95346b5f374ae10a7b501103" title="シーンの切替" alt="" coords="648,360,804,387"/>
+<area shape="rect" href="class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="460,5,579,32"/>
+<area shape="rect" href="class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="460,56,579,83"/>
+<area shape="rect" href="class_scene_stage__1.html#ab4bb4703f3f44eb4f5c49f44003627cf" title="初期化" alt="" coords="453,107,585,133"/>
+<area shape="rect" href="_shader_8cpp.html#a137594b6594f3352656703bfeeba1bbe" title=" " alt="" coords="459,157,579,184"/>
+<area shape="rect" href="_shader_8cpp.html#a527141b482968e801ee13fbbc9f6d9ee" title=" " alt="" coords="474,208,565,235"/>
+<area shape="rect" href="mesh_8cpp.html#afd09c8aac5c23c7b70e88571ccf966b3" title=" " alt="" coords="277,157,347,184"/>
+<area shape="rect" href="polygon_8cpp.html#a8bb589f707597d8419965799f063ad4e" title=" " alt="" coords="269,208,355,235"/>
+<area shape="rect" href="class_c_assimp_model.html#a4a7771d2c4afcde3d4dd26cb73e983e1" title=" " alt="" coords="224,259,400,285"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="137,233,176,260"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,233,89,260"/>
+<area shape="rect" href="_shader_8cpp.html#abfb7e9d65a1539676dee993428d8e9e7" title=" " alt="" coords="455,259,584,285"/>
+<area shape="rect" href="class_scene_manager.html#a2682ac5e419812cb1eeab1fec6a1ce86" title=" " alt="" coords="245,309,379,336"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="448,360,591,387"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad019e0e7e14e8aa9a83bbbf95930ed81" name="ad019e0e7e14e8aa9a83bbbf95930ed81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad019e0e7e14e8aa9a83bbbf95930ed81">&#9670;&nbsp;</a></span>GetRenderTargetView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D11RenderTargetView * GetRenderTargetView </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aafdc26c1149a90863283c7f26dfa89fa" name="aafdc26c1149a90863283c7f26dfa89fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafdc26c1149a90863283c7f26dfa89fa">&#9670;&nbsp;</a></span>GetSwapChain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IDXGISwapChain * GetSwapChain </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a87a3f9652a75339308cf5fd5699ef1fd" name="a87a3f9652a75339308cf5fd5699ef1fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87a3f9652a75339308cf5fd5699ef1fd">&#9670;&nbsp;</a></span>ImGui_ImplWin32_WndProcHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a665f6b404eea9a640b1222a87236fe19">IMGUI_IMPL_API</a> LRESULT ImGui_ImplWin32_WndProcHandler </td>
+          <td>(</td>
+          <td class="paramtype">HWND&#160;</td>
+          <td class="paramname"><em>hWnd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">WPARAM&#160;</td>
+          <td class="paramname"><em>wParam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPARAM&#160;</td>
+          <td class="paramname"><em>lParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a87a3f9652a75339308cf5fd5699ef1fd_cgraph.png" border="0" usemap="#amain_app_8cpp_a87a3f9652a75339308cf5fd5699ef1fd_cgraph" alt=""/></div>
+<map name="amain_app_8cpp_a87a3f9652a75339308cf5fd5699ef1fd_cgraph" id="amain_app_8cpp_a87a3f9652a75339308cf5fd5699ef1fd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,235,57"/>
+<area shape="rect" href="namespace_im_gui.html#af557a6de5538099a0f6047eb994bbf42" title=" " alt="" coords="283,5,455,32"/>
+<area shape="rect" href="namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="319,56,418,83"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a87a3f9652a75339308cf5fd5699ef1fd_icgraph.png" border="0" usemap="#amain_app_8cpp_a87a3f9652a75339308cf5fd5699ef1fd_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_a87a3f9652a75339308cf5fd5699ef1fd_icgraph" id="amain_app_8cpp_a87a3f9652a75339308cf5fd5699ef1fd_icgraph">
+<area shape="rect" title=" " alt="" coords="261,5,491,32"/>
+<area shape="rect" href="main_app_8cpp.html#ae749e989b362e19783c7af4a2bf46c95" title=" " alt="" coords="137,5,213,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a93e37d33930b82ad41bc9c9cb472f300" name="a93e37d33930b82ad41bc9c9cb472f300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93e37d33930b82ad41bc9c9cb472f300">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT Init </td>
+          <td>(</td>
+          <td class="paramtype">HWND&#160;</td>
+          <td class="paramname"><em>hWnd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">BOOL&#160;</td>
+          <td class="paramname"><em>bWindow</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a93e37d33930b82ad41bc9c9cb472f300_cgraph.png" border="0" usemap="#amain_app_8cpp_a93e37d33930b82ad41bc9c9cb472f300_cgraph" alt=""/></div>
+<map name="amain_app_8cpp_a93e37d33930b82ad41bc9c9cb472f300_cgraph" id="amain_app_8cpp_a93e37d33930b82ad41bc9c9cb472f300_cgraph">
+<area shape="rect" title=" " alt="" coords="5,335,44,361"/>
+<area shape="rect" href="main_app_8cpp.html#acaee41532409857c32654e8a1a30d4e7" title=" " alt="" coords="119,5,241,32"/>
+<area shape="rect" href="namespace_im_gui.html#a4ff6c9ad05a0eba37ce1b5ff1607810a" title=" " alt="" coords="107,56,253,83"/>
+<area shape="rect" href="namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="369,157,467,184"/>
+<area shape="rect" href="imgui__impl__dx11_8cpp.html#a6bbf28d9c3bbd7f8159772f07289e848" title=" " alt="" coords="109,157,251,184"/>
+<area shape="rect" href="imgui__impl__win32_8cpp.html#a4221d0dc7d4977eb30970e1f5c2cca98" title=" " alt="" coords="106,208,254,235"/>
+<area shape="rect" href="class_input_manager.html#a42d9a422a057aa3e072bea0519849664" title="初期化" alt="" coords="570,259,695,285"/>
+<area shape="rect" href="class_scene_manager.html#a2682ac5e419812cb1eeab1fec6a1ce86" title=" " alt="" coords="113,461,247,488"/>
+<area shape="rect" href="mesh_8cpp.html#afd09c8aac5c23c7b70e88571ccf966b3" title=" " alt="" coords="145,411,215,437"/>
+<area shape="rect" href="polygon_8cpp.html#a8bb589f707597d8419965799f063ad4e" title=" " alt="" coords="137,309,223,336"/>
+<area shape="rect" href="class_c_assimp_model.html#a4a7771d2c4afcde3d4dd26cb73e983e1" title=" " alt="" coords="92,360,268,387"/>
+<area shape="rect" href="class_input_manager.html#a53a27e2e25bec96173a4c7532515d10e" title="インスタンス生成" alt="" coords="101,512,259,539"/>
+<area shape="rect" href="class_scene_manager.html#a972ad174745419ebc980802a5f6e874e" title=" " alt="" coords="97,563,263,589"/>
+<area shape="rect" href="main_app_8cpp.html#a15367d15c1324ebba192218982bffe3e" title=" " alt="" coords="127,613,233,640"/>
+<area shape="rect" href="namespace_im_gui.html#a26c67fc14081b359566d5e135cd8c767" title=" " alt="" coords="101,664,259,691"/>
+<area shape="rect" href="namespace_im_gui.html#a2e1fd6aabbb02f367fd6aee248506782" title=" " alt="" coords="363,81,473,108"/>
+<area shape="rect" href="namespace_im_gui.html#a289dbbbffdadcf1231821d97a7c4a9be" title=" " alt="" coords="333,31,503,57"/>
+<area shape="rect" href="imgui_8cpp.html#acd1b12694d0365b516bf7373f182eeee" title=" " alt="" coords="591,81,674,108"/>
+<area shape="rect" href="main_app_8cpp.html#aa9d863781ee8f3f820ea4ad9e52f78d9" title=" " alt="" coords="749,309,841,336"/>
+<area shape="rect" href="class_scene_game.html#a5f5bb9169295264e15c157b98fc17776" title="インスタンス取得" alt="" coords="332,411,504,437"/>
+<area shape="rect" href="class_scene_manager.html#a38b987d7f23fed149e20c534a0cf848e" title=" " alt="" coords="331,461,505,488"/>
+<area shape="rect" href="main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="745,360,844,387"/>
+<area shape="rect" href="class_scene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title=" " alt="" coords="591,461,675,488"/>
+<area shape="rect" href="class_scene.html#aa94fb256b8a862aee810db4f1e8d56a4" title=" " alt="" coords="583,512,683,539"/>
+<area shape="rect" href="main_app_8cpp.html#a965053cc7c41d010d359091035281310" title=" " alt="" coords="377,360,459,387"/>
+<area shape="rect" href="_shader_8cpp.html#a527141b482968e801ee13fbbc9f6d9ee" title=" " alt="" coords="373,309,463,336"/>
+<area shape="rect" href="_shader_8cpp.html#a5ee0de25e2acc6f04a0d2d8d8f4d49e9" title=" " alt="" coords="573,309,693,336"/>
+<area shape="rect" href="_shader_8cpp.html#a4eb484569643960e7a2603c5f6947964" title=" " alt="" coords="568,360,697,387"/>
+<area shape="rect" href="class_input_manager.html#a8be46886da639b26d67181c29dab6d6c" title="コンストラクタ" alt="" coords="325,512,511,539"/>
+<area shape="rect" href="class_scene_manager.html#a52085e6737c23b491c228e86781af808" title=" " alt="" coords="316,563,520,589"/>
+<area shape="rect" href="namespace_im_gui.html#abafef4bb3e3654efd96a47b2e22870a7" title=" " alt="" coords="361,664,475,691"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a93e37d33930b82ad41bc9c9cb472f300_icgraph.png" border="0" usemap="#amain_app_8cpp_a93e37d33930b82ad41bc9c9cb472f300_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_a93e37d33930b82ad41bc9c9cb472f300_icgraph" id="amain_app_8cpp_a93e37d33930b82ad41bc9c9cb472f300_icgraph">
+<area shape="rect" title=" " alt="" coords="137,5,176,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae01825b499ec5e42f84e564d8d35bca1" name="ae01825b499ec5e42f84e564d8d35bca1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae01825b499ec5e42f84e564d8d35bca1">&#9670;&nbsp;</a></span>OnCreate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int OnCreate </td>
+          <td>(</td>
+          <td class="paramtype">HWND&#160;</td>
+          <td class="paramname"><em>hWnd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPCREATESTRUCT&#160;</td>
+          <td class="paramname"><em>lpcs</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_ae01825b499ec5e42f84e564d8d35bca1_cgraph.png" border="0" usemap="#amain_app_8cpp_ae01825b499ec5e42f84e564d8d35bca1_cgraph" alt=""/></div>
+<map name="amain_app_8cpp_ae01825b499ec5e42f84e564d8d35bca1_cgraph" id="amain_app_8cpp_ae01825b499ec5e42f84e564d8d35bca1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,83,56"/>
+<area shape="rect" href="namespace_im_gui.html#aaa81e004de4c0a5cedb836e92e8aa0e5" title=" " alt="" coords="131,29,284,56"/>
+<area shape="rect" href="namespace_im_gui.html#a055af7d6b7b4ae977a9c3c25a98e0d2f" title=" " alt="" coords="332,29,535,56"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_ae01825b499ec5e42f84e564d8d35bca1_icgraph.png" border="0" usemap="#amain_app_8cpp_ae01825b499ec5e42f84e564d8d35bca1_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_ae01825b499ec5e42f84e564d8d35bca1_icgraph" id="amain_app_8cpp_ae01825b499ec5e42f84e564d8d35bca1_icgraph">
+<area shape="rect" title=" " alt="" coords="261,5,339,32"/>
+<area shape="rect" href="main_app_8cpp.html#ae749e989b362e19783c7af4a2bf46c95" title=" " alt="" coords="137,5,213,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ad810adfaf29a77c9c136b3403d77c77c" name="ad810adfaf29a77c9c136b3403d77c77c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad810adfaf29a77c9c136b3403d77c77c">&#9670;&nbsp;</a></span>ReleaseBackBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ReleaseBackBuffer </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_ad810adfaf29a77c9c136b3403d77c77c_icgraph.png" border="0" usemap="#amain_app_8cpp_ad810adfaf29a77c9c136b3403d77c77c_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_ad810adfaf29a77c9c136b3403d77c77c_icgraph" id="amain_app_8cpp_ad810adfaf29a77c9c136b3403d77c77c_icgraph">
+<area shape="rect" title=" " alt="" coords="240,5,372,32"/>
+<area shape="rect" href="main_app_8cpp.html#affc0f591b5f188f1b5cb4f20042e4766" title=" " alt="" coords="137,5,192,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a15367d15c1324ebba192218982bffe3e" name="a15367d15c1324ebba192218982bffe3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15367d15c1324ebba192218982bffe3e">&#9670;&nbsp;</a></span>SetBlendState()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetBlendState </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nBlendState</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a15367d15c1324ebba192218982bffe3e_icgraph.png" border="0" usemap="#amain_app_8cpp_a15367d15c1324ebba192218982bffe3e_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_a15367d15c1324ebba192218982bffe3e_icgraph" id="amain_app_8cpp_a15367d15c1324ebba192218982bffe3e_icgraph">
+<area shape="rect" title=" " alt="" coords="316,107,423,133"/>
+<area shape="rect" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="177,5,228,32"/>
+<area shape="rect" href="class_c_anim_mesh.html#a45bca41fe56b3421b59058ce6d336366" title="描画処理" alt="" coords="137,56,268,83"/>
+<area shape="rect" href="class_c_draw2_d.html#ae0459d7b8afc61916d99070a9ef167ab" title="描画処理" alt="" coords="146,107,259,133"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="146,157,259,184"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="183,208,222,235"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,107,89,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a55437f177885a57508f99619a3a7a19f" name="a55437f177885a57508f99619a3a7a19f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55437f177885a57508f99619a3a7a19f">&#9670;&nbsp;</a></span>SetCullMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetCullMode </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nCullMode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9b19b33f1a7f58f261e0025ec2fc66c3" name="a9b19b33f1a7f58f261e0025ec2fc66c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b19b33f1a7f58f261e0025ec2fc66c3">&#9670;&nbsp;</a></span>SetZBuffer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetZBuffer </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bEnable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a9b19b33f1a7f58f261e0025ec2fc66c3_icgraph.png" border="0" usemap="#amain_app_8cpp_a9b19b33f1a7f58f261e0025ec2fc66c3_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_a9b19b33f1a7f58f261e0025ec2fc66c3_icgraph" id="amain_app_8cpp_a9b19b33f1a7f58f261e0025ec2fc66c3_icgraph">
+<area shape="rect" title=" " alt="" coords="379,157,461,184"/>
+<area shape="rect" href="main_app_8cpp.html#a3d5cf0d8d37b6b17224867eb397c9a16" title=" " alt="" coords="232,5,283,32"/>
+<area shape="rect" href="class_menu_manager.html#a257fe839c85d81f74f2077bd0d7dbd63" title="描画処理" alt="" coords="187,157,328,184"/>
+<area shape="rect" href="class_scene_game.html#ac14f575125dcaf8cfd416f9512ee0107" title="描画処理" alt="" coords="5,81,136,108"/>
+<area shape="rect" href="class_stage_select.html#a607ba8e951492ae25d5ff4942b029e27" title="描画処理" alt="" coords="5,183,136,209"/>
+<area shape="rect" href="class_object_manager.html#ac054fcf6fa043ed24a88265e6f25bc15" title="描画処理" alt="" coords="184,107,331,133"/>
+<area shape="rect" href="class_c_draw2_d.html#ae0459d7b8afc61916d99070a9ef167ab" title="描画処理" alt="" coords="201,259,314,285"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="201,309,314,336"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="29,5,113,32"/>
+<area shape="rect" href="class_scene_title.html#acc6b1370a2f20c20e7295d160d1ce6bb" title=" " alt="" coords="11,132,131,159"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a6376c6224e7273eb750a7fde2aea342d" name="a6376c6224e7273eb750a7fde2aea342d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6376c6224e7273eb750a7fde2aea342d">&#9670;&nbsp;</a></span>SetZWrite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetZWrite </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bEnable</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_a6376c6224e7273eb750a7fde2aea342d_icgraph.png" border="0" usemap="#amain_app_8cpp_a6376c6224e7273eb750a7fde2aea342d_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_a6376c6224e7273eb750a7fde2aea342d_icgraph" id="amain_app_8cpp_a6376c6224e7273eb750a7fde2aea342d_icgraph">
+<area shape="rect" title=" " alt="" coords="167,5,247,32"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="5,5,119,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="affc0f591b5f188f1b5cb4f20042e4766" name="affc0f591b5f188f1b5cb4f20042e4766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affc0f591b5f188f1b5cb4f20042e4766">&#9670;&nbsp;</a></span>Uninit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Uninit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_affc0f591b5f188f1b5cb4f20042e4766_cgraph.png" border="0" usemap="#amain_app_8cpp_affc0f591b5f188f1b5cb4f20042e4766_cgraph" alt=""/></div>
+<map name="amain_app_8cpp_affc0f591b5f188f1b5cb4f20042e4766_cgraph" id="amain_app_8cpp_affc0f591b5f188f1b5cb4f20042e4766_cgraph">
+<area shape="rect" title=" " alt="" coords="5,284,60,311"/>
+<area shape="rect" href="class_file_manager.html#a2cac6ac5dc966241a4ec67f4daf36d46" title="インスタンスの破棄" alt="" coords="131,5,277,32"/>
+<area shape="rect" href="namespace_im_gui.html#ab9132deece575023170cd8e681d0581d" title=" " alt="" coords="127,56,281,83"/>
+<area shape="rect" href="imgui__impl__dx11_8cpp.html#aa9731eb4cae116da513d6df90ff93387" title=" " alt="" coords="113,107,295,133"/>
+<area shape="rect" href="imgui__impl__win32_8cpp.html#a4eddd1969cc460312197f2df3dbc992a" title=" " alt="" coords="110,157,298,184"/>
+<area shape="rect" href="main_app_8cpp.html#ad810adfaf29a77c9c136b3403d77c77c" title=" " alt="" coords="138,208,270,235"/>
+<area shape="rect" href="class_input_manager.html#adbed7acd819d7c75a97c728028b067d5" title="終了" alt="" coords="133,259,275,285"/>
+<area shape="rect" href="class_model_manager.html#af9fece7e0c5509069f854acb15c50abe" title="モデルマネージャーの解放" alt="" coords="130,309,278,336"/>
+<area shape="rect" href="class_scene_manager.html#ae3ff21f2261fc50f1e860cf7fc3a2108" title=" " alt="" coords="129,360,279,387"/>
+<area shape="rect" href="class_texture_manager.html#ab2ef3139e30856ee768b2e98ec5259f5" title="終了処理" alt="" coords="126,411,282,437"/>
+<area shape="rect" href="mesh_8cpp.html#a4412ab7873323890dcf6d1a34aa95380" title=" " alt="" coords="161,461,247,488"/>
+<area shape="rect" href="polygon_8cpp.html#aa34cd60c6955287f7b7a0a47eaa3c4b1" title=" " alt="" coords="153,512,255,539"/>
+<area shape="rect" href="class_c_assimp_model.html#ab706c8c7d9065532874d87122e37f8bb" title=" " alt="" coords="108,563,300,589"/>
+<area shape="rect" href="imgui_8h.html#a3c856832c3fe1da8767a9353da3707e1" title=" " alt="" coords="837,107,930,133"/>
+<area shape="rect" href="namespace_im_gui.html#a289dbbbffdadcf1231821d97a7c4a9be" title=" " alt="" coords="570,56,741,83"/>
+<area shape="rect" href="namespace_im_gui.html#ae8e2043e5d630169423e2d14a913afa1" title=" " alt="" coords="369,309,490,336"/>
+<area shape="rect" href="namespace_im_gui.html#a269ec695c6e722ec3da85dae37f0675d" title=" " alt="" coords="1031,107,1149,133"/>
+<area shape="rect" href="namespace_im_gui.html#a61ced7f0dd38c604e895400a2e5eeeb2" title=" " alt="" coords="571,157,739,184"/>
+<area shape="rect" href="struct_im_vector.html#ae2d401b4ec5f1113cdb8edb5a61a38f7" title=" " alt="" coords="1035,385,1145,412"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html#a9e4edc9f950bc9e35d5c3b3071dbc0df" title=" " alt="" coords="808,309,959,336"/>
+<area shape="rect" href="struct_im_gui_storage.html#a72ceecfbca3d08df8c2a232b77890c20" title=" " alt="" coords="814,360,953,387"/>
+<area shape="rect" href="struct_im_pool.html#a613b0fa43ad7457ebde2988d4ea5f0be" title=" " alt="" coords="605,411,705,437"/>
+<area shape="rect" href="struct_im_chunk_stream.html#a3bf3babbba7a8edafce99be0589379a3" title=" " alt="" coords="580,461,731,488"/>
+<area shape="rect" href="struct_im_vector.html#aed9c986ef3cd59fabbd89355d0023122" title=" " alt="" coords="579,208,731,235"/>
+<area shape="rect" href="struct_im_vector.html#ac1ed34eac753156e87e8a92f78dbbe3f" title=" " alt="" coords="573,512,737,539"/>
+<area shape="rect" href="struct_im_gui_input_text_state.html#a8be5f345ea5de89842d5a6716cb19b27" title=" " alt="" coords="813,530,953,571"/>
+<area shape="rect" href="imgui_8cpp.html#ac4a6194720e9d693bc9d34e97d9465aa" title=" " alt="" coords="838,613,929,640"/>
+<area shape="rect" href="namespace_im_gui.html#afa4985e7810be4e687bc4ff28cec8a4d" title=" " alt="" coords="559,664,752,691"/>
+<area shape="rect" href="imgui_8cpp.html#ae6a61623537c5a5de071fade1f0e8acd" title=" " alt="" coords="839,664,927,691"/>
+<area shape="rect" href="imgui_8cpp.html#aab6460bf5ebaa4975159cf0cd4324820" title=" " alt="" coords="839,715,927,741"/>
+<area shape="rect" href="namespace_im_gui.html#a27043a530e0e842e01c279dd4207f9eb" title=" " alt="" coords="800,766,967,807"/>
+<area shape="rect" href="struct_im_vector.html#ac371dd62e56ae486b1a5038cf07eee56" title=" " alt="" coords="1031,668,1149,695"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html#ac78a076eb21b9c4ec532eb5109c84a64" title=" " alt="" coords="1015,723,1165,749"/>
+<area shape="rect" href="struct_im_vector.html#aab5df48e0711a48bd12f3206e08c4108" title=" " alt="" coords="1017,773,1163,800"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html#a2811fcd43e0224eb3bd0f3464b634289" title=" " alt="" coords="1017,824,1163,851"/>
+<area shape="rect" href="class_scene_manager.html#a2f6f914ca9dbb9e19b1630ac1170184b" title=" " alt="" coords="348,360,511,387"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_affc0f591b5f188f1b5cb4f20042e4766_icgraph.png" border="0" usemap="#amain_app_8cpp_affc0f591b5f188f1b5cb4f20042e4766_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_affc0f591b5f188f1b5cb4f20042e4766_icgraph" id="amain_app_8cpp_affc0f591b5f188f1b5cb4f20042e4766_icgraph">
+<area shape="rect" title=" " alt="" coords="137,5,192,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aec0783b5a136e042adcc47bae4fe5291" name="aec0783b5a136e042adcc47bae4fe5291"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec0783b5a136e042adcc47bae4fe5291">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_aec0783b5a136e042adcc47bae4fe5291_cgraph.png" border="0" usemap="#amain_app_8cpp_aec0783b5a136e042adcc47bae4fe5291_cgraph" alt=""/></div>
+<map name="amain_app_8cpp_aec0783b5a136e042adcc47bae4fe5291_cgraph" id="amain_app_8cpp_aec0783b5a136e042adcc47bae4fe5291_cgraph">
+<area shape="rect" title=" " alt="" coords="5,107,68,133"/>
+<area shape="rect" href="class_scene_game.html#a5f5bb9169295264e15c157b98fc17776" title="インスタンス取得" alt="" coords="125,5,297,32"/>
+<area shape="rect" href="class_input_manager.html#a81fb24c5c224f98ece4c2153c20fbd6e" title="キーボードのトリガー状態を取得" alt="" coords="116,56,307,83"/>
+<area shape="rect" href="class_input_manager.html#a53a27e2e25bec96173a4c7532515d10e" title="インスタンス生成" alt="" coords="133,107,290,133"/>
+<area shape="rect" href="class_input_manager.html#aa5480931dba2720e7d80dd00a53adae0" title="更新" alt="" coords="137,157,286,184"/>
+<area shape="rect" href="class_scene_manager.html#a63dcf65832d6a2c190bf496d9a3b00a3" title=" " alt="" coords="132,208,291,235"/>
+<area shape="rect" href="class_input_manager.html#a8be46886da639b26d67181c29dab6d6c" title="コンストラクタ" alt="" coords="355,107,541,133"/>
+<area shape="rect" href="class_scene.html#ab99ec7aff3ed995985ddb764ffb78f8e" title=" " alt="" coords="394,208,502,235"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_aec0783b5a136e042adcc47bae4fe5291_icgraph.png" border="0" usemap="#amain_app_8cpp_aec0783b5a136e042adcc47bae4fe5291_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_aec0783b5a136e042adcc47bae4fe5291_icgraph" id="amain_app_8cpp_aec0783b5a136e042adcc47bae4fe5291_icgraph">
+<area shape="rect" title=" " alt="" coords="137,5,200,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae749e989b362e19783c7af4a2bf46c95" name="ae749e989b362e19783c7af4a2bf46c95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae749e989b362e19783c7af4a2bf46c95">&#9670;&nbsp;</a></span>WndProc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">LRESULT CALLBACK WndProc </td>
+          <td>(</td>
+          <td class="paramtype">HWND&#160;</td>
+          <td class="paramname"><em>hWnd</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>uMsg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">WPARAM&#160;</td>
+          <td class="paramname"><em>wParam</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPARAM&#160;</td>
+          <td class="paramname"><em>lParam</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_ae749e989b362e19783c7af4a2bf46c95_cgraph.png" border="0" usemap="#amain_app_8cpp_ae749e989b362e19783c7af4a2bf46c95_cgraph" alt=""/></div>
+<map name="amain_app_8cpp_ae749e989b362e19783c7af4a2bf46c95_cgraph" id="amain_app_8cpp_ae749e989b362e19783c7af4a2bf46c95_cgraph">
+<area shape="rect" title=" " alt="" coords="5,93,81,120"/>
+<area shape="rect" href="imgui__impl__win32_8cpp.html#a25447e4d5d2cabecf54cb9a5c84e7cde" title=" " alt="" coords="129,56,359,83"/>
+<area shape="rect" href="main_app_8cpp.html#ae01825b499ec5e42f84e564d8d35bca1" title=" " alt="" coords="205,119,283,145"/>
+<area shape="rect" href="namespace_im_gui.html#af557a6de5538099a0f6047eb994bbf42" title=" " alt="" coords="407,5,579,32"/>
+<area shape="rect" href="namespace_im_gui.html#a3179e560812f878f3961ce803a5d9302" title=" " alt="" coords="443,56,542,83"/>
+<area shape="rect" href="namespace_im_gui.html#aaa81e004de4c0a5cedb836e92e8aa0e5" title=" " alt="" coords="416,131,569,157"/>
+<area shape="rect" href="namespace_im_gui.html#a055af7d6b7b4ae977a9c3c25a98e0d2f" title=" " alt="" coords="627,131,829,157"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="main_app_8cpp_ae749e989b362e19783c7af4a2bf46c95_icgraph.png" border="0" usemap="#amain_app_8cpp_ae749e989b362e19783c7af4a2bf46c95_icgraph" alt=""/></div>
+<map name="amain_app_8cpp_ae749e989b362e19783c7af4a2bf46c95_icgraph" id="amain_app_8cpp_ae749e989b362e19783c7af4a2bf46c95_icgraph">
+<area shape="rect" title=" " alt="" coords="137,5,213,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a id="af03f36c7876ed17a936f00434a9236c4" name="af03f36c7876ed17a936f00434a9236c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af03f36c7876ed17a936f00434a9236c4">&#9670;&nbsp;</a></span>g_hInst</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HINSTANCE g_hInst</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af6e451d84715c224b60977594e800b81" name="af6e451d84715c224b60977594e800b81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e451d84715c224b60977594e800b81">&#9670;&nbsp;</a></span>g_hWnd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HWND g_hWnd</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3ff492dab767ebe3921c804121362998" name="a3ff492dab767ebe3921c804121362998"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ff492dab767ebe3921c804121362998">&#9670;&nbsp;</a></span>g_nCountFPS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int g_nCountFPS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab7895c23be6d0815d09494d2cde87745" name="ab7895c23be6d0815d09494d2cde87745"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7895c23be6d0815d09494d2cde87745">&#9670;&nbsp;</a></span>g_pBlendState</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D11BlendState* g_pBlendState[<a class="el" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a2dd3f4c2cf1b7fa074bc5126ce663ba4">MAX_BLENDSTATE</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab9590216690dd67144afc00948867e31" name="ab9590216690dd67144afc00948867e31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9590216690dd67144afc00948867e31">&#9670;&nbsp;</a></span>g_pDepthStencilTexture</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D11Texture2D* g_pDepthStencilTexture</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad94e21ad0f12a5e475e54263844e77f5" name="ad94e21ad0f12a5e475e54263844e77f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad94e21ad0f12a5e475e54263844e77f5">&#9670;&nbsp;</a></span>g_pDepthStencilView</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D11DepthStencilView* g_pDepthStencilView</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2f992b136a900bca3ed6e5150c6a038f" name="a2f992b136a900bca3ed6e5150c6a038f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f992b136a900bca3ed6e5150c6a038f">&#9670;&nbsp;</a></span>g_pDevice</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D11Device* g_pDevice</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5052854e8f64231a4af1c35cdae5ebe" name="ab5052854e8f64231a4af1c35cdae5ebe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5052854e8f64231a4af1c35cdae5ebe">&#9670;&nbsp;</a></span>g_pDeviceContext</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D11DeviceContext* g_pDeviceContext</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a16c31ec5dc59b21e26902e7de80b9627" name="a16c31ec5dc59b21e26902e7de80b9627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16c31ec5dc59b21e26902e7de80b9627">&#9670;&nbsp;</a></span>g_pDSS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D11DepthStencilState* g_pDSS[2]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abcb863a0484c7e63a94f94443c75e4e4" name="abcb863a0484c7e63a94f94443c75e4e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcb863a0484c7e63a94f94443c75e4e4">&#9670;&nbsp;</a></span>g_pInputManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_input_manager.html">InputManager</a>* g_pInputManager = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a795f24bde22c97c4ed279a717ff38beb" name="a795f24bde22c97c4ed279a717ff38beb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a795f24bde22c97c4ed279a717ff38beb">&#9670;&nbsp;</a></span>g_pRenderTargetView</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D11RenderTargetView* g_pRenderTargetView</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1650a47a0e794abae08ef7b3c88c3000" name="a1650a47a0e794abae08ef7b3c88c3000"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1650a47a0e794abae08ef7b3c88c3000">&#9670;&nbsp;</a></span>g_pRs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ID3D11RasterizerState* g_pRs[<a class="el" href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaac9e43ef91a95b9f6a68480609e3cb2c1">MAX_CULLMODE</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a62feac2b19fd7df9a0f0680e576d369c" name="a62feac2b19fd7df9a0f0680e576d369c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62feac2b19fd7df9a0f0680e576d369c">&#9670;&nbsp;</a></span>g_pSceneManager</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_scene_manager.html">SceneManager</a>* g_pSceneManager = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abdc838bdb97168171051e526b8f49d12" name="abdc838bdb97168171051e526b8f49d12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdc838bdb97168171051e526b8f49d12">&#9670;&nbsp;</a></span>g_pSwapChain</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">IDXGISwapChain* g_pSwapChain</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad11c6e200f8d1bdde7dcefece0598700" name="ad11c6e200f8d1bdde7dcefece0598700"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad11c6e200f8d1bdde7dcefece0598700">&#9670;&nbsp;</a></span>g_uSyncInterval</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UINT g_uSyncInterval = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

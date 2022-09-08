@@ -1,0 +1,263 @@
+\hypertarget{class_c_transform}{}\doxysection{CTransform クラス}
+\label{class_c_transform}\index{CTransform@{CTransform}}
+
+
+{\ttfamily \#include $<$Transform\+Component.\+h$>$}
+
+
+
+CTransform の継承関係図\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_transform__inherit__graph}
+\end{center}
+\end{figure}
+
+
+CTransform 連携図\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_transform__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}{CTransform}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_transform_a90d72f6ed0c3b0e5401365ba6fe2bdc5}{$\sim$\+CTransform}} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_transform_aee48dd10140f1955b4aa074c570ce101}{Update}} () override
+\begin{DoxyCompactList}\small\item\em 更新処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_transform_adea1eaa3582e41fa1572cdc08124f9fb}{Set\+Position}} (float fx, float fy, float fz=0.\+0f)
+\begin{DoxyCompactList}\small\item\em 座標の設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_transform_a15ca25e8af2720b81cf9bb62b5661b21}{Set\+Velocity}} (float fx, float fy, float fz=0.\+0f)
+\begin{DoxyCompactList}\small\item\em 速度の設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_transform_aea7974842850c159d06c52833de47531}{Set\+Scale}} (float fx, float fy, float fz=0.\+0f)
+\begin{DoxyCompactList}\small\item\em 大きさの設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_transform_a3d604689f6dbcbf002d7da8cad63ad54}{Set\+Rotate}} (float fx, float fy, float fz=0.\+0f)
+\begin{DoxyCompactList}\small\item\em 傾き(回転)の設定 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+XMFLOAT3 \mbox{\hyperlink{class_c_transform_a5f8cbc0f7082d7c611f38faf840680f4}{Pos}}
+\begin{DoxyCompactList}\small\item\em 座標 \end{DoxyCompactList}\item 
+XMFLOAT3 \mbox{\hyperlink{class_c_transform_ae98674f3555a187f55172fdab933826f}{Vel}}
+\begin{DoxyCompactList}\small\item\em 速度 \end{DoxyCompactList}\item 
+XMFLOAT3 \mbox{\hyperlink{class_c_transform_a42c23402318890cecfc19e9def9232ca}{Acc}}
+\begin{DoxyCompactList}\small\item\em 加速度 \end{DoxyCompactList}\item 
+XMFLOAT3 \mbox{\hyperlink{class_c_transform_a652262d6910f81ee299475c25c4dc5c2}{Scale}}
+\begin{DoxyCompactList}\small\item\em 大きさ \end{DoxyCompactList}\item 
+XMFLOAT3 \mbox{\hyperlink{class_c_transform_aed63334c6b646c0f6d394fdd7b5d9a86}{Rotate}}
+\begin{DoxyCompactList}\small\item\em 回転 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}\label{class_c_transform_a6cc4e6c97dbb86326341aa1a468986d4}} 
+\index{CTransform@{CTransform}!CTransform@{CTransform}}
+\index{CTransform@{CTransform}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{CTransform()}{CTransform()}}
+{\footnotesize\ttfamily CTransform\+::\+CTransform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+\mbox{\Hypertarget{class_c_transform_a90d72f6ed0c3b0e5401365ba6fe2bdc5}\label{class_c_transform_a90d72f6ed0c3b0e5401365ba6fe2bdc5}} 
+\index{CTransform@{CTransform}!````~CTransform@{$\sim$CTransform}}
+\index{````~CTransform@{$\sim$CTransform}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{$\sim$CTransform()}{~CTransform()}}
+{\footnotesize\ttfamily CTransform\+::$\sim$\+CTransform (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+デストラクタ 
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_transform_adea1eaa3582e41fa1572cdc08124f9fb}\label{class_c_transform_adea1eaa3582e41fa1572cdc08124f9fb}} 
+\index{CTransform@{CTransform}!SetPosition@{SetPosition}}
+\index{SetPosition@{SetPosition}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{SetPosition()}{SetPosition()}}
+{\footnotesize\ttfamily void CTransform\+::\+Set\+Position (\begin{DoxyParamCaption}\item[{float}]{fx,  }\item[{float}]{fy,  }\item[{float}]{fz = {\ttfamily 0.0f} }\end{DoxyParamCaption})}
+
+
+
+座標の設定 
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & 設定したいx座標 \\
+\hline
+{\em (float)} & 設定したいy座標 \\
+\hline
+{\em (float)} & 設定したいz座標 \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_transform_adea1eaa3582e41fa1572cdc08124f9fb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_transform_a3d604689f6dbcbf002d7da8cad63ad54}\label{class_c_transform_a3d604689f6dbcbf002d7da8cad63ad54}} 
+\index{CTransform@{CTransform}!SetRotate@{SetRotate}}
+\index{SetRotate@{SetRotate}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{SetRotate()}{SetRotate()}}
+{\footnotesize\ttfamily void CTransform\+::\+Set\+Rotate (\begin{DoxyParamCaption}\item[{float}]{fx,  }\item[{float}]{fy,  }\item[{float}]{fz = {\ttfamily 0.0f} }\end{DoxyParamCaption})}
+
+
+
+傾き(回転)の設定 
+
+角度(回転)の設定
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & 設定したい傾き(回転)(x) \\
+\hline
+{\em (float)} & 設定したい傾き(回転)(y) \\
+\hline
+{\em (float)} & 設定したい傾き(回転)(z) \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{class_c_transform_a3d604689f6dbcbf002d7da8cad63ad54_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_transform_aea7974842850c159d06c52833de47531}\label{class_c_transform_aea7974842850c159d06c52833de47531}} 
+\index{CTransform@{CTransform}!SetScale@{SetScale}}
+\index{SetScale@{SetScale}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{SetScale()}{SetScale()}}
+{\footnotesize\ttfamily void CTransform\+::\+Set\+Scale (\begin{DoxyParamCaption}\item[{float}]{fx,  }\item[{float}]{fy,  }\item[{float}]{fz = {\ttfamily 0.0f} }\end{DoxyParamCaption})}
+
+
+
+大きさの設定 
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & 設定したい大きさ(x) \\
+\hline
+{\em (float)} & 設定したい大きさ(y) \\
+\hline
+{\em (float)} & 設定したい大きさ(z) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_transform_a15ca25e8af2720b81cf9bb62b5661b21}\label{class_c_transform_a15ca25e8af2720b81cf9bb62b5661b21}} 
+\index{CTransform@{CTransform}!SetVelocity@{SetVelocity}}
+\index{SetVelocity@{SetVelocity}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{SetVelocity()}{SetVelocity()}}
+{\footnotesize\ttfamily void CTransform\+::\+Set\+Velocity (\begin{DoxyParamCaption}\item[{float}]{fx,  }\item[{float}]{fy,  }\item[{float}]{fz = {\ttfamily 0.0f} }\end{DoxyParamCaption})}
+
+
+
+速度の設定 
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & 設定したい速度(x) \\
+\hline
+{\em (float)} & 設定したい速度(y) \\
+\hline
+{\em (float)} & 設定したい速度(z) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_transform_aee48dd10140f1955b4aa074c570ce101}\label{class_c_transform_aee48dd10140f1955b4aa074c570ce101}} 
+\index{CTransform@{CTransform}!Update@{Update}}
+\index{Update@{Update}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void CTransform\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新処理 
+
+@breif 更新処理 
+
+\mbox{\hyperlink{class_component_aaf2ce6dc5752072492f790ad4c7955bb}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_c_transform_aee48dd10140f1955b4aa074c570ce101_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_transform_aee48dd10140f1955b4aa074c570ce101_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{class_c_transform_a42c23402318890cecfc19e9def9232ca}\label{class_c_transform_a42c23402318890cecfc19e9def9232ca}} 
+\index{CTransform@{CTransform}!Acc@{Acc}}
+\index{Acc@{Acc}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Acc}{Acc}}
+{\footnotesize\ttfamily XMFLOAT3 CTransform\+::\+Acc}
+
+
+
+加速度 
+
+\mbox{\Hypertarget{class_c_transform_a5f8cbc0f7082d7c611f38faf840680f4}\label{class_c_transform_a5f8cbc0f7082d7c611f38faf840680f4}} 
+\index{CTransform@{CTransform}!Pos@{Pos}}
+\index{Pos@{Pos}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Pos}{Pos}}
+{\footnotesize\ttfamily XMFLOAT3 CTransform\+::\+Pos}
+
+
+
+座標 
+
+\mbox{\Hypertarget{class_c_transform_aed63334c6b646c0f6d394fdd7b5d9a86}\label{class_c_transform_aed63334c6b646c0f6d394fdd7b5d9a86}} 
+\index{CTransform@{CTransform}!Rotate@{Rotate}}
+\index{Rotate@{Rotate}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Rotate}{Rotate}}
+{\footnotesize\ttfamily XMFLOAT3 CTransform\+::\+Rotate}
+
+
+
+回転 
+
+\mbox{\Hypertarget{class_c_transform_a652262d6910f81ee299475c25c4dc5c2}\label{class_c_transform_a652262d6910f81ee299475c25c4dc5c2}} 
+\index{CTransform@{CTransform}!Scale@{Scale}}
+\index{Scale@{Scale}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Scale}{Scale}}
+{\footnotesize\ttfamily XMFLOAT3 CTransform\+::\+Scale}
+
+
+
+大きさ 
+
+\mbox{\Hypertarget{class_c_transform_ae98674f3555a187f55172fdab933826f}\label{class_c_transform_ae98674f3555a187f55172fdab933826f}} 
+\index{CTransform@{CTransform}!Vel@{Vel}}
+\index{Vel@{Vel}!CTransform@{CTransform}}
+\doxysubsubsection{\texorpdfstring{Vel}{Vel}}
+{\footnotesize\ttfamily XMFLOAT3 CTransform\+::\+Vel}
+
+
+
+速度 
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_transform_component_8h}{Transform\+Component.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_transform_component_8cpp}{Transform\+Component.\+cpp}}\end{DoxyCompactItemize}

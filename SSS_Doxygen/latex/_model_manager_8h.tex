@@ -1,0 +1,96 @@
+\hypertarget{_model_manager_8h}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\+Model\+Manager.h ファイル}
+\label{_model_manager_8h}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ModelManager.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ModelManager.h}}
+
+
+モデルを管理するためのマネージャー  
+
+
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include \char`\"{}main\+App.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Assimp\+Model.\+h\char`\"{}}\newline
+Model\+Manager.\+h の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_model_manager_8h__incl}
+\end{center}
+\end{figure}
+被依存関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_model_manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{クラス}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_model_manager}{Model\+Manager}}
+\begin{DoxyCompactList}\small\item\em モデルマネージャー \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{マクロ定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_model_manager_8h_a9153462368932b6b84b730ad10180ee4}{WALK\+\_\+\+ENEMY\+\_\+\+MODEL\+\_\+\+NUM}}~(0)
+\item 
+\#define \mbox{\hyperlink{_model_manager_8h_a6d825790e6fba5b733e349b810bbc7a9}{PATH\+\_\+\+WALK\+\_\+\+ENEMY}}~(\char`\"{}data/model/Walk\+Enemy.\+fbx\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_model_manager_8h_a406d54b4d6f5bcbcbe5f56c4cf315923}{MINT\+\_\+\+GREEN\+\_\+\+BLOCK\+\_\+\+NUM}}~(1)
+\item 
+\#define \mbox{\hyperlink{_model_manager_8h_ad96c90c88ecca6e4ce72992b5256bc7b}{PATH\+\_\+\+MINT\+\_\+\+GREEN\+\_\+\+BLOCK}}~(\char`\"{}data/model/Grass\+\_\+\+Block.\+fbx\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_model_manager_8h_a25ce7fd7f22cc7267200573d55424c6c}{RARD\+\_\+\+BLOCK\+\_\+\+NUM}}~(2)
+\item 
+\#define \mbox{\hyperlink{_model_manager_8h_a840affa55b71c094d0554c8271ad044d}{PATH\+\_\+\+RARD\+\_\+\+BLOCK}}~(\char`\"{}data/model/Rard\+\_\+\+Block.\+fbx\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+モデルを管理するためのマネージャー 
+
+\begin{DoxyAuthor}{著者}
+志水陽祐 
+\end{DoxyAuthor}
+\begin{DoxyDate}{日付}
+2022/7/7 
+\end{DoxyDate}
+
+
+\doxysubsection{マクロ定義詳解}
+\mbox{\Hypertarget{_model_manager_8h_a406d54b4d6f5bcbcbe5f56c4cf315923}\label{_model_manager_8h_a406d54b4d6f5bcbcbe5f56c4cf315923}} 
+\index{ModelManager.h@{ModelManager.h}!MINT\_GREEN\_BLOCK\_NUM@{MINT\_GREEN\_BLOCK\_NUM}}
+\index{MINT\_GREEN\_BLOCK\_NUM@{MINT\_GREEN\_BLOCK\_NUM}!ModelManager.h@{ModelManager.h}}
+\doxysubsubsection{\texorpdfstring{MINT\_GREEN\_BLOCK\_NUM}{MINT\_GREEN\_BLOCK\_NUM}}
+{\footnotesize\ttfamily \#define MINT\+\_\+\+GREEN\+\_\+\+BLOCK\+\_\+\+NUM~(1)}
+
+\mbox{\Hypertarget{_model_manager_8h_ad96c90c88ecca6e4ce72992b5256bc7b}\label{_model_manager_8h_ad96c90c88ecca6e4ce72992b5256bc7b}} 
+\index{ModelManager.h@{ModelManager.h}!PATH\_MINT\_GREEN\_BLOCK@{PATH\_MINT\_GREEN\_BLOCK}}
+\index{PATH\_MINT\_GREEN\_BLOCK@{PATH\_MINT\_GREEN\_BLOCK}!ModelManager.h@{ModelManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_MINT\_GREEN\_BLOCK}{PATH\_MINT\_GREEN\_BLOCK}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+MINT\+\_\+\+GREEN\+\_\+\+BLOCK~(\char`\"{}data/model/Grass\+\_\+\+Block.\+fbx\char`\"{})}
+
+\mbox{\Hypertarget{_model_manager_8h_a840affa55b71c094d0554c8271ad044d}\label{_model_manager_8h_a840affa55b71c094d0554c8271ad044d}} 
+\index{ModelManager.h@{ModelManager.h}!PATH\_RARD\_BLOCK@{PATH\_RARD\_BLOCK}}
+\index{PATH\_RARD\_BLOCK@{PATH\_RARD\_BLOCK}!ModelManager.h@{ModelManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_RARD\_BLOCK}{PATH\_RARD\_BLOCK}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+RARD\+\_\+\+BLOCK~(\char`\"{}data/model/Rard\+\_\+\+Block.\+fbx\char`\"{})}
+
+\mbox{\Hypertarget{_model_manager_8h_a6d825790e6fba5b733e349b810bbc7a9}\label{_model_manager_8h_a6d825790e6fba5b733e349b810bbc7a9}} 
+\index{ModelManager.h@{ModelManager.h}!PATH\_WALK\_ENEMY@{PATH\_WALK\_ENEMY}}
+\index{PATH\_WALK\_ENEMY@{PATH\_WALK\_ENEMY}!ModelManager.h@{ModelManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_WALK\_ENEMY}{PATH\_WALK\_ENEMY}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+WALK\+\_\+\+ENEMY~(\char`\"{}data/model/Walk\+Enemy.\+fbx\char`\"{})}
+
+\mbox{\Hypertarget{_model_manager_8h_a25ce7fd7f22cc7267200573d55424c6c}\label{_model_manager_8h_a25ce7fd7f22cc7267200573d55424c6c}} 
+\index{ModelManager.h@{ModelManager.h}!RARD\_BLOCK\_NUM@{RARD\_BLOCK\_NUM}}
+\index{RARD\_BLOCK\_NUM@{RARD\_BLOCK\_NUM}!ModelManager.h@{ModelManager.h}}
+\doxysubsubsection{\texorpdfstring{RARD\_BLOCK\_NUM}{RARD\_BLOCK\_NUM}}
+{\footnotesize\ttfamily \#define RARD\+\_\+\+BLOCK\+\_\+\+NUM~(2)}
+
+\mbox{\Hypertarget{_model_manager_8h_a9153462368932b6b84b730ad10180ee4}\label{_model_manager_8h_a9153462368932b6b84b730ad10180ee4}} 
+\index{ModelManager.h@{ModelManager.h}!WALK\_ENEMY\_MODEL\_NUM@{WALK\_ENEMY\_MODEL\_NUM}}
+\index{WALK\_ENEMY\_MODEL\_NUM@{WALK\_ENEMY\_MODEL\_NUM}!ModelManager.h@{ModelManager.h}}
+\doxysubsubsection{\texorpdfstring{WALK\_ENEMY\_MODEL\_NUM}{WALK\_ENEMY\_MODEL\_NUM}}
+{\footnotesize\ttfamily \#define WALK\+\_\+\+ENEMY\+\_\+\+MODEL\+\_\+\+NUM~(0)}
+

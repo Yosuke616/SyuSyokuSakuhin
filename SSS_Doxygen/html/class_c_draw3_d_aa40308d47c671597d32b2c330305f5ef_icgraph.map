@@ -1,0 +1,5 @@
+<map id="CDraw3D::GetModel" name="CDraw3D::GetModel">
+<area shape="rect" id="node1" title="モデル情報の取得" alt="" coords="192,31,332,57"/>
+<area shape="rect" id="node2" href="$class_c_enemy.html#aefe3d898f9ac30f42ceac5c7d4979d2f" title="描画処理" alt="" coords="20,5,129,32"/>
+<area shape="rect" id="node3" href="$class_c_enemy.html#af0e92672adfbe4b752d74182cbd28930" title="デストラクタ" alt="" coords="5,56,144,83"/>
+</map>

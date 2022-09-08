@@ -55,7 +55,7 @@ void SceneStage_1::Init() {
 	//モデル読込
 	ModelManager* pModelManager = ModelManager::GetInstance();
 	//ブロックとロゼッタ
-	pModelManager->AddModel(PATH_ROSALINA_X, ROSALINA_MODEL_X);
+	pModelManager->AddModel(PATH_WALK_ENEMY, WALK_ENEMY_MODEL_NUM);
 	pModelManager->AddModel(PATH_MINT_GREEN_BLOCK, MINT_GREEN_BLOCK_NUM);
 
 	//プレイヤー状態の取得

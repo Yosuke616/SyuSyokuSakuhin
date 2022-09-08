@@ -1,0 +1,38 @@
+<map id="StageSelect::Init" name="StageSelect::Init">
+<area shape="rect" id="node1" title="初期化処理" alt="" coords="5,563,124,589"/>
+<area shape="rect" id="node2" href="$class_object.html#a6530059316c8c6ea06c66e0de393dcce" title=" " alt="" coords="463,56,621,83"/>
+<area shape="rect" id="node3" href="$class_model_manager.html#a83cb97219f91ba9799cef863f129ce8c" title="モデルの追加" alt="" coords="195,563,368,589"/>
+<area shape="rect" id="node9" href="$class_object_manager.html#a9d66ba3c6343372fc166ea36658cc555" title="オブジェクトを追加する" alt="" coords="453,5,631,32"/>
+<area shape="rect" id="node13" href="$class_texture_manager.html#acf80525b5a1e493b08426989d2940870" title="テクスチャの追加" alt="" coords="187,512,376,539"/>
+<area shape="rect" id="node15" href="$class_load.html#adb65de6213882ed339efa37921587673" title="ロード画面のスレッド" alt="" coords="236,613,327,640"/>
+<area shape="rect" id="node16" href="$class_menu_manager.html#af6c63b05dda555dce5a7698c69b66f90" title="ステージセレクトメニュー" alt="" coords="172,284,391,311"/>
+<area shape="rect" id="node19" href="$class_model_manager.html#a76fa7f6c4bf14e44dc8fc22b41d18436" title="インスタンス化" alt="" coords="449,360,635,387"/>
+<area shape="rect" id="node21" href="$class_texture_manager.html#ab73eee48ba8c35281558094e2f84013d" title="インスタンス化" alt="" coords="445,411,639,437"/>
+<area shape="rect" id="node24" href="$class_texture_manager.html#a8448501f02d76a5c2362bbed98e89728" title="テクスチャ取得" alt="" coords="449,461,635,488"/>
+<area shape="rect" id="node29" href="$class_load.html#a24754993772c7122c83d696e6d887dbb" title="ロード画面は終わる" alt="" coords="241,664,322,691"/>
+<area shape="rect" id="node30" href="$class_c_camera.html#a67560cf6a017ec3b8a59129be0d0100a" title=" " alt="" coords="229,715,334,741"/>
+<area shape="rect" id="node31" href="$class_object.html#a824beb41e45f1fdecc88c15e11983156" title=" " alt="" coords="204,765,359,792"/>
+<area shape="rect" id="node32" href="$class_object_manager.html#ad2782406e7482eeddffd1941a810d6e6" title="objectマネージャーのインスタンス化" alt="" coords="187,816,375,843"/>
+<area shape="rect" id="node34" href="$class_menu_manager.html#a659dcf3bbe0c9d9771ff15fff87bf449" title="インスタンス生成" alt="" coords="187,867,376,893"/>
+<area shape="rect" id="node35" href="$class_c_camera.html#a7d4ee70503ea51954543621268bfb295" title=" " alt="" coords="231,917,332,944"/>
+<area shape="rect" id="node4" href="$main_app_8cpp.html#a965053cc7c41d010d359091035281310" title=" " alt="" coords="501,563,583,589"/>
+<area shape="rect" id="node5" href="$main_app_8cpp.html#a76385629cd459c9e0fcda690542edb07" title=" " alt="" coords="479,613,605,640"/>
+<area shape="rect" id="node6" href="$main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="493,664,591,691"/>
+<area shape="rect" id="node7" href="$class_c_assimp_model.html#a75759219911dbbc1072687f680a187ec" title=" " alt="" coords="469,715,615,741"/>
+<area shape="rect" id="node8" href="$class_c_assimp_model.html#a9875e0478db4afca70de506809f88381" title=" " alt="" coords="719,715,884,741"/>
+<area shape="rect" id="node10" href="$class_object.html#aa6b2b605e64fdad13e3e52346353e03a" title="描画順を取得する関数" alt="" coords="726,107,877,133"/>
+<area shape="rect" id="node11" href="$class_object.html#aa4113e76535e952da736eb7df90a1dc7" title="更新順を取得する関数" alt="" coords="720,5,883,32"/>
+<area shape="rect" id="node12" href="$class_object.html#ac608bdc75130f88cd292bc8cd7a016c5" title="オブジェクトの初期化 @detail オブジェクトが持つコンポーネントの初期化" alt="" coords="753,56,849,83"/>
+<area shape="rect" id="node14" href="$_texture_8cpp.html#a7d156479ecc3d3bab74cdc73aebe0426" title=" " alt="" coords="465,512,619,539"/>
+<area shape="rect" id="node17" href="$class_menu_manager.html#ac1759aa35665506ebd7fb930bf2e4851" title="メニューオブジェクトの追加" alt="" coords="459,107,625,133"/>
+<area shape="rect" id="node18" href="$class_menu_manager.html#a72ca1a40cc8ebbe9aeb82da1e46575ad" title="メニューリストの削除" alt="" coords="451,208,633,235"/>
+<area shape="rect" id="node23" href="$class_model_manager.html#ae7a58155fc4e317ae505ebd1e3a1f667" title="モデルの取得" alt="" coords="457,259,627,285"/>
+<area shape="rect" id="node25" href="$class_c_transform.html#adea1eaa3582e41fa1572cdc08124f9fb" title="座標の設定" alt="" coords="461,309,623,336"/>
+<area shape="rect" id="node26" href="$class_menu_manager.html#ae92a51fc7b9b001c44f966cdeb907483" title="初期化" alt="" coords="472,157,612,184"/>
+<area shape="rect" id="node20" href="$class_model_manager.html#a9b0d22b1baf59c5b566e82fcd8ca424a" title="コンストラクタ" alt="" coords="701,360,901,387"/>
+<area shape="rect" id="node22" href="$class_texture_manager.html#ad76abb178b37cedf4514eb0154349935" title="コンストラクタ" alt="" coords="693,411,909,437"/>
+<area shape="rect" id="node27" href="$class_scene_manager.html#a972ad174745419ebc980802a5f6e874e" title=" " alt="" coords="718,157,885,184"/>
+<area shape="rect" id="node28" href="$class_scene_manager.html#a52085e6737c23b491c228e86781af808" title=" " alt="" coords="957,157,1161,184"/>
+<area shape="rect" id="node33" href="$class_object_manager.html#a6fa9372c7c3a8da88412f4158ca3dfd9" title="コンストラクタ" alt="" coords="439,816,645,843"/>
+<area shape="rect" id="node36" href="$class_c_camera.html#aa3f7c288082765833d3ea4553a7cb84e" title=" " alt="" coords="452,917,632,944"/>
+</map>

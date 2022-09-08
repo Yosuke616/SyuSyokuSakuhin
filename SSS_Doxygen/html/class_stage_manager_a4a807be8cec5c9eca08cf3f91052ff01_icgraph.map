@@ -1,0 +1,4 @@
+<map id="StageManager::GetInstance" name="StageManager::GetInstance">
+<area shape="rect" id="node1" title="インスタンス生成" alt="" coords="172,5,356,32"/>
+<area shape="rect" id="node2" href="$class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="5,5,124,32"/>
+</map>

@@ -1,0 +1,76 @@
+\hypertarget{_draw_mesh_component_8h_source}{}\doxysection{Draw\+Mesh\+Component.\+h}
+\label{_draw_mesh_component_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/DrawMeshComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/DrawMeshComponent.h}}
+\mbox{\hyperlink{_draw_mesh_component_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_DRAW\_MESH\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_DRAW\_MESH\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{mesh_8h}{mesh.h}}"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//前方宣言}}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_transform}{CTransform}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_draw_mesh}{CDrawMesh}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{22 \textcolor{keyword}{private}:}
+\DoxyCodeLine{23     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{25 \textcolor{comment}{}    \textcolor{keywordtype}{float} m\_fTexSizeX;}
+\DoxyCodeLine{27     \textcolor{keywordtype}{float} m\_fTexSizeZ;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{31 \textcolor{comment}{}    HRESULT MakeVertex(}
+\DoxyCodeLine{32         \textcolor{keywordtype}{float} fSizeBlockX,\textcolor{keywordtype}{float} fSizeBlockZ,}
+\DoxyCodeLine{33         \textcolor{keywordtype}{float} fTexSizeX,\textcolor{keywordtype}{float} fTexSizeZ,}
+\DoxyCodeLine{34         XMFLOAT3 normal);}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{37     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{39 \textcolor{comment}{}    XMFLOAT2 \mbox{\hyperlink{class_c_draw_mesh_afce0f431333b05234c9ca5e482263946}{m\_Offset}};}
+\DoxyCodeLine{41     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_c_draw_mesh_a20b42efead4f057758bb32e22f03964f}{m\_fWidth}};}
+\DoxyCodeLine{43     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_c_draw_mesh_a69db97d620a416c44b89bcf7b718ee4e}{m\_fHeight}};}
+\DoxyCodeLine{45     XMFLOAT3 \mbox{\hyperlink{class_c_draw_mesh_a7ceff529e20037d5517dca35df49bd0e}{m\_fNormal}};}
+\DoxyCodeLine{47     \mbox{\hyperlink{struct_m_e_s_h}{MESH}} \mbox{\hyperlink{class_c_draw_mesh_ac65dc3097284e2cac0bc4a8233a6dba2}{m\_Mesh}};}
+\DoxyCodeLine{49     \mbox{\hyperlink{struct_m_a_t_e_r_i_a_l}{MATERIAL}} \mbox{\hyperlink{class_c_draw_mesh_a3cdd77f0bca1cb47c44eca86cc2c02e6}{m\_Material}};}
+\DoxyCodeLine{51     \mbox{\hyperlink{class_c_transform}{CTransform}}* \mbox{\hyperlink{class_c_draw_mesh_abf4dae3601175f48b293de5fe37745a4}{m\_pTransform}};}
+\DoxyCodeLine{53     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_c_draw_mesh_ab4ab7d6042f134d468be2a080814c642}{m\_nAnim}};}
+\DoxyCodeLine{55     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_c_draw_mesh_a08b1594ec03fd1e37042baef353d855c}{m\_nSplitX}};}
+\DoxyCodeLine{57     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_c_draw_mesh_a3cff830b98c2bfa1a684847da5043af6}{m\_nSplitY}};}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{keyword}{public}:}
+\DoxyCodeLine{63     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{67 \textcolor{comment}{}    \mbox{\hyperlink{class_c_draw_mesh_a396aac694e99cdb19858d20cbccada58}{CDrawMesh}}();}
+\DoxyCodeLine{69     \mbox{\hyperlink{class_c_draw_mesh_a5ed6d0cca62f35202ee9c9ff17b37efb}{\string~CDrawMesh}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_a6100f09bd115ce3f1c8a7e450600d4fc}{Start}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_a2371b08e617e08cf6420681f0f1dcd04}{Update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_a4d4c6a30bae2d1318802f1ebf5fb22cb}{Draw}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_ab2e186b97bd1ac5d706665804d1ebe5d}{SetTexture}}(ID3D11ShaderResourceView* pTex);}
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_ae22c52da902e11fd2a4d14f551b398a0}{SetUVsize}}(XMFLOAT2 uv);}
+\DoxyCodeLine{83     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_a480544454f885653c931a7b9f8d9163b}{SetSize}}(\textcolor{keywordtype}{float} width,\textcolor{keywordtype}{float} height);}
+\DoxyCodeLine{85     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_a96c867c85492c1dc932b3b85cc596e2f}{SetDiffuse}}(XMFLOAT4 Diffuse);}
+\DoxyCodeLine{87     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_ac93cb85b0306060d6387f60ab9424898}{SetAmbient}}(XMFLOAT4 Ambient);}
+\DoxyCodeLine{89     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_a12ccdca43362b7ceb8643216d22a9885}{SetSpecular}}(XMFLOAT4 Specular); }
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_a8ccac154329340eab701883d886c3384}{SetEmissive}}(XMFLOAT4 Emissive);}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_a395db7069e7f8eed9fab0c9c73478938}{SetPower}}(\textcolor{keywordtype}{float} power);}
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_ae267f4deeb9b7cfb3eb622a020827479}{SetNormal}}(\textcolor{keywordtype}{float} fx,\textcolor{keywordtype}{float} fy,\textcolor{keywordtype}{float} fz);}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_a728f617ebfc3b942d19563bc35dd979a}{SetAnimFrame}}(\textcolor{keywordtype}{int} Anim);}
+\DoxyCodeLine{99     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_ad989ef32cc5e683f4a645e29bb7c9801}{SetAnimSplit}}(\textcolor{keywordtype}{int} nx,\textcolor{keywordtype}{int} ny);}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_a814af61d839a207caef3f7686752b64a}{SetOffSet}}(XMFLOAT2 offset);}
+\DoxyCodeLine{103     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw_mesh_ac7a99d87984f30c7b06c8a9609e2cda3}{SetColor}}(\textcolor{keywordtype}{float} r,\textcolor{keywordtype}{float} g,\textcolor{keywordtype}{float} b);}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{107     \mbox{\hyperlink{struct_m_e_s_h}{MESH}}* \mbox{\hyperlink{class_c_draw_mesh_af8243f0d818993df9ff6446312041ebd}{GetMesh}}();}
+\DoxyCodeLine{108 \};}
+\DoxyCodeLine{109 }
+\DoxyCodeLine{110 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

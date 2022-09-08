@@ -1,0 +1,8 @@
+<map id="SceneManager::Init" name="SceneManager::Init">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,140,57"/>
+<area shape="rect" id="node2" href="$class_scene_game.html#a5f5bb9169295264e15c157b98fc17776" title="インスタンス取得" alt="" coords="189,5,361,32"/>
+<area shape="rect" id="node3" href="$class_scene_manager.html#a38b987d7f23fed149e20c534a0cf848e" title=" " alt="" coords="188,56,363,83"/>
+<area shape="rect" id="node4" href="$main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="411,5,510,32"/>
+<area shape="rect" id="node5" href="$class_scene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title=" " alt="" coords="419,56,503,83"/>
+<area shape="rect" id="node6" href="$class_scene.html#aa94fb256b8a862aee810db4f1e8d56a4" title=" " alt="" coords="411,107,511,133"/>
+</map>

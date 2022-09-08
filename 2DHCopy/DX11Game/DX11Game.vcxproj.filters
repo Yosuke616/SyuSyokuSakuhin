@@ -181,6 +181,9 @@
     <ClCompile Include="SceneSelect.cpp">
       <Filter>シーン</Filter>
     </ClCompile>
+    <ClCompile Include="Load.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainApp.h">
@@ -332,6 +335,12 @@
     </ClInclude>
     <ClInclude Include="SceneSelect.h">
       <Filter>シーン</Filter>
+    </ClInclude>
+    <ClInclude Include="Load.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneStage_2.h">
+      <Filter>ステージ</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

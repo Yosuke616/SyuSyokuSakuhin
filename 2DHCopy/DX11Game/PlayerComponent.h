@@ -30,6 +30,7 @@ enum PLAYER_STATE {
 	FALL_PLAYER,		//落下している
 	HIT_PLAYER,			//敵にヒットしたとき
 	MISS_PLAYER,		//いわゆるゲームオーバー
+	CLEAR_PLAYER,		//クリアした状態
 	
 	STOP_PLAYER,		//プレイヤーの足を止めたいとき
 
@@ -88,12 +89,16 @@ private:
 	bool m_bAirDead;
 	/** @brief 敵にぶつかり一定時間落下したらゲームオーバーメニューを出す*/
 	int m_nMissCnt;
+	/** @brief ステージセレクトに行くための時間(所謂ディレイ)*/
+	bool m_bClearFlg;
 
 	//メンバ関数
 	/** @brief プレイヤーがどの方向から敵に当たったかを判別*/
 	int CollEnemy(Object* pObject);
 	/** @brief 攻撃ボタンが押された際に専用オブジェクトの生成*/
 	void CreateAttack();
+	/** @brief 失敗判定にぶつかったときにフラグを管理する関数*/
+	bool CollMiss(Object* pObject);
 
 protected:
 	//メンバ変数
@@ -130,6 +135,8 @@ public:
 	bool GetPlayerJump();
 	/** @brief プレイヤーの状態を取得する関数*/
 	PLAYER_STATE GetPlayerSta();
+	/** @brief クリアしたかどうかを取得する関数*/
+	bool GetClearFlg();
 };
 
 

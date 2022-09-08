@@ -1,0 +1,101 @@
+\hypertarget{_player_component_8h_source}{}\doxysection{Player\+Component.\+h}
+\label{_player_component_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/PlayerComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/PlayerComponent.h}}
+\mbox{\hyperlink{_player_component_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_PLAYER\_COMPONENT\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_PLAYER\_COMPONENT\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{//インクルード部}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{//前方宣言}}
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_input_manager}{InputManager}};}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_transform}{CTransform}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_object}{Object}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_collider}{CCollider}};}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_draw2_d}{CDraw2D}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_anim_mesh}{CAnimMesh}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{24 \textcolor{keyword}{enum} \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}{PLAYER\_STATE}} \{}
+\DoxyCodeLine{25     \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94adae7c3c550e30258845f9f4355f8b433}{IDLE\_PLAYER}} = 0,}
+\DoxyCodeLine{26     \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a5948c9dc0bb7de02f24920ad0f60c902}{RUN\_PLAYER}},           \textcolor{comment}{//横移動}}
+\DoxyCodeLine{27     \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a7c8a207520e3dc3179aeabc99c1ca314}{DUSH\_PLAYER}},     \textcolor{comment}{//エアダッシュ見たいのを作りたい（作ってない）}}
+\DoxyCodeLine{28     \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94acaabad92b8096aba343d718196023e32}{JUMP\_PLAYER}},     \textcolor{comment}{//ジャンプしている}}
+\DoxyCodeLine{29     \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94ab0a68dd52926ffb8d19633420ac5eece}{ATTACK\_PLAYER}},     \textcolor{comment}{//攻撃}}
+\DoxyCodeLine{30     \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94ac19c906d92b699baf264129a04ad0b5b}{FALL\_PLAYER}},     \textcolor{comment}{//落下している}}
+\DoxyCodeLine{31     \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94af16f871a2d70b0806115564a4dea2b3a}{HIT\_PLAYER}},           \textcolor{comment}{//敵にヒットしたとき}}
+\DoxyCodeLine{32     \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a776f5db954d0cfbd0571c41c3dfb6388}{MISS\_PLAYER}},     \textcolor{comment}{//いわゆるゲームオーバー}}
+\DoxyCodeLine{33     \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94acce192e5e5bcf52749188eb28a4ffd6d}{CLEAR\_PLAYER}},       \textcolor{comment}{//クリアした状態}}
+\DoxyCodeLine{34     }
+\DoxyCodeLine{35     \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94ae50e0782ed5b84736057efdbac17c75d}{STOP\_PLAYER}},     \textcolor{comment}{//プレイヤーの足を止めたいとき}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a7bd3bc5b03aa02412bbf6d64607ce73c}{MAX\_PLAYER}}}
+\DoxyCodeLine{38 \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_player}{CPlayer}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{42 \textcolor{keyword}{private}:}
+\DoxyCodeLine{43     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{45 \textcolor{comment}{}    \mbox{\hyperlink{class_c_transform}{CTransform}}* m\_pPlayer;}
+\DoxyCodeLine{47     \mbox{\hyperlink{class_c_anim_mesh}{CAnimMesh}}*    m\_pDraw2D;}
+\DoxyCodeLine{49     \mbox{\hyperlink{class_c_collider}{CCollider}}* m\_pCollider;}
+\DoxyCodeLine{51     \mbox{\hyperlink{class_input_manager}{InputManager}}* m\_pInput;}
+\DoxyCodeLine{53     XMFLOAT2 m\_OldPos;}
+\DoxyCodeLine{55     \textcolor{keywordtype}{bool} m\_bGround;}
+\DoxyCodeLine{57     \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}{PLAYER\_STATE}} m\_ePlayer;}
+\DoxyCodeLine{59     \textcolor{keywordtype}{bool} m\_bJump;}
+\DoxyCodeLine{61     \textcolor{keywordtype}{bool} m\_bPawer\_UP;}
+\DoxyCodeLine{63     \textcolor{keywordtype}{int} m\_nStar\_Time;}
+\DoxyCodeLine{65     \textcolor{keywordtype}{bool} m\_bROL;}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} m\_nHitVec;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{bool} m\_bHitFlg;}
+\DoxyCodeLine{71     \textcolor{keywordtype}{bool} m\_bAttack;}
+\DoxyCodeLine{73     \textcolor{keywordtype}{int} m\_nCoolTime;}
+\DoxyCodeLine{75     \mbox{\hyperlink{class_object}{Object}}* m\_pAttackObj;}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77     \textcolor{comment}{//物に当たっているかの判定(消す)}}
+\DoxyCodeLine{78     \textcolor{keywordtype}{bool} bHitObj = \textcolor{keyword}{false};}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{81     \textcolor{keywordtype}{int} m\_nDushCnt;}
+\DoxyCodeLine{83     \textcolor{keywordtype}{int} m\_nDushCoolTime;}
+\DoxyCodeLine{86     \textcolor{keywordtype}{bool} m\_bAirDushFlg;}
+\DoxyCodeLine{89     \textcolor{keywordtype}{bool} m\_bAirDead;}
+\DoxyCodeLine{91     \textcolor{keywordtype}{int} m\_nMissCnt;}
+\DoxyCodeLine{93     \textcolor{keywordtype}{bool} m\_bClearFlg;}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{97 \textcolor{comment}{}    \textcolor{keywordtype}{int} CollEnemy(\mbox{\hyperlink{class_object}{Object}}* pObject);}
+\DoxyCodeLine{99     \textcolor{keywordtype}{void} CreateAttack();}
+\DoxyCodeLine{101     \textcolor{keywordtype}{bool} CollMiss(\mbox{\hyperlink{class_object}{Object}}* pObject);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{104     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{107     }
+\DoxyCodeLine{108 \textcolor{keyword}{public}:}
+\DoxyCodeLine{109     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{110 }
+\DoxyCodeLine{111     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{113 \textcolor{comment}{}    \mbox{\hyperlink{class_c_player_a931a59adf2ada5376122e30b33ae2c4c}{CPlayer}}();}
+\DoxyCodeLine{115     \mbox{\hyperlink{class_c_player_ae9122c819d61dd8e2f7a890040c04a61}{\string~CPlayer}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{117     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_player_aad0dcf0dbb43561b5202fb20974e43a3}{Start}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{119     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_player_a4582a8020f6734842edea64909bd4b40}{Update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{121     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_player_a9f4de6ca09dfa30de3b06c9d548a0d8f}{Draw}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{123     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_player_abede91d4fa024fae2396593ce5532b17}{OnCollisionEnter}}(\mbox{\hyperlink{class_object}{Object}}* pObject) \textcolor{keyword}{override};}
+\DoxyCodeLine{125     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_player_af3ea32b95b8b7ac0859098a227564c66}{SetPlayerState}}(\mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}{PLAYER\_STATE}} PlayerSta);}
+\DoxyCodeLine{127     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_player_a74a2ae35e6ee85f5d8db25b65fe61062}{ChangeTexture}}();}
+\DoxyCodeLine{129     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_c_player_a242bd1c7a6b560a0886670c4d4fd2cb9}{GetPlayerROL}}();}
+\DoxyCodeLine{131     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_player_a0fbe6a654daa88bd62f8895f4ac3e540}{SetCoolTime}}(\textcolor{keywordtype}{int} CoolTime);}
+\DoxyCodeLine{133     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_player_a3e3fa542e97605dcad912d2beb7c2041}{SetAttackFlg}}(\textcolor{keywordtype}{bool} Attack);}
+\DoxyCodeLine{135     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_c_player_a2010fc46d322bbe154e98752e242f767}{GetPlayerJump}}();}
+\DoxyCodeLine{137     \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}{PLAYER\_STATE}} \mbox{\hyperlink{class_c_player_a5e03b46500ed0d60c75ed8852f43cc45}{GetPlayerSta}}();}
+\DoxyCodeLine{139     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_c_player_acde5e2196354f96ea915c764f7a7bf48}{GetClearFlg}}();}
+\DoxyCodeLine{140 \};}
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 }
+\DoxyCodeLine{143 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

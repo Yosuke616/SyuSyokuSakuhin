@@ -1,0 +1,69 @@
+\hypertarget{_enemy_component_8h_source}{}\doxysection{Enemy\+Component.\+h}
+\label{_enemy_component_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/EnemyComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/EnemyComponent.h}}
+\mbox{\hyperlink{_enemy_component_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_ENEMY\_COMPONENT\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_ENEMY\_COMPONENT\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_transform}{CTransform}};}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_object}{Object}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_collider}{CCollider}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_draw3_d}{CDraw3D}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{22 \textcolor{comment}{//敵の種類}}
+\DoxyCodeLine{23 \textcolor{keyword}{enum} \mbox{\hyperlink{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707db}{ENEMY\_TYPE}} \{}
+\DoxyCodeLine{24     \mbox{\hyperlink{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707dba7992aae9716d2ec5f6c07d9a36ea19b7}{ENEMY\_WALK}} = 0,}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26     \mbox{\hyperlink{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707dbaf62513f74baa670aa319e75242a047d8}{MAX\_ENEMY\_TYPE}}}
+\DoxyCodeLine{27 \};}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{comment}{//敵の状態}}
+\DoxyCodeLine{30 \textcolor{keyword}{enum} \mbox{\hyperlink{_enemy_component_8h_a8168a6db177771b0dc1deae7224211ac}{ENEMY\_STATE}} \{}
+\DoxyCodeLine{31     \mbox{\hyperlink{_enemy_component_8h_a8168a6db177771b0dc1deae7224211aca2d6c5ed02c9d388eeed83e6dfacc0c1e}{ENEMY\_DEFAULT}} = 0,}
+\DoxyCodeLine{32     \mbox{\hyperlink{_enemy_component_8h_a8168a6db177771b0dc1deae7224211acaca2ba33cb0e3372bfb018310e00d1e76}{ENEMY\_DELETE}},}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \mbox{\hyperlink{_enemy_component_8h_a8168a6db177771b0dc1deae7224211acae9e90c4cfe499592484e1bc2602d49e1}{MAX\_ENEMY\_STATE}}}
+\DoxyCodeLine{35 \};}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{42 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_enemy}{CEnemy}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{43 \textcolor{keyword}{private}:}
+\DoxyCodeLine{44     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{46 \textcolor{comment}{}    \mbox{\hyperlink{class_c_transform}{CTransform}}* m\_pTransform;}
+\DoxyCodeLine{48     \mbox{\hyperlink{class_c_draw3_d}{CDraw3D}}* m\_pDraw;}
+\DoxyCodeLine{50     \mbox{\hyperlink{class_c_collider}{CCollider}}* m\_pCollider;}
+\DoxyCodeLine{52     \textcolor{keywordtype}{bool} m\_bRightorLeft;}
+\DoxyCodeLine{54     XMFLOAT2 m\_OldPos;}
+\DoxyCodeLine{56     \mbox{\hyperlink{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707db}{ENEMY\_TYPE}} m\_eEnemy\_Type;}
+\DoxyCodeLine{58     \mbox{\hyperlink{_enemy_component_8h_a8168a6db177771b0dc1deae7224211ac}{ENEMY\_STATE}} m\_eEnemy\_State;}
+\DoxyCodeLine{60     \textcolor{keywordtype}{bool} m\_bStopCom;}
+\DoxyCodeLine{62     \textcolor{keywordtype}{bool} m\_bRoL;}
+\DoxyCodeLine{65     \textcolor{keywordtype}{bool} m\_bStopVel;}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} m\_nBlink;}
+\DoxyCodeLine{69     \textcolor{keywordtype}{int} m\_nDeleteFlg;}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{74     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 \textcolor{keyword}{public}:}
+\DoxyCodeLine{79     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{83 \textcolor{comment}{}    \mbox{\hyperlink{class_c_enemy_a0dd455c1751be6ddd971a27c652172fa}{CEnemy}}();}
+\DoxyCodeLine{85     \mbox{\hyperlink{class_c_enemy_af0e92672adfbe4b752d74182cbd28930}{\string~CEnemy}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{87     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_enemy_abc3651c176dd9f5bf044e8f41adb0532}{Start}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{89     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_enemy_aac23422c9e7f8b091cd91de08b73b25f}{Update}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{91     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_enemy_aefe3d898f9ac30f42ceac5c7d4979d2f}{Draw}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{93     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_enemy_a39e688989d08a7feec4f5517d28ed286}{OnCollisionEnter}}(\mbox{\hyperlink{class_object}{Object}}* pObject)\textcolor{keyword}{override};}
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_enemy_a88241d902de08c9727a6f12fec99bfe6}{SetEnemyType}}(\mbox{\hyperlink{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707db}{ENEMY\_TYPE}} type);}
+\DoxyCodeLine{96 \};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

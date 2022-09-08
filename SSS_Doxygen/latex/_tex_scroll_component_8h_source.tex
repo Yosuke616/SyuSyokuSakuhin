@@ -1,0 +1,56 @@
+\hypertarget{_tex_scroll_component_8h_source}{}\doxysection{Tex\+Scroll\+Component.\+h}
+\label{_tex_scroll_component_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/TexScrollComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/TexScrollComponent.h}}
+\mbox{\hyperlink{_tex_scroll_component_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_TEX\_SCROLL\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_TEX\_SCROLL\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{//インクルード}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{//前方宣言}}
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_draw2_d}{CDraw2D}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_tex_scroll}{CTexScroll}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{20 \textcolor{keyword}{private}:}
+\DoxyCodeLine{21     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{23 \textcolor{comment}{}    \mbox{\hyperlink{class_c_draw2_d}{CDraw2D}}* m\_pDraw2D;}
+\DoxyCodeLine{25     \textcolor{keywordtype}{float}*      m\_pPosX;}
+\DoxyCodeLine{27     \textcolor{keywordtype}{float}*      m\_pPosY;}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{30     XMFLOAT2 m\_Scroll;}
+\DoxyCodeLine{32     XMFLOAT2 m\_UVscroll;}
+\DoxyCodeLine{34     XMFLOAT2 m\_ScrollValue;}
+\DoxyCodeLine{36     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} m\_bScroll;}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{41     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{public}:}
+\DoxyCodeLine{46     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{50 \textcolor{comment}{}    \mbox{\hyperlink{class_c_tex_scroll_a52335d9e7b01d0ed5dff0791f0d7cadb}{CTexScroll}}();}
+\DoxyCodeLine{52     \mbox{\hyperlink{class_c_tex_scroll_a8c71f0b1720441eefb06f2f40c24cc6e}{\string~CTexScroll}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_tex_scroll_a623943f74c9504e53a50440dffae7b96}{Start}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_tex_scroll_a1ab093fcc89dc3130a59c01eb9f456a7}{Update}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_tex_scroll_a600ce1df5cdd43027083d7fbcb355bea}{Draw}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{comment}{//セッター}}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_tex_scroll_a97f08d6a1c58f594022d5f1057f768f7}{SetAxizX}}(\textcolor{keywordtype}{float}* px);}
+\DoxyCodeLine{62     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_tex_scroll_a48e42b36cd7512996161a8e2460409ac}{SetAxizY}}(\textcolor{keywordtype}{float}* py);}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_tex_scroll_a6677211c17b4d00e27ab38223ab22592}{SetScrollValueX}}(\textcolor{keywordtype}{float} fx);}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_tex_scroll_a7fa8a29dc3dc2e28de0c7b290ddc418a}{SetScrollValueY}}(\textcolor{keywordtype}{float} fy);}
+\DoxyCodeLine{65     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_tex_scroll_ac5f44cfe10e58d2cb60e8f07b0189b36}{Scroll}}(\textcolor{keywordtype}{bool} bScroll);}
+\DoxyCodeLine{66 \};}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

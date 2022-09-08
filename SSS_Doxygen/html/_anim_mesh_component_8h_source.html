@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/AnimMeshComponent.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">AnimMeshComponent.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_anim_mesh_component_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef _ANIM_MESH_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define _ANIM_MESH_H_</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_draw_mesh_component_8h.html">DrawMeshComponent.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_c_anim_mesh.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="class_c_anim_mesh.html">CAnimMesh</a> :<span class="keyword">public</span> <a class="code hl_class" href="class_c_draw_mesh.html">CDrawMesh</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">/*メンバ変数*/</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">int</span> m_nFrame;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">int</span> m_nAnimCount;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">bool</span> m_bLoop;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">/*メンバ関数*/</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> CreateAnimVertex();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">/*メンバ変数*/</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">/*メンバ関数*/</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">/*メンバ変数*/</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">/*メンバ関数*/</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <a class="code hl_function" href="class_c_anim_mesh.html#a415518ac092141649c127b0de0ecc452">CAnimMesh</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="class_c_anim_mesh.html#afbe874e6310b66e4a50537b0a9073cc4">~CAnimMesh</a>()<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_anim_mesh.html#a4477eb0930aba2ceb6ec3976aeaa28ae">Start</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_anim_mesh.html#a052d8884ad2a80967e09b28e46a4cafa">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_anim_mesh.html#a45bca41fe56b3421b59058ce6d336366">Draw</a>()<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_anim_mesh.html#a5c35d445c9ff445130cadabb575e2f13">SetSwapFrame</a>(<span class="keywordtype">int</span> nCount);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_anim_mesh.html#a9966dcb8778d3474050f9d8bfc8addfd">SetLoop</a>(<span class="keywordtype">bool</span> loop);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_anim_mesh.html#a3a4e680b70558835fa7ddcc60aca06fa">StartAnim</a>(ID3D11ShaderResourceView* pTex,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        XMFLOAT3 pos, XMFLOAT2 size, <span class="keywordtype">int</span> split_x, <span class="keywordtype">int</span> split_y,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <span class="keywordtype">bool</span> loop,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        <span class="keywordtype">int</span> swap_frame = 1,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>        XMFLOAT3 color = XMFLOAT3(1.0f, 1.0f, 1.0f)</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        );</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_anim_mesh.html#a68647db370f06e36abc97eab88ac1563">SetVertex</a>(<span class="keywordtype">bool</span> bRoL);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    HRESULT <a class="code hl_function" href="class_c_anim_mesh.html#a0f9791e44799f2dedda3756fbec20bba">SetMeshVertex</a>(ID3D11Device* pDevice, <a class="code hl_struct" href="struct_m_e_s_h.html">MESH</a>* pMesh, <a class="code hl_struct" href="struct_v_e_r_t_e_x__3_d.html">VERTEX_3D</a> vertexWk[]);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_draw_mesh_component_8h_html"><div class="ttname"><a href="_draw_mesh_component_8h.html">DrawMeshComponent.h</a></div></div>
+<div class="ttc" id="aclass_c_anim_mesh_html"><div class="ttname"><a href="class_c_anim_mesh.html">CAnimMesh</a></div><div class="ttdef"><b>Definition:</b> AnimMeshComponent.h:20</div></div>
+<div class="ttc" id="aclass_c_anim_mesh_html_a052d8884ad2a80967e09b28e46a4cafa"><div class="ttname"><a href="class_c_anim_mesh.html#a052d8884ad2a80967e09b28e46a4cafa">CAnimMesh::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdoc">更新処理</div><div class="ttdef"><b>Definition:</b> AnimMeshComponent.cpp:86</div></div>
+<div class="ttc" id="aclass_c_anim_mesh_html_a0f9791e44799f2dedda3756fbec20bba"><div class="ttname"><a href="class_c_anim_mesh.html#a0f9791e44799f2dedda3756fbec20bba">CAnimMesh::SetMeshVertex</a></div><div class="ttdeci">HRESULT SetMeshVertex(ID3D11Device *pDevice, MESH *pMesh, VERTEX_3D vertexWk[])</div><div class="ttdoc">テクスチャを左右反転させる関数</div><div class="ttdef"><b>Definition:</b> AnimMeshComponent.cpp:224</div></div>
+<div class="ttc" id="aclass_c_anim_mesh_html_a3a4e680b70558835fa7ddcc60aca06fa"><div class="ttname"><a href="class_c_anim_mesh.html#a3a4e680b70558835fa7ddcc60aca06fa">CAnimMesh::StartAnim</a></div><div class="ttdeci">static void StartAnim(ID3D11ShaderResourceView *pTex, XMFLOAT3 pos, XMFLOAT2 size, int split_x, int split_y, bool loop, int swap_frame=1, XMFLOAT3 color=XMFLOAT3(1.0f, 1.0f, 1.0f))</div><div class="ttdoc">アニメーションの設定</div><div class="ttdef"><b>Definition:</b> AnimMeshComponent.cpp:193</div></div>
+<div class="ttc" id="aclass_c_anim_mesh_html_a415518ac092141649c127b0de0ecc452"><div class="ttname"><a href="class_c_anim_mesh.html#a415518ac092141649c127b0de0ecc452">CAnimMesh::CAnimMesh</a></div><div class="ttdeci">CAnimMesh()</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> AnimMeshComponent.cpp:12</div></div>
+<div class="ttc" id="aclass_c_anim_mesh_html_a4477eb0930aba2ceb6ec3976aeaa28ae"><div class="ttname"><a href="class_c_anim_mesh.html#a4477eb0930aba2ceb6ec3976aeaa28ae">CAnimMesh::Start</a></div><div class="ttdeci">void Start() override</div><div class="ttdoc">初期化処理</div><div class="ttdef"><b>Definition:</b> AnimMeshComponent.cpp:74</div></div>
+<div class="ttc" id="aclass_c_anim_mesh_html_a45bca41fe56b3421b59058ce6d336366"><div class="ttname"><a href="class_c_anim_mesh.html#a45bca41fe56b3421b59058ce6d336366">CAnimMesh::Draw</a></div><div class="ttdeci">void Draw() override</div><div class="ttdoc">描画処理</div><div class="ttdef"><b>Definition:</b> AnimMeshComponent.cpp:112</div></div>
+<div class="ttc" id="aclass_c_anim_mesh_html_a5c35d445c9ff445130cadabb575e2f13"><div class="ttname"><a href="class_c_anim_mesh.html#a5c35d445c9ff445130cadabb575e2f13">CAnimMesh::SetSwapFrame</a></div><div class="ttdeci">void SetSwapFrame(int nCount)</div><div class="ttdoc">アニメーションカウンタの設定</div><div class="ttdef"><b>Definition:</b> AnimMeshComponent.cpp:169</div></div>
+<div class="ttc" id="aclass_c_anim_mesh_html_a68647db370f06e36abc97eab88ac1563"><div class="ttname"><a href="class_c_anim_mesh.html#a68647db370f06e36abc97eab88ac1563">CAnimMesh::SetVertex</a></div><div class="ttdeci">void SetVertex(bool bRoL)</div><div class="ttdoc">テクスチャを反転させる準備</div><div class="ttdef"><b>Definition:</b> AnimMeshComponent.cpp:245</div></div>
+<div class="ttc" id="aclass_c_anim_mesh_html_a9966dcb8778d3474050f9d8bfc8addfd"><div class="ttname"><a href="class_c_anim_mesh.html#a9966dcb8778d3474050f9d8bfc8addfd">CAnimMesh::SetLoop</a></div><div class="ttdeci">void SetLoop(bool loop)</div><div class="ttdoc">アニメーションがループするかどうかの設定</div><div class="ttdef"><b>Definition:</b> AnimMeshComponent.cpp:178</div></div>
+<div class="ttc" id="aclass_c_anim_mesh_html_afbe874e6310b66e4a50537b0a9073cc4"><div class="ttname"><a href="class_c_anim_mesh.html#afbe874e6310b66e4a50537b0a9073cc4">CAnimMesh::~CAnimMesh</a></div><div class="ttdeci">~CAnimMesh() override</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> AnimMeshComponent.cpp:23</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html"><div class="ttname"><a href="class_c_draw_mesh.html">CDrawMesh</a></div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.h:21</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html"><div class="ttname"><a href="struct_m_e_s_h.html">MESH</a></div><div class="ttdef"><b>Definition:</b> mesh.h:43</div></div>
+<div class="ttc" id="astruct_v_e_r_t_e_x__3_d_html"><div class="ttname"><a href="struct_v_e_r_t_e_x__3_d.html">VERTEX_3D</a></div><div class="ttdef"><b>Definition:</b> mainApp.h:88</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

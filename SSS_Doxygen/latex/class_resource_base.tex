@@ -1,0 +1,125 @@
+\hypertarget{class_resource_base}{}\doxysection{Resource\+Base クラス}
+\label{class_resource_base}\index{ResourceBase@{ResourceBase}}
+
+
+外部データを管理する @detail つまり外部データを管理すること  
+
+
+
+
+{\ttfamily \#include $<$Resource\+Base.\+h$>$}
+
+
+
+Resource\+Base の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{class_resource_base__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_resource_base_ad5ba5705c3f4d2e1e86d9ef9e80c54f7}{Resource\+Base}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_resource_base_afc708ddfe926f11074fd6d03b7c724f7}{$\sim$\+Resource\+Base}} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_resource_base_ad8337e8e6d8573e89d878708961b0e36}{Load}} (std\+::string file\+Name)=0
+\begin{DoxyCompactList}\small\item\em ロード \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{class_resource_base_a5dab32ff9037185279b127e1055b25bb}{Save}} (std\+::string file\+Name)=0
+\begin{DoxyCompactList}\small\item\em セーブ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_resource_base_a580fa9e6c2fb1a004a47264e5a692be1}{m\+\_\+file\+Name}}
+\begin{DoxyCompactList}\small\item\em ファイルの名前 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+外部データを管理する @detail つまり外部データを管理すること 
+
+インクルードガード インクルード部 クラス定義 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_resource_base_ad5ba5705c3f4d2e1e86d9ef9e80c54f7}\label{class_resource_base_ad5ba5705c3f4d2e1e86d9ef9e80c54f7}} 
+\index{ResourceBase@{ResourceBase}!ResourceBase@{ResourceBase}}
+\index{ResourceBase@{ResourceBase}!ResourceBase@{ResourceBase}}
+\doxysubsubsection{\texorpdfstring{ResourceBase()}{ResourceBase()}}
+{\footnotesize\ttfamily Resource\+Base\+::\+Resource\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+顔面のいいコンストラクタはイニシャライズがついている
+
+インクルード部 \mbox{\Hypertarget{class_resource_base_afc708ddfe926f11074fd6d03b7c724f7}\label{class_resource_base_afc708ddfe926f11074fd6d03b7c724f7}} 
+\index{ResourceBase@{ResourceBase}!````~ResourceBase@{$\sim$ResourceBase}}
+\index{````~ResourceBase@{$\sim$ResourceBase}!ResourceBase@{ResourceBase}}
+\doxysubsubsection{\texorpdfstring{$\sim$ResourceBase()}{~ResourceBase()}}
+{\footnotesize\ttfamily Resource\+Base\+::$\sim$\+Resource\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+デストラクタ 
+
+デストラクタを・・・止めてくれ・・・ 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_resource_base_ad8337e8e6d8573e89d878708961b0e36}\label{class_resource_base_ad8337e8e6d8573e89d878708961b0e36}} 
+\index{ResourceBase@{ResourceBase}!Load@{Load}}
+\index{Load@{Load}!ResourceBase@{ResourceBase}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily virtual bool Resource\+Base\+::\+Load (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+ロード 
+
+
+
+\mbox{\hyperlink{class_resource_c_s_v_ad5a14cd107aea62537ec3d7c624edab1}{Resource\+CSV}}で実装されています。
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_resource_base_ad8337e8e6d8573e89d878708961b0e36_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_resource_base_a5dab32ff9037185279b127e1055b25bb}\label{class_resource_base_a5dab32ff9037185279b127e1055b25bb}} 
+\index{ResourceBase@{ResourceBase}!Save@{Save}}
+\index{Save@{Save}!ResourceBase@{ResourceBase}}
+\doxysubsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily virtual bool Resource\+Base\+::\+Save (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+セーブ 
+
+
+
+\mbox{\hyperlink{class_resource_c_s_v_abf8512be9116981588d5930e08f7881d}{Resource\+CSV}}で実装されています。
+
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{class_resource_base_a580fa9e6c2fb1a004a47264e5a692be1}\label{class_resource_base_a580fa9e6c2fb1a004a47264e5a692be1}} 
+\index{ResourceBase@{ResourceBase}!m\_fileName@{m\_fileName}}
+\index{m\_fileName@{m\_fileName}!ResourceBase@{ResourceBase}}
+\doxysubsubsection{\texorpdfstring{m\_fileName}{m\_fileName}}
+{\footnotesize\ttfamily std\+::string Resource\+Base\+::m\+\_\+file\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+ファイルの名前 
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_resource_base_8h}{Resource\+Base.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_resource_base_8cpp}{Resource\+Base.\+cpp}}\end{DoxyCompactItemize}

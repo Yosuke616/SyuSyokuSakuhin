@@ -1,0 +1,6 @@
+<map id="SceneTitle::Uninit" name="SceneTitle::Uninit">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,129,57"/>
+<area shape="rect" id="node2" href="$class_menu_manager.html#a5e8304c62a7d410defc91c007c497465" title="インスタンス破棄" alt="" coords="177,5,335,32"/>
+<area shape="rect" id="node3" href="$class_object_manager.html#ab14b919449101fdecbbafe794d907cc9" title="終了処理" alt="" coords="181,56,331,83"/>
+<area shape="rect" id="node4" href="$class_c_collider.html#a80714716239a3ede48cf2e6187cc423f" title="当たり判定を持っているオブジェクトのリストを取得" alt="" coords="383,56,549,83"/>
+</map>

@@ -1,0 +1,28 @@
+\hypertarget{_shader_8h_source}{}\doxysection{Shader.\+h}
+\label{_shader_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Shader.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Shader.h}}
+\mbox{\hyperlink{_shader_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 }
+\DoxyCodeLine{3 \textcolor{comment}{// 警告非表示}}
+\DoxyCodeLine{4 \textcolor{comment}{//\#pragma warning(disable : 4996)}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <d3d11.h>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 HRESULT \mbox{\hyperlink{_shader_8h_a6e3a511855b3597acb572c671d12e476}{LoadVertexShader}}(LPCWSTR pwszVSFName, ID3D11VertexShader** ppVertexShader,}
+\DoxyCodeLine{9     ID3D11InputLayout** ppVertexLayout,}
+\DoxyCodeLine{10     \textcolor{keyword}{const} D3D11\_INPUT\_ELEMENT\_DESC* pInpElemDesc = \textcolor{keyword}{nullptr}, UINT uNumElem = 0);}
+\DoxyCodeLine{11 HRESULT \mbox{\hyperlink{_shader_8h_a5ee0de25e2acc6f04a0d2d8d8f4d49e9}{LoadPixelShader}}(LPCWSTR pwszPSFName, ID3D11PixelShader** ppPixelShader);}
+\DoxyCodeLine{12 HRESULT \mbox{\hyperlink{_shader_8h_ae902de5892e28bbe3e1f7c1192cf39b7}{LoadShader}}(LPCWSTR pwszVSFName, LPCWSTR pwszPSFName,}
+\DoxyCodeLine{13     ID3D11VertexShader** ppVertexShader, ID3D11InputLayout** ppVertexLayout, ID3D11PixelShader** ppPixelShader,}
+\DoxyCodeLine{14     \textcolor{keyword}{const} D3D11\_INPUT\_ELEMENT\_DESC* pInpElemDesc = \textcolor{keyword}{nullptr}, UINT uNumElem = 0);}
+\DoxyCodeLine{15 HRESULT \mbox{\hyperlink{_shader_8h_a6e3a511855b3597acb572c671d12e476}{LoadVertexShader}}(LPCSTR pszVSFName, ID3D11VertexShader** ppVertexShader,}
+\DoxyCodeLine{16     ID3D11InputLayout** ppVertexLayout,}
+\DoxyCodeLine{17     \textcolor{keyword}{const} D3D11\_INPUT\_ELEMENT\_DESC* pInpElemDesc = \textcolor{keyword}{nullptr}, UINT uNumElem = 0);}
+\DoxyCodeLine{18 HRESULT \mbox{\hyperlink{_shader_8h_a5ee0de25e2acc6f04a0d2d8d8f4d49e9}{LoadPixelShader}}(LPCSTR pszPSFName, ID3D11PixelShader** ppPixelShader);}
+\DoxyCodeLine{19 HRESULT \mbox{\hyperlink{_shader_8h_ae902de5892e28bbe3e1f7c1192cf39b7}{LoadShader}}(LPCSTR pszVSFName, LPCSTR pszPSFName,}
+\DoxyCodeLine{20     ID3D11VertexShader** ppVertexShader, ID3D11InputLayout** ppVertexLayout,}
+\DoxyCodeLine{21     ID3D11PixelShader** ppPixelShader,}
+\DoxyCodeLine{22     \textcolor{keyword}{const} D3D11\_INPUT\_ELEMENT\_DESC* pInpElemDesc = \textcolor{keyword}{nullptr}, UINT uNumElem = 0);}
+
+\end{DoxyCode}

@@ -1,0 +1,77 @@
+\hypertarget{mesh_8h_source}{}\doxysection{mesh.\+h}
+\label{mesh_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/mesh.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/mesh.h}}
+\mbox{\hyperlink{mesh_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//=============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{//}}
+\DoxyCodeLine{3 \textcolor{comment}{// メッシュ共通処理 [mesh.h]}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author : HIROHIKO HAMAYA}}
+\DoxyCodeLine{5 \textcolor{comment}{//}}
+\DoxyCodeLine{6 \textcolor{comment}{//=============================================================================}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{12 \textcolor{comment}{// 定数定義}}
+\DoxyCodeLine{13 \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{14 \textcolor{keyword}{enum} \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765d}{ePrimitiveType}} \{}
+\DoxyCodeLine{15     \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765da65f8c8da12eda1e294c44a9924206b99}{PT\_UNDEFINED}} = 0,}
+\DoxyCodeLine{16     \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765da4dad86c74d1779861777bd9dcc7dfe76}{PT\_POINT}},}
+\DoxyCodeLine{17     \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765dadde3b04259449be1cb2f6e5e9c02ccb0}{PT\_LINE}},}
+\DoxyCodeLine{18     \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765dabc672e8b23a2aafa937d887028c2e121}{PT\_LINESTRIP}},}
+\DoxyCodeLine{19     \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765da6da12e48279dc715a56eecdc25eb723b}{PT\_TRIANGLE}},}
+\DoxyCodeLine{20     \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765da56b82113a2e3217d7deafe6dec008a4a}{PT\_TRIANGLESTRIP}},}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22     \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765da1074608f436fc4dde2a3dee90fb38939}{MAX\_PRIMITIVETYPE}}}
+\DoxyCodeLine{23 \};}
+\DoxyCodeLine{24 \textcolor{keyword}{enum} \mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719}{eTranslucentType}} \{}
+\DoxyCodeLine{25     \mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719a996c91852662a7f35689eb6f3481b836}{TT\_NOAFFECT}} = 0, \textcolor{comment}{// 全て}}
+\DoxyCodeLine{26     \mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719ac69238a0a007608593e2a4bc1bf395b0}{TT\_OPACITYONLY}},       \textcolor{comment}{// 不透明のみ}}
+\DoxyCodeLine{27     \mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719a7b4002556d16617b279c3229151287b1}{TT\_TRANSLUCENTONLY}},   \textcolor{comment}{// 半透明のみ}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719af9161d00b36be7bcbb1b76b3b8daa23e}{MAX\_TRANSLUCENTTYPE}}}
+\DoxyCodeLine{30 \};}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{comment}{//**************************************}}
+\DoxyCodeLine{33 \textcolor{comment}{// 構造体定義}}
+\DoxyCodeLine{34 \textcolor{comment}{//**************************************}}
+\DoxyCodeLine{35 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{36     XMFLOAT4    \mbox{\hyperlink{struct_m_a_t_e_r_i_a_l_aed082fdbd011761dbace7d87bbc844ba}{Diffuse}};     \textcolor{comment}{// Diffuse color RGBA}}
+\DoxyCodeLine{37     XMFLOAT4    \mbox{\hyperlink{struct_m_a_t_e_r_i_a_l_ae49c6b1bc734eec6ee7ed766a7438618}{Ambient}};     \textcolor{comment}{// Ambient color RGB}}
+\DoxyCodeLine{38     XMFLOAT4    \mbox{\hyperlink{struct_m_a_t_e_r_i_a_l_a8bfc40a5a338e7e44e40e5239f6f2d34}{Specular}};       \textcolor{comment}{// Specular 'shininess'}}
+\DoxyCodeLine{39     XMFLOAT4    \mbox{\hyperlink{struct_m_a_t_e_r_i_a_l_adbc47529f05bf24f6f9d8d5068325caa}{Emissive}};       \textcolor{comment}{// Emissive color RGB}}
+\DoxyCodeLine{40     \textcolor{keywordtype}{float}       \mbox{\hyperlink{struct_m_a_t_e_r_i_a_l_a1078306cb5d23aa7e212436063b90404}{Power}};         \textcolor{comment}{// Sharpness if specular highlight}}
+\DoxyCodeLine{41 \} \mbox{\hyperlink{struct_m_a_t_e_r_i_a_l}{MATERIAL}};}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{44     ID3D11Buffer* \mbox{\hyperlink{struct_m_e_s_h_a25c3fac0171bd499d9426ffde1f5dfbd}{pVertexBuffer}};           \textcolor{comment}{// 頂点バッファインターフェースへのポインタ}}
+\DoxyCodeLine{45     ID3D11Buffer* \mbox{\hyperlink{struct_m_e_s_h_a69ad9b4954525ebd4146061976ddd1a5}{pIndexBuffer}};             \textcolor{comment}{// インデックスバッファインターフェースへのポインタ}}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_m_e_s_h_ab95be461297f4345df2e31e9dd3aef04}{nNumVertex}};                           \textcolor{comment}{// 総頂点数 }}
+\DoxyCodeLine{47     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_m_e_s_h_ad18e35ef509129728af57e7dd9ceafdf}{nNumIndex}};                         \textcolor{comment}{// 総インデックス数}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     XMFLOAT4X4 \mbox{\hyperlink{struct_m_e_s_h_a9dfe7a61807de6768e8bf09a48a64e28}{mtxWorld}};                    \textcolor{comment}{// ワールドマトリックス}}
+\DoxyCodeLine{50     XMFLOAT3 \mbox{\hyperlink{struct_m_e_s_h_afa08675037bc67e7a194942f11123468}{rot}};                            \textcolor{comment}{// ポリゴンの回転角}}
+\DoxyCodeLine{51     XMFLOAT3 \mbox{\hyperlink{struct_m_e_s_h_a6b4dce5b27fe64c12a97f72edaf0fe9c}{pos}};                            \textcolor{comment}{// ポリゴン表示位置の中心座標}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     XMFLOAT4X4 \mbox{\hyperlink{struct_m_e_s_h_a44119ceb5d4be9aebe23309e3997ed1e}{mtxTexture}};                    \textcolor{comment}{// テクスチャ マトリックス}}
+\DoxyCodeLine{54     ID3D11ShaderResourceView* \mbox{\hyperlink{struct_m_e_s_h_a41099b2ab78ff84e64f30e0ea1384336}{pTexture}};     \textcolor{comment}{// テクスチャ}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765d}{ePrimitiveType}} \mbox{\hyperlink{struct_m_e_s_h_a8c70191a400938f19faef335d41640a9}{primitiveType}};            \textcolor{comment}{// プリミティブ型}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \mbox{\hyperlink{struct_m_a_t_e_r_i_a_l}{MATERIAL}}* \mbox{\hyperlink{struct_m_e_s_h_ad9849d96fcc43d60a76948ff3eeefd1a}{pMaterial}};                   \textcolor{comment}{// マテリアル}}
+\DoxyCodeLine{59     \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_m_e_s_h_adbaeff67e282ff86f11f83fa1bec9278}{fAlpha}};                         \textcolor{comment}{// 頂点カラーα最小値}}
+\DoxyCodeLine{60 \} \mbox{\hyperlink{struct_m_e_s_h}{MESH}};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{63 \textcolor{comment}{// プロトタイプ宣言}}
+\DoxyCodeLine{64 \textcolor{comment}{//*****************************************************************************}}
+\DoxyCodeLine{65 HRESULT \mbox{\hyperlink{mesh_8h_afd09c8aac5c23c7b70e88571ccf966b3}{InitMesh}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{66 \textcolor{keywordtype}{void} \mbox{\hyperlink{mesh_8h_a4412ab7873323890dcf6d1a34aa95380}{UninitMesh}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{67 \textcolor{keywordtype}{void} \mbox{\hyperlink{mesh_8h_a0dfcef8795a69a746393944288fd88c3}{UpdateMesh}}(\mbox{\hyperlink{struct_m_e_s_h}{MESH}}* pMesh);}
+\DoxyCodeLine{68 \textcolor{keywordtype}{void} \mbox{\hyperlink{mesh_8h_abfe81e9eae72eecf6f32df0e194721cb}{DrawMesh}}(ID3D11DeviceContext* pDeviceContext, \mbox{\hyperlink{struct_m_e_s_h}{MESH}}* pMesh, \textcolor{keywordtype}{int} nTranslucntType = \mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719a996c91852662a7f35689eb6f3481b836}{TT\_NOAFFECT}});}
+\DoxyCodeLine{69 HRESULT \mbox{\hyperlink{mesh_8h_a018d9e543a71f8f60712ad246ee4caf7}{MakeMeshVertex}}(ID3D11Device* pDevice, \mbox{\hyperlink{struct_m_e_s_h}{MESH}}* pMesh, \mbox{\hyperlink{struct_v_e_r_t_e_x__3_d}{VERTEX\_3D}} vertexWk[], \textcolor{keywordtype}{int} indexWk[]);}
+\DoxyCodeLine{70 \textcolor{keywordtype}{void} \mbox{\hyperlink{mesh_8h_aa47a62772b5d637aa251793352473f11}{ReleaseMesh}}(\mbox{\hyperlink{struct_m_e_s_h}{MESH}}* pMesh);}
+\DoxyCodeLine{71 HRESULT \mbox{\hyperlink{mesh_8h_a955368bc5f6e1bfb67cec692bbffcdc6}{UpdateMeshVertex}}(ID3D11DeviceContext* pDeviceContext, \mbox{\hyperlink{struct_m_e_s_h}{MESH}}* pMesh, \mbox{\hyperlink{struct_v_e_r_t_e_x__3_d}{VERTEX\_3D}} vertex[]);}
+
+\end{DoxyCode}

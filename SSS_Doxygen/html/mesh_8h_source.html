@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/mesh.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">mesh.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="mesh_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//=============================================================================</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// メッシュ共通処理 [mesh.h]</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// Author : HIROHIKO HAMAYA</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//=============================================================================</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="main_app_8h.html">mainApp.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//*****************************************************************************</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// 定数定義</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//*****************************************************************************</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765d">   14</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765d">ePrimitiveType</a> {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da65f8c8da12eda1e294c44a9924206b99">   15</a></span>    <a class="code hl_enumvalue" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da65f8c8da12eda1e294c44a9924206b99">PT_UNDEFINED</a> = 0,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da4dad86c74d1779861777bd9dcc7dfe76">   16</a></span>    <a class="code hl_enumvalue" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da4dad86c74d1779861777bd9dcc7dfe76">PT_POINT</a>,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765dadde3b04259449be1cb2f6e5e9c02ccb0">   17</a></span>    <a class="code hl_enumvalue" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765dadde3b04259449be1cb2f6e5e9c02ccb0">PT_LINE</a>,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765dabc672e8b23a2aafa937d887028c2e121">   18</a></span>    <a class="code hl_enumvalue" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765dabc672e8b23a2aafa937d887028c2e121">PT_LINESTRIP</a>,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da6da12e48279dc715a56eecdc25eb723b">   19</a></span>    <a class="code hl_enumvalue" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da6da12e48279dc715a56eecdc25eb723b">PT_TRIANGLE</a>,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da56b82113a2e3217d7deafe6dec008a4a">   20</a></span>    <a class="code hl_enumvalue" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da56b82113a2e3217d7deafe6dec008a4a">PT_TRIANGLESTRIP</a>,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <a class="code hl_enumvalue" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da1074608f436fc4dde2a3dee90fb38939">MAX_PRIMITIVETYPE</a></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da1074608f436fc4dde2a3dee90fb38939">   23</a></span>};</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719">   24</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719">eTranslucentType</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719a996c91852662a7f35689eb6f3481b836">   25</a></span>    <a class="code hl_enumvalue" href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719a996c91852662a7f35689eb6f3481b836">TT_NOAFFECT</a> = 0,    <span class="comment">// 全て</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719ac69238a0a007608593e2a4bc1bf395b0">   26</a></span>    <a class="code hl_enumvalue" href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719ac69238a0a007608593e2a4bc1bf395b0">TT_OPACITYONLY</a>,     <span class="comment">// 不透明のみ</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719a7b4002556d16617b279c3229151287b1">   27</a></span>    <a class="code hl_enumvalue" href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719a7b4002556d16617b279c3229151287b1">TT_TRANSLUCENTONLY</a>, <span class="comment">// 半透明のみ</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_enumvalue" href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719af9161d00b36be7bcbb1b76b3b8daa23e">MAX_TRANSLUCENTTYPE</a></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719af9161d00b36be7bcbb1b76b3b8daa23e">   30</a></span>};</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">//**************************************</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// 構造体定義</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment">//**************************************</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="struct_m_a_t_e_r_i_a_l.html">   35</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="struct_m_a_t_e_r_i_a_l.html#aed082fdbd011761dbace7d87bbc844ba">   36</a></span>    XMFLOAT4    <a class="code hl_variable" href="struct_m_a_t_e_r_i_a_l.html#aed082fdbd011761dbace7d87bbc844ba">Diffuse</a>;        <span class="comment">// Diffuse color RGBA</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="struct_m_a_t_e_r_i_a_l.html#ae49c6b1bc734eec6ee7ed766a7438618">   37</a></span>    XMFLOAT4    <a class="code hl_variable" href="struct_m_a_t_e_r_i_a_l.html#ae49c6b1bc734eec6ee7ed766a7438618">Ambient</a>;        <span class="comment">// Ambient color RGB</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="struct_m_a_t_e_r_i_a_l.html#a8bfc40a5a338e7e44e40e5239f6f2d34">   38</a></span>    XMFLOAT4    <a class="code hl_variable" href="struct_m_a_t_e_r_i_a_l.html#a8bfc40a5a338e7e44e40e5239f6f2d34">Specular</a>;       <span class="comment">// Specular &#39;shininess&#39;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="struct_m_a_t_e_r_i_a_l.html#adbc47529f05bf24f6f9d8d5068325caa">   39</a></span>    XMFLOAT4    <a class="code hl_variable" href="struct_m_a_t_e_r_i_a_l.html#adbc47529f05bf24f6f9d8d5068325caa">Emissive</a>;       <span class="comment">// Emissive color RGB</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="struct_m_a_t_e_r_i_a_l.html#a1078306cb5d23aa7e212436063b90404">   40</a></span>    <span class="keywordtype">float</span>       <a class="code hl_variable" href="struct_m_a_t_e_r_i_a_l.html#a1078306cb5d23aa7e212436063b90404">Power</a>;          <span class="comment">// Sharpness if specular highlight</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>} <a class="code hl_struct" href="struct_m_a_t_e_r_i_a_l.html">MATERIAL</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="struct_m_e_s_h.html">   43</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="struct_m_e_s_h.html#a25c3fac0171bd499d9426ffde1f5dfbd">   44</a></span>    ID3D11Buffer* <a class="code hl_variable" href="struct_m_e_s_h.html#a25c3fac0171bd499d9426ffde1f5dfbd">pVertexBuffer</a>;            <span class="comment">// 頂点バッファインターフェースへのポインタ</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="struct_m_e_s_h.html#a69ad9b4954525ebd4146061976ddd1a5">   45</a></span>    ID3D11Buffer* <a class="code hl_variable" href="struct_m_e_s_h.html#a69ad9b4954525ebd4146061976ddd1a5">pIndexBuffer</a>;             <span class="comment">// インデックスバッファインターフェースへのポインタ</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="struct_m_e_s_h.html#ab95be461297f4345df2e31e9dd3aef04">   46</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_m_e_s_h.html#ab95be461297f4345df2e31e9dd3aef04">nNumVertex</a>;                         <span class="comment">// 総頂点数 </span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="struct_m_e_s_h.html#ad18e35ef509129728af57e7dd9ceafdf">   47</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="struct_m_e_s_h.html#ad18e35ef509129728af57e7dd9ceafdf">nNumIndex</a>;                          <span class="comment">// 総インデックス数</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="struct_m_e_s_h.html#a9dfe7a61807de6768e8bf09a48a64e28">   49</a></span>    XMFLOAT4X4 <a class="code hl_variable" href="struct_m_e_s_h.html#a9dfe7a61807de6768e8bf09a48a64e28">mtxWorld</a>;                    <span class="comment">// ワールドマトリックス</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="struct_m_e_s_h.html#afa08675037bc67e7a194942f11123468">   50</a></span>    XMFLOAT3 <a class="code hl_variable" href="struct_m_e_s_h.html#afa08675037bc67e7a194942f11123468">rot</a>;                           <span class="comment">// ポリゴンの回転角</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="struct_m_e_s_h.html#a6b4dce5b27fe64c12a97f72edaf0fe9c">   51</a></span>    XMFLOAT3 <a class="code hl_variable" href="struct_m_e_s_h.html#a6b4dce5b27fe64c12a97f72edaf0fe9c">pos</a>;                           <span class="comment">// ポリゴン表示位置の中心座標</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="struct_m_e_s_h.html#a44119ceb5d4be9aebe23309e3997ed1e">   53</a></span>    XMFLOAT4X4 <a class="code hl_variable" href="struct_m_e_s_h.html#a44119ceb5d4be9aebe23309e3997ed1e">mtxTexture</a>;                  <span class="comment">// テクスチャ マトリックス</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="struct_m_e_s_h.html#a41099b2ab78ff84e64f30e0ea1384336">   54</a></span>    ID3D11ShaderResourceView* <a class="code hl_variable" href="struct_m_e_s_h.html#a41099b2ab78ff84e64f30e0ea1384336">pTexture</a>;     <span class="comment">// テクスチャ</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="struct_m_e_s_h.html#a8c70191a400938f19faef335d41640a9">   56</a></span>    <a class="code hl_enumeration" href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765d">ePrimitiveType</a> <a class="code hl_variable" href="struct_m_e_s_h.html#a8c70191a400938f19faef335d41640a9">primitiveType</a>;           <span class="comment">// プリミティブ型</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="struct_m_e_s_h.html#ad9849d96fcc43d60a76948ff3eeefd1a">   58</a></span>    <a class="code hl_struct" href="struct_m_a_t_e_r_i_a_l.html">MATERIAL</a>* <a class="code hl_variable" href="struct_m_e_s_h.html#ad9849d96fcc43d60a76948ff3eeefd1a">pMaterial</a>;                    <span class="comment">// マテリアル</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="struct_m_e_s_h.html#adbaeff67e282ff86f11f83fa1bec9278">   59</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="struct_m_e_s_h.html#adbaeff67e282ff86f11f83fa1bec9278">fAlpha</a>;                           <span class="comment">// 頂点カラーα最小値</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>} <a class="code hl_struct" href="struct_m_e_s_h.html">MESH</a>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">//*****************************************************************************</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment">// プロトタイプ宣言</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="comment">//*****************************************************************************</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>HRESULT <a class="code hl_function" href="mesh_8h.html#afd09c8aac5c23c7b70e88571ccf966b3">InitMesh</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keywordtype">void</span> <a class="code hl_function" href="mesh_8h.html#a4412ab7873323890dcf6d1a34aa95380">UninitMesh</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="keywordtype">void</span> <a class="code hl_function" href="mesh_8h.html#a0dfcef8795a69a746393944288fd88c3">UpdateMesh</a>(<a class="code hl_struct" href="struct_m_e_s_h.html">MESH</a>* pMesh);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keywordtype">void</span> <a class="code hl_function" href="mesh_8h.html#abfe81e9eae72eecf6f32df0e194721cb">DrawMesh</a>(ID3D11DeviceContext* pDeviceContext, <a class="code hl_struct" href="struct_m_e_s_h.html">MESH</a>* pMesh, <span class="keywordtype">int</span> nTranslucntType = <a class="code hl_enumvalue" href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719a996c91852662a7f35689eb6f3481b836">TT_NOAFFECT</a>);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>HRESULT <a class="code hl_function" href="mesh_8h.html#a018d9e543a71f8f60712ad246ee4caf7">MakeMeshVertex</a>(ID3D11Device* pDevice, <a class="code hl_struct" href="struct_m_e_s_h.html">MESH</a>* pMesh, <a class="code hl_struct" href="struct_v_e_r_t_e_x__3_d.html">VERTEX_3D</a> vertexWk[], <span class="keywordtype">int</span> indexWk[]);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="keywordtype">void</span> <a class="code hl_function" href="mesh_8h.html#aa47a62772b5d637aa251793352473f11">ReleaseMesh</a>(<a class="code hl_struct" href="struct_m_e_s_h.html">MESH</a>* pMesh);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>HRESULT <a class="code hl_function" href="mesh_8h.html#a955368bc5f6e1bfb67cec692bbffcdc6">UpdateMeshVertex</a>(ID3D11DeviceContext* pDeviceContext, <a class="code hl_struct" href="struct_m_e_s_h.html">MESH</a>* pMesh, <a class="code hl_struct" href="struct_v_e_r_t_e_x__3_d.html">VERTEX_3D</a> vertex[]);</div>
+<div class="ttc" id="amain_app_8h_html"><div class="ttname"><a href="main_app_8h.html">mainApp.h</a></div></div>
+<div class="ttc" id="amesh_8h_html_a018d9e543a71f8f60712ad246ee4caf7"><div class="ttname"><a href="mesh_8h.html#a018d9e543a71f8f60712ad246ee4caf7">MakeMeshVertex</a></div><div class="ttdeci">HRESULT MakeMeshVertex(ID3D11Device *pDevice, MESH *pMesh, VERTEX_3D vertexWk[], int indexWk[])</div><div class="ttdef"><b>Definition:</b> mesh.cpp:245</div></div>
+<div class="ttc" id="amesh_8h_html_a0dfcef8795a69a746393944288fd88c3"><div class="ttname"><a href="mesh_8h.html#a0dfcef8795a69a746393944288fd88c3">UpdateMesh</a></div><div class="ttdeci">void UpdateMesh(MESH *pMesh)</div><div class="ttdef"><b>Definition:</b> mesh.cpp:133</div></div>
+<div class="ttc" id="amesh_8h_html_a4412ab7873323890dcf6d1a34aa95380"><div class="ttname"><a href="mesh_8h.html#a4412ab7873323890dcf6d1a34aa95380">UninitMesh</a></div><div class="ttdeci">void UninitMesh(void)</div><div class="ttdef"><b>Definition:</b> mesh.cpp:114</div></div>
+<div class="ttc" id="amesh_8h_html_a76a1fd83b3ce1b41379d93ace98f7719"><div class="ttname"><a href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719">eTranslucentType</a></div><div class="ttdeci">eTranslucentType</div><div class="ttdef"><b>Definition:</b> mesh.h:24</div></div>
+<div class="ttc" id="amesh_8h_html_a76a1fd83b3ce1b41379d93ace98f7719a7b4002556d16617b279c3229151287b1"><div class="ttname"><a href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719a7b4002556d16617b279c3229151287b1">TT_TRANSLUCENTONLY</a></div><div class="ttdeci">@ TT_TRANSLUCENTONLY</div><div class="ttdef"><b>Definition:</b> mesh.h:27</div></div>
+<div class="ttc" id="amesh_8h_html_a76a1fd83b3ce1b41379d93ace98f7719a996c91852662a7f35689eb6f3481b836"><div class="ttname"><a href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719a996c91852662a7f35689eb6f3481b836">TT_NOAFFECT</a></div><div class="ttdeci">@ TT_NOAFFECT</div><div class="ttdef"><b>Definition:</b> mesh.h:25</div></div>
+<div class="ttc" id="amesh_8h_html_a76a1fd83b3ce1b41379d93ace98f7719ac69238a0a007608593e2a4bc1bf395b0"><div class="ttname"><a href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719ac69238a0a007608593e2a4bc1bf395b0">TT_OPACITYONLY</a></div><div class="ttdeci">@ TT_OPACITYONLY</div><div class="ttdef"><b>Definition:</b> mesh.h:26</div></div>
+<div class="ttc" id="amesh_8h_html_a76a1fd83b3ce1b41379d93ace98f7719af9161d00b36be7bcbb1b76b3b8daa23e"><div class="ttname"><a href="mesh_8h.html#a76a1fd83b3ce1b41379d93ace98f7719af9161d00b36be7bcbb1b76b3b8daa23e">MAX_TRANSLUCENTTYPE</a></div><div class="ttdeci">@ MAX_TRANSLUCENTTYPE</div><div class="ttdef"><b>Definition:</b> mesh.h:29</div></div>
+<div class="ttc" id="amesh_8h_html_a7912bfb71ae570d3a83cfad74323765d"><div class="ttname"><a href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765d">ePrimitiveType</a></div><div class="ttdeci">ePrimitiveType</div><div class="ttdef"><b>Definition:</b> mesh.h:14</div></div>
+<div class="ttc" id="amesh_8h_html_a7912bfb71ae570d3a83cfad74323765da1074608f436fc4dde2a3dee90fb38939"><div class="ttname"><a href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da1074608f436fc4dde2a3dee90fb38939">MAX_PRIMITIVETYPE</a></div><div class="ttdeci">@ MAX_PRIMITIVETYPE</div><div class="ttdef"><b>Definition:</b> mesh.h:22</div></div>
+<div class="ttc" id="amesh_8h_html_a7912bfb71ae570d3a83cfad74323765da4dad86c74d1779861777bd9dcc7dfe76"><div class="ttname"><a href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da4dad86c74d1779861777bd9dcc7dfe76">PT_POINT</a></div><div class="ttdeci">@ PT_POINT</div><div class="ttdef"><b>Definition:</b> mesh.h:16</div></div>
+<div class="ttc" id="amesh_8h_html_a7912bfb71ae570d3a83cfad74323765da56b82113a2e3217d7deafe6dec008a4a"><div class="ttname"><a href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da56b82113a2e3217d7deafe6dec008a4a">PT_TRIANGLESTRIP</a></div><div class="ttdeci">@ PT_TRIANGLESTRIP</div><div class="ttdef"><b>Definition:</b> mesh.h:20</div></div>
+<div class="ttc" id="amesh_8h_html_a7912bfb71ae570d3a83cfad74323765da65f8c8da12eda1e294c44a9924206b99"><div class="ttname"><a href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da65f8c8da12eda1e294c44a9924206b99">PT_UNDEFINED</a></div><div class="ttdeci">@ PT_UNDEFINED</div><div class="ttdef"><b>Definition:</b> mesh.h:15</div></div>
+<div class="ttc" id="amesh_8h_html_a7912bfb71ae570d3a83cfad74323765da6da12e48279dc715a56eecdc25eb723b"><div class="ttname"><a href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765da6da12e48279dc715a56eecdc25eb723b">PT_TRIANGLE</a></div><div class="ttdeci">@ PT_TRIANGLE</div><div class="ttdef"><b>Definition:</b> mesh.h:19</div></div>
+<div class="ttc" id="amesh_8h_html_a7912bfb71ae570d3a83cfad74323765dabc672e8b23a2aafa937d887028c2e121"><div class="ttname"><a href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765dabc672e8b23a2aafa937d887028c2e121">PT_LINESTRIP</a></div><div class="ttdeci">@ PT_LINESTRIP</div><div class="ttdef"><b>Definition:</b> mesh.h:18</div></div>
+<div class="ttc" id="amesh_8h_html_a7912bfb71ae570d3a83cfad74323765dadde3b04259449be1cb2f6e5e9c02ccb0"><div class="ttname"><a href="mesh_8h.html#a7912bfb71ae570d3a83cfad74323765dadde3b04259449be1cb2f6e5e9c02ccb0">PT_LINE</a></div><div class="ttdeci">@ PT_LINE</div><div class="ttdef"><b>Definition:</b> mesh.h:17</div></div>
+<div class="ttc" id="amesh_8h_html_a955368bc5f6e1bfb67cec692bbffcdc6"><div class="ttname"><a href="mesh_8h.html#a955368bc5f6e1bfb67cec692bbffcdc6">UpdateMeshVertex</a></div><div class="ttdeci">HRESULT UpdateMeshVertex(ID3D11DeviceContext *pDeviceContext, MESH *pMesh, VERTEX_3D vertex[])</div><div class="ttdef"><b>Definition:</b> mesh.cpp:296</div></div>
+<div class="ttc" id="amesh_8h_html_aa47a62772b5d637aa251793352473f11"><div class="ttname"><a href="mesh_8h.html#aa47a62772b5d637aa251793352473f11">ReleaseMesh</a></div><div class="ttdeci">void ReleaseMesh(MESH *pMesh)</div><div class="ttdef"><b>Definition:</b> mesh.cpp:282</div></div>
+<div class="ttc" id="amesh_8h_html_abfe81e9eae72eecf6f32df0e194721cb"><div class="ttname"><a href="mesh_8h.html#abfe81e9eae72eecf6f32df0e194721cb">DrawMesh</a></div><div class="ttdeci">void DrawMesh(ID3D11DeviceContext *pDeviceContext, MESH *pMesh, int nTranslucntType=TT_NOAFFECT)</div><div class="ttdef"><b>Definition:</b> mesh.cpp:158</div></div>
+<div class="ttc" id="amesh_8h_html_afd09c8aac5c23c7b70e88571ccf966b3"><div class="ttname"><a href="mesh_8h.html#afd09c8aac5c23c7b70e88571ccf966b3">InitMesh</a></div><div class="ttdeci">HRESULT InitMesh(void)</div><div class="ttdef"><b>Definition:</b> mesh.cpp:59</div></div>
+<div class="ttc" id="astruct_m_a_t_e_r_i_a_l_html"><div class="ttname"><a href="struct_m_a_t_e_r_i_a_l.html">MATERIAL</a></div><div class="ttdef"><b>Definition:</b> mesh.h:35</div></div>
+<div class="ttc" id="astruct_m_a_t_e_r_i_a_l_html_a1078306cb5d23aa7e212436063b90404"><div class="ttname"><a href="struct_m_a_t_e_r_i_a_l.html#a1078306cb5d23aa7e212436063b90404">MATERIAL::Power</a></div><div class="ttdeci">float Power</div><div class="ttdef"><b>Definition:</b> mesh.h:40</div></div>
+<div class="ttc" id="astruct_m_a_t_e_r_i_a_l_html_a8bfc40a5a338e7e44e40e5239f6f2d34"><div class="ttname"><a href="struct_m_a_t_e_r_i_a_l.html#a8bfc40a5a338e7e44e40e5239f6f2d34">MATERIAL::Specular</a></div><div class="ttdeci">XMFLOAT4 Specular</div><div class="ttdef"><b>Definition:</b> mesh.h:38</div></div>
+<div class="ttc" id="astruct_m_a_t_e_r_i_a_l_html_adbc47529f05bf24f6f9d8d5068325caa"><div class="ttname"><a href="struct_m_a_t_e_r_i_a_l.html#adbc47529f05bf24f6f9d8d5068325caa">MATERIAL::Emissive</a></div><div class="ttdeci">XMFLOAT4 Emissive</div><div class="ttdef"><b>Definition:</b> mesh.h:39</div></div>
+<div class="ttc" id="astruct_m_a_t_e_r_i_a_l_html_ae49c6b1bc734eec6ee7ed766a7438618"><div class="ttname"><a href="struct_m_a_t_e_r_i_a_l.html#ae49c6b1bc734eec6ee7ed766a7438618">MATERIAL::Ambient</a></div><div class="ttdeci">XMFLOAT4 Ambient</div><div class="ttdef"><b>Definition:</b> mesh.h:37</div></div>
+<div class="ttc" id="astruct_m_a_t_e_r_i_a_l_html_aed082fdbd011761dbace7d87bbc844ba"><div class="ttname"><a href="struct_m_a_t_e_r_i_a_l.html#aed082fdbd011761dbace7d87bbc844ba">MATERIAL::Diffuse</a></div><div class="ttdeci">XMFLOAT4 Diffuse</div><div class="ttdef"><b>Definition:</b> mesh.h:36</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html"><div class="ttname"><a href="struct_m_e_s_h.html">MESH</a></div><div class="ttdef"><b>Definition:</b> mesh.h:43</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html_a25c3fac0171bd499d9426ffde1f5dfbd"><div class="ttname"><a href="struct_m_e_s_h.html#a25c3fac0171bd499d9426ffde1f5dfbd">MESH::pVertexBuffer</a></div><div class="ttdeci">ID3D11Buffer * pVertexBuffer</div><div class="ttdef"><b>Definition:</b> mesh.h:44</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html_a41099b2ab78ff84e64f30e0ea1384336"><div class="ttname"><a href="struct_m_e_s_h.html#a41099b2ab78ff84e64f30e0ea1384336">MESH::pTexture</a></div><div class="ttdeci">ID3D11ShaderResourceView * pTexture</div><div class="ttdef"><b>Definition:</b> mesh.h:54</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html_a44119ceb5d4be9aebe23309e3997ed1e"><div class="ttname"><a href="struct_m_e_s_h.html#a44119ceb5d4be9aebe23309e3997ed1e">MESH::mtxTexture</a></div><div class="ttdeci">XMFLOAT4X4 mtxTexture</div><div class="ttdef"><b>Definition:</b> mesh.h:53</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html_a69ad9b4954525ebd4146061976ddd1a5"><div class="ttname"><a href="struct_m_e_s_h.html#a69ad9b4954525ebd4146061976ddd1a5">MESH::pIndexBuffer</a></div><div class="ttdeci">ID3D11Buffer * pIndexBuffer</div><div class="ttdef"><b>Definition:</b> mesh.h:45</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html_a6b4dce5b27fe64c12a97f72edaf0fe9c"><div class="ttname"><a href="struct_m_e_s_h.html#a6b4dce5b27fe64c12a97f72edaf0fe9c">MESH::pos</a></div><div class="ttdeci">XMFLOAT3 pos</div><div class="ttdef"><b>Definition:</b> mesh.h:51</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html_a8c70191a400938f19faef335d41640a9"><div class="ttname"><a href="struct_m_e_s_h.html#a8c70191a400938f19faef335d41640a9">MESH::primitiveType</a></div><div class="ttdeci">ePrimitiveType primitiveType</div><div class="ttdef"><b>Definition:</b> mesh.h:56</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html_a9dfe7a61807de6768e8bf09a48a64e28"><div class="ttname"><a href="struct_m_e_s_h.html#a9dfe7a61807de6768e8bf09a48a64e28">MESH::mtxWorld</a></div><div class="ttdeci">XMFLOAT4X4 mtxWorld</div><div class="ttdef"><b>Definition:</b> mesh.h:49</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html_ab95be461297f4345df2e31e9dd3aef04"><div class="ttname"><a href="struct_m_e_s_h.html#ab95be461297f4345df2e31e9dd3aef04">MESH::nNumVertex</a></div><div class="ttdeci">int nNumVertex</div><div class="ttdef"><b>Definition:</b> mesh.h:46</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html_ad18e35ef509129728af57e7dd9ceafdf"><div class="ttname"><a href="struct_m_e_s_h.html#ad18e35ef509129728af57e7dd9ceafdf">MESH::nNumIndex</a></div><div class="ttdeci">int nNumIndex</div><div class="ttdef"><b>Definition:</b> mesh.h:47</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html_ad9849d96fcc43d60a76948ff3eeefd1a"><div class="ttname"><a href="struct_m_e_s_h.html#ad9849d96fcc43d60a76948ff3eeefd1a">MESH::pMaterial</a></div><div class="ttdeci">MATERIAL * pMaterial</div><div class="ttdef"><b>Definition:</b> mesh.h:58</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html_adbaeff67e282ff86f11f83fa1bec9278"><div class="ttname"><a href="struct_m_e_s_h.html#adbaeff67e282ff86f11f83fa1bec9278">MESH::fAlpha</a></div><div class="ttdeci">float fAlpha</div><div class="ttdef"><b>Definition:</b> mesh.h:59</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html_afa08675037bc67e7a194942f11123468"><div class="ttname"><a href="struct_m_e_s_h.html#afa08675037bc67e7a194942f11123468">MESH::rot</a></div><div class="ttdeci">XMFLOAT3 rot</div><div class="ttdef"><b>Definition:</b> mesh.h:50</div></div>
+<div class="ttc" id="astruct_v_e_r_t_e_x__3_d_html"><div class="ttname"><a href="struct_v_e_r_t_e_x__3_d.html">VERTEX_3D</a></div><div class="ttdef"><b>Definition:</b> mainApp.h:88</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

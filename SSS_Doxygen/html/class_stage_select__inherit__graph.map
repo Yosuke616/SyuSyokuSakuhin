@@ -1,0 +1,4 @@
+<map id="StageSelect" name="StageSelect">
+<area shape="rect" id="node1" title="ステージ選択用のクラス @detail 色々" alt="" coords="5,80,99,107"/>
+<area shape="rect" id="node2" href="$class_scene.html" title=" " alt="" coords="23,5,81,32"/>
+</map>

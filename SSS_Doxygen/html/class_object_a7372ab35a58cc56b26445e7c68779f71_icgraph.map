@@ -1,0 +1,7 @@
+<map id="Object::Delete" name="Object::Delete">
+<area shape="rect" id="node1" title="オブジェクトの削除をする関数" alt="" coords="220,81,325,108"/>
+<area shape="rect" id="node2" href="$class_c_see_coll.html#a31d917994b761882fef54dc6b296a844" title="メッシュを削除する関数" alt="" coords="5,5,172,32"/>
+<area shape="rect" id="node3" href="$class_c_anim_mesh.html#a052d8884ad2a80967e09b28e46a4cafa" title="更新処理" alt="" coords="17,56,160,83"/>
+<area shape="rect" id="node4" href="$class_c_attack.html#a58d569ffdb3f1cccb5f48ca06b7840c8" title="更新処理" alt="" coords="29,107,148,133"/>
+<area shape="rect" id="node5" href="$class_c_enemy.html#aac23422c9e7f8b091cd91de08b73b25f" title="更新処理" alt="" coords="28,157,149,184"/>
+</map>

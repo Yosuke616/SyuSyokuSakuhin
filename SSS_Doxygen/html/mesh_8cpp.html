@@ -1,0 +1,463 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/mesh.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">mesh.cpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="mesh_8h_source.html">mesh.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_shader_8h_source.html">Shader.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_texture_8h_source.html">Texture.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_camera_8h_source.html">Camera.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_light_8h_source.html">Light.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+mesh.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="mesh_8cpp__incl.png" border="0" usemap="#a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2mesh_8cpp" alt=""/></div>
+<map name="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2mesh_8cpp" id="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2mesh_8cpp">
+<area shape="rect" title=" " alt="" coords="191,5,372,61"/>
+<area shape="rect" href="mesh_8h.html" title=" " alt="" coords="337,109,402,136"/>
+<area shape="rect" href="_shader_8h.html" title=" " alt="" coords="5,184,80,211"/>
+<area shape="rect" href="_texture_8h.html" title=" " alt="" coords="150,109,226,136"/>
+<area shape="rect" href="_camera_8h.html" title=" " alt="" coords="426,109,505,136"/>
+<area shape="rect" href="_light_8h.html" title="ライトを設定するためのクラス" alt="" coords="251,109,312,136"/>
+<area shape="rect" href="main_app_8h.html" title=" " alt="" coords="363,184,447,211"/>
+<area shape="rect" title=" " alt="" coords="161,259,244,285"/>
+<area shape="rect" title=" " alt="" coords="269,259,331,285"/>
+<area shape="rect" title=" " alt="" coords="356,259,455,285"/>
+<area shape="rect" title=" " alt="" coords="69,259,137,285"/>
+<area shape="rect" title=" " alt="" coords="479,259,582,285"/>
+<area shape="rect" href="resource_8h.html" title=" " alt="" coords="607,259,689,285"/>
+<area shape="rect" title=" " alt="" coords="714,259,777,285"/>
+<area shape="rect" title=" " alt="" coords="245,184,339,211"/>
+<area shape="rect" title=" " alt="" coords="155,184,221,211"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_h_a_d_e_r___g_l_o_b_a_l.html">SHADER_GLOBAL</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_h_a_d_e_r___g_l_o_b_a_l2.html">SHADER_GLOBAL2</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:ab591eeca32093a7586f8dedbbc19cf73"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mesh_8cpp.html#ab591eeca32093a7586f8dedbbc19cf73">M_DIFFUSE</a>&#160;&#160;&#160;XMFLOAT4(1.0f,1.0f,1.0f,1.0f)</td></tr>
+<tr class="separator:ab591eeca32093a7586f8dedbbc19cf73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00221ae7b0f4f6f0f2b73ba7e5b563fa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mesh_8cpp.html#a00221ae7b0f4f6f0f2b73ba7e5b563fa">M_SPECULAR</a>&#160;&#160;&#160;XMFLOAT4(0.1f,0.1f,0.1f,1.0f)</td></tr>
+<tr class="separator:a00221ae7b0f4f6f0f2b73ba7e5b563fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acef96e0f155d641d446372b4cd6cf7b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mesh_8cpp.html#acef96e0f155d641d446372b4cd6cf7b8">M_POWER</a>&#160;&#160;&#160;(1.0f)</td></tr>
+<tr class="separator:acef96e0f155d641d446372b4cd6cf7b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe0c5d278fbda0ccd751e905a35bca3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mesh_8cpp.html#afe0c5d278fbda0ccd751e905a35bca3f">M_AMBIENT</a>&#160;&#160;&#160;XMFLOAT4(1.0f,1.0f,1.0f,1.0f)</td></tr>
+<tr class="separator:afe0c5d278fbda0ccd751e905a35bca3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5907a71b7c71ebbbd6185c8df267d0c5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mesh_8cpp.html#a5907a71b7c71ebbbd6185c8df267d0c5">M_EMISSIVE</a>&#160;&#160;&#160;XMFLOAT4(0.0f,0.0f,0.0f,1.0f)</td></tr>
+<tr class="separator:a5907a71b7c71ebbbd6185c8df267d0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:afd09c8aac5c23c7b70e88571ccf966b3"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mesh_8cpp.html#afd09c8aac5c23c7b70e88571ccf966b3">InitMesh</a> (void)</td></tr>
+<tr class="separator:afd09c8aac5c23c7b70e88571ccf966b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4412ab7873323890dcf6d1a34aa95380"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mesh_8cpp.html#a4412ab7873323890dcf6d1a34aa95380">UninitMesh</a> (void)</td></tr>
+<tr class="separator:a4412ab7873323890dcf6d1a34aa95380"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dfcef8795a69a746393944288fd88c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mesh_8cpp.html#a0dfcef8795a69a746393944288fd88c3">UpdateMesh</a> (<a class="el" href="struct_m_e_s_h.html">MESH</a> *pMesh)</td></tr>
+<tr class="separator:a0dfcef8795a69a746393944288fd88c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb39a303cf619d1f154ec7595c4d64b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mesh_8cpp.html#aebb39a303cf619d1f154ec7595c4d64b">DrawMesh</a> (ID3D11DeviceContext *pDeviceContext, <a class="el" href="struct_m_e_s_h.html">MESH</a> *pMesh, int nTranslucntType)</td></tr>
+<tr class="separator:aebb39a303cf619d1f154ec7595c4d64b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a018d9e543a71f8f60712ad246ee4caf7"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mesh_8cpp.html#a018d9e543a71f8f60712ad246ee4caf7">MakeMeshVertex</a> (ID3D11Device *pDevice, <a class="el" href="struct_m_e_s_h.html">MESH</a> *pMesh, <a class="el" href="struct_v_e_r_t_e_x__3_d.html">VERTEX_3D</a> vertexWk[], int indexWk[])</td></tr>
+<tr class="separator:a018d9e543a71f8f60712ad246ee4caf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa47a62772b5d637aa251793352473f11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mesh_8cpp.html#aa47a62772b5d637aa251793352473f11">ReleaseMesh</a> (<a class="el" href="struct_m_e_s_h.html">MESH</a> *pMesh)</td></tr>
+<tr class="separator:aa47a62772b5d637aa251793352473f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a955368bc5f6e1bfb67cec692bbffcdc6"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="mesh_8cpp.html#a955368bc5f6e1bfb67cec692bbffcdc6">UpdateMeshVertex</a> (ID3D11DeviceContext *pDeviceContext, <a class="el" href="struct_m_e_s_h.html">MESH</a> *pMesh, <a class="el" href="struct_v_e_r_t_e_x__3_d.html">VERTEX_3D</a> vertex[])</td></tr>
+<tr class="separator:a955368bc5f6e1bfb67cec692bbffcdc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="afe0c5d278fbda0ccd751e905a35bca3f" name="afe0c5d278fbda0ccd751e905a35bca3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe0c5d278fbda0ccd751e905a35bca3f">&#9670;&nbsp;</a></span>M_AMBIENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define M_AMBIENT&#160;&#160;&#160;XMFLOAT4(1.0f,1.0f,1.0f,1.0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab591eeca32093a7586f8dedbbc19cf73" name="ab591eeca32093a7586f8dedbbc19cf73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab591eeca32093a7586f8dedbbc19cf73">&#9670;&nbsp;</a></span>M_DIFFUSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define M_DIFFUSE&#160;&#160;&#160;XMFLOAT4(1.0f,1.0f,1.0f,1.0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5907a71b7c71ebbbd6185c8df267d0c5" name="a5907a71b7c71ebbbd6185c8df267d0c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5907a71b7c71ebbbd6185c8df267d0c5">&#9670;&nbsp;</a></span>M_EMISSIVE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define M_EMISSIVE&#160;&#160;&#160;XMFLOAT4(0.0f,0.0f,0.0f,1.0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acef96e0f155d641d446372b4cd6cf7b8" name="acef96e0f155d641d446372b4cd6cf7b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acef96e0f155d641d446372b4cd6cf7b8">&#9670;&nbsp;</a></span>M_POWER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define M_POWER&#160;&#160;&#160;(1.0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a00221ae7b0f4f6f0f2b73ba7e5b563fa" name="a00221ae7b0f4f6f0f2b73ba7e5b563fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00221ae7b0f4f6f0f2b73ba7e5b563fa">&#9670;&nbsp;</a></span>M_SPECULAR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define M_SPECULAR&#160;&#160;&#160;XMFLOAT4(0.1f,0.1f,0.1f,1.0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="aebb39a303cf619d1f154ec7595c4d64b" name="aebb39a303cf619d1f154ec7595c4d64b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebb39a303cf619d1f154ec7595c4d64b">&#9670;&nbsp;</a></span>DrawMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void DrawMesh </td>
+          <td>(</td>
+          <td class="paramtype">ID3D11DeviceContext *&#160;</td>
+          <td class="paramname"><em>pDeviceContext</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_m_e_s_h.html">MESH</a> *&#160;</td>
+          <td class="paramname"><em>pMesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nTranslucntType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="mesh_8cpp_aebb39a303cf619d1f154ec7595c4d64b_icgraph.png" border="0" usemap="#amesh_8cpp_aebb39a303cf619d1f154ec7595c4d64b_icgraph" alt=""/></div>
+<map name="amesh_8cpp_aebb39a303cf619d1f154ec7595c4d64b_icgraph" id="amesh_8cpp_aebb39a303cf619d1f154ec7595c4d64b_icgraph">
+<area shape="rect" title=" " alt="" coords="184,31,267,57"/>
+<area shape="rect" href="class_c_anim_mesh.html#a45bca41fe56b3421b59058ce6d336366" title="描画処理" alt="" coords="5,5,136,32"/>
+<area shape="rect" href="class_c_draw_mesh.html#a4d4c6a30bae2d1318802f1ebf5fb22cb" title="描画" alt="" coords="6,56,135,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="afd09c8aac5c23c7b70e88571ccf966b3" name="afd09c8aac5c23c7b70e88571ccf966b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd09c8aac5c23c7b70e88571ccf966b3">&#9670;&nbsp;</a></span>InitMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT InitMesh </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="mesh_8cpp_afd09c8aac5c23c7b70e88571ccf966b3_cgraph.png" border="0" usemap="#amesh_8cpp_afd09c8aac5c23c7b70e88571ccf966b3_cgraph" alt=""/></div>
+<map name="amesh_8cpp_afd09c8aac5c23c7b70e88571ccf966b3_cgraph" id="amesh_8cpp_afd09c8aac5c23c7b70e88571ccf966b3_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,76,57"/>
+<area shape="rect" href="main_app_8cpp.html#a965053cc7c41d010d359091035281310" title=" " alt="" coords="129,5,210,32"/>
+<area shape="rect" href="_shader_8cpp.html#a527141b482968e801ee13fbbc9f6d9ee" title=" " alt="" coords="124,56,215,83"/>
+<area shape="rect" href="_shader_8cpp.html#a5ee0de25e2acc6f04a0d2d8d8f4d49e9" title=" " alt="" coords="267,31,387,57"/>
+<area shape="rect" href="_shader_8cpp.html#a4eb484569643960e7a2603c5f6947964" title=" " alt="" coords="263,81,392,108"/>
+<area shape="rect" href="main_app_8cpp.html#aa9d863781ee8f3f820ea4ad9e52f78d9" title=" " alt="" coords="443,31,535,57"/>
+<area shape="rect" href="main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="440,81,539,108"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="mesh_8cpp_afd09c8aac5c23c7b70e88571ccf966b3_icgraph.png" border="0" usemap="#amesh_8cpp_afd09c8aac5c23c7b70e88571ccf966b3_icgraph" alt=""/></div>
+<map name="amesh_8cpp_afd09c8aac5c23c7b70e88571ccf966b3_icgraph" id="amesh_8cpp_afd09c8aac5c23c7b70e88571ccf966b3_icgraph">
+<area shape="rect" title=" " alt="" coords="224,5,295,32"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="137,5,176,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a018d9e543a71f8f60712ad246ee4caf7" name="a018d9e543a71f8f60712ad246ee4caf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a018d9e543a71f8f60712ad246ee4caf7">&#9670;&nbsp;</a></span>MakeMeshVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT MakeMeshVertex </td>
+          <td>(</td>
+          <td class="paramtype">ID3D11Device *&#160;</td>
+          <td class="paramname"><em>pDevice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_m_e_s_h.html">MESH</a> *&#160;</td>
+          <td class="paramname"><em>pMesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_v_e_r_t_e_x__3_d.html">VERTEX_3D</a>&#160;</td>
+          <td class="paramname"><em>vertexWk</em>[], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>indexWk</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa47a62772b5d637aa251793352473f11" name="aa47a62772b5d637aa251793352473f11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa47a62772b5d637aa251793352473f11">&#9670;&nbsp;</a></span>ReleaseMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ReleaseMesh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_e_s_h.html">MESH</a> *&#160;</td>
+          <td class="paramname"><em>pMesh</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="mesh_8cpp_aa47a62772b5d637aa251793352473f11_icgraph.png" border="0" usemap="#amesh_8cpp_aa47a62772b5d637aa251793352473f11_icgraph" alt=""/></div>
+<map name="amesh_8cpp_aa47a62772b5d637aa251793352473f11_icgraph" id="amesh_8cpp_aa47a62772b5d637aa251793352473f11_icgraph">
+<area shape="rect" title=" " alt="" coords="232,5,333,32"/>
+<area shape="rect" href="class_c_draw_mesh.html#a5ed6d0cca62f35202ee9c9ff17b37efb" title="デストラクタ" alt="" coords="5,5,184,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4412ab7873323890dcf6d1a34aa95380" name="a4412ab7873323890dcf6d1a34aa95380"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4412ab7873323890dcf6d1a34aa95380">&#9670;&nbsp;</a></span>UninitMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UninitMesh </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="mesh_8cpp_a4412ab7873323890dcf6d1a34aa95380_icgraph.png" border="0" usemap="#amesh_8cpp_a4412ab7873323890dcf6d1a34aa95380_icgraph" alt=""/></div>
+<map name="amesh_8cpp_a4412ab7873323890dcf6d1a34aa95380_icgraph" id="amesh_8cpp_a4412ab7873323890dcf6d1a34aa95380_icgraph">
+<area shape="rect" title=" " alt="" coords="240,5,327,32"/>
+<area shape="rect" href="main_app_8cpp.html#affc0f591b5f188f1b5cb4f20042e4766" title=" " alt="" coords="137,5,192,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0dfcef8795a69a746393944288fd88c3" name="a0dfcef8795a69a746393944288fd88c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dfcef8795a69a746393944288fd88c3">&#9670;&nbsp;</a></span>UpdateMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UpdateMesh </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_m_e_s_h.html">MESH</a> *&#160;</td>
+          <td class="paramname"><em>pMesh</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="mesh_8cpp_a0dfcef8795a69a746393944288fd88c3_icgraph.png" border="0" usemap="#amesh_8cpp_a0dfcef8795a69a746393944288fd88c3_icgraph" alt=""/></div>
+<map name="amesh_8cpp_a0dfcef8795a69a746393944288fd88c3_icgraph" id="amesh_8cpp_a0dfcef8795a69a746393944288fd88c3_icgraph">
+<area shape="rect" title=" " alt="" coords="371,5,465,32"/>
+<area shape="rect" href="class_c_draw_mesh.html#a2371b08e617e08cf6420681f0f1dcd04" title="更新" alt="" coords="181,5,323,32"/>
+<area shape="rect" href="class_c_draw_mesh.html#a6100f09bd115ce3f1c8a7e450600d4fc" title="初期化" alt="" coords="5,5,133,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a955368bc5f6e1bfb67cec692bbffcdc6" name="a955368bc5f6e1bfb67cec692bbffcdc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a955368bc5f6e1bfb67cec692bbffcdc6">&#9670;&nbsp;</a></span>UpdateMeshVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT UpdateMeshVertex </td>
+          <td>(</td>
+          <td class="paramtype">ID3D11DeviceContext *&#160;</td>
+          <td class="paramname"><em>pDeviceContext</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_m_e_s_h.html">MESH</a> *&#160;</td>
+          <td class="paramname"><em>pMesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_v_e_r_t_e_x__3_d.html">VERTEX_3D</a>&#160;</td>
+          <td class="paramname"><em>vertex</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

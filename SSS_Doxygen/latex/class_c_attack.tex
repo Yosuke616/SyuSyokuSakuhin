@@ -1,0 +1,184 @@
+\hypertarget{class_c_attack}{}\doxysection{CAttack クラス}
+\label{class_c_attack}\index{CAttack@{CAttack}}
+
+
+攻撃の動きを制御する @detail 攻撃を行った者のよって挙動を変える  
+
+
+
+
+{\ttfamily \#include $<$Attack\+Component.\+h$>$}
+
+
+
+CAttack の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_attack__inherit__graph}
+\end{center}
+\end{figure}
+
+
+CAttack 連携図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_attack__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_attack_adf580d8f4e274755a87e4c31847d9199}{CAttack}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_attack_a204f549c1837b39a7727e7f6c928ec94}{$\sim$\+CAttack}} () override
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_attack_a18254cb0083b36ed25d28bd6bd89446c}{Start}} () override
+\begin{DoxyCompactList}\small\item\em 初期化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_attack_a58d569ffdb3f1cccb5f48ca06b7840c8}{Update}} () override
+\begin{DoxyCompactList}\small\item\em 更新処理 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_c_attack_a2fbd0e1b9d6b881b5f8b6793cf0bcef8}{Get\+Attack\+RoL}} ()
+\begin{DoxyCompactList}\small\item\em 左右どちらからの攻撃かを取得する \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_attack_a8e7d153b84f6278ab56c18c4c99cc98b}{Set\+Attack\+Type}} (\mbox{\hyperlink{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3}{WHO\+\_\+\+ATTACK}} who)
+\begin{DoxyCompactList}\small\item\em どの種類のオブジェクトによる攻撃かを設定する \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_attack_a77cb40385ad5f079998c0bd136978174}{Set\+RoL}} (bool RoL)
+\begin{DoxyCompactList}\small\item\em 左右どっちを向いているかセットする関数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_attack_a83ec8424ba28f24d59457c32937f986e}{Set\+Object}} (\mbox{\hyperlink{class_object}{Object}} $\ast$p\+Obj)
+\begin{DoxyCompactList}\small\item\em オブジェクトの情報を取得する \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+攻撃の動きを制御する @detail 攻撃を行った者のよって挙動を変える 
+
+クラス定義 必要なさそうな変数は消していく 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_attack_adf580d8f4e274755a87e4c31847d9199}\label{class_c_attack_adf580d8f4e274755a87e4c31847d9199}} 
+\index{CAttack@{CAttack}!CAttack@{CAttack}}
+\index{CAttack@{CAttack}!CAttack@{CAttack}}
+\doxysubsubsection{\texorpdfstring{CAttack()}{CAttack()}}
+{\footnotesize\ttfamily CAttack\+::\+CAttack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+コンストラクタは命より重い！！！ \mbox{\Hypertarget{class_c_attack_a204f549c1837b39a7727e7f6c928ec94}\label{class_c_attack_a204f549c1837b39a7727e7f6c928ec94}} 
+\index{CAttack@{CAttack}!````~CAttack@{$\sim$CAttack}}
+\index{````~CAttack@{$\sim$CAttack}!CAttack@{CAttack}}
+\doxysubsubsection{\texorpdfstring{$\sim$CAttack()}{~CAttack()}}
+{\footnotesize\ttfamily CAttack\+::$\sim$\+CAttack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+デストラクタ 
+
+デストラクタやめられないんだけど 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_attack_a2fbd0e1b9d6b881b5f8b6793cf0bcef8}\label{class_c_attack_a2fbd0e1b9d6b881b5f8b6793cf0bcef8}} 
+\index{CAttack@{CAttack}!GetAttackRoL@{GetAttackRoL}}
+\index{GetAttackRoL@{GetAttackRoL}!CAttack@{CAttack}}
+\doxysubsubsection{\texorpdfstring{GetAttackRoL()}{GetAttackRoL()}}
+{\footnotesize\ttfamily bool CAttack\+::\+Get\+Attack\+RoL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+左右どちらからの攻撃かを取得する 
+
+攻撃がどちらからされたかのフラグを取得する
+
+\begin{DoxyReturn}{戻り値}
+(bool) 右ならtrue、左ならfalseを返す 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_attack_a8e7d153b84f6278ab56c18c4c99cc98b}\label{class_c_attack_a8e7d153b84f6278ab56c18c4c99cc98b}} 
+\index{CAttack@{CAttack}!SetAttackType@{SetAttackType}}
+\index{SetAttackType@{SetAttackType}!CAttack@{CAttack}}
+\doxysubsubsection{\texorpdfstring{SetAttackType()}{SetAttackType()}}
+{\footnotesize\ttfamily void CAttack\+::\+Set\+Attack\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3}{WHO\+\_\+\+ATTACK}}}]{who }\end{DoxyParamCaption})}
+
+
+
+どの種類のオブジェクトによる攻撃かを設定する 
+
+誰が攻撃したかを判別する
+
+
+\begin{DoxyParams}{引数}
+{\em (\+WHO\+\_\+\+ATTACK)} & 誰が攻撃したかを設定する \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_attack_a83ec8424ba28f24d59457c32937f986e}\label{class_c_attack_a83ec8424ba28f24d59457c32937f986e}} 
+\index{CAttack@{CAttack}!SetObject@{SetObject}}
+\index{SetObject@{SetObject}!CAttack@{CAttack}}
+\doxysubsubsection{\texorpdfstring{SetObject()}{SetObject()}}
+{\footnotesize\ttfamily void CAttack\+::\+Set\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} $\ast$}]{p\+Obj }\end{DoxyParamCaption})}
+
+
+
+オブジェクトの情報を取得する 
+
+\mbox{\Hypertarget{class_c_attack_a77cb40385ad5f079998c0bd136978174}\label{class_c_attack_a77cb40385ad5f079998c0bd136978174}} 
+\index{CAttack@{CAttack}!SetRoL@{SetRoL}}
+\index{SetRoL@{SetRoL}!CAttack@{CAttack}}
+\doxysubsubsection{\texorpdfstring{SetRoL()}{SetRoL()}}
+{\footnotesize\ttfamily void CAttack\+::\+Set\+RoL (\begin{DoxyParamCaption}\item[{bool}]{RoL }\end{DoxyParamCaption})}
+
+
+
+左右どっちを向いているかセットする関数 
+
+\mbox{\Hypertarget{class_c_attack_a18254cb0083b36ed25d28bd6bd89446c}\label{class_c_attack_a18254cb0083b36ed25d28bd6bd89446c}} 
+\index{CAttack@{CAttack}!Start@{Start}}
+\index{Start@{Start}!CAttack@{CAttack}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void CAttack\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+初期化 
+
+初期化処理 
+
+\mbox{\hyperlink{class_component_a3f57807787e0015833ccffd83fb63d14}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{class_c_attack_a18254cb0083b36ed25d28bd6bd89446c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_attack_a58d569ffdb3f1cccb5f48ca06b7840c8}\label{class_c_attack_a58d569ffdb3f1cccb5f48ca06b7840c8}} 
+\index{CAttack@{CAttack}!Update@{Update}}
+\index{Update@{Update}!CAttack@{CAttack}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void CAttack\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新処理 
+
+更新処理 @detail どのオブジェクトが攻撃しているかで処理を変える 
+
+\mbox{\hyperlink{class_component_aaf2ce6dc5752072492f790ad4c7955bb}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_c_attack_a58d569ffdb3f1cccb5f48ca06b7840c8_cgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_attack_component_8h}{Attack\+Component.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_attack_component_8cpp}{Attack\+Component.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,9 @@
+<map id="ObjectManager::GetGameObject" name="ObjectManager::GetGameObject">
+<area shape="rect" id="node1" title="名前からオブジェクトを特定する" alt="" coords="397,81,609,108"/>
+<area shape="rect" id="node2" href="$class_scene_stage__1.html#ab4bb4703f3f44eb4f5c49f44003627cf" title="初期化" alt="" coords="207,5,339,32"/>
+<area shape="rect" id="node3" href="$class_c_camera.html#a664debc0a2d44acea6112db076a520bf" title=" " alt="" coords="210,56,335,83"/>
+<area shape="rect" id="node4" href="$class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,107,148,133"/>
+<area shape="rect" id="node5" href="$class_menu_manager.html#aabc8f23d87e058b5c5b099a8c34a2af8" title="更新処理" alt="" coords="196,157,349,184"/>
+<area shape="rect" id="node6" href="$class_stage_select.html#aa2796a223f0c14a63523a725957de1ef" title="更新処理" alt="" coords="5,157,148,184"/>
+<area shape="rect" id="node7" href="$class_scene_title.html#af1b28c5ab2cced3b7d8106ef0cd8b0ae" title=" " alt="" coords="11,208,143,235"/>
+</map>

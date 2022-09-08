@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: ImGuiContextHook 構造体</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="struct_im_gui_context_hook-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">ImGuiContextHook 構造体</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="imgui__internal_8h_source.html">imgui_internal.h</a>&gt;</code></p>
+<div class="dynheader">
+ImGuiContextHook 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_im_gui_context_hook__coll__graph.png" border="0" usemap="#a_im_gui_context_hook_coll__map" alt="Collaboration graph"/></div>
+<map name="a_im_gui_context_hook_coll__map" id="a_im_gui_context_hook_coll__map">
+<area shape="rect" title=" " alt="" coords="704,68,835,95"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1123,99,1330,125"/>
+<area shape="rect" href="struct_im_gui_context.html" title=" " alt="" coords="1576,1525,1677,1552"/>
+<area shape="rect" href="struct_im_gui_i_o.html" title=" " alt="" coords="1192,775,1261,801"/>
+<area shape="rect" href="struct_im_vec2.html" title=" " alt="" coords="20,949,87,976"/>
+<area shape="rect" href="struct_im_font_atlas.html" title=" " alt="" coords="333,584,425,611"/>
+<area shape="rect" href="struct_im_font_config.html" title=" " alt="" coords="1177,296,1276,323"/>
+<area shape="rect" href="struct_im_gui_style.html" title=" " alt="" coords="336,687,423,713"/>
+<area shape="rect" href="struct_im_draw_list_shared_data.html" title=" " alt="" coords="1149,480,1304,507"/>
+<area shape="rect" href="struct_im_gui_window.html" title=" " alt="" coords="718,1967,821,1993"/>
+<area shape="rect" href="struct_im_rect.html" title=" " alt="" coords="348,1156,411,1183"/>
+<area shape="rect" href="struct_im_gui_next_window_data.html" title=" " alt="" coords="691,935,847,961"/>
+<area shape="rect" href="struct_im_gui_tab_bar.html" title=" " alt="" coords="1178,2260,1275,2287"/>
+<area shape="rect" href="struct_im_gui_combo_preview_data.html" title=" " alt="" coords="685,1013,853,1040"/>
+<area shape="rect" href="struct_im_font.html" title=" " alt="" coords="738,296,801,323"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1153,576,1300,603"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="318,160,441,187"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="304,737,455,764"/>
+<area shape="rect" href="struct_im_gui_input_text_state.html" title=" " alt="" coords="699,1261,839,1288"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="293,221,465,248"/>
+<area shape="rect" href="struct_im_font_glyph.html" title=" " alt="" coords="5,249,101,276"/>
+<area shape="rect" href="struct_im_vec4.html" title=" " alt="" coords="20,547,87,573"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1133,2041,1320,2068"/>
+<area shape="rect" href="struct_im_gui_nav_item_data.html" title=" " alt="" coords="1162,1181,1291,1208"/>
+<area shape="rect" href="struct_im_gui_table.html" title=" " alt="" coords="1183,1991,1270,2017"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="307,2096,451,2123"/>
+<area shape="rect" href="struct_im_gui_last_item_data.html" title=" " alt="" coords="921,1104,1054,1131"/>
+<area shape="rect" href="struct_im_gui_storage.html" title=" " alt="" coords="329,2403,430,2429"/>
+<area shape="rect" href="struct_im_pool.html" title=" " alt="" coords="912,2519,1063,2545"/>
+<area shape="rect" href="struct_im_pool.html" title=" " alt="" coords="907,2317,1068,2344"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1127,1065,1327,1106"/>
+<area shape="rect" href="struct_im_gui_next_item_data.html" title=" " alt="" coords="1159,1131,1294,1157"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1133,1295,1320,1321"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1133,1345,1320,1372"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1132,1396,1321,1423"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1129,1447,1324,1473"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1129,1497,1325,1524"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1127,1548,1327,1575"/>
+<area shape="rect" href="struct_im_gui_payload.html" title=" " alt="" coords="1175,1649,1278,1676"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1157,1701,1296,1742"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html" title=" " alt="" coords="712,2383,827,2409"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="318,2733,441,2760"/>
+<area shape="rect" href="struct_im_chunk_stream.html" title=" " alt="" coords="884,2726,1091,2767"/>
+<area shape="rect" href="struct_im_chunk_stream.html" title=" " alt="" coords="891,2786,1083,2827"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1135,2143,1318,2185"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1133,2209,1321,2236"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1129,2373,1324,2400"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1131,2425,1322,2466"/>
+<area shape="rect" href="struct_im_vector.html" title=" " alt="" coords="1115,2604,1339,2631"/>
+<area shape="rect" href="struct_im_gui_metrics_config.html" title=" " alt="" coords="1159,2857,1294,2884"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:aa6179093519760cda23818d58d0b040f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_context_hook.html#aa6179093519760cda23818d58d0b040f">ImGuiContextHook</a> ()</td></tr>
+<tr class="separator:aa6179093519760cda23818d58d0b040f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:ac97fa11f1ba8c8ff04c1ede25437ecdf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_context_hook.html#ac97fa11f1ba8c8ff04c1ede25437ecdf">HookId</a></td></tr>
+<tr class="separator:ac97fa11f1ba8c8ff04c1ede25437ecdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86f1cb04f4624448c9a508f6d299c2f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__internal_8h.html#a00ee5484f4006a8b98ed323d1dc37944">ImGuiContextHookType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_context_hook.html#a86f1cb04f4624448c9a508f6d299c2f9">Type</a></td></tr>
+<tr class="separator:a86f1cb04f4624448c9a508f6d299c2f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b6ce62215c093535dd36c4a1303befc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_context_hook.html#a7b6ce62215c093535dd36c4a1303befc">Owner</a></td></tr>
+<tr class="separator:a7b6ce62215c093535dd36c4a1303befc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac95bc416ed24b5ad3cfa7c2199adcaf9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="imgui__internal_8h.html#aa99029b7d107c7769178a5ca13ddfa6f">ImGuiContextHookCallback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_context_hook.html#ac95bc416ed24b5ad3cfa7c2199adcaf9">Callback</a></td></tr>
+<tr class="separator:ac95bc416ed24b5ad3cfa7c2199adcaf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a334cf9cae105a3636f13aa1f2bc25e60"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_im_gui_context_hook.html#a334cf9cae105a3636f13aa1f2bc25e60">UserData</a></td></tr>
+<tr class="separator:a334cf9cae105a3636f13aa1f2bc25e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="aa6179093519760cda23818d58d0b040f" name="aa6179093519760cda23818d58d0b040f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6179093519760cda23818d58d0b040f">&#9670;&nbsp;</a></span>ImGuiContextHook()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ImGuiContextHook::ImGuiContextHook </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="ac95bc416ed24b5ad3cfa7c2199adcaf9" name="ac95bc416ed24b5ad3cfa7c2199adcaf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac95bc416ed24b5ad3cfa7c2199adcaf9">&#9670;&nbsp;</a></span>Callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui__internal_8h.html#aa99029b7d107c7769178a5ca13ddfa6f">ImGuiContextHookCallback</a> ImGuiContextHook::Callback</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac97fa11f1ba8c8ff04c1ede25437ecdf" name="ac97fa11f1ba8c8ff04c1ede25437ecdf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac97fa11f1ba8c8ff04c1ede25437ecdf">&#9670;&nbsp;</a></span>HookId</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiContextHook::HookId</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b6ce62215c093535dd36c4a1303befc" name="a7b6ce62215c093535dd36c4a1303befc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b6ce62215c093535dd36c4a1303befc">&#9670;&nbsp;</a></span>Owner</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui_8h.html#a1785c9b6f4e16406764a85f32582236f">ImGuiID</a> ImGuiContextHook::Owner</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a86f1cb04f4624448c9a508f6d299c2f9" name="a86f1cb04f4624448c9a508f6d299c2f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86f1cb04f4624448c9a508f6d299c2f9">&#9670;&nbsp;</a></span>Type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="imgui__internal_8h.html#a00ee5484f4006a8b98ed323d1dc37944">ImGuiContextHookType</a> ImGuiContextHook::Type</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a334cf9cae105a3636f13aa1f2bc25e60" name="a334cf9cae105a3636f13aa1f2bc25e60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a334cf9cae105a3636f13aa1f2bc25e60">&#9670;&nbsp;</a></span>UserData</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* ImGuiContextHook::UserData</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>この構造体詳解は次のファイルから抽出されました:<ul>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="imgui__internal_8h_source.html">imgui_internal.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

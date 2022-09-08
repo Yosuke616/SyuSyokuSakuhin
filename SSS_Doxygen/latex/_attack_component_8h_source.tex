@@ -1,0 +1,56 @@
+\hypertarget{_attack_component_8h_source}{}\doxysection{Attack\+Component.\+h}
+\label{_attack_component_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/AttackComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/AttackComponent.h}}
+\mbox{\hyperlink{_attack_component_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_ATTACK\_COMPONENT\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_ATTACK\_COMPONENT\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_transform}{CTransform}};}
+\DoxyCodeLine{17 \textcolor{keyword}{class }\mbox{\hyperlink{class_object}{Object}};}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_collider}{CCollider}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_draw_mesh}{CDrawMesh}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{23 \textcolor{keyword}{enum} \mbox{\hyperlink{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3}{WHO\_ATTACK}} \{}
+\DoxyCodeLine{24     \mbox{\hyperlink{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3a74595371199e3faa61f50a8ed87fc2ac}{NONE\_ATTACK}} = 0,}
+\DoxyCodeLine{25     \mbox{\hyperlink{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3ac8b70a6068adfe66f08cda4193dd9e06}{PLAYER\_ATTACK}},}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27     \mbox{\hyperlink{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3afdf6498aa65691370d71c0f9234cc657}{MAX\_WHO\_ATTACK}}}
+\DoxyCodeLine{28 \};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_attack}{CAttack}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{37 \textcolor{keyword}{private}:}
+\DoxyCodeLine{38     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{40 \textcolor{comment}{}    \mbox{\hyperlink{class_c_transform}{CTransform}}* m\_pTrans;}
+\DoxyCodeLine{43     \textcolor{keywordtype}{bool} m\_bRoL;}
+\DoxyCodeLine{45     \mbox{\hyperlink{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3}{WHO\_ATTACK}} m\_eAttack;}
+\DoxyCodeLine{47     \textcolor{keywordtype}{int} m\_nAttackCnt;}
+\DoxyCodeLine{49     \mbox{\hyperlink{class_object}{Object}}* m\_pObj;}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{54     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{keyword}{public}:}
+\DoxyCodeLine{59     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{63 \textcolor{comment}{}    \mbox{\hyperlink{class_c_attack_adf580d8f4e274755a87e4c31847d9199}{CAttack}}();}
+\DoxyCodeLine{65     \mbox{\hyperlink{class_c_attack_a204f549c1837b39a7727e7f6c928ec94}{\string~CAttack}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_attack_a18254cb0083b36ed25d28bd6bd89446c}{Start}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_attack_a58d569ffdb3f1cccb5f48ca06b7840c8}{Update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{71     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_c_attack_a2fbd0e1b9d6b881b5f8b6793cf0bcef8}{GetAttackRoL}}();}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_attack_a8e7d153b84f6278ab56c18c4c99cc98b}{SetAttackType}}(\mbox{\hyperlink{_attack_component_8h_af8ffc28d2cd8417f3614ced8708629e3}{WHO\_ATTACK}} who);}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_attack_a77cb40385ad5f079998c0bd136978174}{SetRoL}}(\textcolor{keywordtype}{bool} RoL);}
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_attack_a83ec8424ba28f24d59457c32937f986e}{SetObject}}(\mbox{\hyperlink{class_object}{Object}}* pObj);}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

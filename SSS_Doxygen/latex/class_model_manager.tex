@@ -1,0 +1,214 @@
+\hypertarget{class_model_manager}{}\doxysection{Model\+Manager クラス}
+\label{class_model_manager}\index{ModelManager@{ModelManager}}
+
+
+モデルマネージャー  
+
+
+
+
+{\ttfamily \#include $<$Model\+Manager.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_manager_a93f4eea50036cc5453014234aa921c7c}{$\sim$\+Model\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_model_manager_a83cb97219f91ba9799cef863f129ce8c}{Add\+Model}} (const char $\ast$psz\+File\+Name, int n\+Model\+ID)
+\begin{DoxyCompactList}\small\item\em モデルの追加 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_assimp_model}{CAssimp\+Model}} $\ast$ \mbox{\hyperlink{class_model_manager_ae7a58155fc4e317ae505ebd1e3a1f667}{Get\+Model}} (int n\+Model\+ID)
+\begin{DoxyCompactList}\small\item\em モデルの取得 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_model_manager_ac1ca2c166728b973a8efd2218d27caff}{Erase\+Model}} (int n\+Model\+ID)
+\begin{DoxyCompactList}\small\item\em モデル削除 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_model_manager}{Model\+Manager}} $\ast$ \mbox{\hyperlink{class_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em インスタンス化 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_model_manager_af9fece7e0c5509069f854acb15c50abe}{Uninit}} ()
+\begin{DoxyCompactList}\small\item\em モデルマネージャーの解放 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_manager_a9b0d22b1baf59c5b566e82fcd8ca424a}{Model\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+モデルマネージャー 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_model_manager_a9b0d22b1baf59c5b566e82fcd8ca424a}\label{class_model_manager_a9b0d22b1baf59c5b566e82fcd8ca424a}} 
+\index{ModelManager@{ModelManager}!ModelManager@{ModelManager}}
+\index{ModelManager@{ModelManager}!ModelManager@{ModelManager}}
+\doxysubsubsection{\texorpdfstring{ModelManager()}{ModelManager()}}
+{\footnotesize\ttfamily Model\+Manager\+::\+Model\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+コンストラクタ 
+
+ｵﾃﾞ...ｺﾝｽﾄﾗｸﾀ...ｸｳ... 被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_model_manager_a9b0d22b1baf59c5b566e82fcd8ca424a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_model_manager_a93f4eea50036cc5453014234aa921c7c}\label{class_model_manager_a93f4eea50036cc5453014234aa921c7c}} 
+\index{ModelManager@{ModelManager}!````~ModelManager@{$\sim$ModelManager}}
+\index{````~ModelManager@{$\sim$ModelManager}!ModelManager@{ModelManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$ModelManager()}{~ModelManager()}}
+{\footnotesize\ttfamily Model\+Manager\+::$\sim$\+Model\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+デストラクタ 
+
+デストラクタって何だろう 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_model_manager_a83cb97219f91ba9799cef863f129ce8c}\label{class_model_manager_a83cb97219f91ba9799cef863f129ce8c}} 
+\index{ModelManager@{ModelManager}!AddModel@{AddModel}}
+\index{AddModel@{AddModel}!ModelManager@{ModelManager}}
+\doxysubsubsection{\texorpdfstring{AddModel()}{AddModel()}}
+{\footnotesize\ttfamily bool Model\+Manager\+::\+Add\+Model (\begin{DoxyParamCaption}\item[{const char $\ast$}]{psz\+File\+Name,  }\item[{int}]{n\+Model\+ID }\end{DoxyParamCaption})}
+
+
+
+モデルの追加 
+
+
+\begin{DoxyParams}{引数}
+{\em (const} & char$\ast$) ファイルの名前 \\
+\hline
+{\em (int)} & 何番目の番号に紐づいているか \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(bool) モデルを読み込めたかどうか 
+\end{DoxyReturn}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_model_manager_a83cb97219f91ba9799cef863f129ce8c_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_model_manager_a83cb97219f91ba9799cef863f129ce8c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_model_manager_ac1ca2c166728b973a8efd2218d27caff}\label{class_model_manager_ac1ca2c166728b973a8efd2218d27caff}} 
+\index{ModelManager@{ModelManager}!EraseModel@{EraseModel}}
+\index{EraseModel@{EraseModel}!ModelManager@{ModelManager}}
+\doxysubsubsection{\texorpdfstring{EraseModel()}{EraseModel()}}
+{\footnotesize\ttfamily bool Model\+Manager\+::\+Erase\+Model (\begin{DoxyParamCaption}\item[{int}]{n\+Model\+ID }\end{DoxyParamCaption})}
+
+
+
+モデル削除 
+
+モデルの削除
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & 消したいモデルの番号 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(bool) 消せたかどうか 
+\end{DoxyReturn}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_model_manager_ac1ca2c166728b973a8efd2218d27caff_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436}\label{class_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436}} 
+\index{ModelManager@{ModelManager}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!ModelManager@{ModelManager}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model_manager}{Model\+Manager}} $\ast$ Model\+Manager\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+インスタンス化 
+
+\begin{DoxyReturn}{戻り値}
+(Model\+Manager$\ast$) モデルマネージャーのポインタを返す 
+\end{DoxyReturn}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_model_manager_ae7a58155fc4e317ae505ebd1e3a1f667}\label{class_model_manager_ae7a58155fc4e317ae505ebd1e3a1f667}} 
+\index{ModelManager@{ModelManager}!GetModel@{GetModel}}
+\index{GetModel@{GetModel}!ModelManager@{ModelManager}}
+\doxysubsubsection{\texorpdfstring{GetModel()}{GetModel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_assimp_model}{CAssimp\+Model}} $\ast$ Model\+Manager\+::\+Get\+Model (\begin{DoxyParamCaption}\item[{int}]{n\+Model\+ID }\end{DoxyParamCaption})}
+
+
+
+モデルの取得 
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & 取得したいモデルの番号 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(CAssimp\+Model$\ast$) モデルの情報を返す 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_model_manager_ae7a58155fc4e317ae505ebd1e3a1f667_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_model_manager_af9fece7e0c5509069f854acb15c50abe}\label{class_model_manager_af9fece7e0c5509069f854acb15c50abe}} 
+\index{ModelManager@{ModelManager}!Uninit@{Uninit}}
+\index{Uninit@{Uninit}!ModelManager@{ModelManager}}
+\doxysubsubsection{\texorpdfstring{Uninit()}{Uninit()}}
+{\footnotesize\ttfamily void Model\+Manager\+::\+Uninit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+モデルマネージャーの解放 
+
+モデルマネージャー開放 被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_model_manager_af9fece7e0c5509069f854acb15c50abe_icgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_model_manager_8h}{Model\+Manager.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_model_manager_8cpp}{Model\+Manager.\+cpp}}\end{DoxyCompactItemize}

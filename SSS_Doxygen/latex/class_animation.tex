@@ -1,0 +1,304 @@
+\hypertarget{class_animation}{}\doxysection{Animation クラス}
+\label{class_animation}\index{Animation@{Animation}}
+
+
+{\ttfamily \#include $<$Animation.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_animation_a83f0a16cef7117f187ad596de38dd9d6}{Animation}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_animation_a401b68793d4fbf48d481c030ee4b2a16}{$\sim$\+Animation}} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a0c6a4e940db84d4a6246fcb3ae773402}{Update}} ()
+\begin{DoxyCompactList}\small\item\em 更新処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a708aaadcc89b683ae349666cbe9e27df}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em 描画処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a62fb5ac8de4add3dd87b5f23d65a1ccd}{Set\+Model}} (\mbox{\hyperlink{class_c_draw3_d}{CDraw3D}} $\ast$model)
+\begin{DoxyCompactList}\small\item\em モデルの設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a1a37908b77156028e7036f9d3c07e5f1}{Play}} (int Anim\+State)
+\begin{DoxyCompactList}\small\item\em 再生 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a87d73dfc88a366e086e0518328e1c1a0}{Stop}} ()
+\begin{DoxyCompactList}\small\item\em 停止 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_aa243c086390d580e3ef98f526160995c}{Add\+Animation}} (int Anim\+ID, double start, double end, double loop\+Start\+Frame, bool loop)
+\begin{DoxyCompactList}\small\item\em アニメーションの追加 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a0600d4ca9e8b7eeca72e31fc78251abd}{Set\+Loop}} (int Anim\+ID, bool loop)
+\begin{DoxyCompactList}\small\item\em ループ再生の設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_ac94f4663a797edb00c9a60cb59e74dac}{Set\+Play\+Speed}} (int Anim\+ID, double speed)
+\begin{DoxyCompactList}\small\item\em 再生速度の設定 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_animation_a61dd177c4b20f9d560bd76199079bf5b}{Anim\+End}} (int Anim\+ID)
+\begin{DoxyCompactList}\small\item\em アニメーションが終わったかのフラグ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_animation_a229edf28387b4f8d007bd0c7354b4742}{Always\+Animation}} (bool always)
+\begin{DoxyCompactList}\small\item\em 常に再生しているかどうか \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_animation_a83f0a16cef7117f187ad596de38dd9d6}\label{class_animation_a83f0a16cef7117f187ad596de38dd9d6}} 
+\index{Animation@{Animation}!Animation@{Animation}}
+\index{Animation@{Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Animation()}{Animation()}}
+{\footnotesize\ttfamily Animation\+::\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+\mbox{\Hypertarget{class_animation_a401b68793d4fbf48d481c030ee4b2a16}\label{class_animation_a401b68793d4fbf48d481c030ee4b2a16}} 
+\index{Animation@{Animation}!````~Animation@{$\sim$Animation}}
+\index{````~Animation@{$\sim$Animation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{$\sim$Animation()}{~Animation()}}
+{\footnotesize\ttfamily Animation\+::$\sim$\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+デストラクタ 
+
+返事がない　ただのデストラクタのようだ 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_animation_aa243c086390d580e3ef98f526160995c}\label{class_animation_aa243c086390d580e3ef98f526160995c}} 
+\index{Animation@{Animation}!AddAnimation@{AddAnimation}}
+\index{AddAnimation@{AddAnimation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{AddAnimation()}{AddAnimation()}}
+{\footnotesize\ttfamily void Animation\+::\+Add\+Animation (\begin{DoxyParamCaption}\item[{int}]{Anim\+ID,  }\item[{double}]{start,  }\item[{double}]{end,  }\item[{double}]{loop\+Start\+Frame,  }\item[{bool}]{loop }\end{DoxyParamCaption})}
+
+
+
+アニメーションの追加 
+
+アニメーションを追加する
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & アニメーションの番号 \\
+\hline
+{\em (double)} & アニメーションスタート番号 ~\newline
+ \\
+\hline
+{\em (double)} & アニメーション終わりの番号 \\
+\hline
+{\em (double)} & ループが始まるフレーム \\
+\hline
+{\em (bool)} & ループさせるかどうか \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_animation_aa243c086390d580e3ef98f526160995c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_animation_a229edf28387b4f8d007bd0c7354b4742}\label{class_animation_a229edf28387b4f8d007bd0c7354b4742}} 
+\index{Animation@{Animation}!AlwaysAnimation@{AlwaysAnimation}}
+\index{AlwaysAnimation@{AlwaysAnimation}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{AlwaysAnimation()}{AlwaysAnimation()}}
+{\footnotesize\ttfamily void Animation\+::\+Always\+Animation (\begin{DoxyParamCaption}\item[{bool}]{always }\end{DoxyParamCaption})}
+
+
+
+常に再生しているかどうか 
+
+@常に常時
+
+
+\begin{DoxyParams}{引数}
+{\em (bool)} & 常にアニメーションを流すか \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_animation_a229edf28387b4f8d007bd0c7354b4742_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_animation_a61dd177c4b20f9d560bd76199079bf5b}\label{class_animation_a61dd177c4b20f9d560bd76199079bf5b}} 
+\index{Animation@{Animation}!AnimEnd@{AnimEnd}}
+\index{AnimEnd@{AnimEnd}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{AnimEnd()}{AnimEnd()}}
+{\footnotesize\ttfamily bool Animation\+::\+Anim\+End (\begin{DoxyParamCaption}\item[{int}]{Anim\+ID }\end{DoxyParamCaption})}
+
+
+
+アニメーションが終わったかのフラグ 
+
+アニメーションを終わらせる
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & どのモデルを終わらせるか \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(bool) 終わらせれたかどうか 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_animation_a61dd177c4b20f9d560bd76199079bf5b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_animation_a708aaadcc89b683ae349666cbe9e27df}\label{class_animation_a708aaadcc89b683ae349666cbe9e27df}} 
+\index{Animation@{Animation}!Draw@{Draw}}
+\index{Draw@{Draw}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Animation\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+描画処理 
+
+\mbox{\Hypertarget{class_animation_a1a37908b77156028e7036f9d3c07e5f1}\label{class_animation_a1a37908b77156028e7036f9d3c07e5f1}} 
+\index{Animation@{Animation}!Play@{Play}}
+\index{Play@{Play}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Play()}{Play()}}
+{\footnotesize\ttfamily void Animation\+::\+Play (\begin{DoxyParamCaption}\item[{int}]{Anim\+State }\end{DoxyParamCaption})}
+
+
+
+再生 
+
+最初から再生
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & アニメーションの情報 \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{class_animation_a1a37908b77156028e7036f9d3c07e5f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_animation_a0600d4ca9e8b7eeca72e31fc78251abd}\label{class_animation_a0600d4ca9e8b7eeca72e31fc78251abd}} 
+\index{Animation@{Animation}!SetLoop@{SetLoop}}
+\index{SetLoop@{SetLoop}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{SetLoop()}{SetLoop()}}
+{\footnotesize\ttfamily void Animation\+::\+Set\+Loop (\begin{DoxyParamCaption}\item[{int}]{Anim\+ID,  }\item[{bool}]{loop }\end{DoxyParamCaption})}
+
+
+
+ループ再生の設定 
+
+ループ再生 ~\newline
+
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & アニメーションの番号 \\
+\hline
+{\em (bool)} & ループさせるかどうか ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_animation_a62fb5ac8de4add3dd87b5f23d65a1ccd}\label{class_animation_a62fb5ac8de4add3dd87b5f23d65a1ccd}} 
+\index{Animation@{Animation}!SetModel@{SetModel}}
+\index{SetModel@{SetModel}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{SetModel()}{SetModel()}}
+{\footnotesize\ttfamily void Animation\+::\+Set\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_draw3_d}{CDraw3D}} $\ast$}]{model }\end{DoxyParamCaption})}
+
+
+
+モデルの設定 
+
+$\ast$brief モデルのセット
+
+
+\begin{DoxyParams}{引数}
+{\em (\+CDraw3\+D$\ast$)} & モデルのポインタ \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_animation_a62fb5ac8de4add3dd87b5f23d65a1ccd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_animation_ac94f4663a797edb00c9a60cb59e74dac}\label{class_animation_ac94f4663a797edb00c9a60cb59e74dac}} 
+\index{Animation@{Animation}!SetPlaySpeed@{SetPlaySpeed}}
+\index{SetPlaySpeed@{SetPlaySpeed}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{SetPlaySpeed()}{SetPlaySpeed()}}
+{\footnotesize\ttfamily void Animation\+::\+Set\+Play\+Speed (\begin{DoxyParamCaption}\item[{int}]{Anim\+ID,  }\item[{double}]{speed }\end{DoxyParamCaption})}
+
+
+
+再生速度の設定 
+
+アニメーションの再生スピードの設定
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & アニメーションの番号 \\
+\hline
+{\em (double)} & アニメーションのスピード \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_animation_ac94f4663a797edb00c9a60cb59e74dac_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_animation_a87d73dfc88a366e086e0518328e1c1a0}\label{class_animation_a87d73dfc88a366e086e0518328e1c1a0}} 
+\index{Animation@{Animation}!Stop@{Stop}}
+\index{Stop@{Stop}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Stop()}{Stop()}}
+{\footnotesize\ttfamily void Animation\+::\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+停止 
+
+停止する 被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_animation_a87d73dfc88a366e086e0518328e1c1a0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_animation_a0c6a4e940db84d4a6246fcb3ae773402}\label{class_animation_a0c6a4e940db84d4a6246fcb3ae773402}} 
+\index{Animation@{Animation}!Update@{Update}}
+\index{Update@{Update}!Animation@{Animation}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Animation\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+更新処理 
+
+更新処理は...終わらねぇ！！！！ 呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_animation_a0c6a4e940db84d4a6246fcb3ae773402_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_animation_a0c6a4e940db84d4a6246fcb3ae773402_icgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_animation_8h}{Animation.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_animation_8cpp}{Animation.\+cpp}}\end{DoxyCompactItemize}

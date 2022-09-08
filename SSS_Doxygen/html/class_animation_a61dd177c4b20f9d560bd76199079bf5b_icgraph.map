@@ -1,0 +1,4 @@
+<map id="Animation::AnimEnd" name="Animation::AnimEnd">
+<area shape="rect" id="node1" title="アニメーションが終わったかのフラグ" alt="" coords="191,5,332,32"/>
+<area shape="rect" id="node2" href="$class_c_draw3_d.html#a5814eb2eadef21588eeda20bd82430f2" title="アニメーション終了" alt="" coords="5,5,143,32"/>
+</map>

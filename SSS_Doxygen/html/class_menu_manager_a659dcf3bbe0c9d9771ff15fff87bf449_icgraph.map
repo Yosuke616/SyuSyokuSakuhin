@@ -1,0 +1,8 @@
+<map id="MenuManager::GetInsutance" name="MenuManager::GetInsutance">
+<area shape="rect" id="node1" title="インスタンス生成" alt="" coords="227,107,416,133"/>
+<area shape="rect" id="node2" href="$class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="33,5,151,32"/>
+<area shape="rect" id="node3" href="$class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="33,56,151,83"/>
+<area shape="rect" id="node4" href="$class_scene_title.html#a25a10fe18f8ff1f5a7e657cfe6eca671" title=" " alt="" coords="38,107,146,133"/>
+<area shape="rect" id="node5" href="$class_c_player.html#abede91d4fa024fae2396593ce5532b17" title="衝突処理" alt="" coords="5,157,179,184"/>
+<area shape="rect" id="node6" href="$class_c_player.html#a4582a8020f6734842edea64909bd4b40" title="更新" alt="" coords="33,208,151,235"/>
+</map>

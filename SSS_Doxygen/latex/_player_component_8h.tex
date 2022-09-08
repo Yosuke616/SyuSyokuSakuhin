@@ -1,0 +1,114 @@
+\hypertarget{_player_component_8h}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\+Player\+Component.h ファイル}
+\label{_player_component_8h}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/PlayerComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/PlayerComponent.h}}
+
+
+プレイヤーの操作をするコンポーネント  
+
+
+{\ttfamily \#include \char`\"{}Component.\+h\char`\"{}}\newline
+Player\+Component.\+h の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_player_component_8h__incl}
+\end{center}
+\end{figure}
+被依存関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_player_component_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{クラス}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_c_player}{CPlayer}}
+\end{DoxyCompactItemize}
+\doxysubsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}{PLAYER\+\_\+\+STATE}} \{ \newline
+\mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94adae7c3c550e30258845f9f4355f8b433}{IDLE\+\_\+\+PLAYER}} = 0
+, \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a5948c9dc0bb7de02f24920ad0f60c902}{RUN\+\_\+\+PLAYER}}
+, \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a7c8a207520e3dc3179aeabc99c1ca314}{DUSH\+\_\+\+PLAYER}}
+, \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94acaabad92b8096aba343d718196023e32}{JUMP\+\_\+\+PLAYER}}
+, \newline
+\mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94ab0a68dd52926ffb8d19633420ac5eece}{ATTACK\+\_\+\+PLAYER}}
+, \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94ac19c906d92b699baf264129a04ad0b5b}{FALL\+\_\+\+PLAYER}}
+, \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94af16f871a2d70b0806115564a4dea2b3a}{HIT\+\_\+\+PLAYER}}
+, \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a776f5db954d0cfbd0571c41c3dfb6388}{MISS\+\_\+\+PLAYER}}
+, \newline
+\mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94acce192e5e5bcf52749188eb28a4ffd6d}{CLEAR\+\_\+\+PLAYER}}
+, \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94ae50e0782ed5b84736057efdbac17c75d}{STOP\+\_\+\+PLAYER}}
+, \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a7bd3bc5b03aa02412bbf6d64607ce73c}{MAX\+\_\+\+PLAYER}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+プレイヤーの操作をするコンポーネント 
+
+\begin{DoxyAuthor}{著者}
+志水陽祐 
+\end{DoxyAuthor}
+\begin{DoxyDate}{日付}
+2022/7/14 
+\end{DoxyDate}
+
+
+\doxysubsection{列挙型詳解}
+\mbox{\Hypertarget{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}\label{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}} 
+\index{PlayerComponent.h@{PlayerComponent.h}!PLAYER\_STATE@{PLAYER\_STATE}}
+\index{PLAYER\_STATE@{PLAYER\_STATE}!PlayerComponent.h@{PlayerComponent.h}}
+\doxysubsubsection{\texorpdfstring{PLAYER\_STATE}{PLAYER\_STATE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}{PLAYER\+\_\+\+STATE}}}
+
+列挙体宣言 \begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IDLE\_PLAYER@{IDLE\_PLAYER}!PlayerComponent.h@{PlayerComponent.h}}\index{PlayerComponent.h@{PlayerComponent.h}!IDLE\_PLAYER@{IDLE\_PLAYER}}}\mbox{\Hypertarget{_player_component_8h_a5baccd10d2f9116585c878821a80cc94adae7c3c550e30258845f9f4355f8b433}\label{_player_component_8h_a5baccd10d2f9116585c878821a80cc94adae7c3c550e30258845f9f4355f8b433}} 
+IDLE\+\_\+\+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RUN\_PLAYER@{RUN\_PLAYER}!PlayerComponent.h@{PlayerComponent.h}}\index{PlayerComponent.h@{PlayerComponent.h}!RUN\_PLAYER@{RUN\_PLAYER}}}\mbox{\Hypertarget{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a5948c9dc0bb7de02f24920ad0f60c902}\label{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a5948c9dc0bb7de02f24920ad0f60c902}} 
+RUN\+\_\+\+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DUSH\_PLAYER@{DUSH\_PLAYER}!PlayerComponent.h@{PlayerComponent.h}}\index{PlayerComponent.h@{PlayerComponent.h}!DUSH\_PLAYER@{DUSH\_PLAYER}}}\mbox{\Hypertarget{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a7c8a207520e3dc3179aeabc99c1ca314}\label{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a7c8a207520e3dc3179aeabc99c1ca314}} 
+DUSH\+\_\+\+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{JUMP\_PLAYER@{JUMP\_PLAYER}!PlayerComponent.h@{PlayerComponent.h}}\index{PlayerComponent.h@{PlayerComponent.h}!JUMP\_PLAYER@{JUMP\_PLAYER}}}\mbox{\Hypertarget{_player_component_8h_a5baccd10d2f9116585c878821a80cc94acaabad92b8096aba343d718196023e32}\label{_player_component_8h_a5baccd10d2f9116585c878821a80cc94acaabad92b8096aba343d718196023e32}} 
+JUMP\+\_\+\+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ATTACK\_PLAYER@{ATTACK\_PLAYER}!PlayerComponent.h@{PlayerComponent.h}}\index{PlayerComponent.h@{PlayerComponent.h}!ATTACK\_PLAYER@{ATTACK\_PLAYER}}}\mbox{\Hypertarget{_player_component_8h_a5baccd10d2f9116585c878821a80cc94ab0a68dd52926ffb8d19633420ac5eece}\label{_player_component_8h_a5baccd10d2f9116585c878821a80cc94ab0a68dd52926ffb8d19633420ac5eece}} 
+ATTACK\+\_\+\+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FALL\_PLAYER@{FALL\_PLAYER}!PlayerComponent.h@{PlayerComponent.h}}\index{PlayerComponent.h@{PlayerComponent.h}!FALL\_PLAYER@{FALL\_PLAYER}}}\mbox{\Hypertarget{_player_component_8h_a5baccd10d2f9116585c878821a80cc94ac19c906d92b699baf264129a04ad0b5b}\label{_player_component_8h_a5baccd10d2f9116585c878821a80cc94ac19c906d92b699baf264129a04ad0b5b}} 
+FALL\+\_\+\+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{HIT\_PLAYER@{HIT\_PLAYER}!PlayerComponent.h@{PlayerComponent.h}}\index{PlayerComponent.h@{PlayerComponent.h}!HIT\_PLAYER@{HIT\_PLAYER}}}\mbox{\Hypertarget{_player_component_8h_a5baccd10d2f9116585c878821a80cc94af16f871a2d70b0806115564a4dea2b3a}\label{_player_component_8h_a5baccd10d2f9116585c878821a80cc94af16f871a2d70b0806115564a4dea2b3a}} 
+HIT\+\_\+\+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MISS\_PLAYER@{MISS\_PLAYER}!PlayerComponent.h@{PlayerComponent.h}}\index{PlayerComponent.h@{PlayerComponent.h}!MISS\_PLAYER@{MISS\_PLAYER}}}\mbox{\Hypertarget{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a776f5db954d0cfbd0571c41c3dfb6388}\label{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a776f5db954d0cfbd0571c41c3dfb6388}} 
+MISS\+\_\+\+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CLEAR\_PLAYER@{CLEAR\_PLAYER}!PlayerComponent.h@{PlayerComponent.h}}\index{PlayerComponent.h@{PlayerComponent.h}!CLEAR\_PLAYER@{CLEAR\_PLAYER}}}\mbox{\Hypertarget{_player_component_8h_a5baccd10d2f9116585c878821a80cc94acce192e5e5bcf52749188eb28a4ffd6d}\label{_player_component_8h_a5baccd10d2f9116585c878821a80cc94acce192e5e5bcf52749188eb28a4ffd6d}} 
+CLEAR\+\_\+\+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STOP\_PLAYER@{STOP\_PLAYER}!PlayerComponent.h@{PlayerComponent.h}}\index{PlayerComponent.h@{PlayerComponent.h}!STOP\_PLAYER@{STOP\_PLAYER}}}\mbox{\Hypertarget{_player_component_8h_a5baccd10d2f9116585c878821a80cc94ae50e0782ed5b84736057efdbac17c75d}\label{_player_component_8h_a5baccd10d2f9116585c878821a80cc94ae50e0782ed5b84736057efdbac17c75d}} 
+STOP\+\_\+\+PLAYER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_PLAYER@{MAX\_PLAYER}!PlayerComponent.h@{PlayerComponent.h}}\index{PlayerComponent.h@{PlayerComponent.h}!MAX\_PLAYER@{MAX\_PLAYER}}}\mbox{\Hypertarget{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a7bd3bc5b03aa02412bbf6d64607ce73c}\label{_player_component_8h_a5baccd10d2f9116585c878821a80cc94a7bd3bc5b03aa02412bbf6d64607ce73c}} 
+MAX\+\_\+\+PLAYER&\\
+\hline
+
+\end{DoxyEnumFields}

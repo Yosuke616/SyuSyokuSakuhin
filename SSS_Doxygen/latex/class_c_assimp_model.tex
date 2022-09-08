@@ -1,0 +1,433 @@
+\hypertarget{class_c_assimp_model}{}\doxysection{CAssimp\+Model クラス}
+\label{class_c_assimp_model}\index{CAssimpModel@{CAssimpModel}}
+
+
+{\ttfamily \#include $<$Assimp\+Model.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_c_assimp_model_ac56e88cd4c0856b4c24deef96d674154}{Set\+Animation}} (bool b\+Animation)
+\item 
+\mbox{\hyperlink{class_c_assimp_model_af51e2d0b62a9326ff40d0560d1f8bd52}{CAssimp\+Model}} ()
+\item 
+virtual \mbox{\hyperlink{class_c_assimp_model_a47021ba66220589ade70afa85feea3cd}{$\sim$\+CAssimp\+Model}} ()
+\item 
+void \mbox{\hyperlink{class_c_assimp_model_a8309052c015d8844e85277fa82810ba3}{Set\+Primitive\+Type}} (D3\+D\+\_\+\+PRIMITIVE\+\_\+\+TOPOLOGY type)
+\item 
+Direct\+X\+::\+XMFLOAT4\+X4 \& \mbox{\hyperlink{class_c_assimp_model_ab79b6874ddc2bd8a9b691c8ddaceea26}{Get\+Texture\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{class_c_assimp_model_addafb779ff18d9d02ece0c85debd17a0}{Set\+Texture\+Matrix}} (Direct\+X\+::\+XMFLOAT4\+X4 \&mtx\+Texture)
+\item 
+bool \mbox{\hyperlink{class_c_assimp_model_a75759219911dbbc1072687f680a187ec}{Load}} (ID3\+D11\+Device $\ast$p\+Device, ID3\+D11\+Device\+Context $\ast$p\+DC, std\+::string filename)
+\item 
+void \mbox{\hyperlink{class_c_assimp_model_aac69dd95631d620577c17670dbd37149}{Draw}} (ID3\+D11\+Device\+Context $\ast$p\+DC, Direct\+X\+::\+XMFLOAT4\+X4 \&mtx\+World, \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}{EBy\+Opacity}} by\+Opacity=\mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a35cbb98affb6d66c253aefeb9d4078bc}{e\+No\+Affect}})
+\item 
+void \mbox{\hyperlink{class_c_assimp_model_a883075480beae8196af8823ed71cd426}{Draw\+Node}} (ID3\+D11\+Device\+Context $\ast$p\+DC, ai\+Node $\ast$pi\+Node, const ai\+Matrix4x4 \&pi\+Matrix, \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}{EBy\+Opacity}} by\+Opacity)
+\item 
+void \mbox{\hyperlink{class_c_assimp_model_ae1efd6c2fae09f8626f1bfce806d38ff}{Set\+Mate}} (\mbox{\hyperlink{struct_t_assimp_material}{TAssimp\+Material}} $\ast$mate)
+\begin{DoxyCompactList}\small\item\em 敵のマテリアルを保存する \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_t_assimp_material}{TAssimp\+Material}} $\ast$ \mbox{\hyperlink{class_c_assimp_model_a689c87a4798e9ccb0cf4ff540543f94f}{Get\+Mate}} ()
+\begin{DoxyCompactList}\small\item\em 敵マテリアルの取得 \end{DoxyCompactList}\item 
+Direct\+X\+::\+XMFLOAT4\+X4 \& \mbox{\hyperlink{class_c_assimp_model_ad5c088fc33fd15c8f36d66053f4b0cb1}{Get\+World\+Matrix}} ()
+\item 
+void \mbox{\hyperlink{class_c_assimp_model_a07167f899d4215e860f8c3f4de456ada}{Set\+Material}} (\mbox{\hyperlink{struct_t_assimp_material}{TAssimp\+Material}} $\ast$p\+Material)
+\item 
+\mbox{\hyperlink{struct_t_assimp_material}{TAssimp\+Material}} $\ast$ \mbox{\hyperlink{class_c_assimp_model_a059efb51145989e578702f2e0055b3ca}{Get\+Material}} ()
+\item 
+\mbox{\hyperlink{class_scene_animator}{Scene\+Animator}} $\ast$ \mbox{\hyperlink{class_c_assimp_model_af4ad20743bce27a7103050ca0a9045c1}{Has\+Animation}} ()
+\item 
+void \mbox{\hyperlink{class_c_assimp_model_adad1c76eb6e46f04d1cb182acd8f2c17}{Set\+Anim\+Index}} (int n\+Anim\+Index)
+\item 
+UINT \mbox{\hyperlink{class_c_assimp_model_afe814cf074d8e2995264793033dd428e}{Get\+Anim\+Count}} ()
+\item 
+double \mbox{\hyperlink{class_c_assimp_model_adb38220b105ac49b618cd5d201a67821}{Get\+Anim\+Duration}} (int n\+Anim\+Index=-\/1)
+\item 
+void \mbox{\hyperlink{class_c_assimp_model_a46d9b841367394d10bb887e2ccb370f7}{Set\+Anim\+Time}} (double d\+Time)
+\item 
+void \mbox{\hyperlink{class_c_assimp_model_a9875e0478db4afca70de506809f88381}{Release}} ()
+\item 
+Direct\+X\+::\+XMFLOAT3 \& \mbox{\hyperlink{class_c_assimp_model_ade037d59becd013cff978addf7ce0ac9}{Get\+BBox}} ()
+\item 
+Direct\+X\+::\+XMFLOAT3 \& \mbox{\hyperlink{class_c_assimp_model_a77d527a3813e206d2e20015ad5ffe701}{Get\+Center}} ()
+\item 
+constexpr const std\+::string \& \mbox{\hyperlink{class_c_assimp_model_a1c0b33a4e0b1f897820b5283a9376456}{Get\+Name}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_c_assimp_model_a4a7771d2c4afcde3d4dd26cb73e983e1}{Init\+Shader}} (ID3\+D11\+Device $\ast$p\+Device)
+\item 
+static void \mbox{\hyperlink{class_c_assimp_model_ab706c8c7d9065532874d87122e37f8bb}{Uninit\+Shader}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{静的公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+static double \mbox{\hyperlink{class_c_assimp_model_a007941bb336a88ff1112802f56e5ce2e}{g\+\_\+time}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_assimp_model_af51e2d0b62a9326ff40d0560d1f8bd52}\label{class_c_assimp_model_af51e2d0b62a9326ff40d0560d1f8bd52}} 
+\index{CAssimpModel@{CAssimpModel}!CAssimpModel@{CAssimpModel}}
+\index{CAssimpModel@{CAssimpModel}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{CAssimpModel()}{CAssimpModel()}}
+{\footnotesize\ttfamily CAssimp\+Model\+::\+CAssimp\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_assimp_model_a47021ba66220589ade70afa85feea3cd}\label{class_c_assimp_model_a47021ba66220589ade70afa85feea3cd}} 
+\index{CAssimpModel@{CAssimpModel}!````~CAssimpModel@{$\sim$CAssimpModel}}
+\index{````~CAssimpModel@{$\sim$CAssimpModel}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{$\sim$CAssimpModel()}{~CAssimpModel()}}
+{\footnotesize\ttfamily CAssimp\+Model\+::$\sim$\+CAssimp\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_assimp_model_aac69dd95631d620577c17670dbd37149}\label{class_c_assimp_model_aac69dd95631d620577c17670dbd37149}} 
+\index{CAssimpModel@{CAssimpModel}!Draw@{Draw}}
+\index{Draw@{Draw}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void CAssimp\+Model\+::\+Draw (\begin{DoxyParamCaption}\item[{ID3\+D11\+Device\+Context $\ast$}]{p\+DC,  }\item[{Direct\+X\+::\+XMFLOAT4\+X4 \&}]{mtx\+World,  }\item[{\mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}{EBy\+Opacity}}}]{by\+Opacity = {\ttfamily \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a35cbb98affb6d66c253aefeb9d4078bc}{e\+No\+Affect}}} }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_aac69dd95631d620577c17670dbd37149_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{class_c_assimp_model_aac69dd95631d620577c17670dbd37149_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_a883075480beae8196af8823ed71cd426}\label{class_c_assimp_model_a883075480beae8196af8823ed71cd426}} 
+\index{CAssimpModel@{CAssimpModel}!DrawNode@{DrawNode}}
+\index{DrawNode@{DrawNode}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{DrawNode()}{DrawNode()}}
+{\footnotesize\ttfamily void CAssimp\+Model\+::\+Draw\+Node (\begin{DoxyParamCaption}\item[{ID3\+D11\+Device\+Context $\ast$}]{p\+DC,  }\item[{ai\+Node $\ast$}]{pi\+Node,  }\item[{const ai\+Matrix4x4 \&}]{pi\+Matrix,  }\item[{\mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}{EBy\+Opacity}}}]{by\+Opacity }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_a883075480beae8196af8823ed71cd426_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_a883075480beae8196af8823ed71cd426_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_afe814cf074d8e2995264793033dd428e}\label{class_c_assimp_model_afe814cf074d8e2995264793033dd428e}} 
+\index{CAssimpModel@{CAssimpModel}!GetAnimCount@{GetAnimCount}}
+\index{GetAnimCount@{GetAnimCount}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{GetAnimCount()}{GetAnimCount()}}
+{\footnotesize\ttfamily UINT CAssimp\+Model\+::\+Get\+Anim\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_assimp_model_adb38220b105ac49b618cd5d201a67821}\label{class_c_assimp_model_adb38220b105ac49b618cd5d201a67821}} 
+\index{CAssimpModel@{CAssimpModel}!GetAnimDuration@{GetAnimDuration}}
+\index{GetAnimDuration@{GetAnimDuration}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{GetAnimDuration()}{GetAnimDuration()}}
+{\footnotesize\ttfamily double CAssimp\+Model\+::\+Get\+Anim\+Duration (\begin{DoxyParamCaption}\item[{int}]{n\+Anim\+Index = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_adb38220b105ac49b618cd5d201a67821_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_ade037d59becd013cff978addf7ce0ac9}\label{class_c_assimp_model_ade037d59becd013cff978addf7ce0ac9}} 
+\index{CAssimpModel@{CAssimpModel}!GetBBox@{GetBBox}}
+\index{GetBBox@{GetBBox}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{GetBBox()}{GetBBox()}}
+{\footnotesize\ttfamily Direct\+X\+::\+XMFLOAT3 \& CAssimp\+Model\+::\+Get\+BBox (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_c_assimp_model_ade037d59becd013cff978addf7ce0ac9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_a77d527a3813e206d2e20015ad5ffe701}\label{class_c_assimp_model_a77d527a3813e206d2e20015ad5ffe701}} 
+\index{CAssimpModel@{CAssimpModel}!GetCenter@{GetCenter}}
+\index{GetCenter@{GetCenter}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{GetCenter()}{GetCenter()}}
+{\footnotesize\ttfamily Direct\+X\+::\+XMFLOAT3 \& CAssimp\+Model\+::\+Get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_c_assimp_model_a689c87a4798e9ccb0cf4ff540543f94f}\label{class_c_assimp_model_a689c87a4798e9ccb0cf4ff540543f94f}} 
+\index{CAssimpModel@{CAssimpModel}!GetMate@{GetMate}}
+\index{GetMate@{GetMate}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{GetMate()}{GetMate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_t_assimp_material}{TAssimp\+Material}} $\ast$ CAssimp\+Model\+::\+Get\+Mate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+敵マテリアルの取得 
+
+\begin{DoxyReturn}{戻り値}
+(TAssimp\+Material$\ast$) な手リアルの入った情報 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_c_assimp_model_a689c87a4798e9ccb0cf4ff540543f94f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_a059efb51145989e578702f2e0055b3ca}\label{class_c_assimp_model_a059efb51145989e578702f2e0055b3ca}} 
+\index{CAssimpModel@{CAssimpModel}!GetMaterial@{GetMaterial}}
+\index{GetMaterial@{GetMaterial}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{GetMaterial()}{GetMaterial()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_t_assimp_material}{TAssimp\+Material}} $\ast$ CAssimp\+Model\+::\+Get\+Material (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_a059efb51145989e578702f2e0055b3ca_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_a1c0b33a4e0b1f897820b5283a9376456}\label{class_c_assimp_model_a1c0b33a4e0b1f897820b5283a9376456}} 
+\index{CAssimpModel@{CAssimpModel}!GetName@{GetName}}
+\index{GetName@{GetName}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily constexpr const std\+::string \& CAssimp\+Model\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{class_c_assimp_model_ab79b6874ddc2bd8a9b691c8ddaceea26}\label{class_c_assimp_model_ab79b6874ddc2bd8a9b691c8ddaceea26}} 
+\index{CAssimpModel@{CAssimpModel}!GetTextureMatrix@{GetTextureMatrix}}
+\index{GetTextureMatrix@{GetTextureMatrix}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{GetTextureMatrix()}{GetTextureMatrix()}}
+{\footnotesize\ttfamily XMFLOAT4\+X4 \& CAssimp\+Model\+::\+Get\+Texture\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_ab79b6874ddc2bd8a9b691c8ddaceea26_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_ad5c088fc33fd15c8f36d66053f4b0cb1}\label{class_c_assimp_model_ad5c088fc33fd15c8f36d66053f4b0cb1}} 
+\index{CAssimpModel@{CAssimpModel}!GetWorldMatrix@{GetWorldMatrix}}
+\index{GetWorldMatrix@{GetWorldMatrix}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{GetWorldMatrix()}{GetWorldMatrix()}}
+{\footnotesize\ttfamily Direct\+X\+::\+XMFLOAT4\+X4 \& CAssimp\+Model\+::\+Get\+World\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_ad5c088fc33fd15c8f36d66053f4b0cb1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_af4ad20743bce27a7103050ca0a9045c1}\label{class_c_assimp_model_af4ad20743bce27a7103050ca0a9045c1}} 
+\index{CAssimpModel@{CAssimpModel}!HasAnimation@{HasAnimation}}
+\index{HasAnimation@{HasAnimation}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{HasAnimation()}{HasAnimation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scene_animator}{Scene\+Animator}} $\ast$ CAssimp\+Model\+::\+Has\+Animation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_af4ad20743bce27a7103050ca0a9045c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_a4a7771d2c4afcde3d4dd26cb73e983e1}\label{class_c_assimp_model_a4a7771d2c4afcde3d4dd26cb73e983e1}} 
+\index{CAssimpModel@{CAssimpModel}!InitShader@{InitShader}}
+\index{InitShader@{InitShader}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{InitShader()}{InitShader()}}
+{\footnotesize\ttfamily bool CAssimp\+Model\+::\+Init\+Shader (\begin{DoxyParamCaption}\item[{ID3\+D11\+Device $\ast$}]{p\+Device }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_a4a7771d2c4afcde3d4dd26cb73e983e1_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_a4a7771d2c4afcde3d4dd26cb73e983e1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_a75759219911dbbc1072687f680a187ec}\label{class_c_assimp_model_a75759219911dbbc1072687f680a187ec}} 
+\index{CAssimpModel@{CAssimpModel}!Load@{Load}}
+\index{Load@{Load}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily bool CAssimp\+Model\+::\+Load (\begin{DoxyParamCaption}\item[{ID3\+D11\+Device $\ast$}]{p\+Device,  }\item[{ID3\+D11\+Device\+Context $\ast$}]{p\+DC,  }\item[{std\+::string}]{filename }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_a75759219911dbbc1072687f680a187ec_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_a75759219911dbbc1072687f680a187ec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_a9875e0478db4afca70de506809f88381}\label{class_c_assimp_model_a9875e0478db4afca70de506809f88381}} 
+\index{CAssimpModel@{CAssimpModel}!Release@{Release}}
+\index{Release@{Release}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{Release()}{Release()}}
+{\footnotesize\ttfamily void CAssimp\+Model\+::\+Release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_a9875e0478db4afca70de506809f88381_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_ac56e88cd4c0856b4c24deef96d674154}\label{class_c_assimp_model_ac56e88cd4c0856b4c24deef96d674154}} 
+\index{CAssimpModel@{CAssimpModel}!SetAnimation@{SetAnimation}}
+\index{SetAnimation@{SetAnimation}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{SetAnimation()}{SetAnimation()}}
+{\footnotesize\ttfamily void CAssimp\+Model\+::\+Set\+Animation (\begin{DoxyParamCaption}\item[{bool}]{b\+Animation }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_assimp_model_adad1c76eb6e46f04d1cb182acd8f2c17}\label{class_c_assimp_model_adad1c76eb6e46f04d1cb182acd8f2c17}} 
+\index{CAssimpModel@{CAssimpModel}!SetAnimIndex@{SetAnimIndex}}
+\index{SetAnimIndex@{SetAnimIndex}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{SetAnimIndex()}{SetAnimIndex()}}
+{\footnotesize\ttfamily void CAssimp\+Model\+::\+Set\+Anim\+Index (\begin{DoxyParamCaption}\item[{int}]{n\+Anim\+Index }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_adad1c76eb6e46f04d1cb182acd8f2c17_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_a46d9b841367394d10bb887e2ccb370f7}\label{class_c_assimp_model_a46d9b841367394d10bb887e2ccb370f7}} 
+\index{CAssimpModel@{CAssimpModel}!SetAnimTime@{SetAnimTime}}
+\index{SetAnimTime@{SetAnimTime}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{SetAnimTime()}{SetAnimTime()}}
+{\footnotesize\ttfamily void CAssimp\+Model\+::\+Set\+Anim\+Time (\begin{DoxyParamCaption}\item[{double}]{d\+Time }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_a46d9b841367394d10bb887e2ccb370f7_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_a46d9b841367394d10bb887e2ccb370f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_ae1efd6c2fae09f8626f1bfce806d38ff}\label{class_c_assimp_model_ae1efd6c2fae09f8626f1bfce806d38ff}} 
+\index{CAssimpModel@{CAssimpModel}!SetMate@{SetMate}}
+\index{SetMate@{SetMate}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{SetMate()}{SetMate()}}
+{\footnotesize\ttfamily void CAssimp\+Model\+::\+Set\+Mate (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_assimp_material}{TAssimp\+Material}} $\ast$}]{mate }\end{DoxyParamCaption})}
+
+
+
+敵のマテリアルを保存する 
+
+
+\begin{DoxyParams}{引数}
+{\em (\+TAssimp\+Material$\ast$)} & マテリアルのポインタ \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_ae1efd6c2fae09f8626f1bfce806d38ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_a07167f899d4215e860f8c3f4de456ada}\label{class_c_assimp_model_a07167f899d4215e860f8c3f4de456ada}} 
+\index{CAssimpModel@{CAssimpModel}!SetMaterial@{SetMaterial}}
+\index{SetMaterial@{SetMaterial}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{SetMaterial()}{SetMaterial()}}
+{\footnotesize\ttfamily void CAssimp\+Model\+::\+Set\+Material (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_t_assimp_material}{TAssimp\+Material}} $\ast$}]{p\+Material }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_a07167f899d4215e860f8c3f4de456ada_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_a8309052c015d8844e85277fa82810ba3}\label{class_c_assimp_model_a8309052c015d8844e85277fa82810ba3}} 
+\index{CAssimpModel@{CAssimpModel}!SetPrimitiveType@{SetPrimitiveType}}
+\index{SetPrimitiveType@{SetPrimitiveType}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{SetPrimitiveType()}{SetPrimitiveType()}}
+{\footnotesize\ttfamily void CAssimp\+Model\+::\+Set\+Primitive\+Type (\begin{DoxyParamCaption}\item[{D3\+D\+\_\+\+PRIMITIVE\+\_\+\+TOPOLOGY}]{type }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_a8309052c015d8844e85277fa82810ba3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_model_addafb779ff18d9d02ece0c85debd17a0}\label{class_c_assimp_model_addafb779ff18d9d02ece0c85debd17a0}} 
+\index{CAssimpModel@{CAssimpModel}!SetTextureMatrix@{SetTextureMatrix}}
+\index{SetTextureMatrix@{SetTextureMatrix}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{SetTextureMatrix()}{SetTextureMatrix()}}
+{\footnotesize\ttfamily void CAssimp\+Model\+::\+Set\+Texture\+Matrix (\begin{DoxyParamCaption}\item[{Direct\+X\+::\+XMFLOAT4\+X4 \&}]{mtx\+Texture }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_assimp_model_ab706c8c7d9065532874d87122e37f8bb}\label{class_c_assimp_model_ab706c8c7d9065532874d87122e37f8bb}} 
+\index{CAssimpModel@{CAssimpModel}!UninitShader@{UninitShader}}
+\index{UninitShader@{UninitShader}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{UninitShader()}{UninitShader()}}
+{\footnotesize\ttfamily void CAssimp\+Model\+::\+Uninit\+Shader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_model_ab706c8c7d9065532874d87122e37f8bb_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{class_c_assimp_model_a007941bb336a88ff1112802f56e5ce2e}\label{class_c_assimp_model_a007941bb336a88ff1112802f56e5ce2e}} 
+\index{CAssimpModel@{CAssimpModel}!g\_time@{g\_time}}
+\index{g\_time@{g\_time}!CAssimpModel@{CAssimpModel}}
+\doxysubsubsection{\texorpdfstring{g\_time}{g\_time}}
+{\footnotesize\ttfamily double CAssimp\+Model\+::g\+\_\+time\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_assimp_model_8h}{Assimp\+Model.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_assimp_model_8cpp}{Assimp\+Model.\+cpp}}\end{DoxyCompactItemize}

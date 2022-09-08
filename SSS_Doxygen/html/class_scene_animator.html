@@ -1,0 +1,802 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: SceneAnimator クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pro-types">限定公開型</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="#pro-attribs">限定公開変数類</a> &#124;
+<a href="class_scene_animator-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">SceneAnimator クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_assimp_model_8h_source.html">AssimpModel.h</a>&gt;</code></p>
+<div class="dynheader">
+SceneAnimator 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator__coll__graph.png" border="0" usemap="#a_scene_animator_coll__map" alt="Collaboration graph"/></div>
+<map name="a_scene_animator_coll__map" id="a_scene_animator_coll__map">
+<area shape="rect" title=" " alt="" coords="68,95,179,121"/>
+<area shape="rect" href="class_anim_evaluator.html" title=" " alt="" coords="5,5,111,32"/>
+<area shape="rect" href="struct_scene_anim_node.html" title=" " alt="" coords="135,5,253,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:ad3f0975b87a7b83e6a53bb932dc87c5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#ad3f0975b87a7b83e6a53bb932dc87c5c">SceneAnimator</a> (const aiScene *pScene, size_t pAnimIndex=0)</td></tr>
+<tr class="separator:ad3f0975b87a7b83e6a53bb932dc87c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a204cb5b04afb15e6223e1b0f016d12fc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#a204cb5b04afb15e6223e1b0f016d12fc">~SceneAnimator</a> ()</td></tr>
+<tr class="separator:a204cb5b04afb15e6223e1b0f016d12fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a248309cdd1e5c8af66247aa14b174609"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#a248309cdd1e5c8af66247aa14b174609">SetAnimIndex</a> (size_t pAnimIndex)</td></tr>
+<tr class="separator:a248309cdd1e5c8af66247aa14b174609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2fca81d4eb40a272065b5cf032db38b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#ac2fca81d4eb40a272065b5cf032db38b">Calculate</a> (double pTime)</td></tr>
+<tr class="separator:ac2fca81d4eb40a272065b5cf032db38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf22ac0c0965e279fd4f387c3f4ad251"><td class="memItemLeft" align="right" valign="top">const aiMatrix4x4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#adf22ac0c0965e279fd4f387c3f4ad251">GetLocalTransform</a> (const aiNode *node) const</td></tr>
+<tr class="separator:adf22ac0c0965e279fd4f387c3f4ad251"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89b285b3575fac7c84497f9bf11e26b6"><td class="memItemLeft" align="right" valign="top">const aiMatrix4x4 &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#a89b285b3575fac7c84497f9bf11e26b6">GetGlobalTransform</a> (const aiNode *node) const</td></tr>
+<tr class="separator:a89b285b3575fac7c84497f9bf11e26b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7dfe2a1c9320bf616bfefefca10f6cd"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; aiMatrix4x4 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#aa7dfe2a1c9320bf616bfefefca10f6cd">GetBoneMatrices</a> (const aiNode *pNode, size_t pMeshIndex=0)</td></tr>
+<tr class="separator:aa7dfe2a1c9320bf616bfefefca10f6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b61268735c0568e1d924ec06e963711"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#a1b61268735c0568e1d924ec06e963711">CurrentAnimIndex</a> () const</td></tr>
+<tr class="separator:a1b61268735c0568e1d924ec06e963711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dc86bae39f8f27bf3134d5bcba57746"><td class="memItemLeft" align="right" valign="top">aiAnimation *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#a5dc86bae39f8f27bf3134d5bcba57746">CurrentAnim</a> () const</td></tr>
+<tr class="separator:a5dc86bae39f8f27bf3134d5bcba57746"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
+限定公開型</h2></td></tr>
+<tr class="memitem:abf59dd7ff4da461f2eb419ab6bcc8862"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; const aiNode *, <a class="el" href="struct_scene_anim_node.html">SceneAnimNode</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#abf59dd7ff4da461f2eb419ab6bcc8862">NodeMap</a></td></tr>
+<tr class="separator:abf59dd7ff4da461f2eb419ab6bcc8862"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25f41ade8381d9d5576393617212529f"><td class="memItemLeft" align="right" valign="top">typedef std::map&lt; const char *, const aiNode * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#a25f41ade8381d9d5576393617212529f">BoneMap</a></td></tr>
+<tr class="separator:a25f41ade8381d9d5576393617212529f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3bbce6d002dbbc7ec1a30fc467a97706"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_scene_anim_node.html">SceneAnimNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#a3bbce6d002dbbc7ec1a30fc467a97706">CreateNodeTree</a> (aiNode *pNode, <a class="el" href="struct_scene_anim_node.html">SceneAnimNode</a> *pParent)</td></tr>
+<tr class="separator:a3bbce6d002dbbc7ec1a30fc467a97706"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d108ebc1aee4a86d162accc0e40ebe7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#a8d108ebc1aee4a86d162accc0e40ebe7">UpdateTransforms</a> (<a class="el" href="struct_scene_anim_node.html">SceneAnimNode</a> *pNode, const std::vector&lt; aiMatrix4x4 &gt; &amp;pTransforms)</td></tr>
+<tr class="separator:a8d108ebc1aee4a86d162accc0e40ebe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaffdfbd7ebf7787f81f6f48e1466da3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#aaffdfbd7ebf7787f81f6f48e1466da3a">CalculateGlobalTransform</a> (<a class="el" href="struct_scene_anim_node.html">SceneAnimNode</a> *pInternalNode)</td></tr>
+<tr class="separator:aaffdfbd7ebf7787f81f6f48e1466da3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+限定公開変数類</h2></td></tr>
+<tr class="memitem:a703fc706e63c10a1ef75cf8a3dfed416"><td class="memItemLeft" align="right" valign="top">const aiScene *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#a703fc706e63c10a1ef75cf8a3dfed416">mScene</a></td></tr>
+<tr class="separator:a703fc706e63c10a1ef75cf8a3dfed416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedfbb1934b8d1517e9159b8687caee52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#aedfbb1934b8d1517e9159b8687caee52">mCurrentAnimIndex</a></td></tr>
+<tr class="separator:aedfbb1934b8d1517e9159b8687caee52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd737ef660b4114be402cd567dedaac7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_anim_evaluator.html">AnimEvaluator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#afd737ef660b4114be402cd567dedaac7">mAnimEvaluator</a></td></tr>
+<tr class="separator:afd737ef660b4114be402cd567dedaac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a694333451821b062ab247b37a98a4611"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_scene_anim_node.html">SceneAnimNode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#a694333451821b062ab247b37a98a4611">mRootNode</a></td></tr>
+<tr class="separator:a694333451821b062ab247b37a98a4611"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87d87fdbf5eab87efbdf2d27795912a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scene_animator.html#abf59dd7ff4da461f2eb419ab6bcc8862">NodeMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#a87d87fdbf5eab87efbdf2d27795912a5">mNodesByName</a></td></tr>
+<tr class="separator:a87d87fdbf5eab87efbdf2d27795912a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ac26b55c6ea416360ce3eb63feae895"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_scene_animator.html#a25f41ade8381d9d5576393617212529f">BoneMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#a8ac26b55c6ea416360ce3eb63feae895">mBoneNodesByName</a></td></tr>
+<tr class="separator:a8ac26b55c6ea416360ce3eb63feae895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4414fe0325b0a9f85863b4bb41c433c8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; aiMatrix4x4 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_animator.html#a4414fe0325b0a9f85863b4bb41c433c8">mTransforms</a></td></tr>
+<tr class="separator:a4414fe0325b0a9f85863b4bb41c433c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">型定義メンバ詳解</h2>
+<a id="a25f41ade8381d9d5576393617212529f" name="a25f41ade8381d9d5576393617212529f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25f41ade8381d9d5576393617212529f">&#9670;&nbsp;</a></span>BoneMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;const char*, const aiNode*&gt; <a class="el" href="class_scene_animator.html#a25f41ade8381d9d5576393617212529f">SceneAnimator::BoneMap</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf59dd7ff4da461f2eb419ab6bcc8862" name="abf59dd7ff4da461f2eb419ab6bcc8862"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf59dd7ff4da461f2eb419ab6bcc8862">&#9670;&nbsp;</a></span>NodeMap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef std::map&lt;const aiNode*, <a class="el" href="struct_scene_anim_node.html">SceneAnimNode</a>*&gt; <a class="el" href="class_scene_animator.html#abf59dd7ff4da461f2eb419ab6bcc8862">SceneAnimator::NodeMap</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="ad3f0975b87a7b83e6a53bb932dc87c5c" name="ad3f0975b87a7b83e6a53bb932dc87c5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3f0975b87a7b83e6a53bb932dc87c5c">&#9670;&nbsp;</a></span>SceneAnimator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SceneAnimator::SceneAnimator </td>
+          <td>(</td>
+          <td class="paramtype">const aiScene *&#160;</td>
+          <td class="paramname"><em>pScene</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>pAnimIndex</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_ad3f0975b87a7b83e6a53bb932dc87c5c_cgraph.png" border="0" usemap="#aclass_scene_animator_ad3f0975b87a7b83e6a53bb932dc87c5c_cgraph" alt=""/></div>
+<map name="aclass_scene_animator_ad3f0975b87a7b83e6a53bb932dc87c5c_cgraph" id="aclass_scene_animator_ad3f0975b87a7b83e6a53bb932dc87c5c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,213,56"/>
+<area shape="rect" href="class_scene_animator.html#a248309cdd1e5c8af66247aa14b174609" title=" " alt="" coords="261,29,461,56"/>
+<area shape="rect" href="class_scene_animator.html#a3bbce6d002dbbc7ec1a30fc467a97706" title=" " alt="" coords="509,29,721,56"/>
+<area shape="rect" href="class_scene_animator.html#aaffdfbd7ebf7787f81f6f48e1466da3a" title=" " alt="" coords="769,22,943,63"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a204cb5b04afb15e6223e1b0f016d12fc" name="a204cb5b04afb15e6223e1b0f016d12fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a204cb5b04afb15e6223e1b0f016d12fc">&#9670;&nbsp;</a></span>~SceneAnimator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SceneAnimator::~SceneAnimator </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="ac2fca81d4eb40a272065b5cf032db38b" name="ac2fca81d4eb40a272065b5cf032db38b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2fca81d4eb40a272065b5cf032db38b">&#9670;&nbsp;</a></span>Calculate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneAnimator::Calculate </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_ac2fca81d4eb40a272065b5cf032db38b_cgraph.png" border="0" usemap="#aclass_scene_animator_ac2fca81d4eb40a272065b5cf032db38b_cgraph" alt=""/></div>
+<map name="aclass_scene_animator_ac2fca81d4eb40a272065b5cf032db38b_cgraph" id="aclass_scene_animator_ac2fca81d4eb40a272065b5cf032db38b_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,179,83"/>
+<area shape="rect" href="class_anim_evaluator.html#ad54be6d3b474ab3753b12c6996bc2852" title=" " alt="" coords="259,5,421,32"/>
+<area shape="rect" href="class_anim_evaluator.html#a2924e71632d97c009d30179756704a57" title=" " alt="" coords="227,56,453,83"/>
+<area shape="rect" href="class_scene_animator.html#a8d108ebc1aee4a86d162accc0e40ebe7" title=" " alt="" coords="228,131,452,157"/>
+<area shape="rect" href="class_scene_animator.html#aaffdfbd7ebf7787f81f6f48e1466da3a" title=" " alt="" coords="501,123,675,165"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_ac2fca81d4eb40a272065b5cf032db38b_icgraph.png" border="0" usemap="#aclass_scene_animator_ac2fca81d4eb40a272065b5cf032db38b_icgraph" alt=""/></div>
+<map name="aclass_scene_animator_ac2fca81d4eb40a272065b5cf032db38b_icgraph" id="aclass_scene_animator_ac2fca81d4eb40a272065b5cf032db38b_icgraph">
+<area shape="rect" title=" " alt="" coords="811,5,984,32"/>
+<area shape="rect" href="class_c_assimp_model.html#a46d9b841367394d10bb887e2ccb370f7" title=" " alt="" coords="567,5,763,32"/>
+<area shape="rect" href="class_c_draw3_d.html#a8b860e3975e265ac0c28e438181d38cb" title="アニメーションの再生フレーム設定" alt="" coords="356,5,519,32"/>
+<area shape="rect" href="class_animation.html#a0c6a4e940db84d4a6246fcb3ae773402" title="更新処理" alt="" coords="179,5,308,32"/>
+<area shape="rect" href="class_c_draw3_d.html#aa42fcba7f1258571457c186292f91702" title="更新" alt="" coords="5,5,131,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aaffdfbd7ebf7787f81f6f48e1466da3a" name="aaffdfbd7ebf7787f81f6f48e1466da3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaffdfbd7ebf7787f81f6f48e1466da3a">&#9670;&nbsp;</a></span>CalculateGlobalTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneAnimator::CalculateGlobalTransform </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_scene_anim_node.html">SceneAnimNode</a> *&#160;</td>
+          <td class="paramname"><em>pInternalNode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_aaffdfbd7ebf7787f81f6f48e1466da3a_icgraph.png" border="0" usemap="#aclass_scene_animator_aaffdfbd7ebf7787f81f6f48e1466da3a_icgraph" alt=""/></div>
+<map name="aclass_scene_animator_aaffdfbd7ebf7787f81f6f48e1466da3a_icgraph" id="aclass_scene_animator_aaffdfbd7ebf7787f81f6f48e1466da3a_icgraph">
+<area shape="rect" title=" " alt="" coords="1343,74,1516,115"/>
+<area shape="rect" href="class_scene_animator.html#a3bbce6d002dbbc7ec1a30fc467a97706" title=" " alt="" coords="1077,44,1289,71"/>
+<area shape="rect" href="class_scene_animator.html#a8d108ebc1aee4a86d162accc0e40ebe7" title=" " alt="" coords="1071,119,1295,145"/>
+<area shape="rect" href="class_scene_animator.html#a248309cdd1e5c8af66247aa14b174609" title=" " alt="" coords="823,44,1023,71"/>
+<area shape="rect" href="class_scene_animator.html#ad3f0975b87a7b83e6a53bb932dc87c5c" title=" " alt="" coords="567,5,775,32"/>
+<area shape="rect" href="class_c_assimp_model.html#adad1c76eb6e46f04d1cb182acd8f2c17" title=" " alt="" coords="571,56,770,83"/>
+<area shape="rect" href="class_scene_animator.html#ac2fca81d4eb40a272065b5cf032db38b" title=" " alt="" coords="836,119,1009,145"/>
+<area shape="rect" href="class_c_assimp_model.html#a46d9b841367394d10bb887e2ccb370f7" title=" " alt="" coords="573,119,769,145"/>
+<area shape="rect" href="class_c_draw3_d.html#a8b860e3975e265ac0c28e438181d38cb" title="アニメーションの再生フレーム設定" alt="" coords="356,119,519,145"/>
+<area shape="rect" href="class_animation.html#a0c6a4e940db84d4a6246fcb3ae773402" title="更新処理" alt="" coords="179,119,308,145"/>
+<area shape="rect" href="class_c_draw3_d.html#aa42fcba7f1258571457c186292f91702" title="更新" alt="" coords="5,119,131,145"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3bbce6d002dbbc7ec1a30fc467a97706" name="a3bbce6d002dbbc7ec1a30fc467a97706"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bbce6d002dbbc7ec1a30fc467a97706">&#9670;&nbsp;</a></span>CreateNodeTree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_scene_anim_node.html">SceneAnimNode</a> * SceneAnimator::CreateNodeTree </td>
+          <td>(</td>
+          <td class="paramtype">aiNode *&#160;</td>
+          <td class="paramname"><em>pNode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_scene_anim_node.html">SceneAnimNode</a> *&#160;</td>
+          <td class="paramname"><em>pParent</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706_cgraph.png" border="0" usemap="#aclass_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706_cgraph" alt=""/></div>
+<map name="aclass_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706_cgraph" id="aclass_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,217,56"/>
+<area shape="rect" href="class_scene_animator.html#aaffdfbd7ebf7787f81f6f48e1466da3a" title=" " alt="" coords="265,22,439,63"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706_icgraph.png" border="0" usemap="#aclass_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706_icgraph" alt=""/></div>
+<map name="aclass_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706_icgraph" id="aclass_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706_icgraph">
+<area shape="rect" title=" " alt="" coords="509,31,721,57"/>
+<area shape="rect" href="class_scene_animator.html#a248309cdd1e5c8af66247aa14b174609" title=" " alt="" coords="261,31,461,57"/>
+<area shape="rect" href="class_scene_animator.html#ad3f0975b87a7b83e6a53bb932dc87c5c" title=" " alt="" coords="5,5,213,32"/>
+<area shape="rect" href="class_c_assimp_model.html#adad1c76eb6e46f04d1cb182acd8f2c17" title=" " alt="" coords="10,56,209,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5dc86bae39f8f27bf3134d5bcba57746" name="a5dc86bae39f8f27bf3134d5bcba57746"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dc86bae39f8f27bf3134d5bcba57746">&#9670;&nbsp;</a></span>CurrentAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">aiAnimation * SceneAnimator::CurrentAnim </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_a5dc86bae39f8f27bf3134d5bcba57746_icgraph.png" border="0" usemap="#aclass_scene_animator_a5dc86bae39f8f27bf3134d5bcba57746_icgraph" alt=""/></div>
+<map name="aclass_scene_animator_a5dc86bae39f8f27bf3134d5bcba57746_icgraph" id="aclass_scene_animator_a5dc86bae39f8f27bf3134d5bcba57746_icgraph">
+<area shape="rect" title=" " alt="" coords="271,5,461,32"/>
+<area shape="rect" href="class_c_assimp_model.html#adb38220b105ac49b618cd5d201a67821" title=" " alt="" coords="5,5,223,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1b61268735c0568e1d924ec06e963711" name="a1b61268735c0568e1d924ec06e963711"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b61268735c0568e1d924ec06e963711">&#9670;&nbsp;</a></span>CurrentAnimIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t SceneAnimator::CurrentAnimIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa7dfe2a1c9320bf616bfefefca10f6cd" name="aa7dfe2a1c9320bf616bfefefca10f6cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7dfe2a1c9320bf616bfefefca10f6cd">&#9670;&nbsp;</a></span>GetBoneMatrices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; aiMatrix4x4 &gt; &amp; SceneAnimator::GetBoneMatrices </td>
+          <td>(</td>
+          <td class="paramtype">const aiNode *&#160;</td>
+          <td class="paramname"><em>pNode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>pMeshIndex</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd_cgraph.png" border="0" usemap="#aclass_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd_cgraph" alt=""/></div>
+<map name="aclass_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd_cgraph" id="aclass_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd_cgraph">
+<area shape="rect" title=" " alt="" coords="5,13,225,39"/>
+<area shape="rect" href="class_scene_animator.html#a89b285b3575fac7c84497f9bf11e26b6" title=" " alt="" coords="273,5,451,47"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd_icgraph.png" border="0" usemap="#aclass_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd_icgraph" alt=""/></div>
+<map name="aclass_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd_icgraph" id="aclass_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd_icgraph">
+<area shape="rect" title=" " alt="" coords="587,29,807,56"/>
+<area shape="rect" href="class_c_assimp_model.html#a883075480beae8196af8823ed71cd426" title=" " alt="" coords="361,29,539,56"/>
+<area shape="rect" href="class_c_assimp_model.html#aac69dd95631d620577c17670dbd37149" title=" " alt="" coords="167,29,313,56"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="5,29,119,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a89b285b3575fac7c84497f9bf11e26b6" name="a89b285b3575fac7c84497f9bf11e26b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89b285b3575fac7c84497f9bf11e26b6">&#9670;&nbsp;</a></span>GetGlobalTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const aiMatrix4x4 &amp; SceneAnimator::GetGlobalTransform </td>
+          <td>(</td>
+          <td class="paramtype">const aiNode *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_a89b285b3575fac7c84497f9bf11e26b6_icgraph.png" border="0" usemap="#aclass_scene_animator_a89b285b3575fac7c84497f9bf11e26b6_icgraph" alt=""/></div>
+<map name="aclass_scene_animator_a89b285b3575fac7c84497f9bf11e26b6_icgraph" id="aclass_scene_animator_a89b285b3575fac7c84497f9bf11e26b6_icgraph">
+<area shape="rect" title=" " alt="" coords="855,22,1032,63"/>
+<area shape="rect" href="class_c_assimp_model.html#a883075480beae8196af8823ed71cd426" title=" " alt="" coords="361,29,539,56"/>
+<area shape="rect" href="class_scene_animator.html#aa7dfe2a1c9320bf616bfefefca10f6cd" title=" " alt="" coords="587,55,807,81"/>
+<area shape="rect" href="class_c_assimp_model.html#aac69dd95631d620577c17670dbd37149" title=" " alt="" coords="167,29,313,56"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="5,29,119,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="adf22ac0c0965e279fd4f387c3f4ad251" name="adf22ac0c0965e279fd4f387c3f4ad251"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf22ac0c0965e279fd4f387c3f4ad251">&#9670;&nbsp;</a></span>GetLocalTransform()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const aiMatrix4x4 &amp; SceneAnimator::GetLocalTransform </td>
+          <td>(</td>
+          <td class="paramtype">const aiNode *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a248309cdd1e5c8af66247aa14b174609" name="a248309cdd1e5c8af66247aa14b174609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248309cdd1e5c8af66247aa14b174609">&#9670;&nbsp;</a></span>SetAnimIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneAnimator::SetAnimIndex </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>pAnimIndex</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_a248309cdd1e5c8af66247aa14b174609_cgraph.png" border="0" usemap="#aclass_scene_animator_a248309cdd1e5c8af66247aa14b174609_cgraph" alt=""/></div>
+<map name="aclass_scene_animator_a248309cdd1e5c8af66247aa14b174609_cgraph" id="aclass_scene_animator_a248309cdd1e5c8af66247aa14b174609_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,205,56"/>
+<area shape="rect" href="class_scene_animator.html#a3bbce6d002dbbc7ec1a30fc467a97706" title=" " alt="" coords="253,29,465,56"/>
+<area shape="rect" href="class_scene_animator.html#aaffdfbd7ebf7787f81f6f48e1466da3a" title=" " alt="" coords="513,22,687,63"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_a248309cdd1e5c8af66247aa14b174609_icgraph.png" border="0" usemap="#aclass_scene_animator_a248309cdd1e5c8af66247aa14b174609_icgraph" alt=""/></div>
+<map name="aclass_scene_animator_a248309cdd1e5c8af66247aa14b174609_icgraph" id="aclass_scene_animator_a248309cdd1e5c8af66247aa14b174609_icgraph">
+<area shape="rect" title=" " alt="" coords="261,31,461,57"/>
+<area shape="rect" href="class_scene_animator.html#ad3f0975b87a7b83e6a53bb932dc87c5c" title=" " alt="" coords="5,5,213,32"/>
+<area shape="rect" href="class_c_assimp_model.html#adad1c76eb6e46f04d1cb182acd8f2c17" title=" " alt="" coords="10,56,209,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8d108ebc1aee4a86d162accc0e40ebe7" name="a8d108ebc1aee4a86d162accc0e40ebe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d108ebc1aee4a86d162accc0e40ebe7">&#9670;&nbsp;</a></span>UpdateTransforms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneAnimator::UpdateTransforms </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_scene_anim_node.html">SceneAnimNode</a> *&#160;</td>
+          <td class="paramname"><em>pNode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; aiMatrix4x4 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pTransforms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7_cgraph.png" border="0" usemap="#aclass_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7_cgraph" alt=""/></div>
+<map name="aclass_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7_cgraph" id="aclass_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,29,229,56"/>
+<area shape="rect" href="class_scene_animator.html#aaffdfbd7ebf7787f81f6f48e1466da3a" title=" " alt="" coords="277,22,451,63"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7_icgraph.png" border="0" usemap="#aclass_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7_icgraph" alt=""/></div>
+<map name="aclass_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7_icgraph" id="aclass_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7_icgraph">
+<area shape="rect" title=" " alt="" coords="1032,29,1256,56"/>
+<area shape="rect" href="class_scene_animator.html#ac2fca81d4eb40a272065b5cf032db38b" title=" " alt="" coords="811,29,984,56"/>
+<area shape="rect" href="class_c_assimp_model.html#a46d9b841367394d10bb887e2ccb370f7" title=" " alt="" coords="567,29,763,56"/>
+<area shape="rect" href="class_c_draw3_d.html#a8b860e3975e265ac0c28e438181d38cb" title="アニメーションの再生フレーム設定" alt="" coords="356,29,519,56"/>
+<area shape="rect" href="class_animation.html#a0c6a4e940db84d4a6246fcb3ae773402" title="更新処理" alt="" coords="179,29,308,56"/>
+<area shape="rect" href="class_c_draw3_d.html#aa42fcba7f1258571457c186292f91702" title="更新" alt="" coords="5,29,131,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="afd737ef660b4114be402cd567dedaac7" name="afd737ef660b4114be402cd567dedaac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd737ef660b4114be402cd567dedaac7">&#9670;&nbsp;</a></span>mAnimEvaluator</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_anim_evaluator.html">AnimEvaluator</a>* SceneAnimator::mAnimEvaluator</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8ac26b55c6ea416360ce3eb63feae895" name="a8ac26b55c6ea416360ce3eb63feae895"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ac26b55c6ea416360ce3eb63feae895">&#9670;&nbsp;</a></span>mBoneNodesByName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_scene_animator.html#a25f41ade8381d9d5576393617212529f">BoneMap</a> SceneAnimator::mBoneNodesByName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aedfbb1934b8d1517e9159b8687caee52" name="aedfbb1934b8d1517e9159b8687caee52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedfbb1934b8d1517e9159b8687caee52">&#9670;&nbsp;</a></span>mCurrentAnimIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SceneAnimator::mCurrentAnimIndex</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a87d87fdbf5eab87efbdf2d27795912a5" name="a87d87fdbf5eab87efbdf2d27795912a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87d87fdbf5eab87efbdf2d27795912a5">&#9670;&nbsp;</a></span>mNodesByName</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_scene_animator.html#abf59dd7ff4da461f2eb419ab6bcc8862">NodeMap</a> SceneAnimator::mNodesByName</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a694333451821b062ab247b37a98a4611" name="a694333451821b062ab247b37a98a4611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a694333451821b062ab247b37a98a4611">&#9670;&nbsp;</a></span>mRootNode</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_scene_anim_node.html">SceneAnimNode</a>* SceneAnimator::mRootNode</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a703fc706e63c10a1ef75cf8a3dfed416" name="a703fc706e63c10a1ef75cf8a3dfed416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a703fc706e63c10a1ef75cf8a3dfed416">&#9670;&nbsp;</a></span>mScene</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const aiScene* SceneAnimator::mScene</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4414fe0325b0a9f85863b4bb41c433c8" name="a4414fe0325b0a9f85863b4bb41c433c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4414fe0325b0a9f85863b4bb41c433c8">&#9670;&nbsp;</a></span>mTransforms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;aiMatrix4x4&gt; SceneAnimator::mTransforms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="_assimp_model_8h_source.html">AssimpModel.h</a></li>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="_assimp_model_8cpp.html">AssimpModel.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

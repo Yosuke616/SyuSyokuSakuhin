@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ModelManager.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">ModelManager.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_model_manager_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">//インクルードガード</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef _MODEL_MANAGER_H_</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define _MODEL_MANAGER_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//インクルード部</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="main_app_8h.html">mainApp.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_assimp_model_8h.html">AssimpModel.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//定数定義</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">//仮</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="_model_manager_8h.html#a9153462368932b6b84b730ad10180ee4">   18</a></span><span class="preprocessor">#define WALK_ENEMY_MODEL_NUM        (0)</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="_model_manager_8h.html#a6d825790e6fba5b733e349b810bbc7a9">   19</a></span><span class="preprocessor">#define PATH_WALK_ENEMY         (&quot;data/model/WalkEnemy.fbx&quot;</span>)</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="_model_manager_8h.html#a406d54b4d6f5bcbcbe5f56c4cf315923">   20</a></span><span class="preprocessor">#define MINT_GREEN_BLOCK_NUM    (1)</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="_model_manager_8h.html#ad96c90c88ecca6e4ce72992b5256bc7b">   21</a></span><span class="preprocessor">#define PATH_MINT_GREEN_BLOCK   (&quot;data/model/Grass_Block.fbx&quot;</span>)</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="_model_manager_8h.html#a25ce7fd7f22cc7267200573d55424c6c">   22</a></span><span class="preprocessor">#define RARD_BLOCK_NUM          (2)</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="_model_manager_8h.html#a840affa55b71c094d0554c8271ad044d">   23</a></span><span class="preprocessor">#define PATH_RARD_BLOCK         (&quot;data/model/Rard_Block.fbx&quot;</span>)</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">//クラス定義</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="class_model_manager.html">   31</a></span><span class="comment"></span><span class="keyword">class </span><a class="code hl_class" href="class_model_manager.html">ModelManager</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"></span>    <span class="keyword">static</span> <a class="code hl_class" href="class_model_manager.html">ModelManager</a>* m_pInstance;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    std::unordered_map&lt;int, CAssimpModel*&gt;  m_ModelList;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"></span>    <a class="code hl_function" href="class_model_manager.html#a9b0d22b1baf59c5b566e82fcd8ca424a">ModelManager</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"></span>    <a class="code hl_function" href="class_model_manager.html#a93f4eea50036cc5453014234aa921c7c">~ModelManager</a>();</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keyword">static</span> <a class="code hl_class" href="class_model_manager.html">ModelManager</a>* <a class="code hl_function" href="class_model_manager.html#a76fa7f6c4bf14e44dc8fc22b41d18436">GetInstance</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_model_manager.html#af9fece7e0c5509069f854acb15c50abe">Uninit</a>();</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_model_manager.html#a83cb97219f91ba9799cef863f129ce8c">AddModel</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* pszFileName,<span class="keywordtype">int</span> nModelID);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <a class="code hl_class" href="class_c_assimp_model.html">CAssimpModel</a>* <a class="code hl_function" href="class_model_manager.html#ae7a58155fc4e317ae505ebd1e3a1f667">GetModel</a>(<span class="keywordtype">int</span> nModelID);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_model_manager.html#ac1ca2c166728b973a8efd2218d27caff">EraseModel</a>(<span class="keywordtype">int</span> nModelID);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_assimp_model_8h_html"><div class="ttname"><a href="_assimp_model_8h.html">AssimpModel.h</a></div></div>
+<div class="ttc" id="aclass_c_assimp_model_html"><div class="ttname"><a href="class_c_assimp_model.html">CAssimpModel</a></div><div class="ttdef"><b>Definition:</b> AssimpModel.h:222</div></div>
+<div class="ttc" id="aclass_model_manager_html"><div class="ttname"><a href="class_model_manager.html">ModelManager</a></div><div class="ttdoc">モデルマネージャー</div><div class="ttdef"><b>Definition:</b> ModelManager.h:31</div></div>
+<div class="ttc" id="aclass_model_manager_html_a76fa7f6c4bf14e44dc8fc22b41d18436"><div class="ttname"><a href="class_model_manager.html#a76fa7f6c4bf14e44dc8fc22b41d18436">ModelManager::GetInstance</a></div><div class="ttdeci">static ModelManager * GetInstance()</div><div class="ttdoc">インスタンス化</div><div class="ttdef"><b>Definition:</b> ModelManager.cpp:33</div></div>
+<div class="ttc" id="aclass_model_manager_html_a83cb97219f91ba9799cef863f129ce8c"><div class="ttname"><a href="class_model_manager.html#a83cb97219f91ba9799cef863f129ce8c">ModelManager::AddModel</a></div><div class="ttdeci">bool AddModel(const char *pszFileName, int nModelID)</div><div class="ttdoc">モデルの追加</div><div class="ttdef"><b>Definition:</b> ModelManager.cpp:58</div></div>
+<div class="ttc" id="aclass_model_manager_html_a93f4eea50036cc5453014234aa921c7c"><div class="ttname"><a href="class_model_manager.html#a93f4eea50036cc5453014234aa921c7c">ModelManager::~ModelManager</a></div><div class="ttdeci">~ModelManager()</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> ModelManager.cpp:20</div></div>
+<div class="ttc" id="aclass_model_manager_html_a9b0d22b1baf59c5b566e82fcd8ca424a"><div class="ttname"><a href="class_model_manager.html#a9b0d22b1baf59c5b566e82fcd8ca424a">ModelManager::ModelManager</a></div><div class="ttdeci">ModelManager()</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> ModelManager.cpp:12</div></div>
+<div class="ttc" id="aclass_model_manager_html_ac1ca2c166728b973a8efd2218d27caff"><div class="ttname"><a href="class_model_manager.html#ac1ca2c166728b973a8efd2218d27caff">ModelManager::EraseModel</a></div><div class="ttdeci">bool EraseModel(int nModelID)</div><div class="ttdoc">モデル削除</div><div class="ttdef"><b>Definition:</b> ModelManager.cpp:106</div></div>
+<div class="ttc" id="aclass_model_manager_html_ae7a58155fc4e317ae505ebd1e3a1f667"><div class="ttname"><a href="class_model_manager.html#ae7a58155fc4e317ae505ebd1e3a1f667">ModelManager::GetModel</a></div><div class="ttdeci">CAssimpModel * GetModel(int nModelID)</div><div class="ttdoc">モデルの取得</div><div class="ttdef"><b>Definition:</b> ModelManager.cpp:85</div></div>
+<div class="ttc" id="aclass_model_manager_html_af9fece7e0c5509069f854acb15c50abe"><div class="ttname"><a href="class_model_manager.html#af9fece7e0c5509069f854acb15c50abe">ModelManager::Uninit</a></div><div class="ttdeci">static void Uninit()</div><div class="ttdoc">モデルマネージャーの解放</div><div class="ttdef"><b>Definition:</b> ModelManager.cpp:44</div></div>
+<div class="ttc" id="amain_app_8h_html"><div class="ttname"><a href="main_app_8h.html">mainApp.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

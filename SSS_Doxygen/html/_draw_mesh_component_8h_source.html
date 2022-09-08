@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/DrawMeshComponent.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">DrawMeshComponent.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_draw_mesh_component_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//インクルードガード</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef _DRAW_MESH_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define _DRAW_MESH_H_</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//インクルードガード</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_component_8h.html">Component.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="main_app_8h.html">mainApp.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="mesh_8h.html">mesh.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">//前方宣言</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span><a class="code hl_class" href="class_c_transform.html">CTransform</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">//クラス定義</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="class_c_draw_mesh.html">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="class_c_draw_mesh.html">CDrawMesh</a> :<span class="keyword">public</span> <a class="code hl_class" href="class_component.html">Component</a> {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"></span>    <span class="keywordtype">float</span> m_fTexSizeX;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">float</span> m_fTexSizeZ;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"></span>    HRESULT MakeVertex(</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">float</span> fSizeBlockX,<span class="keywordtype">float</span> fSizeBlockZ,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">float</span> fTexSizeX,<span class="keywordtype">float</span> fTexSizeZ,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        XMFLOAT3 normal);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_c_draw_mesh.html#afce0f431333b05234c9ca5e482263946">   39</a></span><span class="comment"></span>    XMFLOAT2 <a class="code hl_variable" href="class_c_draw_mesh.html#afce0f431333b05234c9ca5e482263946">m_Offset</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_c_draw_mesh.html#a20b42efead4f057758bb32e22f03964f">   41</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_c_draw_mesh.html#a20b42efead4f057758bb32e22f03964f">m_fWidth</a>;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_c_draw_mesh.html#a69db97d620a416c44b89bcf7b718ee4e">   43</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="class_c_draw_mesh.html#a69db97d620a416c44b89bcf7b718ee4e">m_fHeight</a>;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_c_draw_mesh.html#a7ceff529e20037d5517dca35df49bd0e">   45</a></span>    XMFLOAT3 <a class="code hl_variable" href="class_c_draw_mesh.html#a7ceff529e20037d5517dca35df49bd0e">m_fNormal</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_c_draw_mesh.html#ac65dc3097284e2cac0bc4a8233a6dba2">   47</a></span>    <a class="code hl_struct" href="struct_m_e_s_h.html">MESH</a> <a class="code hl_variable" href="class_c_draw_mesh.html#ac65dc3097284e2cac0bc4a8233a6dba2">m_Mesh</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_c_draw_mesh.html#a3cdd77f0bca1cb47c44eca86cc2c02e6">   49</a></span>    <a class="code hl_struct" href="struct_m_a_t_e_r_i_a_l.html">MATERIAL</a> <a class="code hl_variable" href="class_c_draw_mesh.html#a3cdd77f0bca1cb47c44eca86cc2c02e6">m_Material</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_c_draw_mesh.html#abf4dae3601175f48b293de5fe37745a4">   51</a></span>    <a class="code hl_class" href="class_c_transform.html">CTransform</a>* <a class="code hl_variable" href="class_c_draw_mesh.html#abf4dae3601175f48b293de5fe37745a4">m_pTransform</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_c_draw_mesh.html#ab4ab7d6042f134d468be2a080814c642">   53</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_c_draw_mesh.html#ab4ab7d6042f134d468be2a080814c642">m_nAnim</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_c_draw_mesh.html#a08b1594ec03fd1e37042baef353d855c">   55</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_c_draw_mesh.html#a08b1594ec03fd1e37042baef353d855c">m_nSplitX</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="class_c_draw_mesh.html#a3cff830b98c2bfa1a684847da5043af6">   57</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_c_draw_mesh.html#a3cff830b98c2bfa1a684847da5043af6">m_nSplitY</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment"></span>    <a class="code hl_function" href="class_c_draw_mesh.html#a396aac694e99cdb19858d20cbccada58">CDrawMesh</a>();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <a class="code hl_function" href="class_c_draw_mesh.html#a5ed6d0cca62f35202ee9c9ff17b37efb">~CDrawMesh</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#a6100f09bd115ce3f1c8a7e450600d4fc">Start</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#a2371b08e617e08cf6420681f0f1dcd04">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#a4d4c6a30bae2d1318802f1ebf5fb22cb">Draw</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#ab2e186b97bd1ac5d706665804d1ebe5d">SetTexture</a>(ID3D11ShaderResourceView* pTex);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#ae22c52da902e11fd2a4d14f551b398a0">SetUVsize</a>(XMFLOAT2 uv);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#a480544454f885653c931a7b9f8d9163b">SetSize</a>(<span class="keywordtype">float</span> width,<span class="keywordtype">float</span> height);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#a96c867c85492c1dc932b3b85cc596e2f">SetDiffuse</a>(XMFLOAT4 Diffuse);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#ac93cb85b0306060d6387f60ab9424898">SetAmbient</a>(XMFLOAT4 Ambient);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#a12ccdca43362b7ceb8643216d22a9885">SetSpecular</a>(XMFLOAT4 Specular); </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#a8ccac154329340eab701883d886c3384">SetEmissive</a>(XMFLOAT4 Emissive);</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#a395db7069e7f8eed9fab0c9c73478938">SetPower</a>(<span class="keywordtype">float</span> power);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#ae267f4deeb9b7cfb3eb622a020827479">SetNormal</a>(<span class="keywordtype">float</span> fx,<span class="keywordtype">float</span> fy,<span class="keywordtype">float</span> fz);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#a728f617ebfc3b942d19563bc35dd979a">SetAnimFrame</a>(<span class="keywordtype">int</span> Anim);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#ad989ef32cc5e683f4a645e29bb7c9801">SetAnimSplit</a>(<span class="keywordtype">int</span> nx,<span class="keywordtype">int</span> ny);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#a814af61d839a207caef3f7686752b64a">SetOffSet</a>(XMFLOAT2 offset);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_draw_mesh.html#ac7a99d87984f30c7b06c8a9609e2cda3">SetColor</a>(<span class="keywordtype">float</span> r,<span class="keywordtype">float</span> g,<span class="keywordtype">float</span> b);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_struct" href="struct_m_e_s_h.html">MESH</a>* <a class="code hl_function" href="class_c_draw_mesh.html#af8243f0d818993df9ff6446312041ebd">GetMesh</a>();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>};</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_component_8h_html"><div class="ttname"><a href="_component_8h.html">Component.h</a></div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html"><div class="ttname"><a href="class_c_draw_mesh.html">CDrawMesh</a></div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.h:21</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a08b1594ec03fd1e37042baef353d855c"><div class="ttname"><a href="class_c_draw_mesh.html#a08b1594ec03fd1e37042baef353d855c">CDrawMesh::m_nSplitX</a></div><div class="ttdeci">int m_nSplitX</div><div class="ttdoc">分割数X</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.h:55</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a12ccdca43362b7ceb8643216d22a9885"><div class="ttname"><a href="class_c_draw_mesh.html#a12ccdca43362b7ceb8643216d22a9885">CDrawMesh::SetSpecular</a></div><div class="ttdeci">void SetSpecular(XMFLOAT4 Specular)</div><div class="ttdoc">鏡面反射の設定</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:240</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a20b42efead4f057758bb32e22f03964f"><div class="ttname"><a href="class_c_draw_mesh.html#a20b42efead4f057758bb32e22f03964f">CDrawMesh::m_fWidth</a></div><div class="ttdeci">float m_fWidth</div><div class="ttdoc">1マスの横幅</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.h:41</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a2371b08e617e08cf6420681f0f1dcd04"><div class="ttname"><a href="class_c_draw_mesh.html#a2371b08e617e08cf6420681f0f1dcd04">CDrawMesh::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdoc">更新</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:78</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a395db7069e7f8eed9fab0c9c73478938"><div class="ttname"><a href="class_c_draw_mesh.html#a395db7069e7f8eed9fab0c9c73478938">CDrawMesh::SetPower</a></div><div class="ttdeci">void SetPower(float power)</div><div class="ttdoc">光沢の設定</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:258</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a396aac694e99cdb19858d20cbccada58"><div class="ttname"><a href="class_c_draw_mesh.html#a396aac694e99cdb19858d20cbccada58">CDrawMesh::CDrawMesh</a></div><div class="ttdeci">CDrawMesh()</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:20</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a3cdd77f0bca1cb47c44eca86cc2c02e6"><div class="ttname"><a href="class_c_draw_mesh.html#a3cdd77f0bca1cb47c44eca86cc2c02e6">CDrawMesh::m_Material</a></div><div class="ttdeci">MATERIAL m_Material</div><div class="ttdoc">マテリアル</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.h:49</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a3cff830b98c2bfa1a684847da5043af6"><div class="ttname"><a href="class_c_draw_mesh.html#a3cff830b98c2bfa1a684847da5043af6">CDrawMesh::m_nSplitY</a></div><div class="ttdeci">int m_nSplitY</div><div class="ttdoc">分割数Y</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.h:57</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a480544454f885653c931a7b9f8d9163b"><div class="ttname"><a href="class_c_draw_mesh.html#a480544454f885653c931a7b9f8d9163b">CDrawMesh::SetSize</a></div><div class="ttdeci">void SetSize(float width, float height)</div><div class="ttdoc">マスの大きさ</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:196</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a4d4c6a30bae2d1318802f1ebf5fb22cb"><div class="ttname"><a href="class_c_draw_mesh.html#a4d4c6a30bae2d1318802f1ebf5fb22cb">CDrawMesh::Draw</a></div><div class="ttdeci">void Draw() override</div><div class="ttdoc">描画</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:92</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a5ed6d0cca62f35202ee9c9ff17b37efb"><div class="ttname"><a href="class_c_draw_mesh.html#a5ed6d0cca62f35202ee9c9ff17b37efb">CDrawMesh::~CDrawMesh</a></div><div class="ttdeci">~CDrawMesh() override</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:53</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a6100f09bd115ce3f1c8a7e450600d4fc"><div class="ttname"><a href="class_c_draw_mesh.html#a6100f09bd115ce3f1c8a7e450600d4fc">CDrawMesh::Start</a></div><div class="ttdeci">void Start() override</div><div class="ttdoc">初期化</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:62</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a69db97d620a416c44b89bcf7b718ee4e"><div class="ttname"><a href="class_c_draw_mesh.html#a69db97d620a416c44b89bcf7b718ee4e">CDrawMesh::m_fHeight</a></div><div class="ttdeci">float m_fHeight</div><div class="ttdoc">1マスの立幅</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.h:43</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a728f617ebfc3b942d19563bc35dd979a"><div class="ttname"><a href="class_c_draw_mesh.html#a728f617ebfc3b942d19563bc35dd979a">CDrawMesh::SetAnimFrame</a></div><div class="ttdeci">void SetAnimFrame(int Anim)</div><div class="ttdoc">アニメーションの番号</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:290</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a7ceff529e20037d5517dca35df49bd0e"><div class="ttname"><a href="class_c_draw_mesh.html#a7ceff529e20037d5517dca35df49bd0e">CDrawMesh::m_fNormal</a></div><div class="ttdeci">XMFLOAT3 m_fNormal</div><div class="ttdoc">法線ベクトル</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.h:45</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a814af61d839a207caef3f7686752b64a"><div class="ttname"><a href="class_c_draw_mesh.html#a814af61d839a207caef3f7686752b64a">CDrawMesh::SetOffSet</a></div><div class="ttdeci">void SetOffSet(XMFLOAT2 offset)</div><div class="ttdoc">オフセット</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:310</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a8ccac154329340eab701883d886c3384"><div class="ttname"><a href="class_c_draw_mesh.html#a8ccac154329340eab701883d886c3384">CDrawMesh::SetEmissive</a></div><div class="ttdeci">void SetEmissive(XMFLOAT4 Emissive)</div><div class="ttdoc">自己発光の設定</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:249</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_a96c867c85492c1dc932b3b85cc596e2f"><div class="ttname"><a href="class_c_draw_mesh.html#a96c867c85492c1dc932b3b85cc596e2f">CDrawMesh::SetDiffuse</a></div><div class="ttdeci">void SetDiffuse(XMFLOAT4 Diffuse)</div><div class="ttdoc">反射光</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:222</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_ab2e186b97bd1ac5d706665804d1ebe5d"><div class="ttname"><a href="class_c_draw_mesh.html#ab2e186b97bd1ac5d706665804d1ebe5d">CDrawMesh::SetTexture</a></div><div class="ttdeci">void SetTexture(ID3D11ShaderResourceView *pTex)</div><div class="ttdoc">テクスチャのセット</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:206</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_ab4ab7d6042f134d468be2a080814c642"><div class="ttname"><a href="class_c_draw_mesh.html#ab4ab7d6042f134d468be2a080814c642">CDrawMesh::m_nAnim</a></div><div class="ttdeci">int m_nAnim</div><div class="ttdoc">アニメーション</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.h:53</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_abf4dae3601175f48b293de5fe37745a4"><div class="ttname"><a href="class_c_draw_mesh.html#abf4dae3601175f48b293de5fe37745a4">CDrawMesh::m_pTransform</a></div><div class="ttdeci">CTransform * m_pTransform</div><div class="ttdoc">座標</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.h:51</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_ac65dc3097284e2cac0bc4a8233a6dba2"><div class="ttname"><a href="class_c_draw_mesh.html#ac65dc3097284e2cac0bc4a8233a6dba2">CDrawMesh::m_Mesh</a></div><div class="ttdeci">MESH m_Mesh</div><div class="ttdoc">メッシュ</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.h:47</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_ac7a99d87984f30c7b06c8a9609e2cda3"><div class="ttname"><a href="class_c_draw_mesh.html#ac7a99d87984f30c7b06c8a9609e2cda3">CDrawMesh::SetColor</a></div><div class="ttdeci">void SetColor(float r, float g, float b)</div><div class="ttdoc">色</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:321</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_ac93cb85b0306060d6387f60ab9424898"><div class="ttname"><a href="class_c_draw_mesh.html#ac93cb85b0306060d6387f60ab9424898">CDrawMesh::SetAmbient</a></div><div class="ttdeci">void SetAmbient(XMFLOAT4 Ambient)</div><div class="ttdoc">環境光</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:231</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_ad989ef32cc5e683f4a645e29bb7c9801"><div class="ttname"><a href="class_c_draw_mesh.html#ad989ef32cc5e683f4a645e29bb7c9801">CDrawMesh::SetAnimSplit</a></div><div class="ttdeci">void SetAnimSplit(int nx, int ny)</div><div class="ttdoc">分割数設定</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:300</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_ae22c52da902e11fd2a4d14f551b398a0"><div class="ttname"><a href="class_c_draw_mesh.html#ae22c52da902e11fd2a4d14f551b398a0">CDrawMesh::SetUVsize</a></div><div class="ttdeci">void SetUVsize(XMFLOAT2 uv)</div><div class="ttdoc">テクスチャ座標</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:280</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_ae267f4deeb9b7cfb3eb622a020827479"><div class="ttname"><a href="class_c_draw_mesh.html#ae267f4deeb9b7cfb3eb622a020827479">CDrawMesh::SetNormal</a></div><div class="ttdeci">void SetNormal(float fx, float fy, float fz)</div><div class="ttdoc">法線ベクトルの設定</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:269</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_af8243f0d818993df9ff6446312041ebd"><div class="ttname"><a href="class_c_draw_mesh.html#af8243f0d818993df9ff6446312041ebd">CDrawMesh::GetMesh</a></div><div class="ttdeci">MESH * GetMesh()</div><div class="ttdoc">メッシュ情報の取得</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.cpp:331</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html_afce0f431333b05234c9ca5e482263946"><div class="ttname"><a href="class_c_draw_mesh.html#afce0f431333b05234c9ca5e482263946">CDrawMesh::m_Offset</a></div><div class="ttdeci">XMFLOAT2 m_Offset</div><div class="ttdoc">オフセット</div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.h:39</div></div>
+<div class="ttc" id="aclass_c_transform_html"><div class="ttname"><a href="class_c_transform.html">CTransform</a></div><div class="ttdef"><b>Definition:</b> TransformComponent.h:17</div></div>
+<div class="ttc" id="aclass_component_html"><div class="ttname"><a href="class_component.html">Component</a></div><div class="ttdef"><b>Definition:</b> Component.h:29</div></div>
+<div class="ttc" id="amain_app_8h_html"><div class="ttname"><a href="main_app_8h.html">mainApp.h</a></div></div>
+<div class="ttc" id="amesh_8h_html"><div class="ttname"><a href="mesh_8h.html">mesh.h</a></div></div>
+<div class="ttc" id="astruct_m_a_t_e_r_i_a_l_html"><div class="ttname"><a href="struct_m_a_t_e_r_i_a_l.html">MATERIAL</a></div><div class="ttdef"><b>Definition:</b> mesh.h:35</div></div>
+<div class="ttc" id="astruct_m_e_s_h_html"><div class="ttname"><a href="struct_m_e_s_h.html">MESH</a></div><div class="ttdef"><b>Definition:</b> mesh.h:43</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,49 @@
+\hypertarget{_scene_select_8h_source}{}\doxysection{Scene\+Select.\+h}
+\label{_scene_select_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/SceneSelect.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/SceneSelect.h}}
+\mbox{\hyperlink{_scene_select_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_SCENE\_SELECT\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_SCENE\_SELECT\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_scene_8h}{Scene.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_stage_select}{StageSelect}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_scene}{Scene}} \{}
+\DoxyCodeLine{22 \textcolor{keyword}{private}:}
+\DoxyCodeLine{23     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{24     \textcolor{comment}{//ベクターの二次元配列}}
+\DoxyCodeLine{26 \textcolor{comment}{}    \textcolor{keyword}{using }Cell = int;                   }
+\DoxyCodeLine{28     \textcolor{keyword}{using }Column = std::vector<Cell>;   }
+\DoxyCodeLine{30     \textcolor{keyword}{using }Row = std::vector<Column>;    }
+\DoxyCodeLine{32     \textcolor{keyword}{static} Row m\_StageGrid;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{36 \textcolor{comment}{}    \textcolor{comment}{//static bool Load();}}
+\DoxyCodeLine{38 \textcolor{comment}{}    \textcolor{comment}{//static bool Save();}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{41     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{public}:}
+\DoxyCodeLine{46     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{50 \textcolor{comment}{}    \mbox{\hyperlink{class_stage_select_a4b1fc47d562c9a987744f32bc686f3cb}{StageSelect}}();}
+\DoxyCodeLine{52     \mbox{\hyperlink{class_stage_select_afa42139ae1249d720814cd39db54e637}{\string~StageSelect}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_stage_select_a949e9de720f8072040e2f93bb586a0ba}{Init}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_stage_select_a16880c0008a1b1a9b872eba7c41e1db3}{Uninit}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_stage_select_aa2796a223f0c14a63523a725957de1ef}{Update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_stage_select_a607ba8e951492ae25d5ff4942b029e27}{Draw}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{63     \textcolor{comment}{//static bool GetSelectAble(int stage\_num);}}
+\DoxyCodeLine{65 \textcolor{comment}{}    \textcolor{comment}{//static Row GetSelectGrid();}}
+\DoxyCodeLine{67 \textcolor{comment}{}    \textcolor{comment}{//static bool NewGame();}}
+\DoxyCodeLine{69 \textcolor{comment}{}    \textcolor{comment}{//static bool SaveClearInfo(int nStage);}}
+\DoxyCodeLine{70 \};}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

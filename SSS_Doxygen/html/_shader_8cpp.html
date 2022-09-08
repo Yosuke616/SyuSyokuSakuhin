@@ -1,0 +1,491 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Shader.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#func-members">関数</a>  </div>
+  <div class="headertitle"><div class="title">Shader.cpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="_shader_8h_source.html">Shader.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="main_app_8h_source.html">mainApp.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Shader.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_shader_8cpp__incl.png" border="0" usemap="#a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_shader_8cpp" alt=""/></div>
+<map name="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_shader_8cpp" id="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_shader_8cpp">
+<area shape="rect" title=" " alt="" coords="37,5,219,61"/>
+<area shape="rect" title=" " alt="" coords="5,109,67,136"/>
+<area shape="rect" href="_shader_8h.html" title=" " alt="" coords="91,109,165,136"/>
+<area shape="rect" href="main_app_8h.html" title=" " alt="" coords="289,109,373,136"/>
+<area shape="rect" title=" " alt="" coords="47,184,115,211"/>
+<area shape="rect" title=" " alt="" coords="140,184,223,211"/>
+<area shape="rect" title=" " alt="" coords="247,184,310,211"/>
+<area shape="rect" title=" " alt="" coords="335,184,433,211"/>
+<area shape="rect" title=" " alt="" coords="458,184,561,211"/>
+<area shape="rect" href="resource_8h.html" title=" " alt="" coords="585,184,668,211"/>
+<area shape="rect" title=" " alt="" coords="693,184,755,211"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+関数</h2></td></tr>
+<tr class="memitem:a4eb484569643960e7a2603c5f6947964"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_shader_8cpp.html#a4eb484569643960e7a2603c5f6947964">LoadVertexShader</a> (LPCWSTR pwszVSFName, ID3D11VertexShader **ppVertexShader, ID3D11InputLayout **ppVertexLayout, const D3D11_INPUT_ELEMENT_DESC *pInpElemDesc, UINT uNumElem)</td></tr>
+<tr class="separator:a4eb484569643960e7a2603c5f6947964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ee0de25e2acc6f04a0d2d8d8f4d49e9"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_shader_8cpp.html#a5ee0de25e2acc6f04a0d2d8d8f4d49e9">LoadPixelShader</a> (LPCWSTR pwszPSFName, ID3D11PixelShader **ppPixelShader)</td></tr>
+<tr class="separator:a5ee0de25e2acc6f04a0d2d8d8f4d49e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a527141b482968e801ee13fbbc9f6d9ee"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_shader_8cpp.html#a527141b482968e801ee13fbbc9f6d9ee">LoadShader</a> (LPCWSTR pwszVSFName, LPCWSTR pwszPSFName, ID3D11VertexShader **ppVertexShader, ID3D11InputLayout **ppVertexLayout, ID3D11PixelShader **ppPixelShader, const D3D11_INPUT_ELEMENT_DESC *pInpElemDesc, UINT uNumElem)</td></tr>
+<tr class="separator:a527141b482968e801ee13fbbc9f6d9ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfb7e9d65a1539676dee993428d8e9e7"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_shader_8cpp.html#abfb7e9d65a1539676dee993428d8e9e7">LoadVertexShader</a> (LPCSTR pszVSFName, ID3D11VertexShader **ppVertexShader, ID3D11InputLayout **ppVertexLayout, const D3D11_INPUT_ELEMENT_DESC *pInpElemDesc, UINT uNumElem)</td></tr>
+<tr class="separator:abfb7e9d65a1539676dee993428d8e9e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a137594b6594f3352656703bfeeba1bbe"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_shader_8cpp.html#a137594b6594f3352656703bfeeba1bbe">LoadPixelShader</a> (LPCSTR pszPSFName, ID3D11PixelShader **ppPixelShader)</td></tr>
+<tr class="separator:a137594b6594f3352656703bfeeba1bbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab527f80ab7e627c8bf5d17040160f286"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_shader_8cpp.html#ab527f80ab7e627c8bf5d17040160f286">LoadShader</a> (LPCSTR pszVSFName, LPCSTR pszPSFName, ID3D11VertexShader **ppVertexShader, ID3D11InputLayout **ppVertexLayout, ID3D11PixelShader **ppPixelShader, const D3D11_INPUT_ELEMENT_DESC *pInpElemDesc, UINT uNumElem)</td></tr>
+<tr class="separator:ab527f80ab7e627c8bf5d17040160f286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a137594b6594f3352656703bfeeba1bbe" name="a137594b6594f3352656703bfeeba1bbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a137594b6594f3352656703bfeeba1bbe">&#9670;&nbsp;</a></span>LoadPixelShader() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT LoadPixelShader </td>
+          <td>(</td>
+          <td class="paramtype">LPCSTR&#160;</td>
+          <td class="paramname"><em>pszPSFName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11PixelShader **&#160;</td>
+          <td class="paramname"><em>ppPixelShader</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_shader_8cpp_a137594b6594f3352656703bfeeba1bbe_cgraph.png" border="0" usemap="#a_shader_8cpp_a137594b6594f3352656703bfeeba1bbe_cgraph" alt=""/></div>
+<map name="a_shader_8cpp_a137594b6594f3352656703bfeeba1bbe_cgraph" id="a_shader_8cpp_a137594b6594f3352656703bfeeba1bbe_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,125,57"/>
+<area shape="rect" href="_shader_8cpp.html#a5ee0de25e2acc6f04a0d2d8d8f4d49e9" title=" " alt="" coords="173,31,293,57"/>
+<area shape="rect" href="main_app_8cpp.html#aa9d863781ee8f3f820ea4ad9e52f78d9" title=" " alt="" coords="345,5,437,32"/>
+<area shape="rect" href="main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="341,56,440,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5ee0de25e2acc6f04a0d2d8d8f4d49e9" name="a5ee0de25e2acc6f04a0d2d8d8f4d49e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ee0de25e2acc6f04a0d2d8d8f4d49e9">&#9670;&nbsp;</a></span>LoadPixelShader() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT LoadPixelShader </td>
+          <td>(</td>
+          <td class="paramtype">LPCWSTR&#160;</td>
+          <td class="paramname"><em>pwszPSFName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11PixelShader **&#160;</td>
+          <td class="paramname"><em>ppPixelShader</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_shader_8cpp_a5ee0de25e2acc6f04a0d2d8d8f4d49e9_cgraph.png" border="0" usemap="#a_shader_8cpp_a5ee0de25e2acc6f04a0d2d8d8f4d49e9_cgraph" alt=""/></div>
+<map name="a_shader_8cpp_a5ee0de25e2acc6f04a0d2d8d8f4d49e9_cgraph" id="a_shader_8cpp_a5ee0de25e2acc6f04a0d2d8d8f4d49e9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,125,57"/>
+<area shape="rect" href="main_app_8cpp.html#aa9d863781ee8f3f820ea4ad9e52f78d9" title=" " alt="" coords="177,5,269,32"/>
+<area shape="rect" href="main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="173,56,272,83"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_shader_8cpp_a5ee0de25e2acc6f04a0d2d8d8f4d49e9_icgraph.png" border="0" usemap="#a_shader_8cpp_a5ee0de25e2acc6f04a0d2d8d8f4d49e9_icgraph" alt=""/></div>
+<map name="a_shader_8cpp_a5ee0de25e2acc6f04a0d2d8d8f4d49e9_icgraph" id="a_shader_8cpp_a5ee0de25e2acc6f04a0d2d8d8f4d49e9_icgraph">
+<area shape="rect" title=" " alt="" coords="616,31,736,57"/>
+<area shape="rect" href="_shader_8cpp.html#a137594b6594f3352656703bfeeba1bbe" title=" " alt="" coords="448,5,568,32"/>
+<area shape="rect" href="_shader_8cpp.html#a527141b482968e801ee13fbbc9f6d9ee" title=" " alt="" coords="463,56,553,83"/>
+<area shape="rect" href="mesh_8cpp.html#afd09c8aac5c23c7b70e88571ccf966b3" title=" " alt="" coords="277,5,347,32"/>
+<area shape="rect" href="polygon_8cpp.html#a8bb589f707597d8419965799f063ad4e" title=" " alt="" coords="269,56,355,83"/>
+<area shape="rect" href="class_c_assimp_model.html#a4a7771d2c4afcde3d4dd26cb73e983e1" title=" " alt="" coords="224,107,400,133"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="137,56,176,83"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,56,89,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab527f80ab7e627c8bf5d17040160f286" name="ab527f80ab7e627c8bf5d17040160f286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab527f80ab7e627c8bf5d17040160f286">&#9670;&nbsp;</a></span>LoadShader() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT LoadShader </td>
+          <td>(</td>
+          <td class="paramtype">LPCSTR&#160;</td>
+          <td class="paramname"><em>pszVSFName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPCSTR&#160;</td>
+          <td class="paramname"><em>pszPSFName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11VertexShader **&#160;</td>
+          <td class="paramname"><em>ppVertexShader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11InputLayout **&#160;</td>
+          <td class="paramname"><em>ppVertexLayout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11PixelShader **&#160;</td>
+          <td class="paramname"><em>ppPixelShader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const D3D11_INPUT_ELEMENT_DESC *&#160;</td>
+          <td class="paramname"><em>pInpElemDesc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>uNumElem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_shader_8cpp_ab527f80ab7e627c8bf5d17040160f286_cgraph.png" border="0" usemap="#a_shader_8cpp_ab527f80ab7e627c8bf5d17040160f286_cgraph" alt=""/></div>
+<map name="a_shader_8cpp_ab527f80ab7e627c8bf5d17040160f286_cgraph" id="a_shader_8cpp_ab527f80ab7e627c8bf5d17040160f286_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,96,57"/>
+<area shape="rect" href="_shader_8cpp.html#a5ee0de25e2acc6f04a0d2d8d8f4d49e9" title=" " alt="" coords="149,5,269,32"/>
+<area shape="rect" href="_shader_8cpp.html#a4eb484569643960e7a2603c5f6947964" title=" " alt="" coords="144,56,273,83"/>
+<area shape="rect" href="main_app_8cpp.html#aa9d863781ee8f3f820ea4ad9e52f78d9" title=" " alt="" coords="325,5,417,32"/>
+<area shape="rect" href="main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="321,56,420,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a527141b482968e801ee13fbbc9f6d9ee" name="a527141b482968e801ee13fbbc9f6d9ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a527141b482968e801ee13fbbc9f6d9ee">&#9670;&nbsp;</a></span>LoadShader() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT LoadShader </td>
+          <td>(</td>
+          <td class="paramtype">LPCWSTR&#160;</td>
+          <td class="paramname"><em>pwszVSFName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">LPCWSTR&#160;</td>
+          <td class="paramname"><em>pwszPSFName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11VertexShader **&#160;</td>
+          <td class="paramname"><em>ppVertexShader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11InputLayout **&#160;</td>
+          <td class="paramname"><em>ppVertexLayout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11PixelShader **&#160;</td>
+          <td class="paramname"><em>ppPixelShader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const D3D11_INPUT_ELEMENT_DESC *&#160;</td>
+          <td class="paramname"><em>pInpElemDesc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>uNumElem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_shader_8cpp_a527141b482968e801ee13fbbc9f6d9ee_cgraph.png" border="0" usemap="#a_shader_8cpp_a527141b482968e801ee13fbbc9f6d9ee_cgraph" alt=""/></div>
+<map name="a_shader_8cpp_a527141b482968e801ee13fbbc9f6d9ee_cgraph" id="a_shader_8cpp_a527141b482968e801ee13fbbc9f6d9ee_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,96,57"/>
+<area shape="rect" href="_shader_8cpp.html#a5ee0de25e2acc6f04a0d2d8d8f4d49e9" title=" " alt="" coords="149,5,269,32"/>
+<area shape="rect" href="_shader_8cpp.html#a4eb484569643960e7a2603c5f6947964" title=" " alt="" coords="144,56,273,83"/>
+<area shape="rect" href="main_app_8cpp.html#aa9d863781ee8f3f820ea4ad9e52f78d9" title=" " alt="" coords="325,5,417,32"/>
+<area shape="rect" href="main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="321,56,420,83"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_shader_8cpp_a527141b482968e801ee13fbbc9f6d9ee_icgraph.png" border="0" usemap="#a_shader_8cpp_a527141b482968e801ee13fbbc9f6d9ee_icgraph" alt=""/></div>
+<map name="a_shader_8cpp_a527141b482968e801ee13fbbc9f6d9ee_icgraph" id="a_shader_8cpp_a527141b482968e801ee13fbbc9f6d9ee_icgraph">
+<area shape="rect" title=" " alt="" coords="448,56,539,83"/>
+<area shape="rect" href="mesh_8cpp.html#afd09c8aac5c23c7b70e88571ccf966b3" title=" " alt="" coords="277,5,347,32"/>
+<area shape="rect" href="polygon_8cpp.html#a8bb589f707597d8419965799f063ad4e" title=" " alt="" coords="269,56,355,83"/>
+<area shape="rect" href="class_c_assimp_model.html#a4a7771d2c4afcde3d4dd26cb73e983e1" title=" " alt="" coords="224,107,400,133"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="137,56,176,83"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,56,89,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="abfb7e9d65a1539676dee993428d8e9e7" name="abfb7e9d65a1539676dee993428d8e9e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfb7e9d65a1539676dee993428d8e9e7">&#9670;&nbsp;</a></span>LoadVertexShader() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT LoadVertexShader </td>
+          <td>(</td>
+          <td class="paramtype">LPCSTR&#160;</td>
+          <td class="paramname"><em>pszVSFName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11VertexShader **&#160;</td>
+          <td class="paramname"><em>ppVertexShader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11InputLayout **&#160;</td>
+          <td class="paramname"><em>ppVertexLayout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const D3D11_INPUT_ELEMENT_DESC *&#160;</td>
+          <td class="paramname"><em>pInpElemDesc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>uNumElem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_shader_8cpp_abfb7e9d65a1539676dee993428d8e9e7_cgraph.png" border="0" usemap="#a_shader_8cpp_abfb7e9d65a1539676dee993428d8e9e7_cgraph" alt=""/></div>
+<map name="a_shader_8cpp_abfb7e9d65a1539676dee993428d8e9e7_cgraph" id="a_shader_8cpp_abfb7e9d65a1539676dee993428d8e9e7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,135,57"/>
+<area shape="rect" href="_shader_8cpp.html#a4eb484569643960e7a2603c5f6947964" title=" " alt="" coords="183,31,312,57"/>
+<area shape="rect" href="main_app_8cpp.html#aa9d863781ee8f3f820ea4ad9e52f78d9" title=" " alt="" coords="363,5,455,32"/>
+<area shape="rect" href="main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="360,56,459,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4eb484569643960e7a2603c5f6947964" name="a4eb484569643960e7a2603c5f6947964"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4eb484569643960e7a2603c5f6947964">&#9670;&nbsp;</a></span>LoadVertexShader() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT LoadVertexShader </td>
+          <td>(</td>
+          <td class="paramtype">LPCWSTR&#160;</td>
+          <td class="paramname"><em>pwszVSFName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11VertexShader **&#160;</td>
+          <td class="paramname"><em>ppVertexShader</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">ID3D11InputLayout **&#160;</td>
+          <td class="paramname"><em>ppVertexLayout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const D3D11_INPUT_ELEMENT_DESC *&#160;</td>
+          <td class="paramname"><em>pInpElemDesc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">UINT&#160;</td>
+          <td class="paramname"><em>uNumElem</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_shader_8cpp_a4eb484569643960e7a2603c5f6947964_cgraph.png" border="0" usemap="#a_shader_8cpp_a4eb484569643960e7a2603c5f6947964_cgraph" alt=""/></div>
+<map name="a_shader_8cpp_a4eb484569643960e7a2603c5f6947964_cgraph" id="a_shader_8cpp_a4eb484569643960e7a2603c5f6947964_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,135,57"/>
+<area shape="rect" href="main_app_8cpp.html#aa9d863781ee8f3f820ea4ad9e52f78d9" title=" " alt="" coords="186,5,278,32"/>
+<area shape="rect" href="main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="183,56,281,83"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_shader_8cpp_a4eb484569643960e7a2603c5f6947964_icgraph.png" border="0" usemap="#a_shader_8cpp_a4eb484569643960e7a2603c5f6947964_icgraph" alt=""/></div>
+<map name="a_shader_8cpp_a4eb484569643960e7a2603c5f6947964_icgraph" id="a_shader_8cpp_a4eb484569643960e7a2603c5f6947964_icgraph">
+<area shape="rect" title=" " alt="" coords="625,81,755,108"/>
+<area shape="rect" href="_shader_8cpp.html#a527141b482968e801ee13fbbc9f6d9ee" title=" " alt="" coords="467,56,558,83"/>
+<area shape="rect" href="_shader_8cpp.html#abfb7e9d65a1539676dee993428d8e9e7" title=" " alt="" coords="448,107,577,133"/>
+<area shape="rect" href="mesh_8cpp.html#afd09c8aac5c23c7b70e88571ccf966b3" title=" " alt="" coords="277,5,347,32"/>
+<area shape="rect" href="polygon_8cpp.html#a8bb589f707597d8419965799f063ad4e" title=" " alt="" coords="269,56,355,83"/>
+<area shape="rect" href="class_c_assimp_model.html#a4a7771d2c4afcde3d4dd26cb73e983e1" title=" " alt="" coords="224,107,400,133"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="137,56,176,83"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,56,89,83"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

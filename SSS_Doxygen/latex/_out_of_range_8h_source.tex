@@ -1,0 +1,50 @@
+\hypertarget{_out_of_range_8h_source}{}\doxysection{Out\+Of\+Range.\+h}
+\label{_out_of_range_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/OutOfRange.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/OutOfRange.h}}
+\mbox{\hyperlink{_out_of_range_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_OUTOFRANGE\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_OUTOFRANGE\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_transform}{CTransform}};}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{19 \textcolor{comment}{//===== マクロ定義 =====}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define ENEMY\_OUT\_RANGE\_X   (300.0f)}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#define ENEMY\_OUT\_RANGE\_Y   (220.0f)}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define BLOCK\_OUT\_RANGE\_X   (350.0f)}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#define BLOCK\_OUT\_RANGE\_Y   (270.0f)}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_out_of_range}{COutOfRange}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{27 \textcolor{keyword}{private}:}
+\DoxyCodeLine{28     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{30 \textcolor{comment}{}    \mbox{\hyperlink{class_c_transform}{CTransform}}* m\_pTransform;}
+\DoxyCodeLine{32     XMFLOAT2 m\_LimitRange;}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{36 \textcolor{comment}{}    \textcolor{keywordtype}{void} NoFunction();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{39     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{public}:}
+\DoxyCodeLine{44     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{48 \textcolor{comment}{}    \mbox{\hyperlink{class_c_out_of_range_aa7337b93f62a7297d4e674b3492152c1}{COutOfRange}}();}
+\DoxyCodeLine{50     \mbox{\hyperlink{class_c_out_of_range_af7e0d86e82145da8de96d4e4351aff20}{\string~COutOfRange}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_out_of_range_a733e14aa676e57181da0e943e3c26ff1}{Start}}()\textcolor{keyword}{override};}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_out_of_range_a6cf58e1026a25bc88dd598d2c10200f7}{Update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_out_of_range_a94c9046bd55118cedc702eb35aa9466d}{Draw}}();}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_out_of_range_a8dc6652f55b75059b2fed0a9dea9e934}{OnCollisionEnter}}(\mbox{\hyperlink{class_object}{Object}}* pObject)\textcolor{keyword}{override};}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_out_of_range_a95c09a3839cc1bab5aaa363f743f6ef5}{SetLimitRange}}(\textcolor{keywordtype}{float} x,\textcolor{keywordtype}{float} y);}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

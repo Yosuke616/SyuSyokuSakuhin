@@ -1,0 +1,4 @@
+<map id="CDraw3D::AlwaysAnimation" name="CDraw3D::AlwaysAnimation">
+<area shape="rect" id="node1" title="常にアニメーションを流すか" alt="" coords="5,5,189,32"/>
+<area shape="rect" id="node2" href="$class_animation.html#a229edf28387b4f8d007bd0c7354b4742" title="常に再生しているかどうか" alt="" coords="237,5,425,32"/>
+</map>

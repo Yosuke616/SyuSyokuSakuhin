@@ -32,6 +32,8 @@ private:
 	TAssimpMaterial* m_pMaterial;
 	/** @brief アニメーションの情報*/
 	Animation* m_pAnim;
+	/** @brief マテリアルの実体*/
+	//TAssimpMaterial m_Material;
 
 	//メンバ関数
 

@@ -1,0 +1,107 @@
+\hypertarget{class_anim_evaluator}{}\doxysection{Anim\+Evaluator クラス}
+\label{class_anim_evaluator}\index{AnimEvaluator@{AnimEvaluator}}
+
+
+{\ttfamily \#include $<$Assimp\+Model.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_anim_evaluator_a271264baf8bdbb2ca6169be7f2067c59}{Anim\+Evaluator}} (const ai\+Animation $\ast$p\+Anim)
+\item 
+\mbox{\hyperlink{class_anim_evaluator_a451b9f7bcf5153122792e633273fcf17}{$\sim$\+Anim\+Evaluator}} ()
+\item 
+void \mbox{\hyperlink{class_anim_evaluator_ad54be6d3b474ab3753b12c6996bc2852}{Evaluate}} (double p\+Time)
+\item 
+const std\+::vector$<$ ai\+Matrix4x4 $>$ \& \mbox{\hyperlink{class_anim_evaluator_a2924e71632d97c009d30179756704a57}{Get\+Transformations}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+const ai\+Animation $\ast$ \mbox{\hyperlink{class_anim_evaluator_a9f9e8bd760507f14cc98319f7bcfb4ec}{m\+Anim}}
+\item 
+double \mbox{\hyperlink{class_anim_evaluator_a974658f2259e0cbe7319fab473f24494}{m\+Last\+Time}}
+\item 
+std\+::vector$<$ std\+::tuple$<$ unsigned int, unsigned int, unsigned int $>$ $>$ \mbox{\hyperlink{class_anim_evaluator_a688bbe03c4d441482b61f27c44269113}{m\+Last\+Positions}}
+\item 
+std\+::vector$<$ ai\+Matrix4x4 $>$ \mbox{\hyperlink{class_anim_evaluator_a0748de3a9daa9a12756100a78909820a}{m\+Transforms}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_anim_evaluator_a271264baf8bdbb2ca6169be7f2067c59}\label{class_anim_evaluator_a271264baf8bdbb2ca6169be7f2067c59}} 
+\index{AnimEvaluator@{AnimEvaluator}!AnimEvaluator@{AnimEvaluator}}
+\index{AnimEvaluator@{AnimEvaluator}!AnimEvaluator@{AnimEvaluator}}
+\doxysubsubsection{\texorpdfstring{AnimEvaluator()}{AnimEvaluator()}}
+{\footnotesize\ttfamily Anim\+Evaluator\+::\+Anim\+Evaluator (\begin{DoxyParamCaption}\item[{const ai\+Animation $\ast$}]{p\+Anim }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_anim_evaluator_a451b9f7bcf5153122792e633273fcf17}\label{class_anim_evaluator_a451b9f7bcf5153122792e633273fcf17}} 
+\index{AnimEvaluator@{AnimEvaluator}!````~AnimEvaluator@{$\sim$AnimEvaluator}}
+\index{````~AnimEvaluator@{$\sim$AnimEvaluator}!AnimEvaluator@{AnimEvaluator}}
+\doxysubsubsection{\texorpdfstring{$\sim$AnimEvaluator()}{~AnimEvaluator()}}
+{\footnotesize\ttfamily Anim\+Evaluator\+::$\sim$\+Anim\+Evaluator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_anim_evaluator_ad54be6d3b474ab3753b12c6996bc2852}\label{class_anim_evaluator_ad54be6d3b474ab3753b12c6996bc2852}} 
+\index{AnimEvaluator@{AnimEvaluator}!Evaluate@{Evaluate}}
+\index{Evaluate@{Evaluate}!AnimEvaluator@{AnimEvaluator}}
+\doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
+{\footnotesize\ttfamily void Anim\+Evaluator\+::\+Evaluate (\begin{DoxyParamCaption}\item[{double}]{p\+Time }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_anim_evaluator_ad54be6d3b474ab3753b12c6996bc2852_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_anim_evaluator_a2924e71632d97c009d30179756704a57}\label{class_anim_evaluator_a2924e71632d97c009d30179756704a57}} 
+\index{AnimEvaluator@{AnimEvaluator}!GetTransformations@{GetTransformations}}
+\index{GetTransformations@{GetTransformations}!AnimEvaluator@{AnimEvaluator}}
+\doxysubsubsection{\texorpdfstring{GetTransformations()}{GetTransformations()}}
+{\footnotesize\ttfamily const std\+::vector$<$ ai\+Matrix4x4 $>$ \& Anim\+Evaluator\+::\+Get\+Transformations (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_anim_evaluator_a2924e71632d97c009d30179756704a57_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{class_anim_evaluator_a9f9e8bd760507f14cc98319f7bcfb4ec}\label{class_anim_evaluator_a9f9e8bd760507f14cc98319f7bcfb4ec}} 
+\index{AnimEvaluator@{AnimEvaluator}!mAnim@{mAnim}}
+\index{mAnim@{mAnim}!AnimEvaluator@{AnimEvaluator}}
+\doxysubsubsection{\texorpdfstring{mAnim}{mAnim}}
+{\footnotesize\ttfamily const ai\+Animation$\ast$ Anim\+Evaluator\+::m\+Anim\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_anim_evaluator_a688bbe03c4d441482b61f27c44269113}\label{class_anim_evaluator_a688bbe03c4d441482b61f27c44269113}} 
+\index{AnimEvaluator@{AnimEvaluator}!mLastPositions@{mLastPositions}}
+\index{mLastPositions@{mLastPositions}!AnimEvaluator@{AnimEvaluator}}
+\doxysubsubsection{\texorpdfstring{mLastPositions}{mLastPositions}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::tuple$<$unsigned int, unsigned int, unsigned int$>$ $>$ Anim\+Evaluator\+::m\+Last\+Positions\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_anim_evaluator_a974658f2259e0cbe7319fab473f24494}\label{class_anim_evaluator_a974658f2259e0cbe7319fab473f24494}} 
+\index{AnimEvaluator@{AnimEvaluator}!mLastTime@{mLastTime}}
+\index{mLastTime@{mLastTime}!AnimEvaluator@{AnimEvaluator}}
+\doxysubsubsection{\texorpdfstring{mLastTime}{mLastTime}}
+{\footnotesize\ttfamily double Anim\+Evaluator\+::m\+Last\+Time\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_anim_evaluator_a0748de3a9daa9a12756100a78909820a}\label{class_anim_evaluator_a0748de3a9daa9a12756100a78909820a}} 
+\index{AnimEvaluator@{AnimEvaluator}!mTransforms@{mTransforms}}
+\index{mTransforms@{mTransforms}!AnimEvaluator@{AnimEvaluator}}
+\doxysubsubsection{\texorpdfstring{mTransforms}{mTransforms}}
+{\footnotesize\ttfamily std\+::vector$<$ai\+Matrix4x4$>$ Anim\+Evaluator\+::m\+Transforms\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_assimp_model_8h}{Assimp\+Model.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_assimp_model_8cpp}{Assimp\+Model.\+cpp}}\end{DoxyCompactItemize}
