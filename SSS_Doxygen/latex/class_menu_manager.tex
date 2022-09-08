@@ -1,0 +1,457 @@
+\hypertarget{class_menu_manager}{}\doxysection{Menu\+Manager クラス}
+\label{class_menu_manager}\index{MenuManager@{MenuManager}}
+
+
+メニューの状態を管理するクラス @detail シーンごとに用意するメニューを変えたりする  
+
+
+
+
+{\ttfamily \#include $<$Menu\+Manager.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_menu_manager_a7ea926de3916450fd30baad4385c1490}{$\sim$\+Menu\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_manager_ae92a51fc7b9b001c44f966cdeb907483}{Start}} ()
+\begin{DoxyCompactList}\small\item\em 初期化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_manager_aabc8f23d87e058b5c5b099a8c34a2af8}{Update}} ()
+\begin{DoxyCompactList}\small\item\em 更新処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_manager_a257fe839c85d81f74f2077bd0d7dbd63}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em 描画処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_manager_ac9bdbdfc54c48873f16ebd9cf222d1b6}{Create}} (int state, int delay\+Cnt=1)
+\begin{DoxyCompactList}\small\item\em メニュー作成 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_manager_a72ca1a40cc8ebbe9aeb82da1e46575ad}{Delete\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em メニューリストの削除 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_manager_ac1759aa35665506ebd7fb930bf2e4851}{Add\+Menu}} (\mbox{\hyperlink{class_object}{Object}} $\ast$p\+Menu\+Object)
+\begin{DoxyCompactList}\small\item\em メニューオブジェクトの追加 \end{DoxyCompactList}\item 
+std\+::list$<$ \mbox{\hyperlink{class_object}{Object}} $\ast$ $>$ \& \mbox{\hyperlink{class_menu_manager_afc8e14dec3f86f4ffcefd1814a150bcd}{Get\+Menu\+List}} ()
+\begin{DoxyCompactList}\small\item\em メニューリストの取得 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_menu_manager_a87435714da92d8abe47a1d9d833f1dde}{Get\+Create\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em 作るメニューの番号を取得する \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_manager_a6b1c422b8f1d277d043fc9a309aaa8a0}{Create\+Title\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em タイトルメニュー \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_manager_ad519349168bf08237d1d37fc8333cfce}{Create\+Pause\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em ポーズメニュー \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_manager_af6c63b05dda555dce5a7698c69b66f90}{Create\+Select\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em ステージセレクトメニュー \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_manager_a9f2f549c8364364b698b7c99d5f52f23}{Create\+Miss\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em ミスメニュー \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_menu_manager_acf6c98482ac2231830e38616e8e565fa}{Create\+Game\+Over\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em ゲームオーバーメニュー \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_menu_manager}{Menu\+Manager}} $\ast$ \mbox{\hyperlink{class_menu_manager_a659dcf3bbe0c9d9771ff15fff87bf449}{Get\+Insutance}} ()
+\begin{DoxyCompactList}\small\item\em インスタンス生成 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_menu_manager_a5e8304c62a7d410defc91c007c497465}{Destroy}} ()
+\begin{DoxyCompactList}\small\item\em インスタンス破棄 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_menu_manager_ae31af6ff4d3a6572b25253a8a22fbc99}{m\+\_\+b\+Option}} = false
+\begin{DoxyCompactList}\small\item\em オプションフラグ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+メニューの状態を管理するクラス @detail シーンごとに用意するメニューを変えたりする 
+
+クラス定義 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_menu_manager_a7ea926de3916450fd30baad4385c1490}\label{class_menu_manager_a7ea926de3916450fd30baad4385c1490}} 
+\index{MenuManager@{MenuManager}!````~MenuManager@{$\sim$MenuManager}}
+\index{````~MenuManager@{$\sim$MenuManager}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$MenuManager()}{~MenuManager()}}
+{\footnotesize\ttfamily Menu\+Manager\+::$\sim$\+Menu\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+デストラクタ 
+
+全てのメニューオブジェクトの解放 呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_a7ea926de3916450fd30baad4385c1490_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_menu_manager_ac1759aa35665506ebd7fb930bf2e4851}\label{class_menu_manager_ac1759aa35665506ebd7fb930bf2e4851}} 
+\index{MenuManager@{MenuManager}!AddMenu@{AddMenu}}
+\index{AddMenu@{AddMenu}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{AddMenu()}{AddMenu()}}
+{\footnotesize\ttfamily void Menu\+Manager\+::\+Add\+Menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} $\ast$}]{p\+Menu\+Object }\end{DoxyParamCaption})}
+
+
+
+メニューオブジェクトの追加 
+
+メニューリストに追加
+
+
+\begin{DoxyParams}{引数}
+{\em (\+Object$\ast$)} & 追加するオブジェクトのポインタ \\
+\hline
+\end{DoxyParams}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_ac1759aa35665506ebd7fb930bf2e4851_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_ac1759aa35665506ebd7fb930bf2e4851_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_menu_manager_ac9bdbdfc54c48873f16ebd9cf222d1b6}\label{class_menu_manager_ac9bdbdfc54c48873f16ebd9cf222d1b6}} 
+\index{MenuManager@{MenuManager}!Create@{Create}}
+\index{Create@{Create}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{Create()}{Create()}}
+{\footnotesize\ttfamily void Menu\+Manager\+::\+Create (\begin{DoxyParamCaption}\item[{int}]{state,  }\item[{int}]{delay\+Cnt = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+メニュー作成 
+
+メニューの作成
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & どのメニューを作成するかの番号 \\
+\hline
+{\em (int)} & どの位のフレームの後作成するか \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_ac9bdbdfc54c48873f16ebd9cf222d1b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_menu_manager_acf6c98482ac2231830e38616e8e565fa}\label{class_menu_manager_acf6c98482ac2231830e38616e8e565fa}} 
+\index{MenuManager@{MenuManager}!CreateGameOverMenu@{CreateGameOverMenu}}
+\index{CreateGameOverMenu@{CreateGameOverMenu}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{CreateGameOverMenu()}{CreateGameOverMenu()}}
+{\footnotesize\ttfamily void Menu\+Manager\+::\+Create\+Game\+Over\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+ゲームオーバーメニュー 
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_acf6c98482ac2231830e38616e8e565fa_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_acf6c98482ac2231830e38616e8e565fa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_menu_manager_a9f2f549c8364364b698b7c99d5f52f23}\label{class_menu_manager_a9f2f549c8364364b698b7c99d5f52f23}} 
+\index{MenuManager@{MenuManager}!CreateMissMenu@{CreateMissMenu}}
+\index{CreateMissMenu@{CreateMissMenu}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{CreateMissMenu()}{CreateMissMenu()}}
+{\footnotesize\ttfamily void Menu\+Manager\+::\+Create\+Miss\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+ミスメニュー 
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_a9f2f549c8364364b698b7c99d5f52f23_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_a9f2f549c8364364b698b7c99d5f52f23_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_menu_manager_ad519349168bf08237d1d37fc8333cfce}\label{class_menu_manager_ad519349168bf08237d1d37fc8333cfce}} 
+\index{MenuManager@{MenuManager}!CreatePauseMenu@{CreatePauseMenu}}
+\index{CreatePauseMenu@{CreatePauseMenu}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{CreatePauseMenu()}{CreatePauseMenu()}}
+{\footnotesize\ttfamily void Menu\+Manager\+::\+Create\+Pause\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+ポーズメニュー 
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_ad519349168bf08237d1d37fc8333cfce_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_ad519349168bf08237d1d37fc8333cfce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_menu_manager_af6c63b05dda555dce5a7698c69b66f90}\label{class_menu_manager_af6c63b05dda555dce5a7698c69b66f90}} 
+\index{MenuManager@{MenuManager}!CreateSelectMenu@{CreateSelectMenu}}
+\index{CreateSelectMenu@{CreateSelectMenu}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{CreateSelectMenu()}{CreateSelectMenu()}}
+{\footnotesize\ttfamily void Menu\+Manager\+::\+Create\+Select\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+ステージセレクトメニュー 
+
+ステージセレクトメニューの作成 呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_af6c63b05dda555dce5a7698c69b66f90_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_af6c63b05dda555dce5a7698c69b66f90_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_menu_manager_a6b1c422b8f1d277d043fc9a309aaa8a0}\label{class_menu_manager_a6b1c422b8f1d277d043fc9a309aaa8a0}} 
+\index{MenuManager@{MenuManager}!CreateTitleMenu@{CreateTitleMenu}}
+\index{CreateTitleMenu@{CreateTitleMenu}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{CreateTitleMenu()}{CreateTitleMenu()}}
+{\footnotesize\ttfamily void Menu\+Manager\+::\+Create\+Title\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+タイトルメニュー 
+
+タイトルメニューの作成
+
+作りたいメニューをここから下に追加していく 呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_a6b1c422b8f1d277d043fc9a309aaa8a0_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_a6b1c422b8f1d277d043fc9a309aaa8a0_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_menu_manager_a72ca1a40cc8ebbe9aeb82da1e46575ad}\label{class_menu_manager_a72ca1a40cc8ebbe9aeb82da1e46575ad}} 
+\index{MenuManager@{MenuManager}!DeleteMenu@{DeleteMenu}}
+\index{DeleteMenu@{DeleteMenu}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{DeleteMenu()}{DeleteMenu()}}
+{\footnotesize\ttfamily void Menu\+Manager\+::\+Delete\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+メニューリストの削除 
+
+メニューリストをカラにする 被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_a72ca1a40cc8ebbe9aeb82da1e46575ad_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_menu_manager_a5e8304c62a7d410defc91c007c497465}\label{class_menu_manager_a5e8304c62a7d410defc91c007c497465}} 
+\index{MenuManager@{MenuManager}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily void Menu\+Manager\+::\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+インスタンス破棄 
+
+インスタンスの破棄 被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_menu_manager_a5e8304c62a7d410defc91c007c497465_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_menu_manager_a257fe839c85d81f74f2077bd0d7dbd63}\label{class_menu_manager_a257fe839c85d81f74f2077bd0d7dbd63}} 
+\index{MenuManager@{MenuManager}!Draw@{Draw}}
+\index{Draw@{Draw}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Menu\+Manager\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+描画処理 
+
+メニューオブジェクトの描画 imguiでデバッグのやつを出す呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_a257fe839c85d81f74f2077bd0d7dbd63_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_menu_manager_a257fe839c85d81f74f2077bd0d7dbd63_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_menu_manager_a87435714da92d8abe47a1d9d833f1dde}\label{class_menu_manager_a87435714da92d8abe47a1d9d833f1dde}} 
+\index{MenuManager@{MenuManager}!GetCreateMenu@{GetCreateMenu}}
+\index{GetCreateMenu@{GetCreateMenu}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{GetCreateMenu()}{GetCreateMenu()}}
+{\footnotesize\ttfamily int Menu\+Manager\+::\+Get\+Create\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+作るメニューの番号を取得する 
+
+作られるメニューの番号を返す
+
+\begin{DoxyReturn}{戻り値}
+(int) どの番号のメニューが作られるか 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_menu_manager_a659dcf3bbe0c9d9771ff15fff87bf449}\label{class_menu_manager_a659dcf3bbe0c9d9771ff15fff87bf449}} 
+\index{MenuManager@{MenuManager}!GetInsutance@{GetInsutance}}
+\index{GetInsutance@{GetInsutance}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{GetInsutance()}{GetInsutance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_menu_manager}{Menu\+Manager}} $\ast$ Menu\+Manager\+::\+Get\+Insutance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+インスタンス生成 
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_a659dcf3bbe0c9d9771ff15fff87bf449_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_menu_manager_afc8e14dec3f86f4ffcefd1814a150bcd}\label{class_menu_manager_afc8e14dec3f86f4ffcefd1814a150bcd}} 
+\index{MenuManager@{MenuManager}!GetMenuList@{GetMenuList}}
+\index{GetMenuList@{GetMenuList}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{GetMenuList()}{GetMenuList()}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{class_object}{Object}} $\ast$ $>$ \& Menu\+Manager\+::\+Get\+Menu\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+メニューリストの取得 
+
+\mbox{\Hypertarget{class_menu_manager_ae92a51fc7b9b001c44f966cdeb907483}\label{class_menu_manager_ae92a51fc7b9b001c44f966cdeb907483}} 
+\index{MenuManager@{MenuManager}!Start@{Start}}
+\index{Start@{Start}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Menu\+Manager\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+初期化 
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_ae92a51fc7b9b001c44f966cdeb907483_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_ae92a51fc7b9b001c44f966cdeb907483_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_menu_manager_aabc8f23d87e058b5c5b099a8c34a2af8}\label{class_menu_manager_aabc8f23d87e058b5c5b099a8c34a2af8}} 
+\index{MenuManager@{MenuManager}!Update@{Update}}
+\index{Update@{Update}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Menu\+Manager\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+更新処理 
+
+メニューのリストの入っているオブジェクトの更新 シーンごとの処理を追加していく
+
+タイトルなど始めたりボタンを選ぶやつ
+
+ステージセレクト専用の処理
+
+ミスメニュー専用の処理呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_menu_manager_aabc8f23d87e058b5c5b099a8c34a2af8_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_menu_manager_aabc8f23d87e058b5c5b099a8c34a2af8_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{class_menu_manager_ae31af6ff4d3a6572b25253a8a22fbc99}\label{class_menu_manager_ae31af6ff4d3a6572b25253a8a22fbc99}} 
+\index{MenuManager@{MenuManager}!m\_bOption@{m\_bOption}}
+\index{m\_bOption@{m\_bOption}!MenuManager@{MenuManager}}
+\doxysubsubsection{\texorpdfstring{m\_bOption}{m\_bOption}}
+{\footnotesize\ttfamily bool Menu\+Manager\+::m\+\_\+b\+Option = false\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+オプションフラグ 
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_menu_manager_8h}{Menu\+Manager.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_menu_manager_8cpp}{Menu\+Manager.\+cpp}}\end{DoxyCompactItemize}

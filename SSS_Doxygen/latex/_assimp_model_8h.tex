@@ -1,0 +1,90 @@
+\hypertarget{_assimp_model_8h}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\+Assimp\+Model.h ファイル}
+\label{_assimp_model_8h}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/AssimpModel.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/AssimpModel.h}}
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$d3d11.\+h$>$}\newline
+{\ttfamily \#include $<$Direct\+XMath.\+h$>$}\newline
+{\ttfamily \#include $<$assimp/\+Importer.\+hpp$>$}\newline
+{\ttfamily \#include $<$assimp/scene.\+h$>$}\newline
+{\ttfamily \#include $<$assimp/postprocess.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Camera.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Light.\+h\char`\"{}}\newline
+Assimp\+Model.\+h の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_assimp_model_8h__incl}
+\end{center}
+\end{figure}
+被依存関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_assimp_model_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{クラス}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_t_assimp_material}{TAssimp\+Material}}
+\item 
+struct \mbox{\hyperlink{struct_t_assimp_vertex}{TAssimp\+Vertex}}
+\item 
+class \mbox{\hyperlink{class_anim_evaluator}{Anim\+Evaluator}}
+\item 
+struct \mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}}
+\item 
+class \mbox{\hyperlink{class_scene_animator}{Scene\+Animator}}
+\item 
+class \mbox{\hyperlink{class_c_assimp_mesh}{CAssimp\+Mesh}}
+\item 
+class \mbox{\hyperlink{class_c_assimp_model}{CAssimp\+Model}}
+\end{DoxyCompactItemize}
+\doxysubsection*{マクロ定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_assimp_model_8h_a9f918755b601cf4bffca775992e6fb90}{NOMINMAX}}
+\end{DoxyCompactItemize}
+\doxysubsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}{EBy\+Opacity}} \{ \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a35cbb98affb6d66c253aefeb9d4078bc}{e\+No\+Affect}} = 0
+, \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a8636b2bf1064b0f26ca0c06300df0bb3}{e\+Opacity\+Only}}
+, \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3afde1bd452d55c5a4b848035beb5ed0b4}{e\+Transparent\+Only}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{マクロ定義詳解}
+\mbox{\Hypertarget{_assimp_model_8h_a9f918755b601cf4bffca775992e6fb90}\label{_assimp_model_8h_a9f918755b601cf4bffca775992e6fb90}} 
+\index{AssimpModel.h@{AssimpModel.h}!NOMINMAX@{NOMINMAX}}
+\index{NOMINMAX@{NOMINMAX}!AssimpModel.h@{AssimpModel.h}}
+\doxysubsubsection{\texorpdfstring{NOMINMAX}{NOMINMAX}}
+{\footnotesize\ttfamily \#define NOMINMAX}
+
+
+
+\doxysubsection{列挙型詳解}
+\mbox{\Hypertarget{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}\label{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}} 
+\index{AssimpModel.h@{AssimpModel.h}!EByOpacity@{EByOpacity}}
+\index{EByOpacity@{EByOpacity}!AssimpModel.h@{AssimpModel.h}}
+\doxysubsubsection{\texorpdfstring{EByOpacity}{EByOpacity}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}{EBy\+Opacity}}}
+
+\begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eNoAffect@{eNoAffect}!AssimpModel.h@{AssimpModel.h}}\index{AssimpModel.h@{AssimpModel.h}!eNoAffect@{eNoAffect}}}\mbox{\Hypertarget{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a35cbb98affb6d66c253aefeb9d4078bc}\label{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a35cbb98affb6d66c253aefeb9d4078bc}} 
+e\+No\+Affect&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eOpacityOnly@{eOpacityOnly}!AssimpModel.h@{AssimpModel.h}}\index{AssimpModel.h@{AssimpModel.h}!eOpacityOnly@{eOpacityOnly}}}\mbox{\Hypertarget{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a8636b2bf1064b0f26ca0c06300df0bb3}\label{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a8636b2bf1064b0f26ca0c06300df0bb3}} 
+e\+Opacity\+Only&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eTransparentOnly@{eTransparentOnly}!AssimpModel.h@{AssimpModel.h}}\index{AssimpModel.h@{AssimpModel.h}!eTransparentOnly@{eTransparentOnly}}}\mbox{\Hypertarget{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3afde1bd452d55c5a4b848035beb5ed0b4}\label{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3afde1bd452d55c5a4b848035beb5ed0b4}} 
+e\+Transparent\+Only&\\
+\hline
+
+\end{DoxyEnumFields}

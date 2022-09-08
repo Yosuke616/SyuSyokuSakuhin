@@ -1,0 +1,4 @@
+<map id="ModelManager::EraseModel" name="ModelManager::EraseModel">
+<area shape="rect" id="node1" title="モデル削除" alt="" coords="5,5,189,32"/>
+<area shape="rect" id="node2" href="$class_model_manager.html#ae7a58155fc4e317ae505ebd1e3a1f667" title="モデルの取得" alt="" coords="237,5,408,32"/>
+</map>

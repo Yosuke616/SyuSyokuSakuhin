@@ -1,0 +1,40 @@
+\hypertarget{_see_coll_component_8h_source}{}\doxysection{See\+Coll\+Component.\+h}
+\label{_see_coll_component_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/SeeCollComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/SeeCollComponent.h}}
+\mbox{\hyperlink{_see_coll_component_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef \_SEECOLL\_H\_}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define \_SEECOLL\_H\_}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{//インクルード部}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//前方宣言}}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_transform}{CTransform}};}
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_collider}{CCollider}};}
+\DoxyCodeLine{20 \textcolor{keyword}{class }\mbox{\hyperlink{class_object_manager}{ObjectManager}};}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_object}{Object}};}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_see_coll}{CSeeColl}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{25 \textcolor{keyword}{private}:}
+\DoxyCodeLine{27     \mbox{\hyperlink{class_c_transform}{CTransform}}* m\_pTransform;}
+\DoxyCodeLine{29     \mbox{\hyperlink{class_c_collider}{CCollider}}* m\_pColl;}
+\DoxyCodeLine{31     \mbox{\hyperlink{class_object}{Object}}* m\_pObject;}
+\DoxyCodeLine{32 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{public}:}
+\DoxyCodeLine{36     \mbox{\hyperlink{class_c_see_coll_a666931cef18b945511227417cfae2f6d}{CSeeColl}}();}
+\DoxyCodeLine{38     \mbox{\hyperlink{class_c_see_coll_a6513517867063db7b21542b640f468f1}{\string~CSeeColl}}();}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_see_coll_ab1cc85ed730b6ab2aeb7adfb6ee59230}{Start}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_see_coll_a2f39451e348977f12f7b1168c06c996c}{Update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_see_coll_aede3402862cec9b72fef2fb50577478b}{Draw}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_see_coll_a011da70b78c290c626c94e1e1f65dd81}{SetCollBox}}(XMFLOAT3 CollSize,XMFLOAT2 OffSet);}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_see_coll_a31d917994b761882fef54dc6b296a844}{DeleteCollBox}}();}
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,194 @@
+\hypertarget{_obj_info_8h_source}{}\doxysection{Obj\+Info.\+h}
+\label{_obj_info_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ObjInfo.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ObjInfo.h}}
+\mbox{\hyperlink{_obj_info_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef \_OBJECT\_INFO\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define \_OBJECT\_INFO\_H\_}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{//列挙隊宣言}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{comment}{//オブジェクトの更新順番}}
+\DoxyCodeLine{7 \textcolor{keyword}{enum} \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396}{UPDATE\_ORDER}} \{}
+\DoxyCodeLine{8     \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396abd8715db030d78a1d5ac2cd725becc72}{UPDATE\_BG}},         \textcolor{comment}{//背景}}
+\DoxyCodeLine{9     \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396a3fb41e4ef51fd9171aa8df24e1359fbb}{UPDATE\_PLAYER}},     \textcolor{comment}{//プレイヤー}}
+\DoxyCodeLine{10     \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396a7e4614ade4acf6f6de70371504bef8d7}{UPDATE\_FIELD}},       \textcolor{comment}{//地形}}
+\DoxyCodeLine{11     \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396a36acc1bdaa71b3f81405ab3a69e038a5}{UPDATE\_EFFECT}},     \textcolor{comment}{//エフェクト}}
+\DoxyCodeLine{12     \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396a450970ae922878bf498276ad28ced6de}{UPDATE\_MODEL}},       \textcolor{comment}{//モデル}}
+\DoxyCodeLine{13     \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396a5fcc5d029048eb8d279f6d9127189f5a}{UPDATE\_DEBUG}},       \textcolor{comment}{//debug}}
+\DoxyCodeLine{14     \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396a49bc20247816919e3d7ae465423c5a0a}{UPDATE\_UI}},         \textcolor{comment}{//UI}}
+\DoxyCodeLine{15     \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396a46a16fdb5c31d6f21f75e1cf93afd95e}{UPDATE\_OPTION}},     \textcolor{comment}{//オプション}}
+\DoxyCodeLine{16     \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396a6172479eb5e73188c4d2ec819c6df578}{UPDATE\_GOLETTER}}, \textcolor{comment}{//}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396af92856c78f4425d511f1cc07a0646209}{MAX\_UPDATE\_ORDER}}}
+\DoxyCodeLine{19 \};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{//オブジェクトの描画の順番}}
+\DoxyCodeLine{22 \textcolor{keyword}{enum} \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1d}{DRAW\_ORDER}} \{}
+\DoxyCodeLine{23     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1dafbd97babcb1eaee330e49a7e75186642}{DRAW\_BG}},         \textcolor{comment}{//背景}}
+\DoxyCodeLine{24     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1daecab8ee690213cf690f47d96d5237888}{DRAW\_FIELD}},           \textcolor{comment}{//フィールド}}
+\DoxyCodeLine{25     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1da82e48ac7de88190d9c702edc7a29aa8e}{DRAW\_MODEL}},           \textcolor{comment}{//モデル}}
+\DoxyCodeLine{26     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1da14096646976492b2e9472e312cbe3a7d}{DRAW\_PLAYER}},     \textcolor{comment}{//プレイヤー}}
+\DoxyCodeLine{27     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1daec78f4d771132d64c512585d3bf4ee2b}{DRAW\_EFFECT}},     \textcolor{comment}{//エフェクト}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1da93c5428344b810130b9845aefcfcdbce}{DRAW\_DEBUG}},           \textcolor{comment}{//debug}}
+\DoxyCodeLine{30     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1da18d692dc54f519cd2ff3cc8570211ad8}{DRAW\_UI\_FRAME}},     \textcolor{comment}{//UI枠}}
+\DoxyCodeLine{31     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1da8241450475fc8e791382ab9fb3d756c7}{DRAW\_GOLETTER}},}
+\DoxyCodeLine{32     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1da4379046815544bc17a9aea466670d62b}{DRAW\_UI}},         \textcolor{comment}{//UI}}
+\DoxyCodeLine{33     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1da88799b54a8770dec0a845ab23afe0783}{DRAW\_OPTION\_BLACK\_OUT}},}
+\DoxyCodeLine{34     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1dacf716a6240ef20f8f87ac9d97d08dd89}{DRAW\_OPTION\_FRAME}}, \textcolor{comment}{//オプションオブジェクト}}
+\DoxyCodeLine{35     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1dab75e58ba8b99c58d42627fb498ca6c10}{DRAW\_OPTION}},     \textcolor{comment}{//オプション}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1da256d481de6dd93d65fa9f718353b293a}{MAX\_DRAW\_ORDER}}}
+\DoxyCodeLine{38 \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{//@@@@@ ディエックスちゃん -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{41 \textcolor{preprocessor}{\#define PLAYER\_NAME                 ("{}DXchan"{}})}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define DXCHAN\_SIZE\_X               (100.0f)}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define DXCHAN\_SIZE\_Y               (100.0f)}}
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#define DXCHAN\_SIZE\_RUN\_Y           (95.0f)}}
+\DoxyCodeLine{45 \textcolor{preprocessor}{\#define DXCHAN\_COLL\_SIZE\_X          (25.0f)}}
+\DoxyCodeLine{46 \textcolor{preprocessor}{\#define DXCHAN\_COLL\_SIZE\_Y          (80.0f)}}
+\DoxyCodeLine{47 \textcolor{preprocessor}{\#define DXCHAN\_COLL\_SIZE\_Z          (100.0f)}}
+\DoxyCodeLine{48 \textcolor{preprocessor}{\#define DXCHAN\_COLL\_SIZE\_RUN\_X      (55.0f)}}
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#define DXCHAN\_COLL\_OFFSET\_RUN\_X    (-\/8.0f)}}
+\DoxyCodeLine{50 \textcolor{preprocessor}{\#define DXCHAN\_COLL\_OFFSET\_RUN\_Y    (-\/2.0f)}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{//攻撃用情報}}
+\DoxyCodeLine{53 \textcolor{preprocessor}{\#define ATTACK\_NAME                 ("{}Attack"{}})}
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#define OFFSET\_DX\_X                 (35.0f)}}
+\DoxyCodeLine{55 \textcolor{preprocessor}{\#define OFFSET\_DX\_Y                 (25.0f)}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#define ATTACK\_COLL\_X               (50.0f)}}
+\DoxyCodeLine{57 \textcolor{preprocessor}{\#define ATTACK\_COLL\_Y               (30.0f)}}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{//@@@@@ ブロックの基本情報 -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{60 \textcolor{preprocessor}{\#define BLOCK\_NAME                  ("{}Block"{}})}
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#define MAPCHIP\_WIDTH               (40.0f) }}
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#define MAPCHIP\_HEIGHT              (40.0f) }}
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#define BLOCK\_SIZE\_X                (50.0f)}}
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#define BLOCK\_SIZE\_Y                (50.0f)}}
+\DoxyCodeLine{65 \textcolor{preprocessor}{\#define BLOCK\_SIZE\_Z                (50.0f)}}
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#define BLOCK\_COLL\_SIZE\_X           (43.5f)}}
+\DoxyCodeLine{67 \textcolor{preprocessor}{\#define BLOCK\_COLL\_SIZE\_Y           (43.5f)}}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#define BLOCK\_COLL\_SIZE\_Z           (45.0f)}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{comment}{//@@@@@ 敵の基本情報 -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{71 \textcolor{comment}{//敵ごとに設定する値は変わってくる}}
+\DoxyCodeLine{72 \textcolor{preprocessor}{\#define ENEMY\_NAME                  ("{}Enemy"{}})}
+\DoxyCodeLine{73 \textcolor{comment}{//歩く敵　所謂クリボー}}
+\DoxyCodeLine{74 \textcolor{preprocessor}{\#define E\_WALK\_SIZE\_X               (20.0f)}}
+\DoxyCodeLine{75 \textcolor{preprocessor}{\#define E\_WALK\_SIZE\_Y               (20.0f)}}
+\DoxyCodeLine{76 \textcolor{preprocessor}{\#define E\_WALK\_SIZE\_Z               (20.0f)}}
+\DoxyCodeLine{77 \textcolor{preprocessor}{\#define E\_WALK\_COLL\_X               (38.5f)}}
+\DoxyCodeLine{78 \textcolor{preprocessor}{\#define E\_WALK\_COLL\_Y               (38.5f)}}
+\DoxyCodeLine{79 \textcolor{preprocessor}{\#define E\_WALK\_COLL\_Z               (50.0f)}}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{comment}{//@@@@@ ゴールの基本情報 -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{82 \textcolor{preprocessor}{\#define GOAL\_NAME                   ("{}Goal"{}})}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{//@@@@@ UIの基本情報 -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{85 \textcolor{comment}{//スコア}}
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#define UI\_SCORE\_NAME               ("{}UI\_SCORE"{}})}
+\DoxyCodeLine{87 \textcolor{preprocessor}{\#define UI\_SCORE\_SIZE\_X             (200.0f)}}
+\DoxyCodeLine{88 \textcolor{preprocessor}{\#define UI\_SCORE\_SIZE\_Y             (150.0f)}}
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#define UI\_SCORE\_POS\_X              (-\/500.0f)}}
+\DoxyCodeLine{90 \textcolor{preprocessor}{\#define UI\_SCORE\_POS\_Y              (325.0f)}}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{comment}{//ハイスコア}}
+\DoxyCodeLine{93 \textcolor{preprocessor}{\#define UI\_MAX\_SCORE\_NAME           ("{}UI\_MAX\_SCORE"{}})}
+\DoxyCodeLine{94 \textcolor{preprocessor}{\#define UI\_MAX\_SCORE\_SIZE\_X         (150.0f)}}
+\DoxyCodeLine{95 \textcolor{preprocessor}{\#define UI\_MAX\_SCORE\_SIZE\_Y         (125.0f)}}
+\DoxyCodeLine{96 \textcolor{preprocessor}{\#define UI\_MAX\_SCORE\_POS\_X          (-\/500.0f)}}
+\DoxyCodeLine{97 \textcolor{preprocessor}{\#define UI\_MAX\_SCORE\_POS\_Y          (275.0f)}}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{comment}{//数字}}
+\DoxyCodeLine{100 \textcolor{preprocessor}{\#define UI\_NUMBER\_NAME              ("{}UI\_NAMBER"{}})}
+\DoxyCodeLine{101 \textcolor{preprocessor}{\#define UI\_NUMBER\_SIZE\_X\_SCORE      (200.0f)}}
+\DoxyCodeLine{102 \textcolor{preprocessor}{\#define UI\_NUMBER\_SIZE\_Y\_SCORE      (150.0f)}}
+\DoxyCodeLine{103 \textcolor{preprocessor}{\#define UI\_NUMBER\_POS\_X\_SCORE       (-\/325.0f)}}
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#define UI\_NUMBER\_POS\_Y\_SCORE       (325.0f)}}
+\DoxyCodeLine{105 \textcolor{comment}{//ハイスコア}}
+\DoxyCodeLine{106 \textcolor{preprocessor}{\#define UI\_NUMBER\_SIZE\_X\_MAX        (150.0f)}}
+\DoxyCodeLine{107 \textcolor{preprocessor}{\#define UI\_NUMBER\_SIZE\_Y\_MAX        (125.0f)}}
+\DoxyCodeLine{108 \textcolor{preprocessor}{\#define UI\_NUMBER\_POS\_X\_MAX         (-\/325.0f)}}
+\DoxyCodeLine{109 \textcolor{preprocessor}{\#define UI\_NUMBER\_POS\_Y\_MAX         (275.0f)}}
+\DoxyCodeLine{110 \textcolor{comment}{//タイム}}
+\DoxyCodeLine{111 \textcolor{preprocessor}{\#define UI\_NUMBER\_SIZE\_X\_TIME       (200.0f)}}
+\DoxyCodeLine{112 \textcolor{preprocessor}{\#define UI\_NUMBER\_SIZE\_Y\_TIME       (150.0f)}}
+\DoxyCodeLine{113 \textcolor{preprocessor}{\#define UI\_NUNBER\_POS\_X\_TIME        (560.0f)}}
+\DoxyCodeLine{114 \textcolor{preprocessor}{\#define UI\_NUNBER\_POS\_Y\_TIME        (325.0f)}}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{comment}{//ポーズ}}
+\DoxyCodeLine{117 \textcolor{preprocessor}{\#define UI\_PAUSE\_NAME               ("{}UI\_PAUSE"{}})}
+\DoxyCodeLine{118 \textcolor{preprocessor}{\#define UI\_PAUSE\_SIZE\_X             (200.0f)}}
+\DoxyCodeLine{119 \textcolor{preprocessor}{\#define UI\_PAUSE\_SIZE\_Y             (150.0f)}}
+\DoxyCodeLine{120 \textcolor{preprocessor}{\#define UI\_PAUSE\_POS\_X              (385.0f)}}
+\DoxyCodeLine{121 \textcolor{preprocessor}{\#define UI\_PAUSE\_POS\_Y              (275.0f)}}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{comment}{//時間}}
+\DoxyCodeLine{124 \textcolor{preprocessor}{\#define UI\_TIMA\_NAME                ("{}UI\_TIME"{}})}
+\DoxyCodeLine{125 \textcolor{preprocessor}{\#define UI\_TIME\_SIZE\_X              (200.0f)}}
+\DoxyCodeLine{126 \textcolor{preprocessor}{\#define UI\_TIME\_SIZE\_Y              (150.0f)}}
+\DoxyCodeLine{127 \textcolor{preprocessor}{\#define UI\_TIME\_POS\_X               (400.0f)}}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#define UI\_TIME\_POS\_Y               (325.0f)        }}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 \textcolor{comment}{//プッシュ}}
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#define UI\_PUSH\_NAME                ("{}UI\_PUSH"{}})}
+\DoxyCodeLine{132 \textcolor{preprocessor}{\#define UI\_PUSH\_SIZE\_X              (300.0f)}}
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#define UI\_PUSH\_SIZE\_Y              (200.0f)}}
+\DoxyCodeLine{134 \textcolor{preprocessor}{\#define UI\_PUSH\_POS\_X               (0.0f)}}
+\DoxyCodeLine{135 \textcolor{preprocessor}{\#define UI\_PUSH\_POS\_Y               (200.0f)}}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137 \textcolor{comment}{//タイトル}}
+\DoxyCodeLine{138 \textcolor{preprocessor}{\#define UI\_TITLE\_NAME               ("{}UI\_TITLE"{}})}
+\DoxyCodeLine{139 \textcolor{preprocessor}{\#define UI\_TITLE\_SIZE\_X             (300.0f)}}
+\DoxyCodeLine{140 \textcolor{preprocessor}{\#define UI\_TITLE\_SIZE\_Y             (200.0f)}}
+\DoxyCodeLine{141 \textcolor{preprocessor}{\#define UI\_TITLE\_POS\_X              (-\/450.0f)}}
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#define UI\_TITLE\_POS\_Y              (-\/300.0f)}}
+\DoxyCodeLine{143 }
+\DoxyCodeLine{144 \textcolor{comment}{//再開}}
+\DoxyCodeLine{145 \textcolor{preprocessor}{\#define UI\_RESUME\_NAME              ("{}UI\_RESUME"{}})}
+\DoxyCodeLine{146 \textcolor{preprocessor}{\#define UI\_RESUME\_SIZE\_X            (300.0f)}}
+\DoxyCodeLine{147 \textcolor{preprocessor}{\#define UI\_RESUME\_SIZE\_Y            (200.0f)}}
+\DoxyCodeLine{148 \textcolor{preprocessor}{\#define UI\_RESUME\_POS\_X             (0.0f)}}
+\DoxyCodeLine{149 \textcolor{preprocessor}{\#define UI\_RESUME\_POS\_Y             (75.0f)}}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{comment}{//オプション}}
+\DoxyCodeLine{152 \textcolor{preprocessor}{\#define UI\_OPTION\_NAME              ("{}UI\_OPTION"{}})}
+\DoxyCodeLine{153 }
+\DoxyCodeLine{154 \textcolor{comment}{//初めから}}
+\DoxyCodeLine{155 \textcolor{preprocessor}{\#define UI\_BEGIN\_NAME               ("{}UI\_BEGIN"{}})}
+\DoxyCodeLine{156 \textcolor{preprocessor}{\#define UI\_BEGIN\_SIZE\_X             (300.0f)}}
+\DoxyCodeLine{157 \textcolor{preprocessor}{\#define UI\_BEGIN\_SIZE\_Y             (200.0f)}}
+\DoxyCodeLine{158 \textcolor{preprocessor}{\#define UI\_BEGIN\_POS\_X              (400.0f)}}
+\DoxyCodeLine{159 \textcolor{preprocessor}{\#define UI\_BEGIN\_POS\_Y              (-\/100.0f)}}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161 \textcolor{comment}{//続きから}}
+\DoxyCodeLine{162 \textcolor{preprocessor}{\#define UI\_CONTINUE\_NAME            ("{}UI\_CONTINUE"{}})}
+\DoxyCodeLine{163 \textcolor{preprocessor}{\#define UI\_CONTINUE\_SIZE\_X          (300.0f)}}
+\DoxyCodeLine{164 \textcolor{preprocessor}{\#define UI\_CONTINUE\_SIZE\_Y          (200.0f)}}
+\DoxyCodeLine{165 \textcolor{preprocessor}{\#define UI\_CONTINUE\_POS\_X           (400.0f)}}
+\DoxyCodeLine{166 \textcolor{preprocessor}{\#define UI\_CONTINUE\_POS\_Y           (-\/175.0f)}}
+\DoxyCodeLine{167 }
+\DoxyCodeLine{168 }
+\DoxyCodeLine{169 \textcolor{comment}{//ステージセレクト}}
+\DoxyCodeLine{170 \textcolor{preprocessor}{\#define UI\_STAGE\_SELECT\_NAME        ("{}UI\_STAGE\_SELECT"{}})}
+\DoxyCodeLine{171 }
+\DoxyCodeLine{172 \textcolor{comment}{//終わる}}
+\DoxyCodeLine{173 \textcolor{preprocessor}{\#define UI\_END\_NAME                 ("{}UI\_END"{}})}
+\DoxyCodeLine{174 \textcolor{preprocessor}{\#define UI\_END\_SIZE\_X               (300.0f)}}
+\DoxyCodeLine{175 \textcolor{preprocessor}{\#define UI\_END\_SIZE\_Y               (200.0f)}}
+\DoxyCodeLine{176 \textcolor{preprocessor}{\#define UI\_END\_POS\_X                (400.0f)}}
+\DoxyCodeLine{177 \textcolor{preprocessor}{\#define UI\_END\_POS\_Y                (-\/250.0f)}}
+\DoxyCodeLine{178 }
+\DoxyCodeLine{179 \textcolor{comment}{//BGM}}
+\DoxyCodeLine{180 \textcolor{preprocessor}{\#define UI\_BGM\_NAME                 ("{}UI\_BGM"{}})}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 \textcolor{comment}{//SE}}
+\DoxyCodeLine{183 \textcolor{preprocessor}{\#define UI\_SE\_NAME                  ("{}UI\_SE"{}})}
+\DoxyCodeLine{184 }
+\DoxyCodeLine{185 \textcolor{comment}{//明るさ}}
+\DoxyCodeLine{186 \textcolor{preprocessor}{\#define UI\_BRIGHTNESS\_NAME          ("{}UI\_BRIGHTNESS"{}})}
+\DoxyCodeLine{187 }
+\DoxyCodeLine{188 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,44 @@
+\hypertarget{_load_8h_source}{}\doxysection{Load.\+h}
+\label{_load_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Load.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Load.h}}
+\mbox{\hyperlink{_load_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_LOAD\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_LOAD\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_scene_8h}{Scene.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_load}{Load}} \{}
+\DoxyCodeLine{22 \textcolor{keyword}{private}:}
+\DoxyCodeLine{23     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{25 \textcolor{comment}{}    \textcolor{keyword}{static} HANDLE m\_handle;}
+\DoxyCodeLine{27     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} m\_bLoading;}
+\DoxyCodeLine{29     \textcolor{keyword}{static} \textcolor{keywordtype}{int}  m\_nLoadCount;}
+\DoxyCodeLine{31     \textcolor{keyword}{static} std::vector<Object*> m\_LoadObject;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{35 \textcolor{comment}{}    \textcolor{keyword}{static} \textcolor{keywordtype}{void} Init();}
+\DoxyCodeLine{37     \textcolor{keyword}{static} \textcolor{keywordtype}{void} Uninit();}
+\DoxyCodeLine{39     \textcolor{keyword}{static} \textcolor{keywordtype}{unsigned} \_\_stdcall LoadScreen();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{42     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{keyword}{public}:}
+\DoxyCodeLine{47     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{51 \textcolor{comment}{}    \mbox{\hyperlink{class_load_af345594efdc31c3d2e9cb114f9f57524}{Load}}();}
+\DoxyCodeLine{53     \mbox{\hyperlink{class_load_af91138cb9aea0dc773851b171ce73fff}{\string~Load}}();}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{56     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_load_adb65de6213882ed339efa37921587673}{Begin}}();}
+\DoxyCodeLine{58     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_load_a24754993772c7122c83d696e6d887dbb}{End}}();}
+\DoxyCodeLine{60     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_load_ad39dba1b6e5968052e3bdfcbf13bba08}{GetLoadCount}}();}
+\DoxyCodeLine{61 \};}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

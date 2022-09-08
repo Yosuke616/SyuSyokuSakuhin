@@ -1,0 +1,72 @@
+\hypertarget{_input_manager_8h_source}{}\doxysection{Input\+Manager.\+h}
+\label{_input_manager_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/InputManager.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/InputManager.h}}
+\mbox{\hyperlink{_input_manager_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_INPUT\_MANAGER\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_INPUT\_MANAGER\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{//インクルード部}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define   DIRECTINPUT\_VERSION 0x0800}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <dinput.h>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//定数定義}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#define KEY\_MAX (256)}}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{21 \textcolor{keyword}{enum} \mbox{\hyperlink{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2a}{MOUSE\_BUTTON}} \{}
+\DoxyCodeLine{22     \mbox{\hyperlink{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2aa6c748505c18ae6e7168e90d7693cfc9e}{MOUSE\_L}}, \textcolor{comment}{//左クリック}}
+\DoxyCodeLine{23     \mbox{\hyperlink{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2aa53a0e5961a0f852ee5da76ea147aba11}{MOUSE\_R}}, \textcolor{comment}{//右クリック}}
+\DoxyCodeLine{24     \mbox{\hyperlink{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2aac5fb23e1c6f53737f6a19214646f1b57}{MOSUE\_C}}      \textcolor{comment}{//ホイール}}
+\DoxyCodeLine{25 \};}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{class_input_manager}{InputManager}} \{}
+\DoxyCodeLine{29 \textcolor{keyword}{private}:}
+\DoxyCodeLine{30     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{32 \textcolor{comment}{}    \textcolor{keyword}{static} \mbox{\hyperlink{class_input_manager}{InputManager}}* m\_pInstance;}
+\DoxyCodeLine{34     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} m\_CurrentKeyState[\mbox{\hyperlink{_input_manager_8h_a609683a0c8de0ce9cdd1e696e71a6f07}{KEY\_MAX}}];}
+\DoxyCodeLine{36     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} m\_PrevKeyState[\mbox{\hyperlink{_input_manager_8h_a609683a0c8de0ce9cdd1e696e71a6f07}{KEY\_MAX}}];}
+\DoxyCodeLine{38     DIMOUSESTATE m\_CurrentMouseState;}
+\DoxyCodeLine{40     DIMOUSESTATE m\_PrevMouseState;}
+\DoxyCodeLine{42     XMFLOAT2 m\_MousePos;}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{46 \textcolor{comment}{}    HRESULT InitKeyBoard();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} UpdateKeyBoard();}
+\DoxyCodeLine{50     HRESULT InitMouse();}
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} UpdateMouse();}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{55     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{59 \textcolor{comment}{}    \mbox{\hyperlink{class_input_manager_a8be46886da639b26d67181c29dab6d6c}{InputManager}}();}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{keyword}{public}:}
+\DoxyCodeLine{62     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{66 \textcolor{comment}{}    \textcolor{keyword}{static} \mbox{\hyperlink{class_input_manager}{InputManager}}* \mbox{\hyperlink{class_input_manager_a53a27e2e25bec96173a4c7532515d10e}{Instance}}();}
+\DoxyCodeLine{68     \mbox{\hyperlink{class_input_manager_af518290877dd183606709d5852db5491}{\string~InputManager}}();}
+\DoxyCodeLine{70     HRESULT \mbox{\hyperlink{class_input_manager_a42d9a422a057aa3e072bea0519849664}{Init}}();}
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_input_manager_adbed7acd819d7c75a97c728028b067d5}{Uninit}}();}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_input_manager_aa5480931dba2720e7d80dd00a53adae0}{Update}}();}
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_input_manager_a21cb09ce3b8c8acd90c06a62d79b4f68}{Draw}}();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{79     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_input_manager_a2a9f8b98564b02c3a297df80a227e24c}{GetKeyPress}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} key);}
+\DoxyCodeLine{81     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_input_manager_a81fb24c5c224f98ece4c2153c20fbd6e}{GetKeyTrigger}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} key);}
+\DoxyCodeLine{83     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_input_manager_ab0b02245ba7ebdb8ef7ab2e0063da2db}{GetKeyRelease}}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} key);}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{86     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_input_manager_a36c6868c0184122601593d46ea9e408a}{GetMouseButton}}(\mbox{\hyperlink{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2a}{MOUSE\_BUTTON}} Btn);}
+\DoxyCodeLine{88     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_input_manager_aab164872a8780146de762642dda71c74}{GetMouseTrigger}}(\mbox{\hyperlink{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2a}{MOUSE\_BUTTON}} Btn);}
+\DoxyCodeLine{90     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_input_manager_a50464baef944a481a61630173b2384a1}{GetMouseRelease}}(\mbox{\hyperlink{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2a}{MOUSE\_BUTTON}} Btn);}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{93     XMFLOAT2 \mbox{\hyperlink{class_input_manager_ab82941f8364337bc049ff52ef76e3713}{GetMousePos}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{95     XMFLOAT2 \mbox{\hyperlink{class_input_manager_aeb6791a1e2927ece3622377b1594f956}{GetMouseVelocity}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{96 \};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

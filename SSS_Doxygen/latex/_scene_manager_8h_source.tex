@@ -1,0 +1,72 @@
+\hypertarget{_scene_manager_8h_source}{}\doxysection{Scene\+Manager.\+h}
+\label{_scene_manager_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/SceneManager.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/SceneManager.h}}
+\mbox{\hyperlink{_scene_manager_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{    志水陽祐}}
+\DoxyCodeLine{3 \textcolor{comment}{    2022/6/8　制作開始}}
+\DoxyCodeLine{4 \textcolor{comment}{    どのシーンを更新して描画するかを管理するクラス}}
+\DoxyCodeLine{5 \textcolor{comment}{}}
+\DoxyCodeLine{6 \textcolor{comment}{*/}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_SCENE\_MANAGER\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_SCENE\_MANAGER\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{comment}{//インクルード部}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_scene_8h}{Scene.h}}"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{comment}{//列挙隊宣言(シーン増加に伴い中身は増やしていく)}}
+\DoxyCodeLine{19 \textcolor{keyword}{enum} \mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4b}{EScene}} \{}
+\DoxyCodeLine{20     \mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba96f75e824fdc81751dcfc4f447390853}{SCENE\_TITLE}} = 0, \textcolor{comment}{//タイトル}}
+\DoxyCodeLine{21     \mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba632ce01f7c0a512b4d5f8be8272f624f}{SCENE\_GAME}},           \textcolor{comment}{//ゲーム}}
+\DoxyCodeLine{22     \mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4bab4680fbfc1b3e7011f10db561faf12ea}{SCENE\_SELECT}},       \textcolor{comment}{//ステージセレクト}}
+\DoxyCodeLine{23     \mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba05699d69b7d02fc42925820fcb978b06}{SCENE\_ENDING}},       \textcolor{comment}{//エンディング}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba280c5d06ea08e8495f38008fa223744f}{MAX\_SCENE}}}
+\DoxyCodeLine{26 \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{class_scene_manager}{SceneManager}} \{}
+\DoxyCodeLine{30 \textcolor{keyword}{private}:}
+\DoxyCodeLine{31     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{32     \textcolor{keyword}{static} \mbox{\hyperlink{class_scene_manager}{SceneManager}}* m\_pInstance;       \textcolor{comment}{//インスタンス生成用}}
+\DoxyCodeLine{33     std::vector<Scene*> m\_pSceneList;       \textcolor{comment}{//シーンリスト(タイトルとかゲーム画面とか)}}
+\DoxyCodeLine{34     \mbox{\hyperlink{class_scene}{Scene}}* m\_CurrentScene;                 \textcolor{comment}{//現在のシーン}}
+\DoxyCodeLine{35     \mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4b}{EScene}} m\_eSceneState;                 \textcolor{comment}{//どのシーンが選ばれているかとかを送ったりセットしたりするため}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{41     \mbox{\hyperlink{class_scene_manager_a52085e6737c23b491c228e86781af808}{SceneManager}}();                     \textcolor{comment}{//  コンストラクタ}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{49 }
+\DoxyCodeLine{50     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{51     \textcolor{keyword}{static} \mbox{\hyperlink{class_scene_manager}{SceneManager}}* \mbox{\hyperlink{class_scene_manager_a972ad174745419ebc980802a5f6e874e}{Instance}}();    \textcolor{comment}{//  インスタンス化}}
+\DoxyCodeLine{52     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_manager_a2f6f914ca9dbb9e19b1630ac1170184b}{Destroy}}();               \textcolor{comment}{//  インスタンスの削除}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54     \mbox{\hyperlink{class_scene_manager_a2bb376a85d29e85f47753e26c7539229}{\string~SceneManager}}();                   \textcolor{comment}{//  デストラクタ}}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_manager_a2682ac5e419812cb1eeab1fec6a1ce86}{Init}}();                        \textcolor{comment}{//  初期化}}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_manager_a63dcf65832d6a2c190bf496d9a3b00a3}{Update}}();                        \textcolor{comment}{//  更新}}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_manager_a313955e916bc50c0e8cb5d3cf2ed2664}{Draw}}();                        \textcolor{comment}{//  描画}}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_manager_ae3ff21f2261fc50f1e860cf7fc3a2108}{Uninit}}();                        \textcolor{comment}{//  終了}}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_scene_manager_a38b987d7f23fed149e20c534a0cf848e}{SetScene}}(\mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4b}{EScene}} NextScene);  \textcolor{comment}{//  シーン切り替え}}
+\DoxyCodeLine{61     \mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4b}{EScene}} \mbox{\hyperlink{class_scene_manager_a828b3948ba9e211b48e33060f3f23e9a}{GetScene}}() \textcolor{keyword}{const};          \textcolor{comment}{//  シーン情報の取得}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 \};}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 }
+\DoxyCodeLine{66 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

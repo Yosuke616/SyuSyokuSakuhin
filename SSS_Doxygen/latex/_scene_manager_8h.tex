@@ -1,0 +1,69 @@
+\hypertarget{_scene_manager_8h}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\+Scene\+Manager.h ファイル}
+\label{_scene_manager_8h}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/SceneManager.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/SceneManager.h}}
+{\ttfamily \#include \char`\"{}main\+App.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Scene.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Scene\+Manager.\+h の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_scene_manager_8h__incl}
+\end{center}
+\end{figure}
+被依存関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_scene_manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{クラス}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_scene_manager}{Scene\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4b}{EScene}} \{ \newline
+\mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba96f75e824fdc81751dcfc4f447390853}{SCENE\+\_\+\+TITLE}} = 0
+, \mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba632ce01f7c0a512b4d5f8be8272f624f}{SCENE\+\_\+\+GAME}}
+, \mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4bab4680fbfc1b3e7011f10db561faf12ea}{SCENE\+\_\+\+SELECT}}
+, \mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba05699d69b7d02fc42925820fcb978b06}{SCENE\+\_\+\+ENDING}}
+, \newline
+\mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba280c5d06ea08e8495f38008fa223744f}{MAX\+\_\+\+SCENE}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{列挙型詳解}
+\mbox{\Hypertarget{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4b}\label{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4b}} 
+\index{SceneManager.h@{SceneManager.h}!EScene@{EScene}}
+\index{EScene@{EScene}!SceneManager.h@{SceneManager.h}}
+\doxysubsubsection{\texorpdfstring{EScene}{EScene}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4b}{EScene}}}
+
+\begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCENE\_TITLE@{SCENE\_TITLE}!SceneManager.h@{SceneManager.h}}\index{SceneManager.h@{SceneManager.h}!SCENE\_TITLE@{SCENE\_TITLE}}}\mbox{\Hypertarget{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba96f75e824fdc81751dcfc4f447390853}\label{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba96f75e824fdc81751dcfc4f447390853}} 
+SCENE\+\_\+\+TITLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCENE\_GAME@{SCENE\_GAME}!SceneManager.h@{SceneManager.h}}\index{SceneManager.h@{SceneManager.h}!SCENE\_GAME@{SCENE\_GAME}}}\mbox{\Hypertarget{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba632ce01f7c0a512b4d5f8be8272f624f}\label{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba632ce01f7c0a512b4d5f8be8272f624f}} 
+SCENE\+\_\+\+GAME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCENE\_SELECT@{SCENE\_SELECT}!SceneManager.h@{SceneManager.h}}\index{SceneManager.h@{SceneManager.h}!SCENE\_SELECT@{SCENE\_SELECT}}}\mbox{\Hypertarget{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4bab4680fbfc1b3e7011f10db561faf12ea}\label{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4bab4680fbfc1b3e7011f10db561faf12ea}} 
+SCENE\+\_\+\+SELECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SCENE\_ENDING@{SCENE\_ENDING}!SceneManager.h@{SceneManager.h}}\index{SceneManager.h@{SceneManager.h}!SCENE\_ENDING@{SCENE\_ENDING}}}\mbox{\Hypertarget{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba05699d69b7d02fc42925820fcb978b06}\label{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba05699d69b7d02fc42925820fcb978b06}} 
+SCENE\+\_\+\+ENDING&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_SCENE@{MAX\_SCENE}!SceneManager.h@{SceneManager.h}}\index{SceneManager.h@{SceneManager.h}!MAX\_SCENE@{MAX\_SCENE}}}\mbox{\Hypertarget{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba280c5d06ea08e8495f38008fa223744f}\label{_scene_manager_8h_a7908051915a7d09cc76a65419eec0f4ba280c5d06ea08e8495f38008fa223744f}} 
+MAX\+\_\+\+SCENE&\\
+\hline
+
+\end{DoxyEnumFields}

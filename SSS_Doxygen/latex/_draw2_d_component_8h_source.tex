@@ -1,0 +1,68 @@
+\hypertarget{_draw2_d_component_8h_source}{}\doxysection{Draw2\+DComponent.\+h}
+\label{_draw2_d_component_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Draw2DComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Draw2DComponent.h}}
+\mbox{\hyperlink{_draw2_d_component_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef \_DRAW\_2D\_COMPONENT\_H\_}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define \_DRAW\_2D\_COMPONENT\_H\_}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{comment}{//インクルード部}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//前方宣言}}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_transform}{CTransform}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_draw2_d}{CDraw2D}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{22 \textcolor{keyword}{private}:}
+\DoxyCodeLine{23     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{28     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{30 \textcolor{comment}{}    \mbox{\hyperlink{class_c_transform}{CTransform}}* \mbox{\hyperlink{class_c_draw2_d_adbb5fcad97beb261f051801679860d28}{m\_pTransform}};}
+\DoxyCodeLine{32     ID3D11ShaderResourceView* \mbox{\hyperlink{class_c_draw2_d_ab275af50a6c2d676cef3747a3e12cf74}{m\_pTexture}};}
+\DoxyCodeLine{34     XMFLOAT2 \mbox{\hyperlink{class_c_draw2_d_a1881a3e311f1b90d2efcdddb9cda3fac}{m\_fPolygonSize}};}
+\DoxyCodeLine{36     XMFLOAT2 \mbox{\hyperlink{class_c_draw2_d_a53a924e80bddaff215acda647f1aab39}{m\_fTexFrameSize}};}
+\DoxyCodeLine{38     XMFLOAT4 \mbox{\hyperlink{class_c_draw2_d_aa3d6ea9ff0ba3eb0253e179643a0cb2b}{m\_fVertevColor}};}
+\DoxyCodeLine{40     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_c_draw2_d_abe7f4acb4aad5264433d091728c9d9c7}{m\_fAngle}};}
+\DoxyCodeLine{42     XMFLOAT2 \mbox{\hyperlink{class_c_draw2_d_a6e007ac2891cf22aa4e64c8a90b8adeb}{m\_Scroll}};}
+\DoxyCodeLine{44     \mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2}{EBlendState}} \mbox{\hyperlink{class_c_draw2_d_a7af5c488abce960bdd926d51367581fc}{m\_BlendState}};}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_c_draw2_d_adbb7915ca511dfe5755882418ca13bbd}{m\_nAnimNum}};}
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_c_draw2_d_aeab449e826028d87311a3d02d0b7d29b}{m\_nAnimSplitX}};}
+\DoxyCodeLine{50     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_c_draw2_d_a1f93224a14b30b049bed25fb44fab0d9}{m\_nAnimSplitY}};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{keyword}{public}:}
+\DoxyCodeLine{56     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{60 \textcolor{comment}{}    \mbox{\hyperlink{class_c_draw2_d_af338c8008a19b34be68f0c3796fc9742}{CDraw2D}}();}
+\DoxyCodeLine{62     \mbox{\hyperlink{class_c_draw2_d_af3374fe374f35e3c3d251032b926e12a}{\string~CDraw2D}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_a4556c5d5c6ea589c3f2bf385fd62bea8}{Start}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_aafc929df900f5a322c9efa4373e0b8d9}{Update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_ae0459d7b8afc61916d99070a9ef167ab}{Draw}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_aae60f421210db72c5fe9835895b0337a}{SetSize}}(\textcolor{keywordtype}{float},\textcolor{keywordtype}{float});}
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_a3429b208e0e42c6b8bbbf6079078bf72}{SetUVsize}}(\textcolor{keywordtype}{float},\textcolor{keywordtype}{float});}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_a31a77bc6456332cc7f470c52a3c3c396}{SetAnimSplit}}(\textcolor{keywordtype}{int} ,\textcolor{keywordtype}{int});}
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_afc29f5be1bb3c3b54430a5cecb99c0be}{SetAnimNum}}(\textcolor{keywordtype}{int});}
+\DoxyCodeLine{78     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_ab5be4b73f8c0c80ea9c6c63a795d4999}{SetTexture}}(ID3D11ShaderResourceView*);}
+\DoxyCodeLine{80     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_a0dfe4e59ce203576ee4577556e9ccdee}{SetColor}}(\textcolor{keywordtype}{float} r,\textcolor{keywordtype}{float} g,\textcolor{keywordtype}{float} b);}
+\DoxyCodeLine{82     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_a69e9a2f4fdff08f984a3ac89fb7814f8}{SetAlpha}}(\textcolor{keywordtype}{float} alpha);}
+\DoxyCodeLine{84     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_a80eb8dcbd0282df8ae7671a6d0c9424b}{SetAngle}}(\textcolor{keywordtype}{float} angle);}
+\DoxyCodeLine{86     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_a2c84d66ee98d134eb5a8c8ae24446644}{SetScroll}}(XMFLOAT2 scroll);}
+\DoxyCodeLine{88     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_a00bdcc07166e73186a3a3b0387031468}{SetBlend}}(\mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2}{EBlendState}} state);}
+\DoxyCodeLine{90     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_ac8479ff7e27191e75c021a3e34a8a425}{SetU}}(\textcolor{keywordtype}{float} u);}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_draw2_d_a19a9281a77b6248a8867ee3075f01e24}{SetV}}(\textcolor{keywordtype}{float} v);}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{95     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_c_draw2_d_a5cf2070f80d240897c20dd91fd50fc8a}{GetAnimSplitX}}();}
+\DoxyCodeLine{96 \};}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

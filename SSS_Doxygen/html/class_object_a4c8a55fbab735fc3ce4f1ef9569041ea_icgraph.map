@@ -1,0 +1,11 @@
+<map id="Object::GetName" name="Object::GetName">
+<area shape="rect" id="node1" title=" " alt="" coords="865,81,988,108"/>
+<area shape="rect" id="node2" href="$class_c_enemy.html#a39e688989d08a7feec4f5517d28ed286" title="当たり判定の処理" alt="" coords="640,5,817,32"/>
+<area shape="rect" id="node3" href="$class_c_player.html#abede91d4fa024fae2396593ce5532b17" title="衝突処理" alt="" coords="642,56,815,83"/>
+<area shape="rect" id="node4" href="$class_animation.html#a0c6a4e940db84d4a6246fcb3ae773402" title="更新処理" alt="" coords="664,107,793,133"/>
+<area shape="rect" id="node6" href="$class_c_transform.html#aee48dd10140f1955b4aa074c570ce101" title="更新処理" alt="" coords="660,157,797,184"/>
+<area shape="rect" id="node5" href="$class_c_draw3_d.html#aa42fcba7f1258571457c186292f91702" title="更新" alt="" coords="437,107,562,133"/>
+<area shape="rect" id="node7" href="$class_stage_manager.html#a3a259d33885baf98d68c28d32183143f" title="ステージオブジェクト生成(ゲームモード)" alt="" coords="407,157,592,184"/>
+<area shape="rect" id="node8" href="$class_stage_manager.html#ab85e84fb952cd4722400956dba68d2e3" title="地形生成" alt="" coords="172,157,359,184"/>
+<area shape="rect" id="node9" href="$class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="5,157,124,184"/>
+</map>

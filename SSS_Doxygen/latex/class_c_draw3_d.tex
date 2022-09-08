@@ -1,0 +1,479 @@
+\hypertarget{class_c_draw3_d}{}\doxysection{CDraw3D クラス}
+\label{class_c_draw3_d}\index{CDraw3D@{CDraw3D}}
+
+
+{\ttfamily \#include $<$Draw3d\+Component.\+h$>$}
+
+
+
+CDraw3D の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_draw3_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+CDraw3D 連携図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_draw3_d__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_draw3_d_a30b1dae598c1ec3fbe3efff98e79e685}{CDraw3D}} ()
+\begin{DoxyCompactList}\small\item\em マテリアルの実体 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_draw3_d_a45182dc96f7fe2a4d3b0fa29d3e0718a}{$\sim$\+CDraw3D}} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw3_d_addb8dd96fb70245aa3b9e5cdbe906148}{Start}} () override
+\begin{DoxyCompactList}\small\item\em 初期化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw3_d_aa42fcba7f1258571457c186292f91702}{Update}} () override
+\begin{DoxyCompactList}\small\item\em 更新 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw3_d_a4e807eb965451e20de9e2c0a2fe619fa}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em 描画 \end{DoxyCompactList}\item 
+XMFLOAT4\+X4 $\ast$ \mbox{\hyperlink{class_c_draw3_d_a63f9c9eb68c44bb1f835b32291eb7f45}{Get\+World\+Pos}} ()
+\begin{DoxyCompactList}\small\item\em ワールド行列の取得 \end{DoxyCompactList}\item 
+XMFLOAT3 \mbox{\hyperlink{class_c_draw3_d_af77f20b203075d3a4d15150746a6d147}{Get\+Box}} ()
+\begin{DoxyCompactList}\small\item\em モデルの大きさ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_assimp_model}{CAssimp\+Model}} $\ast$ \mbox{\hyperlink{class_c_draw3_d_aa40308d47c671597d32b2c330305f5ef}{Get\+Model}} ()
+\begin{DoxyCompactList}\small\item\em モデル情報の取得 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw3_d_a318190747f42c6d63bf01f58ba766e2f}{Set\+Model}} (\mbox{\hyperlink{class_c_assimp_model}{CAssimp\+Model}} $\ast$model)
+\begin{DoxyCompactList}\small\item\em モデルの設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw3_d_a44862b532ef21b2abb943995f990519a}{Set\+Primitive\+Type}} (D3\+D\+\_\+\+PRIMITIVE\+\_\+\+TOPOLOGY type)
+\begin{DoxyCompactList}\small\item\em プリミティブの設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw3_d_a0a63bace263206c8bcb7106a46358d0b}{Set\+Texture}} (ID3\+D11\+Shader\+Resource\+View $\ast$p\+Texture)
+\begin{DoxyCompactList}\small\item\em モデルのテクスチャ設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw3_d_af6183b17704f3859819a4e6823d0a418}{Add\+Animation}} (int Anim\+ID, double \mbox{\hyperlink{class_c_draw3_d_addb8dd96fb70245aa3b9e5cdbe906148}{Start}}, double end, bool loop, double loop\+Start\+Frame=-\/1)
+\begin{DoxyCompactList}\small\item\em 謎でした \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw3_d_a3dd93b96e4f10365c473a3e848c6ef31}{Play}} (int Anim\+ID)
+\begin{DoxyCompactList}\small\item\em アニメーションの再生 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw3_d_a8b860e3975e265ac0c28e438181d38cb}{Set\+Anim\+Time}} (double d\+Time)
+\begin{DoxyCompactList}\small\item\em アニメーションの再生フレーム設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw3_d_a870d18c4146e25de9aaafdddd3d91c92}{Always\+Animation}} (bool always)
+\begin{DoxyCompactList}\small\item\em 常にアニメーションを流すか \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw3_d_adf63db5ebc5fd24b789a4bbd042c4a95}{Set\+Play\+Speed}} (int Anim\+ID, double speed)
+\begin{DoxyCompactList}\small\item\em 再生速度 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw3_d_ab72bfb7b7fede9117219afbb9a5784cd}{Absolute}} (int Anim\+ID, bool Absolute)
+\begin{DoxyCompactList}\small\item\em 絶対的な奴 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_c_draw3_d_a5814eb2eadef21588eeda20bd82430f2}{Anim\+End}} (int Anim\+ID)
+\begin{DoxyCompactList}\small\item\em アニメーション終了 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_draw3_d_a30b1dae598c1ec3fbe3efff98e79e685}\label{class_c_draw3_d_a30b1dae598c1ec3fbe3efff98e79e685}} 
+\index{CDraw3D@{CDraw3D}!CDraw3D@{CDraw3D}}
+\index{CDraw3D@{CDraw3D}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{CDraw3D()}{CDraw3D()}}
+{\footnotesize\ttfamily CDraw3\+D\+::\+CDraw3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+マテリアルの実体 
+
+またコンストラクタ先輩が状態
+
+コンストラクタ \mbox{\Hypertarget{class_c_draw3_d_a45182dc96f7fe2a4d3b0fa29d3e0718a}\label{class_c_draw3_d_a45182dc96f7fe2a4d3b0fa29d3e0718a}} 
+\index{CDraw3D@{CDraw3D}!````~CDraw3D@{$\sim$CDraw3D}}
+\index{````~CDraw3D@{$\sim$CDraw3D}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{$\sim$CDraw3D()}{~CDraw3D()}}
+{\footnotesize\ttfamily CDraw3\+D\+::$\sim$\+CDraw3D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+デストラクタ 
+
+デデデストラクタ大王 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_draw3_d_ab72bfb7b7fede9117219afbb9a5784cd}\label{class_c_draw3_d_ab72bfb7b7fede9117219afbb9a5784cd}} 
+\index{CDraw3D@{CDraw3D}!Absolute@{Absolute}}
+\index{Absolute@{Absolute}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{Absolute()}{Absolute()}}
+{\footnotesize\ttfamily void CDraw3\+D\+::\+Absolute (\begin{DoxyParamCaption}\item[{int}]{Anim\+ID,  }\item[{bool}]{Absolute }\end{DoxyParamCaption})}
+
+
+
+絶対的な奴 
+
+\mbox{\Hypertarget{class_c_draw3_d_af6183b17704f3859819a4e6823d0a418}\label{class_c_draw3_d_af6183b17704f3859819a4e6823d0a418}} 
+\index{CDraw3D@{CDraw3D}!AddAnimation@{AddAnimation}}
+\index{AddAnimation@{AddAnimation}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{AddAnimation()}{AddAnimation()}}
+{\footnotesize\ttfamily void CDraw3\+D\+::\+Add\+Animation (\begin{DoxyParamCaption}\item[{int}]{Anim\+ID,  }\item[{double}]{Start,  }\item[{double}]{end,  }\item[{bool}]{loop,  }\item[{double}]{loop\+Start\+Frame = {\ttfamily -\/1} }\end{DoxyParamCaption})}
+
+
+
+謎でした 
+
+アニメーションの追加
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & アニメーションの番号 \\
+\hline
+{\em (double)} & 開始時間 \\
+\hline
+{\em (double)} & 終了時間 \\
+\hline
+{\em (double)} & ループの始まりの時間 \\
+\hline
+{\em (bool)} & ループするかどうか \\
+\hline
+\end{DoxyParams}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw3_d_af6183b17704f3859819a4e6823d0a418_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_a870d18c4146e25de9aaafdddd3d91c92}\label{class_c_draw3_d_a870d18c4146e25de9aaafdddd3d91c92}} 
+\index{CDraw3D@{CDraw3D}!AlwaysAnimation@{AlwaysAnimation}}
+\index{AlwaysAnimation@{AlwaysAnimation}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{AlwaysAnimation()}{AlwaysAnimation()}}
+{\footnotesize\ttfamily void CDraw3\+D\+::\+Always\+Animation (\begin{DoxyParamCaption}\item[{bool}]{always }\end{DoxyParamCaption})}
+
+
+
+常にアニメーションを流すか 
+
+アニメーションを再生し続けるか
+
+
+\begin{DoxyParams}{引数}
+{\em (bool)} & どうするんだい状態 \\
+\hline
+\end{DoxyParams}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw3_d_a870d18c4146e25de9aaafdddd3d91c92_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_a5814eb2eadef21588eeda20bd82430f2}\label{class_c_draw3_d_a5814eb2eadef21588eeda20bd82430f2}} 
+\index{CDraw3D@{CDraw3D}!AnimEnd@{AnimEnd}}
+\index{AnimEnd@{AnimEnd}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{AnimEnd()}{AnimEnd()}}
+{\footnotesize\ttfamily bool CDraw3\+D\+::\+Anim\+End (\begin{DoxyParamCaption}\item[{int}]{Anim\+ID }\end{DoxyParamCaption})}
+
+
+
+アニメーション終了 
+
+アニメーションを終わらせるか
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & モデルの番号 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(bool) 終わらせれたかどうか 
+\end{DoxyReturn}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_c_draw3_d_a5814eb2eadef21588eeda20bd82430f2_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_a4e807eb965451e20de9e2c0a2fe619fa}\label{class_c_draw3_d_a4e807eb965451e20de9e2c0a2fe619fa}} 
+\index{CDraw3D@{CDraw3D}!Draw@{Draw}}
+\index{Draw@{Draw}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void CDraw3\+D\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+描画 
+
+描画処理 
+
+\mbox{\hyperlink{class_component_a8622ccd5f24035d48e33292717299313}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw3_d_a4e807eb965451e20de9e2c0a2fe619fa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_af77f20b203075d3a4d15150746a6d147}\label{class_c_draw3_d_af77f20b203075d3a4d15150746a6d147}} 
+\index{CDraw3D@{CDraw3D}!GetBox@{GetBox}}
+\index{GetBox@{GetBox}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{GetBox()}{GetBox()}}
+{\footnotesize\ttfamily XMFLOAT3 CDraw3\+D\+::\+Get\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+モデルの大きさ 
+
+大きさの取得
+
+\begin{DoxyReturn}{戻り値}
+(XMFLOAT3) 縦横幅の値を返す 
+\end{DoxyReturn}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_c_draw3_d_af77f20b203075d3a4d15150746a6d147_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_aa40308d47c671597d32b2c330305f5ef}\label{class_c_draw3_d_aa40308d47c671597d32b2c330305f5ef}} 
+\index{CDraw3D@{CDraw3D}!GetModel@{GetModel}}
+\index{GetModel@{GetModel}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{GetModel()}{GetModel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_assimp_model}{CAssimp\+Model}} $\ast$ CDraw3\+D\+::\+Get\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+モデル情報の取得 
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{class_c_draw3_d_aa40308d47c671597d32b2c330305f5ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_a63f9c9eb68c44bb1f835b32291eb7f45}\label{class_c_draw3_d_a63f9c9eb68c44bb1f835b32291eb7f45}} 
+\index{CDraw3D@{CDraw3D}!GetWorldPos@{GetWorldPos}}
+\index{GetWorldPos@{GetWorldPos}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{GetWorldPos()}{GetWorldPos()}}
+{\footnotesize\ttfamily XMFLOAT4\+X4 $\ast$ CDraw3\+D\+::\+Get\+World\+Pos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+ワールド行列の取得 
+
+\begin{DoxyReturn}{戻り値}
+(XMFLOAT4\+X4$\ast$) 行列の入ったポインタを返す 
+\end{DoxyReturn}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw3_d_a63f9c9eb68c44bb1f835b32291eb7f45_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_a3dd93b96e4f10365c473a3e848c6ef31}\label{class_c_draw3_d_a3dd93b96e4f10365c473a3e848c6ef31}} 
+\index{CDraw3D@{CDraw3D}!Play@{Play}}
+\index{Play@{Play}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{Play()}{Play()}}
+{\footnotesize\ttfamily void CDraw3\+D\+::\+Play (\begin{DoxyParamCaption}\item[{int}]{Anim\+ID }\end{DoxyParamCaption})}
+
+
+
+アニメーションの再生 
+
+アニメーションを再生する
+
+
+\begin{DoxyParams}{引数}
+{\em (int)モデルの番号} & \\
+\hline
+\end{DoxyParams}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=285pt]{class_c_draw3_d_a3dd93b96e4f10365c473a3e848c6ef31_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_a8b860e3975e265ac0c28e438181d38cb}\label{class_c_draw3_d_a8b860e3975e265ac0c28e438181d38cb}} 
+\index{CDraw3D@{CDraw3D}!SetAnimTime@{SetAnimTime}}
+\index{SetAnimTime@{SetAnimTime}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{SetAnimTime()}{SetAnimTime()}}
+{\footnotesize\ttfamily void CDraw3\+D\+::\+Set\+Anim\+Time (\begin{DoxyParamCaption}\item[{double}]{d\+Time }\end{DoxyParamCaption})}
+
+
+
+アニメーションの再生フレーム設定 
+
+アニメーションのフレーム設定 @double (dounle) どの位のフレームにするかの数値 呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw3_d_a8b860e3975e265ac0c28e438181d38cb_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw3_d_a8b860e3975e265ac0c28e438181d38cb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_a318190747f42c6d63bf01f58ba766e2f}\label{class_c_draw3_d_a318190747f42c6d63bf01f58ba766e2f}} 
+\index{CDraw3D@{CDraw3D}!SetModel@{SetModel}}
+\index{SetModel@{SetModel}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{SetModel()}{SetModel()}}
+{\footnotesize\ttfamily void CDraw3\+D\+::\+Set\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_c_assimp_model}{CAssimp\+Model}} $\ast$}]{model }\end{DoxyParamCaption})}
+
+
+
+モデルの設定 
+
+モデルの情報の設定
+
+
+\begin{DoxyParams}{引数}
+{\em (\+CAssimp\+Model$\ast$)} & モデルの情報を用意する \\
+\hline
+\end{DoxyParams}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw3_d_a318190747f42c6d63bf01f58ba766e2f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_adf63db5ebc5fd24b789a4bbd042c4a95}\label{class_c_draw3_d_adf63db5ebc5fd24b789a4bbd042c4a95}} 
+\index{CDraw3D@{CDraw3D}!SetPlaySpeed@{SetPlaySpeed}}
+\index{SetPlaySpeed@{SetPlaySpeed}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{SetPlaySpeed()}{SetPlaySpeed()}}
+{\footnotesize\ttfamily void CDraw3\+D\+::\+Set\+Play\+Speed (\begin{DoxyParamCaption}\item[{int}]{Anim\+ID,  }\item[{double}]{speed }\end{DoxyParamCaption})}
+
+
+
+再生速度 
+
+再生速度の設定
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & モデルの番号 ~\newline
+ \\
+\hline
+{\em (double)再生速度} & \\
+\hline
+\end{DoxyParams}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw3_d_adf63db5ebc5fd24b789a4bbd042c4a95_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_a44862b532ef21b2abb943995f990519a}\label{class_c_draw3_d_a44862b532ef21b2abb943995f990519a}} 
+\index{CDraw3D@{CDraw3D}!SetPrimitiveType@{SetPrimitiveType}}
+\index{SetPrimitiveType@{SetPrimitiveType}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{SetPrimitiveType()}{SetPrimitiveType()}}
+{\footnotesize\ttfamily void CDraw3\+D\+::\+Set\+Primitive\+Type (\begin{DoxyParamCaption}\item[{D3\+D\+\_\+\+PRIMITIVE\+\_\+\+TOPOLOGY}]{type }\end{DoxyParamCaption})}
+
+
+
+プリミティブの設定 
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw3_d_a44862b532ef21b2abb943995f990519a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_a0a63bace263206c8bcb7106a46358d0b}\label{class_c_draw3_d_a0a63bace263206c8bcb7106a46358d0b}} 
+\index{CDraw3D@{CDraw3D}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}}
+{\footnotesize\ttfamily void CDraw3\+D\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{ID3\+D11\+Shader\+Resource\+View $\ast$}]{p\+Texture }\end{DoxyParamCaption})}
+
+
+
+モデルのテクスチャ設定 
+
+テクスチャの設定
+
+
+\begin{DoxyParams}{引数}
+{\em (\+ID3\+D11\+Shader\+Resource\+View$\ast$)} & テクスチャの情報を行う \\
+\hline
+\end{DoxyParams}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw3_d_a0a63bace263206c8bcb7106a46358d0b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_addb8dd96fb70245aa3b9e5cdbe906148}\label{class_c_draw3_d_addb8dd96fb70245aa3b9e5cdbe906148}} 
+\index{CDraw3D@{CDraw3D}!Start@{Start}}
+\index{Start@{Start}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void CDraw3\+D\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+初期化 
+
+作戦開始 
+
+\mbox{\hyperlink{class_component_a3f57807787e0015833ccffd83fb63d14}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_c_draw3_d_addb8dd96fb70245aa3b9e5cdbe906148_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_c_draw3_d_addb8dd96fb70245aa3b9e5cdbe906148_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw3_d_aa42fcba7f1258571457c186292f91702}\label{class_c_draw3_d_aa42fcba7f1258571457c186292f91702}} 
+\index{CDraw3D@{CDraw3D}!Update@{Update}}
+\index{Update@{Update}!CDraw3D@{CDraw3D}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void CDraw3\+D\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新 
+
+更新処理 
+
+\mbox{\hyperlink{class_component_aaf2ce6dc5752072492f790ad4c7955bb}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw3_d_aa42fcba7f1258571457c186292f91702_cgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_draw3d_component_8h}{Draw3d\+Component.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_draw3_d_component_8cpp}{Draw3\+DComponent.\+cpp}}\end{DoxyCompactItemize}

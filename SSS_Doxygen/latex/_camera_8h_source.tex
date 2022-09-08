@@ -1,0 +1,103 @@
+\hypertarget{_camera_8h_source}{}\doxysection{Camera.\+h}
+\label{_camera_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Camera.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Camera.h}}
+\mbox{\hyperlink{_camera_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{//=============================================================================}}
+\DoxyCodeLine{2 \textcolor{comment}{//}}
+\DoxyCodeLine{3 \textcolor{comment}{// カメラ クラス [Camera.h]}}
+\DoxyCodeLine{4 \textcolor{comment}{// Author : SHIMIZU YOSUKE}}
+\DoxyCodeLine{5 \textcolor{comment}{//}}
+\DoxyCodeLine{6 \textcolor{comment}{//=============================================================================}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_transform}{CTransform}};}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#define GOAL\_POS\_Z  (-\/200.0f)}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_camera}{CCamera}}}
+\DoxyCodeLine{15 \{}
+\DoxyCodeLine{16 \textcolor{keyword}{private}:}
+\DoxyCodeLine{17     \textcolor{comment}{//CTransform* m\_pTransform;}}
+\DoxyCodeLine{18     \textcolor{keywordtype}{float}* m\_pPosX;}
+\DoxyCodeLine{20     \textcolor{keywordtype}{float}* m\_pPosY;}
+\DoxyCodeLine{21     \textcolor{keywordtype}{bool} m\_bZoom;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23     XMFLOAT3 m\_vPos;                \textcolor{comment}{// 視点}}
+\DoxyCodeLine{24     XMFLOAT3 m\_vTarget;             \textcolor{comment}{// 注視点}}
+\DoxyCodeLine{25     XMFLOAT3 m\_vUp;                 \textcolor{comment}{// 上方ベクトル}}
+\DoxyCodeLine{26     XMFLOAT2 m\_Limit;}
+\DoxyCodeLine{27     XMFLOAT2 m\_LimitY;              \textcolor{comment}{//Y軸方向の上限}}
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29     XMFLOAT3 m\_vSrcPos;             \textcolor{comment}{// 元の視点}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31     XMFLOAT3 m\_vDestPos;            \textcolor{comment}{// 視点の目的位置}}
+\DoxyCodeLine{32     XMFLOAT3 m\_vDestTarget;         \textcolor{comment}{// 注視点の目的位置}}
+\DoxyCodeLine{33     XMFLOAT3 m\_vVelocity;           \textcolor{comment}{// 移動量}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{keywordtype}{float} m\_fAspectRatio;           \textcolor{comment}{// 縦横比}}
+\DoxyCodeLine{36     \textcolor{keywordtype}{float} m\_fFovY;                  \textcolor{comment}{// 視野角(Degree)}}
+\DoxyCodeLine{37     \textcolor{keywordtype}{float} m\_fNearZ;                 \textcolor{comment}{// 前方クリップ距離}}
+\DoxyCodeLine{38     \textcolor{keywordtype}{float} m\_fFarZ;                  \textcolor{comment}{// 後方クリップ距離}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     XMFLOAT4X4 m\_mtxWorld;          \textcolor{comment}{// ワールド マトリックス}}
+\DoxyCodeLine{41     XMFLOAT4X4 m\_mtxView;           \textcolor{comment}{// ビュー マトリックス}}
+\DoxyCodeLine{42     XMFLOAT4X4 m\_mtxProj;           \textcolor{comment}{// プロジェクション マトリックス}}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44     \textcolor{comment}{//2022/01/08}}
+\DoxyCodeLine{45     XMFLOAT2 m\_vScrSize;    \textcolor{comment}{// 画面サイズ}}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47     XMFLOAT3 m\_vAngle;              \textcolor{comment}{// カメラの角度}}
+\DoxyCodeLine{48     XMFLOAT3 m\_vDestAngle;          \textcolor{comment}{// カメラの目的の向き}}
+\DoxyCodeLine{49     XMFLOAT3 m\_vDestTargetAngle;    \textcolor{comment}{// 注視点の目的の向き}}
+\DoxyCodeLine{50     \textcolor{keywordtype}{float} m\_fLengthInterval;        \textcolor{comment}{// カメラの視点と注視点の距離}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keyword}{static} \mbox{\hyperlink{class_c_camera}{CCamera}}* m\_pCamera;       \textcolor{comment}{// 現在のカメラ}}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{keyword}{public}:}
+\DoxyCodeLine{55     \mbox{\hyperlink{class_c_camera_a2eb95595766a84cb745ec00783595190}{CCamera}}();                       \textcolor{comment}{//  コンストラクタ}}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_a7d4ee70503ea51954543621268bfb295}{Init}}();                    \textcolor{comment}{//  初期化}}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_a664debc0a2d44acea6112db076a520bf}{Update}}();                    \textcolor{comment}{//  更新}}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_a63f970e7d925755e787761d135b7dbd7}{Draw}}();}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60     XMFLOAT4X4\& \mbox{\hyperlink{class_c_camera_aa3f7c288082765833d3ea4553a7cb84e}{CalcWorldMatrix}}();                   \textcolor{comment}{//  視点/注視点/上方ベクトルからワールド マトリックス算出}}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_ac1b29f785bec590c800582864abfb2fd}{UpdateMatrix}}();                            \textcolor{comment}{//  ビュー/プロジェクション マトリックス更新}}
+\DoxyCodeLine{62     \textcolor{comment}{//setter}}
+\DoxyCodeLine{63     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_a3068cc18259bf078ceb7d559a41ae5d6}{SetPos}}(XMFLOAT3\& vPos);                  \textcolor{comment}{//  カメラ座標の設定}}
+\DoxyCodeLine{64     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_a3068cc18259bf078ceb7d559a41ae5d6}{SetPos}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z);           \textcolor{comment}{//  カメラ座標の設定}}
+\DoxyCodeLine{65     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_a7619961c5d0aa0818d8041f1bb50ad4b}{SetTarget}}(XMFLOAT3\& vTarget);             \textcolor{comment}{//  注視点の設定}}
+\DoxyCodeLine{66     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_a7619961c5d0aa0818d8041f1bb50ad4b}{SetTarget}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z);     \textcolor{comment}{//  注視点の設定}}
+\DoxyCodeLine{67     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_ad4106c9325f7a4db76f257b230756e56}{SetUpVector}}(XMFLOAT3\& vUp);             \textcolor{comment}{//  アップベクトルの設定}}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_ad4106c9325f7a4db76f257b230756e56}{SetUpVector}}(\textcolor{keywordtype}{float} x, \textcolor{keywordtype}{float} y, \textcolor{keywordtype}{float} z); \textcolor{comment}{//  アップベクトルの設定}}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_aa89abb662e1058a2e2f0d6ee628c2b74}{SetWorldMatrix}}(XMFLOAT4X4\& mtxWorld);        \textcolor{comment}{//  ワールドマトリックスの設定}}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_a1210d6c1d274bde0198cf28af414a787}{SetFovY}}(\textcolor{keywordtype}{float} fFovY);                       \textcolor{comment}{//  ？？}}
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_a5e219eeeae6b6d5a4f81107588841c87}{SetAspectRatio}}(\textcolor{keywordtype}{float} fAspect);               \textcolor{comment}{//  アスペクト比の設定}}
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_a93d38558bd61734ddf07849d0276048e}{SetRangeZ}}(\textcolor{keywordtype}{float} fNearZ, \textcolor{keywordtype}{float} fFarZ);     \textcolor{comment}{//  ニアクリップとファークリップの設定}}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_a00af0fdc49e18b6087ef87205d6ddf03}{SetLimit}}(XMFLOAT2 limit);}
+\DoxyCodeLine{74     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_ab3006370e0b6250401ee797c120a24f4}{SetDestPos}}(\textcolor{keywordtype}{float} CameraposZ);}
+\DoxyCodeLine{75     \textcolor{comment}{//getter}}
+\DoxyCodeLine{76     XMFLOAT3\& \mbox{\hyperlink{class_c_camera_a6c938658ede08754ba4ffd9a3dd35ea3}{GetPos}}();                               \textcolor{comment}{//  カメラ座標の取得}}
+\DoxyCodeLine{77     XMFLOAT3\& \mbox{\hyperlink{class_c_camera_aad6ea0c4224522c0b9cc84f7becdd198}{GetAngle}}();                           \textcolor{comment}{//  カメラの傾き取得}}
+\DoxyCodeLine{78     XMFLOAT4X4\& \mbox{\hyperlink{class_c_camera_adb30390410d1da74734c7ff6406f1ecd}{GetWorldMatrix}}();                 \textcolor{comment}{//  ワールド         マトリックスの取得}}
+\DoxyCodeLine{79     XMFLOAT4X4\& \mbox{\hyperlink{class_c_camera_a1d42e5fecad0bcdab17124b402aa1575}{GetViewMatrix}}();                   \textcolor{comment}{//  ビュー      マトリックスの取得}}
+\DoxyCodeLine{80     XMFLOAT4X4\& \mbox{\hyperlink{class_c_camera_a99bbeae7433475a61979f603f439ab13}{GetProjMatrix}}();                   \textcolor{comment}{//  プロジェクション マトリックスの取得}}
+\DoxyCodeLine{81     \textcolor{keywordtype}{float}* \mbox{\hyperlink{class_c_camera_a0c6bd52c0adfd69f653404e93f7e5c86}{GetAxisX}}();}
+\DoxyCodeLine{82     \textcolor{comment}{// Effekseer}}
+\DoxyCodeLine{83     \textcolor{keyword}{const} XMFLOAT3\& \mbox{\hyperlink{class_c_camera_ae82b8d4b214bd06f117c900b69fa0d76}{GetLook}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{84     \textcolor{keyword}{const} XMFLOAT3\& \mbox{\hyperlink{class_c_camera_ab45d2623675e194d6577de8f5898a8e8}{GetUp}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{85     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_c_camera_a567d3591eef1214a9ac46f37aacc6faf}{GetAspect}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{86     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_c_camera_a91c79d9cb36427542e1504244adf7298}{GetNearClip}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{87     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_c_camera_a8de155ed4066592bc4b4bedb37a1b5c5}{GetFarClip}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{88     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_c_camera_a2cee4365487aa284b62baf0cf9185306}{GetFOV}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{89     \mbox{\hyperlink{class_c_camera}{CCamera}}\& \mbox{\hyperlink{class_c_camera_a828ac625f9c67b8927be3ccf2c6c4576}{operator=}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_c_camera}{CCamera}}\& camera);}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     \textcolor{keyword}{static} \mbox{\hyperlink{class_c_camera}{CCamera}}* \mbox{\hyperlink{class_c_camera_a67560cf6a017ec3b8a59129be0d0100a}{Get}}();                            \textcolor{comment}{//  インスタンス取得}}
+\DoxyCodeLine{92     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_a1729d20502996e3a731024b1203aa647}{Set}}(\mbox{\hyperlink{class_c_camera}{CCamera}}* pCamera);                \textcolor{comment}{//  現在のカメラの設定}}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94     \textcolor{comment}{//void SetTransform(CTransform* transform); //  x,y,z固定}}
+\DoxyCodeLine{95     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_aad14e000a4787d825e27bb994b65860b}{SetAxisX}}(\textcolor{keywordtype}{float}* px);}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_camera_a7f115992145660660e9f6a02a16f174b}{SetAxisY}}(\textcolor{keywordtype}{float}* py);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \};}
+
+\end{DoxyCode}

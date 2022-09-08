@@ -19,6 +19,8 @@
 #include "Draw3dComponent.h"
 #include "AnimMeshComponent.h"
 
+#include "Load.h"
+
 /**構造体定義**/
 StageSelect::Row StageSelect::m_StageGrid;
 
@@ -43,6 +45,9 @@ StageSelect::~StageSelect() {
 * @brief	初期化処理
 */
 void StageSelect::Init() {
+	//ロード画面のスレッドを作る
+	Load::Begin();
+
 	//ロードします
 	//進行状況の読込
 	//StageSelect::Load();
@@ -60,9 +65,11 @@ void StageSelect::Init() {
 	pTexManager->AddTexture(PATH_TEX_DXCHAN_STAND, DXCHAN_STAND_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_DXCHAN_RUN, DXCHAN_RUN_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_DEBUG_BLOCK, DEBUG_BLOCK_NUM);
+	pTexManager->AddTexture(PATH_TEX_PUSH, PUSH_TEX_NUM);
+	pTexManager->AddTexture(PATH_TEX_TO_TITLE, TO_TITLE_TEX_NUM);
 
 	//モデルの読込
-	pModelManager->AddModel(PATH_ROSALINA_X, ROSALINA_MODEL_X);
+	pModelManager->AddModel(PATH_WALK_ENEMY, WALK_ENEMY_MODEL_NUM);
 	pModelManager->AddModel(PATH_MINT_GREEN_BLOCK, MINT_GREEN_BLOCK_NUM);
 
 	//必要なオブジェクトの追加
@@ -74,7 +81,7 @@ void StageSelect::Init() {
 	objBG->AddComponent<CTransform>();
 	auto Draw_BG = objBG->AddComponent<CAnimMesh>();
 	//オブジェクトの設定
-	objBG->GetComponent<CTransform>()->SetPosition(0.0f,0.0f,0.0f);
+	objBG->GetComponent<CTransform>()->SetPosition(0.0f,55.0f,0.0f);
 	Draw_BG->SetTexture(pTexManager->GetTexture(TITLE_BACK_GROUND_NUM));
 	Draw_BG->SetSize(450, 260);
 	Draw_BG->SetColor(0.0f,0.0f,1.0f);
@@ -86,6 +93,9 @@ void StageSelect::Init() {
 #pragma endregion
 	//メニューの作成
 	m_pMenuManager->CreateSelectMenu();
+
+	//ロード終了
+	Load::End();
 }
 
 /**
@@ -96,7 +106,7 @@ void StageSelect::Uninit() {
 	//オブジェクトの終了
 	m_pObjectManager->Uninit();
 	//メニューの終了
-	m_pMenuManager->DeleteMenu();
+	m_pMenuManager->Destroy();
 }
 
 /**

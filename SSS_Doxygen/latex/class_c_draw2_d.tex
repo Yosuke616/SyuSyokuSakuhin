@@ -1,0 +1,518 @@
+\hypertarget{class_c_draw2_d}{}\doxysection{CDraw2D クラス}
+\label{class_c_draw2_d}\index{CDraw2D@{CDraw2D}}
+
+
+{\ttfamily \#include $<$Draw2\+DComponent.\+h$>$}
+
+
+
+CDraw2D の継承関係図\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_draw2_d__inherit__graph}
+\end{center}
+\end{figure}
+
+
+CDraw2D 連携図\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{class_c_draw2_d__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_draw2_d_af338c8008a19b34be68f0c3796fc9742}{CDraw2D}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_draw2_d_af3374fe374f35e3c3d251032b926e12a}{$\sim$\+CDraw2D}} () override
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_a4556c5d5c6ea589c3f2bf385fd62bea8}{Start}} () override
+\begin{DoxyCompactList}\small\item\em 初期化処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_aafc929df900f5a322c9efa4373e0b8d9}{Update}} () override
+\begin{DoxyCompactList}\small\item\em 更新処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_ae0459d7b8afc61916d99070a9ef167ab}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em 描画処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_aae60f421210db72c5fe9835895b0337a}{Set\+Size}} (float, float)
+\begin{DoxyCompactList}\small\item\em ポリゴンのサイズ設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_a3429b208e0e42c6b8bbbf6079078bf72}{Set\+UVsize}} (float, float)
+\begin{DoxyCompactList}\small\item\em UVサイズ設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_a31a77bc6456332cc7f470c52a3c3c396}{Set\+Anim\+Split}} (int, int)
+\begin{DoxyCompactList}\small\item\em アニメーション分割数の設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_afc29f5be1bb3c3b54430a5cecb99c0be}{Set\+Anim\+Num}} (int)
+\begin{DoxyCompactList}\small\item\em アニメーション番号の設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_ab5be4b73f8c0c80ea9c6c63a795d4999}{Set\+Texture}} (ID3\+D11\+Shader\+Resource\+View $\ast$)
+\begin{DoxyCompactList}\small\item\em テクスチャの設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_a0dfe4e59ce203576ee4577556e9ccdee}{Set\+Color}} (float r, float g, float b)
+\begin{DoxyCompactList}\small\item\em カラー設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_a69e9a2f4fdff08f984a3ac89fb7814f8}{Set\+Alpha}} (float alpha)
+\begin{DoxyCompactList}\small\item\em 透明度の設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_a80eb8dcbd0282df8ae7671a6d0c9424b}{Set\+Angle}} (float angle)
+\begin{DoxyCompactList}\small\item\em 角度の設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_a2c84d66ee98d134eb5a8c8ae24446644}{Set\+Scroll}} (XMFLOAT2 scroll)
+\begin{DoxyCompactList}\small\item\em スクロール量の設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_a00bdcc07166e73186a3a3b0387031468}{Set\+Blend}} (\mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2}{EBlend\+State}} state)
+\begin{DoxyCompactList}\small\item\em ブレンドステートの設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_ac8479ff7e27191e75c021a3e34a8a425}{SetU}} (float u)
+\begin{DoxyCompactList}\small\item\em UVの\+Uの設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw2_d_a19a9281a77b6248a8867ee3075f01e24}{SetV}} (float v)
+\begin{DoxyCompactList}\small\item\em UVの\+Vの設定 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_draw2_d_a5cf2070f80d240897c20dd91fd50fc8a}{Get\+Anim\+SplitX}} ()
+\begin{DoxyCompactList}\small\item\em 横方向の分割数を得る \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_transform}{CTransform}} $\ast$ \mbox{\hyperlink{class_c_draw2_d_adbb5fcad97beb261f051801679860d28}{m\+\_\+p\+Transform}}
+\begin{DoxyCompactList}\small\item\em 座標などの為の変数 \end{DoxyCompactList}\item 
+ID3\+D11\+Shader\+Resource\+View $\ast$ \mbox{\hyperlink{class_c_draw2_d_ab275af50a6c2d676cef3747a3e12cf74}{m\+\_\+p\+Texture}}
+\begin{DoxyCompactList}\small\item\em テクスチャの情報の為の変数 \end{DoxyCompactList}\item 
+XMFLOAT2 \mbox{\hyperlink{class_c_draw2_d_a1881a3e311f1b90d2efcdddb9cda3fac}{m\+\_\+f\+Polygon\+Size}}
+\begin{DoxyCompactList}\small\item\em 四角形ポリゴンの大きさ \end{DoxyCompactList}\item 
+XMFLOAT2 \mbox{\hyperlink{class_c_draw2_d_a53a924e80bddaff215acda647f1aab39}{m\+\_\+f\+Tex\+Frame\+Size}}
+\begin{DoxyCompactList}\small\item\em テクスチャの割り当て範囲 \end{DoxyCompactList}\item 
+XMFLOAT4 \mbox{\hyperlink{class_c_draw2_d_aa3d6ea9ff0ba3eb0253e179643a0cb2b}{m\+\_\+f\+Vertev\+Color}}
+\begin{DoxyCompactList}\small\item\em 頂点カラー \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_c_draw2_d_abe7f4acb4aad5264433d091728c9d9c7}{m\+\_\+f\+Angle}}
+\begin{DoxyCompactList}\small\item\em 角度 \end{DoxyCompactList}\item 
+XMFLOAT2 \mbox{\hyperlink{class_c_draw2_d_a6e007ac2891cf22aa4e64c8a90b8adeb}{m\+\_\+\+Scroll}}
+\begin{DoxyCompactList}\small\item\em スクロール \end{DoxyCompactList}\item 
+\mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2}{EBlend\+State}} \mbox{\hyperlink{class_c_draw2_d_a7af5c488abce960bdd926d51367581fc}{m\+\_\+\+Blend\+State}}
+\begin{DoxyCompactList}\small\item\em ブレンドの種類 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_draw2_d_adbb7915ca511dfe5755882418ca13bbd}{m\+\_\+n\+Anim\+Num}}
+\begin{DoxyCompactList}\small\item\em アニメーション番号 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_draw2_d_aeab449e826028d87311a3d02d0b7d29b}{m\+\_\+n\+Anim\+SplitX}}
+\begin{DoxyCompactList}\small\item\em 横のアニメーションの分割数 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_draw2_d_a1f93224a14b30b049bed25fb44fab0d9}{m\+\_\+n\+Anim\+SplitY}}
+\begin{DoxyCompactList}\small\item\em 縦のアニメーションの分割数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_draw2_d_af338c8008a19b34be68f0c3796fc9742}\label{class_c_draw2_d_af338c8008a19b34be68f0c3796fc9742}} 
+\index{CDraw2D@{CDraw2D}!CDraw2D@{CDraw2D}}
+\index{CDraw2D@{CDraw2D}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{CDraw2D()}{CDraw2D()}}
+{\footnotesize\ttfamily CDraw2\+D\+::\+CDraw2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+コンストラクタが始まるということ \mbox{\Hypertarget{class_c_draw2_d_af3374fe374f35e3c3d251032b926e12a}\label{class_c_draw2_d_af3374fe374f35e3c3d251032b926e12a}} 
+\index{CDraw2D@{CDraw2D}!````~CDraw2D@{$\sim$CDraw2D}}
+\index{````~CDraw2D@{$\sim$CDraw2D}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{$\sim$CDraw2D()}{~CDraw2D()}}
+{\footnotesize\ttfamily CDraw2\+D\+::$\sim$\+CDraw2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+デストラクタ 
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_draw2_d_ae0459d7b8afc61916d99070a9ef167ab}\label{class_c_draw2_d_ae0459d7b8afc61916d99070a9ef167ab}} 
+\index{CDraw2D@{CDraw2D}!Draw@{Draw}}
+\index{Draw@{Draw}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+描画処理 
+
+描画関数 ~\newline
+ @detail 
+
+\mbox{\hyperlink{class_component_a8622ccd5f24035d48e33292717299313}{Component}}を再実装しています。
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{class_c_draw2_d_ae0459d7b8afc61916d99070a9ef167ab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw2_d_a5cf2070f80d240897c20dd91fd50fc8a}\label{class_c_draw2_d_a5cf2070f80d240897c20dd91fd50fc8a}} 
+\index{CDraw2D@{CDraw2D}!GetAnimSplitX@{GetAnimSplitX}}
+\index{GetAnimSplitX@{GetAnimSplitX}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{GetAnimSplitX()}{GetAnimSplitX()}}
+{\footnotesize\ttfamily int CDraw2\+D\+::\+Get\+Anim\+SplitX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+横方向の分割数を得る 
+
+アニメーション分割数の横方向を取得する
+
+\begin{DoxyReturn}{戻り値}
+(int) どの位分かれているかを返す 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_draw2_d_a69e9a2f4fdff08f984a3ac89fb7814f8}\label{class_c_draw2_d_a69e9a2f4fdff08f984a3ac89fb7814f8}} 
+\index{CDraw2D@{CDraw2D}!SetAlpha@{SetAlpha}}
+\index{SetAlpha@{SetAlpha}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{SetAlpha()}{SetAlpha()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+Set\+Alpha (\begin{DoxyParamCaption}\item[{float}]{alpha }\end{DoxyParamCaption})}
+
+
+
+透明度の設定 
+
+透明度を設定する
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & 透明度を下げて奥側を見よう \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw2_d_a80eb8dcbd0282df8ae7671a6d0c9424b}\label{class_c_draw2_d_a80eb8dcbd0282df8ae7671a6d0c9424b}} 
+\index{CDraw2D@{CDraw2D}!SetAngle@{SetAngle}}
+\index{SetAngle@{SetAngle}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{SetAngle()}{SetAngle()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+Set\+Angle (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})}
+
+
+
+角度の設定 
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & どの角度にするかの数値 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw2_d_afc29f5be1bb3c3b54430a5cecb99c0be}\label{class_c_draw2_d_afc29f5be1bb3c3b54430a5cecb99c0be}} 
+\index{CDraw2D@{CDraw2D}!SetAnimNum@{SetAnimNum}}
+\index{SetAnimNum@{SetAnimNum}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{SetAnimNum()}{SetAnimNum()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+Set\+Anim\+Num (\begin{DoxyParamCaption}\item[{int}]{anim }\end{DoxyParamCaption})}
+
+
+
+アニメーション番号の設定 
+
+アニメーション番号をセットする
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & 現在のアニメーションの番号 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw2_d_a31a77bc6456332cc7f470c52a3c3c396}\label{class_c_draw2_d_a31a77bc6456332cc7f470c52a3c3c396}} 
+\index{CDraw2D@{CDraw2D}!SetAnimSplit@{SetAnimSplit}}
+\index{SetAnimSplit@{SetAnimSplit}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{SetAnimSplit()}{SetAnimSplit()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+Set\+Anim\+Split (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+アニメーション分割数の設定 
+
+アニメーションの分割数を設定
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & 横の分割数の数値 \\
+\hline
+{\em (int)} & 縦の分割数の数値 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw2_d_a00bdcc07166e73186a3a3b0387031468}\label{class_c_draw2_d_a00bdcc07166e73186a3a3b0387031468}} 
+\index{CDraw2D@{CDraw2D}!SetBlend@{SetBlend}}
+\index{SetBlend@{SetBlend}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{SetBlend()}{SetBlend()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+Set\+Blend (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2}{EBlend\+State}}}]{state }\end{DoxyParamCaption})}
+
+
+
+ブレンドステートの設定 
+
+
+\begin{DoxyParams}{引数}
+{\em (\+EBlend\+State)} & ブレンドステートの状態 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw2_d_a0dfe4e59ce203576ee4577556e9ccdee}\label{class_c_draw2_d_a0dfe4e59ce203576ee4577556e9ccdee}} 
+\index{CDraw2D@{CDraw2D}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+Set\+Color (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b }\end{DoxyParamCaption})}
+
+
+
+カラー設定 
+
+色の設定
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & RGBの赤色でした \\
+\hline
+{\em (float)} & RGBの緑のひげ \\
+\hline
+{\em (float)} & RGBの青空教室 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw2_d_a2c84d66ee98d134eb5a8c8ae24446644}\label{class_c_draw2_d_a2c84d66ee98d134eb5a8c8ae24446644}} 
+\index{CDraw2D@{CDraw2D}!SetScroll@{SetScroll}}
+\index{SetScroll@{SetScroll}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{SetScroll()}{SetScroll()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+Set\+Scroll (\begin{DoxyParamCaption}\item[{XMFLOAT2}]{scroll }\end{DoxyParamCaption})}
+
+
+
+スクロール量の設定 
+
+
+\begin{DoxyParams}{引数}
+{\em (\+XMFLOAT2)} & どの位動かせばいいかの設定 \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_c_draw2_d_a2c84d66ee98d134eb5a8c8ae24446644_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw2_d_aae60f421210db72c5fe9835895b0337a}\label{class_c_draw2_d_aae60f421210db72c5fe9835895b0337a}} 
+\index{CDraw2D@{CDraw2D}!SetSize@{SetSize}}
+\index{SetSize@{SetSize}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{SetSize()}{SetSize()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+Set\+Size (\begin{DoxyParamCaption}\item[{float}]{SizeX,  }\item[{float}]{SizeY }\end{DoxyParamCaption})}
+
+
+
+ポリゴンのサイズ設定 
+
+ポリゴンの大きさを設定する
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & ポリゴンの横幅を決める \\
+\hline
+{\em (float)} & ポリゴンの立幅を決める \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw2_d_ab5be4b73f8c0c80ea9c6c63a795d4999}\label{class_c_draw2_d_ab5be4b73f8c0c80ea9c6c63a795d4999}} 
+\index{CDraw2D@{CDraw2D}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{ID3\+D11\+Shader\+Resource\+View $\ast$}]{p\+Tex }\end{DoxyParamCaption})}
+
+
+
+テクスチャの設定 
+
+テクスチャをセットする
+
+
+\begin{DoxyParams}{引数}
+{\em (\+ID3\+D11\+Shader\+Resource\+View$\ast$)} & テクスチャのポインタ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw2_d_ac8479ff7e27191e75c021a3e34a8a425}\label{class_c_draw2_d_ac8479ff7e27191e75c021a3e34a8a425}} 
+\index{CDraw2D@{CDraw2D}!SetU@{SetU}}
+\index{SetU@{SetU}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{SetU()}{SetU()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+SetU (\begin{DoxyParamCaption}\item[{float}]{u }\end{DoxyParamCaption})}
+
+
+
+UVの\+Uの設定 
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & Uである \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw2_d_a3429b208e0e42c6b8bbbf6079078bf72}\label{class_c_draw2_d_a3429b208e0e42c6b8bbbf6079078bf72}} 
+\index{CDraw2D@{CDraw2D}!SetUVsize@{SetUVsize}}
+\index{SetUVsize@{SetUVsize}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{SetUVsize()}{SetUVsize()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+Set\+UVsize (\begin{DoxyParamCaption}\item[{float}]{UVSizeX,  }\item[{float}]{UVSizeY }\end{DoxyParamCaption})}
+
+
+
+UVサイズ設定 
+
+テクスチャのサイズを設定する
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & テクスチャの横幅 \\
+\hline
+{\em (float)} & テクスチャの立幅 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw2_d_a19a9281a77b6248a8867ee3075f01e24}\label{class_c_draw2_d_a19a9281a77b6248a8867ee3075f01e24}} 
+\index{CDraw2D@{CDraw2D}!SetV@{SetV}}
+\index{SetV@{SetV}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{SetV()}{SetV()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+SetV (\begin{DoxyParamCaption}\item[{float}]{v }\end{DoxyParamCaption})}
+
+
+
+UVの\+Vの設定 
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & 実は\+Vだった \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw2_d_a4556c5d5c6ea589c3f2bf385fd62bea8}\label{class_c_draw2_d_a4556c5d5c6ea589c3f2bf385fd62bea8}} 
+\index{CDraw2D@{CDraw2D}!Start@{Start}}
+\index{Start@{Start}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+初期化処理 
+
+初期化の処理 
+
+\mbox{\hyperlink{class_component_a3f57807787e0015833ccffd83fb63d14}{Component}}を再実装しています。
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{class_c_draw2_d_a4556c5d5c6ea589c3f2bf385fd62bea8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw2_d_aafc929df900f5a322c9efa4373e0b8d9}\label{class_c_draw2_d_aafc929df900f5a322c9efa4373e0b8d9}} 
+\index{CDraw2D@{CDraw2D}!Update@{Update}}
+\index{Update@{Update}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void CDraw2\+D\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新処理 
+
+更新処理だったもの 
+
+\mbox{\hyperlink{class_component_aaf2ce6dc5752072492f790ad4c7955bb}{Component}}を再実装しています。
+
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{class_c_draw2_d_a7af5c488abce960bdd926d51367581fc}\label{class_c_draw2_d_a7af5c488abce960bdd926d51367581fc}} 
+\index{CDraw2D@{CDraw2D}!m\_BlendState@{m\_BlendState}}
+\index{m\_BlendState@{m\_BlendState}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{m\_BlendState}{m\_BlendState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2}{EBlend\+State}} CDraw2\+D\+::m\+\_\+\+Blend\+State\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+ブレンドの種類 
+
+\mbox{\Hypertarget{class_c_draw2_d_abe7f4acb4aad5264433d091728c9d9c7}\label{class_c_draw2_d_abe7f4acb4aad5264433d091728c9d9c7}} 
+\index{CDraw2D@{CDraw2D}!m\_fAngle@{m\_fAngle}}
+\index{m\_fAngle@{m\_fAngle}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{m\_fAngle}{m\_fAngle}}
+{\footnotesize\ttfamily float CDraw2\+D\+::m\+\_\+f\+Angle\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+角度 
+
+\mbox{\Hypertarget{class_c_draw2_d_a1881a3e311f1b90d2efcdddb9cda3fac}\label{class_c_draw2_d_a1881a3e311f1b90d2efcdddb9cda3fac}} 
+\index{CDraw2D@{CDraw2D}!m\_fPolygonSize@{m\_fPolygonSize}}
+\index{m\_fPolygonSize@{m\_fPolygonSize}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{m\_fPolygonSize}{m\_fPolygonSize}}
+{\footnotesize\ttfamily XMFLOAT2 CDraw2\+D\+::m\+\_\+f\+Polygon\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+四角形ポリゴンの大きさ 
+
+\mbox{\Hypertarget{class_c_draw2_d_a53a924e80bddaff215acda647f1aab39}\label{class_c_draw2_d_a53a924e80bddaff215acda647f1aab39}} 
+\index{CDraw2D@{CDraw2D}!m\_fTexFrameSize@{m\_fTexFrameSize}}
+\index{m\_fTexFrameSize@{m\_fTexFrameSize}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{m\_fTexFrameSize}{m\_fTexFrameSize}}
+{\footnotesize\ttfamily XMFLOAT2 CDraw2\+D\+::m\+\_\+f\+Tex\+Frame\+Size\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+テクスチャの割り当て範囲 
+
+\mbox{\Hypertarget{class_c_draw2_d_aa3d6ea9ff0ba3eb0253e179643a0cb2b}\label{class_c_draw2_d_aa3d6ea9ff0ba3eb0253e179643a0cb2b}} 
+\index{CDraw2D@{CDraw2D}!m\_fVertevColor@{m\_fVertevColor}}
+\index{m\_fVertevColor@{m\_fVertevColor}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{m\_fVertevColor}{m\_fVertevColor}}
+{\footnotesize\ttfamily XMFLOAT4 CDraw2\+D\+::m\+\_\+f\+Vertev\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+頂点カラー 
+
+\mbox{\Hypertarget{class_c_draw2_d_adbb7915ca511dfe5755882418ca13bbd}\label{class_c_draw2_d_adbb7915ca511dfe5755882418ca13bbd}} 
+\index{CDraw2D@{CDraw2D}!m\_nAnimNum@{m\_nAnimNum}}
+\index{m\_nAnimNum@{m\_nAnimNum}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{m\_nAnimNum}{m\_nAnimNum}}
+{\footnotesize\ttfamily int CDraw2\+D\+::m\+\_\+n\+Anim\+Num\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+アニメーション番号 
+
+\mbox{\Hypertarget{class_c_draw2_d_aeab449e826028d87311a3d02d0b7d29b}\label{class_c_draw2_d_aeab449e826028d87311a3d02d0b7d29b}} 
+\index{CDraw2D@{CDraw2D}!m\_nAnimSplitX@{m\_nAnimSplitX}}
+\index{m\_nAnimSplitX@{m\_nAnimSplitX}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{m\_nAnimSplitX}{m\_nAnimSplitX}}
+{\footnotesize\ttfamily int CDraw2\+D\+::m\+\_\+n\+Anim\+SplitX\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+横のアニメーションの分割数 
+
+\mbox{\Hypertarget{class_c_draw2_d_a1f93224a14b30b049bed25fb44fab0d9}\label{class_c_draw2_d_a1f93224a14b30b049bed25fb44fab0d9}} 
+\index{CDraw2D@{CDraw2D}!m\_nAnimSplitY@{m\_nAnimSplitY}}
+\index{m\_nAnimSplitY@{m\_nAnimSplitY}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{m\_nAnimSplitY}{m\_nAnimSplitY}}
+{\footnotesize\ttfamily int CDraw2\+D\+::m\+\_\+n\+Anim\+SplitY\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+縦のアニメーションの分割数 
+
+\mbox{\Hypertarget{class_c_draw2_d_ab275af50a6c2d676cef3747a3e12cf74}\label{class_c_draw2_d_ab275af50a6c2d676cef3747a3e12cf74}} 
+\index{CDraw2D@{CDraw2D}!m\_pTexture@{m\_pTexture}}
+\index{m\_pTexture@{m\_pTexture}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{m\_pTexture}{m\_pTexture}}
+{\footnotesize\ttfamily ID3\+D11\+Shader\+Resource\+View$\ast$ CDraw2\+D\+::m\+\_\+p\+Texture\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+テクスチャの情報の為の変数 
+
+\mbox{\Hypertarget{class_c_draw2_d_adbb5fcad97beb261f051801679860d28}\label{class_c_draw2_d_adbb5fcad97beb261f051801679860d28}} 
+\index{CDraw2D@{CDraw2D}!m\_pTransform@{m\_pTransform}}
+\index{m\_pTransform@{m\_pTransform}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{m\_pTransform}{m\_pTransform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_transform}{CTransform}}$\ast$ CDraw2\+D\+::m\+\_\+p\+Transform\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+座標などの為の変数 
+
+\mbox{\Hypertarget{class_c_draw2_d_a6e007ac2891cf22aa4e64c8a90b8adeb}\label{class_c_draw2_d_a6e007ac2891cf22aa4e64c8a90b8adeb}} 
+\index{CDraw2D@{CDraw2D}!m\_Scroll@{m\_Scroll}}
+\index{m\_Scroll@{m\_Scroll}!CDraw2D@{CDraw2D}}
+\doxysubsubsection{\texorpdfstring{m\_Scroll}{m\_Scroll}}
+{\footnotesize\ttfamily XMFLOAT2 CDraw2\+D\+::m\+\_\+\+Scroll\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+スクロール 
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_draw2_d_component_8h}{Draw2\+DComponent.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_draw2_d_component_8cpp}{Draw2\+DComponent.\+cpp}}\end{DoxyCompactItemize}

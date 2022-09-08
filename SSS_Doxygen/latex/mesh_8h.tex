@@ -1,0 +1,219 @@
+\hypertarget{mesh_8h}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/mesh.h ファイル}
+\label{mesh_8h}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/mesh.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/mesh.h}}
+{\ttfamily \#include \char`\"{}main\+App.\+h\char`\"{}}\newline
+mesh.\+h の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mesh_8h__incl}
+\end{center}
+\end{figure}
+被依存関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mesh_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{クラス}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_m_a_t_e_r_i_a_l}{MATERIAL}}
+\item 
+struct \mbox{\hyperlink{struct_m_e_s_h}{MESH}}
+\end{DoxyCompactItemize}
+\doxysubsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765d}{e\+Primitive\+Type}} \{ \newline
+\mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765da65f8c8da12eda1e294c44a9924206b99}{PT\+\_\+\+UNDEFINED}} = 0
+, \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765da4dad86c74d1779861777bd9dcc7dfe76}{PT\+\_\+\+POINT}}
+, \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765dadde3b04259449be1cb2f6e5e9c02ccb0}{PT\+\_\+\+LINE}}
+, \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765dabc672e8b23a2aafa937d887028c2e121}{PT\+\_\+\+LINESTRIP}}
+, \newline
+\mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765da6da12e48279dc715a56eecdc25eb723b}{PT\+\_\+\+TRIANGLE}}
+, \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765da56b82113a2e3217d7deafe6dec008a4a}{PT\+\_\+\+TRIANGLESTRIP}}
+, \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765da1074608f436fc4dde2a3dee90fb38939}{MAX\+\_\+\+PRIMITIVETYPE}}
+ \}
+\item 
+enum \mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719}{e\+Translucent\+Type}} \{ \mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719a996c91852662a7f35689eb6f3481b836}{TT\+\_\+\+NOAFFECT}} = 0
+, \mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719ac69238a0a007608593e2a4bc1bf395b0}{TT\+\_\+\+OPACITYONLY}}
+, \mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719a7b4002556d16617b279c3229151287b1}{TT\+\_\+\+TRANSLUCENTONLY}}
+, \mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719af9161d00b36be7bcbb1b76b3b8daa23e}{MAX\+\_\+\+TRANSLUCENTTYPE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+HRESULT \mbox{\hyperlink{mesh_8h_afd09c8aac5c23c7b70e88571ccf966b3}{Init\+Mesh}} (void)
+\item 
+void \mbox{\hyperlink{mesh_8h_a4412ab7873323890dcf6d1a34aa95380}{Uninit\+Mesh}} (void)
+\item 
+void \mbox{\hyperlink{mesh_8h_a0dfcef8795a69a746393944288fd88c3}{Update\+Mesh}} (\mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$p\+Mesh)
+\item 
+void \mbox{\hyperlink{mesh_8h_abfe81e9eae72eecf6f32df0e194721cb}{Draw\+Mesh}} (ID3\+D11\+Device\+Context $\ast$p\+Device\+Context, \mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$p\+Mesh, int n\+Translucnt\+Type=\mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719a996c91852662a7f35689eb6f3481b836}{TT\+\_\+\+NOAFFECT}})
+\item 
+HRESULT \mbox{\hyperlink{mesh_8h_a018d9e543a71f8f60712ad246ee4caf7}{Make\+Mesh\+Vertex}} (ID3\+D11\+Device $\ast$p\+Device, \mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$p\+Mesh, \mbox{\hyperlink{struct_v_e_r_t_e_x__3_d}{VERTEX\+\_\+3D}} vertex\+Wk\mbox{[}$\,$\mbox{]}, int index\+Wk\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{mesh_8h_aa47a62772b5d637aa251793352473f11}{Release\+Mesh}} (\mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$p\+Mesh)
+\item 
+HRESULT \mbox{\hyperlink{mesh_8h_a955368bc5f6e1bfb67cec692bbffcdc6}{Update\+Mesh\+Vertex}} (ID3\+D11\+Device\+Context $\ast$p\+Device\+Context, \mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$p\+Mesh, \mbox{\hyperlink{struct_v_e_r_t_e_x__3_d}{VERTEX\+\_\+3D}} vertex\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{列挙型詳解}
+\mbox{\Hypertarget{mesh_8h_a7912bfb71ae570d3a83cfad74323765d}\label{mesh_8h_a7912bfb71ae570d3a83cfad74323765d}} 
+\index{mesh.h@{mesh.h}!ePrimitiveType@{ePrimitiveType}}
+\index{ePrimitiveType@{ePrimitiveType}!mesh.h@{mesh.h}}
+\doxysubsubsection{\texorpdfstring{ePrimitiveType}{ePrimitiveType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765d}{e\+Primitive\+Type}}}
+
+\begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PT\_UNDEFINED@{PT\_UNDEFINED}!mesh.h@{mesh.h}}\index{mesh.h@{mesh.h}!PT\_UNDEFINED@{PT\_UNDEFINED}}}\mbox{\Hypertarget{mesh_8h_a7912bfb71ae570d3a83cfad74323765da65f8c8da12eda1e294c44a9924206b99}\label{mesh_8h_a7912bfb71ae570d3a83cfad74323765da65f8c8da12eda1e294c44a9924206b99}} 
+PT\+\_\+\+UNDEFINED&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PT\_POINT@{PT\_POINT}!mesh.h@{mesh.h}}\index{mesh.h@{mesh.h}!PT\_POINT@{PT\_POINT}}}\mbox{\Hypertarget{mesh_8h_a7912bfb71ae570d3a83cfad74323765da4dad86c74d1779861777bd9dcc7dfe76}\label{mesh_8h_a7912bfb71ae570d3a83cfad74323765da4dad86c74d1779861777bd9dcc7dfe76}} 
+PT\+\_\+\+POINT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PT\_LINE@{PT\_LINE}!mesh.h@{mesh.h}}\index{mesh.h@{mesh.h}!PT\_LINE@{PT\_LINE}}}\mbox{\Hypertarget{mesh_8h_a7912bfb71ae570d3a83cfad74323765dadde3b04259449be1cb2f6e5e9c02ccb0}\label{mesh_8h_a7912bfb71ae570d3a83cfad74323765dadde3b04259449be1cb2f6e5e9c02ccb0}} 
+PT\+\_\+\+LINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PT\_LINESTRIP@{PT\_LINESTRIP}!mesh.h@{mesh.h}}\index{mesh.h@{mesh.h}!PT\_LINESTRIP@{PT\_LINESTRIP}}}\mbox{\Hypertarget{mesh_8h_a7912bfb71ae570d3a83cfad74323765dabc672e8b23a2aafa937d887028c2e121}\label{mesh_8h_a7912bfb71ae570d3a83cfad74323765dabc672e8b23a2aafa937d887028c2e121}} 
+PT\+\_\+\+LINESTRIP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PT\_TRIANGLE@{PT\_TRIANGLE}!mesh.h@{mesh.h}}\index{mesh.h@{mesh.h}!PT\_TRIANGLE@{PT\_TRIANGLE}}}\mbox{\Hypertarget{mesh_8h_a7912bfb71ae570d3a83cfad74323765da6da12e48279dc715a56eecdc25eb723b}\label{mesh_8h_a7912bfb71ae570d3a83cfad74323765da6da12e48279dc715a56eecdc25eb723b}} 
+PT\+\_\+\+TRIANGLE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PT\_TRIANGLESTRIP@{PT\_TRIANGLESTRIP}!mesh.h@{mesh.h}}\index{mesh.h@{mesh.h}!PT\_TRIANGLESTRIP@{PT\_TRIANGLESTRIP}}}\mbox{\Hypertarget{mesh_8h_a7912bfb71ae570d3a83cfad74323765da56b82113a2e3217d7deafe6dec008a4a}\label{mesh_8h_a7912bfb71ae570d3a83cfad74323765da56b82113a2e3217d7deafe6dec008a4a}} 
+PT\+\_\+\+TRIANGLESTRIP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_PRIMITIVETYPE@{MAX\_PRIMITIVETYPE}!mesh.h@{mesh.h}}\index{mesh.h@{mesh.h}!MAX\_PRIMITIVETYPE@{MAX\_PRIMITIVETYPE}}}\mbox{\Hypertarget{mesh_8h_a7912bfb71ae570d3a83cfad74323765da1074608f436fc4dde2a3dee90fb38939}\label{mesh_8h_a7912bfb71ae570d3a83cfad74323765da1074608f436fc4dde2a3dee90fb38939}} 
+MAX\+\_\+\+PRIMITIVETYPE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719}\label{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719}} 
+\index{mesh.h@{mesh.h}!eTranslucentType@{eTranslucentType}}
+\index{eTranslucentType@{eTranslucentType}!mesh.h@{mesh.h}}
+\doxysubsubsection{\texorpdfstring{eTranslucentType}{eTranslucentType}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719}{e\+Translucent\+Type}}}
+
+\begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TT\_NOAFFECT@{TT\_NOAFFECT}!mesh.h@{mesh.h}}\index{mesh.h@{mesh.h}!TT\_NOAFFECT@{TT\_NOAFFECT}}}\mbox{\Hypertarget{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719a996c91852662a7f35689eb6f3481b836}\label{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719a996c91852662a7f35689eb6f3481b836}} 
+TT\+\_\+\+NOAFFECT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TT\_OPACITYONLY@{TT\_OPACITYONLY}!mesh.h@{mesh.h}}\index{mesh.h@{mesh.h}!TT\_OPACITYONLY@{TT\_OPACITYONLY}}}\mbox{\Hypertarget{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719ac69238a0a007608593e2a4bc1bf395b0}\label{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719ac69238a0a007608593e2a4bc1bf395b0}} 
+TT\+\_\+\+OPACITYONLY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TT\_TRANSLUCENTONLY@{TT\_TRANSLUCENTONLY}!mesh.h@{mesh.h}}\index{mesh.h@{mesh.h}!TT\_TRANSLUCENTONLY@{TT\_TRANSLUCENTONLY}}}\mbox{\Hypertarget{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719a7b4002556d16617b279c3229151287b1}\label{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719a7b4002556d16617b279c3229151287b1}} 
+TT\+\_\+\+TRANSLUCENTONLY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_TRANSLUCENTTYPE@{MAX\_TRANSLUCENTTYPE}!mesh.h@{mesh.h}}\index{mesh.h@{mesh.h}!MAX\_TRANSLUCENTTYPE@{MAX\_TRANSLUCENTTYPE}}}\mbox{\Hypertarget{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719af9161d00b36be7bcbb1b76b3b8daa23e}\label{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719af9161d00b36be7bcbb1b76b3b8daa23e}} 
+MAX\+\_\+\+TRANSLUCENTTYPE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{mesh_8h_abfe81e9eae72eecf6f32df0e194721cb}\label{mesh_8h_abfe81e9eae72eecf6f32df0e194721cb}} 
+\index{mesh.h@{mesh.h}!DrawMesh@{DrawMesh}}
+\index{DrawMesh@{DrawMesh}!mesh.h@{mesh.h}}
+\doxysubsubsection{\texorpdfstring{DrawMesh()}{DrawMesh()}}
+{\footnotesize\ttfamily void Draw\+Mesh (\begin{DoxyParamCaption}\item[{ID3\+D11\+Device\+Context $\ast$}]{p\+Device\+Context,  }\item[{\mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$}]{p\+Mesh,  }\item[{int}]{n\+Translucnt\+Type = {\ttfamily \mbox{\hyperlink{mesh_8h_a76a1fd83b3ce1b41379d93ace98f7719a996c91852662a7f35689eb6f3481b836}{TT\+\_\+\+NOAFFECT}}} }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{mesh_8h_abfe81e9eae72eecf6f32df0e194721cb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mesh_8h_afd09c8aac5c23c7b70e88571ccf966b3}\label{mesh_8h_afd09c8aac5c23c7b70e88571ccf966b3}} 
+\index{mesh.h@{mesh.h}!InitMesh@{InitMesh}}
+\index{InitMesh@{InitMesh}!mesh.h@{mesh.h}}
+\doxysubsubsection{\texorpdfstring{InitMesh()}{InitMesh()}}
+{\footnotesize\ttfamily HRESULT Init\+Mesh (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mesh_8h_afd09c8aac5c23c7b70e88571ccf966b3_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{mesh_8h_afd09c8aac5c23c7b70e88571ccf966b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mesh_8h_a018d9e543a71f8f60712ad246ee4caf7}\label{mesh_8h_a018d9e543a71f8f60712ad246ee4caf7}} 
+\index{mesh.h@{mesh.h}!MakeMeshVertex@{MakeMeshVertex}}
+\index{MakeMeshVertex@{MakeMeshVertex}!mesh.h@{mesh.h}}
+\doxysubsubsection{\texorpdfstring{MakeMeshVertex()}{MakeMeshVertex()}}
+{\footnotesize\ttfamily HRESULT Make\+Mesh\+Vertex (\begin{DoxyParamCaption}\item[{ID3\+D11\+Device $\ast$}]{p\+Device,  }\item[{\mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$}]{p\+Mesh,  }\item[{\mbox{\hyperlink{struct_v_e_r_t_e_x__3_d}{VERTEX\+\_\+3D}}}]{vertex\+Wk\mbox{[}$\,$\mbox{]},  }\item[{int}]{index\+Wk\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{mesh_8h_aa47a62772b5d637aa251793352473f11}\label{mesh_8h_aa47a62772b5d637aa251793352473f11}} 
+\index{mesh.h@{mesh.h}!ReleaseMesh@{ReleaseMesh}}
+\index{ReleaseMesh@{ReleaseMesh}!mesh.h@{mesh.h}}
+\doxysubsubsection{\texorpdfstring{ReleaseMesh()}{ReleaseMesh()}}
+{\footnotesize\ttfamily void Release\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$}]{p\+Mesh }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{mesh_8h_aa47a62772b5d637aa251793352473f11_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mesh_8h_a4412ab7873323890dcf6d1a34aa95380}\label{mesh_8h_a4412ab7873323890dcf6d1a34aa95380}} 
+\index{mesh.h@{mesh.h}!UninitMesh@{UninitMesh}}
+\index{UninitMesh@{UninitMesh}!mesh.h@{mesh.h}}
+\doxysubsubsection{\texorpdfstring{UninitMesh()}{UninitMesh()}}
+{\footnotesize\ttfamily void Uninit\+Mesh (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{mesh_8h_a4412ab7873323890dcf6d1a34aa95380_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mesh_8h_a0dfcef8795a69a746393944288fd88c3}\label{mesh_8h_a0dfcef8795a69a746393944288fd88c3}} 
+\index{mesh.h@{mesh.h}!UpdateMesh@{UpdateMesh}}
+\index{UpdateMesh@{UpdateMesh}!mesh.h@{mesh.h}}
+\doxysubsubsection{\texorpdfstring{UpdateMesh()}{UpdateMesh()}}
+{\footnotesize\ttfamily void Update\+Mesh (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$}]{p\+Mesh }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mesh_8h_a0dfcef8795a69a746393944288fd88c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mesh_8h_a955368bc5f6e1bfb67cec692bbffcdc6}\label{mesh_8h_a955368bc5f6e1bfb67cec692bbffcdc6}} 
+\index{mesh.h@{mesh.h}!UpdateMeshVertex@{UpdateMeshVertex}}
+\index{UpdateMeshVertex@{UpdateMeshVertex}!mesh.h@{mesh.h}}
+\doxysubsubsection{\texorpdfstring{UpdateMeshVertex()}{UpdateMeshVertex()}}
+{\footnotesize\ttfamily HRESULT Update\+Mesh\+Vertex (\begin{DoxyParamCaption}\item[{ID3\+D11\+Device\+Context $\ast$}]{p\+Device\+Context,  }\item[{\mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$}]{p\+Mesh,  }\item[{\mbox{\hyperlink{struct_v_e_r_t_e_x__3_d}{VERTEX\+\_\+3D}}}]{vertex\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+

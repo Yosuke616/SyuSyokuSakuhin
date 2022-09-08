@@ -1,0 +1,8 @@
+<map id="CalcWorldSize" name="CalcWorldSize">
+<area shape="rect" id="node1" title="スクリーンの映っているワールドの横幅と高さを計算する" alt="" coords="5,81,113,108"/>
+<area shape="rect" id="node2" href="$main_app_8cpp.html#a33762d19fee3469aebc3f8a7a724bcf9" title=" " alt="" coords="187,5,305,32"/>
+<area shape="rect" id="node4" href="$class_c_camera.html#a67560cf6a017ec3b8a59129be0d0100a" title=" " alt="" coords="193,56,299,83"/>
+<area shape="rect" id="node5" href="$class_c_camera.html#a99bbeae7433475a61979f603f439ab13" title=" " alt="" coords="164,107,328,133"/>
+<area shape="rect" id="node6" href="$class_c_camera.html#a1d42e5fecad0bcdab17124b402aa1575" title=" " alt="" coords="161,157,331,184"/>
+<area shape="rect" id="node3" href="$main_app_8cpp.html#a45b6acf4c6f99b1092ca0ab4bba46b07" title=" " alt="" coords="379,5,516,32"/>
+</map>

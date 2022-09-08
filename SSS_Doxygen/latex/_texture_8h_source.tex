@@ -1,0 +1,37 @@
+\hypertarget{_texture_8h_source}{}\doxysection{Texture.\+h}
+\label{_texture_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Texture.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Texture.h}}
+\mbox{\hyperlink{_texture_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifdef \_MSC\_VER}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <d3d11.h>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <DirectXTex.h>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#pragma warning(push)}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#pragma warning(disable : 4005)}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <stdint.h>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#pragma warning(pop)}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 HRESULT \mbox{\hyperlink{_texture_8h_afcaffa5f8dab5bca3ea654e37d680359}{CreateTextureFromMemory}}(\_In\_ ID3D11Device* d3dDevice,}
+\DoxyCodeLine{15     \_In\_bytecount\_(wicDataSize) \textcolor{keyword}{const} uint8\_t* wicData,}
+\DoxyCodeLine{16     \_In\_ \textcolor{keywordtype}{size\_t} wicDataSize,}
+\DoxyCodeLine{17     \_Out\_opt\_ ID3D11ShaderResourceView** textureView,}
+\DoxyCodeLine{18     \_Out\_opt\_ DirectX::TexMetadata* pTexInfo = \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{19 );}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 HRESULT \mbox{\hyperlink{_texture_8h_aa315bdea3021fa9e47e8d13e0b63d0dd}{CreateTextureFromFile}}(\_In\_ ID3D11Device* d3dDevice,}
+\DoxyCodeLine{22     \_In\_z\_ \textcolor{keyword}{const} \textcolor{keywordtype}{wchar\_t}* szFileName,}
+\DoxyCodeLine{23     \_Out\_opt\_ ID3D11ShaderResourceView** textureView,}
+\DoxyCodeLine{24     \_Out\_opt\_ DirectX::TexMetadata* pTexInfo = \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{25 );}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 HRESULT \mbox{\hyperlink{_texture_8h_aa315bdea3021fa9e47e8d13e0b63d0dd}{CreateTextureFromFile}}(\_In\_ ID3D11Device* d3dDevice,}
+\DoxyCodeLine{28     \_In\_z\_ \textcolor{keyword}{const} \textcolor{keywordtype}{char}* szFileName,}
+\DoxyCodeLine{29     \_Out\_opt\_ ID3D11ShaderResourceView** textureView,}
+\DoxyCodeLine{30     \_Out\_opt\_ DirectX::TexMetadata* pTexInfo = \textcolor{keyword}{nullptr}}
+\DoxyCodeLine{31 );}
+
+\end{DoxyCode}

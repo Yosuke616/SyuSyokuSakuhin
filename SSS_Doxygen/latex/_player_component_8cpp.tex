@@ -1,0 +1,93 @@
+\hypertarget{_player_component_8cpp}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\+Player\+Component.cpp ファイル}
+\label{_player_component_8cpp}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/PlayerComponent.cpp@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/PlayerComponent.cpp}}
+{\ttfamily \#include \char`\"{}Player\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Input\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Texture\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imgui.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Transform\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Draw2\+DComponent.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Anim\+Mesh\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Collider\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gravity\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scene\+Game.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Camera.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}See\+Coll\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Attack\+Component.\+h\char`\"{}}\newline
+Player\+Component.\+cpp の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_player_component_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{マクロ定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_player_component_8cpp_ad09bfcb7c6113a965c5400429316eaba}{MAX\+\_\+\+PLAYER\+\_\+\+GRAVITY}}~(1.\+0f)
+\item 
+\#define \mbox{\hyperlink{_player_component_8cpp_aaeca23329a85a7cded812352969cf337}{VALUE\+\_\+\+JUMP\+\_\+\+SPEED}}~(8.\+0f)
+\item 
+\#define \mbox{\hyperlink{_player_component_8cpp_ab835bd8a3c5e0f2a5b4d9843e082354a}{VALUE\+\_\+\+MOVE\+\_\+\+SPEED}}~(2.\+0f)
+\item 
+\#define \mbox{\hyperlink{_player_component_8cpp_ade70cc6e2cab1e078ebdd2219b6fda47}{STAR\+\_\+\+TIME}}~(180)
+\item 
+\#define \mbox{\hyperlink{_player_component_8cpp_a7bfc14dd5fd582749a54a878642ac6c9}{HIT\+\_\+\+SPEED}}~(8.\+0f)
+\item 
+\#define \mbox{\hyperlink{_player_component_8cpp_a4c7ca6678a0009b78ba730f69bc47294}{KNOCK\+\_\+\+BACK\+\_\+\+PLAYER}}~(0.\+05f)
+\end{DoxyCompactItemize}
+\doxysubsection*{変数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}{PLAYER\+\_\+\+STATE}} \mbox{\hyperlink{_player_component_8cpp_ab90fafc01f03a63872286d6183e798fa}{g\+\_\+e\+Player}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{マクロ定義詳解}
+\mbox{\Hypertarget{_player_component_8cpp_a7bfc14dd5fd582749a54a878642ac6c9}\label{_player_component_8cpp_a7bfc14dd5fd582749a54a878642ac6c9}} 
+\index{PlayerComponent.cpp@{PlayerComponent.cpp}!HIT\_SPEED@{HIT\_SPEED}}
+\index{HIT\_SPEED@{HIT\_SPEED}!PlayerComponent.cpp@{PlayerComponent.cpp}}
+\doxysubsubsection{\texorpdfstring{HIT\_SPEED}{HIT\_SPEED}}
+{\footnotesize\ttfamily \#define HIT\+\_\+\+SPEED~(8.\+0f)}
+
+\mbox{\Hypertarget{_player_component_8cpp_a4c7ca6678a0009b78ba730f69bc47294}\label{_player_component_8cpp_a4c7ca6678a0009b78ba730f69bc47294}} 
+\index{PlayerComponent.cpp@{PlayerComponent.cpp}!KNOCK\_BACK\_PLAYER@{KNOCK\_BACK\_PLAYER}}
+\index{KNOCK\_BACK\_PLAYER@{KNOCK\_BACK\_PLAYER}!PlayerComponent.cpp@{PlayerComponent.cpp}}
+\doxysubsubsection{\texorpdfstring{KNOCK\_BACK\_PLAYER}{KNOCK\_BACK\_PLAYER}}
+{\footnotesize\ttfamily \#define KNOCK\+\_\+\+BACK\+\_\+\+PLAYER~(0.\+05f)}
+
+\mbox{\Hypertarget{_player_component_8cpp_ad09bfcb7c6113a965c5400429316eaba}\label{_player_component_8cpp_ad09bfcb7c6113a965c5400429316eaba}} 
+\index{PlayerComponent.cpp@{PlayerComponent.cpp}!MAX\_PLAYER\_GRAVITY@{MAX\_PLAYER\_GRAVITY}}
+\index{MAX\_PLAYER\_GRAVITY@{MAX\_PLAYER\_GRAVITY}!PlayerComponent.cpp@{PlayerComponent.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_PLAYER\_GRAVITY}{MAX\_PLAYER\_GRAVITY}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+PLAYER\+\_\+\+GRAVITY~(1.\+0f)}
+
+\mbox{\Hypertarget{_player_component_8cpp_ade70cc6e2cab1e078ebdd2219b6fda47}\label{_player_component_8cpp_ade70cc6e2cab1e078ebdd2219b6fda47}} 
+\index{PlayerComponent.cpp@{PlayerComponent.cpp}!STAR\_TIME@{STAR\_TIME}}
+\index{STAR\_TIME@{STAR\_TIME}!PlayerComponent.cpp@{PlayerComponent.cpp}}
+\doxysubsubsection{\texorpdfstring{STAR\_TIME}{STAR\_TIME}}
+{\footnotesize\ttfamily \#define STAR\+\_\+\+TIME~(180)}
+
+\mbox{\Hypertarget{_player_component_8cpp_aaeca23329a85a7cded812352969cf337}\label{_player_component_8cpp_aaeca23329a85a7cded812352969cf337}} 
+\index{PlayerComponent.cpp@{PlayerComponent.cpp}!VALUE\_JUMP\_SPEED@{VALUE\_JUMP\_SPEED}}
+\index{VALUE\_JUMP\_SPEED@{VALUE\_JUMP\_SPEED}!PlayerComponent.cpp@{PlayerComponent.cpp}}
+\doxysubsubsection{\texorpdfstring{VALUE\_JUMP\_SPEED}{VALUE\_JUMP\_SPEED}}
+{\footnotesize\ttfamily \#define VALUE\+\_\+\+JUMP\+\_\+\+SPEED~(8.\+0f)}
+
+\mbox{\Hypertarget{_player_component_8cpp_ab835bd8a3c5e0f2a5b4d9843e082354a}\label{_player_component_8cpp_ab835bd8a3c5e0f2a5b4d9843e082354a}} 
+\index{PlayerComponent.cpp@{PlayerComponent.cpp}!VALUE\_MOVE\_SPEED@{VALUE\_MOVE\_SPEED}}
+\index{VALUE\_MOVE\_SPEED@{VALUE\_MOVE\_SPEED}!PlayerComponent.cpp@{PlayerComponent.cpp}}
+\doxysubsubsection{\texorpdfstring{VALUE\_MOVE\_SPEED}{VALUE\_MOVE\_SPEED}}
+{\footnotesize\ttfamily \#define VALUE\+\_\+\+MOVE\+\_\+\+SPEED~(2.\+0f)}
+
+
+
+\doxysubsection{変数詳解}
+\mbox{\Hypertarget{_player_component_8cpp_ab90fafc01f03a63872286d6183e798fa}\label{_player_component_8cpp_ab90fafc01f03a63872286d6183e798fa}} 
+\index{PlayerComponent.cpp@{PlayerComponent.cpp}!g\_ePlayer@{g\_ePlayer}}
+\index{g\_ePlayer@{g\_ePlayer}!PlayerComponent.cpp@{PlayerComponent.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_ePlayer}{g\_ePlayer}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}{PLAYER\+\_\+\+STATE}} g\+\_\+e\+Player}
+
+グローバル変数 

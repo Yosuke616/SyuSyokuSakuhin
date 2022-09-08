@@ -1,0 +1,4 @@
+<map id="ModelManager::GetInstance" name="ModelManager::GetInstance">
+<area shape="rect" id="node1" title="インスタンス化" alt="" coords="5,5,191,32"/>
+<area shape="rect" id="node2" href="$class_model_manager.html#a9b0d22b1baf59c5b566e82fcd8ca424a" title="コンストラクタ" alt="" coords="239,5,439,32"/>
+</map>

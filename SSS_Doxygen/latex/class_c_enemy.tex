@@ -1,0 +1,212 @@
+\hypertarget{class_c_enemy}{}\doxysection{CEnemy クラス}
+\label{class_c_enemy}\index{CEnemy@{CEnemy}}
+
+
+敵の動きを制御する @detail 攻撃したり引き返したり  
+
+
+
+
+{\ttfamily \#include $<$Enemy\+Component.\+h$>$}
+
+
+
+CEnemy の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_enemy__inherit__graph}
+\end{center}
+\end{figure}
+
+
+CEnemy 連携図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_enemy__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_enemy_a0dd455c1751be6ddd971a27c652172fa}{CEnemy}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_enemy_af0e92672adfbe4b752d74182cbd28930}{$\sim$\+CEnemy}} () override
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_enemy_abc3651c176dd9f5bf044e8f41adb0532}{Start}} () override
+\begin{DoxyCompactList}\small\item\em 初期化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_enemy_aac23422c9e7f8b091cd91de08b73b25f}{Update}} () override
+\begin{DoxyCompactList}\small\item\em 更新処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_enemy_aefe3d898f9ac30f42ceac5c7d4979d2f}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em 描画処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_enemy_a39e688989d08a7feec4f5517d28ed286}{On\+Collision\+Enter}} (\mbox{\hyperlink{class_object}{Object}} $\ast$p\+Object) override
+\begin{DoxyCompactList}\small\item\em 当たり判定の処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_enemy_a88241d902de08c9727a6f12fec99bfe6}{Set\+Enemy\+Type}} (\mbox{\hyperlink{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707db}{ENEMY\+\_\+\+TYPE}} type)
+\begin{DoxyCompactList}\small\item\em 敵の種類の設定 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+敵の動きを制御する @detail 攻撃したり引き返したり 
+
+クラス定義 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_enemy_a0dd455c1751be6ddd971a27c652172fa}\label{class_c_enemy_a0dd455c1751be6ddd971a27c652172fa}} 
+\index{CEnemy@{CEnemy}!CEnemy@{CEnemy}}
+\index{CEnemy@{CEnemy}!CEnemy@{CEnemy}}
+\doxysubsubsection{\texorpdfstring{CEnemy()}{CEnemy()}}
+{\footnotesize\ttfamily CEnemy\+::\+CEnemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+シンジ、コンストラクタに乗れ @detail トランスフォーム・描画・当たり判定等のポインタをヌルにする \mbox{\Hypertarget{class_c_enemy_af0e92672adfbe4b752d74182cbd28930}\label{class_c_enemy_af0e92672adfbe4b752d74182cbd28930}} 
+\index{CEnemy@{CEnemy}!````~CEnemy@{$\sim$CEnemy}}
+\index{````~CEnemy@{$\sim$CEnemy}!CEnemy@{CEnemy}}
+\doxysubsubsection{\texorpdfstring{$\sim$CEnemy()}{~CEnemy()}}
+{\footnotesize\ttfamily CEnemy\+::$\sim$\+CEnemy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+デストラクタ 
+
+デストラクタする・・・それが私の生まれた意味！ 呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_c_enemy_af0e92672adfbe4b752d74182cbd28930_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_enemy_aefe3d898f9ac30f42ceac5c7d4979d2f}\label{class_c_enemy_aefe3d898f9ac30f42ceac5c7d4979d2f}} 
+\index{CEnemy@{CEnemy}!Draw@{Draw}}
+\index{Draw@{Draw}!CEnemy@{CEnemy}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void CEnemy\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+描画処理 
+
+描画する(デバックで出したい情報を) 
+
+\mbox{\hyperlink{class_component_a8622ccd5f24035d48e33292717299313}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_enemy_aefe3d898f9ac30f42ceac5c7d4979d2f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_enemy_a39e688989d08a7feec4f5517d28ed286}\label{class_c_enemy_a39e688989d08a7feec4f5517d28ed286}} 
+\index{CEnemy@{CEnemy}!OnCollisionEnter@{OnCollisionEnter}}
+\index{OnCollisionEnter@{OnCollisionEnter}!CEnemy@{CEnemy}}
+\doxysubsubsection{\texorpdfstring{OnCollisionEnter()}{OnCollisionEnter()}}
+{\footnotesize\ttfamily void CEnemy\+::\+On\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} $\ast$}]{p\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+当たり判定の処理 
+
+敵が何か物に当たったときの処理
+
+
+\begin{DoxyParams}{引数}
+{\em (\+Object$\ast$)} & 相手方のオブジェクトの情報が入ったポインタ \\
+\hline
+\end{DoxyParams}
+エネミーがブロックの中(左端と右端の中)にいた場合の処理
+
+敵が上に乗ったら
+
+頭ごっつんこ状態である
+
+敵がブロックの中(上端と下端の中)にいた場合の処理
+
+\mbox{\hyperlink{class_component_affb738998b25ee4b6be3719e020d16f2}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_enemy_a39e688989d08a7feec4f5517d28ed286_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_enemy_a88241d902de08c9727a6f12fec99bfe6}\label{class_c_enemy_a88241d902de08c9727a6f12fec99bfe6}} 
+\index{CEnemy@{CEnemy}!SetEnemyType@{SetEnemyType}}
+\index{SetEnemyType@{SetEnemyType}!CEnemy@{CEnemy}}
+\doxysubsubsection{\texorpdfstring{SetEnemyType()}{SetEnemyType()}}
+{\footnotesize\ttfamily void CEnemy\+::\+Set\+Enemy\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707db}{ENEMY\+\_\+\+TYPE}}}]{type }\end{DoxyParamCaption})}
+
+
+
+敵の種類の設定 
+
+敵の種類を決める関数(3種類くらい？)
+
+
+\begin{DoxyParams}{引数}
+{\em (\+ENEMY\+\_\+\+TYPE)} & 敵の種類を決めてもらう \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_enemy_abc3651c176dd9f5bf044e8f41adb0532}\label{class_c_enemy_abc3651c176dd9f5bf044e8f41adb0532}} 
+\index{CEnemy@{CEnemy}!Start@{Start}}
+\index{Start@{Start}!CEnemy@{CEnemy}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void CEnemy\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+初期化 
+
+開始処理 
+
+\mbox{\hyperlink{class_component_a3f57807787e0015833ccffd83fb63d14}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_c_enemy_abc3651c176dd9f5bf044e8f41adb0532_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_enemy_aac23422c9e7f8b091cd91de08b73b25f}\label{class_c_enemy_aac23422c9e7f8b091cd91de08b73b25f}} 
+\index{CEnemy@{CEnemy}!Update@{Update}}
+\index{Update@{Update}!CEnemy@{CEnemy}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void CEnemy\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新処理 
+
+
+
+\mbox{\hyperlink{class_component_aaf2ce6dc5752072492f790ad4c7955bb}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_c_enemy_aac23422c9e7f8b091cd91de08b73b25f_cgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_enemy_component_8h}{Enemy\+Component.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_enemy_component_8cpp}{Enemy\+Component.\+cpp}}\end{DoxyCompactItemize}

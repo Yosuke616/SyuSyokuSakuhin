@@ -1,0 +1,20 @@
+<map id="StageManager::CreateBlock" name="StageManager::CreateBlock">
+<area shape="rect" id="node1" title="ステージオブジェクト生成(ゲームモード)" alt="" coords="5,284,191,311"/>
+<area shape="rect" id="node2" href="$class_object.html#a6530059316c8c6ea06c66e0de393dcce" title=" " alt="" coords="257,56,414,83"/>
+<area shape="rect" id="node3" href="$class_object_manager.html#a9d66ba3c6343372fc166ea36658cc555" title="オブジェクトを追加する" alt="" coords="246,107,425,133"/>
+<area shape="rect" id="node7" href="$class_object.html#a824beb41e45f1fdecc88c15e11983156" title=" " alt="" coords="511,385,665,412"/>
+<area shape="rect" id="node8" href="$class_model_manager.html#a76fa7f6c4bf14e44dc8fc22b41d18436" title="インスタンス化" alt="" coords="243,157,428,184"/>
+<area shape="rect" id="node10" href="$class_object_manager.html#ad2782406e7482eeddffd1941a810d6e6" title="objectマネージャーのインスタンス化" alt="" coords="241,208,429,235"/>
+<area shape="rect" id="node12" href="$class_texture_manager.html#ab73eee48ba8c35281558094e2f84013d" title="インスタンス化" alt="" coords="239,259,432,285"/>
+<area shape="rect" id="node14" href="$class_model_manager.html#ae7a58155fc4e317ae505ebd1e3a1f667" title="モデルの取得" alt="" coords="250,360,421,387"/>
+<area shape="rect" id="node15" href="$class_texture_manager.html#a8448501f02d76a5c2362bbed98e89728" title="テクスチャ取得" alt="" coords="242,411,429,437"/>
+<area shape="rect" id="node16" href="$class_c_transform.html#adea1eaa3582e41fa1572cdc08124f9fb" title="座標の設定" alt="" coords="254,461,417,488"/>
+<area shape="rect" id="node17" href="$class_c_transform.html#aee48dd10140f1955b4aa074c570ce101" title="更新処理" alt="" coords="267,512,404,539"/>
+<area shape="rect" id="node4" href="$class_object.html#aa6b2b605e64fdad13e3e52346353e03a" title="描画順を取得する関数" alt="" coords="513,107,663,133"/>
+<area shape="rect" id="node5" href="$class_object.html#aa4113e76535e952da736eb7df90a1dc7" title="更新順を取得する関数" alt="" coords="507,5,669,32"/>
+<area shape="rect" id="node6" href="$class_object.html#ac608bdc75130f88cd292bc8cd7a016c5" title="オブジェクトの初期化 @detail オブジェクトが持つコンポーネントの初期化" alt="" coords="540,56,636,83"/>
+<area shape="rect" id="node9" href="$class_model_manager.html#a9b0d22b1baf59c5b566e82fcd8ca424a" title="コンストラクタ" alt="" coords="488,157,688,184"/>
+<area shape="rect" id="node11" href="$class_object_manager.html#a6fa9372c7c3a8da88412f4158ca3dfd9" title="コンストラクタ" alt="" coords="485,208,691,235"/>
+<area shape="rect" id="node13" href="$class_texture_manager.html#ad76abb178b37cedf4514eb0154349935" title="コンストラクタ" alt="" coords="480,259,696,285"/>
+<area shape="rect" id="node18" href="$class_object.html#a4c8a55fbab735fc3ce4f1ef9569041ea" title=" " alt="" coords="527,512,649,539"/>
+</map>

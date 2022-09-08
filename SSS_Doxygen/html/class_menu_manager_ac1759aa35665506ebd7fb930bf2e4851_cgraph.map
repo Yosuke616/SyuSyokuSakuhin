@@ -1,0 +1,5 @@
+<map id="MenuManager::AddMenu" name="MenuManager::AddMenu">
+<area shape="rect" id="node1" title="メニューオブジェクトの追加" alt="" coords="5,31,172,57"/>
+<area shape="rect" id="node2" href="$class_object.html#aa6b2b605e64fdad13e3e52346353e03a" title="描画順を取得する関数" alt="" coords="220,5,371,32"/>
+<area shape="rect" id="node3" href="$class_object.html#ac608bdc75130f88cd292bc8cd7a016c5" title="オブジェクトの初期化 @detail オブジェクトが持つコンポーネントの初期化" alt="" coords="247,56,343,83"/>
+</map>

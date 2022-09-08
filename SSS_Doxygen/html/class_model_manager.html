@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: ModelManager クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pro-methods">限定公開メンバ関数</a> &#124;
+<a href="class_model_manager-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">ModelManager クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>モデルマネージャー  
+ <a href="class_model_manager.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="_model_manager_8h_source.html">ModelManager.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a93f4eea50036cc5453014234aa921c7c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_manager.html#a93f4eea50036cc5453014234aa921c7c">~ModelManager</a> ()</td></tr>
+<tr class="memdesc:a93f4eea50036cc5453014234aa921c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="class_model_manager.html#a93f4eea50036cc5453014234aa921c7c">[詳解]</a><br /></td></tr>
+<tr class="separator:a93f4eea50036cc5453014234aa921c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83cb97219f91ba9799cef863f129ce8c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_manager.html#a83cb97219f91ba9799cef863f129ce8c">AddModel</a> (const char *pszFileName, int nModelID)</td></tr>
+<tr class="memdesc:a83cb97219f91ba9799cef863f129ce8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">モデルの追加  <a href="class_model_manager.html#a83cb97219f91ba9799cef863f129ce8c">[詳解]</a><br /></td></tr>
+<tr class="separator:a83cb97219f91ba9799cef863f129ce8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7a58155fc4e317ae505ebd1e3a1f667"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_assimp_model.html">CAssimpModel</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_manager.html#ae7a58155fc4e317ae505ebd1e3a1f667">GetModel</a> (int nModelID)</td></tr>
+<tr class="memdesc:ae7a58155fc4e317ae505ebd1e3a1f667"><td class="mdescLeft">&#160;</td><td class="mdescRight">モデルの取得  <a href="class_model_manager.html#ae7a58155fc4e317ae505ebd1e3a1f667">[詳解]</a><br /></td></tr>
+<tr class="separator:ae7a58155fc4e317ae505ebd1e3a1f667"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1ca2c166728b973a8efd2218d27caff"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_manager.html#ac1ca2c166728b973a8efd2218d27caff">EraseModel</a> (int nModelID)</td></tr>
+<tr class="memdesc:ac1ca2c166728b973a8efd2218d27caff"><td class="mdescLeft">&#160;</td><td class="mdescRight">モデル削除  <a href="class_model_manager.html#ac1ca2c166728b973a8efd2218d27caff">[詳解]</a><br /></td></tr>
+<tr class="separator:ac1ca2c166728b973a8efd2218d27caff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a76fa7f6c4bf14e44dc8fc22b41d18436"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_model_manager.html">ModelManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_manager.html#a76fa7f6c4bf14e44dc8fc22b41d18436">GetInstance</a> ()</td></tr>
+<tr class="memdesc:a76fa7f6c4bf14e44dc8fc22b41d18436"><td class="mdescLeft">&#160;</td><td class="mdescRight">インスタンス化  <a href="class_model_manager.html#a76fa7f6c4bf14e44dc8fc22b41d18436">[詳解]</a><br /></td></tr>
+<tr class="separator:a76fa7f6c4bf14e44dc8fc22b41d18436"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9fece7e0c5509069f854acb15c50abe"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_manager.html#af9fece7e0c5509069f854acb15c50abe">Uninit</a> ()</td></tr>
+<tr class="memdesc:af9fece7e0c5509069f854acb15c50abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">モデルマネージャーの解放  <a href="class_model_manager.html#af9fece7e0c5509069f854acb15c50abe">[詳解]</a><br /></td></tr>
+<tr class="separator:af9fece7e0c5509069f854acb15c50abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+限定公開メンバ関数</h2></td></tr>
+<tr class="memitem:a9b0d22b1baf59c5b566e82fcd8ca424a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_model_manager.html#a9b0d22b1baf59c5b566e82fcd8ca424a">ModelManager</a> ()</td></tr>
+<tr class="memdesc:a9b0d22b1baf59c5b566e82fcd8ca424a"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="class_model_manager.html#a9b0d22b1baf59c5b566e82fcd8ca424a">[詳解]</a><br /></td></tr>
+<tr class="separator:a9b0d22b1baf59c5b566e82fcd8ca424a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p >モデルマネージャー </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a9b0d22b1baf59c5b566e82fcd8ca424a" name="a9b0d22b1baf59c5b566e82fcd8ca424a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b0d22b1baf59c5b566e82fcd8ca424a">&#9670;&nbsp;</a></span>ModelManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ModelManager::ModelManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<p >ｵﾃﾞ...ｺﾝｽﾄﾗｸﾀ...ｸｳ... </p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_model_manager_a9b0d22b1baf59c5b566e82fcd8ca424a_icgraph.png" border="0" usemap="#aclass_model_manager_a9b0d22b1baf59c5b566e82fcd8ca424a_icgraph" alt=""/></div>
+<map name="aclass_model_manager_a9b0d22b1baf59c5b566e82fcd8ca424a_icgraph" id="aclass_model_manager_a9b0d22b1baf59c5b566e82fcd8ca424a_icgraph">
+<area shape="rect" title="コンストラクタ" alt="" coords="1096,132,1296,159"/>
+<area shape="rect" href="class_model_manager.html#a76fa7f6c4bf14e44dc8fc22b41d18436" title="インスタンス化" alt="" coords="863,132,1048,159"/>
+<area shape="rect" href="class_stage_manager.html#a3a259d33885baf98d68c28d32183143f" title="ステージオブジェクト生成(ゲームモード)" alt="" coords="613,5,798,32"/>
+<area shape="rect" href="class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="181,31,299,57"/>
+<area shape="rect" href="class_menu_manager.html#af6c63b05dda555dce5a7698c69b66f90" title="ステージセレクトメニュー" alt="" coords="596,107,815,133"/>
+<area shape="rect" href="class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="395,120,514,147"/>
+<area shape="rect" href="class_c_assimp_mesh.html#a40ccc5aa52266d7673ba52e23aad20fa" title=" " alt="" coords="633,208,777,235"/>
+<area shape="rect" href="class_scene_stage__1.html#ab4bb4703f3f44eb4f5c49f44003627cf" title="初期化" alt="" coords="639,259,771,285"/>
+<area shape="rect" href="class_stage_manager.html#ab85e84fb952cd4722400956dba68d2e3" title="地形生成" alt="" coords="361,5,548,32"/>
+<area shape="rect" href="class_c_assimp_model.html#a883075480beae8196af8823ed71cd426" title=" " alt="" coords="366,208,543,235"/>
+<area shape="rect" href="class_c_assimp_model.html#aac69dd95631d620577c17670dbd37149" title=" " alt="" coords="167,208,313,235"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="5,208,119,235"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a93f4eea50036cc5453014234aa921c7c" name="a93f4eea50036cc5453014234aa921c7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93f4eea50036cc5453014234aa921c7c">&#9670;&nbsp;</a></span>~ModelManager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ModelManager::~ModelManager </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+<p >デストラクタって何だろう </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a83cb97219f91ba9799cef863f129ce8c" name="a83cb97219f91ba9799cef863f129ce8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83cb97219f91ba9799cef863f129ce8c">&#9670;&nbsp;</a></span>AddModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ModelManager::AddModel </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>pszFileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nModelID</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>モデルの追加 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(const</td><td>char*) ファイルの名前 </td></tr>
+    <tr><td class="paramname">(int)</td><td>何番目の番号に紐づいているか </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>(bool) モデルを読み込めたかどうか </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_model_manager_a83cb97219f91ba9799cef863f129ce8c_cgraph.png" border="0" usemap="#aclass_model_manager_a83cb97219f91ba9799cef863f129ce8c_cgraph" alt=""/></div>
+<map name="aclass_model_manager_a83cb97219f91ba9799cef863f129ce8c_cgraph" id="aclass_model_manager_a83cb97219f91ba9799cef863f129ce8c_cgraph">
+<area shape="rect" title="モデルの追加" alt="" coords="5,81,179,108"/>
+<area shape="rect" href="main_app_8cpp.html#a965053cc7c41d010d359091035281310" title=" " alt="" coords="259,5,341,32"/>
+<area shape="rect" href="main_app_8cpp.html#a76385629cd459c9e0fcda690542edb07" title=" " alt="" coords="237,56,363,83"/>
+<area shape="rect" href="main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="251,107,349,133"/>
+<area shape="rect" href="class_c_assimp_model.html#a75759219911dbbc1072687f680a187ec" title=" " alt="" coords="227,157,373,184"/>
+<area shape="rect" href="class_c_assimp_model.html#a9875e0478db4afca70de506809f88381" title=" " alt="" coords="421,157,587,184"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_model_manager_a83cb97219f91ba9799cef863f129ce8c_icgraph.png" border="0" usemap="#aclass_model_manager_a83cb97219f91ba9799cef863f129ce8c_icgraph" alt=""/></div>
+<map name="aclass_model_manager_a83cb97219f91ba9799cef863f129ce8c_icgraph" id="aclass_model_manager_a83cb97219f91ba9799cef863f129ce8c_icgraph">
+<area shape="rect" title="モデルの追加" alt="" coords="185,56,359,83"/>
+<area shape="rect" href="class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="12,5,131,32"/>
+<area shape="rect" href="class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="12,56,131,83"/>
+<area shape="rect" href="class_scene_stage__1.html#ab4bb4703f3f44eb4f5c49f44003627cf" title="初期化" alt="" coords="5,107,137,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ac1ca2c166728b973a8efd2218d27caff" name="ac1ca2c166728b973a8efd2218d27caff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1ca2c166728b973a8efd2218d27caff">&#9670;&nbsp;</a></span>EraseModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ModelManager::EraseModel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nModelID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>モデル削除 </p>
+<p >モデルの削除</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(int)</td><td>消したいモデルの番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>(bool) 消せたかどうか </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_model_manager_ac1ca2c166728b973a8efd2218d27caff_cgraph.png" border="0" usemap="#aclass_model_manager_ac1ca2c166728b973a8efd2218d27caff_cgraph" alt=""/></div>
+<map name="aclass_model_manager_ac1ca2c166728b973a8efd2218d27caff_cgraph" id="aclass_model_manager_ac1ca2c166728b973a8efd2218d27caff_cgraph">
+<area shape="rect" title="モデル削除" alt="" coords="5,5,189,32"/>
+<area shape="rect" href="class_model_manager.html#ae7a58155fc4e317ae505ebd1e3a1f667" title="モデルの取得" alt="" coords="237,5,408,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a76fa7f6c4bf14e44dc8fc22b41d18436" name="a76fa7f6c4bf14e44dc8fc22b41d18436"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76fa7f6c4bf14e44dc8fc22b41d18436">&#9670;&nbsp;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_model_manager.html">ModelManager</a> * ModelManager::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>インスタンス化 </p>
+<dl class="section return"><dt>戻り値</dt><dd>(ModelManager*) モデルマネージャーのポインタを返す </dd></dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436_cgraph.png" border="0" usemap="#aclass_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436_cgraph" alt=""/></div>
+<map name="aclass_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436_cgraph" id="aclass_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436_cgraph">
+<area shape="rect" title="インスタンス化" alt="" coords="5,5,191,32"/>
+<area shape="rect" href="class_model_manager.html#a9b0d22b1baf59c5b566e82fcd8ca424a" title="コンストラクタ" alt="" coords="239,5,439,32"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436_icgraph.png" border="0" usemap="#aclass_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436_icgraph" alt=""/></div>
+<map name="aclass_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436_icgraph" id="aclass_model_manager_a76fa7f6c4bf14e44dc8fc22b41d18436_icgraph">
+<area shape="rect" title="インスタンス化" alt="" coords="863,132,1048,159"/>
+<area shape="rect" href="class_stage_manager.html#a3a259d33885baf98d68c28d32183143f" title="ステージオブジェクト生成(ゲームモード)" alt="" coords="613,5,798,32"/>
+<area shape="rect" href="class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="181,31,299,57"/>
+<area shape="rect" href="class_menu_manager.html#af6c63b05dda555dce5a7698c69b66f90" title="ステージセレクトメニュー" alt="" coords="596,107,815,133"/>
+<area shape="rect" href="class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="395,120,514,147"/>
+<area shape="rect" href="class_c_assimp_mesh.html#a40ccc5aa52266d7673ba52e23aad20fa" title=" " alt="" coords="633,208,777,235"/>
+<area shape="rect" href="class_scene_stage__1.html#ab4bb4703f3f44eb4f5c49f44003627cf" title="初期化" alt="" coords="639,259,771,285"/>
+<area shape="rect" href="class_stage_manager.html#ab85e84fb952cd4722400956dba68d2e3" title="地形生成" alt="" coords="361,5,548,32"/>
+<area shape="rect" href="class_c_assimp_model.html#a883075480beae8196af8823ed71cd426" title=" " alt="" coords="366,208,543,235"/>
+<area shape="rect" href="class_c_assimp_model.html#aac69dd95631d620577c17670dbd37149" title=" " alt="" coords="167,208,313,235"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="5,208,119,235"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ae7a58155fc4e317ae505ebd1e3a1f667" name="ae7a58155fc4e317ae505ebd1e3a1f667"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7a58155fc4e317ae505ebd1e3a1f667">&#9670;&nbsp;</a></span>GetModel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_c_assimp_model.html">CAssimpModel</a> * ModelManager::GetModel </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nModelID</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>モデルの取得 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(int)</td><td>取得したいモデルの番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>(CAssimpModel*) モデルの情報を返す </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_model_manager_ae7a58155fc4e317ae505ebd1e3a1f667_icgraph.png" border="0" usemap="#aclass_model_manager_ae7a58155fc4e317ae505ebd1e3a1f667_icgraph" alt=""/></div>
+<map name="aclass_model_manager_ae7a58155fc4e317ae505ebd1e3a1f667_icgraph" id="aclass_model_manager_ae7a58155fc4e317ae505ebd1e3a1f667_icgraph">
+<area shape="rect" title="モデルの取得" alt="" coords="673,56,844,83"/>
+<area shape="rect" href="class_stage_manager.html#a3a259d33885baf98d68c28d32183143f" title="ステージオブジェクト生成(ゲームモード)" alt="" coords="423,5,609,32"/>
+<area shape="rect" href="class_menu_manager.html#af6c63b05dda555dce5a7698c69b66f90" title="ステージセレクトメニュー" alt="" coords="407,56,625,83"/>
+<area shape="rect" href="class_model_manager.html#ac1ca2c166728b973a8efd2218d27caff" title="モデル削除" alt="" coords="424,107,608,133"/>
+<area shape="rect" href="class_stage_manager.html#ab85e84fb952cd4722400956dba68d2e3" title="地形生成" alt="" coords="172,5,359,32"/>
+<area shape="rect" href="class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="5,5,124,32"/>
+<area shape="rect" href="class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="206,56,325,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af9fece7e0c5509069f854acb15c50abe" name="af9fece7e0c5509069f854acb15c50abe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9fece7e0c5509069f854acb15c50abe">&#9670;&nbsp;</a></span>Uninit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ModelManager::Uninit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>モデルマネージャーの解放 </p>
+<p >モデルマネージャー開放 </p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_model_manager_af9fece7e0c5509069f854acb15c50abe_icgraph.png" border="0" usemap="#aclass_model_manager_af9fece7e0c5509069f854acb15c50abe_icgraph" alt=""/></div>
+<map name="aclass_model_manager_af9fece7e0c5509069f854acb15c50abe_icgraph" id="aclass_model_manager_af9fece7e0c5509069f854acb15c50abe_icgraph">
+<area shape="rect" title="モデルマネージャーの解放" alt="" coords="240,5,388,32"/>
+<area shape="rect" href="main_app_8cpp.html#affc0f591b5f188f1b5cb4f20042e4766" title=" " alt="" coords="137,5,192,32"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,5,89,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="_model_manager_8h_source.html">ModelManager.h</a></li>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="_model_manager_8cpp.html">ModelManager.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

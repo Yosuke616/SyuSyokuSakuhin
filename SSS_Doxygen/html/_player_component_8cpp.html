@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/PlayerComponent.cpp ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#define-members">マクロ定義</a> &#124;
+<a href="#var-members">変数</a>  </div>
+  <div class="headertitle"><div class="title">PlayerComponent.cpp ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_player_component_8h_source.html">PlayerComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_input_manager_8h_source.html">InputManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_object_manager_8h_source.html">ObjectManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_texture_manager_8h_source.html">TextureManager.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="imgui_8h_source.html">imgui.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_transform_component_8h_source.html">TransformComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_draw2_d_component_8h_source.html">Draw2DComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_anim_mesh_component_8h_source.html">AnimMeshComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_collider_component_8h_source.html">ColliderComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_gravity_component_8h_source.html">GravityComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="scene_game_8h_source.html">sceneGame.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_camera_8h_source.html">Camera.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_see_coll_component_8h_source.html">SeeCollComponent.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_attack_component_8h_source.html">AttackComponent.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+PlayerComponent.cpp の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_player_component_8cpp__incl.png" border="0" usemap="#a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_player_component_8cpp" alt=""/></div>
+<map name="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_player_component_8cpp" id="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_player_component_8cpp">
+<area shape="rect" title=" " alt="" coords="923,5,1104,61"/>
+<area shape="rect" href="_player_component_8h.html" title="プレイヤーの操作をするコンポーネント" alt="" coords="477,109,613,136"/>
+<area shape="rect" href="_input_manager_8h.html" title="コントローラーやキーボード操作できるようにする" alt="" coords="1097,109,1207,136"/>
+<area shape="rect" href="_object_manager_8h.html" title=" " alt="" coords="2369,333,2490,360"/>
+<area shape="rect" href="_texture_manager_8h.html" title="テクスチャの情報を管理するマネージャー" alt="" coords="1282,184,1409,211"/>
+<area shape="rect" href="imgui_8h.html" title=" " alt="" coords="2316,109,2380,136"/>
+<area shape="rect" href="_transform_component_8h.html" title=" " alt="" coords="409,184,565,211"/>
+<area shape="rect" href="_draw2_d_component_8h.html" title=" " alt="" coords="189,184,333,211"/>
+<area shape="rect" href="_anim_mesh_component_8h.html" title="テクスチャアニメーションを描画するコンポーネント" alt="" coords="6,109,167,136"/>
+<area shape="rect" href="_collider_component_8h.html" title="このコンポーネントを持つオブジェクトどうしが当たっているか判断する" alt="" coords="971,184,1114,211"/>
+<area shape="rect" href="_gravity_component_8h.html" title="重力を加えるコンポーネント" alt="" coords="640,184,779,211"/>
+<area shape="rect" href="scene_game_8h.html" title="実はゲームシーンである" alt="" coords="1486,184,1589,211"/>
+<area shape="rect" href="_camera_8h.html" title=" " alt="" coords="1243,333,1322,360"/>
+<area shape="rect" href="_see_coll_component_8h.html" title="当たり判定を見えるようにする @detail 親の座標と当たり判定の大きさを取得し可視化する" alt="" coords="803,184,947,211"/>
+<area shape="rect" href="_attack_component_8h.html" title="プレイヤーや敵の攻撃を処理する関数" alt="" coords="747,109,885,136"/>
+<area shape="rect" href="_component_8h.html" title=" " alt="" coords="660,259,759,285"/>
+<area shape="rect" href="main_app_8h.html" title=" " alt="" coords="1007,408,1091,435"/>
+<area shape="rect" href="_obj_info_8h.html" title=" " alt="" coords="1273,408,1346,435"/>
+<area shape="rect" href="_object_8h.html" title=" " alt="" coords="1433,333,1503,360"/>
+<area shape="rect" title=" " alt="" coords="1752,483,1835,509"/>
+<area shape="rect" title=" " alt="" coords="855,483,918,509"/>
+<area shape="rect" title=" " alt="" coords="943,483,1041,509"/>
+<area shape="rect" title=" " alt="" coords="1993,483,2061,509"/>
+<area shape="rect" title=" " alt="" coords="1358,483,1461,509"/>
+<area shape="rect" href="resource_8h.html" title=" " alt="" coords="1065,483,1148,509"/>
+<area shape="rect" title=" " alt="" coords="1173,483,1235,509"/>
+<area shape="rect" title=" " alt="" coords="2267,408,2306,435"/>
+<area shape="rect" title=" " alt="" coords="2366,408,2421,435"/>
+<area shape="rect" title=" " alt="" coords="1190,184,1258,211"/>
+<area shape="rect" title=" " alt="" coords="1289,259,1399,285"/>
+<area shape="rect" href="imconfig_8h.html" title=" " alt="" coords="2499,184,2581,211"/>
+<area shape="rect" title=" " alt="" coords="2605,184,2662,211"/>
+<area shape="rect" title=" " alt="" coords="2129,184,2199,211"/>
+<area shape="rect" title=" " alt="" coords="2223,184,2291,211"/>
+<area shape="rect" title=" " alt="" coords="2315,184,2381,211"/>
+<area shape="rect" title=" " alt="" coords="2405,184,2475,211"/>
+<area shape="rect" href="_draw_mesh_component_8h.html" title=" " alt="" coords="5,184,165,211"/>
+<area shape="rect" href="mesh_8h.html" title=" " alt="" coords="271,259,337,285"/>
+<area shape="rect" title=" " alt="" coords="1163,333,1219,360"/>
+<area shape="rect" href="_scene_8h.html" title=" " alt="" coords="1983,259,2054,285"/>
+<area shape="rect" href="_assimp_model_8h.html" title=" " alt="" coords="1580,259,1692,285"/>
+<area shape="rect" href="_menu_manager_8h.html" title="メニューを操作したりするマネージャー" alt="" coords="2229,333,2344,360"/>
+<area shape="rect" title=" " alt="" coords="1893,333,1939,360"/>
+<area shape="rect" title=" " alt="" coords="1963,333,2103,360"/>
+<area shape="rect" title=" " alt="" coords="1579,333,1693,360"/>
+<area shape="rect" title=" " alt="" coords="1718,333,1869,360"/>
+<area shape="rect" href="_light_8h.html" title="ライトを設定するためのクラス" alt="" coords="1347,333,1408,360"/>
+</map>
+</div>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:ad09bfcb7c6113a965c5400429316eaba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_player_component_8cpp.html#ad09bfcb7c6113a965c5400429316eaba">MAX_PLAYER_GRAVITY</a>&#160;&#160;&#160;(1.0f)</td></tr>
+<tr class="separator:ad09bfcb7c6113a965c5400429316eaba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeca23329a85a7cded812352969cf337"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_player_component_8cpp.html#aaeca23329a85a7cded812352969cf337">VALUE_JUMP_SPEED</a>&#160;&#160;&#160;(8.0f)</td></tr>
+<tr class="separator:aaeca23329a85a7cded812352969cf337"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab835bd8a3c5e0f2a5b4d9843e082354a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_player_component_8cpp.html#ab835bd8a3c5e0f2a5b4d9843e082354a">VALUE_MOVE_SPEED</a>&#160;&#160;&#160;(2.0f)</td></tr>
+<tr class="separator:ab835bd8a3c5e0f2a5b4d9843e082354a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade70cc6e2cab1e078ebdd2219b6fda47"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_player_component_8cpp.html#ade70cc6e2cab1e078ebdd2219b6fda47">STAR_TIME</a>&#160;&#160;&#160;(180)</td></tr>
+<tr class="separator:ade70cc6e2cab1e078ebdd2219b6fda47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bfc14dd5fd582749a54a878642ac6c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_player_component_8cpp.html#a7bfc14dd5fd582749a54a878642ac6c9">HIT_SPEED</a>&#160;&#160;&#160;(8.0f)</td></tr>
+<tr class="separator:a7bfc14dd5fd582749a54a878642ac6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c7ca6678a0009b78ba730f69bc47294"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_player_component_8cpp.html#a4c7ca6678a0009b78ba730f69bc47294">KNOCK_BACK_PLAYER</a>&#160;&#160;&#160;(0.05f)</td></tr>
+<tr class="separator:a4c7ca6678a0009b78ba730f69bc47294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+変数</h2></td></tr>
+<tr class="memitem:ab90fafc01f03a63872286d6183e798fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94">PLAYER_STATE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_player_component_8cpp.html#ab90fafc01f03a63872286d6183e798fa">g_ePlayer</a></td></tr>
+<tr class="separator:ab90fafc01f03a63872286d6183e798fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a7bfc14dd5fd582749a54a878642ac6c9" name="a7bfc14dd5fd582749a54a878642ac6c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bfc14dd5fd582749a54a878642ac6c9">&#9670;&nbsp;</a></span>HIT_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define HIT_SPEED&#160;&#160;&#160;(8.0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c7ca6678a0009b78ba730f69bc47294" name="a4c7ca6678a0009b78ba730f69bc47294"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c7ca6678a0009b78ba730f69bc47294">&#9670;&nbsp;</a></span>KNOCK_BACK_PLAYER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define KNOCK_BACK_PLAYER&#160;&#160;&#160;(0.05f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad09bfcb7c6113a965c5400429316eaba" name="ad09bfcb7c6113a965c5400429316eaba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad09bfcb7c6113a965c5400429316eaba">&#9670;&nbsp;</a></span>MAX_PLAYER_GRAVITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_PLAYER_GRAVITY&#160;&#160;&#160;(1.0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ade70cc6e2cab1e078ebdd2219b6fda47" name="ade70cc6e2cab1e078ebdd2219b6fda47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade70cc6e2cab1e078ebdd2219b6fda47">&#9670;&nbsp;</a></span>STAR_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STAR_TIME&#160;&#160;&#160;(180)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaeca23329a85a7cded812352969cf337" name="aaeca23329a85a7cded812352969cf337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeca23329a85a7cded812352969cf337">&#9670;&nbsp;</a></span>VALUE_JUMP_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VALUE_JUMP_SPEED&#160;&#160;&#160;(8.0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab835bd8a3c5e0f2a5b4d9843e082354a" name="ab835bd8a3c5e0f2a5b4d9843e082354a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab835bd8a3c5e0f2a5b4d9843e082354a">&#9670;&nbsp;</a></span>VALUE_MOVE_SPEED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define VALUE_MOVE_SPEED&#160;&#160;&#160;(2.0f)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">変数詳解</h2>
+<a id="ab90fafc01f03a63872286d6183e798fa" name="ab90fafc01f03a63872286d6183e798fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab90fafc01f03a63872286d6183e798fa">&#9670;&nbsp;</a></span>g_ePlayer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94">PLAYER_STATE</a> g_ePlayer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p >グローバル変数 </p>
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

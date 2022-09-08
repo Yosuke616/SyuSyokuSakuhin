@@ -1,0 +1,846 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/TextureManager.h ファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">クラス</a> &#124;
+<a href="#define-members">マクロ定義</a>  </div>
+  <div class="headertitle"><div class="title">TextureManager.h ファイル</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>テクスチャの情報を管理するマネージャー  
+<a href="#details">[詳解]</a></p>
+<div class="textblock"><code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &quot;<a class="el" href="main_app_8h_source.html">mainApp.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+TextureManager.h の依存先関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_texture_manager_8h__incl.png" border="0" usemap="#a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_texture_manager_8h" alt=""/></div>
+<map name="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_texture_manager_8h" id="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_texture_manager_8h">
+<area shape="rect" title="テクスチャの情報を管理するマネージャー" alt="" coords="205,5,387,61"/>
+<area shape="rect" title=" " alt="" coords="181,109,291,136"/>
+<area shape="rect" href="main_app_8h.html" title=" " alt="" coords="315,109,399,136"/>
+<area shape="rect" title=" " alt="" coords="5,184,88,211"/>
+<area shape="rect" title=" " alt="" coords="113,184,175,211"/>
+<area shape="rect" title=" " alt="" coords="200,184,299,211"/>
+<area shape="rect" title=" " alt="" coords="323,184,391,211"/>
+<area shape="rect" title=" " alt="" coords="415,184,518,211"/>
+<area shape="rect" href="resource_8h.html" title=" " alt="" coords="543,184,625,211"/>
+<area shape="rect" title=" " alt="" coords="650,184,713,211"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+被依存関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="_texture_manager_8h__dep__incl.png" border="0" usemap="#a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_texture_manager_8hdep" alt=""/></div>
+<map name="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_texture_manager_8hdep" id="a_c_1_2_users_2ys200_2_desktop_2_s_s_s_22_d_h_copy_2_d_x11_game_2_texture_manager_8hdep">
+<area shape="rect" title="テクスチャの情報を管理するマネージャー" alt="" coords="1032,5,1213,61"/>
+<area shape="rect" href="_load_8cpp.html" title=" " alt="" coords="5,109,187,165"/>
+<area shape="rect" href="_menu_manager_8cpp.html" title=" " alt="" coords="211,109,392,165"/>
+<area shape="rect" href="_player_component_8cpp.html" title=" " alt="" coords="416,109,597,165"/>
+<area shape="rect" href="_scene_game_8cpp.html" title=" " alt="" coords="621,109,803,165"/>
+<area shape="rect" href="_scene_select_8cpp.html" title=" " alt="" coords="827,109,1008,165"/>
+<area shape="rect" href="_scene_stage__1_8cpp.html" title=" " alt="" coords="1032,109,1213,165"/>
+<area shape="rect" href="_scene_title_8cpp.html" title=" " alt="" coords="1237,109,1419,165"/>
+<area shape="rect" href="_see_coll_component_8cpp.html" title=" " alt="" coords="1443,109,1624,165"/>
+<area shape="rect" href="_stage_manager_8cpp.html" title=" " alt="" coords="1648,109,1829,165"/>
+<area shape="rect" href="_texture_manager_8cpp.html" title=" " alt="" coords="1853,109,2035,165"/>
+<area shape="rect" href="main_app_8cpp.html" title=" " alt="" coords="2059,109,2240,165"/>
+</map>
+</div>
+</div>
+<p><a href="_texture_manager_8h_source.html">[ソースコード]</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+クラス</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_texture_manager.html">TextureManager</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">テクスチャを管理するクラス  <a href="class_texture_manager.html#details">[詳解]</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+マクロ定義</h2></td></tr>
+<tr class="memitem:a8c1eb3a78191fc875848f01da2c4cee0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a8c1eb3a78191fc875848f01da2c4cee0">DXCHAN_STAND_TEX_NUM</a>&#160;&#160;&#160;(500)</td></tr>
+<tr class="memdesc:a8c1eb3a78191fc875848f01da2c4cee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">必要になってくるテクスチャをここに書いていく  <a href="_texture_manager_8h.html#a8c1eb3a78191fc875848f01da2c4cee0">[詳解]</a><br /></td></tr>
+<tr class="separator:a8c1eb3a78191fc875848f01da2c4cee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2ffb8a682a74e2f479d1d80b9953c2a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#ad2ffb8a682a74e2f479d1d80b9953c2a">PATH_TEX_DXCHAN_STAND</a>&#160;&#160;&#160;(&quot;data/texture/Stand_Def.PNG&quot;)</td></tr>
+<tr class="separator:ad2ffb8a682a74e2f479d1d80b9953c2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc79f189187a128d8d5d30a2b7c6bd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#adfc79f189187a128d8d5d30a2b7c6bd5">DXCHAN_RUN_TEX_NUM</a>&#160;&#160;&#160;(501)</td></tr>
+<tr class="separator:adfc79f189187a128d8d5d30a2b7c6bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca6ab7f486d550bf642be802447001b4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#aca6ab7f486d550bf642be802447001b4">PATH_TEX_DXCHAN_RUN</a>&#160;&#160;&#160;(&quot;data/texture/Run_Def.PNG&quot;)</td></tr>
+<tr class="separator:aca6ab7f486d550bf642be802447001b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcc88c3d1cca87ccbc15ff30ce762fb9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#afcc88c3d1cca87ccbc15ff30ce762fb9">DEBUG_BLOCK_NUM</a>&#160;&#160;&#160;(1)</td></tr>
+<tr class="separator:afcc88c3d1cca87ccbc15ff30ce762fb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41ec9d87ae2ec61d1b39b2cfd44f5952"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a41ec9d87ae2ec61d1b39b2cfd44f5952">PATH_TEX_DEBUG_BLOCK</a>&#160;&#160;&#160;(&quot;data/texture/Debug.jpg&quot;)</td></tr>
+<tr class="separator:a41ec9d87ae2ec61d1b39b2cfd44f5952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4258bc05f47149341c9621969197a037"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a4258bc05f47149341c9621969197a037">TITLE_BACK_GROUND_NUM</a>&#160;&#160;&#160;(2)</td></tr>
+<tr class="separator:a4258bc05f47149341c9621969197a037"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab11db4d7c23fffe5c9b60201915163e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#ab11db4d7c23fffe5c9b60201915163e7">PATH_TEX_TITLE_BACK_GROUND</a>&#160;&#160;&#160;(&quot;data/texture/TitleBack.jpg&quot;)</td></tr>
+<tr class="separator:ab11db4d7c23fffe5c9b60201915163e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea503ce005f65cee8c3ae840196d4684"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#aea503ce005f65cee8c3ae840196d4684">TITLE_BUTTON_NUM</a>&#160;&#160;&#160;(3)</td></tr>
+<tr class="separator:aea503ce005f65cee8c3ae840196d4684"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adacd1009dfd5ef22d7d8718f2ca6688f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#adacd1009dfd5ef22d7d8718f2ca6688f">PATH_TEX_TITLE_BUTTON</a>&#160;&#160;&#160;(&quot;data/texture/press_enter.png&quot;)</td></tr>
+<tr class="separator:adacd1009dfd5ef22d7d8718f2ca6688f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d8cbda2983f97cb07441d4368197499"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a7d8cbda2983f97cb07441d4368197499">FEAD_OUT_NUM</a>&#160;&#160;&#160;(4)</td></tr>
+<tr class="separator:a7d8cbda2983f97cb07441d4368197499"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68c1995d9717f93b0a8d1373c730a366"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a68c1995d9717f93b0a8d1373c730a366">PATH_TEX_FAID_OUT</a>&#160;&#160;&#160;(&quot;data/texture/BlackOut.png&quot;)</td></tr>
+<tr class="separator:a68c1995d9717f93b0a8d1373c730a366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f46607feee2ca50792bfc55f3e25271"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a9f46607feee2ca50792bfc55f3e25271">SCORE_TEX_NUM</a>&#160;&#160;&#160;(5)</td></tr>
+<tr class="separator:a9f46607feee2ca50792bfc55f3e25271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a894c18ca176763901b712b4d69db6215"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a894c18ca176763901b712b4d69db6215">PATH_TEX_SCORE</a>&#160;&#160;&#160;(&quot;data/texture/Score.png&quot;)</td></tr>
+<tr class="separator:a894c18ca176763901b712b4d69db6215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46416a9dfae90c178413409c1bf67171"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a46416a9dfae90c178413409c1bf67171">MAX_SCORE_TEX_NUM</a>&#160;&#160;&#160;(6)</td></tr>
+<tr class="separator:a46416a9dfae90c178413409c1bf67171"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c84b60ed498962fcbe275f95834a44b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a7c84b60ed498962fcbe275f95834a44b">PATH_TEX_MAX_SCORE</a>&#160;&#160;&#160;(&quot;data/texture/highscore.png&quot;)</td></tr>
+<tr class="separator:a7c84b60ed498962fcbe275f95834a44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec10e7163f5aa4803958a8d8ecb60334"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#aec10e7163f5aa4803958a8d8ecb60334">NUMBER_TEX_NUM</a>&#160;&#160;&#160;(7)</td></tr>
+<tr class="separator:aec10e7163f5aa4803958a8d8ecb60334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9513fa815e989d62aa7e4c47d32485c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#af9513fa815e989d62aa7e4c47d32485c">PATH_TEX_NUMBER</a>&#160;&#160;&#160;(&quot;data/texture/Number.png&quot;)</td></tr>
+<tr class="separator:af9513fa815e989d62aa7e4c47d32485c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dd2854a5544252c18735f5a392c33cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a7dd2854a5544252c18735f5a392c33cf">PAUSE_TEX_NUM</a>&#160;&#160;&#160;(8)</td></tr>
+<tr class="separator:a7dd2854a5544252c18735f5a392c33cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf25b0f52c83f2850a46226646aaf4aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#aaf25b0f52c83f2850a46226646aaf4aa">PATH_TEX_PAUSE</a>&#160;&#160;&#160;(&quot;data/texture/Pause.png&quot;)</td></tr>
+<tr class="separator:aaf25b0f52c83f2850a46226646aaf4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0adb2176c9874a01d97fb9c4a767363b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a0adb2176c9874a01d97fb9c4a767363b">TIME_TEX_NUM</a>&#160;&#160;&#160;(9)</td></tr>
+<tr class="separator:a0adb2176c9874a01d97fb9c4a767363b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb8f5e228503243ba1a3f9c7e4947ba0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#acb8f5e228503243ba1a3f9c7e4947ba0">PATH_TEX_TIME</a>&#160;&#160;&#160;(&quot;data/texture/Time.png&quot;)</td></tr>
+<tr class="separator:acb8f5e228503243ba1a3f9c7e4947ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a700ad2d48873ef8606a78ac378f572a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a700ad2d48873ef8606a78ac378f572a9">PUSH_TEX_NUM</a>&#160;&#160;&#160;(10)</td></tr>
+<tr class="separator:a700ad2d48873ef8606a78ac378f572a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae74be7b7f3a2069ebcd8cc7c2da806b8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#ae74be7b7f3a2069ebcd8cc7c2da806b8">PATH_TEX_PUSH</a>&#160;&#160;&#160;(&quot;data/texture/pushA.png&quot;)</td></tr>
+<tr class="separator:ae74be7b7f3a2069ebcd8cc7c2da806b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1933db8fcea718f8f52e432dd01d96bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a1933db8fcea718f8f52e432dd01d96bd">TO_TITLE_TEX_NUM</a>&#160;&#160;&#160;(11)</td></tr>
+<tr class="separator:a1933db8fcea718f8f52e432dd01d96bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a14fa94a8d69324cfddd203312863f19f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a14fa94a8d69324cfddd203312863f19f">PATH_TEX_TO_TITLE</a>&#160;&#160;&#160;(&quot;data/texture/タイトルへ.png&quot;)</td></tr>
+<tr class="separator:a14fa94a8d69324cfddd203312863f19f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94e57a8b867249b1d640559eecff107d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a94e57a8b867249b1d640559eecff107d">RESUME_TEX_NUM</a>&#160;&#160;&#160;(12)</td></tr>
+<tr class="separator:a94e57a8b867249b1d640559eecff107d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5acb3264d288a3d5765a36de7b263a8b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a5acb3264d288a3d5765a36de7b263a8b">PATH_TEX_RESUME</a>&#160;&#160;&#160;(&quot;data/texture/再会.png&quot;)</td></tr>
+<tr class="separator:a5acb3264d288a3d5765a36de7b263a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98efb0cdce672af55227628e3b879c2d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a98efb0cdce672af55227628e3b879c2d">OPTION_TEX_NUM</a>&#160;&#160;&#160;(13)</td></tr>
+<tr class="separator:a98efb0cdce672af55227628e3b879c2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac633d669983264803e1213e42338a04b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#ac633d669983264803e1213e42338a04b">PATH_TEX_OPTION</a>&#160;&#160;&#160;(&quot;data/texture/オプション.png&quot;)</td></tr>
+<tr class="separator:ac633d669983264803e1213e42338a04b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb67f6bccc9047519526fc30d0b3122"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a9bb67f6bccc9047519526fc30d0b3122">BEGIN_TEX_NUM</a>&#160;&#160;&#160;(14)</td></tr>
+<tr class="separator:a9bb67f6bccc9047519526fc30d0b3122"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a321d0c93007a33733797c7d6a7869682"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a321d0c93007a33733797c7d6a7869682">PATH_TEX_BEGIN</a>&#160;&#160;&#160;(&quot;data/texture/初めから.png&quot;)</td></tr>
+<tr class="separator:a321d0c93007a33733797c7d6a7869682"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5c89d369083a220f1d00be25ac2bdeb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#af5c89d369083a220f1d00be25ac2bdeb">CONTINUE_TEX_NUM</a>&#160;&#160;&#160;(15)</td></tr>
+<tr class="separator:af5c89d369083a220f1d00be25ac2bdeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac36efc7c79cdb528a69b56ce3c786af9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#ac36efc7c79cdb528a69b56ce3c786af9">PATH_TEX_CONTINUE</a>&#160;&#160;&#160;(&quot;data/texture/続きから.png&quot;)</td></tr>
+<tr class="separator:ac36efc7c79cdb528a69b56ce3c786af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11a7e01b4ff0c1cfed1ceac73cffd72a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a11a7e01b4ff0c1cfed1ceac73cffd72a">STAGE_SELECT_TEX_NUM</a>&#160;&#160;&#160;(16)</td></tr>
+<tr class="separator:a11a7e01b4ff0c1cfed1ceac73cffd72a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac762d3cf8ec39f08004d690e771956d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#aac762d3cf8ec39f08004d690e771956d">PATH_TEX_STAGE_SELECT</a>&#160;&#160;&#160;(&quot;data/texture/ステージセレクト.png&quot;)</td></tr>
+<tr class="separator:aac762d3cf8ec39f08004d690e771956d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3902a57c0a82c31dd13fcb1a884b1786"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a3902a57c0a82c31dd13fcb1a884b1786">END_TEX_NUM</a>&#160;&#160;&#160;(17)</td></tr>
+<tr class="separator:a3902a57c0a82c31dd13fcb1a884b1786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c06a3ebcb9d439572fa83b002b2850a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a3c06a3ebcb9d439572fa83b002b2850a">PATH_TEX_END</a>&#160;&#160;&#160;(&quot;data/texture/終わる.png&quot;)</td></tr>
+<tr class="separator:a3c06a3ebcb9d439572fa83b002b2850a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2bc464903cc8ef8d64c6b46e77ab20e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#aa2bc464903cc8ef8d64c6b46e77ab20e">BGM_TEX_NUM</a>&#160;&#160;&#160;(18)</td></tr>
+<tr class="separator:aa2bc464903cc8ef8d64c6b46e77ab20e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6a0746e39176393de12e58845626589"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#aa6a0746e39176393de12e58845626589">PATH_TEX_BGM</a>&#160;&#160;&#160;(&quot;data/texture/BYM.png&quot;)</td></tr>
+<tr class="separator:aa6a0746e39176393de12e58845626589"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8f68c40434a5f4e7b2cfa53f121b44b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#ae8f68c40434a5f4e7b2cfa53f121b44b">SE_TEX_NUM</a>&#160;&#160;&#160;(19)</td></tr>
+<tr class="separator:ae8f68c40434a5f4e7b2cfa53f121b44b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7482a63ba418afe1ed649bd958fc5d52"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a7482a63ba418afe1ed649bd958fc5d52">PATH_TEX_SE</a>&#160;&#160;&#160;(&quot;data/texture/se.png&quot;)</td></tr>
+<tr class="separator:a7482a63ba418afe1ed649bd958fc5d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c716283fc9acefcfa3001c4812fbe3d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a4c716283fc9acefcfa3001c4812fbe3d">BRIGHTNESS_TEX_NUM</a>&#160;&#160;&#160;(20)</td></tr>
+<tr class="separator:a4c716283fc9acefcfa3001c4812fbe3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a117f5fc19661312560945f5c7bc1cf3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_texture_manager_8h.html#a117f5fc19661312560945f5c7bc1cf3a">PATH_TEX_BRIGHTNESS</a>&#160;&#160;&#160;(&quot;data/texture/明るさ.png&quot;)</td></tr>
+<tr class="separator:a117f5fc19661312560945f5c7bc1cf3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p >テクスチャの情報を管理するマネージャー </p>
+<dl class="section author"><dt>著者</dt><dd>志水陽祐 </dd></dl>
+<dl class="section date"><dt>日付</dt><dd>2022/6/28 </dd></dl>
+</div><h2 class="groupheader">マクロ定義詳解</h2>
+<a id="a9bb67f6bccc9047519526fc30d0b3122" name="a9bb67f6bccc9047519526fc30d0b3122"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb67f6bccc9047519526fc30d0b3122">&#9670;&nbsp;</a></span>BEGIN_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BEGIN_TEX_NUM&#160;&#160;&#160;(14)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa2bc464903cc8ef8d64c6b46e77ab20e" name="aa2bc464903cc8ef8d64c6b46e77ab20e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2bc464903cc8ef8d64c6b46e77ab20e">&#9670;&nbsp;</a></span>BGM_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BGM_TEX_NUM&#160;&#160;&#160;(18)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4c716283fc9acefcfa3001c4812fbe3d" name="a4c716283fc9acefcfa3001c4812fbe3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c716283fc9acefcfa3001c4812fbe3d">&#9670;&nbsp;</a></span>BRIGHTNESS_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BRIGHTNESS_TEX_NUM&#160;&#160;&#160;(20)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af5c89d369083a220f1d00be25ac2bdeb" name="af5c89d369083a220f1d00be25ac2bdeb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5c89d369083a220f1d00be25ac2bdeb">&#9670;&nbsp;</a></span>CONTINUE_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONTINUE_TEX_NUM&#160;&#160;&#160;(15)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afcc88c3d1cca87ccbc15ff30ce762fb9" name="afcc88c3d1cca87ccbc15ff30ce762fb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcc88c3d1cca87ccbc15ff30ce762fb9">&#9670;&nbsp;</a></span>DEBUG_BLOCK_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEBUG_BLOCK_NUM&#160;&#160;&#160;(1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adfc79f189187a128d8d5d30a2b7c6bd5" name="adfc79f189187a128d8d5d30a2b7c6bd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfc79f189187a128d8d5d30a2b7c6bd5">&#9670;&nbsp;</a></span>DXCHAN_RUN_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXCHAN_RUN_TEX_NUM&#160;&#160;&#160;(501)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8c1eb3a78191fc875848f01da2c4cee0" name="a8c1eb3a78191fc875848f01da2c4cee0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c1eb3a78191fc875848f01da2c4cee0">&#9670;&nbsp;</a></span>DXCHAN_STAND_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DXCHAN_STAND_TEX_NUM&#160;&#160;&#160;(500)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>必要になってくるテクスチャをここに書いていく </p>
+
+</div>
+</div>
+<a id="a3902a57c0a82c31dd13fcb1a884b1786" name="a3902a57c0a82c31dd13fcb1a884b1786"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3902a57c0a82c31dd13fcb1a884b1786">&#9670;&nbsp;</a></span>END_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define END_TEX_NUM&#160;&#160;&#160;(17)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7d8cbda2983f97cb07441d4368197499" name="a7d8cbda2983f97cb07441d4368197499"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d8cbda2983f97cb07441d4368197499">&#9670;&nbsp;</a></span>FEAD_OUT_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FEAD_OUT_NUM&#160;&#160;&#160;(4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a46416a9dfae90c178413409c1bf67171" name="a46416a9dfae90c178413409c1bf67171"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46416a9dfae90c178413409c1bf67171">&#9670;&nbsp;</a></span>MAX_SCORE_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_SCORE_TEX_NUM&#160;&#160;&#160;(6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec10e7163f5aa4803958a8d8ecb60334" name="aec10e7163f5aa4803958a8d8ecb60334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec10e7163f5aa4803958a8d8ecb60334">&#9670;&nbsp;</a></span>NUMBER_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NUMBER_TEX_NUM&#160;&#160;&#160;(7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a98efb0cdce672af55227628e3b879c2d" name="a98efb0cdce672af55227628e3b879c2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98efb0cdce672af55227628e3b879c2d">&#9670;&nbsp;</a></span>OPTION_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OPTION_TEX_NUM&#160;&#160;&#160;(13)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a321d0c93007a33733797c7d6a7869682" name="a321d0c93007a33733797c7d6a7869682"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a321d0c93007a33733797c7d6a7869682">&#9670;&nbsp;</a></span>PATH_TEX_BEGIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_BEGIN&#160;&#160;&#160;(&quot;data/texture/初めから.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa6a0746e39176393de12e58845626589" name="aa6a0746e39176393de12e58845626589"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6a0746e39176393de12e58845626589">&#9670;&nbsp;</a></span>PATH_TEX_BGM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_BGM&#160;&#160;&#160;(&quot;data/texture/BYM.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a117f5fc19661312560945f5c7bc1cf3a" name="a117f5fc19661312560945f5c7bc1cf3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a117f5fc19661312560945f5c7bc1cf3a">&#9670;&nbsp;</a></span>PATH_TEX_BRIGHTNESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_BRIGHTNESS&#160;&#160;&#160;(&quot;data/texture/明るさ.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac36efc7c79cdb528a69b56ce3c786af9" name="ac36efc7c79cdb528a69b56ce3c786af9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac36efc7c79cdb528a69b56ce3c786af9">&#9670;&nbsp;</a></span>PATH_TEX_CONTINUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_CONTINUE&#160;&#160;&#160;(&quot;data/texture/続きから.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a41ec9d87ae2ec61d1b39b2cfd44f5952" name="a41ec9d87ae2ec61d1b39b2cfd44f5952"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41ec9d87ae2ec61d1b39b2cfd44f5952">&#9670;&nbsp;</a></span>PATH_TEX_DEBUG_BLOCK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_DEBUG_BLOCK&#160;&#160;&#160;(&quot;data/texture/Debug.jpg&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aca6ab7f486d550bf642be802447001b4" name="aca6ab7f486d550bf642be802447001b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca6ab7f486d550bf642be802447001b4">&#9670;&nbsp;</a></span>PATH_TEX_DXCHAN_RUN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_DXCHAN_RUN&#160;&#160;&#160;(&quot;data/texture/Run_Def.PNG&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad2ffb8a682a74e2f479d1d80b9953c2a" name="ad2ffb8a682a74e2f479d1d80b9953c2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2ffb8a682a74e2f479d1d80b9953c2a">&#9670;&nbsp;</a></span>PATH_TEX_DXCHAN_STAND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_DXCHAN_STAND&#160;&#160;&#160;(&quot;data/texture/Stand_Def.PNG&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3c06a3ebcb9d439572fa83b002b2850a" name="a3c06a3ebcb9d439572fa83b002b2850a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c06a3ebcb9d439572fa83b002b2850a">&#9670;&nbsp;</a></span>PATH_TEX_END</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_END&#160;&#160;&#160;(&quot;data/texture/終わる.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a68c1995d9717f93b0a8d1373c730a366" name="a68c1995d9717f93b0a8d1373c730a366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68c1995d9717f93b0a8d1373c730a366">&#9670;&nbsp;</a></span>PATH_TEX_FAID_OUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_FAID_OUT&#160;&#160;&#160;(&quot;data/texture/BlackOut.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7c84b60ed498962fcbe275f95834a44b" name="a7c84b60ed498962fcbe275f95834a44b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c84b60ed498962fcbe275f95834a44b">&#9670;&nbsp;</a></span>PATH_TEX_MAX_SCORE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_MAX_SCORE&#160;&#160;&#160;(&quot;data/texture/highscore.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af9513fa815e989d62aa7e4c47d32485c" name="af9513fa815e989d62aa7e4c47d32485c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9513fa815e989d62aa7e4c47d32485c">&#9670;&nbsp;</a></span>PATH_TEX_NUMBER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_NUMBER&#160;&#160;&#160;(&quot;data/texture/Number.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac633d669983264803e1213e42338a04b" name="ac633d669983264803e1213e42338a04b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac633d669983264803e1213e42338a04b">&#9670;&nbsp;</a></span>PATH_TEX_OPTION</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_OPTION&#160;&#160;&#160;(&quot;data/texture/オプション.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaf25b0f52c83f2850a46226646aaf4aa" name="aaf25b0f52c83f2850a46226646aaf4aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf25b0f52c83f2850a46226646aaf4aa">&#9670;&nbsp;</a></span>PATH_TEX_PAUSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_PAUSE&#160;&#160;&#160;(&quot;data/texture/Pause.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae74be7b7f3a2069ebcd8cc7c2da806b8" name="ae74be7b7f3a2069ebcd8cc7c2da806b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae74be7b7f3a2069ebcd8cc7c2da806b8">&#9670;&nbsp;</a></span>PATH_TEX_PUSH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_PUSH&#160;&#160;&#160;(&quot;data/texture/pushA.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5acb3264d288a3d5765a36de7b263a8b" name="a5acb3264d288a3d5765a36de7b263a8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5acb3264d288a3d5765a36de7b263a8b">&#9670;&nbsp;</a></span>PATH_TEX_RESUME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_RESUME&#160;&#160;&#160;(&quot;data/texture/再会.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a894c18ca176763901b712b4d69db6215" name="a894c18ca176763901b712b4d69db6215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a894c18ca176763901b712b4d69db6215">&#9670;&nbsp;</a></span>PATH_TEX_SCORE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_SCORE&#160;&#160;&#160;(&quot;data/texture/Score.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7482a63ba418afe1ed649bd958fc5d52" name="a7482a63ba418afe1ed649bd958fc5d52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7482a63ba418afe1ed649bd958fc5d52">&#9670;&nbsp;</a></span>PATH_TEX_SE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_SE&#160;&#160;&#160;(&quot;data/texture/se.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aac762d3cf8ec39f08004d690e771956d" name="aac762d3cf8ec39f08004d690e771956d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac762d3cf8ec39f08004d690e771956d">&#9670;&nbsp;</a></span>PATH_TEX_STAGE_SELECT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_STAGE_SELECT&#160;&#160;&#160;(&quot;data/texture/ステージセレクト.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acb8f5e228503243ba1a3f9c7e4947ba0" name="acb8f5e228503243ba1a3f9c7e4947ba0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb8f5e228503243ba1a3f9c7e4947ba0">&#9670;&nbsp;</a></span>PATH_TEX_TIME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_TIME&#160;&#160;&#160;(&quot;data/texture/Time.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab11db4d7c23fffe5c9b60201915163e7" name="ab11db4d7c23fffe5c9b60201915163e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab11db4d7c23fffe5c9b60201915163e7">&#9670;&nbsp;</a></span>PATH_TEX_TITLE_BACK_GROUND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_TITLE_BACK_GROUND&#160;&#160;&#160;(&quot;data/texture/TitleBack.jpg&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adacd1009dfd5ef22d7d8718f2ca6688f" name="adacd1009dfd5ef22d7d8718f2ca6688f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adacd1009dfd5ef22d7d8718f2ca6688f">&#9670;&nbsp;</a></span>PATH_TEX_TITLE_BUTTON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_TITLE_BUTTON&#160;&#160;&#160;(&quot;data/texture/press_enter.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a14fa94a8d69324cfddd203312863f19f" name="a14fa94a8d69324cfddd203312863f19f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14fa94a8d69324cfddd203312863f19f">&#9670;&nbsp;</a></span>PATH_TEX_TO_TITLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PATH_TEX_TO_TITLE&#160;&#160;&#160;(&quot;data/texture/タイトルへ.png&quot;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7dd2854a5544252c18735f5a392c33cf" name="a7dd2854a5544252c18735f5a392c33cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dd2854a5544252c18735f5a392c33cf">&#9670;&nbsp;</a></span>PAUSE_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PAUSE_TEX_NUM&#160;&#160;&#160;(8)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a700ad2d48873ef8606a78ac378f572a9" name="a700ad2d48873ef8606a78ac378f572a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a700ad2d48873ef8606a78ac378f572a9">&#9670;&nbsp;</a></span>PUSH_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PUSH_TEX_NUM&#160;&#160;&#160;(10)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a94e57a8b867249b1d640559eecff107d" name="a94e57a8b867249b1d640559eecff107d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94e57a8b867249b1d640559eecff107d">&#9670;&nbsp;</a></span>RESUME_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define RESUME_TEX_NUM&#160;&#160;&#160;(12)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f46607feee2ca50792bfc55f3e25271" name="a9f46607feee2ca50792bfc55f3e25271"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f46607feee2ca50792bfc55f3e25271">&#9670;&nbsp;</a></span>SCORE_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCORE_TEX_NUM&#160;&#160;&#160;(5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae8f68c40434a5f4e7b2cfa53f121b44b" name="ae8f68c40434a5f4e7b2cfa53f121b44b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8f68c40434a5f4e7b2cfa53f121b44b">&#9670;&nbsp;</a></span>SE_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SE_TEX_NUM&#160;&#160;&#160;(19)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a11a7e01b4ff0c1cfed1ceac73cffd72a" name="a11a7e01b4ff0c1cfed1ceac73cffd72a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11a7e01b4ff0c1cfed1ceac73cffd72a">&#9670;&nbsp;</a></span>STAGE_SELECT_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STAGE_SELECT_TEX_NUM&#160;&#160;&#160;(16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0adb2176c9874a01d97fb9c4a767363b" name="a0adb2176c9874a01d97fb9c4a767363b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0adb2176c9874a01d97fb9c4a767363b">&#9670;&nbsp;</a></span>TIME_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TIME_TEX_NUM&#160;&#160;&#160;(9)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4258bc05f47149341c9621969197a037" name="a4258bc05f47149341c9621969197a037"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4258bc05f47149341c9621969197a037">&#9670;&nbsp;</a></span>TITLE_BACK_GROUND_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TITLE_BACK_GROUND_NUM&#160;&#160;&#160;(2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aea503ce005f65cee8c3ae840196d4684" name="aea503ce005f65cee8c3ae840196d4684"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea503ce005f65cee8c3ae840196d4684">&#9670;&nbsp;</a></span>TITLE_BUTTON_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TITLE_BUTTON_NUM&#160;&#160;&#160;(3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1933db8fcea718f8f52e432dd01d96bd" name="a1933db8fcea718f8f52e432dd01d96bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1933db8fcea718f8f52e432dd01d96bd">&#9670;&nbsp;</a></span>TO_TITLE_TEX_NUM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TO_TITLE_TEX_NUM&#160;&#160;&#160;(11)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

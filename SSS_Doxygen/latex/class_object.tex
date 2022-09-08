@@ -1,0 +1,400 @@
+\hypertarget{class_object}{}\doxysection{Object クラス}
+\label{class_object}\index{Object@{Object}}
+
+
+{\ttfamily \#include $<$Object.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object}} ()
+\item 
+\mbox{\hyperlink{class_object_afd79a4381708dd3ea692d6b3c11e75f4}{Object}} (std\+::string sz\+Name, \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396}{UPDATE\+\_\+\+ORDER}} Update\+Order, \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1d}{DRAW\+\_\+\+ORDER}} Draw\+Order)
+\begin{DoxyCompactList}\small\item\em オブジェクト生成時に使用するコンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{$\sim$\+Object}} ()
+\begin{DoxyCompactList}\small\item\em オブジェクトの削除 オブジェクトが持つコンポーネントの削除 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_ac608bdc75130f88cd292bc8cd7a016c5}{Start}} ()
+\begin{DoxyCompactList}\small\item\em オブジェクトの初期化 @detail オブジェクトが持つコンポーネントの初期化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_a2bac4495e863092c6367556d62666271}{Update}} ()
+\begin{DoxyCompactList}\small\item\em オブジェクトの更新 @detail オブジェクトが持つコンポーネントの更新 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_ac469dbbd3cedec6a3e8f0d2172b7429e}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em オブジェクトの描画 @detail オブジェクトが持つコンポーネントの描画 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_a28ca54b3342ee2e6356c9388ebc7ba1d}{On\+Collision\+Enter}} (\mbox{\hyperlink{class_object}{Object}} $\ast$)
+\begin{DoxyCompactList}\small\item\em オブジェクトとの衝突判定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_a118db426c87fe3625687d9bc74a8175f}{Stop\+Update}} ()
+\begin{DoxyCompactList}\small\item\em 機能を停止する為の関数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_aa0ab975acb1c585af49bb00b43828790}{Resume\+Update}} ()
+\begin{DoxyCompactList}\small\item\em 機能を再開する為の関数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_ac0c1cb0378e61ac7d6af71c8b86b6355}{Use}} ()
+\begin{DoxyCompactList}\small\item\em 機能を再開するための関数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_ae4a6e1076e1a372b6f3daec25e1d9aea}{No\+Use}} ()
+\begin{DoxyCompactList}\small\item\em 機能を停止するための関数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_a654b22aad99c5b182b03d97ec05fd8c1}{Stop\+Draw}} ()
+\begin{DoxyCompactList}\small\item\em 描画を停止するための関数 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_af6550fa9e9039b59f1cf28951b0b832e}{Resume\+Draw}} ()
+\begin{DoxyCompactList}\small\item\em 描画を再開するための関数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1d}{DRAW\+\_\+\+ORDER}} \mbox{\hyperlink{class_object_aa6b2b605e64fdad13e3e52346353e03a}{Get\+Draw\+Order}} ()
+\begin{DoxyCompactList}\small\item\em 描画順を取得する関数 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396}{UPDATE\+\_\+\+ORDER}} \mbox{\hyperlink{class_object_aa4113e76535e952da736eb7df90a1dc7}{Get\+Update\+Order}} ()
+\begin{DoxyCompactList}\small\item\em 更新順を取得する関数 \end{DoxyCompactList}\item 
+std\+::list$<$ \mbox{\hyperlink{class_component}{Component}} $\ast$ $>$ \mbox{\hyperlink{class_object_a02814636bba2aaf6b1c264f283bed288}{Get\+Component\+List}} ()
+\begin{DoxyCompactList}\small\item\em コンポーネントリストを得る \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_object_a7372ab35a58cc56b26445e7c68779f71}{Delete}} ()
+\begin{DoxyCompactList}\small\item\em オブジェクトの削除をする関数 \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\T $\ast$ \mbox{\hyperlink{class_object_a824beb41e45f1fdecc88c15e11983156}{Get\+Component}} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\T $\ast$ \mbox{\hyperlink{class_object_a6530059316c8c6ea06c66e0de393dcce}{Add\+Component}} ()
+\item 
+constexpr const std\+::string \& \mbox{\hyperlink{class_object_a4c8a55fbab735fc3ce4f1ef9569041ea}{Get\+Name}} () const
+\item 
+constexpr const bool \mbox{\hyperlink{class_object_ab75ac4b7289350a0ada0eee65fe23eb3}{Get\+Delete\+Flag}} () const
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_object_a40860402e64d8008fb42329df7097cdb}\label{class_object_a40860402e64d8008fb42329df7097cdb}} 
+\index{Object@{Object}!Object@{Object}}
+\index{Object@{Object}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_object_afd79a4381708dd3ea692d6b3c11e75f4}\label{class_object_afd79a4381708dd3ea692d6b3c11e75f4}} 
+\index{Object@{Object}!Object@{Object}}
+\index{Object@{Object}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Object\+::\+Object (\begin{DoxyParamCaption}\item[{std\+::string}]{sz\+Name,  }\item[{\mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396}{UPDATE\+\_\+\+ORDER}}}]{Update\+Order,  }\item[{\mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1d}{DRAW\+\_\+\+ORDER}}}]{Draw\+Order }\end{DoxyParamCaption})}
+
+
+
+オブジェクト生成時に使用するコンストラクタ 
+
+
+\begin{DoxyParams}{引数}
+{\em (string)} & オブジェクト名 \\
+\hline
+{\em (\+UPDATE\+\_\+\+ORDER)} & オブジェクトの更新の順番 \\
+\hline
+{\em (\+DRAW\+\_\+\+ORDER)} & オブジェクトの描画の順番 @detail 更新、描画の順番は\+Object\+Info.\+h \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_object_ae8f5483f459e46687bd01e6f9977afd3}\label{class_object_ae8f5483f459e46687bd01e6f9977afd3}} 
+\index{Object@{Object}!````~Object@{$\sim$Object}}
+\index{````~Object@{$\sim$Object}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{$\sim$Object()}{~Object()}}
+{\footnotesize\ttfamily Object\+::$\sim$\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+オブジェクトの削除 オブジェクトが持つコンポーネントの削除 
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_object_a6530059316c8c6ea06c66e0de393dcce}\label{class_object_a6530059316c8c6ea06c66e0de393dcce}} 
+\index{Object@{Object}!AddComponent@{AddComponent}}
+\index{AddComponent@{AddComponent}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{AddComponent()}{AddComponent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T $\ast$ Object\+::\+Add\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_a6530059316c8c6ea06c66e0de393dcce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_a7372ab35a58cc56b26445e7c68779f71}\label{class_object_a7372ab35a58cc56b26445e7c68779f71}} 
+\index{Object@{Object}!Delete@{Delete}}
+\index{Delete@{Delete}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily void Object\+::\+Delete (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+オブジェクトの削除をする関数 
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_object_a7372ab35a58cc56b26445e7c68779f71_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_ac469dbbd3cedec6a3e8f0d2172b7429e}\label{class_object_ac469dbbd3cedec6a3e8f0d2172b7429e}} 
+\index{Object@{Object}!Draw@{Draw}}
+\index{Draw@{Draw}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Object\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+オブジェクトの描画 @detail オブジェクトが持つコンポーネントの描画 
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_object_ac469dbbd3cedec6a3e8f0d2172b7429e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_a824beb41e45f1fdecc88c15e11983156}\label{class_object_a824beb41e45f1fdecc88c15e11983156}} 
+\index{Object@{Object}!GetComponent@{GetComponent}}
+\index{GetComponent@{GetComponent}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{GetComponent()}{GetComponent()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T $\ast$ Object\+::\+Get\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_a824beb41e45f1fdecc88c15e11983156_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_a02814636bba2aaf6b1c264f283bed288}\label{class_object_a02814636bba2aaf6b1c264f283bed288}} 
+\index{Object@{Object}!GetComponentList@{GetComponentList}}
+\index{GetComponentList@{GetComponentList}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{GetComponentList()}{GetComponentList()}}
+{\footnotesize\ttfamily std\+::list$<$ \mbox{\hyperlink{class_component}{Component}} $\ast$ $>$ Object\+::\+Get\+Component\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンポーネントリストを得る 
+
+コンポーネントリストを取得する
+
+\begin{DoxyReturn}{戻り値}
+\texorpdfstring{$<$}{<}Component$\ast$\texorpdfstring{$>$}{>} 親が持っているコンポーネントが格納されているポインタを送る 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_object_a02814636bba2aaf6b1c264f283bed288_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_ab75ac4b7289350a0ada0eee65fe23eb3}\label{class_object_ab75ac4b7289350a0ada0eee65fe23eb3}} 
+\index{Object@{Object}!GetDeleteFlag@{GetDeleteFlag}}
+\index{GetDeleteFlag@{GetDeleteFlag}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{GetDeleteFlag()}{GetDeleteFlag()}}
+{\footnotesize\ttfamily constexpr const bool Object\+::\+Get\+Delete\+Flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_ab75ac4b7289350a0ada0eee65fe23eb3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_aa6b2b605e64fdad13e3e52346353e03a}\label{class_object_aa6b2b605e64fdad13e3e52346353e03a}} 
+\index{Object@{Object}!GetDrawOrder@{GetDrawOrder}}
+\index{GetDrawOrder@{GetDrawOrder}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{GetDrawOrder()}{GetDrawOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1d}{DRAW\+\_\+\+ORDER}} Object\+::\+Get\+Draw\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+描画順を取得する関数 
+
+\begin{DoxyReturn}{戻り値}
+描画順を返す(\+DRAW\+\_\+\+ORDER) 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_aa6b2b605e64fdad13e3e52346353e03a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_a4c8a55fbab735fc3ce4f1ef9569041ea}\label{class_object_a4c8a55fbab735fc3ce4f1ef9569041ea}} 
+\index{Object@{Object}!GetName@{GetName}}
+\index{GetName@{GetName}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{GetName()}{GetName()}}
+{\footnotesize\ttfamily constexpr const std\+::string \& Object\+::\+Get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_a4c8a55fbab735fc3ce4f1ef9569041ea_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_aa4113e76535e952da736eb7df90a1dc7}\label{class_object_aa4113e76535e952da736eb7df90a1dc7}} 
+\index{Object@{Object}!GetUpdateOrder@{GetUpdateOrder}}
+\index{GetUpdateOrder@{GetUpdateOrder}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{GetUpdateOrder()}{GetUpdateOrder()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396}{UPDATE\+\_\+\+ORDER}} Object\+::\+Get\+Update\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+更新順を取得する関数 
+
+\begin{DoxyReturn}{戻り値}
+更新順を返す(\+UPDATE\+\_\+\+ORDER) 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_aa4113e76535e952da736eb7df90a1dc7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_ae4a6e1076e1a372b6f3daec25e1d9aea}\label{class_object_ae4a6e1076e1a372b6f3daec25e1d9aea}} 
+\index{Object@{Object}!NoUse@{NoUse}}
+\index{NoUse@{NoUse}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{NoUse()}{NoUse()}}
+{\footnotesize\ttfamily void Object\+::\+No\+Use (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+機能を停止するための関数 
+
+\mbox{\Hypertarget{class_object_a28ca54b3342ee2e6356c9388ebc7ba1d}\label{class_object_a28ca54b3342ee2e6356c9388ebc7ba1d}} 
+\index{Object@{Object}!OnCollisionEnter@{OnCollisionEnter}}
+\index{OnCollisionEnter@{OnCollisionEnter}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{OnCollisionEnter()}{OnCollisionEnter()}}
+{\footnotesize\ttfamily void Object\+::\+On\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} $\ast$}]{p\+Object }\end{DoxyParamCaption})}
+
+
+
+オブジェクトとの衝突判定 
+
+
+\begin{DoxyParams}{引数}
+{\em (\+Object$\ast$)} & 衝突下相手のポインタ @detail オブジェクトが持つコンポーネントの衝突判定 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_object_af6550fa9e9039b59f1cf28951b0b832e}\label{class_object_af6550fa9e9039b59f1cf28951b0b832e}} 
+\index{Object@{Object}!ResumeDraw@{ResumeDraw}}
+\index{ResumeDraw@{ResumeDraw}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{ResumeDraw()}{ResumeDraw()}}
+{\footnotesize\ttfamily void Object\+::\+Resume\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+描画を再開するための関数 
+
+\mbox{\Hypertarget{class_object_aa0ab975acb1c585af49bb00b43828790}\label{class_object_aa0ab975acb1c585af49bb00b43828790}} 
+\index{Object@{Object}!ResumeUpdate@{ResumeUpdate}}
+\index{ResumeUpdate@{ResumeUpdate}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{ResumeUpdate()}{ResumeUpdate()}}
+{\footnotesize\ttfamily void Object\+::\+Resume\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+機能を再開する為の関数 
+
+\mbox{\Hypertarget{class_object_ac608bdc75130f88cd292bc8cd7a016c5}\label{class_object_ac608bdc75130f88cd292bc8cd7a016c5}} 
+\index{Object@{Object}!Start@{Start}}
+\index{Start@{Start}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Object\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+オブジェクトの初期化 @detail オブジェクトが持つコンポーネントの初期化 
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_ac608bdc75130f88cd292bc8cd7a016c5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_a654b22aad99c5b182b03d97ec05fd8c1}\label{class_object_a654b22aad99c5b182b03d97ec05fd8c1}} 
+\index{Object@{Object}!StopDraw@{StopDraw}}
+\index{StopDraw@{StopDraw}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{StopDraw()}{StopDraw()}}
+{\footnotesize\ttfamily void Object\+::\+Stop\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+描画を停止するための関数 
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=322pt]{class_object_a654b22aad99c5b182b03d97ec05fd8c1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_a118db426c87fe3625687d9bc74a8175f}\label{class_object_a118db426c87fe3625687d9bc74a8175f}} 
+\index{Object@{Object}!StopUpdate@{StopUpdate}}
+\index{StopUpdate@{StopUpdate}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{StopUpdate()}{StopUpdate()}}
+{\footnotesize\ttfamily void Object\+::\+Stop\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+機能を停止する為の関数 
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_object_a118db426c87fe3625687d9bc74a8175f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_a2bac4495e863092c6367556d62666271}\label{class_object_a2bac4495e863092c6367556d62666271}} 
+\index{Object@{Object}!Update@{Update}}
+\index{Update@{Update}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily Object\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+オブジェクトの更新 @detail オブジェクトが持つコンポーネントの更新 
+
+全てのオブジェクトの更新 @detail 各々のオブジェクトが持っているコンポーネントの更新 デリートフラグが立っているオブジェクトは更新の最後で削除している 呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_object_a2bac4495e863092c6367556d62666271_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_object_a2bac4495e863092c6367556d62666271_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_object_ac0c1cb0378e61ac7d6af71c8b86b6355}\label{class_object_ac0c1cb0378e61ac7d6af71c8b86b6355}} 
+\index{Object@{Object}!Use@{Use}}
+\index{Use@{Use}!Object@{Object}}
+\doxysubsubsection{\texorpdfstring{Use()}{Use()}}
+{\footnotesize\ttfamily void Object\+::\+Use (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+機能を再開するための関数 
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_object_ac0c1cb0378e61ac7d6af71c8b86b6355_icgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_object_8h}{Object.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_object_8cpp}{Object.\+cpp}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_object_manager_8cpp}{Object\+Manager.\+cpp}}\end{DoxyCompactItemize}

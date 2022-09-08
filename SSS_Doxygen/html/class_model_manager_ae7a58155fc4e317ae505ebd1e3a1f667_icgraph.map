@@ -1,0 +1,9 @@
+<map id="ModelManager::GetModel" name="ModelManager::GetModel">
+<area shape="rect" id="node1" title="モデルの取得" alt="" coords="673,56,844,83"/>
+<area shape="rect" id="node2" href="$class_stage_manager.html#a3a259d33885baf98d68c28d32183143f" title="ステージオブジェクト生成(ゲームモード)" alt="" coords="423,5,609,32"/>
+<area shape="rect" id="node5" href="$class_menu_manager.html#af6c63b05dda555dce5a7698c69b66f90" title="ステージセレクトメニュー" alt="" coords="407,56,625,83"/>
+<area shape="rect" id="node7" href="$class_model_manager.html#ac1ca2c166728b973a8efd2218d27caff" title="モデル削除" alt="" coords="424,107,608,133"/>
+<area shape="rect" id="node3" href="$class_stage_manager.html#ab85e84fb952cd4722400956dba68d2e3" title="地形生成" alt="" coords="172,5,359,32"/>
+<area shape="rect" id="node4" href="$class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node6" href="$class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="206,56,325,83"/>
+</map>

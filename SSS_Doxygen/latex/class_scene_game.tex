@@ -1,0 +1,297 @@
+\hypertarget{class_scene_game}{}\doxysection{Scene\+Game クラス}
+\label{class_scene_game}\index{SceneGame@{SceneGame}}
+
+
+ゲームシーンの為のクラス @detail どのステージを読み込む、ゲームをするうえで必要な情報のみを読み込む  
+
+
+
+
+{\ttfamily \#include $<$scene\+Game.\+h$>$}
+
+
+
+Scene\+Game の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=151pt]{class_scene_game__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Scene\+Game 連携図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{class_scene_game__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_game_a137a0d207ed6421a6156993c25f85809}{$\sim$\+Scene\+Game}} () override
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_game_a942c6131f3f4a831791f63a5091cccfe}{Init}} () override
+\begin{DoxyCompactList}\small\item\em 初期化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_game_a8bd731734e28b5ddd1a23d50bfa56532}{Uninit}} () override
+\begin{DoxyCompactList}\small\item\em 終了処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_game_a39f13a210e99042a1361d958ead36686}{Update}} () override
+\begin{DoxyCompactList}\small\item\em 更新処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_game_ac14f575125dcaf8cfd416f9512ee0107}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em 描画処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_game_a40dd3b6c95346b5f374ae10a7b501103}{Set\+Stage}} (\mbox{\hyperlink{scene_game_8h_aca8133200c1122e29b87b314d82604eb}{Stage}} Next\+Stage)
+\begin{DoxyCompactList}\small\item\em シーンの切替 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{scene_game_8h_aca8133200c1122e29b87b314d82604eb}{Stage}} \mbox{\hyperlink{class_scene_game_af1edee33919a754f03a810d0057ea8b6}{Get\+Stage}} ()
+\begin{DoxyCompactList}\small\item\em シーン情報の取得 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_scene_game_aa8bccc8003c3084181f256c53a1f6160}{Set\+Pause\+OOO}} (bool ooo)
+\begin{DoxyCompactList}\small\item\em ポーズフラグをオンにする \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_scene_game}{Scene\+Game}} $\ast$ \mbox{\hyperlink{class_scene_game_a5f5bb9169295264e15c157b98fc17776}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em インスタンス取得 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_scene_game_a6c9fcb1377d041cf0643bbc4965bb237}{Destroy}} ()
+\begin{DoxyCompactList}\small\item\em インスタンス破棄 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_scene_game_aed823bf8cd7d8af96a3fb7422e49f21e}{m\+\_\+b\+Edit\+Mode}}
+\begin{DoxyCompactList}\small\item\em 編集モード \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_scene_game_a1f4a26f2b3c7867ed3f7c1004470edda}{m\+\_\+b\+Pause\+Mode}}
+\begin{DoxyCompactList}\small\item\em メニュー画面 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+ゲームシーンの為のクラス @detail どのステージを読み込む、ゲームをするうえで必要な情報のみを読み込む 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_scene_game_a137a0d207ed6421a6156993c25f85809}\label{class_scene_game_a137a0d207ed6421a6156993c25f85809}} 
+\index{SceneGame@{SceneGame}!````~SceneGame@{$\sim$SceneGame}}
+\index{````~SceneGame@{$\sim$SceneGame}!SceneGame@{SceneGame}}
+\doxysubsubsection{\texorpdfstring{$\sim$SceneGame()}{~SceneGame()}}
+{\footnotesize\ttfamily Scene\+Game\+::$\sim$\+Scene\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+デストラクタ 
+
+デストラクタでステージをぶっこわーす 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_scene_game_a6c9fcb1377d041cf0643bbc4965bb237}\label{class_scene_game_a6c9fcb1377d041cf0643bbc4965bb237}} 
+\index{SceneGame@{SceneGame}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!SceneGame@{SceneGame}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily void Scene\+Game\+::\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+インスタンス破棄 
+
+\mbox{\Hypertarget{class_scene_game_ac14f575125dcaf8cfd416f9512ee0107}\label{class_scene_game_ac14f575125dcaf8cfd416f9512ee0107}} 
+\index{SceneGame@{SceneGame}!Draw@{Draw}}
+\index{Draw@{Draw}!SceneGame@{SceneGame}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Scene\+Game\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+描画処理 
+
+描画する関数 @detail 教室が寒すぎる、上着を忘れるこれ即ち死を示す 
+
+\mbox{\hyperlink{class_scene_a8680672fd30bb4b345e6fab918e31ecd}{Scene}}を実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_game_ac14f575125dcaf8cfd416f9512ee0107_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_game_a5f5bb9169295264e15c157b98fc17776}\label{class_scene_game_a5f5bb9169295264e15c157b98fc17776}} 
+\index{SceneGame@{SceneGame}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!SceneGame@{SceneGame}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scene_game}{Scene\+Game}} $\ast$ Scene\+Game\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+インスタンス取得 
+
+\begin{DoxyReturn}{戻り値}
+(Scene\+Game$\ast$) インスタンスを返す 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_game_a5f5bb9169295264e15c157b98fc17776_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_game_af1edee33919a754f03a810d0057ea8b6}\label{class_scene_game_af1edee33919a754f03a810d0057ea8b6}} 
+\index{SceneGame@{SceneGame}!GetStage@{GetStage}}
+\index{GetStage@{GetStage}!SceneGame@{SceneGame}}
+\doxysubsubsection{\texorpdfstring{GetStage()}{GetStage()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{scene_game_8h_aca8133200c1122e29b87b314d82604eb}{Stage}} Scene\+Game\+::\+Get\+Stage (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+シーン情報の取得 
+
+ステージの情報を取得する
+
+\begin{DoxyReturn}{戻り値}
+(Stage) 現在のステージ番号を返す 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_scene_game_a942c6131f3f4a831791f63a5091cccfe}\label{class_scene_game_a942c6131f3f4a831791f63a5091cccfe}} 
+\index{SceneGame@{SceneGame}!Init@{Init}}
+\index{Init@{Init}!SceneGame@{SceneGame}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void Scene\+Game\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+初期化 
+
+初期化をする 
+
+\mbox{\hyperlink{class_scene_ac3c4677dfd702a3ffd5ffadd3f1ac478}{Scene}}を実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_game_a942c6131f3f4a831791f63a5091cccfe_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_game_aa8bccc8003c3084181f256c53a1f6160}\label{class_scene_game_aa8bccc8003c3084181f256c53a1f6160}} 
+\index{SceneGame@{SceneGame}!SetPauseOOO@{SetPauseOOO}}
+\index{SetPauseOOO@{SetPauseOOO}!SceneGame@{SceneGame}}
+\doxysubsubsection{\texorpdfstring{SetPauseOOO()}{SetPauseOOO()}}
+{\footnotesize\ttfamily void Scene\+Game\+::\+Set\+Pause\+OOO (\begin{DoxyParamCaption}\item[{bool}]{ooo }\end{DoxyParamCaption})}
+
+
+
+ポーズフラグをオンにする 
+
+ポーズのオンオフを外部から決める
+
+
+\begin{DoxyParams}{引数}
+{\em (bool)} & ポーズメニューを更新するかどうか \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_game_aa8bccc8003c3084181f256c53a1f6160_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_game_a40dd3b6c95346b5f374ae10a7b501103}\label{class_scene_game_a40dd3b6c95346b5f374ae10a7b501103}} 
+\index{SceneGame@{SceneGame}!SetStage@{SetStage}}
+\index{SetStage@{SetStage}!SceneGame@{SceneGame}}
+\doxysubsubsection{\texorpdfstring{SetStage()}{SetStage()}}
+{\footnotesize\ttfamily void Scene\+Game\+::\+Set\+Stage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{scene_game_8h_aca8133200c1122e29b87b314d82604eb}{Stage}}}]{Next\+Stage }\end{DoxyParamCaption})}
+
+
+
+シーンの切替 
+
+ステージの切り替え
+
+
+\begin{DoxyParams}{引数}
+{\em (\+Stage)} & 次のステージ番号 \\
+\hline
+\end{DoxyParams}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{class_scene_game_a40dd3b6c95346b5f374ae10a7b501103_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_game_a8bd731734e28b5ddd1a23d50bfa56532}\label{class_scene_game_a8bd731734e28b5ddd1a23d50bfa56532}} 
+\index{SceneGame@{SceneGame}!Uninit@{Uninit}}
+\index{Uninit@{Uninit}!SceneGame@{SceneGame}}
+\doxysubsubsection{\texorpdfstring{Uninit()}{Uninit()}}
+{\footnotesize\ttfamily void Scene\+Game\+::\+Uninit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+終了処理 
+
+
+
+\mbox{\hyperlink{class_scene_aa94fb256b8a862aee810db4f1e8d56a4}{Scene}}を実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_game_a8bd731734e28b5ddd1a23d50bfa56532_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_game_a39f13a210e99042a1361d958ead36686}\label{class_scene_game_a39f13a210e99042a1361d958ead36686}} 
+\index{SceneGame@{SceneGame}!Update@{Update}}
+\index{Update@{Update}!SceneGame@{SceneGame}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Scene\+Game\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新処理 
+
+
+
+\mbox{\hyperlink{class_scene_ab99ec7aff3ed995985ddb764ffb78f8e}{Scene}}を実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_game_a39f13a210e99042a1361d958ead36686_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{class_scene_game_aed823bf8cd7d8af96a3fb7422e49f21e}\label{class_scene_game_aed823bf8cd7d8af96a3fb7422e49f21e}} 
+\index{SceneGame@{SceneGame}!m\_bEditMode@{m\_bEditMode}}
+\index{m\_bEditMode@{m\_bEditMode}!SceneGame@{SceneGame}}
+\doxysubsubsection{\texorpdfstring{m\_bEditMode}{m\_bEditMode}}
+{\footnotesize\ttfamily bool Scene\+Game\+::m\+\_\+b\+Edit\+Mode}
+
+
+
+編集モード 
+
+\mbox{\Hypertarget{class_scene_game_a1f4a26f2b3c7867ed3f7c1004470edda}\label{class_scene_game_a1f4a26f2b3c7867ed3f7c1004470edda}} 
+\index{SceneGame@{SceneGame}!m\_bPauseMode@{m\_bPauseMode}}
+\index{m\_bPauseMode@{m\_bPauseMode}!SceneGame@{SceneGame}}
+\doxysubsubsection{\texorpdfstring{m\_bPauseMode}{m\_bPauseMode}}
+{\footnotesize\ttfamily bool Scene\+Game\+::m\+\_\+b\+Pause\+Mode}
+
+
+
+メニュー画面 
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{scene_game_8h}{scene\+Game.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_scene_game_8cpp}{Scene\+Game.\+cpp}}\end{DoxyCompactItemize}

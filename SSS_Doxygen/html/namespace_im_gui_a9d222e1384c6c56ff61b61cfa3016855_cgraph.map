@@ -1,0 +1,16 @@
+<map id="ImGui::SplitterBehavior" name="ImGui::SplitterBehavior">
+<area shape="rect" id="node1" title=" " alt="" coords="5,183,160,209"/>
+<area shape="rect" id="node2" href="$namespace_im_gui.html#a65a4f18b1bc8ce0f351687922089f374" title=" " alt="" coords="224,81,375,108"/>
+<area shape="rect" id="node11" href="$struct_im_rect.html#af33a7424c3341d08acd69da30c27c753" title=" " alt="" coords="242,132,357,159"/>
+<area shape="rect" id="node12" href="$namespace_im_gui.html#a5de8ecd4c80efdca1af7329a2a48121c" title=" " alt="" coords="243,183,355,209"/>
+<area shape="rect" id="node13" href="$namespace_im_gui.html#a3291356b06ebe5f771d60b334a831d4b" title=" " alt="" coords="208,233,391,260"/>
+<area shape="rect" id="node14" href="$namespace_im_gui.html#aca3237fd4efa0af7fc6b4eff6494dfce" title=" " alt="" coords="219,284,380,311"/>
+<area shape="rect" id="node3" href="$namespace_im_gui.html#ac452417b5004ca16a814a72cff153526" title=" " alt="" coords="439,5,612,32"/>
+<area shape="rect" id="node4" href="$namespace_im_gui.html#ac9a400eff3a9561d95e80486c52a660b" title=" " alt="" coords="453,56,598,83"/>
+<area shape="rect" id="node6" href="$namespace_im_gui.html#a488b86a9f235923304186fb86ff64ffb" title=" " alt="" coords="453,107,598,133"/>
+<area shape="rect" id="node10" href="$namespace_im_gui.html#aba1f0c75d6f98702e6b02eb1bc30d915" title=" " alt="" coords="454,157,597,184"/>
+<area shape="rect" id="node5" href="$namespace_im_gui.html#add3290865a67327258c3a32b695adb28" title=" " alt="" coords="680,56,829,83"/>
+<area shape="rect" id="node7" href="$namespace_im_gui.html#ae0b8ea0e06c457316d6aed6c5b2a1c25" title=" " alt="" coords="660,107,849,133"/>
+<area shape="rect" id="node8" href="$struct_im_rect.html#ac02d5cf6ce0358aea9ed9df43d368f3f" title=" " alt="" coords="899,81,1019,108"/>
+<area shape="rect" id="node9" href="$struct_im_rect.html#ac583156fd0e9306181fff5d120b262ea" title=" " alt="" coords="897,132,1020,159"/>
+</map>

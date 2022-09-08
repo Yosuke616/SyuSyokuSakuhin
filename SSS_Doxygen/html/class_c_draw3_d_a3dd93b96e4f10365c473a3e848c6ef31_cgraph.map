@@ -1,0 +1,4 @@
+<map id="CDraw3D::Play" name="CDraw3D::Play">
+<area shape="rect" id="node1" title="アニメーションの再生" alt="" coords="5,5,116,32"/>
+<area shape="rect" id="node2" href="$class_animation.html#a1a37908b77156028e7036f9d3c07e5f1" title="再生" alt="" coords="164,5,279,32"/>
+</map>

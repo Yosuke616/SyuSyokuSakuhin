@@ -1,0 +1,5 @@
+<map id="MenuManager::Start" name="MenuManager::Start">
+<area shape="rect" id="node1" title="初期化" alt="" coords="5,5,145,32"/>
+<area shape="rect" id="node2" href="$class_scene_manager.html#a972ad174745419ebc980802a5f6e874e" title=" " alt="" coords="193,5,360,32"/>
+<area shape="rect" id="node3" href="$class_scene_manager.html#a52085e6737c23b491c228e86781af808" title=" " alt="" coords="408,5,612,32"/>
+</map>

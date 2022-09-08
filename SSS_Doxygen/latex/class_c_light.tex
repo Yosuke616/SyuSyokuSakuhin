@@ -1,0 +1,232 @@
+\hypertarget{class_c_light}{}\doxysection{CLight クラス}
+\label{class_c_light}\index{CLight@{CLight}}
+
+
+{\ttfamily \#include $<$Light.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_light_a6428960cf198a7a9644e3146cf59f82e}{CLight}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_light_adf6778ad94bf5d111523f7468540c3c8}{Init}} ()
+\begin{DoxyCompactList}\small\item\em 初期化 \end{DoxyCompactList}\item 
+XMFLOAT4 \& \mbox{\hyperlink{class_c_light_a837bec6973025bfd74f8c9d45ee4583b}{Get\+Diffuse}} ()
+\begin{DoxyCompactList}\small\item\em 反射光の取得 \end{DoxyCompactList}\item 
+XMFLOAT4 \& \mbox{\hyperlink{class_c_light_ab8f6c373c7391407739f71ef8317ff48}{Get\+Ambient}} ()
+\begin{DoxyCompactList}\small\item\em 環境光の取得 \end{DoxyCompactList}\item 
+XMFLOAT4 \& \mbox{\hyperlink{class_c_light_a2e39622934de7ca6b477a1a8a17acee2}{Get\+Specular}} ()
+\begin{DoxyCompactList}\small\item\em 自己発光の取得 \end{DoxyCompactList}\item 
+XMFLOAT3 \& \mbox{\hyperlink{class_c_light_ae4b6c1b4ae9b9379e34bda0284bb1940}{Get\+Dir}} ()
+\begin{DoxyCompactList}\small\item\em 光源方向取得 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_light_ac7b7c97931e49a5ee4cddd829dea43e8}{Set\+Enable}} (bool b\+Enable=true)
+\begin{DoxyCompactList}\small\item\em ライト\+ON \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_light_a9518a3f2ef3e82b0f839f28541c06d42}{Set\+Disable}} (bool b\+Disable=true)
+\begin{DoxyCompactList}\small\item\em ライト\+OFF \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_c_light}{CLight}} $\ast$ \mbox{\hyperlink{class_c_light_a4a80a6d18305f88d251970b4f84ed1c4}{Get}} ()
+\begin{DoxyCompactList}\small\item\em ライトのインスタンス取得 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_light_a6428960cf198a7a9644e3146cf59f82e}\label{class_c_light_a6428960cf198a7a9644e3146cf59f82e}} 
+\index{CLight@{CLight}!CLight@{CLight}}
+\index{CLight@{CLight}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{CLight()}{CLight()}}
+{\footnotesize\ttfamily CLight\+::\+CLight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+コンストラクタが耳元でささやいている 呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{class_c_light_a6428960cf198a7a9644e3146cf59f82e_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_light_a4a80a6d18305f88d251970b4f84ed1c4}\label{class_c_light_a4a80a6d18305f88d251970b4f84ed1c4}} 
+\index{CLight@{CLight}!Get@{Get}}
+\index{Get@{Get}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_light}{CLight}} $\ast$ CLight\+::\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+ライトのインスタンス取得 
+
+光源インスタンスの取得をする
+
+
+\begin{DoxyParams}{引数}
+{\em (\+CLight$\ast$)} & インスタンス情報のポインタを返す \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_light_a4a80a6d18305f88d251970b4f84ed1c4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_light_ab8f6c373c7391407739f71ef8317ff48}\label{class_c_light_ab8f6c373c7391407739f71ef8317ff48}} 
+\index{CLight@{CLight}!GetAmbient@{GetAmbient}}
+\index{GetAmbient@{GetAmbient}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{GetAmbient()}{GetAmbient()}}
+{\footnotesize\ttfamily XMFLOAT4 \& CLight\+::\+Get\+Ambient (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+環境光の取得 
+
+\begin{DoxyReturn}{戻り値}
+(XMFLOAT4\&) 環境光の情報が入っているアドレスを返す 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_light_ab8f6c373c7391407739f71ef8317ff48_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_light_a837bec6973025bfd74f8c9d45ee4583b}\label{class_c_light_a837bec6973025bfd74f8c9d45ee4583b}} 
+\index{CLight@{CLight}!GetDiffuse@{GetDiffuse}}
+\index{GetDiffuse@{GetDiffuse}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{GetDiffuse()}{GetDiffuse()}}
+{\footnotesize\ttfamily XMFLOAT4 \& CLight\+::\+Get\+Diffuse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+反射光の取得 
+
+\begin{DoxyReturn}{戻り値}
+(XMFLOAT4\&) 反射光の情報が入っているアドレスを返す 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_light_a837bec6973025bfd74f8c9d45ee4583b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_light_ae4b6c1b4ae9b9379e34bda0284bb1940}\label{class_c_light_ae4b6c1b4ae9b9379e34bda0284bb1940}} 
+\index{CLight@{CLight}!GetDir@{GetDir}}
+\index{GetDir@{GetDir}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{GetDir()}{GetDir()}}
+{\footnotesize\ttfamily XMFLOAT3 \& CLight\+::\+Get\+Dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+光源方向取得 
+
+光源方向を取得する
+
+\begin{DoxyReturn}{戻り値}
+(XMFLOAT3\&) ライトがオンになっていた場合その方向を返す 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_light_ae4b6c1b4ae9b9379e34bda0284bb1940_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_light_a2e39622934de7ca6b477a1a8a17acee2}\label{class_c_light_a2e39622934de7ca6b477a1a8a17acee2}} 
+\index{CLight@{CLight}!GetSpecular@{GetSpecular}}
+\index{GetSpecular@{GetSpecular}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{GetSpecular()}{GetSpecular()}}
+{\footnotesize\ttfamily XMFLOAT4 \& CLight\+::\+Get\+Specular (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+自己発光の取得 
+
+\begin{DoxyReturn}{戻り値}
+(XMFLOAT4\&) 自己発光の情報が入っているアドレスを返す 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_light_a2e39622934de7ca6b477a1a8a17acee2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_light_adf6778ad94bf5d111523f7468540c3c8}\label{class_c_light_adf6778ad94bf5d111523f7468540c3c8}} 
+\index{CLight@{CLight}!Init@{Init}}
+\index{Init@{Init}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily void CLight\+::\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+初期化 
+
+初期化します 被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{class_c_light_adf6778ad94bf5d111523f7468540c3c8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_light_a9518a3f2ef3e82b0f839f28541c06d42}\label{class_c_light_a9518a3f2ef3e82b0f839f28541c06d42}} 
+\index{CLight@{CLight}!SetDisable@{SetDisable}}
+\index{SetDisable@{SetDisable}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{SetDisable()}{SetDisable()}}
+{\footnotesize\ttfamily void CLight\+::\+Set\+Disable (\begin{DoxyParamCaption}\item[{bool}]{b\+Disable = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+ライト\+OFF 
+
+ライトをオフにする
+
+
+\begin{DoxyParams}{引数}
+{\em (bool)} & ライトを消すかどうか　つまり0 \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_c_light_a9518a3f2ef3e82b0f839f28541c06d42_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_light_ac7b7c97931e49a5ee4cddd829dea43e8}\label{class_c_light_ac7b7c97931e49a5ee4cddd829dea43e8}} 
+\index{CLight@{CLight}!SetEnable@{SetEnable}}
+\index{SetEnable@{SetEnable}!CLight@{CLight}}
+\doxysubsubsection{\texorpdfstring{SetEnable()}{SetEnable()}}
+{\footnotesize\ttfamily void CLight\+::\+Set\+Enable (\begin{DoxyParamCaption}\item[{bool}]{b\+Enable = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+ライト\+ON 
+
+ライトを\+ONにする @oaram (bool) ライトを付けるかどうかよ 被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{class_c_light_ac7b7c97931e49a5ee4cddd829dea43e8_icgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_light_8h}{Light.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_light_8cpp}{Light.\+cpp}}\end{DoxyCompactItemize}

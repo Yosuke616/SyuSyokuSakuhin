@@ -34,7 +34,8 @@ CEnemy::CEnemy()
 * @brief	デストラクタする・・・それが私の生まれた意味！
 */
 CEnemy::~CEnemy() {
-
+	TAssimpMaterial* pMaterial = m_pDraw->GetModel()->GetMate();
+	pMaterial->Kd = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
 }
 
 /**
@@ -71,10 +72,12 @@ void CEnemy::Update() {
 			if (m_bRightorLeft) {
 				//一生左に動き続ける人生
 				m_pTransform->Vel.x = -VALUE_MOVE_ENEMY;
+				m_pTransform->SetRotate(0.0f,90.0f,0.0f);
 			}
 			else {
 				//右にも移動できる知能はあったらしい
 				m_pTransform->Vel.x = VALUE_MOVE_ENEMY;
+				m_pTransform->SetRotate(0.0f, -90.0f, 0.0f);
 			}
 			break;
 
@@ -135,24 +138,7 @@ void CEnemy::Update() {
 
 		//全てのてきが点滅するから変えないといけない
 
-		//点滅させてから消し去る
-		m_nBlink++;
-		//敵のYのスピードを2で割って偶数で表示
-		if (m_nBlink < 5) {
-			//消す
-			//モデルの色を変える
-			TAssimpMaterial* pMaterial = m_pDraw->GetModel()->GetMate();
-			pMaterial->Kd = XMFLOAT4(1.0f,0.0f,0.0f,0.0f);
-		}
-		else if(m_nBlink < 10){
-			//付ける
-			TAssimpMaterial* pMaterial = m_pDraw->GetModel()->GetMate();
-			pMaterial->Kd = XMFLOAT4(1.0f,0.0f,0.0f,1.0f);
-		}
-		else {
-			m_nBlink = 0;
-			m_nDeleteFlg++;
-		}
+		
 
 		//削除フラグがたったら消す
 		if (m_nDeleteFlg > 5) {
@@ -170,6 +156,32 @@ void CEnemy::Update() {
 * @brief	描画する(デバックで出したい情報を)
 */
 void CEnemy::Draw() {
+	//色を変える
+	if (m_eEnemy_State == ENEMY_DELETE) {
+		//点滅させてから消し去る
+		m_nBlink++;
+		//敵のYのスピードを2で割って偶数で表示
+		if (m_nBlink < 5) {
+			//消す
+			//モデルの色を変える
+			TAssimpMaterial* pMaterial = m_pDraw->GetModel()->GetMate();
+			pMaterial->Kd = XMFLOAT4(1.0f, 0.0f, 0.0f, 0.0f);
+		}
+		else if (m_nBlink < 10) {
+			//付ける
+			TAssimpMaterial* pMaterial = m_pDraw->GetModel()->GetMate();
+			pMaterial->Kd = XMFLOAT4(1.0f, 0.0f, 0.0f, 1.0f);
+		}
+		else {
+			m_nBlink = 0;
+			m_nDeleteFlg++;
+		}
+	}
+	else {
+		TAssimpMaterial* pMaterial = m_pDraw->GetModel()->GetMate();
+		pMaterial->Kd = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	}
+
 #ifdef _DEBUG
 	using namespace ImGui;
 

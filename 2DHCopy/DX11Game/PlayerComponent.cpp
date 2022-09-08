@@ -85,6 +85,8 @@ void CPlayer::Start() {
 	m_bAirDead = false;
 	//ミスカウントは0にしておく
 	m_nMissCnt = 0;
+	//クリアしたフラグはオフにしておく
+	m_bClearFlg = false;
 }
 
 /**
@@ -552,22 +554,9 @@ void CPlayer::Update() {
 		if (m_bAirDead) {
 			//落下死
 			//じかんがある程度たったらゲームオーバーのメニューを出現させる
-			MenuManager::GetInsutance()->Create(GAMEOVER_STATE, 25);
-
-			//プレイヤーの更新を止める
-			Parent->StopUpdate();
-
-			//シーンゲームのオプションフラグをオンにする
-			SceneGame::GetInstance()->SetPauseOOO(true);
-		}
-		else {
-			//敵により死亡			
-			//ミスカウンターを増やし一定でゲームオーバーメニューを出す
 			m_nMissCnt++;
 			if (m_nMissCnt > 90) {
-				//じかんがある程度たったらゲームオーバーのメニューを出現させる
-				//テクスチャが流し終わったら
-				MenuManager::GetInsutance()->Create(GAMEOVER_STATE, 25);
+				MenuManager::GetInsutance()->Create(MISS_STATE, 25);
 
 				//プレイヤーの更新を止める
 				Parent->StopUpdate();
@@ -576,6 +565,44 @@ void CPlayer::Update() {
 				SceneGame::GetInstance()->SetPauseOOO(true);
 			}
 		}
+		else {
+			//敵により死亡			
+			//ミスカウンターを増やし一定でゲームオーバーメニューを出す
+			m_nMissCnt++;
+			if (m_nMissCnt > 90) {
+				//じかんがある程度たったらゲームオーバーのメニューを出現させる
+				//テクスチャが流し終わったら
+				MenuManager::GetInsutance()->Create(MISS_STATE, 25);
+
+				//プレイヤーの更新を止める
+				Parent->StopUpdate();
+
+				//シーンゲームのオプションフラグをオンにする
+				SceneGame::GetInstance()->SetPauseOOO(true);
+			}
+		}
+		break;
+#pragma endregion
+	case CLEAR_PLAYER:
+#pragma region ---クリア
+		//やりたいこと
+		//ステージセレクト画面に戻す
+		//次のステージの解放
+
+		//プレイヤーの横の速度を0にする
+		m_pPlayer->Vel.x = 0.0f;
+
+		//敵の更新の停止
+		for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+			if (obj->GetName() == ENEMY_NAME) {
+				obj->StopUpdate();
+			}
+		}
+
+		//クリアフラグをオンにする
+		m_bClearFlg = true;
+
+		break;
 #pragma endregion
 	default: break;
 	}
@@ -733,7 +760,9 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 				m_pPlayer->Pos.y = BlockUpLine + PlayerHalhSize.y - PlayerOffset.y;	
 
 				//敵の攻撃にヒットしている場合状態は変えない
-				if (m_ePlayer == HIT_PLAYER||m_ePlayer == MISS_PLAYER) {
+				if (m_ePlayer == HIT_PLAYER  ||
+					m_ePlayer == MISS_PLAYER ||
+					m_ePlayer == CLEAR_PLAYER) {
 				
 				}
 				else {
@@ -762,7 +791,7 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 
 					//じかんがある程度たったらゲームオーバーのメニューを出現させる
 					//テクスチャが流し終わったら
-					MenuManager::GetInsutance()->Create(GAMEOVER_STATE, 25);
+					MenuManager::GetInsutance()->Create(MISS_STATE, 25);
 
 					//プレイヤーの更新を止める
 					Parent->StopUpdate();
@@ -860,27 +889,33 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 					//テクスチャを変える
 					ChangeTexture();
 				}
-			}
-
-			//やりたいこと
-			//パワーアップ状態で無かったらミス判定
-
-			//ミス判定　プレイヤー以外のオブジェクトの更新を止めてミスのテクスチャを流す
-			//テクスチャを流し終えたらメニュー画面の表示(ゲームオーバーメニュー)
-			
-		
-		
+			}		
 		}
 	}
 	
+#pragma endregion
+
+#pragma region ---クリア判定
+	if (pObject->GetName() == GOAL_NAME) {
+		if (CollEnemy(pObject)) {
+			//プレイヤーの状態を変える
+			m_ePlayer = CLEAR_PLAYER;
+			g_ePlayer = m_ePlayer;
+			//テクスチャを変える
+			ChangeTexture();
+		}
+	}
 #pragma endregion
 
 #pragma region ---ミス判定
 	if (pObject->GetName() == "MISS_COLL") {
 		//やらないといけないこと
 		//ミス用のメニューを作成する
-		m_ePlayer = MISS_PLAYER;
-		g_ePlayer = m_ePlayer;
+		if (CollMiss(pObject)) {
+			m_ePlayer = MISS_PLAYER;
+			g_ePlayer = m_ePlayer;		
+		}
+
 	}
 #pragma endregion
 }
@@ -1111,4 +1146,43 @@ bool CPlayer::GetPlayerJump() {
 */
 PLAYER_STATE CPlayer::GetPlayerSta() {
 	return g_ePlayer;
+}
+
+/**
+* @fn		CPlayer::GetClearFlg
+* @brief	ステージをクリアしたかを取得する関数
+* @return	クリアしていたらtrueを返す
+*/
+bool CPlayer::GetClearFlg() {
+	return m_bClearFlg;
+}
+
+/**
+* @fn		CPlayer::CollMiss
+* @brief	落下用当たり判定とぶつかったらフラグを変える
+* @return	(Object*)	何にぶつかったら(ここではミス判定)
+*/
+bool CPlayer::CollMiss(Object* pObject) {
+	//プレイヤーの情報を取得
+	auto Player = Parent->GetComponent<CCollider>();
+	auto PlayerPos = Player->GetCenterPos();
+	auto PlayerSize = Player->GetColliderSize();
+	auto PlayerOffset = Player->GetOffSet();
+
+	XMFLOAT2 PlayerHalfSize = XMFLOAT2(PlayerSize.x / 2.0f, PlayerSize.y / 2.0f);
+	//当たり判定の大きさを持ってくる
+	auto Enemy = pObject->GetComponent<CCollider>();
+	auto TEnemy = pObject->GetComponent<CTransform>();
+	XMFLOAT2 EnemyHalfSize = XMFLOAT2(Enemy->GetColliderSize().x / 2.0f, Enemy->GetColliderSize().y / 2.0f);
+
+	if (Enemy->GetCenterPos().x - EnemyHalfSize.x + TEnemy->Vel.x < m_pCollider->GetCenterPos().x + PlayerHalfSize.x + m_pPlayer->Vel.x &&
+		m_pCollider->GetCenterPos().x - PlayerHalfSize.x + m_pPlayer->Vel.x < Enemy->GetCenterPos().x + EnemyHalfSize.x + TEnemy->Vel.x) {
+
+		if (Enemy->GetCenterPos().y - EnemyHalfSize.y + TEnemy->Vel.y < m_pCollider->GetCenterPos().y + PlayerHalfSize.y + m_pPlayer->Vel.y &&
+			m_pCollider->GetCenterPos().y - PlayerHalfSize.y + m_pPlayer->Vel.y < Enemy->GetCenterPos().y + EnemyHalfSize.y + TEnemy->Vel.y) {
+			m_bAirDead = true;
+			return true;
+		}
+	}
+	return false;
 }

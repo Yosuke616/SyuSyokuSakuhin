@@ -1,0 +1,105 @@
+\hypertarget{_menu_manager_8h}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\+Menu\+Manager.h ファイル}
+\label{_menu_manager_8h}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/MenuManager.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/MenuManager.h}}
+
+
+メニューを操作したりするマネージャー  
+
+
+{\ttfamily \#include \char`\"{}main\+App.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$list$>$}\newline
+Menu\+Manager.\+h の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_menu_manager_8h__incl}
+\end{center}
+\end{figure}
+被依存関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_menu_manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{クラス}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_menu_manager}{Menu\+Manager}}
+\begin{DoxyCompactList}\small\item\em メニューの状態を管理するクラス @detail シーンごとに用意するメニューを変えたりする \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25}{MENU\+\_\+\+STATE}} \{ \newline
+\mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25ac36e5c9ac597253191be83acf0b51d25}{STATE\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a72690adb1ade0aac593f3e1514160687}{TITLE\+\_\+\+STATE}}
+, \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a26cfbf6b4494b21047d9661df7b624f9}{SELECT\+\_\+\+STATE}}
+, \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25ae59a46346df78761d7d0c246a06a324c}{PAUSE\+\_\+\+STATE}}
+, \newline
+\mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a08f39dc823a8e3ea327a867b79b1d707}{OPTION\+\_\+\+STATE}}
+, \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a41fe1fa3c3f42732434c66488788657f}{GAMECLEAR\+\_\+\+STATE}}
+, \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25ab3746e5f3606c4c8a424331774843f29}{MISS\+\_\+\+STATE}}
+, \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a2a9b04358b8ab454b5c51b74e14f31f2}{GAMEOVER\+\_\+\+STATE}}
+, \newline
+\mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25aa777d74d726d771b24cd179950051c12}{MAX\+\_\+\+MENU}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+メニューを操作したりするマネージャー 
+
+\begin{DoxyAuthor}{著者}
+志水陽祐 
+\end{DoxyAuthor}
+\begin{DoxyDate}{日付}
+2022/7/31 
+\end{DoxyDate}
+
+
+\doxysubsection{列挙型詳解}
+\mbox{\Hypertarget{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25}\label{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25}} 
+\index{MenuManager.h@{MenuManager.h}!MENU\_STATE@{MENU\_STATE}}
+\index{MENU\_STATE@{MENU\_STATE}!MenuManager.h@{MenuManager.h}}
+\doxysubsubsection{\texorpdfstring{MENU\_STATE}{MENU\_STATE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25}{MENU\+\_\+\+STATE}}}
+
+列挙体宣言 \begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_NONE@{STATE\_NONE}!MenuManager.h@{MenuManager.h}}\index{MenuManager.h@{MenuManager.h}!STATE\_NONE@{STATE\_NONE}}}\mbox{\Hypertarget{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25ac36e5c9ac597253191be83acf0b51d25}\label{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25ac36e5c9ac597253191be83acf0b51d25}} 
+STATE\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{TITLE\_STATE@{TITLE\_STATE}!MenuManager.h@{MenuManager.h}}\index{MenuManager.h@{MenuManager.h}!TITLE\_STATE@{TITLE\_STATE}}}\mbox{\Hypertarget{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a72690adb1ade0aac593f3e1514160687}\label{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a72690adb1ade0aac593f3e1514160687}} 
+TITLE\+\_\+\+STATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SELECT\_STATE@{SELECT\_STATE}!MenuManager.h@{MenuManager.h}}\index{MenuManager.h@{MenuManager.h}!SELECT\_STATE@{SELECT\_STATE}}}\mbox{\Hypertarget{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a26cfbf6b4494b21047d9661df7b624f9}\label{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a26cfbf6b4494b21047d9661df7b624f9}} 
+SELECT\+\_\+\+STATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{PAUSE\_STATE@{PAUSE\_STATE}!MenuManager.h@{MenuManager.h}}\index{MenuManager.h@{MenuManager.h}!PAUSE\_STATE@{PAUSE\_STATE}}}\mbox{\Hypertarget{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25ae59a46346df78761d7d0c246a06a324c}\label{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25ae59a46346df78761d7d0c246a06a324c}} 
+PAUSE\+\_\+\+STATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{OPTION\_STATE@{OPTION\_STATE}!MenuManager.h@{MenuManager.h}}\index{MenuManager.h@{MenuManager.h}!OPTION\_STATE@{OPTION\_STATE}}}\mbox{\Hypertarget{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a08f39dc823a8e3ea327a867b79b1d707}\label{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a08f39dc823a8e3ea327a867b79b1d707}} 
+OPTION\+\_\+\+STATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GAMECLEAR\_STATE@{GAMECLEAR\_STATE}!MenuManager.h@{MenuManager.h}}\index{MenuManager.h@{MenuManager.h}!GAMECLEAR\_STATE@{GAMECLEAR\_STATE}}}\mbox{\Hypertarget{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a41fe1fa3c3f42732434c66488788657f}\label{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a41fe1fa3c3f42732434c66488788657f}} 
+GAMECLEAR\+\_\+\+STATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MISS\_STATE@{MISS\_STATE}!MenuManager.h@{MenuManager.h}}\index{MenuManager.h@{MenuManager.h}!MISS\_STATE@{MISS\_STATE}}}\mbox{\Hypertarget{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25ab3746e5f3606c4c8a424331774843f29}\label{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25ab3746e5f3606c4c8a424331774843f29}} 
+MISS\+\_\+\+STATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GAMEOVER\_STATE@{GAMEOVER\_STATE}!MenuManager.h@{MenuManager.h}}\index{MenuManager.h@{MenuManager.h}!GAMEOVER\_STATE@{GAMEOVER\_STATE}}}\mbox{\Hypertarget{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a2a9b04358b8ab454b5c51b74e14f31f2}\label{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25a2a9b04358b8ab454b5c51b74e14f31f2}} 
+GAMEOVER\+\_\+\+STATE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_MENU@{MAX\_MENU}!MenuManager.h@{MenuManager.h}}\index{MenuManager.h@{MenuManager.h}!MAX\_MENU@{MAX\_MENU}}}\mbox{\Hypertarget{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25aa777d74d726d771b24cd179950051c12}\label{_menu_manager_8h_a8b022cbaf1689aca386d8e721bfd9f25aa777d74d726d771b24cd179950051c12}} 
+MAX\+\_\+\+MENU&\\
+\hline
+
+\end{DoxyEnumFields}

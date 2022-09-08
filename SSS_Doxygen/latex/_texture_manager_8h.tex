@@ -1,0 +1,403 @@
+\hypertarget{_texture_manager_8h}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\+Texture\+Manager.h ファイル}
+\label{_texture_manager_8h}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/TextureManager.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/TextureManager.h}}
+
+
+テクスチャの情報を管理するマネージャー  
+
+
+{\ttfamily \#include $<$unordered\+\_\+map$>$}\newline
+{\ttfamily \#include \char`\"{}main\+App.\+h\char`\"{}}\newline
+Texture\+Manager.\+h の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_texture_manager_8h__incl}
+\end{center}
+\end{figure}
+被依存関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_texture_manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{クラス}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}}
+\begin{DoxyCompactList}\small\item\em テクスチャを管理するクラス \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{マクロ定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a8c1eb3a78191fc875848f01da2c4cee0}{DXCHAN\+\_\+\+STAND\+\_\+\+TEX\+\_\+\+NUM}}~(500)
+\begin{DoxyCompactList}\small\item\em 必要になってくるテクスチャをここに書いていく \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_ad2ffb8a682a74e2f479d1d80b9953c2a}{PATH\+\_\+\+TEX\+\_\+\+DXCHAN\+\_\+\+STAND}}~(\char`\"{}data/texture/Stand\+\_\+\+Def.\+PNG\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_adfc79f189187a128d8d5d30a2b7c6bd5}{DXCHAN\+\_\+\+RUN\+\_\+\+TEX\+\_\+\+NUM}}~(501)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_aca6ab7f486d550bf642be802447001b4}{PATH\+\_\+\+TEX\+\_\+\+DXCHAN\+\_\+\+RUN}}~(\char`\"{}data/texture/Run\+\_\+\+Def.\+PNG\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_afcc88c3d1cca87ccbc15ff30ce762fb9}{DEBUG\+\_\+\+BLOCK\+\_\+\+NUM}}~(1)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a41ec9d87ae2ec61d1b39b2cfd44f5952}{PATH\+\_\+\+TEX\+\_\+\+DEBUG\+\_\+\+BLOCK}}~(\char`\"{}data/texture/Debug.\+jpg\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a4258bc05f47149341c9621969197a037}{TITLE\+\_\+\+BACK\+\_\+\+GROUND\+\_\+\+NUM}}~(2)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_ab11db4d7c23fffe5c9b60201915163e7}{PATH\+\_\+\+TEX\+\_\+\+TITLE\+\_\+\+BACK\+\_\+\+GROUND}}~(\char`\"{}data/texture/Title\+Back.\+jpg\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_aea503ce005f65cee8c3ae840196d4684}{TITLE\+\_\+\+BUTTON\+\_\+\+NUM}}~(3)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_adacd1009dfd5ef22d7d8718f2ca6688f}{PATH\+\_\+\+TEX\+\_\+\+TITLE\+\_\+\+BUTTON}}~(\char`\"{}data/texture/press\+\_\+enter.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a7d8cbda2983f97cb07441d4368197499}{FEAD\+\_\+\+OUT\+\_\+\+NUM}}~(4)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a68c1995d9717f93b0a8d1373c730a366}{PATH\+\_\+\+TEX\+\_\+\+FAID\+\_\+\+OUT}}~(\char`\"{}data/texture/Black\+Out.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a9f46607feee2ca50792bfc55f3e25271}{SCORE\+\_\+\+TEX\+\_\+\+NUM}}~(5)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a894c18ca176763901b712b4d69db6215}{PATH\+\_\+\+TEX\+\_\+\+SCORE}}~(\char`\"{}data/texture/Score.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a46416a9dfae90c178413409c1bf67171}{MAX\+\_\+\+SCORE\+\_\+\+TEX\+\_\+\+NUM}}~(6)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a7c84b60ed498962fcbe275f95834a44b}{PATH\+\_\+\+TEX\+\_\+\+MAX\+\_\+\+SCORE}}~(\char`\"{}data/texture/highscore.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_aec10e7163f5aa4803958a8d8ecb60334}{NUMBER\+\_\+\+TEX\+\_\+\+NUM}}~(7)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_af9513fa815e989d62aa7e4c47d32485c}{PATH\+\_\+\+TEX\+\_\+\+NUMBER}}~(\char`\"{}data/texture/Number.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a7dd2854a5544252c18735f5a392c33cf}{PAUSE\+\_\+\+TEX\+\_\+\+NUM}}~(8)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_aaf25b0f52c83f2850a46226646aaf4aa}{PATH\+\_\+\+TEX\+\_\+\+PAUSE}}~(\char`\"{}data/texture/Pause.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a0adb2176c9874a01d97fb9c4a767363b}{TIME\+\_\+\+TEX\+\_\+\+NUM}}~(9)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_acb8f5e228503243ba1a3f9c7e4947ba0}{PATH\+\_\+\+TEX\+\_\+\+TIME}}~(\char`\"{}data/texture/Time.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a700ad2d48873ef8606a78ac378f572a9}{PUSH\+\_\+\+TEX\+\_\+\+NUM}}~(10)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_ae74be7b7f3a2069ebcd8cc7c2da806b8}{PATH\+\_\+\+TEX\+\_\+\+PUSH}}~(\char`\"{}data/texture/push\+A.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a1933db8fcea718f8f52e432dd01d96bd}{TO\+\_\+\+TITLE\+\_\+\+TEX\+\_\+\+NUM}}~(11)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a14fa94a8d69324cfddd203312863f19f}{PATH\+\_\+\+TEX\+\_\+\+TO\+\_\+\+TITLE}}~(\char`\"{}data/texture/タイトルへ.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a94e57a8b867249b1d640559eecff107d}{RESUME\+\_\+\+TEX\+\_\+\+NUM}}~(12)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a5acb3264d288a3d5765a36de7b263a8b}{PATH\+\_\+\+TEX\+\_\+\+RESUME}}~(\char`\"{}data/texture/再会.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a98efb0cdce672af55227628e3b879c2d}{OPTION\+\_\+\+TEX\+\_\+\+NUM}}~(13)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_ac633d669983264803e1213e42338a04b}{PATH\+\_\+\+TEX\+\_\+\+OPTION}}~(\char`\"{}data/texture/オプション.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a9bb67f6bccc9047519526fc30d0b3122}{BEGIN\+\_\+\+TEX\+\_\+\+NUM}}~(14)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a321d0c93007a33733797c7d6a7869682}{PATH\+\_\+\+TEX\+\_\+\+BEGIN}}~(\char`\"{}data/texture/初めから.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_af5c89d369083a220f1d00be25ac2bdeb}{CONTINUE\+\_\+\+TEX\+\_\+\+NUM}}~(15)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_ac36efc7c79cdb528a69b56ce3c786af9}{PATH\+\_\+\+TEX\+\_\+\+CONTINUE}}~(\char`\"{}data/texture/続きから.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a11a7e01b4ff0c1cfed1ceac73cffd72a}{STAGE\+\_\+\+SELECT\+\_\+\+TEX\+\_\+\+NUM}}~(16)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_aac762d3cf8ec39f08004d690e771956d}{PATH\+\_\+\+TEX\+\_\+\+STAGE\+\_\+\+SELECT}}~(\char`\"{}data/texture/ステージセレクト.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a3902a57c0a82c31dd13fcb1a884b1786}{END\+\_\+\+TEX\+\_\+\+NUM}}~(17)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a3c06a3ebcb9d439572fa83b002b2850a}{PATH\+\_\+\+TEX\+\_\+\+END}}~(\char`\"{}data/texture/終わる.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_aa2bc464903cc8ef8d64c6b46e77ab20e}{BGM\+\_\+\+TEX\+\_\+\+NUM}}~(18)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_aa6a0746e39176393de12e58845626589}{PATH\+\_\+\+TEX\+\_\+\+BGM}}~(\char`\"{}data/texture/BYM.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_ae8f68c40434a5f4e7b2cfa53f121b44b}{SE\+\_\+\+TEX\+\_\+\+NUM}}~(19)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a7482a63ba418afe1ed649bd958fc5d52}{PATH\+\_\+\+TEX\+\_\+\+SE}}~(\char`\"{}data/texture/se.\+png\char`\"{})
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a4c716283fc9acefcfa3001c4812fbe3d}{BRIGHTNESS\+\_\+\+TEX\+\_\+\+NUM}}~(20)
+\item 
+\#define \mbox{\hyperlink{_texture_manager_8h_a117f5fc19661312560945f5c7bc1cf3a}{PATH\+\_\+\+TEX\+\_\+\+BRIGHTNESS}}~(\char`\"{}data/texture/明るさ.\+png\char`\"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+テクスチャの情報を管理するマネージャー 
+
+\begin{DoxyAuthor}{著者}
+志水陽祐 
+\end{DoxyAuthor}
+\begin{DoxyDate}{日付}
+2022/6/28 
+\end{DoxyDate}
+
+
+\doxysubsection{マクロ定義詳解}
+\mbox{\Hypertarget{_texture_manager_8h_a9bb67f6bccc9047519526fc30d0b3122}\label{_texture_manager_8h_a9bb67f6bccc9047519526fc30d0b3122}} 
+\index{TextureManager.h@{TextureManager.h}!BEGIN\_TEX\_NUM@{BEGIN\_TEX\_NUM}}
+\index{BEGIN\_TEX\_NUM@{BEGIN\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{BEGIN\_TEX\_NUM}{BEGIN\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define BEGIN\+\_\+\+TEX\+\_\+\+NUM~(14)}
+
+\mbox{\Hypertarget{_texture_manager_8h_aa2bc464903cc8ef8d64c6b46e77ab20e}\label{_texture_manager_8h_aa2bc464903cc8ef8d64c6b46e77ab20e}} 
+\index{TextureManager.h@{TextureManager.h}!BGM\_TEX\_NUM@{BGM\_TEX\_NUM}}
+\index{BGM\_TEX\_NUM@{BGM\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{BGM\_TEX\_NUM}{BGM\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define BGM\+\_\+\+TEX\+\_\+\+NUM~(18)}
+
+\mbox{\Hypertarget{_texture_manager_8h_a4c716283fc9acefcfa3001c4812fbe3d}\label{_texture_manager_8h_a4c716283fc9acefcfa3001c4812fbe3d}} 
+\index{TextureManager.h@{TextureManager.h}!BRIGHTNESS\_TEX\_NUM@{BRIGHTNESS\_TEX\_NUM}}
+\index{BRIGHTNESS\_TEX\_NUM@{BRIGHTNESS\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{BRIGHTNESS\_TEX\_NUM}{BRIGHTNESS\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define BRIGHTNESS\+\_\+\+TEX\+\_\+\+NUM~(20)}
+
+\mbox{\Hypertarget{_texture_manager_8h_af5c89d369083a220f1d00be25ac2bdeb}\label{_texture_manager_8h_af5c89d369083a220f1d00be25ac2bdeb}} 
+\index{TextureManager.h@{TextureManager.h}!CONTINUE\_TEX\_NUM@{CONTINUE\_TEX\_NUM}}
+\index{CONTINUE\_TEX\_NUM@{CONTINUE\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{CONTINUE\_TEX\_NUM}{CONTINUE\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define CONTINUE\+\_\+\+TEX\+\_\+\+NUM~(15)}
+
+\mbox{\Hypertarget{_texture_manager_8h_afcc88c3d1cca87ccbc15ff30ce762fb9}\label{_texture_manager_8h_afcc88c3d1cca87ccbc15ff30ce762fb9}} 
+\index{TextureManager.h@{TextureManager.h}!DEBUG\_BLOCK\_NUM@{DEBUG\_BLOCK\_NUM}}
+\index{DEBUG\_BLOCK\_NUM@{DEBUG\_BLOCK\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_BLOCK\_NUM}{DEBUG\_BLOCK\_NUM}}
+{\footnotesize\ttfamily \#define DEBUG\+\_\+\+BLOCK\+\_\+\+NUM~(1)}
+
+\mbox{\Hypertarget{_texture_manager_8h_adfc79f189187a128d8d5d30a2b7c6bd5}\label{_texture_manager_8h_adfc79f189187a128d8d5d30a2b7c6bd5}} 
+\index{TextureManager.h@{TextureManager.h}!DXCHAN\_RUN\_TEX\_NUM@{DXCHAN\_RUN\_TEX\_NUM}}
+\index{DXCHAN\_RUN\_TEX\_NUM@{DXCHAN\_RUN\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{DXCHAN\_RUN\_TEX\_NUM}{DXCHAN\_RUN\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define DXCHAN\+\_\+\+RUN\+\_\+\+TEX\+\_\+\+NUM~(501)}
+
+\mbox{\Hypertarget{_texture_manager_8h_a8c1eb3a78191fc875848f01da2c4cee0}\label{_texture_manager_8h_a8c1eb3a78191fc875848f01da2c4cee0}} 
+\index{TextureManager.h@{TextureManager.h}!DXCHAN\_STAND\_TEX\_NUM@{DXCHAN\_STAND\_TEX\_NUM}}
+\index{DXCHAN\_STAND\_TEX\_NUM@{DXCHAN\_STAND\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{DXCHAN\_STAND\_TEX\_NUM}{DXCHAN\_STAND\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define DXCHAN\+\_\+\+STAND\+\_\+\+TEX\+\_\+\+NUM~(500)}
+
+
+
+必要になってくるテクスチャをここに書いていく 
+
+\mbox{\Hypertarget{_texture_manager_8h_a3902a57c0a82c31dd13fcb1a884b1786}\label{_texture_manager_8h_a3902a57c0a82c31dd13fcb1a884b1786}} 
+\index{TextureManager.h@{TextureManager.h}!END\_TEX\_NUM@{END\_TEX\_NUM}}
+\index{END\_TEX\_NUM@{END\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{END\_TEX\_NUM}{END\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define END\+\_\+\+TEX\+\_\+\+NUM~(17)}
+
+\mbox{\Hypertarget{_texture_manager_8h_a7d8cbda2983f97cb07441d4368197499}\label{_texture_manager_8h_a7d8cbda2983f97cb07441d4368197499}} 
+\index{TextureManager.h@{TextureManager.h}!FEAD\_OUT\_NUM@{FEAD\_OUT\_NUM}}
+\index{FEAD\_OUT\_NUM@{FEAD\_OUT\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{FEAD\_OUT\_NUM}{FEAD\_OUT\_NUM}}
+{\footnotesize\ttfamily \#define FEAD\+\_\+\+OUT\+\_\+\+NUM~(4)}
+
+\mbox{\Hypertarget{_texture_manager_8h_a46416a9dfae90c178413409c1bf67171}\label{_texture_manager_8h_a46416a9dfae90c178413409c1bf67171}} 
+\index{TextureManager.h@{TextureManager.h}!MAX\_SCORE\_TEX\_NUM@{MAX\_SCORE\_TEX\_NUM}}
+\index{MAX\_SCORE\_TEX\_NUM@{MAX\_SCORE\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{MAX\_SCORE\_TEX\_NUM}{MAX\_SCORE\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+SCORE\+\_\+\+TEX\+\_\+\+NUM~(6)}
+
+\mbox{\Hypertarget{_texture_manager_8h_aec10e7163f5aa4803958a8d8ecb60334}\label{_texture_manager_8h_aec10e7163f5aa4803958a8d8ecb60334}} 
+\index{TextureManager.h@{TextureManager.h}!NUMBER\_TEX\_NUM@{NUMBER\_TEX\_NUM}}
+\index{NUMBER\_TEX\_NUM@{NUMBER\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{NUMBER\_TEX\_NUM}{NUMBER\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define NUMBER\+\_\+\+TEX\+\_\+\+NUM~(7)}
+
+\mbox{\Hypertarget{_texture_manager_8h_a98efb0cdce672af55227628e3b879c2d}\label{_texture_manager_8h_a98efb0cdce672af55227628e3b879c2d}} 
+\index{TextureManager.h@{TextureManager.h}!OPTION\_TEX\_NUM@{OPTION\_TEX\_NUM}}
+\index{OPTION\_TEX\_NUM@{OPTION\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{OPTION\_TEX\_NUM}{OPTION\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define OPTION\+\_\+\+TEX\+\_\+\+NUM~(13)}
+
+\mbox{\Hypertarget{_texture_manager_8h_a321d0c93007a33733797c7d6a7869682}\label{_texture_manager_8h_a321d0c93007a33733797c7d6a7869682}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_BEGIN@{PATH\_TEX\_BEGIN}}
+\index{PATH\_TEX\_BEGIN@{PATH\_TEX\_BEGIN}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_BEGIN}{PATH\_TEX\_BEGIN}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+BEGIN~(\char`\"{}data/texture/初めから.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_aa6a0746e39176393de12e58845626589}\label{_texture_manager_8h_aa6a0746e39176393de12e58845626589}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_BGM@{PATH\_TEX\_BGM}}
+\index{PATH\_TEX\_BGM@{PATH\_TEX\_BGM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_BGM}{PATH\_TEX\_BGM}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+BGM~(\char`\"{}data/texture/BYM.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_a117f5fc19661312560945f5c7bc1cf3a}\label{_texture_manager_8h_a117f5fc19661312560945f5c7bc1cf3a}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_BRIGHTNESS@{PATH\_TEX\_BRIGHTNESS}}
+\index{PATH\_TEX\_BRIGHTNESS@{PATH\_TEX\_BRIGHTNESS}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_BRIGHTNESS}{PATH\_TEX\_BRIGHTNESS}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+BRIGHTNESS~(\char`\"{}data/texture/明るさ.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_ac36efc7c79cdb528a69b56ce3c786af9}\label{_texture_manager_8h_ac36efc7c79cdb528a69b56ce3c786af9}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_CONTINUE@{PATH\_TEX\_CONTINUE}}
+\index{PATH\_TEX\_CONTINUE@{PATH\_TEX\_CONTINUE}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_CONTINUE}{PATH\_TEX\_CONTINUE}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+CONTINUE~(\char`\"{}data/texture/続きから.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_a41ec9d87ae2ec61d1b39b2cfd44f5952}\label{_texture_manager_8h_a41ec9d87ae2ec61d1b39b2cfd44f5952}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_DEBUG\_BLOCK@{PATH\_TEX\_DEBUG\_BLOCK}}
+\index{PATH\_TEX\_DEBUG\_BLOCK@{PATH\_TEX\_DEBUG\_BLOCK}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_DEBUG\_BLOCK}{PATH\_TEX\_DEBUG\_BLOCK}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+DEBUG\+\_\+\+BLOCK~(\char`\"{}data/texture/Debug.\+jpg\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_aca6ab7f486d550bf642be802447001b4}\label{_texture_manager_8h_aca6ab7f486d550bf642be802447001b4}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_DXCHAN\_RUN@{PATH\_TEX\_DXCHAN\_RUN}}
+\index{PATH\_TEX\_DXCHAN\_RUN@{PATH\_TEX\_DXCHAN\_RUN}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_DXCHAN\_RUN}{PATH\_TEX\_DXCHAN\_RUN}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+DXCHAN\+\_\+\+RUN~(\char`\"{}data/texture/Run\+\_\+\+Def.\+PNG\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_ad2ffb8a682a74e2f479d1d80b9953c2a}\label{_texture_manager_8h_ad2ffb8a682a74e2f479d1d80b9953c2a}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_DXCHAN\_STAND@{PATH\_TEX\_DXCHAN\_STAND}}
+\index{PATH\_TEX\_DXCHAN\_STAND@{PATH\_TEX\_DXCHAN\_STAND}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_DXCHAN\_STAND}{PATH\_TEX\_DXCHAN\_STAND}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+DXCHAN\+\_\+\+STAND~(\char`\"{}data/texture/Stand\+\_\+\+Def.\+PNG\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_a3c06a3ebcb9d439572fa83b002b2850a}\label{_texture_manager_8h_a3c06a3ebcb9d439572fa83b002b2850a}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_END@{PATH\_TEX\_END}}
+\index{PATH\_TEX\_END@{PATH\_TEX\_END}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_END}{PATH\_TEX\_END}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+END~(\char`\"{}data/texture/終わる.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_a68c1995d9717f93b0a8d1373c730a366}\label{_texture_manager_8h_a68c1995d9717f93b0a8d1373c730a366}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_FAID\_OUT@{PATH\_TEX\_FAID\_OUT}}
+\index{PATH\_TEX\_FAID\_OUT@{PATH\_TEX\_FAID\_OUT}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_FAID\_OUT}{PATH\_TEX\_FAID\_OUT}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+FAID\+\_\+\+OUT~(\char`\"{}data/texture/Black\+Out.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_a7c84b60ed498962fcbe275f95834a44b}\label{_texture_manager_8h_a7c84b60ed498962fcbe275f95834a44b}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_MAX\_SCORE@{PATH\_TEX\_MAX\_SCORE}}
+\index{PATH\_TEX\_MAX\_SCORE@{PATH\_TEX\_MAX\_SCORE}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_MAX\_SCORE}{PATH\_TEX\_MAX\_SCORE}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+MAX\+\_\+\+SCORE~(\char`\"{}data/texture/highscore.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_af9513fa815e989d62aa7e4c47d32485c}\label{_texture_manager_8h_af9513fa815e989d62aa7e4c47d32485c}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_NUMBER@{PATH\_TEX\_NUMBER}}
+\index{PATH\_TEX\_NUMBER@{PATH\_TEX\_NUMBER}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_NUMBER}{PATH\_TEX\_NUMBER}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+NUMBER~(\char`\"{}data/texture/Number.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_ac633d669983264803e1213e42338a04b}\label{_texture_manager_8h_ac633d669983264803e1213e42338a04b}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_OPTION@{PATH\_TEX\_OPTION}}
+\index{PATH\_TEX\_OPTION@{PATH\_TEX\_OPTION}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_OPTION}{PATH\_TEX\_OPTION}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+OPTION~(\char`\"{}data/texture/オプション.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_aaf25b0f52c83f2850a46226646aaf4aa}\label{_texture_manager_8h_aaf25b0f52c83f2850a46226646aaf4aa}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_PAUSE@{PATH\_TEX\_PAUSE}}
+\index{PATH\_TEX\_PAUSE@{PATH\_TEX\_PAUSE}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_PAUSE}{PATH\_TEX\_PAUSE}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+PAUSE~(\char`\"{}data/texture/Pause.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_ae74be7b7f3a2069ebcd8cc7c2da806b8}\label{_texture_manager_8h_ae74be7b7f3a2069ebcd8cc7c2da806b8}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_PUSH@{PATH\_TEX\_PUSH}}
+\index{PATH\_TEX\_PUSH@{PATH\_TEX\_PUSH}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_PUSH}{PATH\_TEX\_PUSH}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+PUSH~(\char`\"{}data/texture/push\+A.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_a5acb3264d288a3d5765a36de7b263a8b}\label{_texture_manager_8h_a5acb3264d288a3d5765a36de7b263a8b}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_RESUME@{PATH\_TEX\_RESUME}}
+\index{PATH\_TEX\_RESUME@{PATH\_TEX\_RESUME}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_RESUME}{PATH\_TEX\_RESUME}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+RESUME~(\char`\"{}data/texture/再会.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_a894c18ca176763901b712b4d69db6215}\label{_texture_manager_8h_a894c18ca176763901b712b4d69db6215}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_SCORE@{PATH\_TEX\_SCORE}}
+\index{PATH\_TEX\_SCORE@{PATH\_TEX\_SCORE}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_SCORE}{PATH\_TEX\_SCORE}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+SCORE~(\char`\"{}data/texture/Score.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_a7482a63ba418afe1ed649bd958fc5d52}\label{_texture_manager_8h_a7482a63ba418afe1ed649bd958fc5d52}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_SE@{PATH\_TEX\_SE}}
+\index{PATH\_TEX\_SE@{PATH\_TEX\_SE}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_SE}{PATH\_TEX\_SE}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+SE~(\char`\"{}data/texture/se.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_aac762d3cf8ec39f08004d690e771956d}\label{_texture_manager_8h_aac762d3cf8ec39f08004d690e771956d}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_STAGE\_SELECT@{PATH\_TEX\_STAGE\_SELECT}}
+\index{PATH\_TEX\_STAGE\_SELECT@{PATH\_TEX\_STAGE\_SELECT}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_STAGE\_SELECT}{PATH\_TEX\_STAGE\_SELECT}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+STAGE\+\_\+\+SELECT~(\char`\"{}data/texture/ステージセレクト.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_acb8f5e228503243ba1a3f9c7e4947ba0}\label{_texture_manager_8h_acb8f5e228503243ba1a3f9c7e4947ba0}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_TIME@{PATH\_TEX\_TIME}}
+\index{PATH\_TEX\_TIME@{PATH\_TEX\_TIME}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_TIME}{PATH\_TEX\_TIME}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+TIME~(\char`\"{}data/texture/Time.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_ab11db4d7c23fffe5c9b60201915163e7}\label{_texture_manager_8h_ab11db4d7c23fffe5c9b60201915163e7}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_TITLE\_BACK\_GROUND@{PATH\_TEX\_TITLE\_BACK\_GROUND}}
+\index{PATH\_TEX\_TITLE\_BACK\_GROUND@{PATH\_TEX\_TITLE\_BACK\_GROUND}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_TITLE\_BACK\_GROUND}{PATH\_TEX\_TITLE\_BACK\_GROUND}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+TITLE\+\_\+\+BACK\+\_\+\+GROUND~(\char`\"{}data/texture/Title\+Back.\+jpg\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_adacd1009dfd5ef22d7d8718f2ca6688f}\label{_texture_manager_8h_adacd1009dfd5ef22d7d8718f2ca6688f}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_TITLE\_BUTTON@{PATH\_TEX\_TITLE\_BUTTON}}
+\index{PATH\_TEX\_TITLE\_BUTTON@{PATH\_TEX\_TITLE\_BUTTON}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_TITLE\_BUTTON}{PATH\_TEX\_TITLE\_BUTTON}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+TITLE\+\_\+\+BUTTON~(\char`\"{}data/texture/press\+\_\+enter.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_a14fa94a8d69324cfddd203312863f19f}\label{_texture_manager_8h_a14fa94a8d69324cfddd203312863f19f}} 
+\index{TextureManager.h@{TextureManager.h}!PATH\_TEX\_TO\_TITLE@{PATH\_TEX\_TO\_TITLE}}
+\index{PATH\_TEX\_TO\_TITLE@{PATH\_TEX\_TO\_TITLE}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PATH\_TEX\_TO\_TITLE}{PATH\_TEX\_TO\_TITLE}}
+{\footnotesize\ttfamily \#define PATH\+\_\+\+TEX\+\_\+\+TO\+\_\+\+TITLE~(\char`\"{}data/texture/タイトルへ.\+png\char`\"{})}
+
+\mbox{\Hypertarget{_texture_manager_8h_a7dd2854a5544252c18735f5a392c33cf}\label{_texture_manager_8h_a7dd2854a5544252c18735f5a392c33cf}} 
+\index{TextureManager.h@{TextureManager.h}!PAUSE\_TEX\_NUM@{PAUSE\_TEX\_NUM}}
+\index{PAUSE\_TEX\_NUM@{PAUSE\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PAUSE\_TEX\_NUM}{PAUSE\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define PAUSE\+\_\+\+TEX\+\_\+\+NUM~(8)}
+
+\mbox{\Hypertarget{_texture_manager_8h_a700ad2d48873ef8606a78ac378f572a9}\label{_texture_manager_8h_a700ad2d48873ef8606a78ac378f572a9}} 
+\index{TextureManager.h@{TextureManager.h}!PUSH\_TEX\_NUM@{PUSH\_TEX\_NUM}}
+\index{PUSH\_TEX\_NUM@{PUSH\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{PUSH\_TEX\_NUM}{PUSH\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define PUSH\+\_\+\+TEX\+\_\+\+NUM~(10)}
+
+\mbox{\Hypertarget{_texture_manager_8h_a94e57a8b867249b1d640559eecff107d}\label{_texture_manager_8h_a94e57a8b867249b1d640559eecff107d}} 
+\index{TextureManager.h@{TextureManager.h}!RESUME\_TEX\_NUM@{RESUME\_TEX\_NUM}}
+\index{RESUME\_TEX\_NUM@{RESUME\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{RESUME\_TEX\_NUM}{RESUME\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define RESUME\+\_\+\+TEX\+\_\+\+NUM~(12)}
+
+\mbox{\Hypertarget{_texture_manager_8h_a9f46607feee2ca50792bfc55f3e25271}\label{_texture_manager_8h_a9f46607feee2ca50792bfc55f3e25271}} 
+\index{TextureManager.h@{TextureManager.h}!SCORE\_TEX\_NUM@{SCORE\_TEX\_NUM}}
+\index{SCORE\_TEX\_NUM@{SCORE\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{SCORE\_TEX\_NUM}{SCORE\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define SCORE\+\_\+\+TEX\+\_\+\+NUM~(5)}
+
+\mbox{\Hypertarget{_texture_manager_8h_ae8f68c40434a5f4e7b2cfa53f121b44b}\label{_texture_manager_8h_ae8f68c40434a5f4e7b2cfa53f121b44b}} 
+\index{TextureManager.h@{TextureManager.h}!SE\_TEX\_NUM@{SE\_TEX\_NUM}}
+\index{SE\_TEX\_NUM@{SE\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{SE\_TEX\_NUM}{SE\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define SE\+\_\+\+TEX\+\_\+\+NUM~(19)}
+
+\mbox{\Hypertarget{_texture_manager_8h_a11a7e01b4ff0c1cfed1ceac73cffd72a}\label{_texture_manager_8h_a11a7e01b4ff0c1cfed1ceac73cffd72a}} 
+\index{TextureManager.h@{TextureManager.h}!STAGE\_SELECT\_TEX\_NUM@{STAGE\_SELECT\_TEX\_NUM}}
+\index{STAGE\_SELECT\_TEX\_NUM@{STAGE\_SELECT\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{STAGE\_SELECT\_TEX\_NUM}{STAGE\_SELECT\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define STAGE\+\_\+\+SELECT\+\_\+\+TEX\+\_\+\+NUM~(16)}
+
+\mbox{\Hypertarget{_texture_manager_8h_a0adb2176c9874a01d97fb9c4a767363b}\label{_texture_manager_8h_a0adb2176c9874a01d97fb9c4a767363b}} 
+\index{TextureManager.h@{TextureManager.h}!TIME\_TEX\_NUM@{TIME\_TEX\_NUM}}
+\index{TIME\_TEX\_NUM@{TIME\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{TIME\_TEX\_NUM}{TIME\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define TIME\+\_\+\+TEX\+\_\+\+NUM~(9)}
+
+\mbox{\Hypertarget{_texture_manager_8h_a4258bc05f47149341c9621969197a037}\label{_texture_manager_8h_a4258bc05f47149341c9621969197a037}} 
+\index{TextureManager.h@{TextureManager.h}!TITLE\_BACK\_GROUND\_NUM@{TITLE\_BACK\_GROUND\_NUM}}
+\index{TITLE\_BACK\_GROUND\_NUM@{TITLE\_BACK\_GROUND\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{TITLE\_BACK\_GROUND\_NUM}{TITLE\_BACK\_GROUND\_NUM}}
+{\footnotesize\ttfamily \#define TITLE\+\_\+\+BACK\+\_\+\+GROUND\+\_\+\+NUM~(2)}
+
+\mbox{\Hypertarget{_texture_manager_8h_aea503ce005f65cee8c3ae840196d4684}\label{_texture_manager_8h_aea503ce005f65cee8c3ae840196d4684}} 
+\index{TextureManager.h@{TextureManager.h}!TITLE\_BUTTON\_NUM@{TITLE\_BUTTON\_NUM}}
+\index{TITLE\_BUTTON\_NUM@{TITLE\_BUTTON\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{TITLE\_BUTTON\_NUM}{TITLE\_BUTTON\_NUM}}
+{\footnotesize\ttfamily \#define TITLE\+\_\+\+BUTTON\+\_\+\+NUM~(3)}
+
+\mbox{\Hypertarget{_texture_manager_8h_a1933db8fcea718f8f52e432dd01d96bd}\label{_texture_manager_8h_a1933db8fcea718f8f52e432dd01d96bd}} 
+\index{TextureManager.h@{TextureManager.h}!TO\_TITLE\_TEX\_NUM@{TO\_TITLE\_TEX\_NUM}}
+\index{TO\_TITLE\_TEX\_NUM@{TO\_TITLE\_TEX\_NUM}!TextureManager.h@{TextureManager.h}}
+\doxysubsubsection{\texorpdfstring{TO\_TITLE\_TEX\_NUM}{TO\_TITLE\_TEX\_NUM}}
+{\footnotesize\ttfamily \#define TO\+\_\+\+TITLE\+\_\+\+TEX\+\_\+\+NUM~(11)}
+

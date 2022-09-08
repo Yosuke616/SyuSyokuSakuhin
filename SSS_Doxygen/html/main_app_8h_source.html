@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/mainApp.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">mainApp.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="main_app_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//=============================================================================</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">//</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// メイン処理 [main.h]</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// Author : SHIMIZU YOUSUKE</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">//</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//=============================================================================</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment">//*****************************************************************************</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// インクルードファイル</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">//*****************************************************************************</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="main_app_8h.html#a9f918755b601cf4bffca775992e6fb90">   12</a></span><span class="preprocessor">#define NOMINMAX</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;windows.h&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;tchar.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;mmsystem.h&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;d3d11.h&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;DirectXMath.h&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="resource_8h.html">resource.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;math.h&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">// 本来はヘッダに書かない方が良い</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">using namespace </span>DirectX;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">//*****************************************************************************</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// マクロ定義</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">//*****************************************************************************</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#ifndef SAFE_RELEASE</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="main_app_8h.html#a2bc549675ca29f733709b4656d22d52a">   29</a></span><span class="preprocessor">#define SAFE_RELEASE(x) {if(x){(x)-&gt;Release();x=nullptr;}}</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#ifndef SAFE_DELETE</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="main_app_8h.html#a4b8b2bed986c06c207ebac140ba65a7a">   32</a></span><span class="preprocessor">#define SAFE_DELETE(x) {if(x){delete(x);x=nullptr;}}</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#ifndef SAFE_DELETE_ARRAY</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="main_app_8h.html#a529602a5e4c2f9ba2c721ce9aefaddf7">   35</a></span><span class="preprocessor">#define SAFE_DELETE_ARRAY(x) {if(x){delete[](x);x=nullptr;}}</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="main_app_8h.html#a2cd109632a6dcccaa80b43561b1ab700">   38</a></span><span class="preprocessor">#define SCREEN_WIDTH    (1280)              </span><span class="comment">// ウインドウの幅</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="main_app_8h.html#a6974d08a74da681b3957b2fead2608b8">   39</a></span><span class="preprocessor">#define SCREEN_HEIGHT   (720)               </span><span class="comment">// ウインドウの高さ</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="main_app_8h.html#a95a8665023499fe96fe4c8eac20c27f4">   40</a></span><span class="preprocessor">#define SCREEN_CENTER_X (SCREEN_WIDTH/2)    </span><span class="comment">// ウインドウの中心Ｘ座標</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="main_app_8h.html#a8d605dd2d3860073577d63169888ba84">   41</a></span><span class="preprocessor">#define SCREEN_CENTER_Y (SCREEN_HEIGHT/2)   </span><span class="comment">// ウインドウの中心Ｙ座標</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="main_app_8h.html#ab722cbfcd174beb57f5473d53f9767f7">   43</a></span><span class="preprocessor">#define NUM_VERTEX      (4)                 </span><span class="comment">// 頂点数</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="main_app_8h.html#a76f2100a99233162d34d4283a26332bb">   44</a></span><span class="preprocessor">#define NUM_POLYGON     (2)                 </span><span class="comment">// ポリゴン数</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="main_app_8h.html#ae78ba7a387b6da61def93aa3d2dcd109">   46</a></span><span class="preprocessor">#define SinDeg(degree)  sinf(XMConvertToRadians(degree))    </span><span class="comment">//  Sinの値  引数は角度</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="main_app_8h.html#a0d04c6140b97345edfc86985f1676253">   47</a></span><span class="preprocessor">#define CosDeg(degree)  cosf(XMConvertToRadians(degree))    </span><span class="comment">//  Cosの値   引数は角度</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment">// 2022/01/21 方向</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6b">   50</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6b">Direct</a></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>{</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6ba2e15270378edc4b0861165674c651970">   52</a></span>    <a class="code hl_enumvalue" href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6ba2e15270378edc4b0861165674c651970">DIR_NONE</a> = 0,</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6ba5dd21ef3d450f62c44082756cab8f6f8">   53</a></span>    <a class="code hl_enumvalue" href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6ba5dd21ef3d450f62c44082756cab8f6f8">DIR_RIGHT</a>,</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6ba1307dc42d06472935155dcbe283bc660">   54</a></span>    <a class="code hl_enumvalue" href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6ba1307dc42d06472935155dcbe283bc660">DIR_LEFT</a>,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6ba0b76fb863426c07c6c997a8d9523257b">   55</a></span>    <a class="code hl_enumvalue" href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6ba0b76fb863426c07c6c997a8d9523257b">DIR_UP</a>,</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6bab1bf68da897d09488069dd40e54f442d">   56</a></span>    <a class="code hl_enumvalue" href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6bab1bf68da897d09488069dd40e54f442d">DIR_DOWN</a>,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2">   60</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2">EBlendState</a> {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a2d12b87b8f786ee643522fd75a569ee9">   61</a></span>    <a class="code hl_enumvalue" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a2d12b87b8f786ee643522fd75a569ee9">BS_NONE</a> = 0,                            <span class="comment">// 半透明合成無し</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a4652560626321baf86b007ea6cf19d1b">   62</a></span>    <a class="code hl_enumvalue" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a4652560626321baf86b007ea6cf19d1b">BS_ALPHABLEND</a>,                          <span class="comment">// 半透明合成</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a4b3aed63826d12e954d4f8916d7d7ee3">   63</a></span>    <a class="code hl_enumvalue" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a4b3aed63826d12e954d4f8916d7d7ee3">BS_ADDITIVE</a>,                            <span class="comment">// 加算合成</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a696619a00213b38ff53c718615609ac9">   64</a></span>    <a class="code hl_enumvalue" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a696619a00213b38ff53c718615609ac9">BS_SUBTRACTION</a>,                         <span class="comment">// 減算合成</span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code hl_enumvalue" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a2dd3f4c2cf1b7fa074bc5126ce663ba4">MAX_BLENDSTATE</a></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a2dd3f4c2cf1b7fa074bc5126ce663ba4">   67</a></span>};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fca">   69</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fca">ECullMode</a> {</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaa2de164d15a5a308a3e7f852ef6e7948e">   70</a></span>    <a class="code hl_enumvalue" href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaa2de164d15a5a308a3e7f852ef6e7948e">CULLMODE_NONE</a> = 0,                      <span class="comment">// カリングしない</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaaa72c8619e0be2fe67ef171b2f2ee7bc6">   71</a></span>    <a class="code hl_enumvalue" href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaaa72c8619e0be2fe67ef171b2f2ee7bc6">CULLMODE_CW</a>,                            <span class="comment">// 前面カリング</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaaf3a645ebbdf5dde3b88e2197e6c05c4e">   72</a></span>    <a class="code hl_enumvalue" href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaaf3a645ebbdf5dde3b88e2197e6c05c4e">CULLMODE_CCW</a>,                           <span class="comment">// 背面カリング</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <a class="code hl_enumvalue" href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaac9e43ef91a95b9f6a68480609e3cb2c1">MAX_CULLMODE</a></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaac9e43ef91a95b9f6a68480609e3cb2c1">   75</a></span>};</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="comment">//*****************************************************************************</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">// 構造体定義</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="comment">//*****************************************************************************</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">// 頂点フォーマット( 頂点座標[2D] / 反射光 / テクスチャ座標 )</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="struct_v_e_r_t_e_x__2_d.html">   81</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="struct_v_e_r_t_e_x__2_d.html#a0732120d0ffc2648438306f04ff52d2f">   82</a></span>    XMFLOAT3 <a class="code hl_variable" href="struct_v_e_r_t_e_x__2_d.html#a0732120d0ffc2648438306f04ff52d2f">vtx</a>;       <span class="comment">// 頂点座標</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="struct_v_e_r_t_e_x__2_d.html#a6227dce918f9ae0e90ad7ce98974510d">   83</a></span>    XMFLOAT4 <a class="code hl_variable" href="struct_v_e_r_t_e_x__2_d.html#a6227dce918f9ae0e90ad7ce98974510d">diffuse</a>;   <span class="comment">// 拡散反射光</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="struct_v_e_r_t_e_x__2_d.html#ac6db08953bb6b76fac17f8ea73cbcb69">   84</a></span>    XMFLOAT2 <a class="code hl_variable" href="struct_v_e_r_t_e_x__2_d.html#ac6db08953bb6b76fac17f8ea73cbcb69">tex</a>;       <span class="comment">// テクスチャ座標</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>} <a class="code hl_struct" href="struct_v_e_r_t_e_x__2_d.html">VERTEX_2D</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">// 頂点フォーマット( 頂点座標[3D] / 法線ベクトル / 反射光 / テクスチャ座標 )</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="struct_v_e_r_t_e_x__3_d.html">   88</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="struct_v_e_r_t_e_x__3_d.html#a63f5c21e4110738cbb9801a885537a5e">   89</a></span>    XMFLOAT3 <a class="code hl_variable" href="struct_v_e_r_t_e_x__3_d.html#a63f5c21e4110738cbb9801a885537a5e">vtx</a>;       <span class="comment">// 頂点座標</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="struct_v_e_r_t_e_x__3_d.html#aa275a4f60227dc096a3ec715859b4087">   90</a></span>    XMFLOAT3 <a class="code hl_variable" href="struct_v_e_r_t_e_x__3_d.html#aa275a4f60227dc096a3ec715859b4087">nor</a>;       <span class="comment">// 法線ベクトル</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno"><a class="line" href="struct_v_e_r_t_e_x__3_d.html#a3570266c04bfab162e6af89968187438">   91</a></span>    XMFLOAT4 <a class="code hl_variable" href="struct_v_e_r_t_e_x__3_d.html#a3570266c04bfab162e6af89968187438">diffuse</a>;   <span class="comment">// 拡散反射光</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="struct_v_e_r_t_e_x__3_d.html#ad82d470cdae573bc060d6e7c4aa81c75">   92</a></span>    XMFLOAT2 <a class="code hl_variable" href="struct_v_e_r_t_e_x__3_d.html#ad82d470cdae573bc060d6e7c4aa81c75">tex</a>;       <span class="comment">// テクスチャ座標</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>} <a class="code hl_struct" href="struct_v_e_r_t_e_x__3_d.html">VERTEX_3D</a>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="comment">//*****************************************************************************</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">// プロトタイプ宣言</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment">//*****************************************************************************</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>HWND <a class="code hl_function" href="main_app_8h.html#a92550af168fdc15968f87992fd9d07c5">GetMainWnd</a>();                          <span class="comment">//  メイン ウィンドウ ハンドル取得</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>HINSTANCE <a class="code hl_function" href="main_app_8h.html#aa9d863781ee8f3f820ea4ad9e52f78d9">GetInstance</a>();                    <span class="comment">//  インスタンス ハンドル取得</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>ID3D11Device* <a class="code hl_function" href="main_app_8h.html#a965053cc7c41d010d359091035281310">GetDevice</a>();                  <span class="comment">//  デバイス取得</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>ID3D11DeviceContext* <a class="code hl_function" href="main_app_8h.html#a76385629cd459c9e0fcda690542edb07">GetDeviceContext</a>();    <span class="comment">//  デバイス コンテキスト取得</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_app_8h.html#a15367d15c1324ebba192218982bffe3e">SetBlendState</a>(<span class="keywordtype">int</span> nBlendState);        <span class="comment">//  ブレンドステートの設定</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_app_8h.html#a55437f177885a57508f99619a3a7a19f">SetCullMode</a>(<span class="keywordtype">int</span> nCullMode);            <span class="comment">//  カリングモードの設定</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_app_8h.html#a9b19b33f1a7f58f261e0025ec2fc66c3">SetZBuffer</a>(<span class="keywordtype">bool</span> bEnable);              <span class="comment">//  深度バッファ有効無効制御</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="keywordtype">void</span> <a class="code hl_function" href="main_app_8h.html#a6376c6224e7273eb750a7fde2aea342d">SetZWrite</a>(<span class="keywordtype">bool</span> bEnable);               <span class="comment">//  深度バッファ更新有効無効制御</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="comment">//#define 成田</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="comment">// スクリーン座標をワールド座標に変換</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>XMVECTOR* <a class="code hl_function" href="main_app_8h.html#a45b6acf4c6f99b1092ca0ab4bba46b07">CalcScreenToWorld</a>(</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    XMVECTOR* pout,     <span class="comment">//  格納先</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordtype">float</span> Sx,           <span class="comment">//  スクリーンX座標</span></div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    <span class="keywordtype">float</span> Sy,           <span class="comment">//  スクリーンY座標</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">float</span> fZ,           <span class="comment">//  射影空間でのZ値（0〜1）</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">int</span> Screen_w,       <span class="comment">//  スクリーンの幅</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">int</span> Screen_h,       <span class="comment">//  スクリーンの高さ</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    XMMATRIX View,      <span class="comment">//  ビューマトリックス</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    XMMATRIX Prj        <span class="comment">//  射影行列</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span><span class="comment">// XY平面とスクリーン座標の交点算出関数</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>XMVECTOR* <a class="code hl_function" href="main_app_8h.html#a33762d19fee3469aebc3f8a7a724bcf9">CalcScreenToXY</a>(</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    XMFLOAT3* pout,     <span class="comment">//  格納先</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">float</span> Sx,           <span class="comment">//  スクリーンX座標</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordtype">float</span> Sy,           <span class="comment">//  スクリーンY座標</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordtype">int</span> Screen_w,       <span class="comment">//  スクリーンの幅</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">int</span> Screen_h,       <span class="comment">//  スクリーンの高さ</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    XMMATRIX View,      <span class="comment">//  ビューマトリックス</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    XMMATRIX Prj        <span class="comment">//  射影行列</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>XMFLOAT2 <a class="code hl_function" href="main_app_8h.html#ab2bc1dccc769090b3dbd2b251a643039">CalcWorldSize</a>();</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="comment">// レンダラターゲットビューの取得</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>ID3D11RenderTargetView* <a class="code hl_function" href="main_app_8h.html#ad019e0e7e14e8aa9a83bbbf95930ed81">GetRenderTargetView</a>();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="comment">// Zバッファ</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>ID3D11DepthStencilView* <a class="code hl_function" href="main_app_8h.html#a5cd40119cdaa763b483dfba6942eaa3e">GetDepthStencilView</a>();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">// スワップチェーン</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>IDXGISwapChain* <a class="code hl_function" href="main_app_8h.html#aafdc26c1149a90863283c7f26dfa89fa">GetSwapChain</a>();</div>
+<div class="ttc" id="amain_app_8h_html_a15367d15c1324ebba192218982bffe3e"><div class="ttname"><a href="main_app_8h.html#a15367d15c1324ebba192218982bffe3e">SetBlendState</a></div><div class="ttdeci">void SetBlendState(int nBlendState)</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:665</div></div>
+<div class="ttc" id="amain_app_8h_html_a33762d19fee3469aebc3f8a7a724bcf9"><div class="ttname"><a href="main_app_8h.html#a33762d19fee3469aebc3f8a7a724bcf9">CalcScreenToXY</a></div><div class="ttdeci">XMVECTOR * CalcScreenToXY(XMFLOAT3 *pout, float Sx, float Sy, int Screen_w, int Screen_h, XMMATRIX View, XMMATRIX Prj)</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:720</div></div>
+<div class="ttc" id="amain_app_8h_html_a3e447a94ef1b4376d3cbf363802bb5f2"><div class="ttname"><a href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2">EBlendState</a></div><div class="ttdeci">EBlendState</div><div class="ttdef"><b>Definition:</b> mainApp.h:60</div></div>
+<div class="ttc" id="amain_app_8h_html_a3e447a94ef1b4376d3cbf363802bb5f2a2d12b87b8f786ee643522fd75a569ee9"><div class="ttname"><a href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a2d12b87b8f786ee643522fd75a569ee9">BS_NONE</a></div><div class="ttdeci">@ BS_NONE</div><div class="ttdef"><b>Definition:</b> mainApp.h:61</div></div>
+<div class="ttc" id="amain_app_8h_html_a3e447a94ef1b4376d3cbf363802bb5f2a2dd3f4c2cf1b7fa074bc5126ce663ba4"><div class="ttname"><a href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a2dd3f4c2cf1b7fa074bc5126ce663ba4">MAX_BLENDSTATE</a></div><div class="ttdeci">@ MAX_BLENDSTATE</div><div class="ttdef"><b>Definition:</b> mainApp.h:66</div></div>
+<div class="ttc" id="amain_app_8h_html_a3e447a94ef1b4376d3cbf363802bb5f2a4652560626321baf86b007ea6cf19d1b"><div class="ttname"><a href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a4652560626321baf86b007ea6cf19d1b">BS_ALPHABLEND</a></div><div class="ttdeci">@ BS_ALPHABLEND</div><div class="ttdef"><b>Definition:</b> mainApp.h:62</div></div>
+<div class="ttc" id="amain_app_8h_html_a3e447a94ef1b4376d3cbf363802bb5f2a4b3aed63826d12e954d4f8916d7d7ee3"><div class="ttname"><a href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a4b3aed63826d12e954d4f8916d7d7ee3">BS_ADDITIVE</a></div><div class="ttdeci">@ BS_ADDITIVE</div><div class="ttdef"><b>Definition:</b> mainApp.h:63</div></div>
+<div class="ttc" id="amain_app_8h_html_a3e447a94ef1b4376d3cbf363802bb5f2a696619a00213b38ff53c718615609ac9"><div class="ttname"><a href="main_app_8h.html#a3e447a94ef1b4376d3cbf363802bb5f2a696619a00213b38ff53c718615609ac9">BS_SUBTRACTION</a></div><div class="ttdeci">@ BS_SUBTRACTION</div><div class="ttdef"><b>Definition:</b> mainApp.h:64</div></div>
+<div class="ttc" id="amain_app_8h_html_a45b6acf4c6f99b1092ca0ab4bba46b07"><div class="ttname"><a href="main_app_8h.html#a45b6acf4c6f99b1092ca0ab4bba46b07">CalcScreenToWorld</a></div><div class="ttdeci">XMVECTOR * CalcScreenToWorld(XMVECTOR *pout, float Sx, float Sy, float fZ, int Screen_w, int Screen_h, XMMATRIX View, XMMATRIX Prj)</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:682</div></div>
+<div class="ttc" id="amain_app_8h_html_a4853d3aea066eba9ef3740585c107a6b"><div class="ttname"><a href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6b">Direct</a></div><div class="ttdeci">Direct</div><div class="ttdef"><b>Definition:</b> mainApp.h:51</div></div>
+<div class="ttc" id="amain_app_8h_html_a4853d3aea066eba9ef3740585c107a6ba0b76fb863426c07c6c997a8d9523257b"><div class="ttname"><a href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6ba0b76fb863426c07c6c997a8d9523257b">DIR_UP</a></div><div class="ttdeci">@ DIR_UP</div><div class="ttdef"><b>Definition:</b> mainApp.h:55</div></div>
+<div class="ttc" id="amain_app_8h_html_a4853d3aea066eba9ef3740585c107a6ba1307dc42d06472935155dcbe283bc660"><div class="ttname"><a href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6ba1307dc42d06472935155dcbe283bc660">DIR_LEFT</a></div><div class="ttdeci">@ DIR_LEFT</div><div class="ttdef"><b>Definition:</b> mainApp.h:54</div></div>
+<div class="ttc" id="amain_app_8h_html_a4853d3aea066eba9ef3740585c107a6ba2e15270378edc4b0861165674c651970"><div class="ttname"><a href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6ba2e15270378edc4b0861165674c651970">DIR_NONE</a></div><div class="ttdeci">@ DIR_NONE</div><div class="ttdef"><b>Definition:</b> mainApp.h:52</div></div>
+<div class="ttc" id="amain_app_8h_html_a4853d3aea066eba9ef3740585c107a6ba5dd21ef3d450f62c44082756cab8f6f8"><div class="ttname"><a href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6ba5dd21ef3d450f62c44082756cab8f6f8">DIR_RIGHT</a></div><div class="ttdeci">@ DIR_RIGHT</div><div class="ttdef"><b>Definition:</b> mainApp.h:53</div></div>
+<div class="ttc" id="amain_app_8h_html_a4853d3aea066eba9ef3740585c107a6bab1bf68da897d09488069dd40e54f442d"><div class="ttname"><a href="main_app_8h.html#a4853d3aea066eba9ef3740585c107a6bab1bf68da897d09488069dd40e54f442d">DIR_DOWN</a></div><div class="ttdeci">@ DIR_DOWN</div><div class="ttdef"><b>Definition:</b> mainApp.h:56</div></div>
+<div class="ttc" id="amain_app_8h_html_a55437f177885a57508f99619a3a7a19f"><div class="ttname"><a href="main_app_8h.html#a55437f177885a57508f99619a3a7a19f">SetCullMode</a></div><div class="ttdeci">void SetCullMode(int nCullMode)</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:674</div></div>
+<div class="ttc" id="amain_app_8h_html_a5cd40119cdaa763b483dfba6942eaa3e"><div class="ttname"><a href="main_app_8h.html#a5cd40119cdaa763b483dfba6942eaa3e">GetDepthStencilView</a></div><div class="ttdeci">ID3D11DepthStencilView * GetDepthStencilView()</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:797</div></div>
+<div class="ttc" id="amain_app_8h_html_a6376c6224e7273eb750a7fde2aea342d"><div class="ttname"><a href="main_app_8h.html#a6376c6224e7273eb750a7fde2aea342d">SetZWrite</a></div><div class="ttdeci">void SetZWrite(bool bEnable)</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:659</div></div>
+<div class="ttc" id="amain_app_8h_html_a76385629cd459c9e0fcda690542edb07"><div class="ttname"><a href="main_app_8h.html#a76385629cd459c9e0fcda690542edb07">GetDeviceContext</a></div><div class="ttdeci">ID3D11DeviceContext * GetDeviceContext()</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:647</div></div>
+<div class="ttc" id="amain_app_8h_html_a92550af168fdc15968f87992fd9d07c5"><div class="ttname"><a href="main_app_8h.html#a92550af168fdc15968f87992fd9d07c5">GetMainWnd</a></div><div class="ttdeci">HWND GetMainWnd()</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:629</div></div>
+<div class="ttc" id="amain_app_8h_html_a965053cc7c41d010d359091035281310"><div class="ttname"><a href="main_app_8h.html#a965053cc7c41d010d359091035281310">GetDevice</a></div><div class="ttdeci">ID3D11Device * GetDevice()</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:641</div></div>
+<div class="ttc" id="amain_app_8h_html_a9b19b33f1a7f58f261e0025ec2fc66c3"><div class="ttname"><a href="main_app_8h.html#a9b19b33f1a7f58f261e0025ec2fc66c3">SetZBuffer</a></div><div class="ttdeci">void SetZBuffer(bool bEnable)</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:653</div></div>
+<div class="ttc" id="amain_app_8h_html_aa9d863781ee8f3f820ea4ad9e52f78d9"><div class="ttname"><a href="main_app_8h.html#aa9d863781ee8f3f820ea4ad9e52f78d9">GetInstance</a></div><div class="ttdeci">HINSTANCE GetInstance()</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:635</div></div>
+<div class="ttc" id="amain_app_8h_html_aafdc26c1149a90863283c7f26dfa89fa"><div class="ttname"><a href="main_app_8h.html#aafdc26c1149a90863283c7f26dfa89fa">GetSwapChain</a></div><div class="ttdeci">IDXGISwapChain * GetSwapChain()</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:803</div></div>
+<div class="ttc" id="amain_app_8h_html_ab2bc1dccc769090b3dbd2b251a643039"><div class="ttname"><a href="main_app_8h.html#ab2bc1dccc769090b3dbd2b251a643039">CalcWorldSize</a></div><div class="ttdeci">XMFLOAT2 CalcWorldSize()</div><div class="ttdoc">スクリーンの映っているワールドの横幅と高さを計算する</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:765</div></div>
+<div class="ttc" id="amain_app_8h_html_acb1e92521e1d5e281d7d65e74fee4fca"><div class="ttname"><a href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fca">ECullMode</a></div><div class="ttdeci">ECullMode</div><div class="ttdef"><b>Definition:</b> mainApp.h:69</div></div>
+<div class="ttc" id="amain_app_8h_html_acb1e92521e1d5e281d7d65e74fee4fcaa2de164d15a5a308a3e7f852ef6e7948e"><div class="ttname"><a href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaa2de164d15a5a308a3e7f852ef6e7948e">CULLMODE_NONE</a></div><div class="ttdeci">@ CULLMODE_NONE</div><div class="ttdef"><b>Definition:</b> mainApp.h:70</div></div>
+<div class="ttc" id="amain_app_8h_html_acb1e92521e1d5e281d7d65e74fee4fcaaa72c8619e0be2fe67ef171b2f2ee7bc6"><div class="ttname"><a href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaaa72c8619e0be2fe67ef171b2f2ee7bc6">CULLMODE_CW</a></div><div class="ttdeci">@ CULLMODE_CW</div><div class="ttdef"><b>Definition:</b> mainApp.h:71</div></div>
+<div class="ttc" id="amain_app_8h_html_acb1e92521e1d5e281d7d65e74fee4fcaac9e43ef91a95b9f6a68480609e3cb2c1"><div class="ttname"><a href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaac9e43ef91a95b9f6a68480609e3cb2c1">MAX_CULLMODE</a></div><div class="ttdeci">@ MAX_CULLMODE</div><div class="ttdef"><b>Definition:</b> mainApp.h:74</div></div>
+<div class="ttc" id="amain_app_8h_html_acb1e92521e1d5e281d7d65e74fee4fcaaf3a645ebbdf5dde3b88e2197e6c05c4e"><div class="ttname"><a href="main_app_8h.html#acb1e92521e1d5e281d7d65e74fee4fcaaf3a645ebbdf5dde3b88e2197e6c05c4e">CULLMODE_CCW</a></div><div class="ttdeci">@ CULLMODE_CCW</div><div class="ttdef"><b>Definition:</b> mainApp.h:72</div></div>
+<div class="ttc" id="amain_app_8h_html_ad019e0e7e14e8aa9a83bbbf95930ed81"><div class="ttname"><a href="main_app_8h.html#ad019e0e7e14e8aa9a83bbbf95930ed81">GetRenderTargetView</a></div><div class="ttdeci">ID3D11RenderTargetView * GetRenderTargetView()</div><div class="ttdef"><b>Definition:</b> mainApp.cpp:791</div></div>
+<div class="ttc" id="aresource_8h_html"><div class="ttname"><a href="resource_8h.html">resource.h</a></div></div>
+<div class="ttc" id="astruct_v_e_r_t_e_x__2_d_html"><div class="ttname"><a href="struct_v_e_r_t_e_x__2_d.html">VERTEX_2D</a></div><div class="ttdef"><b>Definition:</b> mainApp.h:81</div></div>
+<div class="ttc" id="astruct_v_e_r_t_e_x__2_d_html_a0732120d0ffc2648438306f04ff52d2f"><div class="ttname"><a href="struct_v_e_r_t_e_x__2_d.html#a0732120d0ffc2648438306f04ff52d2f">VERTEX_2D::vtx</a></div><div class="ttdeci">XMFLOAT3 vtx</div><div class="ttdef"><b>Definition:</b> mainApp.h:82</div></div>
+<div class="ttc" id="astruct_v_e_r_t_e_x__2_d_html_a6227dce918f9ae0e90ad7ce98974510d"><div class="ttname"><a href="struct_v_e_r_t_e_x__2_d.html#a6227dce918f9ae0e90ad7ce98974510d">VERTEX_2D::diffuse</a></div><div class="ttdeci">XMFLOAT4 diffuse</div><div class="ttdef"><b>Definition:</b> mainApp.h:83</div></div>
+<div class="ttc" id="astruct_v_e_r_t_e_x__2_d_html_ac6db08953bb6b76fac17f8ea73cbcb69"><div class="ttname"><a href="struct_v_e_r_t_e_x__2_d.html#ac6db08953bb6b76fac17f8ea73cbcb69">VERTEX_2D::tex</a></div><div class="ttdeci">XMFLOAT2 tex</div><div class="ttdef"><b>Definition:</b> mainApp.h:84</div></div>
+<div class="ttc" id="astruct_v_e_r_t_e_x__3_d_html"><div class="ttname"><a href="struct_v_e_r_t_e_x__3_d.html">VERTEX_3D</a></div><div class="ttdef"><b>Definition:</b> mainApp.h:88</div></div>
+<div class="ttc" id="astruct_v_e_r_t_e_x__3_d_html_a3570266c04bfab162e6af89968187438"><div class="ttname"><a href="struct_v_e_r_t_e_x__3_d.html#a3570266c04bfab162e6af89968187438">VERTEX_3D::diffuse</a></div><div class="ttdeci">XMFLOAT4 diffuse</div><div class="ttdef"><b>Definition:</b> mainApp.h:91</div></div>
+<div class="ttc" id="astruct_v_e_r_t_e_x__3_d_html_a63f5c21e4110738cbb9801a885537a5e"><div class="ttname"><a href="struct_v_e_r_t_e_x__3_d.html#a63f5c21e4110738cbb9801a885537a5e">VERTEX_3D::vtx</a></div><div class="ttdeci">XMFLOAT3 vtx</div><div class="ttdef"><b>Definition:</b> mainApp.h:89</div></div>
+<div class="ttc" id="astruct_v_e_r_t_e_x__3_d_html_aa275a4f60227dc096a3ec715859b4087"><div class="ttname"><a href="struct_v_e_r_t_e_x__3_d.html#aa275a4f60227dc096a3ec715859b4087">VERTEX_3D::nor</a></div><div class="ttdeci">XMFLOAT3 nor</div><div class="ttdef"><b>Definition:</b> mainApp.h:90</div></div>
+<div class="ttc" id="astruct_v_e_r_t_e_x__3_d_html_ad82d470cdae573bc060d6e7c4aa81c75"><div class="ttname"><a href="struct_v_e_r_t_e_x__3_d.html#ad82d470cdae573bc060d6e7c4aa81c75">VERTEX_3D::tex</a></div><div class="ttdeci">XMFLOAT2 tex</div><div class="ttdef"><b>Definition:</b> mainApp.h:92</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

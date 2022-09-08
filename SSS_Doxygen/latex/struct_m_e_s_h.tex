@@ -1,0 +1,123 @@
+\hypertarget{struct_m_e_s_h}{}\doxysection{MESH 構造体}
+\label{struct_m_e_s_h}\index{MESH@{MESH}}
+
+
+{\ttfamily \#include $<$mesh.\+h$>$}
+
+
+
+MESH 連携図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=156pt]{struct_m_e_s_h__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+ID3\+D11\+Buffer $\ast$ \mbox{\hyperlink{struct_m_e_s_h_a25c3fac0171bd499d9426ffde1f5dfbd}{p\+Vertex\+Buffer}}
+\item 
+ID3\+D11\+Buffer $\ast$ \mbox{\hyperlink{struct_m_e_s_h_a69ad9b4954525ebd4146061976ddd1a5}{p\+Index\+Buffer}}
+\item 
+int \mbox{\hyperlink{struct_m_e_s_h_ab95be461297f4345df2e31e9dd3aef04}{n\+Num\+Vertex}}
+\item 
+int \mbox{\hyperlink{struct_m_e_s_h_ad18e35ef509129728af57e7dd9ceafdf}{n\+Num\+Index}}
+\item 
+XMFLOAT4\+X4 \mbox{\hyperlink{struct_m_e_s_h_a9dfe7a61807de6768e8bf09a48a64e28}{mtx\+World}}
+\item 
+XMFLOAT3 \mbox{\hyperlink{struct_m_e_s_h_afa08675037bc67e7a194942f11123468}{rot}}
+\item 
+XMFLOAT3 \mbox{\hyperlink{struct_m_e_s_h_a6b4dce5b27fe64c12a97f72edaf0fe9c}{pos}}
+\item 
+XMFLOAT4\+X4 \mbox{\hyperlink{struct_m_e_s_h_a44119ceb5d4be9aebe23309e3997ed1e}{mtx\+Texture}}
+\item 
+ID3\+D11\+Shader\+Resource\+View $\ast$ \mbox{\hyperlink{struct_m_e_s_h_a41099b2ab78ff84e64f30e0ea1384336}{p\+Texture}}
+\item 
+\mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765d}{e\+Primitive\+Type}} \mbox{\hyperlink{struct_m_e_s_h_a8c70191a400938f19faef335d41640a9}{primitive\+Type}}
+\item 
+\mbox{\hyperlink{struct_m_a_t_e_r_i_a_l}{MATERIAL}} $\ast$ \mbox{\hyperlink{struct_m_e_s_h_ad9849d96fcc43d60a76948ff3eeefd1a}{p\+Material}}
+\item 
+float \mbox{\hyperlink{struct_m_e_s_h_adbaeff67e282ff86f11f83fa1bec9278}{f\+Alpha}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{struct_m_e_s_h_adbaeff67e282ff86f11f83fa1bec9278}\label{struct_m_e_s_h_adbaeff67e282ff86f11f83fa1bec9278}} 
+\index{MESH@{MESH}!fAlpha@{fAlpha}}
+\index{fAlpha@{fAlpha}!MESH@{MESH}}
+\doxysubsubsection{\texorpdfstring{fAlpha}{fAlpha}}
+{\footnotesize\ttfamily float MESH\+::f\+Alpha}
+
+\mbox{\Hypertarget{struct_m_e_s_h_a44119ceb5d4be9aebe23309e3997ed1e}\label{struct_m_e_s_h_a44119ceb5d4be9aebe23309e3997ed1e}} 
+\index{MESH@{MESH}!mtxTexture@{mtxTexture}}
+\index{mtxTexture@{mtxTexture}!MESH@{MESH}}
+\doxysubsubsection{\texorpdfstring{mtxTexture}{mtxTexture}}
+{\footnotesize\ttfamily XMFLOAT4\+X4 MESH\+::mtx\+Texture}
+
+\mbox{\Hypertarget{struct_m_e_s_h_a9dfe7a61807de6768e8bf09a48a64e28}\label{struct_m_e_s_h_a9dfe7a61807de6768e8bf09a48a64e28}} 
+\index{MESH@{MESH}!mtxWorld@{mtxWorld}}
+\index{mtxWorld@{mtxWorld}!MESH@{MESH}}
+\doxysubsubsection{\texorpdfstring{mtxWorld}{mtxWorld}}
+{\footnotesize\ttfamily XMFLOAT4\+X4 MESH\+::mtx\+World}
+
+\mbox{\Hypertarget{struct_m_e_s_h_ad18e35ef509129728af57e7dd9ceafdf}\label{struct_m_e_s_h_ad18e35ef509129728af57e7dd9ceafdf}} 
+\index{MESH@{MESH}!nNumIndex@{nNumIndex}}
+\index{nNumIndex@{nNumIndex}!MESH@{MESH}}
+\doxysubsubsection{\texorpdfstring{nNumIndex}{nNumIndex}}
+{\footnotesize\ttfamily int MESH\+::n\+Num\+Index}
+
+\mbox{\Hypertarget{struct_m_e_s_h_ab95be461297f4345df2e31e9dd3aef04}\label{struct_m_e_s_h_ab95be461297f4345df2e31e9dd3aef04}} 
+\index{MESH@{MESH}!nNumVertex@{nNumVertex}}
+\index{nNumVertex@{nNumVertex}!MESH@{MESH}}
+\doxysubsubsection{\texorpdfstring{nNumVertex}{nNumVertex}}
+{\footnotesize\ttfamily int MESH\+::n\+Num\+Vertex}
+
+\mbox{\Hypertarget{struct_m_e_s_h_a69ad9b4954525ebd4146061976ddd1a5}\label{struct_m_e_s_h_a69ad9b4954525ebd4146061976ddd1a5}} 
+\index{MESH@{MESH}!pIndexBuffer@{pIndexBuffer}}
+\index{pIndexBuffer@{pIndexBuffer}!MESH@{MESH}}
+\doxysubsubsection{\texorpdfstring{pIndexBuffer}{pIndexBuffer}}
+{\footnotesize\ttfamily ID3\+D11\+Buffer$\ast$ MESH\+::p\+Index\+Buffer}
+
+\mbox{\Hypertarget{struct_m_e_s_h_ad9849d96fcc43d60a76948ff3eeefd1a}\label{struct_m_e_s_h_ad9849d96fcc43d60a76948ff3eeefd1a}} 
+\index{MESH@{MESH}!pMaterial@{pMaterial}}
+\index{pMaterial@{pMaterial}!MESH@{MESH}}
+\doxysubsubsection{\texorpdfstring{pMaterial}{pMaterial}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_m_a_t_e_r_i_a_l}{MATERIAL}}$\ast$ MESH\+::p\+Material}
+
+\mbox{\Hypertarget{struct_m_e_s_h_a6b4dce5b27fe64c12a97f72edaf0fe9c}\label{struct_m_e_s_h_a6b4dce5b27fe64c12a97f72edaf0fe9c}} 
+\index{MESH@{MESH}!pos@{pos}}
+\index{pos@{pos}!MESH@{MESH}}
+\doxysubsubsection{\texorpdfstring{pos}{pos}}
+{\footnotesize\ttfamily XMFLOAT3 MESH\+::pos}
+
+\mbox{\Hypertarget{struct_m_e_s_h_a8c70191a400938f19faef335d41640a9}\label{struct_m_e_s_h_a8c70191a400938f19faef335d41640a9}} 
+\index{MESH@{MESH}!primitiveType@{primitiveType}}
+\index{primitiveType@{primitiveType}!MESH@{MESH}}
+\doxysubsubsection{\texorpdfstring{primitiveType}{primitiveType}}
+{\footnotesize\ttfamily \mbox{\hyperlink{mesh_8h_a7912bfb71ae570d3a83cfad74323765d}{e\+Primitive\+Type}} MESH\+::primitive\+Type}
+
+\mbox{\Hypertarget{struct_m_e_s_h_a41099b2ab78ff84e64f30e0ea1384336}\label{struct_m_e_s_h_a41099b2ab78ff84e64f30e0ea1384336}} 
+\index{MESH@{MESH}!pTexture@{pTexture}}
+\index{pTexture@{pTexture}!MESH@{MESH}}
+\doxysubsubsection{\texorpdfstring{pTexture}{pTexture}}
+{\footnotesize\ttfamily ID3\+D11\+Shader\+Resource\+View$\ast$ MESH\+::p\+Texture}
+
+\mbox{\Hypertarget{struct_m_e_s_h_a25c3fac0171bd499d9426ffde1f5dfbd}\label{struct_m_e_s_h_a25c3fac0171bd499d9426ffde1f5dfbd}} 
+\index{MESH@{MESH}!pVertexBuffer@{pVertexBuffer}}
+\index{pVertexBuffer@{pVertexBuffer}!MESH@{MESH}}
+\doxysubsubsection{\texorpdfstring{pVertexBuffer}{pVertexBuffer}}
+{\footnotesize\ttfamily ID3\+D11\+Buffer$\ast$ MESH\+::p\+Vertex\+Buffer}
+
+\mbox{\Hypertarget{struct_m_e_s_h_afa08675037bc67e7a194942f11123468}\label{struct_m_e_s_h_afa08675037bc67e7a194942f11123468}} 
+\index{MESH@{MESH}!rot@{rot}}
+\index{rot@{rot}!MESH@{MESH}}
+\doxysubsubsection{\texorpdfstring{rot}{rot}}
+{\footnotesize\ttfamily XMFLOAT3 MESH\+::rot}
+
+
+
+この構造体詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{mesh_8h}{mesh.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,13 @@
+<map id="InputManager::Instance" name="InputManager::Instance">
+<area shape="rect" id="node1" title="インスタンス生成" alt="" coords="399,183,556,209"/>
+<area shape="rect" id="node2" href="$class_stage_manager.html#ae704cc0e6a00b5b94f4974869e1d90b8" title="描画処理" alt="" coords="202,5,345,32"/>
+<area shape="rect" id="node3" href="$main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="254,56,293,83"/>
+<area shape="rect" id="node5" href="$class_c_player.html#aad0dcf0dbb43561b5202fb20974e43a3" title="初期化" alt="" coords="221,107,325,133"/>
+<area shape="rect" id="node6" href="$class_animation.html#a0c6a4e940db84d4a6246fcb3ae773402" title="更新処理" alt="" coords="209,208,338,235"/>
+<area shape="rect" id="node8" href="$class_c_camera.html#a664debc0a2d44acea6112db076a520bf" title=" " alt="" coords="211,259,336,285"/>
+<area shape="rect" id="node9" href="$class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,309,148,336"/>
+<area shape="rect" id="node10" href="$main_app_8cpp.html#aec0783b5a136e042adcc47bae4fe5291" title=" " alt="" coords="242,157,305,184"/>
+<area shape="rect" id="node11" href="$class_stage_manager.html#afe74bc34352fd78b5b8f2dfaf551a251" title="更新処理" alt="" coords="196,360,351,387"/>
+<area shape="rect" id="node4" href="$main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="35,107,119,133"/>
+<area shape="rect" id="node7" href="$class_c_draw3_d.html#aa42fcba7f1258571457c186292f91702" title="更新" alt="" coords="14,208,139,235"/>
+</map>

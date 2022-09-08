@@ -1,0 +1,12 @@
+<map id="ImGui::BeginMenuBar" name="ImGui::BeginMenuBar">
+<area shape="rect" id="node1" title=" " alt="" coords="5,81,155,108"/>
+<area shape="rect" id="node2" href="$namespace_im_gui.html#a42407e196b7ed2a8755bff28aae9805f" title=" " alt="" coords="231,5,363,32"/>
+<area shape="rect" id="node5" href="$namespace_im_gui.html#ac452417b5004ca16a814a72cff153526" title=" " alt="" coords="211,56,384,83"/>
+<area shape="rect" id="node6" href="$struct_im_gui_window.html#a59df76c1445aaaf0b43456c83c1a88e5" title=" " alt="" coords="203,107,392,133"/>
+<area shape="rect" id="node7" href="$namespace_im_gui.html#a27a8533605dc5b8cabf161bf7715bbde" title=" " alt="" coords="244,157,351,184"/>
+<area shape="rect" id="node3" href="$struct_im_vector.html#a2d80e87e81b1b01143c8d8be93e6fde1" title=" " alt="" coords="677,27,788,53"/>
+<area shape="rect" id="node4" href="$struct_im_vector.html#ac371dd62e56ae486b1a5038cf07eee56" title=" " alt="" coords="476,48,593,75"/>
+<area shape="rect" id="node8" href="$struct_im_gui_window.html#adc0a43f74a0b53a15a4bc4fea05524fe" title=" " alt="" coords="440,99,629,141"/>
+<area shape="rect" id="node10" href="$struct_im_vector.html#aab5df48e0711a48bd12f3206e08c4108" title=" " alt="" coords="462,165,607,192"/>
+<area shape="rect" id="node9" href="$imgui_8cpp.html#acd1b12694d0365b516bf7373f182eeee" title=" " alt="" coords="691,107,774,133"/>
+</map>

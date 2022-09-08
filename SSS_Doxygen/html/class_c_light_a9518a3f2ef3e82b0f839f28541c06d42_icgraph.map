@@ -1,0 +1,5 @@
+<map id="CLight::SetDisable" name="CLight::SetDisable">
+<area shape="rect" id="node1" title="ライトOFF" alt="" coords="184,31,315,57"/>
+<area shape="rect" id="node2" href="$class_c_anim_mesh.html#a45bca41fe56b3421b59058ce6d336366" title="描画処理" alt="" coords="5,5,136,32"/>
+<area shape="rect" id="node3" href="$class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="14,56,127,83"/>
+</map>

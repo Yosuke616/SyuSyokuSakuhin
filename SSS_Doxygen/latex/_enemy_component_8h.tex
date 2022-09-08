@@ -1,0 +1,91 @@
+\hypertarget{_enemy_component_8h}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\+Enemy\+Component.h ファイル}
+\label{_enemy_component_8h}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/EnemyComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/EnemyComponent.h}}
+
+
+敵の動きを制御するコンポーネント  
+
+
+{\ttfamily \#include \char`\"{}Component.\+h\char`\"{}}\newline
+Enemy\+Component.\+h の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_enemy_component_8h__incl}
+\end{center}
+\end{figure}
+被依存関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_enemy_component_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{クラス}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_c_enemy}{CEnemy}}
+\begin{DoxyCompactList}\small\item\em 敵の動きを制御する @detail 攻撃したり引き返したり \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707db}{ENEMY\+\_\+\+TYPE}} \{ \mbox{\hyperlink{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707dba7992aae9716d2ec5f6c07d9a36ea19b7}{ENEMY\+\_\+\+WALK}} = 0
+, \mbox{\hyperlink{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707dbaf62513f74baa670aa319e75242a047d8}{MAX\+\_\+\+ENEMY\+\_\+\+TYPE}}
+ \}
+\item 
+enum \mbox{\hyperlink{_enemy_component_8h_a8168a6db177771b0dc1deae7224211ac}{ENEMY\+\_\+\+STATE}} \{ \mbox{\hyperlink{_enemy_component_8h_a8168a6db177771b0dc1deae7224211aca2d6c5ed02c9d388eeed83e6dfacc0c1e}{ENEMY\+\_\+\+DEFAULT}} = 0
+, \mbox{\hyperlink{_enemy_component_8h_a8168a6db177771b0dc1deae7224211acaca2ba33cb0e3372bfb018310e00d1e76}{ENEMY\+\_\+\+DELETE}}
+, \mbox{\hyperlink{_enemy_component_8h_a8168a6db177771b0dc1deae7224211acae9e90c4cfe499592484e1bc2602d49e1}{MAX\+\_\+\+ENEMY\+\_\+\+STATE}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+敵の動きを制御するコンポーネント 
+
+\begin{DoxyAuthor}{著者}
+志水陽祐 
+\end{DoxyAuthor}
+\begin{DoxyDate}{日付}
+2022/8/4 
+\end{DoxyDate}
+
+
+\doxysubsection{列挙型詳解}
+\mbox{\Hypertarget{_enemy_component_8h_a8168a6db177771b0dc1deae7224211ac}\label{_enemy_component_8h_a8168a6db177771b0dc1deae7224211ac}} 
+\index{EnemyComponent.h@{EnemyComponent.h}!ENEMY\_STATE@{ENEMY\_STATE}}
+\index{ENEMY\_STATE@{ENEMY\_STATE}!EnemyComponent.h@{EnemyComponent.h}}
+\doxysubsubsection{\texorpdfstring{ENEMY\_STATE}{ENEMY\_STATE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_enemy_component_8h_a8168a6db177771b0dc1deae7224211ac}{ENEMY\+\_\+\+STATE}}}
+
+\begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENEMY\_DEFAULT@{ENEMY\_DEFAULT}!EnemyComponent.h@{EnemyComponent.h}}\index{EnemyComponent.h@{EnemyComponent.h}!ENEMY\_DEFAULT@{ENEMY\_DEFAULT}}}\mbox{\Hypertarget{_enemy_component_8h_a8168a6db177771b0dc1deae7224211aca2d6c5ed02c9d388eeed83e6dfacc0c1e}\label{_enemy_component_8h_a8168a6db177771b0dc1deae7224211aca2d6c5ed02c9d388eeed83e6dfacc0c1e}} 
+ENEMY\+\_\+\+DEFAULT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENEMY\_DELETE@{ENEMY\_DELETE}!EnemyComponent.h@{EnemyComponent.h}}\index{EnemyComponent.h@{EnemyComponent.h}!ENEMY\_DELETE@{ENEMY\_DELETE}}}\mbox{\Hypertarget{_enemy_component_8h_a8168a6db177771b0dc1deae7224211acaca2ba33cb0e3372bfb018310e00d1e76}\label{_enemy_component_8h_a8168a6db177771b0dc1deae7224211acaca2ba33cb0e3372bfb018310e00d1e76}} 
+ENEMY\+\_\+\+DELETE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_ENEMY\_STATE@{MAX\_ENEMY\_STATE}!EnemyComponent.h@{EnemyComponent.h}}\index{EnemyComponent.h@{EnemyComponent.h}!MAX\_ENEMY\_STATE@{MAX\_ENEMY\_STATE}}}\mbox{\Hypertarget{_enemy_component_8h_a8168a6db177771b0dc1deae7224211acae9e90c4cfe499592484e1bc2602d49e1}\label{_enemy_component_8h_a8168a6db177771b0dc1deae7224211acae9e90c4cfe499592484e1bc2602d49e1}} 
+MAX\+\_\+\+ENEMY\+\_\+\+STATE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707db}\label{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707db}} 
+\index{EnemyComponent.h@{EnemyComponent.h}!ENEMY\_TYPE@{ENEMY\_TYPE}}
+\index{ENEMY\_TYPE@{ENEMY\_TYPE}!EnemyComponent.h@{EnemyComponent.h}}
+\doxysubsubsection{\texorpdfstring{ENEMY\_TYPE}{ENEMY\_TYPE}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707db}{ENEMY\+\_\+\+TYPE}}}
+
+列挙体宣言 \begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENEMY\_WALK@{ENEMY\_WALK}!EnemyComponent.h@{EnemyComponent.h}}\index{EnemyComponent.h@{EnemyComponent.h}!ENEMY\_WALK@{ENEMY\_WALK}}}\mbox{\Hypertarget{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707dba7992aae9716d2ec5f6c07d9a36ea19b7}\label{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707dba7992aae9716d2ec5f6c07d9a36ea19b7}} 
+ENEMY\+\_\+\+WALK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_ENEMY\_TYPE@{MAX\_ENEMY\_TYPE}!EnemyComponent.h@{EnemyComponent.h}}\index{EnemyComponent.h@{EnemyComponent.h}!MAX\_ENEMY\_TYPE@{MAX\_ENEMY\_TYPE}}}\mbox{\Hypertarget{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707dbaf62513f74baa670aa319e75242a047d8}\label{_enemy_component_8h_aef73e23ea1cdc9dda520bbb81af707dbaf62513f74baa670aa319e75242a047d8}} 
+MAX\+\_\+\+ENEMY\+\_\+\+TYPE&\\
+\hline
+
+\end{DoxyEnumFields}

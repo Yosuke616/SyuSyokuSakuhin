@@ -1,0 +1,685 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: SceneGame クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="class_scene_game-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">SceneGame クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>ゲームシーンの為のクラス @detail どのステージを読み込む、ゲームをするうえで必要な情報のみを読み込む  
+ <a href="class_scene_game.html#details">[詳解]</a></p>
+
+<p><code>#include &lt;<a class="el" href="scene_game_8h_source.html">sceneGame.h</a>&gt;</code></p>
+<div class="dynheader">
+SceneGame の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_game__inherit__graph.png" border="0" usemap="#a_scene_game_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_scene_game_inherit__map" id="a_scene_game_inherit__map">
+<area shape="rect" title="ゲームシーンの為のクラス @detail どのステージを読み込む、ゲームをするうえで必要な情報のみを読み込む" alt="" coords="5,80,100,107"/>
+<area shape="rect" href="class_scene.html" title=" " alt="" coords="23,5,82,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+SceneGame 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_game__coll__graph.png" border="0" usemap="#a_scene_game_coll__map" alt="Collaboration graph"/></div>
+<map name="a_scene_game_coll__map" id="a_scene_game_coll__map">
+<area shape="rect" title="ゲームシーンの為のクラス @detail どのステージを読み込む、ゲームをするうえで必要な情報のみを読み込む" alt="" coords="87,171,181,197"/>
+<area shape="rect" href="class_scene.html" title=" " alt="" coords="105,95,163,121"/>
+<area shape="rect" href="class_object_manager.html" title="生成されたオブジェクトを管理するクラス" alt="" coords="5,5,116,32"/>
+<area shape="rect" href="class_menu_manager.html" title="メニューの状態を管理するクラス @detail シーンごとに用意するメニューを変えたりする" alt="" coords="157,5,261,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a137a0d207ed6421a6156993c25f85809"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_game.html#a137a0d207ed6421a6156993c25f85809">~SceneGame</a> () override</td></tr>
+<tr class="memdesc:a137a0d207ed6421a6156993c25f85809"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="class_scene_game.html#a137a0d207ed6421a6156993c25f85809">[詳解]</a><br /></td></tr>
+<tr class="separator:a137a0d207ed6421a6156993c25f85809"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a942c6131f3f4a831791f63a5091cccfe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe">Init</a> () override</td></tr>
+<tr class="memdesc:a942c6131f3f4a831791f63a5091cccfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化  <a href="class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe">[詳解]</a><br /></td></tr>
+<tr class="separator:a942c6131f3f4a831791f63a5091cccfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bd731734e28b5ddd1a23d50bfa56532"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_game.html#a8bd731734e28b5ddd1a23d50bfa56532">Uninit</a> () override</td></tr>
+<tr class="memdesc:a8bd731734e28b5ddd1a23d50bfa56532"><td class="mdescLeft">&#160;</td><td class="mdescRight">終了処理  <a href="class_scene_game.html#a8bd731734e28b5ddd1a23d50bfa56532">[詳解]</a><br /></td></tr>
+<tr class="separator:a8bd731734e28b5ddd1a23d50bfa56532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39f13a210e99042a1361d958ead36686"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686">Update</a> () override</td></tr>
+<tr class="memdesc:a39f13a210e99042a1361d958ead36686"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新処理  <a href="class_scene_game.html#a39f13a210e99042a1361d958ead36686">[詳解]</a><br /></td></tr>
+<tr class="separator:a39f13a210e99042a1361d958ead36686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac14f575125dcaf8cfd416f9512ee0107"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_game.html#ac14f575125dcaf8cfd416f9512ee0107">Draw</a> () override</td></tr>
+<tr class="memdesc:ac14f575125dcaf8cfd416f9512ee0107"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画処理  <a href="class_scene_game.html#ac14f575125dcaf8cfd416f9512ee0107">[詳解]</a><br /></td></tr>
+<tr class="separator:ac14f575125dcaf8cfd416f9512ee0107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40dd3b6c95346b5f374ae10a7b501103"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_game.html#a40dd3b6c95346b5f374ae10a7b501103">SetStage</a> (<a class="el" href="scene_game_8h.html#aca8133200c1122e29b87b314d82604eb">Stage</a> NextStage)</td></tr>
+<tr class="memdesc:a40dd3b6c95346b5f374ae10a7b501103"><td class="mdescLeft">&#160;</td><td class="mdescRight">シーンの切替  <a href="class_scene_game.html#a40dd3b6c95346b5f374ae10a7b501103">[詳解]</a><br /></td></tr>
+<tr class="separator:a40dd3b6c95346b5f374ae10a7b501103"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1edee33919a754f03a810d0057ea8b6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="scene_game_8h.html#aca8133200c1122e29b87b314d82604eb">Stage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_game.html#af1edee33919a754f03a810d0057ea8b6">GetStage</a> ()</td></tr>
+<tr class="memdesc:af1edee33919a754f03a810d0057ea8b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">シーン情報の取得  <a href="class_scene_game.html#af1edee33919a754f03a810d0057ea8b6">[詳解]</a><br /></td></tr>
+<tr class="separator:af1edee33919a754f03a810d0057ea8b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8bccc8003c3084181f256c53a1f6160"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_game.html#aa8bccc8003c3084181f256c53a1f6160">SetPauseOOO</a> (bool ooo)</td></tr>
+<tr class="memdesc:aa8bccc8003c3084181f256c53a1f6160"><td class="mdescLeft">&#160;</td><td class="mdescRight">ポーズフラグをオンにする  <a href="class_scene_game.html#aa8bccc8003c3084181f256c53a1f6160">[詳解]</a><br /></td></tr>
+<tr class="separator:aa8bccc8003c3084181f256c53a1f6160"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_scene"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_scene')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_scene.html">Scene</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:ad10176d75a9cc0da56626f682d083507 inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ad10176d75a9cc0da56626f682d083507">Scene</a> ()</td></tr>
+<tr class="separator:ad10176d75a9cc0da56626f682d083507 inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0a5be58e2ee2d1fdafc5fb46b5e661e inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aa0a5be58e2ee2d1fdafc5fb46b5e661e">~Scene</a> ()</td></tr>
+<tr class="separator:aa0a5be58e2ee2d1fdafc5fb46b5e661e inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3c4677dfd702a3ffd5ffadd3f1ac478 inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478">Init</a> ()=0</td></tr>
+<tr class="separator:ac3c4677dfd702a3ffd5ffadd3f1ac478 inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa94fb256b8a862aee810db4f1e8d56a4 inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aa94fb256b8a862aee810db4f1e8d56a4">Uninit</a> ()=0</td></tr>
+<tr class="separator:aa94fb256b8a862aee810db4f1e8d56a4 inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab99ec7aff3ed995985ddb764ffb78f8e inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ab99ec7aff3ed995985ddb764ffb78f8e">Update</a> ()=0</td></tr>
+<tr class="separator:ab99ec7aff3ed995985ddb764ffb78f8e inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8680672fd30bb4b345e6fab918e31ecd inherit pub_methods_class_scene"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a8680672fd30bb4b345e6fab918e31ecd">Draw</a> ()=0</td></tr>
+<tr class="separator:a8680672fd30bb4b345e6fab918e31ecd inherit pub_methods_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a5f5bb9169295264e15c157b98fc17776"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_scene_game.html">SceneGame</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_game.html#a5f5bb9169295264e15c157b98fc17776">GetInstance</a> ()</td></tr>
+<tr class="memdesc:a5f5bb9169295264e15c157b98fc17776"><td class="mdescLeft">&#160;</td><td class="mdescRight">インスタンス取得  <a href="class_scene_game.html#a5f5bb9169295264e15c157b98fc17776">[詳解]</a><br /></td></tr>
+<tr class="separator:a5f5bb9169295264e15c157b98fc17776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c9fcb1377d041cf0643bbc4965bb237"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_game.html#a6c9fcb1377d041cf0643bbc4965bb237">Destroy</a> ()</td></tr>
+<tr class="memdesc:a6c9fcb1377d041cf0643bbc4965bb237"><td class="mdescLeft">&#160;</td><td class="mdescRight">インスタンス破棄  <a href="class_scene_game.html#a6c9fcb1377d041cf0643bbc4965bb237">[詳解]</a><br /></td></tr>
+<tr class="separator:a6c9fcb1377d041cf0643bbc4965bb237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:aed823bf8cd7d8af96a3fb7422e49f21e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_game.html#aed823bf8cd7d8af96a3fb7422e49f21e">m_bEditMode</a></td></tr>
+<tr class="memdesc:aed823bf8cd7d8af96a3fb7422e49f21e"><td class="mdescLeft">&#160;</td><td class="mdescRight">編集モード  <a href="class_scene_game.html#aed823bf8cd7d8af96a3fb7422e49f21e">[詳解]</a><br /></td></tr>
+<tr class="separator:aed823bf8cd7d8af96a3fb7422e49f21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f4a26f2b3c7867ed3f7c1004470edda"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_game.html#a1f4a26f2b3c7867ed3f7c1004470edda">m_bPauseMode</a></td></tr>
+<tr class="memdesc:a1f4a26f2b3c7867ed3f7c1004470edda"><td class="mdescLeft">&#160;</td><td class="mdescRight">メニュー画面  <a href="class_scene_game.html#a1f4a26f2b3c7867ed3f7c1004470edda">[詳解]</a><br /></td></tr>
+<tr class="separator:a1f4a26f2b3c7867ed3f7c1004470edda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+その他の継承メンバ</h2></td></tr>
+<tr class="inherit_header pro_attribs_class_scene"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_scene')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_scene.html">Scene</a> に属する継承限定公開変数類</td></tr>
+<tr class="memitem:a6a70cba8ef8354ef1fa033685fa348a8 inherit pro_attribs_class_scene"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_object_manager.html">ObjectManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a6a70cba8ef8354ef1fa033685fa348a8">m_pObjectManager</a></td></tr>
+<tr class="memdesc:a6a70cba8ef8354ef1fa033685fa348a8 inherit pro_attribs_class_scene"><td class="mdescLeft">&#160;</td><td class="mdescRight">オブジェクトの管理ポインタ  <a href="class_scene.html#a6a70cba8ef8354ef1fa033685fa348a8">[詳解]</a><br /></td></tr>
+<tr class="separator:a6a70cba8ef8354ef1fa033685fa348a8 inherit pro_attribs_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3bb137f44650bba2ab048c0ff0bd52d inherit pro_attribs_class_scene"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_menu_manager.html">MenuManager</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#af3bb137f44650bba2ab048c0ff0bd52d">m_pMenuManager</a></td></tr>
+<tr class="memdesc:af3bb137f44650bba2ab048c0ff0bd52d inherit pro_attribs_class_scene"><td class="mdescLeft">&#160;</td><td class="mdescRight">メニュー管理用のポインタ  <a href="class_scene.html#af3bb137f44650bba2ab048c0ff0bd52d">[詳解]</a><br /></td></tr>
+<tr class="separator:af3bb137f44650bba2ab048c0ff0bd52d inherit pro_attribs_class_scene"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p >ゲームシーンの為のクラス @detail どのステージを読み込む、ゲームをするうえで必要な情報のみを読み込む </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a137a0d207ed6421a6156993c25f85809" name="a137a0d207ed6421a6156993c25f85809"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a137a0d207ed6421a6156993c25f85809">&#9670;&nbsp;</a></span>~SceneGame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SceneGame::~SceneGame </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+<p >デストラクタでステージをぶっこわーす </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a6c9fcb1377d041cf0643bbc4965bb237" name="a6c9fcb1377d041cf0643bbc4965bb237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c9fcb1377d041cf0643bbc4965bb237">&#9670;&nbsp;</a></span>Destroy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneGame::Destroy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>インスタンス破棄 </p>
+
+</div>
+</div>
+<a id="ac14f575125dcaf8cfd416f9512ee0107" name="ac14f575125dcaf8cfd416f9512ee0107"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac14f575125dcaf8cfd416f9512ee0107">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneGame::Draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>描画処理 </p>
+<p >描画する関数 @detail 教室が寒すぎる、上着を忘れるこれ即ち死を示す </p>
+
+<p><a class="el" href="class_scene.html#a8680672fd30bb4b345e6fab918e31ecd">Scene</a>を実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_game_ac14f575125dcaf8cfd416f9512ee0107_cgraph.png" border="0" usemap="#aclass_scene_game_ac14f575125dcaf8cfd416f9512ee0107_cgraph" alt=""/></div>
+<map name="aclass_scene_game_ac14f575125dcaf8cfd416f9512ee0107_cgraph" id="aclass_scene_game_ac14f575125dcaf8cfd416f9512ee0107_cgraph">
+<area shape="rect" title="描画処理" alt="" coords="5,652,136,679"/>
+<area shape="rect" href="class_menu_manager.html#a257fe839c85d81f74f2077bd0d7dbd63" title="描画処理" alt="" coords="187,601,328,628"/>
+<area shape="rect" href="main_app_8cpp.html#a9b19b33f1a7f58f261e0025ec2fc66c3" title=" " alt="" coords="429,703,511,729"/>
+<area shape="rect" href="class_object_manager.html#ac054fcf6fa043ed24a88265e6f25bc15" title="描画処理" alt="" coords="184,652,331,679"/>
+<area shape="rect" href="namespace_im_gui.html#a581e58db0bc930bafa4a5d23093a2b99" title=" " alt="" coords="421,327,519,353"/>
+<area shape="rect" href="namespace_im_gui.html#a5479d93794a004c67ceb6d13f37c8254" title=" " alt="" coords="427,551,513,577"/>
+<area shape="rect" href="namespace_im_gui.html#afbccd31113430670b5ab2bf0d6f509bf" title=" " alt="" coords="380,601,560,628"/>
+<area shape="rect" href="namespace_im_gui.html#ab33717bb71ef5e393ae18656fc6b229d" title=" " alt="" coords="379,652,561,679"/>
+<area shape="rect" href="namespace_im_gui.html#a9e7b83611fe441d54fad2effb4bf4965" title=" " alt="" coords="425,164,515,191"/>
+<area shape="rect" href="namespace_im_gui.html#abca25f22c02e73d5eb2e9c72c4557813" title=" " alt="" coords="609,208,795,235"/>
+<area shape="rect" href="namespace_im_gui.html#a82204d8800dc3a072ddbcbd2aecc48ac" title=" " alt="" coords="843,157,1005,184"/>
+<area shape="rect" href="imgui_8cpp.html#acd1b12694d0365b516bf7373f182eeee" title=" " alt="" coords="883,208,965,235"/>
+<area shape="rect" href="struct_im_gui_storage.html#aaf87a98ede89da09113b0189f6d878ca" title=" " alt="" coords="1053,157,1227,184"/>
+<area shape="rect" href="struct_im_vector.html#a2d80e87e81b1b01143c8d8be93e6fde1" title=" " alt="" coords="1085,689,1195,716"/>
+<area shape="rect" href="struct_im_gui_stack_sizes.html#aff8cf412bfbdf0a936cae963c25fac55" title=" " alt="" coords="611,573,793,614"/>
+<area shape="rect" href="namespace_im_gui.html#af93bed3bce5475fe4d525d744f16aa20" title=" " alt="" coords="633,639,771,665"/>
+<area shape="rect" href="struct_im_vector.html#a3db7ce62d3c429effdb893fbf7148c1c" title=" " alt="" coords="1564,867,1703,893"/>
+<area shape="rect" href="namespace_im_gui.html#aef1c8a6e5a3c70cb10d03d2a2a66dfd8" title=" " alt="" coords="856,613,992,640"/>
+<area shape="rect" href="namespace_im_gui.html#a2ebcd048d1ca025fb972e1c2e920e3f3" title=" " alt="" coords="642,411,762,437"/>
+<area shape="rect" href="namespace_im_gui.html#ac452417b5004ca16a814a72cff153526" title=" " alt="" coords="1053,537,1227,564"/>
+<area shape="rect" href="struct_im_draw_list_splitter.html#af3fc4bad2abca9e481d476d1877ba5be" title=" " alt="" coords="861,813,987,854"/>
+<area shape="rect" href="namespace_im_gui.html#ad29a3fc0cb5dfc7f9fc7224512ce90bf" title=" " alt="" coords="851,664,997,691"/>
+<area shape="rect" href="struct_im_draw_list.html#a2cb0295fcd3062bfedbebbad55865455" title=" " alt="" coords="1275,892,1499,919"/>
+<area shape="rect" href="struct_im_draw_list.html#a846714bb0321c6f1f908767abc8559e6" title=" " alt="" coords="1547,681,1720,708"/>
+<area shape="rect" href="struct_im_vector.html#a2f88ac70791f2da6d4168d7b29f38f1e" title=" " alt="" coords="1083,892,1197,919"/>
+<area shape="rect" href="struct_im_vector.html#ac371dd62e56ae486b1a5038cf07eee56" title=" " alt="" coords="1081,943,1199,969"/>
+<area shape="rect" href="struct_im_draw_list_splitter.html#ad3797b0755caa07f3d69a9e3566eb0e5" title=" " alt="" coords="1317,674,1456,715"/>
+<area shape="rect" href="struct_im_vector.html#aab5df48e0711a48bd12f3206e08c4108" title=" " alt="" coords="1768,681,1913,708"/>
+<area shape="rect" href="struct_im_draw_list.html#a44f40c59ca755f559020f5a7fa81103a" title=" " alt="" coords="1057,588,1223,615"/>
+<area shape="rect" href="struct_im_draw_list.html#a8e51ddbe1f9732bc271ce807bec23f54" title=" " alt="" coords="1277,740,1496,767"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html#ad971435d81bc0b957cdb59f5d58eaacd" title=" " alt="" coords="847,259,1001,285"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html#a9e4edc9f950bc9e35d5c3b3071dbc0df" title=" " alt="" coords="849,411,999,437"/>
+<area shape="rect" href="struct_im_gui_text_buffer.html#affd606443a661cd0fcce0d381bc8cf98" title=" " alt="" coords="845,461,1003,488"/>
+<area shape="rect" href="imgui_8cpp.html#ac4a6194720e9d693bc9d34e97d9465aa" title=" " alt="" coords="879,512,969,539"/>
+<area shape="rect" href="namespace_im_gui.html#aa548475d8f771ab6524d73d900a41198" title=" " alt="" coords="869,309,979,336"/>
+<area shape="rect" href="namespace_im_gui.html#aa4824a1b351c063b4aff9b9f4fb5fd4d" title=" " alt="" coords="843,360,1005,387"/>
+<area shape="rect" href="struct_im_vector.html#a5a21f508086337de2f6739701d22f721" title=" " alt="" coords="1087,259,1193,285"/>
+<area shape="rect" href="struct_im_vector.html#ae2d401b4ec5f1113cdb8edb5a61a38f7" title=" " alt="" coords="1085,411,1195,437"/>
+<area shape="rect" href="namespace_im_gui.html#a10a0d6362178c2f743092f21e1b6cd20" title=" " alt="" coords="653,81,751,108"/>
+<area shape="rect" href="imgui_8cpp.html#a2e0022a073d369645a0daab17f823779" title=" " alt="" coords="864,5,984,32"/>
+<area shape="rect" href="namespace_im_gui.html#aae6420fec03511fd478d9108f31e6b5f" title=" " alt="" coords="871,56,977,83"/>
+<area shape="rect" href="namespace_im_gui.html#aaba5637199d31ea23d4d143b30a44aff" title=" " alt="" coords="1055,56,1225,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5f5bb9169295264e15c157b98fc17776" name="a5f5bb9169295264e15c157b98fc17776"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f5bb9169295264e15c157b98fc17776">&#9670;&nbsp;</a></span>GetInstance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_scene_game.html">SceneGame</a> * SceneGame::GetInstance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>インスタンス取得 </p>
+<dl class="section return"><dt>戻り値</dt><dd>(SceneGame*) インスタンスを返す </dd></dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_game_a5f5bb9169295264e15c157b98fc17776_icgraph.png" border="0" usemap="#aclass_scene_game_a5f5bb9169295264e15c157b98fc17776_icgraph" alt=""/></div>
+<map name="aclass_scene_game_a5f5bb9169295264e15c157b98fc17776_icgraph" id="aclass_scene_game_a5f5bb9169295264e15c157b98fc17776_icgraph">
+<area shape="rect" title="インスタンス取得" alt="" coords="549,132,721,159"/>
+<area shape="rect" href="class_scene_manager.html#a2682ac5e419812cb1eeab1fec6a1ce86" title=" " alt="" coords="347,5,482,32"/>
+<area shape="rect" href="class_c_player.html#abede91d4fa024fae2396593ce5532b17" title="衝突処理" alt="" coords="328,56,501,83"/>
+<area shape="rect" href="class_c_camera.html#a664debc0a2d44acea6112db076a520bf" title=" " alt="" coords="352,107,477,133"/>
+<area shape="rect" href="main_app_8cpp.html#aec0783b5a136e042adcc47bae4fe5291" title=" " alt="" coords="177,196,240,223"/>
+<area shape="rect" href="class_stage_manager.html#afe74bc34352fd78b5b8f2dfaf551a251" title="更新処理" alt="" coords="337,157,492,184"/>
+<area shape="rect" href="class_c_player.html#a4582a8020f6734842edea64909bd4b40" title="更新" alt="" coords="356,259,473,285"/>
+<area shape="rect" href="main_app_8cpp.html#a93e37d33930b82ad41bc9c9cb472f300" title=" " alt="" coords="189,37,228,64"/>
+<area shape="rect" href="main_app_8cpp.html#aa31d4ec34bb3eea7f1fa53fa75b1e339" title=" " alt="" coords="5,133,89,160"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="137,120,280,147"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af1edee33919a754f03a810d0057ea8b6" name="af1edee33919a754f03a810d0057ea8b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1edee33919a754f03a810d0057ea8b6">&#9670;&nbsp;</a></span>GetStage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="scene_game_8h.html#aca8133200c1122e29b87b314d82604eb">Stage</a> SceneGame::GetStage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>シーン情報の取得 </p>
+<p >ステージの情報を取得する</p>
+<dl class="section return"><dt>戻り値</dt><dd>(Stage) 現在のステージ番号を返す </dd></dl>
+
+</div>
+</div>
+<a id="a942c6131f3f4a831791f63a5091cccfe" name="a942c6131f3f4a831791f63a5091cccfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a942c6131f3f4a831791f63a5091cccfe">&#9670;&nbsp;</a></span>Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneGame::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初期化 </p>
+<p >初期化をする </p>
+
+<p><a class="el" href="class_scene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478">Scene</a>を実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_game_a942c6131f3f4a831791f63a5091cccfe_cgraph.png" border="0" usemap="#aclass_scene_game_a942c6131f3f4a831791f63a5091cccfe_cgraph" alt=""/></div>
+<map name="aclass_scene_game_a942c6131f3f4a831791f63a5091cccfe_cgraph" id="aclass_scene_game_a942c6131f3f4a831791f63a5091cccfe_cgraph">
+<area shape="rect" title="初期化" alt="" coords="5,537,124,564"/>
+<area shape="rect" href="class_object.html#a6530059316c8c6ea06c66e0de393dcce" title=" " alt="" coords="661,208,818,235"/>
+<area shape="rect" href="class_model_manager.html#a83cb97219f91ba9799cef863f129ce8c" title="モデルの追加" alt="" coords="180,107,353,133"/>
+<area shape="rect" href="class_object_manager.html#a9d66ba3c6343372fc166ea36658cc555" title="オブジェクトを追加する" alt="" coords="650,259,829,285"/>
+<area shape="rect" href="class_texture_manager.html#acf80525b5a1e493b08426989d2940870" title="テクスチャの追加" alt="" coords="172,208,361,235"/>
+<area shape="rect" href="class_load.html#adb65de6213882ed339efa37921587673" title="ロード画面のスレッド" alt="" coords="221,360,312,387"/>
+<area shape="rect" href="class_stage_manager.html#ab85e84fb952cd4722400956dba68d2e3" title="地形生成" alt="" coords="173,461,360,488"/>
+<area shape="rect" href="class_model_manager.html#a76fa7f6c4bf14e44dc8fc22b41d18436" title="インスタンス化" alt="" coords="647,309,832,336"/>
+<area shape="rect" href="class_object_manager.html#ad2782406e7482eeddffd1941a810d6e6" title="objectマネージャーのインスタンス化" alt="" coords="645,512,833,539"/>
+<area shape="rect" href="class_texture_manager.html#ab73eee48ba8c35281558094e2f84013d" title="インスタンス化" alt="" coords="643,563,836,589"/>
+<area shape="rect" href="class_texture_manager.html#a8448501f02d76a5c2362bbed98e89728" title="テクスチャ取得" alt="" coords="646,613,833,640"/>
+<area shape="rect" href="class_c_transform.html#adea1eaa3582e41fa1572cdc08124f9fb" title="座標の設定" alt="" coords="658,664,821,691"/>
+<area shape="rect" href="class_load.html#a24754993772c7122c83d696e6d887dbb" title="ロード画面は終わる" alt="" coords="226,715,307,741"/>
+<area shape="rect" href="class_c_camera.html#a67560cf6a017ec3b8a59129be0d0100a" title=" " alt="" coords="214,765,319,792"/>
+<area shape="rect" href="class_stage_manager.html#a4a807be8cec5c9eca08cf3f91052ff01" title="インスタンス生成" alt="" coords="175,816,359,843"/>
+<area shape="rect" href="class_menu_manager.html#a659dcf3bbe0c9d9771ff15fff87bf449" title="インスタンス生成" alt="" coords="172,867,361,893"/>
+<area shape="rect" href="class_c_camera.html#a7d4ee70503ea51954543621268bfb295" title=" " alt="" coords="216,917,317,944"/>
+<area shape="rect" href="main_app_8cpp.html#a965053cc7c41d010d359091035281310" title=" " alt="" coords="461,157,543,184"/>
+<area shape="rect" href="main_app_8cpp.html#a76385629cd459c9e0fcda690542edb07" title=" " alt="" coords="439,5,565,32"/>
+<area shape="rect" href="main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="453,107,551,133"/>
+<area shape="rect" href="class_c_assimp_model.html#a75759219911dbbc1072687f680a187ec" title=" " alt="" coords="429,56,575,83"/>
+<area shape="rect" href="class_c_assimp_model.html#a9875e0478db4afca70de506809f88381" title=" " alt="" coords="657,56,822,83"/>
+<area shape="rect" href="class_object.html#aa6b2b605e64fdad13e3e52346353e03a" title="描画順を取得する関数" alt="" coords="917,284,1067,311"/>
+<area shape="rect" href="class_object.html#aa4113e76535e952da736eb7df90a1dc7" title="更新順を取得する関数" alt="" coords="911,183,1073,209"/>
+<area shape="rect" href="class_object.html#ac608bdc75130f88cd292bc8cd7a016c5" title="オブジェクトの初期化 @detail オブジェクトが持つコンポーネントの初期化" alt="" coords="944,233,1040,260"/>
+<area shape="rect" href="_texture_8cpp.html#a7d156479ecc3d3bab74cdc73aebe0426" title=" " alt="" coords="425,208,579,235"/>
+<area shape="rect" href="class_stage_manager.html#a3a259d33885baf98d68c28d32183143f" title="ステージオブジェクト生成(ゲームモード)" alt="" coords="409,461,595,488"/>
+<area shape="rect" href="class_object.html#a824beb41e45f1fdecc88c15e11983156" title=" " alt="" coords="915,411,1069,437"/>
+<area shape="rect" href="class_model_manager.html#ae7a58155fc4e317ae505ebd1e3a1f667" title="モデルの取得" alt="" coords="654,360,825,387"/>
+<area shape="rect" href="class_c_transform.html#aee48dd10140f1955b4aa074c570ce101" title="更新処理" alt="" coords="671,461,808,488"/>
+<area shape="rect" href="class_model_manager.html#a9b0d22b1baf59c5b566e82fcd8ca424a" title="コンストラクタ" alt="" coords="892,335,1092,361"/>
+<area shape="rect" href="class_object_manager.html#a6fa9372c7c3a8da88412f4158ca3dfd9" title="コンストラクタ" alt="" coords="889,512,1095,539"/>
+<area shape="rect" href="class_texture_manager.html#ad76abb178b37cedf4514eb0154349935" title="コンストラクタ" alt="" coords="884,563,1100,589"/>
+<area shape="rect" href="class_object.html#a4c8a55fbab735fc3ce4f1ef9569041ea" title=" " alt="" coords="931,461,1053,488"/>
+<area shape="rect" href="class_c_camera.html#aa3f7c288082765833d3ea4553a7cb84e" title=" " alt="" coords="412,917,592,944"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa8bccc8003c3084181f256c53a1f6160" name="aa8bccc8003c3084181f256c53a1f6160"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8bccc8003c3084181f256c53a1f6160">&#9670;&nbsp;</a></span>SetPauseOOO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneGame::SetPauseOOO </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>ooo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ポーズフラグをオンにする </p>
+<p >ポーズのオンオフを外部から決める</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(bool)</td><td>ポーズメニューを更新するかどうか </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_game_aa8bccc8003c3084181f256c53a1f6160_icgraph.png" border="0" usemap="#aclass_scene_game_aa8bccc8003c3084181f256c53a1f6160_icgraph" alt=""/></div>
+<map name="aclass_scene_game_aa8bccc8003c3084181f256c53a1f6160_icgraph" id="aclass_scene_game_aa8bccc8003c3084181f256c53a1f6160_icgraph">
+<area shape="rect" title="ポーズフラグをオンにする" alt="" coords="227,31,416,57"/>
+<area shape="rect" href="class_c_player.html#abede91d4fa024fae2396593ce5532b17" title="衝突処理" alt="" coords="5,5,179,32"/>
+<area shape="rect" href="class_c_player.html#a4582a8020f6734842edea64909bd4b40" title="更新" alt="" coords="33,56,151,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a40dd3b6c95346b5f374ae10a7b501103" name="a40dd3b6c95346b5f374ae10a7b501103"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40dd3b6c95346b5f374ae10a7b501103">&#9670;&nbsp;</a></span>SetStage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneGame::SetStage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="scene_game_8h.html#aca8133200c1122e29b87b314d82604eb">Stage</a>&#160;</td>
+          <td class="paramname"><em>NextStage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>シーンの切替 </p>
+<p >ステージの切り替え</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(Stage)</td><td>次のステージ番号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_game_a40dd3b6c95346b5f374ae10a7b501103_cgraph.png" border="0" usemap="#aclass_scene_game_a40dd3b6c95346b5f374ae10a7b501103_cgraph" alt=""/></div>
+<map name="aclass_scene_game_a40dd3b6c95346b5f374ae10a7b501103_cgraph" id="aclass_scene_game_a40dd3b6c95346b5f374ae10a7b501103_cgraph">
+<area shape="rect" title="シーンの切替" alt="" coords="5,31,161,57"/>
+<area shape="rect" href="main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="210,5,309,32"/>
+<area shape="rect" href="class_scene.html#aa94fb256b8a862aee810db4f1e8d56a4" title=" " alt="" coords="209,56,309,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a8bd731734e28b5ddd1a23d50bfa56532" name="a8bd731734e28b5ddd1a23d50bfa56532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bd731734e28b5ddd1a23d50bfa56532">&#9670;&nbsp;</a></span>Uninit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneGame::Uninit </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>終了処理 </p>
+
+<p><a class="el" href="class_scene.html#aa94fb256b8a862aee810db4f1e8d56a4">Scene</a>を実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_game_a8bd731734e28b5ddd1a23d50bfa56532_cgraph.png" border="0" usemap="#aclass_scene_game_a8bd731734e28b5ddd1a23d50bfa56532_cgraph" alt=""/></div>
+<map name="aclass_scene_game_a8bd731734e28b5ddd1a23d50bfa56532_cgraph" id="aclass_scene_game_a8bd731734e28b5ddd1a23d50bfa56532_cgraph">
+<area shape="rect" title="終了処理" alt="" coords="5,5,140,32"/>
+<area shape="rect" href="class_object_manager.html#ab14b919449101fdecbbafe794d907cc9" title="終了処理" alt="" coords="188,5,339,32"/>
+<area shape="rect" href="class_c_collider.html#a80714716239a3ede48cf2e6187cc423f" title="当たり判定を持っているオブジェクトのリストを取得" alt="" coords="387,5,553,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a39f13a210e99042a1361d958ead36686" name="a39f13a210e99042a1361d958ead36686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39f13a210e99042a1361d958ead36686">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SceneGame::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>更新処理 </p>
+
+<p><a class="el" href="class_scene.html#ab99ec7aff3ed995985ddb764ffb78f8e">Scene</a>を実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_scene_game_a39f13a210e99042a1361d958ead36686_cgraph.png" border="0" usemap="#aclass_scene_game_a39f13a210e99042a1361d958ead36686_cgraph" alt=""/></div>
+<map name="aclass_scene_game_a39f13a210e99042a1361d958ead36686_cgraph" id="aclass_scene_game_a39f13a210e99042a1361d958ead36686_cgraph">
+<area shape="rect" title="更新処理" alt="" coords="5,867,148,893"/>
+<area shape="rect" href="class_menu_manager.html#ad519349168bf08237d1d37fc8333cfce" title="ポーズメニュー" alt="" coords="457,56,676,83"/>
+<area shape="rect" href="class_c_camera.html#a67560cf6a017ec3b8a59129be0d0100a" title=" " alt="" coords="514,917,619,944"/>
+<area shape="rect" href="class_c_player.html#acde5e2196354f96ea915c764f7a7bf48" title="クリアしたかどうかを取得する関数" alt="" coords="224,1525,369,1552"/>
+<area shape="rect" href="class_object.html#a824beb41e45f1fdecc88c15e11983156" title=" " alt="" coords="762,639,917,665"/>
+<area shape="rect" href="class_object_manager.html#a2d2cfb3535474fc5ce136d06e2d3a8fb" title="名前からオブジェクトを特定する" alt="" coords="461,411,673,437"/>
+<area shape="rect" href="class_object_manager.html#ad2782406e7482eeddffd1941a810d6e6" title="objectマネージャーのインスタンス化" alt="" coords="473,309,661,336"/>
+<area shape="rect" href="class_c_player.html#a5e03b46500ed0d60c75ed8852f43cc45" title="プレイヤーの状態を取得する関数" alt="" coords="489,5,644,32"/>
+<area shape="rect" href="class_object_manager.html#ae32f7c13ff2140a856102a0c3603e909" title="更新リストの取得" alt="" coords="196,1576,397,1603"/>
+<area shape="rect" href="class_input_manager.html#a53a27e2e25bec96173a4c7532515d10e" title="インスタンス生成" alt="" coords="488,867,645,893"/>
+<area shape="rect" href="class_scene_manager.html#a972ad174745419ebc980802a5f6e874e" title=" " alt="" coords="483,360,650,387"/>
+<area shape="rect" href="class_c_camera.html#aad14e000a4787d825e27bb994b65860b" title=" " alt="" coords="498,715,635,741"/>
+<area shape="rect" href="class_scene_manager.html#a38b987d7f23fed149e20c534a0cf848e" title=" " alt="" coords="209,1627,384,1653"/>
+<area shape="rect" href="class_c_camera.html#a664debc0a2d44acea6112db076a520bf" title=" " alt="" coords="234,613,359,640"/>
+<area shape="rect" href="class_menu_manager.html#aabc8f23d87e058b5c5b099a8c34a2af8" title="更新処理" alt="" coords="220,284,373,311"/>
+<area shape="rect" href="class_object_manager.html#ac6035906749a40ec3a1d685ebed11c89" title="更新処理" alt="" coords="217,1475,376,1501"/>
+<area shape="rect" href="class_stage_manager.html#afe74bc34352fd78b5b8f2dfaf551a251" title="更新処理" alt="" coords="219,1019,374,1045"/>
+<area shape="rect" href="class_object_manager.html#a86d895e6def5ee60d8d29d2c475f8962" title="ステージ作成時の更新処理" alt="" coords="205,1424,388,1451"/>
+<area shape="rect" href="class_object.html#a6530059316c8c6ea06c66e0de393dcce" title=" " alt="" coords="761,183,918,209"/>
+<area shape="rect" href="class_menu_manager.html#ac1759aa35665506ebd7fb930bf2e4851" title="メニューオブジェクトの追加" alt="" coords="756,233,923,260"/>
+<area shape="rect" href="class_menu_manager.html#a72ca1a40cc8ebbe9aeb82da1e46575ad" title="メニューリストの削除" alt="" coords="749,31,930,57"/>
+<area shape="rect" href="class_texture_manager.html#ab73eee48ba8c35281558094e2f84013d" title="インスタンス化" alt="" coords="743,81,936,108"/>
+<area shape="rect" href="class_texture_manager.html#a8448501f02d76a5c2362bbed98e89728" title="テクスチャ取得" alt="" coords="746,132,933,159"/>
+<area shape="rect" href="class_object.html#aa6b2b605e64fdad13e3e52346353e03a" title="描画順を取得する関数" alt="" coords="991,233,1141,260"/>
+<area shape="rect" href="class_object_manager.html#a6fa9372c7c3a8da88412f4158ca3dfd9" title="コンストラクタ" alt="" coords="736,309,943,336"/>
+<area shape="rect" href="class_input_manager.html#a8be46886da639b26d67181c29dab6d6c" title="コンストラクタ" alt="" coords="746,867,933,893"/>
+<area shape="rect" href="class_scene_manager.html#a52085e6737c23b491c228e86781af808" title=" " alt="" coords="737,360,941,387"/>
+<area shape="rect" href="main_app_8cpp.html#a92550af168fdc15968f87992fd9d07c5" title=" " alt="" coords="517,1576,616,1603"/>
+<area shape="rect" href="class_scene.html#ac3c4677dfd702a3ffd5ffadd3f1ac478" title=" " alt="" coords="525,1627,609,1653"/>
+<area shape="rect" href="class_scene.html#aa94fb256b8a862aee810db4f1e8d56a4" title=" " alt="" coords="517,1677,617,1704"/>
+<area shape="rect" href="class_c_camera.html#a0c6bd52c0adfd69f653404e93f7e5c86" title=" " alt="" coords="497,563,636,589"/>
+<area shape="rect" href="class_scene_game.html#a5f5bb9169295264e15c157b98fc17776" title="インスタンス取得" alt="" coords="481,816,653,843"/>
+<area shape="rect" href="class_input_manager.html#a2a9f8b98564b02c3a297df80a227e24c" title="キーボードのプレス状態を取得" alt="" coords="473,765,660,792"/>
+<area shape="rect" href="class_c_tex_scroll.html#ac5f44cfe10e58d2cb60e8f07b0189b36" title="?????????" alt="" coords="503,613,630,640"/>
+<area shape="rect" href="class_c_camera.html#a7f115992145660660e9f6a02a16f174b" title="Y軸の注視点の設定をする 2022/7/26" alt="" coords="497,664,636,691"/>
+<area shape="rect" href="class_c_camera.html#ac1b29f785bec590c800582864abfb2fd" title=" " alt="" coords="486,512,647,539"/>
+<area shape="rect" href="class_menu_manager.html#acf6c98482ac2231830e38616e8e565fa" title="ゲームオーバーメニュー" alt="" coords="445,208,688,235"/>
+<area shape="rect" href="class_menu_manager.html#a9f2f549c8364364b698b7c99d5f52f23" title="ミスメニュー" alt="" coords="461,157,672,184"/>
+<area shape="rect" href="class_menu_manager.html#a6b1c422b8f1d277d043fc9a309aaa8a0" title="タイトルメニュー" alt="" coords="463,107,670,133"/>
+<area shape="rect" href="class_c_collider.html#a80714716239a3ede48cf2e6187cc423f" title="当たり判定を持っているオブジェクトのリストを取得" alt="" coords="483,1475,650,1501"/>
+<area shape="rect" href="class_object.html#ab75ac4b7289350a0ada0eee65fe23eb3" title=" " alt="" coords="491,1424,642,1451"/>
+<area shape="rect" href="class_c_collider.html#a3cc514e5726fbd81149ee96526264256" title="当たり判定を持っているオブジェクトたちの更新" alt="" coords="480,1525,653,1552"/>
+<area shape="rect" href="main_app_8cpp.html#a33762d19fee3469aebc3f8a7a724bcf9" title=" " alt="" coords="507,968,626,995"/>
+<area shape="rect" href="class_file_manager.html#ae0c7f1fa9fa186ba9600f2e274130b16" title="データ取得" alt="" coords="505,1019,628,1045"/>
+<area shape="rect" href="class_file_manager.html#a604802b6192958e9f9df590728a210d4" title="インスタンスの取得" alt="" coords="481,1069,652,1096"/>
+<area shape="rect" href="class_input_manager.html#a81fb24c5c224f98ece4c2153c20fbd6e" title="キーボードのトリガー状態を取得" alt="" coords="471,1120,662,1147"/>
+<area shape="rect" href="class_input_manager.html#ab82941f8364337bc049ff52ef76e3713" title="マウスの座標の取得" alt="" coords="471,1171,662,1197"/>
+<area shape="rect" href="class_input_manager.html#aab164872a8780146de762642dda71c74" title="マウスのトリガー状態を取得" alt="" coords="463,1221,670,1248"/>
+<area shape="rect" href="class_resource_c_s_v.html#a2f1dc7d3c7b55b6450b5070a91fb78f1" title="セルに数値を入力する" alt="" coords="493,1272,640,1299"/>
+<area shape="rect" href="class_object.html#a2bac4495e863092c6367556d62666271" title="オブジェクトの更新 @detail オブジェクトが持つコンポーネントの更新" alt="" coords="512,1323,621,1349"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="aed823bf8cd7d8af96a3fb7422e49f21e" name="aed823bf8cd7d8af96a3fb7422e49f21e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed823bf8cd7d8af96a3fb7422e49f21e">&#9670;&nbsp;</a></span>m_bEditMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SceneGame::m_bEditMode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>編集モード </p>
+
+</div>
+</div>
+<a id="a1f4a26f2b3c7867ed3f7c1004470edda" name="a1f4a26f2b3c7867ed3f7c1004470edda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f4a26f2b3c7867ed3f7c1004470edda">&#9670;&nbsp;</a></span>m_bPauseMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SceneGame::m_bPauseMode</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>メニュー画面 </p>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="scene_game_8h_source.html">sceneGame.h</a></li>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="_scene_game_8cpp.html">SceneGame.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

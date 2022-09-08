@@ -188,6 +188,7 @@
     <ClCompile Include="imgui_widgets.cpp" />
     <ClCompile Include="InputManager.cpp" />
     <ClCompile Include="Light.cpp" />
+    <ClCompile Include="Load.cpp" />
     <ClCompile Include="mainApp.cpp" />
     <ClCompile Include="MenuManager.cpp" />
     <ClCompile Include="mesh.cpp" />
@@ -236,6 +237,7 @@
     <ClInclude Include="imstb_truetype.h" />
     <ClInclude Include="InputManager.h" />
     <ClInclude Include="Light.h" />
+    <ClInclude Include="Load.h" />
     <ClInclude Include="mainApp.h" />
     <ClInclude Include="MenuManager.h" />
     <ClInclude Include="mesh.h" />
@@ -258,6 +260,7 @@
     <ClInclude Include="SeeCollComponent.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="StageManager.h" />
+    <ClInclude Include="SceneStage_2.h" />
     <ClInclude Include="TexScrollComponent.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureManager.h" />

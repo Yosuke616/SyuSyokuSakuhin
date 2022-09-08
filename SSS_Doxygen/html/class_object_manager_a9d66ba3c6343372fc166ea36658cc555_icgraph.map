@@ -1,0 +1,10 @@
+<map id="ObjectManager::AddObject" name="ObjectManager::AddObject">
+<area shape="rect" id="node1" title="オブジェクトを追加する" alt="" coords="640,132,819,159"/>
+<area shape="rect" id="node2" href="$class_stage_manager.html#a3a259d33885baf98d68c28d32183143f" title="ステージオブジェクト生成(ゲームモード)" alt="" coords="407,5,592,32"/>
+<area shape="rect" id="node4" href="$class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="5,31,124,57"/>
+<area shape="rect" id="node5" href="$class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="440,107,559,133"/>
+<area shape="rect" id="node6" href="$class_scene_title.html#a25a10fe18f8ff1f5a7e657cfe6eca671" title=" " alt="" coords="445,157,553,184"/>
+<area shape="rect" id="node7" href="$class_c_see_coll.html#ab1cc85ed730b6ab2aeb7adfb6ee59230" title="初期化" alt="" coords="443,208,555,235"/>
+<area shape="rect" id="node8" href="$class_c_anim_mesh.html#a3a4e680b70558835fa7ddcc60aca06fa" title="アニメーションの設定" alt="" coords="420,259,579,285"/>
+<area shape="rect" id="node3" href="$class_stage_manager.html#ab85e84fb952cd4722400956dba68d2e3" title="地形生成" alt="" coords="172,5,359,32"/>
+</map>

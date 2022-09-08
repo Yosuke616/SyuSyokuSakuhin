@@ -1,0 +1,274 @@
+\hypertarget{class_c_anim_mesh}{}\doxysection{CAnim\+Mesh クラス}
+\label{class_c_anim_mesh}\index{CAnimMesh@{CAnimMesh}}
+
+
+{\ttfamily \#include $<$Anim\+Mesh\+Component.\+h$>$}
+
+
+
+CAnim\+Mesh の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{class_c_anim_mesh__inherit__graph}
+\end{center}
+\end{figure}
+
+
+CAnim\+Mesh 連携図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_c_anim_mesh__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_anim_mesh_a415518ac092141649c127b0de0ecc452}{CAnim\+Mesh}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_anim_mesh_afbe874e6310b66e4a50537b0a9073cc4}{$\sim$\+CAnim\+Mesh}} () override
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_anim_mesh_a4477eb0930aba2ceb6ec3976aeaa28ae}{Start}} () override
+\begin{DoxyCompactList}\small\item\em 初期化処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_anim_mesh_a052d8884ad2a80967e09b28e46a4cafa}{Update}} () override
+\begin{DoxyCompactList}\small\item\em 更新処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_anim_mesh_a45bca41fe56b3421b59058ce6d336366}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em 描画処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_anim_mesh_a5c35d445c9ff445130cadabb575e2f13}{Set\+Swap\+Frame}} (int n\+Count)
+\begin{DoxyCompactList}\small\item\em アニメーションカウンタの設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_anim_mesh_a9966dcb8778d3474050f9d8bfc8addfd}{Set\+Loop}} (bool loop)
+\begin{DoxyCompactList}\small\item\em アニメーションがループするかどうかの設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_anim_mesh_a68647db370f06e36abc97eab88ac1563}{Set\+Vertex}} (bool b\+RoL)
+\begin{DoxyCompactList}\small\item\em テクスチャを反転させる準備 \end{DoxyCompactList}\item 
+HRESULT \mbox{\hyperlink{class_c_anim_mesh_a0f9791e44799f2dedda3756fbec20bba}{Set\+Mesh\+Vertex}} (ID3\+D11\+Device $\ast$p\+Device, \mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$p\+Mesh, \mbox{\hyperlink{struct_v_e_r_t_e_x__3_d}{VERTEX\+\_\+3D}} vertex\+Wk\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em テクスチャを左右反転させる関数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_c_anim_mesh_a3a4e680b70558835fa7ddcc60aca06fa}{Start\+Anim}} (ID3\+D11\+Shader\+Resource\+View $\ast$p\+Tex, XMFLOAT3 pos, XMFLOAT2 size, int split\+\_\+x, int split\+\_\+y, bool loop, int swap\+\_\+frame=1, XMFLOAT3 color=XMFLOAT3(1.\+0f, 1.\+0f, 1.\+0f))
+\begin{DoxyCompactList}\small\item\em アニメーションの設定 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{詳解}
+インクルードガード インクルード部 前方宣言 定数定義 クラス定義 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_anim_mesh_a415518ac092141649c127b0de0ecc452}\label{class_c_anim_mesh_a415518ac092141649c127b0de0ecc452}} 
+\index{CAnimMesh@{CAnimMesh}!CAnimMesh@{CAnimMesh}}
+\index{CAnimMesh@{CAnimMesh}!CAnimMesh@{CAnimMesh}}
+\doxysubsubsection{\texorpdfstring{CAnimMesh()}{CAnimMesh()}}
+{\footnotesize\ttfamily CAnim\+Mesh\+::\+CAnim\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+コンストラクタ・・・生きていたのか・・・
+
+インクルード部 \mbox{\Hypertarget{class_c_anim_mesh_afbe874e6310b66e4a50537b0a9073cc4}\label{class_c_anim_mesh_afbe874e6310b66e4a50537b0a9073cc4}} 
+\index{CAnimMesh@{CAnimMesh}!````~CAnimMesh@{$\sim$CAnimMesh}}
+\index{````~CAnimMesh@{$\sim$CAnimMesh}!CAnimMesh@{CAnimMesh}}
+\doxysubsubsection{\texorpdfstring{$\sim$CAnimMesh()}{~CAnimMesh()}}
+{\footnotesize\ttfamily CAnim\+Mesh\+::$\sim$\+CAnim\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+デストラクタ 
+
+別にデストラクタしても構わんのだろう？ 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_anim_mesh_a45bca41fe56b3421b59058ce6d336366}\label{class_c_anim_mesh_a45bca41fe56b3421b59058ce6d336366}} 
+\index{CAnimMesh@{CAnimMesh}!Draw@{Draw}}
+\index{Draw@{Draw}!CAnimMesh@{CAnimMesh}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void CAnim\+Mesh\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+描画処理 
+
+描画するためのフラグ 
+
+\mbox{\hyperlink{class_component_a8622ccd5f24035d48e33292717299313}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_c_anim_mesh_a45bca41fe56b3421b59058ce6d336366_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_anim_mesh_a9966dcb8778d3474050f9d8bfc8addfd}\label{class_c_anim_mesh_a9966dcb8778d3474050f9d8bfc8addfd}} 
+\index{CAnimMesh@{CAnimMesh}!SetLoop@{SetLoop}}
+\index{SetLoop@{SetLoop}!CAnimMesh@{CAnimMesh}}
+\doxysubsubsection{\texorpdfstring{SetLoop()}{SetLoop()}}
+{\footnotesize\ttfamily void CAnim\+Mesh\+::\+Set\+Loop (\begin{DoxyParamCaption}\item[{bool}]{loop }\end{DoxyParamCaption})}
+
+
+
+アニメーションがループするかどうかの設定 
+
+ループするかどうかの設定
+
+
+\begin{DoxyParams}{引数}
+{\em (bool)} & ループするのかいしないのかいどっちなんだい \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_anim_mesh_a0f9791e44799f2dedda3756fbec20bba}\label{class_c_anim_mesh_a0f9791e44799f2dedda3756fbec20bba}} 
+\index{CAnimMesh@{CAnimMesh}!SetMeshVertex@{SetMeshVertex}}
+\index{SetMeshVertex@{SetMeshVertex}!CAnimMesh@{CAnimMesh}}
+\doxysubsubsection{\texorpdfstring{SetMeshVertex()}{SetMeshVertex()}}
+{\footnotesize\ttfamily HRESULT CAnim\+Mesh\+::\+Set\+Mesh\+Vertex (\begin{DoxyParamCaption}\item[{ID3\+D11\+Device $\ast$}]{p\+Device,  }\item[{\mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$}]{p\+Mesh,  }\item[{\mbox{\hyperlink{struct_v_e_r_t_e_x__3_d}{VERTEX\+\_\+3D}}}]{vertex\+Wk\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+テクスチャを左右反転させる関数 
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_anim_mesh_a0f9791e44799f2dedda3756fbec20bba_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_anim_mesh_a5c35d445c9ff445130cadabb575e2f13}\label{class_c_anim_mesh_a5c35d445c9ff445130cadabb575e2f13}} 
+\index{CAnimMesh@{CAnimMesh}!SetSwapFrame@{SetSwapFrame}}
+\index{SetSwapFrame@{SetSwapFrame}!CAnimMesh@{CAnimMesh}}
+\doxysubsubsection{\texorpdfstring{SetSwapFrame()}{SetSwapFrame()}}
+{\footnotesize\ttfamily void CAnim\+Mesh\+::\+Set\+Swap\+Frame (\begin{DoxyParamCaption}\item[{int}]{n\+Count }\end{DoxyParamCaption})}
+
+
+
+アニメーションカウンタの設定 
+
+セッター
+
+セッター
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & どの位のカウントから始めるか \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_anim_mesh_a68647db370f06e36abc97eab88ac1563}\label{class_c_anim_mesh_a68647db370f06e36abc97eab88ac1563}} 
+\index{CAnimMesh@{CAnimMesh}!SetVertex@{SetVertex}}
+\index{SetVertex@{SetVertex}!CAnimMesh@{CAnimMesh}}
+\doxysubsubsection{\texorpdfstring{SetVertex()}{SetVertex()}}
+{\footnotesize\ttfamily void CAnim\+Mesh\+::\+Set\+Vertex (\begin{DoxyParamCaption}\item[{bool}]{b\+RoL }\end{DoxyParamCaption})}
+
+
+
+テクスチャを反転させる準備 
+
+テクスチャを入れ替える準備 呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_anim_mesh_a68647db370f06e36abc97eab88ac1563_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_anim_mesh_a68647db370f06e36abc97eab88ac1563_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_anim_mesh_a4477eb0930aba2ceb6ec3976aeaa28ae}\label{class_c_anim_mesh_a4477eb0930aba2ceb6ec3976aeaa28ae}} 
+\index{CAnimMesh@{CAnimMesh}!Start@{Start}}
+\index{Start@{Start}!CAnimMesh@{CAnimMesh}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void CAnim\+Mesh\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+初期化処理 
+
+
+
+\mbox{\hyperlink{class_component_a3f57807787e0015833ccffd83fb63d14}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_c_anim_mesh_a4477eb0930aba2ceb6ec3976aeaa28ae_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_anim_mesh_a3a4e680b70558835fa7ddcc60aca06fa}\label{class_c_anim_mesh_a3a4e680b70558835fa7ddcc60aca06fa}} 
+\index{CAnimMesh@{CAnimMesh}!StartAnim@{StartAnim}}
+\index{StartAnim@{StartAnim}!CAnimMesh@{CAnimMesh}}
+\doxysubsubsection{\texorpdfstring{StartAnim()}{StartAnim()}}
+{\footnotesize\ttfamily void CAnim\+Mesh\+::\+Start\+Anim (\begin{DoxyParamCaption}\item[{ID3\+D11\+Shader\+Resource\+View $\ast$}]{p\+Tex,  }\item[{XMFLOAT3}]{pos,  }\item[{XMFLOAT2}]{size,  }\item[{int}]{split\+\_\+x,  }\item[{int}]{split\+\_\+y,  }\item[{bool}]{loop,  }\item[{int}]{swap\+\_\+frame = {\ttfamily 1},  }\item[{XMFLOAT3}]{color = {\ttfamily XMFLOAT3(1.0f,~1.0f,~1.0f)} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+アニメーションの設定 
+
+アニメーション描画開始
+
+
+\begin{DoxyParams}{引数}
+{\em (\+ID3\+D11\+Shader\+Resource\+View$\ast$)} & テクスチャ情報 \\
+\hline
+{\em (\+XMFLOAT3)} & オブジェクトの座標 \\
+\hline
+{\em (\+XMFLOAT2)} & オブジェクトの描画サイズ \\
+\hline
+{\em (int)} & テクスチャの分割数X \\
+\hline
+{\em (int)} & テクスチャの分割数Y \\
+\hline
+{\em (int)} & テクスチャの切替フレーム数 \\
+\hline
+{\em (\+XMFLOAT3)} & 色 ~\newline
+ \\
+\hline
+\end{DoxyParams}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_anim_mesh_a3a4e680b70558835fa7ddcc60aca06fa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_anim_mesh_a052d8884ad2a80967e09b28e46a4cafa}\label{class_c_anim_mesh_a052d8884ad2a80967e09b28e46a4cafa}} 
+\index{CAnimMesh@{CAnimMesh}!Update@{Update}}
+\index{Update@{Update}!CAnimMesh@{CAnimMesh}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void CAnim\+Mesh\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新処理 
+
+
+
+\mbox{\hyperlink{class_component_aaf2ce6dc5752072492f790ad4c7955bb}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{class_c_anim_mesh_a052d8884ad2a80967e09b28e46a4cafa_cgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_anim_mesh_component_8h}{Anim\+Mesh\+Component.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_anim_mesh_component_8cpp}{Anim\+Mesh\+Component.\+cpp}}\end{DoxyCompactItemize}

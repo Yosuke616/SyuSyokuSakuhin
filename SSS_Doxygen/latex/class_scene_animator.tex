@@ -1,0 +1,316 @@
+\hypertarget{class_scene_animator}{}\doxysection{Scene\+Animator クラス}
+\label{class_scene_animator}\index{SceneAnimator@{SceneAnimator}}
+
+
+{\ttfamily \#include $<$Assimp\+Model.\+h$>$}
+
+
+
+Scene\+Animator 連携図\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_scene_animator__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_scene_animator_ad3f0975b87a7b83e6a53bb932dc87c5c}{Scene\+Animator}} (const ai\+Scene $\ast$p\+Scene, size\+\_\+t p\+Anim\+Index=0)
+\item 
+\mbox{\hyperlink{class_scene_animator_a204cb5b04afb15e6223e1b0f016d12fc}{$\sim$\+Scene\+Animator}} ()
+\item 
+void \mbox{\hyperlink{class_scene_animator_a248309cdd1e5c8af66247aa14b174609}{Set\+Anim\+Index}} (size\+\_\+t p\+Anim\+Index)
+\item 
+void \mbox{\hyperlink{class_scene_animator_ac2fca81d4eb40a272065b5cf032db38b}{Calculate}} (double p\+Time)
+\item 
+const ai\+Matrix4x4 \& \mbox{\hyperlink{class_scene_animator_adf22ac0c0965e279fd4f387c3f4ad251}{Get\+Local\+Transform}} (const ai\+Node $\ast$node) const
+\item 
+const ai\+Matrix4x4 \& \mbox{\hyperlink{class_scene_animator_a89b285b3575fac7c84497f9bf11e26b6}{Get\+Global\+Transform}} (const ai\+Node $\ast$node) const
+\item 
+const std\+::vector$<$ ai\+Matrix4x4 $>$ \& \mbox{\hyperlink{class_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd}{Get\+Bone\+Matrices}} (const ai\+Node $\ast$p\+Node, size\+\_\+t p\+Mesh\+Index=0)
+\item 
+size\+\_\+t \mbox{\hyperlink{class_scene_animator_a1b61268735c0568e1d924ec06e963711}{Current\+Anim\+Index}} () const
+\item 
+ai\+Animation $\ast$ \mbox{\hyperlink{class_scene_animator_a5dc86bae39f8f27bf3134d5bcba57746}{Current\+Anim}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{限定公開型}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::map$<$ const ai\+Node $\ast$, \mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}} $\ast$ $>$ \mbox{\hyperlink{class_scene_animator_abf59dd7ff4da461f2eb419ab6bcc8862}{Node\+Map}}
+\item 
+typedef std\+::map$<$ const char $\ast$, const ai\+Node $\ast$ $>$ \mbox{\hyperlink{class_scene_animator_a25f41ade8381d9d5576393617212529f}{Bone\+Map}}
+\end{DoxyCompactItemize}
+\doxysubsection*{限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}} $\ast$ \mbox{\hyperlink{class_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706}{Create\+Node\+Tree}} (ai\+Node $\ast$p\+Node, \mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}} $\ast$p\+Parent)
+\item 
+void \mbox{\hyperlink{class_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7}{Update\+Transforms}} (\mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}} $\ast$p\+Node, const std\+::vector$<$ ai\+Matrix4x4 $>$ \&p\+Transforms)
+\item 
+void \mbox{\hyperlink{class_scene_animator_aaffdfbd7ebf7787f81f6f48e1466da3a}{Calculate\+Global\+Transform}} (\mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}} $\ast$p\+Internal\+Node)
+\end{DoxyCompactItemize}
+\doxysubsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+const ai\+Scene $\ast$ \mbox{\hyperlink{class_scene_animator_a703fc706e63c10a1ef75cf8a3dfed416}{m\+Scene}}
+\item 
+int \mbox{\hyperlink{class_scene_animator_aedfbb1934b8d1517e9159b8687caee52}{m\+Current\+Anim\+Index}}
+\item 
+\mbox{\hyperlink{class_anim_evaluator}{Anim\+Evaluator}} $\ast$ \mbox{\hyperlink{class_scene_animator_afd737ef660b4114be402cd567dedaac7}{m\+Anim\+Evaluator}}
+\item 
+\mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}} $\ast$ \mbox{\hyperlink{class_scene_animator_a694333451821b062ab247b37a98a4611}{m\+Root\+Node}}
+\item 
+\mbox{\hyperlink{class_scene_animator_abf59dd7ff4da461f2eb419ab6bcc8862}{Node\+Map}} \mbox{\hyperlink{class_scene_animator_a87d87fdbf5eab87efbdf2d27795912a5}{m\+Nodes\+By\+Name}}
+\item 
+\mbox{\hyperlink{class_scene_animator_a25f41ade8381d9d5576393617212529f}{Bone\+Map}} \mbox{\hyperlink{class_scene_animator_a8ac26b55c6ea416360ce3eb63feae895}{m\+Bone\+Nodes\+By\+Name}}
+\item 
+std\+::vector$<$ ai\+Matrix4x4 $>$ \mbox{\hyperlink{class_scene_animator_a4414fe0325b0a9f85863b4bb41c433c8}{m\+Transforms}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{型定義メンバ詳解}
+\mbox{\Hypertarget{class_scene_animator_a25f41ade8381d9d5576393617212529f}\label{class_scene_animator_a25f41ade8381d9d5576393617212529f}} 
+\index{SceneAnimator@{SceneAnimator}!BoneMap@{BoneMap}}
+\index{BoneMap@{BoneMap}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{BoneMap}{BoneMap}}
+{\footnotesize\ttfamily typedef std\+::map$<$const char$\ast$, const ai\+Node$\ast$$>$ \mbox{\hyperlink{class_scene_animator_a25f41ade8381d9d5576393617212529f}{Scene\+Animator\+::\+Bone\+Map}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_scene_animator_abf59dd7ff4da461f2eb419ab6bcc8862}\label{class_scene_animator_abf59dd7ff4da461f2eb419ab6bcc8862}} 
+\index{SceneAnimator@{SceneAnimator}!NodeMap@{NodeMap}}
+\index{NodeMap@{NodeMap}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{NodeMap}{NodeMap}}
+{\footnotesize\ttfamily typedef std\+::map$<$const ai\+Node$\ast$, \mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}}$\ast$$>$ \mbox{\hyperlink{class_scene_animator_abf59dd7ff4da461f2eb419ab6bcc8862}{Scene\+Animator\+::\+Node\+Map}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_scene_animator_ad3f0975b87a7b83e6a53bb932dc87c5c}\label{class_scene_animator_ad3f0975b87a7b83e6a53bb932dc87c5c}} 
+\index{SceneAnimator@{SceneAnimator}!SceneAnimator@{SceneAnimator}}
+\index{SceneAnimator@{SceneAnimator}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{SceneAnimator()}{SceneAnimator()}}
+{\footnotesize\ttfamily Scene\+Animator\+::\+Scene\+Animator (\begin{DoxyParamCaption}\item[{const ai\+Scene $\ast$}]{p\+Scene,  }\item[{size\+\_\+t}]{p\+Anim\+Index = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_ad3f0975b87a7b83e6a53bb932dc87c5c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_animator_a204cb5b04afb15e6223e1b0f016d12fc}\label{class_scene_animator_a204cb5b04afb15e6223e1b0f016d12fc}} 
+\index{SceneAnimator@{SceneAnimator}!````~SceneAnimator@{$\sim$SceneAnimator}}
+\index{````~SceneAnimator@{$\sim$SceneAnimator}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{$\sim$SceneAnimator()}{~SceneAnimator()}}
+{\footnotesize\ttfamily Scene\+Animator\+::$\sim$\+Scene\+Animator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_scene_animator_ac2fca81d4eb40a272065b5cf032db38b}\label{class_scene_animator_ac2fca81d4eb40a272065b5cf032db38b}} 
+\index{SceneAnimator@{SceneAnimator}!Calculate@{Calculate}}
+\index{Calculate@{Calculate}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{Calculate()}{Calculate()}}
+{\footnotesize\ttfamily void Scene\+Animator\+::\+Calculate (\begin{DoxyParamCaption}\item[{double}]{p\+Time }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_ac2fca81d4eb40a272065b5cf032db38b_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_ac2fca81d4eb40a272065b5cf032db38b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_animator_aaffdfbd7ebf7787f81f6f48e1466da3a}\label{class_scene_animator_aaffdfbd7ebf7787f81f6f48e1466da3a}} 
+\index{SceneAnimator@{SceneAnimator}!CalculateGlobalTransform@{CalculateGlobalTransform}}
+\index{CalculateGlobalTransform@{CalculateGlobalTransform}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{CalculateGlobalTransform()}{CalculateGlobalTransform()}}
+{\footnotesize\ttfamily void Scene\+Animator\+::\+Calculate\+Global\+Transform (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}} $\ast$}]{p\+Internal\+Node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_aaffdfbd7ebf7787f81f6f48e1466da3a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706}\label{class_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706}} 
+\index{SceneAnimator@{SceneAnimator}!CreateNodeTree@{CreateNodeTree}}
+\index{CreateNodeTree@{CreateNodeTree}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{CreateNodeTree()}{CreateNodeTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}} $\ast$ Scene\+Animator\+::\+Create\+Node\+Tree (\begin{DoxyParamCaption}\item[{ai\+Node $\ast$}]{p\+Node,  }\item[{\mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}} $\ast$}]{p\+Parent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_a3bbce6d002dbbc7ec1a30fc467a97706_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_animator_a5dc86bae39f8f27bf3134d5bcba57746}\label{class_scene_animator_a5dc86bae39f8f27bf3134d5bcba57746}} 
+\index{SceneAnimator@{SceneAnimator}!CurrentAnim@{CurrentAnim}}
+\index{CurrentAnim@{CurrentAnim}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{CurrentAnim()}{CurrentAnim()}}
+{\footnotesize\ttfamily ai\+Animation $\ast$ Scene\+Animator\+::\+Current\+Anim (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_a5dc86bae39f8f27bf3134d5bcba57746_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_animator_a1b61268735c0568e1d924ec06e963711}\label{class_scene_animator_a1b61268735c0568e1d924ec06e963711}} 
+\index{SceneAnimator@{SceneAnimator}!CurrentAnimIndex@{CurrentAnimIndex}}
+\index{CurrentAnimIndex@{CurrentAnimIndex}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{CurrentAnimIndex()}{CurrentAnimIndex()}}
+{\footnotesize\ttfamily size\+\_\+t Scene\+Animator\+::\+Current\+Anim\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd}\label{class_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd}} 
+\index{SceneAnimator@{SceneAnimator}!GetBoneMatrices@{GetBoneMatrices}}
+\index{GetBoneMatrices@{GetBoneMatrices}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{GetBoneMatrices()}{GetBoneMatrices()}}
+{\footnotesize\ttfamily const std\+::vector$<$ ai\+Matrix4x4 $>$ \& Scene\+Animator\+::\+Get\+Bone\+Matrices (\begin{DoxyParamCaption}\item[{const ai\+Node $\ast$}]{p\+Node,  }\item[{size\+\_\+t}]{p\+Mesh\+Index = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_aa7dfe2a1c9320bf616bfefefca10f6cd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_animator_a89b285b3575fac7c84497f9bf11e26b6}\label{class_scene_animator_a89b285b3575fac7c84497f9bf11e26b6}} 
+\index{SceneAnimator@{SceneAnimator}!GetGlobalTransform@{GetGlobalTransform}}
+\index{GetGlobalTransform@{GetGlobalTransform}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{GetGlobalTransform()}{GetGlobalTransform()}}
+{\footnotesize\ttfamily const ai\+Matrix4x4 \& Scene\+Animator\+::\+Get\+Global\+Transform (\begin{DoxyParamCaption}\item[{const ai\+Node $\ast$}]{node }\end{DoxyParamCaption}) const}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_a89b285b3575fac7c84497f9bf11e26b6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_animator_adf22ac0c0965e279fd4f387c3f4ad251}\label{class_scene_animator_adf22ac0c0965e279fd4f387c3f4ad251}} 
+\index{SceneAnimator@{SceneAnimator}!GetLocalTransform@{GetLocalTransform}}
+\index{GetLocalTransform@{GetLocalTransform}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{GetLocalTransform()}{GetLocalTransform()}}
+{\footnotesize\ttfamily const ai\+Matrix4x4 \& Scene\+Animator\+::\+Get\+Local\+Transform (\begin{DoxyParamCaption}\item[{const ai\+Node $\ast$}]{node }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{class_scene_animator_a248309cdd1e5c8af66247aa14b174609}\label{class_scene_animator_a248309cdd1e5c8af66247aa14b174609}} 
+\index{SceneAnimator@{SceneAnimator}!SetAnimIndex@{SetAnimIndex}}
+\index{SetAnimIndex@{SetAnimIndex}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{SetAnimIndex()}{SetAnimIndex()}}
+{\footnotesize\ttfamily void Scene\+Animator\+::\+Set\+Anim\+Index (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{p\+Anim\+Index }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_a248309cdd1e5c8af66247aa14b174609_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_a248309cdd1e5c8af66247aa14b174609_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7}\label{class_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7}} 
+\index{SceneAnimator@{SceneAnimator}!UpdateTransforms@{UpdateTransforms}}
+\index{UpdateTransforms@{UpdateTransforms}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{UpdateTransforms()}{UpdateTransforms()}}
+{\footnotesize\ttfamily void Scene\+Animator\+::\+Update\+Transforms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}} $\ast$}]{p\+Node,  }\item[{const std\+::vector$<$ ai\+Matrix4x4 $>$ \&}]{p\+Transforms }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_scene_animator_a8d108ebc1aee4a86d162accc0e40ebe7_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{class_scene_animator_afd737ef660b4114be402cd567dedaac7}\label{class_scene_animator_afd737ef660b4114be402cd567dedaac7}} 
+\index{SceneAnimator@{SceneAnimator}!mAnimEvaluator@{mAnimEvaluator}}
+\index{mAnimEvaluator@{mAnimEvaluator}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{mAnimEvaluator}{mAnimEvaluator}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_anim_evaluator}{Anim\+Evaluator}}$\ast$ Scene\+Animator\+::m\+Anim\+Evaluator\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_scene_animator_a8ac26b55c6ea416360ce3eb63feae895}\label{class_scene_animator_a8ac26b55c6ea416360ce3eb63feae895}} 
+\index{SceneAnimator@{SceneAnimator}!mBoneNodesByName@{mBoneNodesByName}}
+\index{mBoneNodesByName@{mBoneNodesByName}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{mBoneNodesByName}{mBoneNodesByName}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scene_animator_a25f41ade8381d9d5576393617212529f}{Bone\+Map}} Scene\+Animator\+::m\+Bone\+Nodes\+By\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_scene_animator_aedfbb1934b8d1517e9159b8687caee52}\label{class_scene_animator_aedfbb1934b8d1517e9159b8687caee52}} 
+\index{SceneAnimator@{SceneAnimator}!mCurrentAnimIndex@{mCurrentAnimIndex}}
+\index{mCurrentAnimIndex@{mCurrentAnimIndex}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{mCurrentAnimIndex}{mCurrentAnimIndex}}
+{\footnotesize\ttfamily int Scene\+Animator\+::m\+Current\+Anim\+Index\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_scene_animator_a87d87fdbf5eab87efbdf2d27795912a5}\label{class_scene_animator_a87d87fdbf5eab87efbdf2d27795912a5}} 
+\index{SceneAnimator@{SceneAnimator}!mNodesByName@{mNodesByName}}
+\index{mNodesByName@{mNodesByName}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{mNodesByName}{mNodesByName}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scene_animator_abf59dd7ff4da461f2eb419ab6bcc8862}{Node\+Map}} Scene\+Animator\+::m\+Nodes\+By\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_scene_animator_a694333451821b062ab247b37a98a4611}\label{class_scene_animator_a694333451821b062ab247b37a98a4611}} 
+\index{SceneAnimator@{SceneAnimator}!mRootNode@{mRootNode}}
+\index{mRootNode@{mRootNode}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{mRootNode}{mRootNode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_scene_anim_node}{Scene\+Anim\+Node}}$\ast$ Scene\+Animator\+::m\+Root\+Node\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_scene_animator_a703fc706e63c10a1ef75cf8a3dfed416}\label{class_scene_animator_a703fc706e63c10a1ef75cf8a3dfed416}} 
+\index{SceneAnimator@{SceneAnimator}!mScene@{mScene}}
+\index{mScene@{mScene}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{mScene}{mScene}}
+{\footnotesize\ttfamily const ai\+Scene$\ast$ Scene\+Animator\+::m\+Scene\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_scene_animator_a4414fe0325b0a9f85863b4bb41c433c8}\label{class_scene_animator_a4414fe0325b0a9f85863b4bb41c433c8}} 
+\index{SceneAnimator@{SceneAnimator}!mTransforms@{mTransforms}}
+\index{mTransforms@{mTransforms}!SceneAnimator@{SceneAnimator}}
+\doxysubsubsection{\texorpdfstring{mTransforms}{mTransforms}}
+{\footnotesize\ttfamily std\+::vector$<$ai\+Matrix4x4$>$ Scene\+Animator\+::m\+Transforms\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_assimp_model_8h}{Assimp\+Model.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_assimp_model_8cpp}{Assimp\+Model.\+cpp}}\end{DoxyCompactItemize}

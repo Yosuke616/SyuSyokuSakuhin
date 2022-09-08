@@ -1,0 +1,88 @@
+\hypertarget{_stage_manager_8cpp}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\+Stage\+Manager.cpp ファイル}
+\label{_stage_manager_8cpp}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/StageManager.cpp@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/StageManager.cpp}}
+{\ttfamily \#include \char`\"{}Stage\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Texture\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Input\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scene\+Game.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Obj\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imgui.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Camera.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}File\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Resource\+CSV.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Transform\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Collider\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}See\+Coll\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Anim\+Mesh\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Draw3d\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Draw2\+DComponent.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Model\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Gravity\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Out\+Of\+Range.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Enemy\+Component.\+h\char`\"{}}\newline
+Stage\+Manager.\+cpp の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_stage_manager_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8}{MAP\+\_\+\+CHIP}} \{ \newline
+\mbox{\hyperlink{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a2c63acbe79d9f41ba6bb7766e9c37702}{N}} = -\/1
+, \mbox{\hyperlink{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a80d8056645753ae7c02f75f9eef552ad}{ENEMY\+\_\+1}} = 1
+, \mbox{\hyperlink{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a551d43e4ccc6720d1e1a0c78a999c4ff}{B\+\_\+1}} = 10
+, \mbox{\hyperlink{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8ac7eb54cf183c701c6c24f25e31371e6d}{GRASS\+\_\+\+IN}} = 11
+, \newline
+\mbox{\hyperlink{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a481acf8650ec2f2e4c0b366fef0368b4}{GOAL}} = 50
+, \mbox{\hyperlink{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a54c742c6ed764ca3a3a6cdd0b1cbdb9a}{MISS\+\_\+\+COLL}} = 99
+, \mbox{\hyperlink{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8addd9bb06222af5c8484a2b603b970f40}{MAX\+\_\+\+MAP\+\_\+\+CHIP}}
+ \}
+\begin{DoxyCompactList}\small\item\em どのオブジェクトを配置するかを判別する \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{列挙型詳解}
+\mbox{\Hypertarget{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8}\label{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8}} 
+\index{StageManager.cpp@{StageManager.cpp}!MAP\_CHIP@{MAP\_CHIP}}
+\index{MAP\_CHIP@{MAP\_CHIP}!StageManager.cpp@{StageManager.cpp}}
+\doxysubsubsection{\texorpdfstring{MAP\_CHIP}{MAP\_CHIP}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8}{MAP\+\_\+\+CHIP}}}
+
+
+
+どのオブジェクトを配置するかを判別する 
+
+インクルード部 列挙体宣言 \begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N@{N}!StageManager.cpp@{StageManager.cpp}}\index{StageManager.cpp@{StageManager.cpp}!N@{N}}}\mbox{\Hypertarget{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a2c63acbe79d9f41ba6bb7766e9c37702}\label{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a2c63acbe79d9f41ba6bb7766e9c37702}} 
+N&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ENEMY\_1@{ENEMY\_1}!StageManager.cpp@{StageManager.cpp}}\index{StageManager.cpp@{StageManager.cpp}!ENEMY\_1@{ENEMY\_1}}}\mbox{\Hypertarget{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a80d8056645753ae7c02f75f9eef552ad}\label{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a80d8056645753ae7c02f75f9eef552ad}} 
+ENEMY\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{B\_1@{B\_1}!StageManager.cpp@{StageManager.cpp}}\index{StageManager.cpp@{StageManager.cpp}!B\_1@{B\_1}}}\mbox{\Hypertarget{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a551d43e4ccc6720d1e1a0c78a999c4ff}\label{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a551d43e4ccc6720d1e1a0c78a999c4ff}} 
+B\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GRASS\_IN@{GRASS\_IN}!StageManager.cpp@{StageManager.cpp}}\index{StageManager.cpp@{StageManager.cpp}!GRASS\_IN@{GRASS\_IN}}}\mbox{\Hypertarget{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8ac7eb54cf183c701c6c24f25e31371e6d}\label{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8ac7eb54cf183c701c6c24f25e31371e6d}} 
+GRASS\+\_\+\+IN&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GOAL@{GOAL}!StageManager.cpp@{StageManager.cpp}}\index{StageManager.cpp@{StageManager.cpp}!GOAL@{GOAL}}}\mbox{\Hypertarget{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a481acf8650ec2f2e4c0b366fef0368b4}\label{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a481acf8650ec2f2e4c0b366fef0368b4}} 
+GOAL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MISS\_COLL@{MISS\_COLL}!StageManager.cpp@{StageManager.cpp}}\index{StageManager.cpp@{StageManager.cpp}!MISS\_COLL@{MISS\_COLL}}}\mbox{\Hypertarget{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a54c742c6ed764ca3a3a6cdd0b1cbdb9a}\label{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8a54c742c6ed764ca3a3a6cdd0b1cbdb9a}} 
+MISS\+\_\+\+COLL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_MAP\_CHIP@{MAX\_MAP\_CHIP}!StageManager.cpp@{StageManager.cpp}}\index{StageManager.cpp@{StageManager.cpp}!MAX\_MAP\_CHIP@{MAX\_MAP\_CHIP}}}\mbox{\Hypertarget{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8addd9bb06222af5c8484a2b603b970f40}\label{_stage_manager_8cpp_aacedb662f297fbabdd4a2c88ba1f10d8addd9bb06222af5c8484a2b603b970f40}} 
+MAX\+\_\+\+MAP\+\_\+\+CHIP&\\
+\hline
+
+\end{DoxyEnumFields}

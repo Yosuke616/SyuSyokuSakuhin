@@ -1,0 +1,4 @@
+<map id="CCollider::AddColliderList" name="CCollider::AddColliderList">
+<area shape="rect" id="node1" title="当たり判定リストに追加" alt="" coords="164,5,333,32"/>
+<area shape="rect" id="node2" href="$class_c_collider.html#abf4ddce7c4496c1e2035f84e4650a2f3" title="初期化" alt="" coords="5,5,116,32"/>
+</map>

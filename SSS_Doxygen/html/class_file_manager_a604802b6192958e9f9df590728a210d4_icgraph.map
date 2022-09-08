@@ -1,0 +1,5 @@
+<map id="FileManager::GetInstance" name="FileManager::GetInstance">
+<area shape="rect" id="node1" title="インスタンスの取得" alt="" coords="399,5,569,32"/>
+<area shape="rect" id="node2" href="$class_stage_manager.html#afe74bc34352fd78b5b8f2dfaf551a251" title="更新処理" alt="" coords="196,5,351,32"/>
+<area shape="rect" id="node3" href="$class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,5,148,32"/>
+</map>

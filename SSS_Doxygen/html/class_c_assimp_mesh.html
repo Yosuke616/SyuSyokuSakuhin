@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: CAssimpMesh クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="class_c_assimp_mesh-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">CAssimpMesh クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_assimp_model_8h_source.html">AssimpModel.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a0407c0d669b67e0c5ea916b9afe7fd90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_assimp_mesh.html#a0407c0d669b67e0c5ea916b9afe7fd90">CAssimpMesh</a> (ID3D11Device *pDevice, <a class="el" href="class_c_assimp_model.html">CAssimpModel</a> *pModel, std::vector&lt; <a class="el" href="struct_t_assimp_vertex.html">TAssimpVertex</a> &gt; aVertex, std::vector&lt; UINT &gt; aIndex, <a class="el" href="struct_t_assimp_material.html">TAssimpMaterial</a> &amp;material)</td></tr>
+<tr class="separator:a0407c0d669b67e0c5ea916b9afe7fd90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf56aff36d7b748bf11036ae9ca87cf6"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_assimp_mesh.html#abf56aff36d7b748bf11036ae9ca87cf6">~CAssimpMesh</a> ()</td></tr>
+<tr class="separator:abf56aff36d7b748bf11036ae9ca87cf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40ccc5aa52266d7673ba52e23aad20fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_assimp_mesh.html#a40ccc5aa52266d7673ba52e23aad20fa">Draw</a> (ID3D11DeviceContext *pDC, DirectX::XMFLOAT4X4 &amp;mtxWorld, <a class="el" href="_assimp_model_8h.html#acbd1753ffd33dcd5787e7028cc0e9bf3">EByOpacity</a> byOpacity=<a class="el" href="_assimp_model_8h.html#acbd1753ffd33dcd5787e7028cc0e9bf3a35cbb98affb6d66c253aefeb9d4078bc">eNoAffect</a>)</td></tr>
+<tr class="separator:a40ccc5aa52266d7673ba52e23aad20fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b61f1fe42a80555d2f6e286016762b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_assimp_mesh.html#a0b61f1fe42a80555d2f6e286016762b5">Release</a> ()</td></tr>
+<tr class="separator:a0b61f1fe42a80555d2f6e286016762b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa23f916538ebc325071af295bc54c0ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_assimp_mesh.html#aa23f916538ebc325071af295bc54c0ba">SetBoneMatrix</a> (ID3D11DeviceContext *pDC, XMFLOAT4X4 mtxBone[])</td></tr>
+<tr class="separator:aa23f916538ebc325071af295bc54c0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a0407c0d669b67e0c5ea916b9afe7fd90" name="a0407c0d669b67e0c5ea916b9afe7fd90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0407c0d669b67e0c5ea916b9afe7fd90">&#9670;&nbsp;</a></span>CAssimpMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CAssimpMesh::CAssimpMesh </td>
+          <td>(</td>
+          <td class="paramtype">ID3D11Device *&#160;</td>
+          <td class="paramname"><em>pDevice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c_assimp_model.html">CAssimpModel</a> *&#160;</td>
+          <td class="paramname"><em>pModel</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="struct_t_assimp_vertex.html">TAssimpVertex</a> &gt;&#160;</td>
+          <td class="paramname"><em>aVertex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; UINT &gt;&#160;</td>
+          <td class="paramname"><em>aIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_t_assimp_material.html">TAssimpMaterial</a> &amp;&#160;</td>
+          <td class="paramname"><em>material</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="abf56aff36d7b748bf11036ae9ca87cf6" name="abf56aff36d7b748bf11036ae9ca87cf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf56aff36d7b748bf11036ae9ca87cf6">&#9670;&nbsp;</a></span>~CAssimpMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CAssimpMesh::~CAssimpMesh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a40ccc5aa52266d7673ba52e23aad20fa" name="a40ccc5aa52266d7673ba52e23aad20fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ccc5aa52266d7673ba52e23aad20fa">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAssimpMesh::Draw </td>
+          <td>(</td>
+          <td class="paramtype">ID3D11DeviceContext *&#160;</td>
+          <td class="paramname"><em>pDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DirectX::XMFLOAT4X4 &amp;&#160;</td>
+          <td class="paramname"><em>mtxWorld</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_assimp_model_8h.html#acbd1753ffd33dcd5787e7028cc0e9bf3">EByOpacity</a>&#160;</td>
+          <td class="paramname"><em>byOpacity</em> = <code><a class="el" href="_assimp_model_8h.html#acbd1753ffd33dcd5787e7028cc0e9bf3a35cbb98affb6d66c253aefeb9d4078bc">eNoAffect</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa_cgraph.png" border="0" usemap="#aclass_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa_cgraph" alt=""/></div>
+<map name="aclass_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa_cgraph" id="aclass_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa_cgraph">
+<area shape="rect" title=" " alt="" coords="5,309,149,336"/>
+<area shape="rect" href="class_c_camera.html#a67560cf6a017ec3b8a59129be0d0100a" title=" " alt="" coords="237,5,343,32"/>
+<area shape="rect" href="class_c_light.html#a4a80a6d18305f88d251970b4f84ed1c4" title="ライトのインスタンス取得" alt="" coords="246,56,334,83"/>
+<area shape="rect" href="class_c_light.html#ab8f6c373c7391407739f71ef8317ff48" title="環境光の取得" alt="" coords="222,107,358,133"/>
+<area shape="rect" href="class_c_light.html#a837bec6973025bfd74f8c9d45ee4583b" title="反射光の取得" alt="" coords="227,157,353,184"/>
+<area shape="rect" href="class_c_light.html#ae4b6c1b4ae9b9379e34bda0284bb1940" title="光源方向取得" alt="" coords="238,208,342,235"/>
+<area shape="rect" href="class_model_manager.html#a76fa7f6c4bf14e44dc8fc22b41d18436" title="インスタンス化" alt="" coords="197,259,383,285"/>
+<area shape="rect" href="class_c_assimp_model.html#a059efb51145989e578702f2e0055b3ca" title=" " alt="" coords="197,309,383,336"/>
+<area shape="rect" href="class_c_camera.html#a6c938658ede08754ba4ffd9a3dd35ea3" title=" " alt="" coords="226,360,354,387"/>
+<area shape="rect" href="class_c_camera.html#a99bbeae7433475a61979f603f439ab13" title=" " alt="" coords="208,411,372,437"/>
+<area shape="rect" href="class_c_light.html#a2e39622934de7ca6b477a1a8a17acee2" title="自己発光の取得" alt="" coords="221,461,359,488"/>
+<area shape="rect" href="class_c_assimp_model.html#ab79b6874ddc2bd8a9b691c8ddaceea26" title=" " alt="" coords="199,513,381,554"/>
+<area shape="rect" href="class_c_camera.html#a1d42e5fecad0bcdab17124b402aa1575" title=" " alt="" coords="205,579,375,605"/>
+<area shape="rect" href="class_c_assimp_model.html#ae1efd6c2fae09f8626f1bfce806d38ff" title="敵のマテリアルを保存する" alt="" coords="207,629,373,656"/>
+<area shape="rect" href="class_model_manager.html#a9b0d22b1baf59c5b566e82fcd8ca424a" title="コンストラクタ" alt="" coords="431,259,631,285"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa_icgraph.png" border="0" usemap="#aclass_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa_icgraph" alt=""/></div>
+<map name="aclass_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa_icgraph" id="aclass_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa_icgraph">
+<area shape="rect" title=" " alt="" coords="587,29,731,56"/>
+<area shape="rect" href="class_c_assimp_model.html#a883075480beae8196af8823ed71cd426" title=" " alt="" coords="361,29,539,56"/>
+<area shape="rect" href="class_c_assimp_model.html#aac69dd95631d620577c17670dbd37149" title=" " alt="" coords="167,29,313,56"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="5,29,119,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0b61f1fe42a80555d2f6e286016762b5" name="a0b61f1fe42a80555d2f6e286016762b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b61f1fe42a80555d2f6e286016762b5">&#9670;&nbsp;</a></span>Release()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAssimpMesh::Release </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_assimp_mesh_a0b61f1fe42a80555d2f6e286016762b5_cgraph.png" border="0" usemap="#aclass_c_assimp_mesh_a0b61f1fe42a80555d2f6e286016762b5_cgraph" alt=""/></div>
+<map name="aclass_c_assimp_mesh_a0b61f1fe42a80555d2f6e286016762b5_cgraph" id="aclass_c_assimp_mesh_a0b61f1fe42a80555d2f6e286016762b5_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,168,32"/>
+<area shape="rect" href="struct_t_assimp_material.html#acc0cb588c61731a1d7510d24b55e3d16" title=" " alt="" coords="216,5,391,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa23f916538ebc325071af295bc54c0ba" name="aa23f916538ebc325071af295bc54c0ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa23f916538ebc325071af295bc54c0ba">&#9670;&nbsp;</a></span>SetBoneMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAssimpMesh::SetBoneMatrix </td>
+          <td>(</td>
+          <td class="paramtype">ID3D11DeviceContext *&#160;</td>
+          <td class="paramname"><em>pDC</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">XMFLOAT4X4&#160;</td>
+          <td class="paramname"><em>mtxBone</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_assimp_mesh_aa23f916538ebc325071af295bc54c0ba_icgraph.png" border="0" usemap="#aclass_c_assimp_mesh_aa23f916538ebc325071af295bc54c0ba_icgraph" alt=""/></div>
+<map name="aclass_c_assimp_mesh_aa23f916538ebc325071af295bc54c0ba_icgraph" id="aclass_c_assimp_mesh_aa23f916538ebc325071af295bc54c0ba_icgraph">
+<area shape="rect" title=" " alt="" coords="587,29,788,56"/>
+<area shape="rect" href="class_c_assimp_model.html#a883075480beae8196af8823ed71cd426" title=" " alt="" coords="361,29,539,56"/>
+<area shape="rect" href="class_c_assimp_model.html#aac69dd95631d620577c17670dbd37149" title=" " alt="" coords="167,29,313,56"/>
+<area shape="rect" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa" title="描画" alt="" coords="5,29,119,56"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="_assimp_model_8h_source.html">AssimpModel.h</a></li>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="_assimp_model_8cpp.html">AssimpModel.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

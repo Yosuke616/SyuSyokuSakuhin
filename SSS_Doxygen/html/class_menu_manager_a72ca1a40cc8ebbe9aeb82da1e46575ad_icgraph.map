@@ -1,0 +1,14 @@
+<map id="MenuManager::DeleteMenu" name="MenuManager::DeleteMenu">
+<area shape="rect" id="node1" title="メニューリストの削除" alt="" coords="688,107,869,133"/>
+<area shape="rect" id="node2" href="$class_menu_manager.html#acf6c98482ac2231830e38616e8e565fa" title="ゲームオーバーメニュー" alt="" coords="397,107,640,133"/>
+<area shape="rect" id="node7" href="$class_menu_manager.html#a9f2f549c8364364b698b7c99d5f52f23" title="ミスメニュー" alt="" coords="413,56,624,83"/>
+<area shape="rect" id="node8" href="$class_menu_manager.html#ad519349168bf08237d1d37fc8333cfce" title="ポーズメニュー" alt="" coords="409,5,628,32"/>
+<area shape="rect" id="node9" href="$class_menu_manager.html#af6c63b05dda555dce5a7698c69b66f90" title="ステージセレクトメニュー" alt="" coords="409,208,628,235"/>
+<area shape="rect" id="node11" href="$class_menu_manager.html#a6b1c422b8f1d277d043fc9a309aaa8a0" title="タイトルメニュー" alt="" coords="415,157,622,184"/>
+<area shape="rect" id="node3" href="$class_menu_manager.html#aabc8f23d87e058b5c5b099a8c34a2af8" title="更新処理" alt="" coords="196,56,349,83"/>
+<area shape="rect" id="node4" href="$class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node5" href="$class_stage_select.html#aa2796a223f0c14a63523a725957de1ef" title="更新処理" alt="" coords="5,107,148,133"/>
+<area shape="rect" id="node6" href="$class_scene_title.html#af1b28c5ab2cced3b7d8106ef0cd8b0ae" title=" " alt="" coords="11,56,143,83"/>
+<area shape="rect" id="node10" href="$class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="213,208,332,235"/>
+<area shape="rect" id="node12" href="$class_scene_title.html#a25a10fe18f8ff1f5a7e657cfe6eca671" title=" " alt="" coords="219,157,327,184"/>
+</map>

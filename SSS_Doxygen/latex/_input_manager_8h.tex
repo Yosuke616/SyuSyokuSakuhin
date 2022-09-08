@@ -1,0 +1,94 @@
+\hypertarget{_input_manager_8h}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\+Input\+Manager.h ファイル}
+\label{_input_manager_8h}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/InputManager.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/InputManager.h}}
+
+
+コントローラーやキーボード操作できるようにする  
+
+
+{\ttfamily \#include \char`\"{}main\+App.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$dinput.\+h$>$}\newline
+Input\+Manager.\+h の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_input_manager_8h__incl}
+\end{center}
+\end{figure}
+被依存関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_input_manager_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{クラス}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_input_manager}{Input\+Manager}}
+\end{DoxyCompactItemize}
+\doxysubsection*{マクロ定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_input_manager_8h_a1d7ab29fdefabdb4e7e7cd27ac4c9934}{DIRECTINPUT\+\_\+\+VERSION}}~0x0800
+\item 
+\#define \mbox{\hyperlink{_input_manager_8h_a609683a0c8de0ce9cdd1e696e71a6f07}{KEY\+\_\+\+MAX}}~(256)
+\end{DoxyCompactItemize}
+\doxysubsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2a}{MOUSE\+\_\+\+BUTTON}} \{ \mbox{\hyperlink{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2aa6c748505c18ae6e7168e90d7693cfc9e}{MOUSE\+\_\+L}}
+, \mbox{\hyperlink{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2aa53a0e5961a0f852ee5da76ea147aba11}{MOUSE\+\_\+R}}
+, \mbox{\hyperlink{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2aac5fb23e1c6f53737f6a19214646f1b57}{MOSUE\+\_\+C}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+コントローラーやキーボード操作できるようにする 
+
+\begin{DoxyAuthor}{著者}
+志水陽祐 
+\end{DoxyAuthor}
+\begin{DoxyDate}{日付}
+2022/6/30 
+\end{DoxyDate}
+
+
+\doxysubsection{マクロ定義詳解}
+\mbox{\Hypertarget{_input_manager_8h_a1d7ab29fdefabdb4e7e7cd27ac4c9934}\label{_input_manager_8h_a1d7ab29fdefabdb4e7e7cd27ac4c9934}} 
+\index{InputManager.h@{InputManager.h}!DIRECTINPUT\_VERSION@{DIRECTINPUT\_VERSION}}
+\index{DIRECTINPUT\_VERSION@{DIRECTINPUT\_VERSION}!InputManager.h@{InputManager.h}}
+\doxysubsubsection{\texorpdfstring{DIRECTINPUT\_VERSION}{DIRECTINPUT\_VERSION}}
+{\footnotesize\ttfamily \#define DIRECTINPUT\+\_\+\+VERSION~0x0800}
+
+\mbox{\Hypertarget{_input_manager_8h_a609683a0c8de0ce9cdd1e696e71a6f07}\label{_input_manager_8h_a609683a0c8de0ce9cdd1e696e71a6f07}} 
+\index{InputManager.h@{InputManager.h}!KEY\_MAX@{KEY\_MAX}}
+\index{KEY\_MAX@{KEY\_MAX}!InputManager.h@{InputManager.h}}
+\doxysubsubsection{\texorpdfstring{KEY\_MAX}{KEY\_MAX}}
+{\footnotesize\ttfamily \#define KEY\+\_\+\+MAX~(256)}
+
+
+
+\doxysubsection{列挙型詳解}
+\mbox{\Hypertarget{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2a}\label{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2a}} 
+\index{InputManager.h@{InputManager.h}!MOUSE\_BUTTON@{MOUSE\_BUTTON}}
+\index{MOUSE\_BUTTON@{MOUSE\_BUTTON}!InputManager.h@{InputManager.h}}
+\doxysubsubsection{\texorpdfstring{MOUSE\_BUTTON}{MOUSE\_BUTTON}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2a}{MOUSE\+\_\+\+BUTTON}}}
+
+列挙体宣言 \begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_L@{MOUSE\_L}!InputManager.h@{InputManager.h}}\index{InputManager.h@{InputManager.h}!MOUSE\_L@{MOUSE\_L}}}\mbox{\Hypertarget{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2aa6c748505c18ae6e7168e90d7693cfc9e}\label{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2aa6c748505c18ae6e7168e90d7693cfc9e}} 
+MOUSE\+\_\+L&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOUSE\_R@{MOUSE\_R}!InputManager.h@{InputManager.h}}\index{InputManager.h@{InputManager.h}!MOUSE\_R@{MOUSE\_R}}}\mbox{\Hypertarget{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2aa53a0e5961a0f852ee5da76ea147aba11}\label{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2aa53a0e5961a0f852ee5da76ea147aba11}} 
+MOUSE\+\_\+R&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MOSUE\_C@{MOSUE\_C}!InputManager.h@{InputManager.h}}\index{InputManager.h@{InputManager.h}!MOSUE\_C@{MOSUE\_C}}}\mbox{\Hypertarget{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2aac5fb23e1c6f53737f6a19214646f1b57}\label{_input_manager_8h_ac306d9f7f033a5e73e4660ace4e89b2aac5fb23e1c6f53737f6a19214646f1b57}} 
+MOSUE\+\_\+C&\\
+\hline
+
+\end{DoxyEnumFields}

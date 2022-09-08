@@ -1,0 +1,58 @@
+\hypertarget{_menu_manager_8cpp}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\+Menu\+Manager.cpp ファイル}
+\label{_menu_manager_8cpp}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/MenuManager.cpp@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/MenuManager.cpp}}
+{\ttfamily \#include \char`\"{}Menu\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$crtdbg.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Transform\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Input\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Draw2\+DComponent.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Collider\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Texture\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scene\+Game.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imgui.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Scene\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Anim\+Mesh\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Model\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Draw3d\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Obj\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Player\+Component.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Object\+Manager.\+h\char`\"{}}\newline
+Menu\+Manager.\+cpp の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_menu_manager_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{マクロ定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_menu_manager_8cpp_a2b066b074a5a63307745ff85a83a4fa3}{STAGEOBJ\+\_\+\+VEL}}~(2.\+0f)
+\begin{DoxyCompactList}\small\item\em ステージ選択画面のオブジェクトが、 どれだけの速度で移動するか \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{_menu_manager_8cpp_a23eeecdd60ef7d1dd104420dca15388b}{MAX\+\_\+\+OBJ\+\_\+\+MOVE}}~(150.\+0f)
+\begin{DoxyCompactList}\small\item\em どれだけ移動したかを制御する定数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{マクロ定義詳解}
+\mbox{\Hypertarget{_menu_manager_8cpp_a23eeecdd60ef7d1dd104420dca15388b}\label{_menu_manager_8cpp_a23eeecdd60ef7d1dd104420dca15388b}} 
+\index{MenuManager.cpp@{MenuManager.cpp}!MAX\_OBJ\_MOVE@{MAX\_OBJ\_MOVE}}
+\index{MAX\_OBJ\_MOVE@{MAX\_OBJ\_MOVE}!MenuManager.cpp@{MenuManager.cpp}}
+\doxysubsubsection{\texorpdfstring{MAX\_OBJ\_MOVE}{MAX\_OBJ\_MOVE}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+OBJ\+\_\+\+MOVE~(150.\+0f)}
+
+
+
+どれだけ移動したかを制御する定数 
+
+\mbox{\Hypertarget{_menu_manager_8cpp_a2b066b074a5a63307745ff85a83a4fa3}\label{_menu_manager_8cpp_a2b066b074a5a63307745ff85a83a4fa3}} 
+\index{MenuManager.cpp@{MenuManager.cpp}!STAGEOBJ\_VEL@{STAGEOBJ\_VEL}}
+\index{STAGEOBJ\_VEL@{STAGEOBJ\_VEL}!MenuManager.cpp@{MenuManager.cpp}}
+\doxysubsubsection{\texorpdfstring{STAGEOBJ\_VEL}{STAGEOBJ\_VEL}}
+{\footnotesize\ttfamily \#define STAGEOBJ\+\_\+\+VEL~(2.\+0f)}
+
+
+
+ステージ選択画面のオブジェクトが、 どれだけの速度で移動するか 
+
+インクルード部 定数定義 

@@ -1,0 +1,346 @@
+\hypertarget{class_c_player}{}\doxysection{CPlayer クラス}
+\label{class_c_player}\index{CPlayer@{CPlayer}}
+
+
+{\ttfamily \#include $<$Player\+Component.\+h$>$}
+
+
+
+CPlayer の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_player__inherit__graph}
+\end{center}
+\end{figure}
+
+
+CPlayer 連携図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=146pt]{class_c_player__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_player_a931a59adf2ada5376122e30b33ae2c4c}{CPlayer}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_player_ae9122c819d61dd8e2f7a890040c04a61}{$\sim$\+CPlayer}} () override
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_player_aad0dcf0dbb43561b5202fb20974e43a3}{Start}} () override
+\begin{DoxyCompactList}\small\item\em 初期化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_player_a4582a8020f6734842edea64909bd4b40}{Update}} () override
+\begin{DoxyCompactList}\small\item\em 更新 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_player_a9f4de6ca09dfa30de3b06c9d548a0d8f}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em 描画 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_player_abede91d4fa024fae2396593ce5532b17}{On\+Collision\+Enter}} (\mbox{\hyperlink{class_object}{Object}} $\ast$p\+Object) override
+\begin{DoxyCompactList}\small\item\em 衝突処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_player_af3ea32b95b8b7ac0859098a227564c66}{Set\+Player\+State}} (\mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}{PLAYER\+\_\+\+STATE}} Player\+Sta)
+\begin{DoxyCompactList}\small\item\em プレイヤーの状態を変更するため \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_player_a74a2ae35e6ee85f5d8db25b65fe61062}{Change\+Texture}} ()
+\begin{DoxyCompactList}\small\item\em プレイヤーのテクスチャを変更するための関数 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_c_player_a242bd1c7a6b560a0886670c4d4fd2cb9}{Get\+Player\+ROL}} ()
+\begin{DoxyCompactList}\small\item\em プレイヤーがどっちの方向を決めているかを \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_player_a0fbe6a654daa88bd62f8895f4ac3e540}{Set\+Cool\+Time}} (int Cool\+Time)
+\begin{DoxyCompactList}\small\item\em 攻撃後のクールタイムを設定する \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_player_a3e3fa542e97605dcad912d2beb7c2041}{Set\+Attack\+Flg}} (bool Attack)
+\begin{DoxyCompactList}\small\item\em 再び攻撃できるようにする \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_c_player_a2010fc46d322bbe154e98752e242f767}{Get\+Player\+Jump}} ()
+\begin{DoxyCompactList}\small\item\em プレイヤーがジャンプしているかを取得する \end{DoxyCompactList}\item 
+\mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}{PLAYER\+\_\+\+STATE}} \mbox{\hyperlink{class_c_player_a5e03b46500ed0d60c75ed8852f43cc45}{Get\+Player\+Sta}} ()
+\begin{DoxyCompactList}\small\item\em プレイヤーの状態を取得する関数 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_c_player_acde5e2196354f96ea915c764f7a7bf48}{Get\+Clear\+Flg}} ()
+\begin{DoxyCompactList}\small\item\em クリアしたかどうかを取得する関数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_player_a931a59adf2ada5376122e30b33ae2c4c}\label{class_c_player_a931a59adf2ada5376122e30b33ae2c4c}} 
+\index{CPlayer@{CPlayer}!CPlayer@{CPlayer}}
+\index{CPlayer@{CPlayer}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{CPlayer()}{CPlayer()}}
+{\footnotesize\ttfamily CPlayer\+::\+CPlayer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+俺の名前はコンストラクタ　ただのコンストラクタ @detail トランスフォームや描画情報をイニシャライズでnullにする \mbox{\Hypertarget{class_c_player_ae9122c819d61dd8e2f7a890040c04a61}\label{class_c_player_ae9122c819d61dd8e2f7a890040c04a61}} 
+\index{CPlayer@{CPlayer}!````~CPlayer@{$\sim$CPlayer}}
+\index{````~CPlayer@{$\sim$CPlayer}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{$\sim$CPlayer()}{~CPlayer()}}
+{\footnotesize\ttfamily CPlayer\+::$\sim$\+CPlayer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+デストラクタ 
+
+デストラクタしたのか　俺以外のやつと 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_player_a74a2ae35e6ee85f5d8db25b65fe61062}\label{class_c_player_a74a2ae35e6ee85f5d8db25b65fe61062}} 
+\index{CPlayer@{CPlayer}!ChangeTexture@{ChangeTexture}}
+\index{ChangeTexture@{ChangeTexture}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{ChangeTexture()}{ChangeTexture()}}
+{\footnotesize\ttfamily void CPlayer\+::\+Change\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+プレイヤーのテクスチャを変更するための関数 
+
+プレイヤーのステータスが変わったとき、テクスチャを変える関数 呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_player_a74a2ae35e6ee85f5d8db25b65fe61062_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_player_a74a2ae35e6ee85f5d8db25b65fe61062_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_player_a9f4de6ca09dfa30de3b06c9d548a0d8f}\label{class_c_player_a9f4de6ca09dfa30de3b06c9d548a0d8f}} 
+\index{CPlayer@{CPlayer}!Draw@{Draw}}
+\index{Draw@{Draw}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void CPlayer\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+描画 
+
+プレイヤーをデバッグ表示 
+
+\mbox{\hyperlink{class_component_a8622ccd5f24035d48e33292717299313}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_player_a9f4de6ca09dfa30de3b06c9d548a0d8f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_player_acde5e2196354f96ea915c764f7a7bf48}\label{class_c_player_acde5e2196354f96ea915c764f7a7bf48}} 
+\index{CPlayer@{CPlayer}!GetClearFlg@{GetClearFlg}}
+\index{GetClearFlg@{GetClearFlg}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{GetClearFlg()}{GetClearFlg()}}
+{\footnotesize\ttfamily bool CPlayer\+::\+Get\+Clear\+Flg (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+クリアしたかどうかを取得する関数 
+
+ステージをクリアしたかを取得する関数
+
+\begin{DoxyReturn}{戻り値}
+クリアしていたらtrueを返す 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_c_player_acde5e2196354f96ea915c764f7a7bf48_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_player_a2010fc46d322bbe154e98752e242f767}\label{class_c_player_a2010fc46d322bbe154e98752e242f767}} 
+\index{CPlayer@{CPlayer}!GetPlayerJump@{GetPlayerJump}}
+\index{GetPlayerJump@{GetPlayerJump}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{GetPlayerJump()}{GetPlayerJump()}}
+{\footnotesize\ttfamily bool CPlayer\+::\+Get\+Player\+Jump (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+プレイヤーがジャンプしているかを取得する 
+
+ジャンプしているかを取得する
+
+\begin{DoxyReturn}{戻り値}
+(bool) ~\newline
+ 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=329pt]{class_c_player_a2010fc46d322bbe154e98752e242f767_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_player_a242bd1c7a6b560a0886670c4d4fd2cb9}\label{class_c_player_a242bd1c7a6b560a0886670c4d4fd2cb9}} 
+\index{CPlayer@{CPlayer}!GetPlayerROL@{GetPlayerROL}}
+\index{GetPlayerROL@{GetPlayerROL}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{GetPlayerROL()}{GetPlayerROL()}}
+{\footnotesize\ttfamily bool CPlayer\+::\+Get\+Player\+ROL (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+プレイヤーがどっちの方向を決めているかを 
+
+プレイヤーが左右どちらを向いているかを取得する関数
+
+\begin{DoxyReturn}{戻り値}
+(bool) 右ならばtrue、左ならfalseを返す 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_player_a5e03b46500ed0d60c75ed8852f43cc45}\label{class_c_player_a5e03b46500ed0d60c75ed8852f43cc45}} 
+\index{CPlayer@{CPlayer}!GetPlayerSta@{GetPlayerSta}}
+\index{GetPlayerSta@{GetPlayerSta}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{GetPlayerSta()}{GetPlayerSta()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}{PLAYER\+\_\+\+STATE}} CPlayer\+::\+Get\+Player\+Sta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+プレイヤーの状態を取得する関数 
+
+プレイヤーの状態を取得する
+
+\begin{DoxyReturn}{戻り値}
+(PLAYER\+\_\+\+STATE) 現在のプレイヤーの状態を返す 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_player_a5e03b46500ed0d60c75ed8852f43cc45_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_player_abede91d4fa024fae2396593ce5532b17}\label{class_c_player_abede91d4fa024fae2396593ce5532b17}} 
+\index{CPlayer@{CPlayer}!OnCollisionEnter@{OnCollisionEnter}}
+\index{OnCollisionEnter@{OnCollisionEnter}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{OnCollisionEnter()}{OnCollisionEnter()}}
+{\footnotesize\ttfamily void CPlayer\+::\+On\+Collision\+Enter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_object}{Object}} $\ast$}]{p\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+衝突処理 
+
+プレイヤーが何かに当たったときの処理
+
+
+\begin{DoxyParams}{引数}
+{\em (\+Object$\ast$)} & 相手方のオブジェクトのポインタ \\
+\hline
+\end{DoxyParams}
+プレイヤーがブロックの中(左端と右端の中)にいた場合の処理
+
+プレイヤーが上に乗ったら
+
+頭ごっつんこ状態である
+
+プレイヤーがブロックの中(上端と下端の中)にいた場合の処理
+
+\mbox{\hyperlink{class_component_affb738998b25ee4b6be3719e020d16f2}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_player_abede91d4fa024fae2396593ce5532b17_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_player_a3e3fa542e97605dcad912d2beb7c2041}\label{class_c_player_a3e3fa542e97605dcad912d2beb7c2041}} 
+\index{CPlayer@{CPlayer}!SetAttackFlg@{SetAttackFlg}}
+\index{SetAttackFlg@{SetAttackFlg}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{SetAttackFlg()}{SetAttackFlg()}}
+{\footnotesize\ttfamily void CPlayer\+::\+Set\+Attack\+Flg (\begin{DoxyParamCaption}\item[{bool}]{Attack }\end{DoxyParamCaption})}
+
+
+
+再び攻撃できるようにする 
+
+攻撃が再びできるようにするフラグ
+
+
+\begin{DoxyParams}{引数}
+{\em (bool)} & 攻撃していいよ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_player_a0fbe6a654daa88bd62f8895f4ac3e540}\label{class_c_player_a0fbe6a654daa88bd62f8895f4ac3e540}} 
+\index{CPlayer@{CPlayer}!SetCoolTime@{SetCoolTime}}
+\index{SetCoolTime@{SetCoolTime}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{SetCoolTime()}{SetCoolTime()}}
+{\footnotesize\ttfamily void CPlayer\+::\+Set\+Cool\+Time (\begin{DoxyParamCaption}\item[{int}]{Cool\+Time }\end{DoxyParamCaption})}
+
+
+
+攻撃後のクールタイムを設定する 
+
+攻撃後のクールタイムの設定
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & どの位たったら次の攻撃に移れるか \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_player_af3ea32b95b8b7ac0859098a227564c66}\label{class_c_player_af3ea32b95b8b7ac0859098a227564c66}} 
+\index{CPlayer@{CPlayer}!SetPlayerState@{SetPlayerState}}
+\index{SetPlayerState@{SetPlayerState}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{SetPlayerState()}{SetPlayerState()}}
+{\footnotesize\ttfamily void CPlayer\+::\+Set\+Player\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{_player_component_8h_a5baccd10d2f9116585c878821a80cc94}{PLAYER\+\_\+\+STATE}}}]{Player\+Sta }\end{DoxyParamCaption})}
+
+
+
+プレイヤーの状態を変更するため 
+
+\mbox{\Hypertarget{class_c_player_aad0dcf0dbb43561b5202fb20974e43a3}\label{class_c_player_aad0dcf0dbb43561b5202fb20974e43a3}} 
+\index{CPlayer@{CPlayer}!Start@{Start}}
+\index{Start@{Start}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void CPlayer\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+初期化 
+
+開始処理 
+
+\mbox{\hyperlink{class_component_a3f57807787e0015833ccffd83fb63d14}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_player_aad0dcf0dbb43561b5202fb20974e43a3_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_player_a4582a8020f6734842edea64909bd4b40}\label{class_c_player_a4582a8020f6734842edea64909bd4b40}} 
+\index{CPlayer@{CPlayer}!Update@{Update}}
+\index{Update@{Update}!CPlayer@{CPlayer}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void CPlayer\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新 
+
+更新処理 
+
+\mbox{\hyperlink{class_component_aaf2ce6dc5752072492f790ad4c7955bb}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_player_a4582a8020f6734842edea64909bd4b40_cgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_player_component_8h}{Player\+Component.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_player_component_8cpp}{Player\+Component.\+cpp}}\end{DoxyCompactItemize}

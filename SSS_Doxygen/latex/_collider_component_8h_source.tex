@@ -1,0 +1,73 @@
+\hypertarget{_collider_component_8h_source}{}\doxysection{Collider\+Component.\+h}
+\label{_collider_component_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ColliderComponent.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ColliderComponent.h}}
+\mbox{\hyperlink{_collider_component_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{11 \textcolor{comment}{//インクルードガード}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#ifndef \_COLLIDER\_H\_}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define \_COLLIDER\_H\_}}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{comment}{//インクルード}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_component_8h}{Component.h}}"{}}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{comment}{//前方宣言}}
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_transform}{CTransform}};}
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{class_object_manager}{ObjectManager}};}
+\DoxyCodeLine{24 \textcolor{keyword}{class }\mbox{\hyperlink{class_object}{Object}};}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{class_c_collider}{CCollider}} :\textcolor{keyword}{public} \mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{28 \textcolor{keyword}{private}:}
+\DoxyCodeLine{29     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{31 \textcolor{comment}{}    \mbox{\hyperlink{class_c_transform}{CTransform}}*   m\_pTransform;}
+\DoxyCodeLine{33     XMFLOAT3 m\_CollisionSize;}
+\DoxyCodeLine{35     XMFLOAT2 m\_CenterOffset;}
+\DoxyCodeLine{37     \textcolor{keywordtype}{float} m\_fRadisu;}
+\DoxyCodeLine{39     \textcolor{keyword}{static} std::list<Object*> m\_ColliderList;}
+\DoxyCodeLine{41     std::list<Object*> m\_IntersectObjects;}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{44     \textcolor{comment}{//当たり判定と愉快な仲間たち}}
+\DoxyCodeLine{46 \textcolor{comment}{}    \textcolor{keywordtype}{bool} CheckCollisionRectToRect(XMFLOAT2 centerPos1,XMFLOAT2 centerPos2,}
+\DoxyCodeLine{47         XMFLOAT2 size1,XMFLOAT2 size2,XMFLOAT2 Velocity1,XMFLOAT2 Velocity2);}
+\DoxyCodeLine{49     \textcolor{keywordtype}{bool} CheckCollisionCircleToCircle(XMFLOAT2, XMFLOAT2, \textcolor{keywordtype}{float}, \textcolor{keywordtype}{float});}
+\DoxyCodeLine{51     \textcolor{keywordtype}{bool} CollisionSphere(XMFLOAT3 Apos,XMFLOAT3 Bpos, \textcolor{keywordtype}{float} Ar, \textcolor{keywordtype}{float} Br);}
+\DoxyCodeLine{53     \textcolor{keywordtype}{bool} CollisionAABB(XMFLOAT3 Apos, XMFLOAT3 Asize, XMFLOAT3 Bpos, XMFLOAT3 Bsize);}
+\DoxyCodeLine{55     \textcolor{keywordtype}{bool} CollisionRectToRectXY(\mbox{\hyperlink{class_c_transform}{CTransform}}* pA,\mbox{\hyperlink{class_c_transform}{CTransform}}* pB,}
+\DoxyCodeLine{56                                XMFLOAT2 Asize,XMFLOAT2 BSize,}
+\DoxyCodeLine{57                                XMFLOAT2 Aoffset = XMFLOAT2(0.0f,0.0f),XMFLOAT2 Boffset = XMFLOAT2(0.0f,0.0f));}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{60     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{keyword}{public}:}
+\DoxyCodeLine{65     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{69 \textcolor{comment}{}    \mbox{\hyperlink{class_c_collider_a96eef1228608297f21515cca60b18bfd}{CCollider}}();}
+\DoxyCodeLine{71     \mbox{\hyperlink{class_c_collider_a60d5cd42989d838fb6e9e80e4d7c99a9}{\string~CCollider}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_collider_abf4ddce7c4496c1e2035f84e4650a2f3}{Start}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_collider_aebd65f77a9c4850eb29d703cec88152d}{Update}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{78     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_collider_a5f312fa70b28ad693dca00429fa7310c}{AddColliderList}}(\mbox{\hyperlink{class_object}{Object}}* pObject);}
+\DoxyCodeLine{80     \textcolor{keyword}{static} std::list<Object*>\& \mbox{\hyperlink{class_c_collider_a80714716239a3ede48cf2e6187cc423f}{GetColliderList}}();}
+\DoxyCodeLine{82     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_collider_a3cc514e5726fbd81149ee96526264256}{UpdateColliders}}();}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84     \textcolor{comment}{//ゲッター}}
+\DoxyCodeLine{86 \textcolor{comment}{}    XMFLOAT2 \mbox{\hyperlink{class_c_collider_a25bca703b998946ae0325619727f247e}{GetOffSet}}();}
+\DoxyCodeLine{88     XMFLOAT3 \mbox{\hyperlink{class_c_collider_a098303a6144f11e6f966dea14e18288b}{GetColliderSize}}();}
+\DoxyCodeLine{90     XMFLOAT2 \mbox{\hyperlink{class_c_collider_a392e4083a78be282a4dd0cb9fba52ff6}{GetCenterPos}}();}
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92     \textcolor{comment}{//セッター}}
+\DoxyCodeLine{94 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_collider_a940b20263cfa9a6416d932c54fa413df}{SetCollisionSize}}(\textcolor{keywordtype}{float} fx,\textcolor{keywordtype}{float} fy,\textcolor{keywordtype}{float} fz = 0.0f);}
+\DoxyCodeLine{96     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_c_collider_ae9057981540d7d56153c6271297697e6}{SetOffset}}(\textcolor{keywordtype}{float} fx,\textcolor{keywordtype}{float} fy);}
+\DoxyCodeLine{97 \};}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

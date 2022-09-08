@@ -1,0 +1,586 @@
+\hypertarget{class_c_draw_mesh}{}\doxysection{CDraw\+Mesh クラス}
+\label{class_c_draw_mesh}\index{CDrawMesh@{CDrawMesh}}
+
+
+{\ttfamily \#include $<$Draw\+Mesh\+Component.\+h$>$}
+
+
+
+CDraw\+Mesh の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{class_c_draw_mesh__inherit__graph}
+\end{center}
+\end{figure}
+
+
+CDraw\+Mesh 連携図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_c_draw_mesh__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_draw_mesh_a396aac694e99cdb19858d20cbccada58}{CDraw\+Mesh}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_draw_mesh_a5ed6d0cca62f35202ee9c9ff17b37efb}{$\sim$\+CDraw\+Mesh}} () override
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_a6100f09bd115ce3f1c8a7e450600d4fc}{Start}} () override
+\begin{DoxyCompactList}\small\item\em 初期化 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_a2371b08e617e08cf6420681f0f1dcd04}{Update}} () override
+\begin{DoxyCompactList}\small\item\em 更新 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_a4d4c6a30bae2d1318802f1ebf5fb22cb}{Draw}} () override
+\begin{DoxyCompactList}\small\item\em 描画 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_ab2e186b97bd1ac5d706665804d1ebe5d}{Set\+Texture}} (ID3\+D11\+Shader\+Resource\+View $\ast$p\+Tex)
+\begin{DoxyCompactList}\small\item\em テクスチャのセット \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_ae22c52da902e11fd2a4d14f551b398a0}{Set\+UVsize}} (XMFLOAT2 uv)
+\begin{DoxyCompactList}\small\item\em テクスチャ座標 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_a480544454f885653c931a7b9f8d9163b}{Set\+Size}} (float width, float height)
+\begin{DoxyCompactList}\small\item\em マスの大きさ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_a96c867c85492c1dc932b3b85cc596e2f}{Set\+Diffuse}} (XMFLOAT4 Diffuse)
+\begin{DoxyCompactList}\small\item\em 反射光 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_ac93cb85b0306060d6387f60ab9424898}{Set\+Ambient}} (XMFLOAT4 Ambient)
+\begin{DoxyCompactList}\small\item\em 環境光 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_a12ccdca43362b7ceb8643216d22a9885}{Set\+Specular}} (XMFLOAT4 Specular)
+\begin{DoxyCompactList}\small\item\em 鏡面反射の設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_a8ccac154329340eab701883d886c3384}{Set\+Emissive}} (XMFLOAT4 Emissive)
+\begin{DoxyCompactList}\small\item\em 自己発光の設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_a395db7069e7f8eed9fab0c9c73478938}{Set\+Power}} (float power)
+\begin{DoxyCompactList}\small\item\em 光沢の設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_ae267f4deeb9b7cfb3eb622a020827479}{Set\+Normal}} (float fx, float fy, float fz)
+\begin{DoxyCompactList}\small\item\em 法線ベクトルの設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_a728f617ebfc3b942d19563bc35dd979a}{Set\+Anim\+Frame}} (int Anim)
+\begin{DoxyCompactList}\small\item\em アニメーションの番号 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_ad989ef32cc5e683f4a645e29bb7c9801}{Set\+Anim\+Split}} (int nx, int ny)
+\begin{DoxyCompactList}\small\item\em 分割数設定 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_a814af61d839a207caef3f7686752b64a}{Set\+Off\+Set}} (XMFLOAT2 offset)
+\begin{DoxyCompactList}\small\item\em オフセット \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_c_draw_mesh_ac7a99d87984f30c7b06c8a9609e2cda3}{Set\+Color}} (float r, float g, float b)
+\begin{DoxyCompactList}\small\item\em 色 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$ \mbox{\hyperlink{class_c_draw_mesh_af8243f0d818993df9ff6446312041ebd}{Get\+Mesh}} ()
+\begin{DoxyCompactList}\small\item\em メッシュ情報の取得 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{限定公開変数類}
+\begin{DoxyCompactItemize}
+\item 
+XMFLOAT2 \mbox{\hyperlink{class_c_draw_mesh_afce0f431333b05234c9ca5e482263946}{m\+\_\+\+Offset}}
+\begin{DoxyCompactList}\small\item\em オフセット \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_c_draw_mesh_a20b42efead4f057758bb32e22f03964f}{m\+\_\+f\+Width}}
+\begin{DoxyCompactList}\small\item\em 1マスの横幅 \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{class_c_draw_mesh_a69db97d620a416c44b89bcf7b718ee4e}{m\+\_\+f\+Height}}
+\begin{DoxyCompactList}\small\item\em 1マスの立幅 \end{DoxyCompactList}\item 
+XMFLOAT3 \mbox{\hyperlink{class_c_draw_mesh_a7ceff529e20037d5517dca35df49bd0e}{m\+\_\+f\+Normal}}
+\begin{DoxyCompactList}\small\item\em 法線ベクトル \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_m_e_s_h}{MESH}} \mbox{\hyperlink{class_c_draw_mesh_ac65dc3097284e2cac0bc4a8233a6dba2}{m\+\_\+\+Mesh}}
+\begin{DoxyCompactList}\small\item\em メッシュ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_m_a_t_e_r_i_a_l}{MATERIAL}} \mbox{\hyperlink{class_c_draw_mesh_a3cdd77f0bca1cb47c44eca86cc2c02e6}{m\+\_\+\+Material}}
+\begin{DoxyCompactList}\small\item\em マテリアル \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_c_transform}{CTransform}} $\ast$ \mbox{\hyperlink{class_c_draw_mesh_abf4dae3601175f48b293de5fe37745a4}{m\+\_\+p\+Transform}}
+\begin{DoxyCompactList}\small\item\em 座標 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_draw_mesh_ab4ab7d6042f134d468be2a080814c642}{m\+\_\+n\+Anim}}
+\begin{DoxyCompactList}\small\item\em アニメーション \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_draw_mesh_a08b1594ec03fd1e37042baef353d855c}{m\+\_\+n\+SplitX}}
+\begin{DoxyCompactList}\small\item\em 分割数X \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_c_draw_mesh_a3cff830b98c2bfa1a684847da5043af6}{m\+\_\+n\+SplitY}}
+\begin{DoxyCompactList}\small\item\em 分割数Y \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{その他の継承メンバ}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_draw_mesh_a396aac694e99cdb19858d20cbccada58}\label{class_c_draw_mesh_a396aac694e99cdb19858d20cbccada58}} 
+\index{CDrawMesh@{CDrawMesh}!CDrawMesh@{CDrawMesh}}
+\index{CDrawMesh@{CDrawMesh}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{CDrawMesh()}{CDrawMesh()}}
+{\footnotesize\ttfamily CDraw\+Mesh\+::\+CDraw\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+コンストラクタ 
+
+コンストラクタということ \mbox{\Hypertarget{class_c_draw_mesh_a5ed6d0cca62f35202ee9c9ff17b37efb}\label{class_c_draw_mesh_a5ed6d0cca62f35202ee9c9ff17b37efb}} 
+\index{CDrawMesh@{CDrawMesh}!````~CDrawMesh@{$\sim$CDrawMesh}}
+\index{````~CDrawMesh@{$\sim$CDrawMesh}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{$\sim$CDrawMesh()}{~CDrawMesh()}}
+{\footnotesize\ttfamily CDraw\+Mesh\+::$\sim$\+CDraw\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}}
+
+
+
+デストラクタ 
+
+くっ・・・デストラクタに負けた 呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{class_c_draw_mesh_a5ed6d0cca62f35202ee9c9ff17b37efb_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_draw_mesh_a4d4c6a30bae2d1318802f1ebf5fb22cb}\label{class_c_draw_mesh_a4d4c6a30bae2d1318802f1ebf5fb22cb}} 
+\index{CDrawMesh@{CDrawMesh}!Draw@{Draw}}
+\index{Draw@{Draw}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+描画 
+
+描画処理 
+
+\mbox{\hyperlink{class_component_a8622ccd5f24035d48e33292717299313}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{class_c_draw_mesh_a4d4c6a30bae2d1318802f1ebf5fb22cb_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw_mesh_af8243f0d818993df9ff6446312041ebd}\label{class_c_draw_mesh_af8243f0d818993df9ff6446312041ebd}} 
+\index{CDrawMesh@{CDrawMesh}!GetMesh@{GetMesh}}
+\index{GetMesh@{GetMesh}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{GetMesh()}{GetMesh()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_m_e_s_h}{MESH}} $\ast$ CDraw\+Mesh\+::\+Get\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+メッシュ情報の取得 
+
+ゲッター
+
+ゲッター
+
+\begin{DoxyReturn}{戻り値}
+(\mbox{\hyperlink{struct_m_e_s_h}{MESH}}) メッシュ情報 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_c_draw_mesh_ac93cb85b0306060d6387f60ab9424898}\label{class_c_draw_mesh_ac93cb85b0306060d6387f60ab9424898}} 
+\index{CDrawMesh@{CDrawMesh}!SetAmbient@{SetAmbient}}
+\index{SetAmbient@{SetAmbient}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{SetAmbient()}{SetAmbient()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Set\+Ambient (\begin{DoxyParamCaption}\item[{XMFLOAT4}]{Ambient }\end{DoxyParamCaption})}
+
+
+
+環境光 
+
+環境光の設定
+
+
+\begin{DoxyParams}{引数}
+{\em (\+XMFLOAT4)} & 環境光の情報 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw_mesh_a728f617ebfc3b942d19563bc35dd979a}\label{class_c_draw_mesh_a728f617ebfc3b942d19563bc35dd979a}} 
+\index{CDrawMesh@{CDrawMesh}!SetAnimFrame@{SetAnimFrame}}
+\index{SetAnimFrame@{SetAnimFrame}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{SetAnimFrame()}{SetAnimFrame()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Set\+Anim\+Frame (\begin{DoxyParamCaption}\item[{int}]{Anim }\end{DoxyParamCaption})}
+
+
+
+アニメーションの番号 
+
+アニメーション番号の設定
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & アニメーション番号の数値 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw_mesh_ad989ef32cc5e683f4a645e29bb7c9801}\label{class_c_draw_mesh_ad989ef32cc5e683f4a645e29bb7c9801}} 
+\index{CDrawMesh@{CDrawMesh}!SetAnimSplit@{SetAnimSplit}}
+\index{SetAnimSplit@{SetAnimSplit}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{SetAnimSplit()}{SetAnimSplit()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Set\+Anim\+Split (\begin{DoxyParamCaption}\item[{int}]{nx,  }\item[{int}]{ny }\end{DoxyParamCaption})}
+
+
+
+分割数設定 
+
+分割数の設定
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & 横方向の分割数 \\
+\hline
+{\em (int)} & 縦方向の分割数 \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw_mesh_ad989ef32cc5e683f4a645e29bb7c9801_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw_mesh_ac7a99d87984f30c7b06c8a9609e2cda3}\label{class_c_draw_mesh_ac7a99d87984f30c7b06c8a9609e2cda3}} 
+\index{CDrawMesh@{CDrawMesh}!SetColor@{SetColor}}
+\index{SetColor@{SetColor}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{SetColor()}{SetColor()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Set\+Color (\begin{DoxyParamCaption}\item[{float}]{r,  }\item[{float}]{g,  }\item[{float}]{b }\end{DoxyParamCaption})}
+
+
+
+色 
+
+色を変える
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & rgbのrの数値を受け取る \\
+\hline
+{\em (float)} & rgbのgの数値を受け取る \\
+\hline
+{\em (float)} & rgbのbの数値を受け取る \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw_mesh_ac7a99d87984f30c7b06c8a9609e2cda3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw_mesh_a96c867c85492c1dc932b3b85cc596e2f}\label{class_c_draw_mesh_a96c867c85492c1dc932b3b85cc596e2f}} 
+\index{CDrawMesh@{CDrawMesh}!SetDiffuse@{SetDiffuse}}
+\index{SetDiffuse@{SetDiffuse}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{SetDiffuse()}{SetDiffuse()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Set\+Diffuse (\begin{DoxyParamCaption}\item[{XMFLOAT4}]{Diffuse }\end{DoxyParamCaption})}
+
+
+
+反射光 
+
+反射光の設定
+
+
+\begin{DoxyParams}{引数}
+{\em (\+XMFLOAT4)} & 反射光の強さの情報 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw_mesh_a8ccac154329340eab701883d886c3384}\label{class_c_draw_mesh_a8ccac154329340eab701883d886c3384}} 
+\index{CDrawMesh@{CDrawMesh}!SetEmissive@{SetEmissive}}
+\index{SetEmissive@{SetEmissive}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{SetEmissive()}{SetEmissive()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Set\+Emissive (\begin{DoxyParamCaption}\item[{XMFLOAT4}]{Emissive }\end{DoxyParamCaption})}
+
+
+
+自己発光の設定 
+
+
+\begin{DoxyParams}{引数}
+{\em (\+XMFLOAT4)} & 自分がどれくらい光っているかの情報 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw_mesh_ae267f4deeb9b7cfb3eb622a020827479}\label{class_c_draw_mesh_ae267f4deeb9b7cfb3eb622a020827479}} 
+\index{CDrawMesh@{CDrawMesh}!SetNormal@{SetNormal}}
+\index{SetNormal@{SetNormal}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{SetNormal()}{SetNormal()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Set\+Normal (\begin{DoxyParamCaption}\item[{float}]{fx,  }\item[{float}]{fy,  }\item[{float}]{fz }\end{DoxyParamCaption})}
+
+
+
+法線ベクトルの設定 
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & x方向の法線の数値 \\
+\hline
+{\em (float)} & y方向の法線の数値 \\
+\hline
+{\em (float)} & z方向の法線の数値 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw_mesh_a814af61d839a207caef3f7686752b64a}\label{class_c_draw_mesh_a814af61d839a207caef3f7686752b64a}} 
+\index{CDrawMesh@{CDrawMesh}!SetOffSet@{SetOffSet}}
+\index{SetOffSet@{SetOffSet}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{SetOffSet()}{SetOffSet()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Set\+Off\+Set (\begin{DoxyParamCaption}\item[{XMFLOAT2}]{offset }\end{DoxyParamCaption})}
+
+
+
+オフセット 
+
+オフセットの設定
+
+
+\begin{DoxyParams}{引数}
+{\em (\+XMFLOAT2)} & どの位意図的にずらすか \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw_mesh_a395db7069e7f8eed9fab0c9c73478938}\label{class_c_draw_mesh_a395db7069e7f8eed9fab0c9c73478938}} 
+\index{CDrawMesh@{CDrawMesh}!SetPower@{SetPower}}
+\index{SetPower@{SetPower}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{SetPower()}{SetPower()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Set\+Power (\begin{DoxyParamCaption}\item[{float}]{power }\end{DoxyParamCaption})}
+
+
+
+光沢の設定 
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & どの位光沢を出すかの数値 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw_mesh_a480544454f885653c931a7b9f8d9163b}\label{class_c_draw_mesh_a480544454f885653c931a7b9f8d9163b}} 
+\index{CDrawMesh@{CDrawMesh}!SetSize@{SetSize}}
+\index{SetSize@{SetSize}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{SetSize()}{SetSize()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Set\+Size (\begin{DoxyParamCaption}\item[{float}]{width,  }\item[{float}]{height }\end{DoxyParamCaption})}
+
+
+
+マスの大きさ 
+
+メッシュサイズの設定
+
+セッター
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & 横幅 \\
+\hline
+{\em (float)} & 立幅 \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw_mesh_a480544454f885653c931a7b9f8d9163b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw_mesh_a12ccdca43362b7ceb8643216d22a9885}\label{class_c_draw_mesh_a12ccdca43362b7ceb8643216d22a9885}} 
+\index{CDrawMesh@{CDrawMesh}!SetSpecular@{SetSpecular}}
+\index{SetSpecular@{SetSpecular}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{SetSpecular()}{SetSpecular()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Set\+Specular (\begin{DoxyParamCaption}\item[{XMFLOAT4}]{Specular }\end{DoxyParamCaption})}
+
+
+
+鏡面反射の設定 
+
+
+\begin{DoxyParams}{引数}
+{\em (\+XMFLOAT4)} & 鏡面反射はどの位するかの情報 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw_mesh_ab2e186b97bd1ac5d706665804d1ebe5d}\label{class_c_draw_mesh_ab2e186b97bd1ac5d706665804d1ebe5d}} 
+\index{CDrawMesh@{CDrawMesh}!SetTexture@{SetTexture}}
+\index{SetTexture@{SetTexture}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{SetTexture()}{SetTexture()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Set\+Texture (\begin{DoxyParamCaption}\item[{ID3\+D11\+Shader\+Resource\+View $\ast$}]{p\+Tex }\end{DoxyParamCaption})}
+
+
+
+テクスチャのセット 
+
+テクスチャの設定
+
+セッター
+
+
+\begin{DoxyParams}{引数}
+{\em (\+ID3\+D11\+Shader\+Resource\+View$\ast$)} & テクスチャの情報の入ったポインタ \\
+\hline
+\end{DoxyParams}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw_mesh_ab2e186b97bd1ac5d706665804d1ebe5d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw_mesh_ae22c52da902e11fd2a4d14f551b398a0}\label{class_c_draw_mesh_ae22c52da902e11fd2a4d14f551b398a0}} 
+\index{CDrawMesh@{CDrawMesh}!SetUVsize@{SetUVsize}}
+\index{SetUVsize@{SetUVsize}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{SetUVsize()}{SetUVsize()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Set\+UVsize (\begin{DoxyParamCaption}\item[{XMFLOAT2}]{uv }\end{DoxyParamCaption})}
+
+
+
+テクスチャ座標 
+
+テクスチャ座標の設定
+
+
+\begin{DoxyParams}{引数}
+{\em (\+XMFLOAT2)} & どのあたりに座標があるかの設定 \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_c_draw_mesh_a6100f09bd115ce3f1c8a7e450600d4fc}\label{class_c_draw_mesh_a6100f09bd115ce3f1c8a7e450600d4fc}} 
+\index{CDrawMesh@{CDrawMesh}!Start@{Start}}
+\index{Start@{Start}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+初期化 
+
+初期化処理 
+
+\mbox{\hyperlink{class_component_a3f57807787e0015833ccffd83fb63d14}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_draw_mesh_a6100f09bd115ce3f1c8a7e450600d4fc_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_draw_mesh_a2371b08e617e08cf6420681f0f1dcd04}\label{class_c_draw_mesh_a2371b08e617e08cf6420681f0f1dcd04}} 
+\index{CDrawMesh@{CDrawMesh}!Update@{Update}}
+\index{Update@{Update}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void CDraw\+Mesh\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+更新 
+
+更新処理 
+
+\mbox{\hyperlink{class_component_aaf2ce6dc5752072492f790ad4c7955bb}{Component}}を再実装しています。
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=293pt]{class_c_draw_mesh_a2371b08e617e08cf6420681f0f1dcd04_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_c_draw_mesh_a2371b08e617e08cf6420681f0f1dcd04_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{メンバ詳解}
+\mbox{\Hypertarget{class_c_draw_mesh_a69db97d620a416c44b89bcf7b718ee4e}\label{class_c_draw_mesh_a69db97d620a416c44b89bcf7b718ee4e}} 
+\index{CDrawMesh@{CDrawMesh}!m\_fHeight@{m\_fHeight}}
+\index{m\_fHeight@{m\_fHeight}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{m\_fHeight}{m\_fHeight}}
+{\footnotesize\ttfamily float CDraw\+Mesh\+::m\+\_\+f\+Height\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+1マスの立幅 
+
+\mbox{\Hypertarget{class_c_draw_mesh_a7ceff529e20037d5517dca35df49bd0e}\label{class_c_draw_mesh_a7ceff529e20037d5517dca35df49bd0e}} 
+\index{CDrawMesh@{CDrawMesh}!m\_fNormal@{m\_fNormal}}
+\index{m\_fNormal@{m\_fNormal}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{m\_fNormal}{m\_fNormal}}
+{\footnotesize\ttfamily XMFLOAT3 CDraw\+Mesh\+::m\+\_\+f\+Normal\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+法線ベクトル 
+
+\mbox{\Hypertarget{class_c_draw_mesh_a20b42efead4f057758bb32e22f03964f}\label{class_c_draw_mesh_a20b42efead4f057758bb32e22f03964f}} 
+\index{CDrawMesh@{CDrawMesh}!m\_fWidth@{m\_fWidth}}
+\index{m\_fWidth@{m\_fWidth}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{m\_fWidth}{m\_fWidth}}
+{\footnotesize\ttfamily float CDraw\+Mesh\+::m\+\_\+f\+Width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+1マスの横幅 
+
+\mbox{\Hypertarget{class_c_draw_mesh_a3cdd77f0bca1cb47c44eca86cc2c02e6}\label{class_c_draw_mesh_a3cdd77f0bca1cb47c44eca86cc2c02e6}} 
+\index{CDrawMesh@{CDrawMesh}!m\_Material@{m\_Material}}
+\index{m\_Material@{m\_Material}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{m\_Material}{m\_Material}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_m_a_t_e_r_i_a_l}{MATERIAL}} CDraw\+Mesh\+::m\+\_\+\+Material\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+マテリアル 
+
+\mbox{\Hypertarget{class_c_draw_mesh_ac65dc3097284e2cac0bc4a8233a6dba2}\label{class_c_draw_mesh_ac65dc3097284e2cac0bc4a8233a6dba2}} 
+\index{CDrawMesh@{CDrawMesh}!m\_Mesh@{m\_Mesh}}
+\index{m\_Mesh@{m\_Mesh}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{m\_Mesh}{m\_Mesh}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_m_e_s_h}{MESH}} CDraw\+Mesh\+::m\+\_\+\+Mesh\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+メッシュ 
+
+\mbox{\Hypertarget{class_c_draw_mesh_ab4ab7d6042f134d468be2a080814c642}\label{class_c_draw_mesh_ab4ab7d6042f134d468be2a080814c642}} 
+\index{CDrawMesh@{CDrawMesh}!m\_nAnim@{m\_nAnim}}
+\index{m\_nAnim@{m\_nAnim}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{m\_nAnim}{m\_nAnim}}
+{\footnotesize\ttfamily int CDraw\+Mesh\+::m\+\_\+n\+Anim\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+アニメーション 
+
+\mbox{\Hypertarget{class_c_draw_mesh_a08b1594ec03fd1e37042baef353d855c}\label{class_c_draw_mesh_a08b1594ec03fd1e37042baef353d855c}} 
+\index{CDrawMesh@{CDrawMesh}!m\_nSplitX@{m\_nSplitX}}
+\index{m\_nSplitX@{m\_nSplitX}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{m\_nSplitX}{m\_nSplitX}}
+{\footnotesize\ttfamily int CDraw\+Mesh\+::m\+\_\+n\+SplitX\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+分割数X 
+
+\mbox{\Hypertarget{class_c_draw_mesh_a3cff830b98c2bfa1a684847da5043af6}\label{class_c_draw_mesh_a3cff830b98c2bfa1a684847da5043af6}} 
+\index{CDrawMesh@{CDrawMesh}!m\_nSplitY@{m\_nSplitY}}
+\index{m\_nSplitY@{m\_nSplitY}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{m\_nSplitY}{m\_nSplitY}}
+{\footnotesize\ttfamily int CDraw\+Mesh\+::m\+\_\+n\+SplitY\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+分割数Y 
+
+\mbox{\Hypertarget{class_c_draw_mesh_afce0f431333b05234c9ca5e482263946}\label{class_c_draw_mesh_afce0f431333b05234c9ca5e482263946}} 
+\index{CDrawMesh@{CDrawMesh}!m\_Offset@{m\_Offset}}
+\index{m\_Offset@{m\_Offset}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{m\_Offset}{m\_Offset}}
+{\footnotesize\ttfamily XMFLOAT2 CDraw\+Mesh\+::m\+\_\+\+Offset\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+オフセット 
+
+\mbox{\Hypertarget{class_c_draw_mesh_abf4dae3601175f48b293de5fe37745a4}\label{class_c_draw_mesh_abf4dae3601175f48b293de5fe37745a4}} 
+\index{CDrawMesh@{CDrawMesh}!m\_pTransform@{m\_pTransform}}
+\index{m\_pTransform@{m\_pTransform}!CDrawMesh@{CDrawMesh}}
+\doxysubsubsection{\texorpdfstring{m\_pTransform}{m\_pTransform}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_c_transform}{CTransform}}$\ast$ CDraw\+Mesh\+::m\+\_\+p\+Transform\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+座標 
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_draw_mesh_component_8h}{Draw\+Mesh\+Component.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_draw_mesh_component_8cpp}{Draw\+Mesh\+Component.\+cpp}}\end{DoxyCompactItemize}

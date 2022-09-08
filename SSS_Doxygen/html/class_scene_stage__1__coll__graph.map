@@ -1,0 +1,6 @@
+<map id="SceneStage_1" name="SceneStage_1">
+<area shape="rect" id="node1" title=" " alt="" coords="81,171,187,197"/>
+<area shape="rect" id="node2" href="$class_scene.html" title=" " alt="" coords="105,95,163,121"/>
+<area shape="rect" id="node3" href="$class_object_manager.html" title="生成されたオブジェクトを管理するクラス" alt="" coords="5,5,116,32"/>
+<area shape="rect" id="node4" href="$class_menu_manager.html" title="メニューの状態を管理するクラス @detail シーンごとに用意するメニューを変えたりする" alt="" coords="157,5,261,32"/>
+</map>

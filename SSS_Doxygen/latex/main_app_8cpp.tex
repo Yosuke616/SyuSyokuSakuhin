@@ -1,0 +1,603 @@
+\hypertarget{main_app_8cpp}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/main\+App.cpp ファイル}
+\label{main_app_8cpp}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/mainApp.cpp@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/mainApp.cpp}}
+{\ttfamily \#include \char`\"{}main\+App.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Win\+User.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}resource.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}polygon.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Assimp\+Model.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mesh.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imgui.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imgui\+\_\+impl\+\_\+win32.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imgui\+\_\+impl\+\_\+dx11.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Scene\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Input\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Texture\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Model\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}File\+Manager.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Resource\+CSV.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}scene\+Game.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Obj\+Info.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$process.\+h$>$}\newline
+main\+App.\+cpp の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{マクロ定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_app_8cpp_a79f2713d570c7065f61a160134ea765b}{CLASS\+\_\+\+NAME}}~\+\_\+T(\char`\"{}App\+Class\char`\"{})
+\item 
+\#define \mbox{\hyperlink{main_app_8cpp_a2d6acae8f9b752a5d85795baf1005907}{WINDOW\+\_\+\+NAME}}~\+\_\+T(\char`\"{}就職作品\char`\"{})
+\end{DoxyCompactItemize}
+\doxysubsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+LRESULT CALLBACK \mbox{\hyperlink{main_app_8cpp_ae749e989b362e19783c7af4a2bf46c95}{Wnd\+Proc}} (HWND h\+Wnd, UINT u\+Msg, WPARAM w\+Param, LPARAM l\+Param)
+\item 
+int \mbox{\hyperlink{main_app_8cpp_ae01825b499ec5e42f84e564d8d35bca1}{On\+Create}} (HWND h\+Wnd, LPCREATESTRUCT lpcs)
+\item 
+HRESULT \mbox{\hyperlink{main_app_8cpp_acaee41532409857c32654e8a1a30d4e7}{Create\+Back\+Buffer}} ()
+\item 
+void \mbox{\hyperlink{main_app_8cpp_ad810adfaf29a77c9c136b3403d77c77c}{Release\+Back\+Buffer}} ()
+\item 
+HRESULT \mbox{\hyperlink{main_app_8cpp_a93e37d33930b82ad41bc9c9cb472f300}{Init}} (HWND h\+Wnd, BOOL b\+Window)
+\item 
+void \mbox{\hyperlink{main_app_8cpp_affc0f591b5f188f1b5cb4f20042e4766}{Uninit}} ()
+\item 
+void \mbox{\hyperlink{main_app_8cpp_aec0783b5a136e042adcc47bae4fe5291}{Update}} ()
+\item 
+void \mbox{\hyperlink{main_app_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16}{Draw}} ()
+\item 
+\mbox{\hyperlink{imgui_8h_a665f6b404eea9a640b1222a87236fe19}{IMGUI\+\_\+\+IMPL\+\_\+\+API}} LRESULT \mbox{\hyperlink{main_app_8cpp_a87a3f9652a75339308cf5fd5699ef1fd}{Im\+Gui\+\_\+\+Impl\+Win32\+\_\+\+Wnd\+Proc\+Handler}} (HWND h\+Wnd, UINT msg, WPARAM w\+Param, LPARAM l\+Param)
+\item 
+int WINAPI \mbox{\hyperlink{main_app_8cpp_aa31d4ec34bb3eea7f1fa53fa75b1e339}{\+\_\+t\+Win\+Main}} (HINSTANCE h\+Instance, HINSTANCE h\+Prev\+Instance, LPTSTR lp\+Cmd\+Line, int n\+Cmd\+Show)
+\item 
+HWND \mbox{\hyperlink{main_app_8cpp_a92550af168fdc15968f87992fd9d07c5}{Get\+Main\+Wnd}} ()
+\item 
+HINSTANCE \mbox{\hyperlink{main_app_8cpp_aa9d863781ee8f3f820ea4ad9e52f78d9}{Get\+Instance}} ()
+\item 
+ID3\+D11\+Device $\ast$ \mbox{\hyperlink{main_app_8cpp_a965053cc7c41d010d359091035281310}{Get\+Device}} ()
+\item 
+ID3\+D11\+Device\+Context $\ast$ \mbox{\hyperlink{main_app_8cpp_a76385629cd459c9e0fcda690542edb07}{Get\+Device\+Context}} ()
+\item 
+void \mbox{\hyperlink{main_app_8cpp_a9b19b33f1a7f58f261e0025ec2fc66c3}{Set\+ZBuffer}} (bool b\+Enable)
+\item 
+void \mbox{\hyperlink{main_app_8cpp_a6376c6224e7273eb750a7fde2aea342d}{Set\+ZWrite}} (bool b\+Enable)
+\item 
+void \mbox{\hyperlink{main_app_8cpp_a15367d15c1324ebba192218982bffe3e}{Set\+Blend\+State}} (int n\+Blend\+State)
+\item 
+void \mbox{\hyperlink{main_app_8cpp_a55437f177885a57508f99619a3a7a19f}{Set\+Cull\+Mode}} (int n\+Cull\+Mode)
+\item 
+XMVECTOR $\ast$ \mbox{\hyperlink{main_app_8cpp_a45b6acf4c6f99b1092ca0ab4bba46b07}{Calc\+Screen\+To\+World}} (XMVECTOR $\ast$pout, float Sx, float Sy, float fZ, int Screen\+\_\+w, int Screen\+\_\+h, XMMATRIX View, XMMATRIX Prj)
+\item 
+XMVECTOR $\ast$ \mbox{\hyperlink{main_app_8cpp_a33762d19fee3469aebc3f8a7a724bcf9}{Calc\+Screen\+To\+XY}} (XMFLOAT3 $\ast$pout, float Sx, float Sy, int Screen\+\_\+w, int Screen\+\_\+h, XMMATRIX View, XMMATRIX Prj)
+\item 
+XMFLOAT2 \mbox{\hyperlink{main_app_8cpp_a1ed2062f0707227a588cbd598ba2e562}{Calc\+World\+Size}} ()
+\begin{DoxyCompactList}\small\item\em スクリーンの映っているワールドの横幅と高さを計算する \end{DoxyCompactList}\item 
+ID3\+D11\+Render\+Target\+View $\ast$ \mbox{\hyperlink{main_app_8cpp_ad019e0e7e14e8aa9a83bbbf95930ed81}{Get\+Render\+Target\+View}} ()
+\item 
+ID3\+D11\+Depth\+Stencil\+View $\ast$ \mbox{\hyperlink{main_app_8cpp_a5cd40119cdaa763b483dfba6942eaa3e}{Get\+Depth\+Stencil\+View}} ()
+\item 
+IDXGISwap\+Chain $\ast$ \mbox{\hyperlink{main_app_8cpp_aafdc26c1149a90863283c7f26dfa89fa}{Get\+Swap\+Chain}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{変数}
+\begin{DoxyCompactItemize}
+\item 
+HWND \mbox{\hyperlink{main_app_8cpp_af6e451d84715c224b60977594e800b81}{g\+\_\+h\+Wnd}}
+\item 
+HINSTANCE \mbox{\hyperlink{main_app_8cpp_af03f36c7876ed17a936f00434a9236c4}{g\+\_\+h\+Inst}}
+\item 
+ID3\+D11\+Device $\ast$ \mbox{\hyperlink{main_app_8cpp_a2f992b136a900bca3ed6e5150c6a038f}{g\+\_\+p\+Device}}
+\item 
+ID3\+D11\+Device\+Context $\ast$ \mbox{\hyperlink{main_app_8cpp_ab5052854e8f64231a4af1c35cdae5ebe}{g\+\_\+p\+Device\+Context}}
+\item 
+IDXGISwap\+Chain $\ast$ \mbox{\hyperlink{main_app_8cpp_abdc838bdb97168171051e526b8f49d12}{g\+\_\+p\+Swap\+Chain}}
+\item 
+ID3\+D11\+Render\+Target\+View $\ast$ \mbox{\hyperlink{main_app_8cpp_a795f24bde22c97c4ed279a717ff38beb}{g\+\_\+p\+Render\+Target\+View}}
+\item 
+UINT \mbox{\hyperlink{main_app_8cpp_ad11c6e200f8d1bdde7dcefece0598700}{g\+\_\+u\+Sync\+Interval}} = 0
+\item 
+ID3\+D11\+Blend\+State $\ast$ \mbox{\hyperlink{main_app_8cpp_ab7895c23be6d0815d09494d2cde87745}{g\+\_\+p\+Blend\+State}} \mbox{[}\mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a2dd3f4c2cf1b7fa074bc5126ce663ba4}{MAX\+\_\+\+BLENDSTATE}}\mbox{]}
+\item 
+ID3\+D11\+Texture2D $\ast$ \mbox{\hyperlink{main_app_8cpp_ab9590216690dd67144afc00948867e31}{g\+\_\+p\+Depth\+Stencil\+Texture}}
+\item 
+ID3\+D11\+Depth\+Stencil\+View $\ast$ \mbox{\hyperlink{main_app_8cpp_ad94e21ad0f12a5e475e54263844e77f5}{g\+\_\+p\+Depth\+Stencil\+View}}
+\item 
+ID3\+D11\+Rasterizer\+State $\ast$ \mbox{\hyperlink{main_app_8cpp_a1650a47a0e794abae08ef7b3c88c3000}{g\+\_\+p\+Rs}} \mbox{[}\mbox{\hyperlink{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaac9e43ef91a95b9f6a68480609e3cb2c1}{MAX\+\_\+\+CULLMODE}}\mbox{]}
+\item 
+ID3\+D11\+Depth\+Stencil\+State $\ast$ \mbox{\hyperlink{main_app_8cpp_a16c31ec5dc59b21e26902e7de80b9627}{g\+\_\+p\+DSS}} \mbox{[}2\mbox{]}
+\item 
+int \mbox{\hyperlink{main_app_8cpp_a3ff492dab767ebe3921c804121362998}{g\+\_\+n\+Count\+FPS}}
+\item 
+\mbox{\hyperlink{class_scene_manager}{Scene\+Manager}} $\ast$ \mbox{\hyperlink{main_app_8cpp_a62feac2b19fd7df9a0f0680e576d369c}{g\+\_\+p\+Scene\+Manager}} = nullptr
+\item 
+\mbox{\hyperlink{class_input_manager}{Input\+Manager}} $\ast$ \mbox{\hyperlink{main_app_8cpp_abcb863a0484c7e63a94f94443c75e4e4}{g\+\_\+p\+Input\+Manager}} = nullptr
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{マクロ定義詳解}
+\mbox{\Hypertarget{main_app_8cpp_a79f2713d570c7065f61a160134ea765b}\label{main_app_8cpp_a79f2713d570c7065f61a160134ea765b}} 
+\index{mainApp.cpp@{mainApp.cpp}!CLASS\_NAME@{CLASS\_NAME}}
+\index{CLASS\_NAME@{CLASS\_NAME}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{CLASS\_NAME}{CLASS\_NAME}}
+{\footnotesize\ttfamily \#define CLASS\+\_\+\+NAME~\+\_\+T(\char`\"{}App\+Class\char`\"{})}
+
+\mbox{\Hypertarget{main_app_8cpp_a2d6acae8f9b752a5d85795baf1005907}\label{main_app_8cpp_a2d6acae8f9b752a5d85795baf1005907}} 
+\index{mainApp.cpp@{mainApp.cpp}!WINDOW\_NAME@{WINDOW\_NAME}}
+\index{WINDOW\_NAME@{WINDOW\_NAME}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{WINDOW\_NAME}{WINDOW\_NAME}}
+{\footnotesize\ttfamily \#define WINDOW\+\_\+\+NAME~\+\_\+T(\char`\"{}就職作品\char`\"{})}
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{main_app_8cpp_aa31d4ec34bb3eea7f1fa53fa75b1e339}\label{main_app_8cpp_aa31d4ec34bb3eea7f1fa53fa75b1e339}} 
+\index{mainApp.cpp@{mainApp.cpp}!\_tWinMain@{\_tWinMain}}
+\index{\_tWinMain@{\_tWinMain}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{\_tWinMain()}{\_tWinMain()}}
+{\footnotesize\ttfamily int WINAPI \+\_\+t\+Win\+Main (\begin{DoxyParamCaption}\item[{HINSTANCE}]{h\+Instance,  }\item[{HINSTANCE}]{h\+Prev\+Instance,  }\item[{LPTSTR}]{lp\+Cmd\+Line,  }\item[{int}]{n\+Cmd\+Show }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{main_app_8cpp_aa31d4ec34bb3eea7f1fa53fa75b1e339_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_a45b6acf4c6f99b1092ca0ab4bba46b07}\label{main_app_8cpp_a45b6acf4c6f99b1092ca0ab4bba46b07}} 
+\index{mainApp.cpp@{mainApp.cpp}!CalcScreenToWorld@{CalcScreenToWorld}}
+\index{CalcScreenToWorld@{CalcScreenToWorld}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{CalcScreenToWorld()}{CalcScreenToWorld()}}
+{\footnotesize\ttfamily XMVECTOR $\ast$ Calc\+Screen\+To\+World (\begin{DoxyParamCaption}\item[{XMVECTOR $\ast$}]{pout,  }\item[{float}]{Sx,  }\item[{float}]{Sy,  }\item[{float}]{fZ,  }\item[{int}]{Screen\+\_\+w,  }\item[{int}]{Screen\+\_\+h,  }\item[{XMMATRIX}]{View,  }\item[{XMMATRIX}]{Prj }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_a45b6acf4c6f99b1092ca0ab4bba46b07_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_a33762d19fee3469aebc3f8a7a724bcf9}\label{main_app_8cpp_a33762d19fee3469aebc3f8a7a724bcf9}} 
+\index{mainApp.cpp@{mainApp.cpp}!CalcScreenToXY@{CalcScreenToXY}}
+\index{CalcScreenToXY@{CalcScreenToXY}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{CalcScreenToXY()}{CalcScreenToXY()}}
+{\footnotesize\ttfamily XMVECTOR $\ast$ Calc\+Screen\+To\+XY (\begin{DoxyParamCaption}\item[{XMFLOAT3 $\ast$}]{pout,  }\item[{float}]{Sx,  }\item[{float}]{Sy,  }\item[{int}]{Screen\+\_\+w,  }\item[{int}]{Screen\+\_\+h,  }\item[{XMMATRIX}]{View,  }\item[{XMMATRIX}]{Prj }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{main_app_8cpp_a33762d19fee3469aebc3f8a7a724bcf9_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_a33762d19fee3469aebc3f8a7a724bcf9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_a1ed2062f0707227a588cbd598ba2e562}\label{main_app_8cpp_a1ed2062f0707227a588cbd598ba2e562}} 
+\index{mainApp.cpp@{mainApp.cpp}!CalcWorldSize@{CalcWorldSize}}
+\index{CalcWorldSize@{CalcWorldSize}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{CalcWorldSize()}{CalcWorldSize()}}
+{\footnotesize\ttfamily Calc\+World\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+スクリーンの映っているワールドの横幅と高さを計算する 
+
+\begin{DoxyReturn}{戻り値}
+XMFLOAT2 スクリーンの映っているワールドの横幅と高さ 
+\end{DoxyReturn}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_a1ed2062f0707227a588cbd598ba2e562_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{main_app_8cpp_a1ed2062f0707227a588cbd598ba2e562_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_acaee41532409857c32654e8a1a30d4e7}\label{main_app_8cpp_acaee41532409857c32654e8a1a30d4e7}} 
+\index{mainApp.cpp@{mainApp.cpp}!CreateBackBuffer@{CreateBackBuffer}}
+\index{CreateBackBuffer@{CreateBackBuffer}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{CreateBackBuffer()}{CreateBackBuffer()}}
+{\footnotesize\ttfamily HRESULT Create\+Back\+Buffer (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{main_app_8cpp_acaee41532409857c32654e8a1a30d4e7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16}\label{main_app_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16}} 
+\index{mainApp.cpp@{mainApp.cpp}!Draw@{Draw}}
+\index{Draw@{Draw}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{main_app_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_a5cd40119cdaa763b483dfba6942eaa3e}\label{main_app_8cpp_a5cd40119cdaa763b483dfba6942eaa3e}} 
+\index{mainApp.cpp@{mainApp.cpp}!GetDepthStencilView@{GetDepthStencilView}}
+\index{GetDepthStencilView@{GetDepthStencilView}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{GetDepthStencilView()}{GetDepthStencilView()}}
+{\footnotesize\ttfamily ID3\+D11\+Depth\+Stencil\+View $\ast$ Get\+Depth\+Stencil\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_app_8cpp_a965053cc7c41d010d359091035281310}\label{main_app_8cpp_a965053cc7c41d010d359091035281310}} 
+\index{mainApp.cpp@{mainApp.cpp}!GetDevice@{GetDevice}}
+\index{GetDevice@{GetDevice}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{GetDevice()}{GetDevice()}}
+{\footnotesize\ttfamily ID3\+D11\+Device $\ast$ Get\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_a965053cc7c41d010d359091035281310_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_a76385629cd459c9e0fcda690542edb07}\label{main_app_8cpp_a76385629cd459c9e0fcda690542edb07}} 
+\index{mainApp.cpp@{mainApp.cpp}!GetDeviceContext@{GetDeviceContext}}
+\index{GetDeviceContext@{GetDeviceContext}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{GetDeviceContext()}{GetDeviceContext()}}
+{\footnotesize\ttfamily ID3\+D11\+Device\+Context $\ast$ Get\+Device\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_a76385629cd459c9e0fcda690542edb07_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_aa9d863781ee8f3f820ea4ad9e52f78d9}\label{main_app_8cpp_aa9d863781ee8f3f820ea4ad9e52f78d9}} 
+\index{mainApp.cpp@{mainApp.cpp}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily HINSTANCE Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_aa9d863781ee8f3f820ea4ad9e52f78d9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_a92550af168fdc15968f87992fd9d07c5}\label{main_app_8cpp_a92550af168fdc15968f87992fd9d07c5}} 
+\index{mainApp.cpp@{mainApp.cpp}!GetMainWnd@{GetMainWnd}}
+\index{GetMainWnd@{GetMainWnd}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{GetMainWnd()}{GetMainWnd()}}
+{\footnotesize\ttfamily HWND Get\+Main\+Wnd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_a92550af168fdc15968f87992fd9d07c5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_ad019e0e7e14e8aa9a83bbbf95930ed81}\label{main_app_8cpp_ad019e0e7e14e8aa9a83bbbf95930ed81}} 
+\index{mainApp.cpp@{mainApp.cpp}!GetRenderTargetView@{GetRenderTargetView}}
+\index{GetRenderTargetView@{GetRenderTargetView}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{GetRenderTargetView()}{GetRenderTargetView()}}
+{\footnotesize\ttfamily ID3\+D11\+Render\+Target\+View $\ast$ Get\+Render\+Target\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_app_8cpp_aafdc26c1149a90863283c7f26dfa89fa}\label{main_app_8cpp_aafdc26c1149a90863283c7f26dfa89fa}} 
+\index{mainApp.cpp@{mainApp.cpp}!GetSwapChain@{GetSwapChain}}
+\index{GetSwapChain@{GetSwapChain}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{GetSwapChain()}{GetSwapChain()}}
+{\footnotesize\ttfamily IDXGISwap\+Chain $\ast$ Get\+Swap\+Chain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_app_8cpp_a87a3f9652a75339308cf5fd5699ef1fd}\label{main_app_8cpp_a87a3f9652a75339308cf5fd5699ef1fd}} 
+\index{mainApp.cpp@{mainApp.cpp}!ImGui\_ImplWin32\_WndProcHandler@{ImGui\_ImplWin32\_WndProcHandler}}
+\index{ImGui\_ImplWin32\_WndProcHandler@{ImGui\_ImplWin32\_WndProcHandler}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{ImGui\_ImplWin32\_WndProcHandler()}{ImGui\_ImplWin32\_WndProcHandler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{imgui_8h_a665f6b404eea9a640b1222a87236fe19}{IMGUI\+\_\+\+IMPL\+\_\+\+API}} LRESULT Im\+Gui\+\_\+\+Impl\+Win32\+\_\+\+Wnd\+Proc\+Handler (\begin{DoxyParamCaption}\item[{HWND}]{h\+Wnd,  }\item[{UINT}]{msg,  }\item[{WPARAM}]{w\+Param,  }\item[{LPARAM}]{l\+Param }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_a87a3f9652a75339308cf5fd5699ef1fd_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_a87a3f9652a75339308cf5fd5699ef1fd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_a93e37d33930b82ad41bc9c9cb472f300}\label{main_app_8cpp_a93e37d33930b82ad41bc9c9cb472f300}} 
+\index{mainApp.cpp@{mainApp.cpp}!Init@{Init}}
+\index{Init@{Init}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily HRESULT Init (\begin{DoxyParamCaption}\item[{HWND}]{h\+Wnd,  }\item[{BOOL}]{b\+Window }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_a93e37d33930b82ad41bc9c9cb472f300_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{main_app_8cpp_a93e37d33930b82ad41bc9c9cb472f300_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_ae01825b499ec5e42f84e564d8d35bca1}\label{main_app_8cpp_ae01825b499ec5e42f84e564d8d35bca1}} 
+\index{mainApp.cpp@{mainApp.cpp}!OnCreate@{OnCreate}}
+\index{OnCreate@{OnCreate}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{OnCreate()}{OnCreate()}}
+{\footnotesize\ttfamily int On\+Create (\begin{DoxyParamCaption}\item[{HWND}]{h\+Wnd,  }\item[{LPCREATESTRUCT}]{lpcs }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_ae01825b499ec5e42f84e564d8d35bca1_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{main_app_8cpp_ae01825b499ec5e42f84e564d8d35bca1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_ad810adfaf29a77c9c136b3403d77c77c}\label{main_app_8cpp_ad810adfaf29a77c9c136b3403d77c77c}} 
+\index{mainApp.cpp@{mainApp.cpp}!ReleaseBackBuffer@{ReleaseBackBuffer}}
+\index{ReleaseBackBuffer@{ReleaseBackBuffer}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{ReleaseBackBuffer()}{ReleaseBackBuffer()}}
+{\footnotesize\ttfamily void Release\+Back\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_ad810adfaf29a77c9c136b3403d77c77c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_a15367d15c1324ebba192218982bffe3e}\label{main_app_8cpp_a15367d15c1324ebba192218982bffe3e}} 
+\index{mainApp.cpp@{mainApp.cpp}!SetBlendState@{SetBlendState}}
+\index{SetBlendState@{SetBlendState}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{SetBlendState()}{SetBlendState()}}
+{\footnotesize\ttfamily void Set\+Blend\+State (\begin{DoxyParamCaption}\item[{int}]{n\+Blend\+State }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_a15367d15c1324ebba192218982bffe3e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_a55437f177885a57508f99619a3a7a19f}\label{main_app_8cpp_a55437f177885a57508f99619a3a7a19f}} 
+\index{mainApp.cpp@{mainApp.cpp}!SetCullMode@{SetCullMode}}
+\index{SetCullMode@{SetCullMode}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{SetCullMode()}{SetCullMode()}}
+{\footnotesize\ttfamily void Set\+Cull\+Mode (\begin{DoxyParamCaption}\item[{int}]{n\+Cull\+Mode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_app_8cpp_a9b19b33f1a7f58f261e0025ec2fc66c3}\label{main_app_8cpp_a9b19b33f1a7f58f261e0025ec2fc66c3}} 
+\index{mainApp.cpp@{mainApp.cpp}!SetZBuffer@{SetZBuffer}}
+\index{SetZBuffer@{SetZBuffer}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{SetZBuffer()}{SetZBuffer()}}
+{\footnotesize\ttfamily void Set\+ZBuffer (\begin{DoxyParamCaption}\item[{bool}]{b\+Enable }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_a9b19b33f1a7f58f261e0025ec2fc66c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_a6376c6224e7273eb750a7fde2aea342d}\label{main_app_8cpp_a6376c6224e7273eb750a7fde2aea342d}} 
+\index{mainApp.cpp@{mainApp.cpp}!SetZWrite@{SetZWrite}}
+\index{SetZWrite@{SetZWrite}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{SetZWrite()}{SetZWrite()}}
+{\footnotesize\ttfamily void Set\+ZWrite (\begin{DoxyParamCaption}\item[{bool}]{b\+Enable }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{main_app_8cpp_a6376c6224e7273eb750a7fde2aea342d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_affc0f591b5f188f1b5cb4f20042e4766}\label{main_app_8cpp_affc0f591b5f188f1b5cb4f20042e4766}} 
+\index{mainApp.cpp@{mainApp.cpp}!Uninit@{Uninit}}
+\index{Uninit@{Uninit}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{Uninit()}{Uninit()}}
+{\footnotesize\ttfamily void Uninit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_affc0f591b5f188f1b5cb4f20042e4766_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=220pt]{main_app_8cpp_affc0f591b5f188f1b5cb4f20042e4766_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_aec0783b5a136e042adcc47bae4fe5291}\label{main_app_8cpp_aec0783b5a136e042adcc47bae4fe5291}} 
+\index{mainApp.cpp@{mainApp.cpp}!Update@{Update}}
+\index{Update@{Update}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_aec0783b5a136e042adcc47bae4fe5291_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{main_app_8cpp_aec0783b5a136e042adcc47bae4fe5291_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8cpp_ae749e989b362e19783c7af4a2bf46c95}\label{main_app_8cpp_ae749e989b362e19783c7af4a2bf46c95}} 
+\index{mainApp.cpp@{mainApp.cpp}!WndProc@{WndProc}}
+\index{WndProc@{WndProc}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{WndProc()}{WndProc()}}
+{\footnotesize\ttfamily LRESULT CALLBACK Wnd\+Proc (\begin{DoxyParamCaption}\item[{HWND}]{h\+Wnd,  }\item[{UINT}]{u\+Msg,  }\item[{WPARAM}]{w\+Param,  }\item[{LPARAM}]{l\+Param }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8cpp_ae749e989b362e19783c7af4a2bf46c95_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{main_app_8cpp_ae749e989b362e19783c7af4a2bf46c95_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{変数詳解}
+\mbox{\Hypertarget{main_app_8cpp_af03f36c7876ed17a936f00434a9236c4}\label{main_app_8cpp_af03f36c7876ed17a936f00434a9236c4}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_hInst@{g\_hInst}}
+\index{g\_hInst@{g\_hInst}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_hInst}{g\_hInst}}
+{\footnotesize\ttfamily HINSTANCE g\+\_\+h\+Inst}
+
+\mbox{\Hypertarget{main_app_8cpp_af6e451d84715c224b60977594e800b81}\label{main_app_8cpp_af6e451d84715c224b60977594e800b81}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_hWnd@{g\_hWnd}}
+\index{g\_hWnd@{g\_hWnd}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_hWnd}{g\_hWnd}}
+{\footnotesize\ttfamily HWND g\+\_\+h\+Wnd}
+
+\mbox{\Hypertarget{main_app_8cpp_a3ff492dab767ebe3921c804121362998}\label{main_app_8cpp_a3ff492dab767ebe3921c804121362998}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_nCountFPS@{g\_nCountFPS}}
+\index{g\_nCountFPS@{g\_nCountFPS}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_nCountFPS}{g\_nCountFPS}}
+{\footnotesize\ttfamily int g\+\_\+n\+Count\+FPS}
+
+\mbox{\Hypertarget{main_app_8cpp_ab7895c23be6d0815d09494d2cde87745}\label{main_app_8cpp_ab7895c23be6d0815d09494d2cde87745}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_pBlendState@{g\_pBlendState}}
+\index{g\_pBlendState@{g\_pBlendState}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_pBlendState}{g\_pBlendState}}
+{\footnotesize\ttfamily ID3\+D11\+Blend\+State$\ast$ g\+\_\+p\+Blend\+State\mbox{[}\mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a2dd3f4c2cf1b7fa074bc5126ce663ba4}{MAX\+\_\+\+BLENDSTATE}}\mbox{]}}
+
+\mbox{\Hypertarget{main_app_8cpp_ab9590216690dd67144afc00948867e31}\label{main_app_8cpp_ab9590216690dd67144afc00948867e31}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_pDepthStencilTexture@{g\_pDepthStencilTexture}}
+\index{g\_pDepthStencilTexture@{g\_pDepthStencilTexture}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_pDepthStencilTexture}{g\_pDepthStencilTexture}}
+{\footnotesize\ttfamily ID3\+D11\+Texture2D$\ast$ g\+\_\+p\+Depth\+Stencil\+Texture}
+
+\mbox{\Hypertarget{main_app_8cpp_ad94e21ad0f12a5e475e54263844e77f5}\label{main_app_8cpp_ad94e21ad0f12a5e475e54263844e77f5}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_pDepthStencilView@{g\_pDepthStencilView}}
+\index{g\_pDepthStencilView@{g\_pDepthStencilView}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_pDepthStencilView}{g\_pDepthStencilView}}
+{\footnotesize\ttfamily ID3\+D11\+Depth\+Stencil\+View$\ast$ g\+\_\+p\+Depth\+Stencil\+View}
+
+\mbox{\Hypertarget{main_app_8cpp_a2f992b136a900bca3ed6e5150c6a038f}\label{main_app_8cpp_a2f992b136a900bca3ed6e5150c6a038f}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_pDevice@{g\_pDevice}}
+\index{g\_pDevice@{g\_pDevice}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_pDevice}{g\_pDevice}}
+{\footnotesize\ttfamily ID3\+D11\+Device$\ast$ g\+\_\+p\+Device}
+
+\mbox{\Hypertarget{main_app_8cpp_ab5052854e8f64231a4af1c35cdae5ebe}\label{main_app_8cpp_ab5052854e8f64231a4af1c35cdae5ebe}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_pDeviceContext@{g\_pDeviceContext}}
+\index{g\_pDeviceContext@{g\_pDeviceContext}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_pDeviceContext}{g\_pDeviceContext}}
+{\footnotesize\ttfamily ID3\+D11\+Device\+Context$\ast$ g\+\_\+p\+Device\+Context}
+
+\mbox{\Hypertarget{main_app_8cpp_a16c31ec5dc59b21e26902e7de80b9627}\label{main_app_8cpp_a16c31ec5dc59b21e26902e7de80b9627}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_pDSS@{g\_pDSS}}
+\index{g\_pDSS@{g\_pDSS}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_pDSS}{g\_pDSS}}
+{\footnotesize\ttfamily ID3\+D11\+Depth\+Stencil\+State$\ast$ g\+\_\+p\+DSS\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{main_app_8cpp_abcb863a0484c7e63a94f94443c75e4e4}\label{main_app_8cpp_abcb863a0484c7e63a94f94443c75e4e4}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_pInputManager@{g\_pInputManager}}
+\index{g\_pInputManager@{g\_pInputManager}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_pInputManager}{g\_pInputManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_input_manager}{Input\+Manager}}$\ast$ g\+\_\+p\+Input\+Manager = nullptr}
+
+\mbox{\Hypertarget{main_app_8cpp_a795f24bde22c97c4ed279a717ff38beb}\label{main_app_8cpp_a795f24bde22c97c4ed279a717ff38beb}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_pRenderTargetView@{g\_pRenderTargetView}}
+\index{g\_pRenderTargetView@{g\_pRenderTargetView}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_pRenderTargetView}{g\_pRenderTargetView}}
+{\footnotesize\ttfamily ID3\+D11\+Render\+Target\+View$\ast$ g\+\_\+p\+Render\+Target\+View}
+
+\mbox{\Hypertarget{main_app_8cpp_a1650a47a0e794abae08ef7b3c88c3000}\label{main_app_8cpp_a1650a47a0e794abae08ef7b3c88c3000}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_pRs@{g\_pRs}}
+\index{g\_pRs@{g\_pRs}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_pRs}{g\_pRs}}
+{\footnotesize\ttfamily ID3\+D11\+Rasterizer\+State$\ast$ g\+\_\+p\+Rs\mbox{[}\mbox{\hyperlink{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaac9e43ef91a95b9f6a68480609e3cb2c1}{MAX\+\_\+\+CULLMODE}}\mbox{]}}
+
+\mbox{\Hypertarget{main_app_8cpp_a62feac2b19fd7df9a0f0680e576d369c}\label{main_app_8cpp_a62feac2b19fd7df9a0f0680e576d369c}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_pSceneManager@{g\_pSceneManager}}
+\index{g\_pSceneManager@{g\_pSceneManager}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_pSceneManager}{g\_pSceneManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_scene_manager}{Scene\+Manager}}$\ast$ g\+\_\+p\+Scene\+Manager = nullptr}
+
+\mbox{\Hypertarget{main_app_8cpp_abdc838bdb97168171051e526b8f49d12}\label{main_app_8cpp_abdc838bdb97168171051e526b8f49d12}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_pSwapChain@{g\_pSwapChain}}
+\index{g\_pSwapChain@{g\_pSwapChain}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_pSwapChain}{g\_pSwapChain}}
+{\footnotesize\ttfamily IDXGISwap\+Chain$\ast$ g\+\_\+p\+Swap\+Chain}
+
+\mbox{\Hypertarget{main_app_8cpp_ad11c6e200f8d1bdde7dcefece0598700}\label{main_app_8cpp_ad11c6e200f8d1bdde7dcefece0598700}} 
+\index{mainApp.cpp@{mainApp.cpp}!g\_uSyncInterval@{g\_uSyncInterval}}
+\index{g\_uSyncInterval@{g\_uSyncInterval}!mainApp.cpp@{mainApp.cpp}}
+\doxysubsubsection{\texorpdfstring{g\_uSyncInterval}{g\_uSyncInterval}}
+{\footnotesize\ttfamily UINT g\+\_\+u\+Sync\+Interval = 0}
+

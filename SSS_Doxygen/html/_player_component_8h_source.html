@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/PlayerComponent.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">PlayerComponent.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_player_component_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">//インクルードガード</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef _PLAYER_COMPONENT_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define _PLAYER_COMPONENT_H_</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">//インクルード部</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_component_8h.html">Component.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//前方宣言</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_class" href="class_input_manager.html">InputManager</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class </span><a class="code hl_class" href="class_c_transform.html">CTransform</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span><a class="code hl_class" href="class_object.html">Object</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span><a class="code hl_class" href="class_c_collider.html">CCollider</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">class </span><a class="code hl_class" href="class_c_draw2_d.html">CDraw2D</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">class </span><a class="code hl_class" href="class_c_anim_mesh.html">CAnimMesh</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94">   24</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94">PLAYER_STATE</a> {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94adae7c3c550e30258845f9f4355f8b433">   25</a></span>    <a class="code hl_enumvalue" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94adae7c3c550e30258845f9f4355f8b433">IDLE_PLAYER</a> = 0,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94a5948c9dc0bb7de02f24920ad0f60c902">   26</a></span>    <a class="code hl_enumvalue" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94a5948c9dc0bb7de02f24920ad0f60c902">RUN_PLAYER</a>,         <span class="comment">//横移動</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94a7c8a207520e3dc3179aeabc99c1ca314">   27</a></span>    <a class="code hl_enumvalue" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94a7c8a207520e3dc3179aeabc99c1ca314">DUSH_PLAYER</a>,        <span class="comment">//エアダッシュ見たいのを作りたい（作ってない）</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94acaabad92b8096aba343d718196023e32">   28</a></span>    <a class="code hl_enumvalue" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94acaabad92b8096aba343d718196023e32">JUMP_PLAYER</a>,        <span class="comment">//ジャンプしている</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94ab0a68dd52926ffb8d19633420ac5eece">   29</a></span>    <a class="code hl_enumvalue" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94ab0a68dd52926ffb8d19633420ac5eece">ATTACK_PLAYER</a>,      <span class="comment">//攻撃</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94ac19c906d92b699baf264129a04ad0b5b">   30</a></span>    <a class="code hl_enumvalue" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94ac19c906d92b699baf264129a04ad0b5b">FALL_PLAYER</a>,        <span class="comment">//落下している</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94af16f871a2d70b0806115564a4dea2b3a">   31</a></span>    <a class="code hl_enumvalue" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94af16f871a2d70b0806115564a4dea2b3a">HIT_PLAYER</a>,         <span class="comment">//敵にヒットしたとき</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94a776f5db954d0cfbd0571c41c3dfb6388">   32</a></span>    <a class="code hl_enumvalue" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94a776f5db954d0cfbd0571c41c3dfb6388">MISS_PLAYER</a>,        <span class="comment">//いわゆるゲームオーバー</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94acce192e5e5bcf52749188eb28a4ffd6d">   33</a></span>    <a class="code hl_enumvalue" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94acce192e5e5bcf52749188eb28a4ffd6d">CLEAR_PLAYER</a>,       <span class="comment">//クリアした状態</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94ae50e0782ed5b84736057efdbac17c75d">   35</a></span>    <a class="code hl_enumvalue" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94ae50e0782ed5b84736057efdbac17c75d">STOP_PLAYER</a>,        <span class="comment">//プレイヤーの足を止めたいとき</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_enumvalue" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94a7bd3bc5b03aa02412bbf6d64607ce73c">MAX_PLAYER</a></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94a7bd3bc5b03aa02412bbf6d64607ce73c">   38</a></span>};</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">//クラス定義</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_c_player.html">   41</a></span><span class="keyword">class </span><a class="code hl_class" href="class_c_player.html">CPlayer</a> :<span class="keyword">public</span> <a class="code hl_class" href="class_component.html">Component</a> {</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"></span>    <a class="code hl_class" href="class_c_transform.html">CTransform</a>* m_pPlayer;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_class" href="class_c_anim_mesh.html">CAnimMesh</a>*    m_pDraw2D;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_class" href="class_c_collider.html">CCollider</a>* m_pCollider;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_class" href="class_input_manager.html">InputManager</a>* m_pInput;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    XMFLOAT2 m_OldPos;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">bool</span> m_bGround;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_enumeration" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94">PLAYER_STATE</a> m_ePlayer;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">bool</span> m_bJump;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">bool</span> m_bPawer_UP;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">int</span> m_nStar_Time;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">bool</span> m_bROL;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">int</span> m_nHitVec;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">bool</span> m_bHitFlg;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">bool</span> m_bAttack;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">int</span> m_nCoolTime;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_class" href="class_object.html">Object</a>* m_pAttackObj;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="comment">//物に当たっているかの判定(消す)</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">bool</span> bHitObj = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">int</span> m_nDushCnt;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordtype">int</span> m_nDushCoolTime;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">bool</span> m_bAirDushFlg;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordtype">bool</span> m_bAirDead;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keywordtype">int</span> m_nMissCnt;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordtype">bool</span> m_bClearFlg;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="comment"></span>    <span class="keywordtype">int</span> CollEnemy(<a class="code hl_class" href="class_object.html">Object</a>* pObject);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">void</span> CreateAttack();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <span class="keywordtype">bool</span> CollMiss(<a class="code hl_class" href="class_object.html">Object</a>* pObject);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="comment"></span>    <a class="code hl_function" href="class_c_player.html#a931a59adf2ada5376122e30b33ae2c4c">CPlayer</a>();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <a class="code hl_function" href="class_c_player.html#ae9122c819d61dd8e2f7a890040c04a61">~CPlayer</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_player.html#aad0dcf0dbb43561b5202fb20974e43a3">Start</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_player.html#a4582a8020f6734842edea64909bd4b40">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_player.html#a9f4de6ca09dfa30de3b06c9d548a0d8f">Draw</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_player.html#abede91d4fa024fae2396593ce5532b17">OnCollisionEnter</a>(<a class="code hl_class" href="class_object.html">Object</a>* pObject) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_player.html#af3ea32b95b8b7ac0859098a227564c66">SetPlayerState</a>(<a class="code hl_enumeration" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94">PLAYER_STATE</a> PlayerSta);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_player.html#a74a2ae35e6ee85f5d8db25b65fe61062">ChangeTexture</a>();</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_player.html#a242bd1c7a6b560a0886670c4d4fd2cb9">GetPlayerROL</a>();</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_player.html#a0fbe6a654daa88bd62f8895f4ac3e540">SetCoolTime</a>(<span class="keywordtype">int</span> CoolTime);</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_player.html#a3e3fa542e97605dcad912d2beb7c2041">SetAttackFlg</a>(<span class="keywordtype">bool</span> Attack);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_player.html#a2010fc46d322bbe154e98752e242f767">GetPlayerJump</a>();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_enumeration" href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94">PLAYER_STATE</a> <a class="code hl_function" href="class_c_player.html#a5e03b46500ed0d60c75ed8852f43cc45">GetPlayerSta</a>();</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_player.html#acde5e2196354f96ea915c764f7a7bf48">GetClearFlg</a>();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>};</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_component_8h_html"><div class="ttname"><a href="_component_8h.html">Component.h</a></div></div>
+<div class="ttc" id="a_player_component_8h_html_a5baccd10d2f9116585c878821a80cc94"><div class="ttname"><a href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94">PLAYER_STATE</a></div><div class="ttdeci">PLAYER_STATE</div><div class="ttdef"><b>Definition:</b> PlayerComponent.h:24</div></div>
+<div class="ttc" id="a_player_component_8h_html_a5baccd10d2f9116585c878821a80cc94a5948c9dc0bb7de02f24920ad0f60c902"><div class="ttname"><a href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94a5948c9dc0bb7de02f24920ad0f60c902">RUN_PLAYER</a></div><div class="ttdeci">@ RUN_PLAYER</div><div class="ttdef"><b>Definition:</b> PlayerComponent.h:26</div></div>
+<div class="ttc" id="a_player_component_8h_html_a5baccd10d2f9116585c878821a80cc94a776f5db954d0cfbd0571c41c3dfb6388"><div class="ttname"><a href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94a776f5db954d0cfbd0571c41c3dfb6388">MISS_PLAYER</a></div><div class="ttdeci">@ MISS_PLAYER</div><div class="ttdef"><b>Definition:</b> PlayerComponent.h:32</div></div>
+<div class="ttc" id="a_player_component_8h_html_a5baccd10d2f9116585c878821a80cc94a7bd3bc5b03aa02412bbf6d64607ce73c"><div class="ttname"><a href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94a7bd3bc5b03aa02412bbf6d64607ce73c">MAX_PLAYER</a></div><div class="ttdeci">@ MAX_PLAYER</div><div class="ttdef"><b>Definition:</b> PlayerComponent.h:37</div></div>
+<div class="ttc" id="a_player_component_8h_html_a5baccd10d2f9116585c878821a80cc94a7c8a207520e3dc3179aeabc99c1ca314"><div class="ttname"><a href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94a7c8a207520e3dc3179aeabc99c1ca314">DUSH_PLAYER</a></div><div class="ttdeci">@ DUSH_PLAYER</div><div class="ttdef"><b>Definition:</b> PlayerComponent.h:27</div></div>
+<div class="ttc" id="a_player_component_8h_html_a5baccd10d2f9116585c878821a80cc94ab0a68dd52926ffb8d19633420ac5eece"><div class="ttname"><a href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94ab0a68dd52926ffb8d19633420ac5eece">ATTACK_PLAYER</a></div><div class="ttdeci">@ ATTACK_PLAYER</div><div class="ttdef"><b>Definition:</b> PlayerComponent.h:29</div></div>
+<div class="ttc" id="a_player_component_8h_html_a5baccd10d2f9116585c878821a80cc94ac19c906d92b699baf264129a04ad0b5b"><div class="ttname"><a href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94ac19c906d92b699baf264129a04ad0b5b">FALL_PLAYER</a></div><div class="ttdeci">@ FALL_PLAYER</div><div class="ttdef"><b>Definition:</b> PlayerComponent.h:30</div></div>
+<div class="ttc" id="a_player_component_8h_html_a5baccd10d2f9116585c878821a80cc94acaabad92b8096aba343d718196023e32"><div class="ttname"><a href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94acaabad92b8096aba343d718196023e32">JUMP_PLAYER</a></div><div class="ttdeci">@ JUMP_PLAYER</div><div class="ttdef"><b>Definition:</b> PlayerComponent.h:28</div></div>
+<div class="ttc" id="a_player_component_8h_html_a5baccd10d2f9116585c878821a80cc94acce192e5e5bcf52749188eb28a4ffd6d"><div class="ttname"><a href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94acce192e5e5bcf52749188eb28a4ffd6d">CLEAR_PLAYER</a></div><div class="ttdeci">@ CLEAR_PLAYER</div><div class="ttdef"><b>Definition:</b> PlayerComponent.h:33</div></div>
+<div class="ttc" id="a_player_component_8h_html_a5baccd10d2f9116585c878821a80cc94adae7c3c550e30258845f9f4355f8b433"><div class="ttname"><a href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94adae7c3c550e30258845f9f4355f8b433">IDLE_PLAYER</a></div><div class="ttdeci">@ IDLE_PLAYER</div><div class="ttdef"><b>Definition:</b> PlayerComponent.h:25</div></div>
+<div class="ttc" id="a_player_component_8h_html_a5baccd10d2f9116585c878821a80cc94ae50e0782ed5b84736057efdbac17c75d"><div class="ttname"><a href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94ae50e0782ed5b84736057efdbac17c75d">STOP_PLAYER</a></div><div class="ttdeci">@ STOP_PLAYER</div><div class="ttdef"><b>Definition:</b> PlayerComponent.h:35</div></div>
+<div class="ttc" id="a_player_component_8h_html_a5baccd10d2f9116585c878821a80cc94af16f871a2d70b0806115564a4dea2b3a"><div class="ttname"><a href="_player_component_8h.html#a5baccd10d2f9116585c878821a80cc94af16f871a2d70b0806115564a4dea2b3a">HIT_PLAYER</a></div><div class="ttdeci">@ HIT_PLAYER</div><div class="ttdef"><b>Definition:</b> PlayerComponent.h:31</div></div>
+<div class="ttc" id="aclass_c_anim_mesh_html"><div class="ttname"><a href="class_c_anim_mesh.html">CAnimMesh</a></div><div class="ttdef"><b>Definition:</b> AnimMeshComponent.h:20</div></div>
+<div class="ttc" id="aclass_c_collider_html"><div class="ttname"><a href="class_c_collider.html">CCollider</a></div><div class="ttdef"><b>Definition:</b> ColliderComponent.h:27</div></div>
+<div class="ttc" id="aclass_c_draw2_d_html"><div class="ttname"><a href="class_c_draw2_d.html">CDraw2D</a></div><div class="ttdef"><b>Definition:</b> Draw2DComponent.h:21</div></div>
+<div class="ttc" id="aclass_c_player_html"><div class="ttname"><a href="class_c_player.html">CPlayer</a></div><div class="ttdef"><b>Definition:</b> PlayerComponent.h:41</div></div>
+<div class="ttc" id="aclass_c_player_html_a0fbe6a654daa88bd62f8895f4ac3e540"><div class="ttname"><a href="class_c_player.html#a0fbe6a654daa88bd62f8895f4ac3e540">CPlayer::SetCoolTime</a></div><div class="ttdeci">void SetCoolTime(int CoolTime)</div><div class="ttdoc">攻撃後のクールタイムを設定する</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:1120</div></div>
+<div class="ttc" id="aclass_c_player_html_a2010fc46d322bbe154e98752e242f767"><div class="ttname"><a href="class_c_player.html#a2010fc46d322bbe154e98752e242f767">CPlayer::GetPlayerJump</a></div><div class="ttdeci">bool GetPlayerJump()</div><div class="ttdoc">プレイヤーがジャンプしているかを取得する</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:1138</div></div>
+<div class="ttc" id="aclass_c_player_html_a242bd1c7a6b560a0886670c4d4fd2cb9"><div class="ttname"><a href="class_c_player.html#a242bd1c7a6b560a0886670c4d4fd2cb9">CPlayer::GetPlayerROL</a></div><div class="ttdeci">bool GetPlayerROL()</div><div class="ttdoc">プレイヤーがどっちの方向を決めているかを</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:1111</div></div>
+<div class="ttc" id="aclass_c_player_html_a3e3fa542e97605dcad912d2beb7c2041"><div class="ttname"><a href="class_c_player.html#a3e3fa542e97605dcad912d2beb7c2041">CPlayer::SetAttackFlg</a></div><div class="ttdeci">void SetAttackFlg(bool Attack)</div><div class="ttdoc">再び攻撃できるようにする</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:1129</div></div>
+<div class="ttc" id="aclass_c_player_html_a4582a8020f6734842edea64909bd4b40"><div class="ttname"><a href="class_c_player.html#a4582a8020f6734842edea64909bd4b40">CPlayer::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdoc">更新</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:96</div></div>
+<div class="ttc" id="aclass_c_player_html_a5e03b46500ed0d60c75ed8852f43cc45"><div class="ttname"><a href="class_c_player.html#a5e03b46500ed0d60c75ed8852f43cc45">CPlayer::GetPlayerSta</a></div><div class="ttdeci">PLAYER_STATE GetPlayerSta()</div><div class="ttdoc">プレイヤーの状態を取得する関数</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:1147</div></div>
+<div class="ttc" id="aclass_c_player_html_a74a2ae35e6ee85f5d8db25b65fe61062"><div class="ttname"><a href="class_c_player.html#a74a2ae35e6ee85f5d8db25b65fe61062">CPlayer::ChangeTexture</a></div><div class="ttdeci">void ChangeTexture()</div><div class="ttdoc">プレイヤーのテクスチャを変更するための関数</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:1038</div></div>
+<div class="ttc" id="aclass_c_player_html_a931a59adf2ada5376122e30b33ae2c4c"><div class="ttname"><a href="class_c_player.html#a931a59adf2ada5376122e30b33ae2c4c">CPlayer::CPlayer</a></div><div class="ttdeci">CPlayer()</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:35</div></div>
+<div class="ttc" id="aclass_c_player_html_a9f4de6ca09dfa30de3b06c9d548a0d8f"><div class="ttname"><a href="class_c_player.html#a9f4de6ca09dfa30de3b06c9d548a0d8f">CPlayer::Draw</a></div><div class="ttdeci">void Draw() override</div><div class="ttdoc">描画</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:693</div></div>
+<div class="ttc" id="aclass_c_player_html_aad0dcf0dbb43561b5202fb20974e43a3"><div class="ttname"><a href="class_c_player.html#aad0dcf0dbb43561b5202fb20974e43a3">CPlayer::Start</a></div><div class="ttdeci">void Start() override</div><div class="ttdoc">初期化</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:59</div></div>
+<div class="ttc" id="aclass_c_player_html_abede91d4fa024fae2396593ce5532b17"><div class="ttname"><a href="class_c_player.html#abede91d4fa024fae2396593ce5532b17">CPlayer::OnCollisionEnter</a></div><div class="ttdeci">void OnCollisionEnter(Object *pObject) override</div><div class="ttdoc">衝突処理</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:718</div></div>
+<div class="ttc" id="aclass_c_player_html_acde5e2196354f96ea915c764f7a7bf48"><div class="ttname"><a href="class_c_player.html#acde5e2196354f96ea915c764f7a7bf48">CPlayer::GetClearFlg</a></div><div class="ttdeci">bool GetClearFlg()</div><div class="ttdoc">クリアしたかどうかを取得する関数</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:1156</div></div>
+<div class="ttc" id="aclass_c_player_html_ae9122c819d61dd8e2f7a890040c04a61"><div class="ttname"><a href="class_c_player.html#ae9122c819d61dd8e2f7a890040c04a61">CPlayer::~CPlayer</a></div><div class="ttdeci">~CPlayer() override</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:51</div></div>
+<div class="ttc" id="aclass_c_player_html_af3ea32b95b8b7ac0859098a227564c66"><div class="ttname"><a href="class_c_player.html#af3ea32b95b8b7ac0859098a227564c66">CPlayer::SetPlayerState</a></div><div class="ttdeci">void SetPlayerState(PLAYER_STATE PlayerSta)</div><div class="ttdoc">プレイヤーの状態を変更するため</div><div class="ttdef"><b>Definition:</b> PlayerComponent.cpp:929</div></div>
+<div class="ttc" id="aclass_c_transform_html"><div class="ttname"><a href="class_c_transform.html">CTransform</a></div><div class="ttdef"><b>Definition:</b> TransformComponent.h:17</div></div>
+<div class="ttc" id="aclass_component_html"><div class="ttname"><a href="class_component.html">Component</a></div><div class="ttdef"><b>Definition:</b> Component.h:29</div></div>
+<div class="ttc" id="aclass_input_manager_html"><div class="ttname"><a href="class_input_manager.html">InputManager</a></div><div class="ttdef"><b>Definition:</b> InputManager.h:28</div></div>
+<div class="ttc" id="aclass_object_html"><div class="ttname"><a href="class_object.html">Object</a></div><div class="ttdef"><b>Definition:</b> Object.h:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

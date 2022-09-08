@@ -1,0 +1,10 @@
+<map id="Object::GetDeleteFlag" name="Object::GetDeleteFlag">
+<area shape="rect" id="node1" title=" " alt="" coords="427,81,577,108"/>
+<area shape="rect" id="node2" href="$class_menu_manager.html#aabc8f23d87e058b5c5b099a8c34a2af8" title="更新処理" alt="" coords="211,56,364,83"/>
+<area shape="rect" id="node6" href="$class_object_manager.html#ac6035906749a40ec3a1d685ebed11c89" title="更新処理" alt="" coords="208,107,367,133"/>
+<area shape="rect" id="node7" href="$class_c_collider.html#aebd65f77a9c4850eb29d703cec88152d" title="更新" alt="" coords="226,157,349,184"/>
+<area shape="rect" id="node8" href="$class_object_manager.html#a86d895e6def5ee60d8d29d2c475f8962" title="ステージ作成時の更新処理" alt="" coords="196,5,379,32"/>
+<area shape="rect" id="node3" href="$class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,5,148,32"/>
+<area shape="rect" id="node4" href="$class_stage_select.html#aa2796a223f0c14a63523a725957de1ef" title="更新処理" alt="" coords="5,107,148,133"/>
+<area shape="rect" id="node5" href="$class_scene_title.html#af1b28c5ab2cced3b7d8106ef0cd8b0ae" title=" " alt="" coords="11,56,143,83"/>
+</map>

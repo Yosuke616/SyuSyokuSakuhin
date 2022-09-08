@@ -24,6 +24,7 @@ enum MENU_STATE {
 	PAUSE_STATE,
 	OPTION_STATE,
 	GAMECLEAR_STATE,
+	MISS_STATE,
 	GAMEOVER_STATE,
 
 	MAX_MENU
@@ -56,6 +57,10 @@ private:
 	bool m_bRestart;
 	/** @brief どれだけ移動したかを保存する変数*/
 	float m_fMoveObj;
+	/** @brief 透明から半透明にするための変数*/
+	float m_fBlackAlpha;
+	/** @brief ある程度時間がたったら初めからやり直す*/
+	int m_nChangeCnt;
 
 	//メンバ関数
 	/** @brief コンストラクタ*/
@@ -70,6 +75,9 @@ private:
 	void StageSelect();
 	/** @brief 選択されたステージを読み込む関数*/
 	void StageIN();
+	/** @brief ミスしたときの処理*/
+	void MissMenu();
+	/** @brief ポーズメニューの処理*/
 
 protected:
 	//メンバ変数
@@ -112,6 +120,8 @@ public:
 	void CreatePauseMenu();
 	/** @brief ステージセレクトメニュー*/
 	void CreateSelectMenu();
+	/** @brief ミスメニュー*/
+	void CreateMissMenu();
 	/** @brief ゲームオーバーメニュー*/
 	void CreateGameOverMenu();
 };

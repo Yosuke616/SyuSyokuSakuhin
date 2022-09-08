@@ -1,0 +1,464 @@
+\hypertarget{main_app_8h}{}\doxysection{C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/main\+App.h ファイル}
+\label{main_app_8h}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/mainApp.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/mainApp.h}}
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$tchar.\+h$>$}\newline
+{\ttfamily \#include $<$mmsystem.\+h$>$}\newline
+{\ttfamily \#include $<$d3d11.\+h$>$}\newline
+{\ttfamily \#include $<$Direct\+XMath.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}resource.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+main\+App.\+h の依存先関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8h__incl}
+\end{center}
+\end{figure}
+被依存関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{クラス}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_v_e_r_t_e_x__2_d}{VERTEX\+\_\+2D}}
+\item 
+struct \mbox{\hyperlink{struct_v_e_r_t_e_x__3_d}{VERTEX\+\_\+3D}}
+\end{DoxyCompactItemize}
+\doxysubsection*{マクロ定義}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_app_8h_a9f918755b601cf4bffca775992e6fb90}{NOMINMAX}}
+\item 
+\#define \mbox{\hyperlink{main_app_8h_a2bc549675ca29f733709b4656d22d52a}{SAFE\+\_\+\+RELEASE}}(x)~\{if(x)\{(x)-\/$>$Release();x=nullptr;\}\}
+\item 
+\#define \mbox{\hyperlink{main_app_8h_a4b8b2bed986c06c207ebac140ba65a7a}{SAFE\+\_\+\+DELETE}}(x)~\{if(x)\{delete(x);x=nullptr;\}\}
+\item 
+\#define \mbox{\hyperlink{main_app_8h_a529602a5e4c2f9ba2c721ce9aefaddf7}{SAFE\+\_\+\+DELETE\+\_\+\+ARRAY}}(x)~\{if(x)\{delete\mbox{[}$\,$\mbox{]}(x);x=nullptr;\}\}
+\item 
+\#define \mbox{\hyperlink{main_app_8h_a2cd109632a6dcccaa80b43561b1ab700}{SCREEN\+\_\+\+WIDTH}}~(1280)
+\item 
+\#define \mbox{\hyperlink{main_app_8h_a6974d08a74da681b3957b2fead2608b8}{SCREEN\+\_\+\+HEIGHT}}~(720)
+\item 
+\#define \mbox{\hyperlink{main_app_8h_a95a8665023499fe96fe4c8eac20c27f4}{SCREEN\+\_\+\+CENTER\+\_\+X}}~(\mbox{\hyperlink{main_app_8h_a2cd109632a6dcccaa80b43561b1ab700}{SCREEN\+\_\+\+WIDTH}}/2)
+\item 
+\#define \mbox{\hyperlink{main_app_8h_a8d605dd2d3860073577d63169888ba84}{SCREEN\+\_\+\+CENTER\+\_\+Y}}~(\mbox{\hyperlink{main_app_8h_a6974d08a74da681b3957b2fead2608b8}{SCREEN\+\_\+\+HEIGHT}}/2)
+\item 
+\#define \mbox{\hyperlink{main_app_8h_ab722cbfcd174beb57f5473d53f9767f7}{NUM\+\_\+\+VERTEX}}~(4)
+\item 
+\#define \mbox{\hyperlink{main_app_8h_a76f2100a99233162d34d4283a26332bb}{NUM\+\_\+\+POLYGON}}~(2)
+\item 
+\#define \mbox{\hyperlink{main_app_8h_ae78ba7a387b6da61def93aa3d2dcd109}{Sin\+Deg}}(degree)~sinf(XMConvert\+To\+Radians(degree))
+\item 
+\#define \mbox{\hyperlink{main_app_8h_a0d04c6140b97345edfc86985f1676253}{Cos\+Deg}}(degree)~cosf(XMConvert\+To\+Radians(degree))
+\end{DoxyCompactItemize}
+\doxysubsection*{列挙型}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{main_app_8h_a4853d3aea066eba9ef3740585c107a6b}{Direct}} \{ \newline
+\mbox{\hyperlink{main_app_8h_a4853d3aea066eba9ef3740585c107a6ba2e15270378edc4b0861165674c651970}{DIR\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{main_app_8h_a4853d3aea066eba9ef3740585c107a6ba5dd21ef3d450f62c44082756cab8f6f8}{DIR\+\_\+\+RIGHT}}
+, \mbox{\hyperlink{main_app_8h_a4853d3aea066eba9ef3740585c107a6ba1307dc42d06472935155dcbe283bc660}{DIR\+\_\+\+LEFT}}
+, \mbox{\hyperlink{main_app_8h_a4853d3aea066eba9ef3740585c107a6ba0b76fb863426c07c6c997a8d9523257b}{DIR\+\_\+\+UP}}
+, \newline
+\mbox{\hyperlink{main_app_8h_a4853d3aea066eba9ef3740585c107a6bab1bf68da897d09488069dd40e54f442d}{DIR\+\_\+\+DOWN}}
+ \}
+\item 
+enum \mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2}{EBlend\+State}} \{ \newline
+\mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a2d12b87b8f786ee643522fd75a569ee9}{BS\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a4652560626321baf86b007ea6cf19d1b}{BS\+\_\+\+ALPHABLEND}}
+, \mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a4b3aed63826d12e954d4f8916d7d7ee3}{BS\+\_\+\+ADDITIVE}}
+, \mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a696619a00213b38ff53c718615609ac9}{BS\+\_\+\+SUBTRACTION}}
+, \newline
+\mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a2dd3f4c2cf1b7fa074bc5126ce663ba4}{MAX\+\_\+\+BLENDSTATE}}
+ \}
+\item 
+enum \mbox{\hyperlink{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fca}{ECull\+Mode}} \{ \mbox{\hyperlink{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaa2de164d15a5a308a3e7f852ef6e7948e}{CULLMODE\+\_\+\+NONE}} = 0
+, \mbox{\hyperlink{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaaa72c8619e0be2fe67ef171b2f2ee7bc6}{CULLMODE\+\_\+\+CW}}
+, \mbox{\hyperlink{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaaf3a645ebbdf5dde3b88e2197e6c05c4e}{CULLMODE\+\_\+\+CCW}}
+, \mbox{\hyperlink{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaac9e43ef91a95b9f6a68480609e3cb2c1}{MAX\+\_\+\+CULLMODE}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{関数}
+\begin{DoxyCompactItemize}
+\item 
+HWND \mbox{\hyperlink{main_app_8h_a92550af168fdc15968f87992fd9d07c5}{Get\+Main\+Wnd}} ()
+\item 
+HINSTANCE \mbox{\hyperlink{main_app_8h_aa9d863781ee8f3f820ea4ad9e52f78d9}{Get\+Instance}} ()
+\item 
+ID3\+D11\+Device $\ast$ \mbox{\hyperlink{main_app_8h_a965053cc7c41d010d359091035281310}{Get\+Device}} ()
+\item 
+ID3\+D11\+Device\+Context $\ast$ \mbox{\hyperlink{main_app_8h_a76385629cd459c9e0fcda690542edb07}{Get\+Device\+Context}} ()
+\item 
+void \mbox{\hyperlink{main_app_8h_a15367d15c1324ebba192218982bffe3e}{Set\+Blend\+State}} (int n\+Blend\+State)
+\item 
+void \mbox{\hyperlink{main_app_8h_a55437f177885a57508f99619a3a7a19f}{Set\+Cull\+Mode}} (int n\+Cull\+Mode)
+\item 
+void \mbox{\hyperlink{main_app_8h_a9b19b33f1a7f58f261e0025ec2fc66c3}{Set\+ZBuffer}} (bool b\+Enable)
+\item 
+void \mbox{\hyperlink{main_app_8h_a6376c6224e7273eb750a7fde2aea342d}{Set\+ZWrite}} (bool b\+Enable)
+\item 
+XMVECTOR $\ast$ \mbox{\hyperlink{main_app_8h_a45b6acf4c6f99b1092ca0ab4bba46b07}{Calc\+Screen\+To\+World}} (XMVECTOR $\ast$pout, float Sx, float Sy, float fZ, int Screen\+\_\+w, int Screen\+\_\+h, XMMATRIX View, XMMATRIX Prj)
+\item 
+XMVECTOR $\ast$ \mbox{\hyperlink{main_app_8h_a33762d19fee3469aebc3f8a7a724bcf9}{Calc\+Screen\+To\+XY}} (XMFLOAT3 $\ast$pout, float Sx, float Sy, int Screen\+\_\+w, int Screen\+\_\+h, XMMATRIX View, XMMATRIX Prj)
+\item 
+XMFLOAT2 \mbox{\hyperlink{main_app_8h_ab2bc1dccc769090b3dbd2b251a643039}{Calc\+World\+Size}} ()
+\begin{DoxyCompactList}\small\item\em スクリーンの映っているワールドの横幅と高さを計算する \end{DoxyCompactList}\item 
+ID3\+D11\+Render\+Target\+View $\ast$ \mbox{\hyperlink{main_app_8h_ad019e0e7e14e8aa9a83bbbf95930ed81}{Get\+Render\+Target\+View}} ()
+\item 
+ID3\+D11\+Depth\+Stencil\+View $\ast$ \mbox{\hyperlink{main_app_8h_a5cd40119cdaa763b483dfba6942eaa3e}{Get\+Depth\+Stencil\+View}} ()
+\item 
+IDXGISwap\+Chain $\ast$ \mbox{\hyperlink{main_app_8h_aafdc26c1149a90863283c7f26dfa89fa}{Get\+Swap\+Chain}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{マクロ定義詳解}
+\mbox{\Hypertarget{main_app_8h_a0d04c6140b97345edfc86985f1676253}\label{main_app_8h_a0d04c6140b97345edfc86985f1676253}} 
+\index{mainApp.h@{mainApp.h}!CosDeg@{CosDeg}}
+\index{CosDeg@{CosDeg}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{CosDeg}{CosDeg}}
+{\footnotesize\ttfamily \#define Cos\+Deg(\begin{DoxyParamCaption}\item[{}]{degree }\end{DoxyParamCaption})~cosf(XMConvert\+To\+Radians(degree))}
+
+\mbox{\Hypertarget{main_app_8h_a9f918755b601cf4bffca775992e6fb90}\label{main_app_8h_a9f918755b601cf4bffca775992e6fb90}} 
+\index{mainApp.h@{mainApp.h}!NOMINMAX@{NOMINMAX}}
+\index{NOMINMAX@{NOMINMAX}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{NOMINMAX}{NOMINMAX}}
+{\footnotesize\ttfamily \#define NOMINMAX}
+
+\mbox{\Hypertarget{main_app_8h_a76f2100a99233162d34d4283a26332bb}\label{main_app_8h_a76f2100a99233162d34d4283a26332bb}} 
+\index{mainApp.h@{mainApp.h}!NUM\_POLYGON@{NUM\_POLYGON}}
+\index{NUM\_POLYGON@{NUM\_POLYGON}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{NUM\_POLYGON}{NUM\_POLYGON}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+POLYGON~(2)}
+
+\mbox{\Hypertarget{main_app_8h_ab722cbfcd174beb57f5473d53f9767f7}\label{main_app_8h_ab722cbfcd174beb57f5473d53f9767f7}} 
+\index{mainApp.h@{mainApp.h}!NUM\_VERTEX@{NUM\_VERTEX}}
+\index{NUM\_VERTEX@{NUM\_VERTEX}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{NUM\_VERTEX}{NUM\_VERTEX}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+VERTEX~(4)}
+
+\mbox{\Hypertarget{main_app_8h_a4b8b2bed986c06c207ebac140ba65a7a}\label{main_app_8h_a4b8b2bed986c06c207ebac140ba65a7a}} 
+\index{mainApp.h@{mainApp.h}!SAFE\_DELETE@{SAFE\_DELETE}}
+\index{SAFE\_DELETE@{SAFE\_DELETE}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{SAFE\_DELETE}{SAFE\_DELETE}}
+{\footnotesize\ttfamily \#define SAFE\+\_\+\+DELETE(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\{if(x)\{delete(x);x=nullptr;\}\}}
+
+\mbox{\Hypertarget{main_app_8h_a529602a5e4c2f9ba2c721ce9aefaddf7}\label{main_app_8h_a529602a5e4c2f9ba2c721ce9aefaddf7}} 
+\index{mainApp.h@{mainApp.h}!SAFE\_DELETE\_ARRAY@{SAFE\_DELETE\_ARRAY}}
+\index{SAFE\_DELETE\_ARRAY@{SAFE\_DELETE\_ARRAY}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{SAFE\_DELETE\_ARRAY}{SAFE\_DELETE\_ARRAY}}
+{\footnotesize\ttfamily \#define SAFE\+\_\+\+DELETE\+\_\+\+ARRAY(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\{if(x)\{delete\mbox{[}$\,$\mbox{]}(x);x=nullptr;\}\}}
+
+\mbox{\Hypertarget{main_app_8h_a2bc549675ca29f733709b4656d22d52a}\label{main_app_8h_a2bc549675ca29f733709b4656d22d52a}} 
+\index{mainApp.h@{mainApp.h}!SAFE\_RELEASE@{SAFE\_RELEASE}}
+\index{SAFE\_RELEASE@{SAFE\_RELEASE}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{SAFE\_RELEASE}{SAFE\_RELEASE}}
+{\footnotesize\ttfamily \#define SAFE\+\_\+\+RELEASE(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\{if(x)\{(x)-\/$>$Release();x=nullptr;\}\}}
+
+\mbox{\Hypertarget{main_app_8h_a95a8665023499fe96fe4c8eac20c27f4}\label{main_app_8h_a95a8665023499fe96fe4c8eac20c27f4}} 
+\index{mainApp.h@{mainApp.h}!SCREEN\_CENTER\_X@{SCREEN\_CENTER\_X}}
+\index{SCREEN\_CENTER\_X@{SCREEN\_CENTER\_X}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_CENTER\_X}{SCREEN\_CENTER\_X}}
+{\footnotesize\ttfamily \#define SCREEN\+\_\+\+CENTER\+\_\+X~(\mbox{\hyperlink{main_app_8h_a2cd109632a6dcccaa80b43561b1ab700}{SCREEN\+\_\+\+WIDTH}}/2)}
+
+\mbox{\Hypertarget{main_app_8h_a8d605dd2d3860073577d63169888ba84}\label{main_app_8h_a8d605dd2d3860073577d63169888ba84}} 
+\index{mainApp.h@{mainApp.h}!SCREEN\_CENTER\_Y@{SCREEN\_CENTER\_Y}}
+\index{SCREEN\_CENTER\_Y@{SCREEN\_CENTER\_Y}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_CENTER\_Y}{SCREEN\_CENTER\_Y}}
+{\footnotesize\ttfamily \#define SCREEN\+\_\+\+CENTER\+\_\+Y~(\mbox{\hyperlink{main_app_8h_a6974d08a74da681b3957b2fead2608b8}{SCREEN\+\_\+\+HEIGHT}}/2)}
+
+\mbox{\Hypertarget{main_app_8h_a6974d08a74da681b3957b2fead2608b8}\label{main_app_8h_a6974d08a74da681b3957b2fead2608b8}} 
+\index{mainApp.h@{mainApp.h}!SCREEN\_HEIGHT@{SCREEN\_HEIGHT}}
+\index{SCREEN\_HEIGHT@{SCREEN\_HEIGHT}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_HEIGHT}{SCREEN\_HEIGHT}}
+{\footnotesize\ttfamily \#define SCREEN\+\_\+\+HEIGHT~(720)}
+
+\mbox{\Hypertarget{main_app_8h_a2cd109632a6dcccaa80b43561b1ab700}\label{main_app_8h_a2cd109632a6dcccaa80b43561b1ab700}} 
+\index{mainApp.h@{mainApp.h}!SCREEN\_WIDTH@{SCREEN\_WIDTH}}
+\index{SCREEN\_WIDTH@{SCREEN\_WIDTH}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{SCREEN\_WIDTH}{SCREEN\_WIDTH}}
+{\footnotesize\ttfamily \#define SCREEN\+\_\+\+WIDTH~(1280)}
+
+\mbox{\Hypertarget{main_app_8h_ae78ba7a387b6da61def93aa3d2dcd109}\label{main_app_8h_ae78ba7a387b6da61def93aa3d2dcd109}} 
+\index{mainApp.h@{mainApp.h}!SinDeg@{SinDeg}}
+\index{SinDeg@{SinDeg}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{SinDeg}{SinDeg}}
+{\footnotesize\ttfamily \#define Sin\+Deg(\begin{DoxyParamCaption}\item[{}]{degree }\end{DoxyParamCaption})~sinf(XMConvert\+To\+Radians(degree))}
+
+
+
+\doxysubsection{列挙型詳解}
+\mbox{\Hypertarget{main_app_8h_a4853d3aea066eba9ef3740585c107a6b}\label{main_app_8h_a4853d3aea066eba9ef3740585c107a6b}} 
+\index{mainApp.h@{mainApp.h}!Direct@{Direct}}
+\index{Direct@{Direct}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{Direct}{Direct}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{main_app_8h_a4853d3aea066eba9ef3740585c107a6b}{Direct}}}
+
+\begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIR\_NONE@{DIR\_NONE}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!DIR\_NONE@{DIR\_NONE}}}\mbox{\Hypertarget{main_app_8h_a4853d3aea066eba9ef3740585c107a6ba2e15270378edc4b0861165674c651970}\label{main_app_8h_a4853d3aea066eba9ef3740585c107a6ba2e15270378edc4b0861165674c651970}} 
+DIR\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIR\_RIGHT@{DIR\_RIGHT}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!DIR\_RIGHT@{DIR\_RIGHT}}}\mbox{\Hypertarget{main_app_8h_a4853d3aea066eba9ef3740585c107a6ba5dd21ef3d450f62c44082756cab8f6f8}\label{main_app_8h_a4853d3aea066eba9ef3740585c107a6ba5dd21ef3d450f62c44082756cab8f6f8}} 
+DIR\+\_\+\+RIGHT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIR\_LEFT@{DIR\_LEFT}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!DIR\_LEFT@{DIR\_LEFT}}}\mbox{\Hypertarget{main_app_8h_a4853d3aea066eba9ef3740585c107a6ba1307dc42d06472935155dcbe283bc660}\label{main_app_8h_a4853d3aea066eba9ef3740585c107a6ba1307dc42d06472935155dcbe283bc660}} 
+DIR\+\_\+\+LEFT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIR\_UP@{DIR\_UP}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!DIR\_UP@{DIR\_UP}}}\mbox{\Hypertarget{main_app_8h_a4853d3aea066eba9ef3740585c107a6ba0b76fb863426c07c6c997a8d9523257b}\label{main_app_8h_a4853d3aea066eba9ef3740585c107a6ba0b76fb863426c07c6c997a8d9523257b}} 
+DIR\+\_\+\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIR\_DOWN@{DIR\_DOWN}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!DIR\_DOWN@{DIR\_DOWN}}}\mbox{\Hypertarget{main_app_8h_a4853d3aea066eba9ef3740585c107a6bab1bf68da897d09488069dd40e54f442d}\label{main_app_8h_a4853d3aea066eba9ef3740585c107a6bab1bf68da897d09488069dd40e54f442d}} 
+DIR\+\_\+\+DOWN&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2}\label{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2}} 
+\index{mainApp.h@{mainApp.h}!EBlendState@{EBlendState}}
+\index{EBlendState@{EBlendState}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{EBlendState}{EBlendState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2}{EBlend\+State}}}
+
+\begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BS\_NONE@{BS\_NONE}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!BS\_NONE@{BS\_NONE}}}\mbox{\Hypertarget{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a2d12b87b8f786ee643522fd75a569ee9}\label{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a2d12b87b8f786ee643522fd75a569ee9}} 
+BS\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BS\_ALPHABLEND@{BS\_ALPHABLEND}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!BS\_ALPHABLEND@{BS\_ALPHABLEND}}}\mbox{\Hypertarget{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a4652560626321baf86b007ea6cf19d1b}\label{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a4652560626321baf86b007ea6cf19d1b}} 
+BS\+\_\+\+ALPHABLEND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BS\_ADDITIVE@{BS\_ADDITIVE}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!BS\_ADDITIVE@{BS\_ADDITIVE}}}\mbox{\Hypertarget{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a4b3aed63826d12e954d4f8916d7d7ee3}\label{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a4b3aed63826d12e954d4f8916d7d7ee3}} 
+BS\+\_\+\+ADDITIVE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{BS\_SUBTRACTION@{BS\_SUBTRACTION}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!BS\_SUBTRACTION@{BS\_SUBTRACTION}}}\mbox{\Hypertarget{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a696619a00213b38ff53c718615609ac9}\label{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a696619a00213b38ff53c718615609ac9}} 
+BS\+\_\+\+SUBTRACTION&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_BLENDSTATE@{MAX\_BLENDSTATE}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!MAX\_BLENDSTATE@{MAX\_BLENDSTATE}}}\mbox{\Hypertarget{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a2dd3f4c2cf1b7fa074bc5126ce663ba4}\label{main_app_8h_a3e447a94ef1b4376d3cbf363802bb5f2a2dd3f4c2cf1b7fa074bc5126ce663ba4}} 
+MAX\+\_\+\+BLENDSTATE&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fca}\label{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fca}} 
+\index{mainApp.h@{mainApp.h}!ECullMode@{ECullMode}}
+\index{ECullMode@{ECullMode}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{ECullMode}{ECullMode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fca}{ECull\+Mode}}}
+
+\begin{DoxyEnumFields}{列挙値}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CULLMODE\_NONE@{CULLMODE\_NONE}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!CULLMODE\_NONE@{CULLMODE\_NONE}}}\mbox{\Hypertarget{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaa2de164d15a5a308a3e7f852ef6e7948e}\label{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaa2de164d15a5a308a3e7f852ef6e7948e}} 
+CULLMODE\+\_\+\+NONE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CULLMODE\_CW@{CULLMODE\_CW}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!CULLMODE\_CW@{CULLMODE\_CW}}}\mbox{\Hypertarget{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaaa72c8619e0be2fe67ef171b2f2ee7bc6}\label{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaaa72c8619e0be2fe67ef171b2f2ee7bc6}} 
+CULLMODE\+\_\+\+CW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CULLMODE\_CCW@{CULLMODE\_CCW}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!CULLMODE\_CCW@{CULLMODE\_CCW}}}\mbox{\Hypertarget{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaaf3a645ebbdf5dde3b88e2197e6c05c4e}\label{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaaf3a645ebbdf5dde3b88e2197e6c05c4e}} 
+CULLMODE\+\_\+\+CCW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{MAX\_CULLMODE@{MAX\_CULLMODE}!mainApp.h@{mainApp.h}}\index{mainApp.h@{mainApp.h}!MAX\_CULLMODE@{MAX\_CULLMODE}}}\mbox{\Hypertarget{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaac9e43ef91a95b9f6a68480609e3cb2c1}\label{main_app_8h_acb1e92521e1d5e281d7d65e74fee4fcaac9e43ef91a95b9f6a68480609e3cb2c1}} 
+MAX\+\_\+\+CULLMODE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{main_app_8h_a45b6acf4c6f99b1092ca0ab4bba46b07}\label{main_app_8h_a45b6acf4c6f99b1092ca0ab4bba46b07}} 
+\index{mainApp.h@{mainApp.h}!CalcScreenToWorld@{CalcScreenToWorld}}
+\index{CalcScreenToWorld@{CalcScreenToWorld}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{CalcScreenToWorld()}{CalcScreenToWorld()}}
+{\footnotesize\ttfamily XMVECTOR $\ast$ Calc\+Screen\+To\+World (\begin{DoxyParamCaption}\item[{XMVECTOR $\ast$}]{pout,  }\item[{float}]{Sx,  }\item[{float}]{Sy,  }\item[{float}]{fZ,  }\item[{int}]{Screen\+\_\+w,  }\item[{int}]{Screen\+\_\+h,  }\item[{XMMATRIX}]{View,  }\item[{XMMATRIX}]{Prj }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8h_a45b6acf4c6f99b1092ca0ab4bba46b07_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8h_a33762d19fee3469aebc3f8a7a724bcf9}\label{main_app_8h_a33762d19fee3469aebc3f8a7a724bcf9}} 
+\index{mainApp.h@{mainApp.h}!CalcScreenToXY@{CalcScreenToXY}}
+\index{CalcScreenToXY@{CalcScreenToXY}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{CalcScreenToXY()}{CalcScreenToXY()}}
+{\footnotesize\ttfamily XMVECTOR $\ast$ Calc\+Screen\+To\+XY (\begin{DoxyParamCaption}\item[{XMFLOAT3 $\ast$}]{pout,  }\item[{float}]{Sx,  }\item[{float}]{Sy,  }\item[{int}]{Screen\+\_\+w,  }\item[{int}]{Screen\+\_\+h,  }\item[{XMMATRIX}]{View,  }\item[{XMMATRIX}]{Prj }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{main_app_8h_a33762d19fee3469aebc3f8a7a724bcf9_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8h_a33762d19fee3469aebc3f8a7a724bcf9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8h_ab2bc1dccc769090b3dbd2b251a643039}\label{main_app_8h_ab2bc1dccc769090b3dbd2b251a643039}} 
+\index{mainApp.h@{mainApp.h}!CalcWorldSize@{CalcWorldSize}}
+\index{CalcWorldSize@{CalcWorldSize}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{CalcWorldSize()}{CalcWorldSize()}}
+{\footnotesize\ttfamily XMFLOAT2 Calc\+World\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+スクリーンの映っているワールドの横幅と高さを計算する 
+
+\begin{DoxyReturn}{戻り値}
+XMFLOAT2 スクリーンの映っているワールドの横幅と高さ 
+\end{DoxyReturn}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8h_ab2bc1dccc769090b3dbd2b251a643039_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{main_app_8h_ab2bc1dccc769090b3dbd2b251a643039_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8h_a5cd40119cdaa763b483dfba6942eaa3e}\label{main_app_8h_a5cd40119cdaa763b483dfba6942eaa3e}} 
+\index{mainApp.h@{mainApp.h}!GetDepthStencilView@{GetDepthStencilView}}
+\index{GetDepthStencilView@{GetDepthStencilView}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{GetDepthStencilView()}{GetDepthStencilView()}}
+{\footnotesize\ttfamily ID3\+D11\+Depth\+Stencil\+View $\ast$ Get\+Depth\+Stencil\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_app_8h_a965053cc7c41d010d359091035281310}\label{main_app_8h_a965053cc7c41d010d359091035281310}} 
+\index{mainApp.h@{mainApp.h}!GetDevice@{GetDevice}}
+\index{GetDevice@{GetDevice}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{GetDevice()}{GetDevice()}}
+{\footnotesize\ttfamily ID3\+D11\+Device $\ast$ Get\+Device (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8h_a965053cc7c41d010d359091035281310_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8h_a76385629cd459c9e0fcda690542edb07}\label{main_app_8h_a76385629cd459c9e0fcda690542edb07}} 
+\index{mainApp.h@{mainApp.h}!GetDeviceContext@{GetDeviceContext}}
+\index{GetDeviceContext@{GetDeviceContext}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{GetDeviceContext()}{GetDeviceContext()}}
+{\footnotesize\ttfamily ID3\+D11\+Device\+Context $\ast$ Get\+Device\+Context (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8h_a76385629cd459c9e0fcda690542edb07_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8h_aa9d863781ee8f3f820ea4ad9e52f78d9}\label{main_app_8h_aa9d863781ee8f3f820ea4ad9e52f78d9}} 
+\index{mainApp.h@{mainApp.h}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily HINSTANCE Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8h_aa9d863781ee8f3f820ea4ad9e52f78d9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8h_a92550af168fdc15968f87992fd9d07c5}\label{main_app_8h_a92550af168fdc15968f87992fd9d07c5}} 
+\index{mainApp.h@{mainApp.h}!GetMainWnd@{GetMainWnd}}
+\index{GetMainWnd@{GetMainWnd}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{GetMainWnd()}{GetMainWnd()}}
+{\footnotesize\ttfamily HWND Get\+Main\+Wnd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8h_a92550af168fdc15968f87992fd9d07c5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8h_ad019e0e7e14e8aa9a83bbbf95930ed81}\label{main_app_8h_ad019e0e7e14e8aa9a83bbbf95930ed81}} 
+\index{mainApp.h@{mainApp.h}!GetRenderTargetView@{GetRenderTargetView}}
+\index{GetRenderTargetView@{GetRenderTargetView}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{GetRenderTargetView()}{GetRenderTargetView()}}
+{\footnotesize\ttfamily ID3\+D11\+Render\+Target\+View $\ast$ Get\+Render\+Target\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_app_8h_aafdc26c1149a90863283c7f26dfa89fa}\label{main_app_8h_aafdc26c1149a90863283c7f26dfa89fa}} 
+\index{mainApp.h@{mainApp.h}!GetSwapChain@{GetSwapChain}}
+\index{GetSwapChain@{GetSwapChain}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{GetSwapChain()}{GetSwapChain()}}
+{\footnotesize\ttfamily IDXGISwap\+Chain $\ast$ Get\+Swap\+Chain (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_app_8h_a15367d15c1324ebba192218982bffe3e}\label{main_app_8h_a15367d15c1324ebba192218982bffe3e}} 
+\index{mainApp.h@{mainApp.h}!SetBlendState@{SetBlendState}}
+\index{SetBlendState@{SetBlendState}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{SetBlendState()}{SetBlendState()}}
+{\footnotesize\ttfamily void Set\+Blend\+State (\begin{DoxyParamCaption}\item[{int}]{n\+Blend\+State }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8h_a15367d15c1324ebba192218982bffe3e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8h_a55437f177885a57508f99619a3a7a19f}\label{main_app_8h_a55437f177885a57508f99619a3a7a19f}} 
+\index{mainApp.h@{mainApp.h}!SetCullMode@{SetCullMode}}
+\index{SetCullMode@{SetCullMode}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{SetCullMode()}{SetCullMode()}}
+{\footnotesize\ttfamily void Set\+Cull\+Mode (\begin{DoxyParamCaption}\item[{int}]{n\+Cull\+Mode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_app_8h_a9b19b33f1a7f58f261e0025ec2fc66c3}\label{main_app_8h_a9b19b33f1a7f58f261e0025ec2fc66c3}} 
+\index{mainApp.h@{mainApp.h}!SetZBuffer@{SetZBuffer}}
+\index{SetZBuffer@{SetZBuffer}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{SetZBuffer()}{SetZBuffer()}}
+{\footnotesize\ttfamily void Set\+ZBuffer (\begin{DoxyParamCaption}\item[{bool}]{b\+Enable }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_app_8h_a9b19b33f1a7f58f261e0025ec2fc66c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_app_8h_a6376c6224e7273eb750a7fde2aea342d}\label{main_app_8h_a6376c6224e7273eb750a7fde2aea342d}} 
+\index{mainApp.h@{mainApp.h}!SetZWrite@{SetZWrite}}
+\index{SetZWrite@{SetZWrite}!mainApp.h@{mainApp.h}}
+\doxysubsubsection{\texorpdfstring{SetZWrite()}{SetZWrite()}}
+{\footnotesize\ttfamily void Set\+ZWrite (\begin{DoxyParamCaption}\item[{bool}]{b\+Enable }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{main_app_8h_a6376c6224e7273eb750a7fde2aea342d_icgraph}
+\end{center}
+\end{figure}

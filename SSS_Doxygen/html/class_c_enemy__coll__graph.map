@@ -1,0 +1,5 @@
+<map id="CEnemy" name="CEnemy">
+<area shape="rect" id="node1" title="敵の動きを制御する @detail 攻撃したり引き返したり" alt="" coords="13,171,85,197"/>
+<area shape="rect" id="node2" href="$class_component.html" title=" " alt="" coords="5,95,93,121"/>
+<area shape="rect" id="node3" href="$class_object.html" title=" " alt="" coords="19,5,79,32"/>
+</map>

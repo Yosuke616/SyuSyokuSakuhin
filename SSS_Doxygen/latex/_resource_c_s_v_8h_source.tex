@@ -1,0 +1,55 @@
+\hypertarget{_resource_c_s_v_8h_source}{}\doxysection{Resource\+CSV.\+h}
+\label{_resource_c_s_v_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ResourceCSV.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ResourceCSV.h}}
+\mbox{\hyperlink{_resource_c_s_v_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#ifndef \_RESOURCECSV\_H\_}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#define \_RESOURCECSV\_H\_}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_resource_base_8h}{ResourceBase.h}}"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{22 \textcolor{keyword}{class }\mbox{\hyperlink{class_resource_c_s_v}{ResourceCSV}} : \textcolor{keyword}{public} \mbox{\hyperlink{class_resource_base}{ResourceBase}} \{}
+\DoxyCodeLine{23 \textcolor{keyword}{private}:}
+\DoxyCodeLine{24     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{27 \textcolor{comment}{}    \textcolor{keyword}{using }Cell = std::string;}
+\DoxyCodeLine{29     \textcolor{keyword}{using }Column = std::vector<Cell>;}
+\DoxyCodeLine{31     \textcolor{keyword}{using }Row = std::vector<Column>;}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{34     Row m\_Grid;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{39     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{keyword}{public}:}
+\DoxyCodeLine{44     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{48 \textcolor{comment}{}    \mbox{\hyperlink{class_resource_c_s_v_ad11513c6b6d36b549d1ad9445383bc17}{ResourceCSV}}();}
+\DoxyCodeLine{50     \mbox{\hyperlink{class_resource_c_s_v_a420e90e5a36275584797e7731f20d732}{\string~ResourceCSV}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{53     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_resource_c_s_v_ad5a14cd107aea62537ec3d7c624edab1}{Load}}(std::string fileName)\textcolor{keyword}{override};}
+\DoxyCodeLine{55     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_resource_c_s_v_abf8512be9116981588d5930e08f7881d}{Save}}(std::string fileName)\textcolor{keyword}{override};}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{59     std::string \mbox{\hyperlink{class_resource_c_s_v_a66e674d2e116f338e816f03d5bf1ce39}{GetStr}}(\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{61     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_resource_c_s_v_a94d56d83495dec3c0f618146a29ef059}{GetInt}}(\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{63     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_resource_c_s_v_a771e7a65d1f09a4d9216c529e45ecf74}{GetFloat}}(\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{65     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_resource_c_s_v_a00d7764b5c481597e4747ef3afa66a71}{GetRowSize}}();}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_resource_c_s_v_a6d4e6e00df2fe2ad283e13c8ff8df464}{GetColumnSize}}(\textcolor{keywordtype}{int} row);}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_resource_c_s_v_a34c1e609a23c9c1dee6aed5dd3da886f}{SetStr}}(\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y,std::string str);}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_resource_c_s_v_a2f1dc7d3c7b55b6450b5070a91fb78f1}{SetInt}}(\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y,\textcolor{keywordtype}{int} num);}
+\DoxyCodeLine{75     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_resource_c_s_v_a1d429d8ac3516f0f17e0b1e243f667a3}{SetFloat}}(\textcolor{keywordtype}{int} x,\textcolor{keywordtype}{int} y,\textcolor{keywordtype}{float} num);}
+\DoxyCodeLine{77     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_resource_c_s_v_a6bca9e20ccaa3a8cd5bbc3aa047bb3c3}{SetRowSize}}(\textcolor{keywordtype}{int} Size);}
+\DoxyCodeLine{79     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_resource_c_s_v_a1208b23460cea14e9d4433fb5f03d0fd}{SetColumnSize}}(\textcolor{keywordtype}{int} row,\textcolor{keywordtype}{int} size);}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \};}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

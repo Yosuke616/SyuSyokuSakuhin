@@ -1,0 +1,4 @@
+<map id="TextureManager::EraseTexture" name="TextureManager::EraseTexture">
+<area shape="rect" id="node1" title="テクスチャ削除" alt="" coords="5,5,205,32"/>
+<area shape="rect" id="node2" href="$class_texture_manager.html#a8448501f02d76a5c2362bbed98e89728" title="テクスチャ取得" alt="" coords="253,5,440,32"/>
+</map>

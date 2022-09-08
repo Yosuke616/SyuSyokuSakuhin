@@ -1,0 +1,21 @@
+<map id="CAssimpModel::DrawNode" name="CAssimpModel::DrawNode">
+<area shape="rect" id="node1" title=" " alt="" coords="5,663,183,689"/>
+<area shape="rect" id="node2" href="$class_c_assimp_mesh.html#a40ccc5aa52266d7673ba52e23aad20fa" title=" " alt="" coords="269,335,413,361"/>
+<area shape="rect" id="node17" href="$class_scene_animator.html#aa7dfe2a1c9320bf616bfefefca10f6cd" title=" " alt="" coords="231,637,451,664"/>
+<area shape="rect" id="node18" href="$class_scene_animator.html#a89b285b3575fac7c84497f9bf11e26b6" title=" " alt="" coords="503,681,680,722"/>
+<area shape="rect" id="node19" href="$class_c_assimp_mesh.html#aa23f916538ebc325071af295bc54c0ba" title=" " alt="" coords="240,739,441,765"/>
+<area shape="rect" id="node3" href="$class_c_camera.html#a67560cf6a017ec3b8a59129be0d0100a" title=" " alt="" coords="539,5,644,32"/>
+<area shape="rect" id="node4" href="$class_c_light.html#a4a80a6d18305f88d251970b4f84ed1c4" title="ライトのインスタンス取得" alt="" coords="547,56,635,83"/>
+<area shape="rect" id="node5" href="$class_c_light.html#ab8f6c373c7391407739f71ef8317ff48" title="環境光の取得" alt="" coords="523,107,659,133"/>
+<area shape="rect" id="node6" href="$class_c_light.html#a837bec6973025bfd74f8c9d45ee4583b" title="反射光の取得" alt="" coords="528,157,655,184"/>
+<area shape="rect" id="node7" href="$class_c_light.html#ae4b6c1b4ae9b9379e34bda0284bb1940" title="光源方向取得" alt="" coords="539,208,643,235"/>
+<area shape="rect" id="node8" href="$class_model_manager.html#a76fa7f6c4bf14e44dc8fc22b41d18436" title="インスタンス化" alt="" coords="499,259,684,285"/>
+<area shape="rect" id="node10" href="$class_c_assimp_model.html#a059efb51145989e578702f2e0055b3ca" title=" " alt="" coords="499,309,684,336"/>
+<area shape="rect" id="node11" href="$class_c_camera.html#a6c938658ede08754ba4ffd9a3dd35ea3" title=" " alt="" coords="527,360,655,387"/>
+<area shape="rect" id="node12" href="$class_c_camera.html#a99bbeae7433475a61979f603f439ab13" title=" " alt="" coords="509,411,673,437"/>
+<area shape="rect" id="node13" href="$class_c_light.html#a2e39622934de7ca6b477a1a8a17acee2" title="自己発光の取得" alt="" coords="522,461,661,488"/>
+<area shape="rect" id="node14" href="$class_c_assimp_model.html#ab79b6874ddc2bd8a9b691c8ddaceea26" title=" " alt="" coords="500,513,683,554"/>
+<area shape="rect" id="node15" href="$class_c_camera.html#a1d42e5fecad0bcdab17124b402aa1575" title=" " alt="" coords="507,579,676,605"/>
+<area shape="rect" id="node16" href="$class_c_assimp_model.html#ae1efd6c2fae09f8626f1bfce806d38ff" title="敵のマテリアルを保存する" alt="" coords="508,629,675,656"/>
+<area shape="rect" id="node9" href="$class_model_manager.html#a9b0d22b1baf59c5b566e82fcd8ca424a" title="コンストラクタ" alt="" coords="732,259,932,285"/>
+</map>

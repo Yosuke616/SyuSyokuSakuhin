@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/ResourceCSV.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">ResourceCSV.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_resource_c_s_v_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef _RESOURCECSV_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define _RESOURCECSV_H_</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="_resource_base_8h.html">ResourceBase.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="class_resource_c_s_v.html">   22</a></span><span class="keyword">class </span><a class="code hl_class" href="class_resource_c_s_v.html">ResourceCSV</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_resource_base.html">ResourceBase</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"></span>    <span class="keyword">using </span>Cell = std::string;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">using </span>Column = std::vector&lt;Cell&gt;;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">using </span>Row = std::vector&lt;Column&gt;;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    Row m_Grid;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment"></span>    <a class="code hl_function" href="class_resource_c_s_v.html#ad11513c6b6d36b549d1ad9445383bc17">ResourceCSV</a>();</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="class_resource_c_s_v.html#a420e90e5a36275584797e7731f20d732">~ResourceCSV</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_resource_c_s_v.html#ad5a14cd107aea62537ec3d7c624edab1">Load</a>(std::string fileName)<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_resource_c_s_v.html#abf8512be9116981588d5930e08f7881d">Save</a>(std::string fileName)<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    std::string <a class="code hl_function" href="class_resource_c_s_v.html#a66e674d2e116f338e816f03d5bf1ce39">GetStr</a>(<span class="keywordtype">int</span> x,<span class="keywordtype">int</span> y);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_resource_c_s_v.html#a94d56d83495dec3c0f618146a29ef059">GetInt</a>(<span class="keywordtype">int</span> x,<span class="keywordtype">int</span> y);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">float</span> <a class="code hl_function" href="class_resource_c_s_v.html#a771e7a65d1f09a4d9216c529e45ecf74">GetFloat</a>(<span class="keywordtype">int</span> x,<span class="keywordtype">int</span> y);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_resource_c_s_v.html#a00d7764b5c481597e4747ef3afa66a71">GetRowSize</a>();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_resource_c_s_v.html#a6d4e6e00df2fe2ad283e13c8ff8df464">GetColumnSize</a>(<span class="keywordtype">int</span> row);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_resource_c_s_v.html#a34c1e609a23c9c1dee6aed5dd3da886f">SetStr</a>(<span class="keywordtype">int</span> x,<span class="keywordtype">int</span> y,std::string str);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_resource_c_s_v.html#a2f1dc7d3c7b55b6450b5070a91fb78f1">SetInt</a>(<span class="keywordtype">int</span> x,<span class="keywordtype">int</span> y,<span class="keywordtype">int</span> num);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_resource_c_s_v.html#a1d429d8ac3516f0f17e0b1e243f667a3">SetFloat</a>(<span class="keywordtype">int</span> x,<span class="keywordtype">int</span> y,<span class="keywordtype">float</span> num);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_resource_c_s_v.html#a6bca9e20ccaa3a8cd5bbc3aa047bb3c3">SetRowSize</a>(<span class="keywordtype">int</span> Size);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_resource_c_s_v.html#a1208b23460cea14e9d4433fb5f03d0fd">SetColumnSize</a>(<span class="keywordtype">int</span> row,<span class="keywordtype">int</span> size);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_resource_base_8h_html"><div class="ttname"><a href="_resource_base_8h.html">ResourceBase.h</a></div><div class="ttdoc">外部から読み込むデータを管理</div></div>
+<div class="ttc" id="aclass_resource_base_html"><div class="ttname"><a href="class_resource_base.html">ResourceBase</a></div><div class="ttdoc">外部データを管理する @detail つまり外部データを管理すること</div><div class="ttdef"><b>Definition:</b> ResourceBase.h:20</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html"><div class="ttname"><a href="class_resource_c_s_v.html">ResourceCSV</a></div><div class="ttdoc">CSV読み込んじゃうよーん @detail 実際にファイルの中まで入り読み込んだり書き込んだりする</div><div class="ttdef"><b>Definition:</b> ResourceCSV.h:22</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_a00d7764b5c481597e4747ef3afa66a71"><div class="ttname"><a href="class_resource_c_s_v.html#a00d7764b5c481597e4747ef3afa66a71">ResourceCSV::GetRowSize</a></div><div class="ttdeci">int GetRowSize()</div><div class="ttdoc">行の数を取得</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:206</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_a1208b23460cea14e9d4433fb5f03d0fd"><div class="ttname"><a href="class_resource_c_s_v.html#a1208b23460cea14e9d4433fb5f03d0fd">ResourceCSV::SetColumnSize</a></div><div class="ttdeci">void SetColumnSize(int row, int size)</div><div class="ttdoc">列の数を指定</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:313</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_a1d429d8ac3516f0f17e0b1e243f667a3"><div class="ttname"><a href="class_resource_c_s_v.html#a1d429d8ac3516f0f17e0b1e243f667a3">ResourceCSV::SetFloat</a></div><div class="ttdeci">void SetFloat(int x, int y, float num)</div><div class="ttdoc">セルに数値(小数点込み)を入力する</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:274</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_a2f1dc7d3c7b55b6450b5070a91fb78f1"><div class="ttname"><a href="class_resource_c_s_v.html#a2f1dc7d3c7b55b6450b5070a91fb78f1">ResourceCSV::SetInt</a></div><div class="ttdeci">void SetInt(int x, int y, int num)</div><div class="ttdoc">セルに数値を入力する</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:243</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_a34c1e609a23c9c1dee6aed5dd3da886f"><div class="ttname"><a href="class_resource_c_s_v.html#a34c1e609a23c9c1dee6aed5dd3da886f">ResourceCSV::SetStr</a></div><div class="ttdeci">void SetStr(int x, int y, std::string str)</div><div class="ttdoc">セルに文字を入力する</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:232</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_a420e90e5a36275584797e7731f20d732"><div class="ttname"><a href="class_resource_c_s_v.html#a420e90e5a36275584797e7731f20d732">ResourceCSV::~ResourceCSV</a></div><div class="ttdeci">~ResourceCSV()</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:20</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_a66e674d2e116f338e816f03d5bf1ce39"><div class="ttname"><a href="class_resource_c_s_v.html#a66e674d2e116f338e816f03d5bf1ce39">ResourceCSV::GetStr</a></div><div class="ttdeci">std::string GetStr(int x, int y)</div><div class="ttdoc">セルの場所に入っている文字の取得</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:173</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_a6bca9e20ccaa3a8cd5bbc3aa047bb3c3"><div class="ttname"><a href="class_resource_c_s_v.html#a6bca9e20ccaa3a8cd5bbc3aa047bb3c3">ResourceCSV::SetRowSize</a></div><div class="ttdeci">void SetRowSize(int Size)</div><div class="ttdoc">行の数を指定</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:303</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_a6d4e6e00df2fe2ad283e13c8ff8df464"><div class="ttname"><a href="class_resource_c_s_v.html#a6d4e6e00df2fe2ad283e13c8ff8df464">ResourceCSV::GetColumnSize</a></div><div class="ttdeci">int GetColumnSize(int row)</div><div class="ttdoc">列の数を取得</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:216</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_a771e7a65d1f09a4d9216c529e45ecf74"><div class="ttname"><a href="class_resource_c_s_v.html#a771e7a65d1f09a4d9216c529e45ecf74">ResourceCSV::GetFloat</a></div><div class="ttdeci">float GetFloat(int x, int y)</div><div class="ttdoc">セルに記入されている文字を数値(float型)で取得</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:196</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_a94d56d83495dec3c0f618146a29ef059"><div class="ttname"><a href="class_resource_c_s_v.html#a94d56d83495dec3c0f618146a29ef059">ResourceCSV::GetInt</a></div><div class="ttdeci">int GetInt(int x, int y)</div><div class="ttdoc">セルに記入されている文字を数値で取得</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:184</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_abf8512be9116981588d5930e08f7881d"><div class="ttname"><a href="class_resource_c_s_v.html#abf8512be9116981588d5930e08f7881d">ResourceCSV::Save</a></div><div class="ttdeci">bool Save(std::string fileName) override</div><div class="ttdoc">セーブ</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:119</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_ad11513c6b6d36b549d1ad9445383bc17"><div class="ttname"><a href="class_resource_c_s_v.html#ad11513c6b6d36b549d1ad9445383bc17">ResourceCSV::ResourceCSV</a></div><div class="ttdeci">ResourceCSV()</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:12</div></div>
+<div class="ttc" id="aclass_resource_c_s_v_html_ad5a14cd107aea62537ec3d7c624edab1"><div class="ttname"><a href="class_resource_c_s_v.html#ad5a14cd107aea62537ec3d7c624edab1">ResourceCSV::Load</a></div><div class="ttdeci">bool Load(std::string fileName) override</div><div class="ttdoc">ロード</div><div class="ttdef"><b>Definition:</b> ResourceCSV.cpp:30</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

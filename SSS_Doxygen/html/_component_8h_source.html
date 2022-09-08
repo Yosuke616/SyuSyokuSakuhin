@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Component.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">Component.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_component_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">    全てのコンポーネントの元のクラス</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">    志水陽祐</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">    2022/6/9　作成</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">*/</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#ifndef _COMPONENT_H_</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#define _COMPONENT_H_</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">//インクルード部</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="main_app_8h.html">mainApp.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_obj_info_8h.html">ObjInfo.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="_object_8h.html">Object.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment">//列挙隊宣言</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28">   17</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28">COMPONENT_UPDATE_ORDER</a> {       <span class="comment">//コンポーネントの更新順</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a6baeaa21a04446e95dc80d51b3bbc927">   18</a></span>    <a class="code hl_enumvalue" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a6baeaa21a04446e95dc80d51b3bbc927">COM_UPDATE_1</a> = 0,               <span class="comment">//これで大丈夫だよ</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a4d0904d197e4d7bf1d845f513d0a47b7">   19</a></span>    <a class="code hl_enumvalue" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a4d0904d197e4d7bf1d845f513d0a47b7">COM_UPDATE_2</a>,                   </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28ae363172a43aff7e3ce24e48b6b379acb">   20</a></span>    <a class="code hl_enumvalue" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28ae363172a43aff7e3ce24e48b6b379acb">COM_UPDATE_TRANSRATE</a>,           <span class="comment">//トランスフォームコンポーネント</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a060737d468f39fe5b39351fbb112ef63">   21</a></span>    <a class="code hl_enumvalue" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a060737d468f39fe5b39351fbb112ef63">COM_UPDATE_COLLIDER</a>,            <span class="comment">//衝突処理</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28afd655f45a6f67361484c5b8389442f3e">   22</a></span>    <a class="code hl_enumvalue" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28afd655f45a6f67361484c5b8389442f3e">COM_UPDATE_OFF_SCREEN</a>,          <span class="comment">//画面外処理</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28ad3122c8affdd28c161a682c33b003cba">   23</a></span>    <a class="code hl_enumvalue" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28ad3122c8affdd28c161a682c33b003cba">COM_UPDATE_DRAW</a>,                <span class="comment">//描画用コンポーネント</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_enumvalue" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a3763f25a40a837533054fbaa8c4f95c0">MAX_COMPONENT</a></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a3763f25a40a837533054fbaa8c4f95c0">   26</a></span>};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment">//クラス定義</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_component.html">   29</a></span><span class="keyword">class </span><a class="code hl_class" href="class_component.html">Component</a> {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">bool</span> m_bDelete = <span class="keyword">false</span>;         <span class="comment">//削除するかのフラグ</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="class_component.html#a3b174bab3a4da91c7c657ad6052ba78b">   43</a></span>    <a class="code hl_class" href="class_object.html">Object</a>* <a class="code hl_variable" href="class_component.html#a3b174bab3a4da91c7c657ad6052ba78b">Parent</a> = <span class="keyword">nullptr</span>;                                   <span class="comment">//オブジェクトの所有者</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_component.html#af40a1a2240e4b0717804a6d60592d66e">   44</a></span>    <a class="code hl_enumeration" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28">COMPONENT_UPDATE_ORDER</a> <a class="code hl_variable" href="class_component.html#af40a1a2240e4b0717804a6d60592d66e">m_eUpdateOrder</a> = <a class="code hl_enumvalue" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a6baeaa21a04446e95dc80d51b3bbc927">COM_UPDATE_1</a>;       <span class="comment">//オブジェクトの更新順序</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_component.html#a5a9e309d0a3ab72807e8998c28941518">   47</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_component.html#a5a9e309d0a3ab72807e8998c28941518">m_bDrawFlag</a> = <span class="keyword">true</span>;                                    <span class="comment">//描画のフラグ</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_component.html#a2c166a99c04988fb2ae53a70a7a6f4f1">   48</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="class_component.html#a2c166a99c04988fb2ae53a70a7a6f4f1">m_bUpdateFlag</a> = <span class="keyword">true</span>;                                  <span class="comment">//更新のフラグ</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_component.html#a1215dae17aa345fe79d5fa539452bebb">   49</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_component.html#a1215dae17aa345fe79d5fa539452bebb">Delete</a>() { m_bDelete = <span class="keyword">true</span>; }                         <span class="comment">//このコンポーネント？を削除する</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_component.html#a013bb7b3333811d796df2d4ab684bc3f">   50</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_component.html#a013bb7b3333811d796df2d4ab684bc3f">GetDeleteFlag</a>() { <span class="keywordflow">return</span> m_bDelete; }                  <span class="comment">//削除フラグ</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_component.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">   51</a></span>    <a class="code hl_function" href="class_component.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component</a>() {}                                              <span class="comment">//コンストラクタ</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_component.html#a2e9aa4348314d981f05f67397ad2f872">   52</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_component.html#a2e9aa4348314d981f05f67397ad2f872">~Component</a>() {}                                     <span class="comment">//(仮想関数)デストラクタ</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_component.html#a3f57807787e0015833ccffd83fb63d14">   53</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_component.html#a3f57807787e0015833ccffd83fb63d14">Start</a>() {}                                     <span class="comment">//(仮想関数)初期化</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_component.html#aaf2ce6dc5752072492f790ad4c7955bb">   54</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_component.html#aaf2ce6dc5752072492f790ad4c7955bb">Update</a>() {}                                    <span class="comment">//(仮想関数)更新</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="class_component.html#a8622ccd5f24035d48e33292717299313">   55</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_component.html#a8622ccd5f24035d48e33292717299313">Draw</a>() {}                                      <span class="comment">//(仮想関数)描画</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_component.html#affb738998b25ee4b6be3719e020d16f2">   58</a></span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="class_component.html#affb738998b25ee4b6be3719e020d16f2">OnCollisionEnter</a>(<a class="code hl_class" href="class_object.html">Object</a>*) {}                   <span class="comment">//どのオブジェクトが衝突したかを判定するかの関数</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                                                                <span class="comment">//このコンポーネントの所有者が衝突したオブジェクトのポインタを返す</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_component_8h_html_a7f5c175bf5601648aa014d9dd7b12f28"><div class="ttname"><a href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28">COMPONENT_UPDATE_ORDER</a></div><div class="ttdeci">COMPONENT_UPDATE_ORDER</div><div class="ttdef"><b>Definition:</b> Component.h:17</div></div>
+<div class="ttc" id="a_component_8h_html_a7f5c175bf5601648aa014d9dd7b12f28a060737d468f39fe5b39351fbb112ef63"><div class="ttname"><a href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a060737d468f39fe5b39351fbb112ef63">COM_UPDATE_COLLIDER</a></div><div class="ttdeci">@ COM_UPDATE_COLLIDER</div><div class="ttdef"><b>Definition:</b> Component.h:21</div></div>
+<div class="ttc" id="a_component_8h_html_a7f5c175bf5601648aa014d9dd7b12f28a3763f25a40a837533054fbaa8c4f95c0"><div class="ttname"><a href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a3763f25a40a837533054fbaa8c4f95c0">MAX_COMPONENT</a></div><div class="ttdeci">@ MAX_COMPONENT</div><div class="ttdef"><b>Definition:</b> Component.h:25</div></div>
+<div class="ttc" id="a_component_8h_html_a7f5c175bf5601648aa014d9dd7b12f28a4d0904d197e4d7bf1d845f513d0a47b7"><div class="ttname"><a href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a4d0904d197e4d7bf1d845f513d0a47b7">COM_UPDATE_2</a></div><div class="ttdeci">@ COM_UPDATE_2</div><div class="ttdef"><b>Definition:</b> Component.h:19</div></div>
+<div class="ttc" id="a_component_8h_html_a7f5c175bf5601648aa014d9dd7b12f28a6baeaa21a04446e95dc80d51b3bbc927"><div class="ttname"><a href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a6baeaa21a04446e95dc80d51b3bbc927">COM_UPDATE_1</a></div><div class="ttdeci">@ COM_UPDATE_1</div><div class="ttdef"><b>Definition:</b> Component.h:18</div></div>
+<div class="ttc" id="a_component_8h_html_a7f5c175bf5601648aa014d9dd7b12f28ad3122c8affdd28c161a682c33b003cba"><div class="ttname"><a href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28ad3122c8affdd28c161a682c33b003cba">COM_UPDATE_DRAW</a></div><div class="ttdeci">@ COM_UPDATE_DRAW</div><div class="ttdef"><b>Definition:</b> Component.h:23</div></div>
+<div class="ttc" id="a_component_8h_html_a7f5c175bf5601648aa014d9dd7b12f28ae363172a43aff7e3ce24e48b6b379acb"><div class="ttname"><a href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28ae363172a43aff7e3ce24e48b6b379acb">COM_UPDATE_TRANSRATE</a></div><div class="ttdeci">@ COM_UPDATE_TRANSRATE</div><div class="ttdef"><b>Definition:</b> Component.h:20</div></div>
+<div class="ttc" id="a_component_8h_html_a7f5c175bf5601648aa014d9dd7b12f28afd655f45a6f67361484c5b8389442f3e"><div class="ttname"><a href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28afd655f45a6f67361484c5b8389442f3e">COM_UPDATE_OFF_SCREEN</a></div><div class="ttdeci">@ COM_UPDATE_OFF_SCREEN</div><div class="ttdef"><b>Definition:</b> Component.h:22</div></div>
+<div class="ttc" id="a_obj_info_8h_html"><div class="ttname"><a href="_obj_info_8h.html">ObjInfo.h</a></div></div>
+<div class="ttc" id="a_object_8h_html"><div class="ttname"><a href="_object_8h.html">Object.h</a></div></div>
+<div class="ttc" id="aclass_component_html"><div class="ttname"><a href="class_component.html">Component</a></div><div class="ttdef"><b>Definition:</b> Component.h:29</div></div>
+<div class="ttc" id="aclass_component_html_a013bb7b3333811d796df2d4ab684bc3f"><div class="ttname"><a href="class_component.html#a013bb7b3333811d796df2d4ab684bc3f">Component::GetDeleteFlag</a></div><div class="ttdeci">bool GetDeleteFlag()</div><div class="ttdef"><b>Definition:</b> Component.h:50</div></div>
+<div class="ttc" id="aclass_component_html_a1215dae17aa345fe79d5fa539452bebb"><div class="ttname"><a href="class_component.html#a1215dae17aa345fe79d5fa539452bebb">Component::Delete</a></div><div class="ttdeci">void Delete()</div><div class="ttdef"><b>Definition:</b> Component.h:49</div></div>
+<div class="ttc" id="aclass_component_html_a2c166a99c04988fb2ae53a70a7a6f4f1"><div class="ttname"><a href="class_component.html#a2c166a99c04988fb2ae53a70a7a6f4f1">Component::m_bUpdateFlag</a></div><div class="ttdeci">bool m_bUpdateFlag</div><div class="ttdef"><b>Definition:</b> Component.h:48</div></div>
+<div class="ttc" id="aclass_component_html_a2e9aa4348314d981f05f67397ad2f872"><div class="ttname"><a href="class_component.html#a2e9aa4348314d981f05f67397ad2f872">Component::~Component</a></div><div class="ttdeci">virtual ~Component()</div><div class="ttdef"><b>Definition:</b> Component.h:52</div></div>
+<div class="ttc" id="aclass_component_html_a3b174bab3a4da91c7c657ad6052ba78b"><div class="ttname"><a href="class_component.html#a3b174bab3a4da91c7c657ad6052ba78b">Component::Parent</a></div><div class="ttdeci">Object * Parent</div><div class="ttdef"><b>Definition:</b> Component.h:43</div></div>
+<div class="ttc" id="aclass_component_html_a3f57807787e0015833ccffd83fb63d14"><div class="ttname"><a href="class_component.html#a3f57807787e0015833ccffd83fb63d14">Component::Start</a></div><div class="ttdeci">virtual void Start()</div><div class="ttdef"><b>Definition:</b> Component.h:53</div></div>
+<div class="ttc" id="aclass_component_html_a5a9e309d0a3ab72807e8998c28941518"><div class="ttname"><a href="class_component.html#a5a9e309d0a3ab72807e8998c28941518">Component::m_bDrawFlag</a></div><div class="ttdeci">bool m_bDrawFlag</div><div class="ttdef"><b>Definition:</b> Component.h:47</div></div>
+<div class="ttc" id="aclass_component_html_a8622ccd5f24035d48e33292717299313"><div class="ttname"><a href="class_component.html#a8622ccd5f24035d48e33292717299313">Component::Draw</a></div><div class="ttdeci">virtual void Draw()</div><div class="ttdef"><b>Definition:</b> Component.h:55</div></div>
+<div class="ttc" id="aclass_component_html_a8775db6d1a2c1afc2e77cd3c8f39da6f"><div class="ttname"><a href="class_component.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component::Component</a></div><div class="ttdeci">Component()</div><div class="ttdef"><b>Definition:</b> Component.h:51</div></div>
+<div class="ttc" id="aclass_component_html_aaf2ce6dc5752072492f790ad4c7955bb"><div class="ttname"><a href="class_component.html#aaf2ce6dc5752072492f790ad4c7955bb">Component::Update</a></div><div class="ttdeci">virtual void Update()</div><div class="ttdef"><b>Definition:</b> Component.h:54</div></div>
+<div class="ttc" id="aclass_component_html_af40a1a2240e4b0717804a6d60592d66e"><div class="ttname"><a href="class_component.html#af40a1a2240e4b0717804a6d60592d66e">Component::m_eUpdateOrder</a></div><div class="ttdeci">COMPONENT_UPDATE_ORDER m_eUpdateOrder</div><div class="ttdef"><b>Definition:</b> Component.h:44</div></div>
+<div class="ttc" id="aclass_component_html_affb738998b25ee4b6be3719e020d16f2"><div class="ttname"><a href="class_component.html#affb738998b25ee4b6be3719e020d16f2">Component::OnCollisionEnter</a></div><div class="ttdeci">virtual void OnCollisionEnter(Object *)</div><div class="ttdef"><b>Definition:</b> Component.h:58</div></div>
+<div class="ttc" id="aclass_object_html"><div class="ttname"><a href="class_object.html">Object</a></div><div class="ttdef"><b>Definition:</b> Object.h:21</div></div>
+<div class="ttc" id="amain_app_8h_html"><div class="ttname"><a href="main_app_8h.html">mainApp.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

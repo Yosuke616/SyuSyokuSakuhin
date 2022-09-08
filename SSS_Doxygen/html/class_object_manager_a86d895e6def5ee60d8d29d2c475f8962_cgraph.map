@@ -1,0 +1,5 @@
+<map id="ObjectManager::UpdateEdit" name="ObjectManager::UpdateEdit">
+<area shape="rect" id="node1" title="ステージ作成時の更新処理" alt="" coords="5,31,188,57"/>
+<area shape="rect" id="node2" href="$class_c_collider.html#a80714716239a3ede48cf2e6187cc423f" title="当たり判定を持っているオブジェクトのリストを取得" alt="" coords="236,5,403,32"/>
+<area shape="rect" id="node3" href="$class_object.html#ab75ac4b7289350a0ada0eee65fe23eb3" title=" " alt="" coords="244,56,395,83"/>
+</map>

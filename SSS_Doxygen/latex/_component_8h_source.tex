@@ -1,0 +1,68 @@
+\hypertarget{_component_8h_source}{}\doxysection{Component.\+h}
+\label{_component_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Component.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Component.h}}
+\mbox{\hyperlink{_component_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{    全てのコンポーネントの元のクラス}}
+\DoxyCodeLine{3 \textcolor{comment}{    志水陽祐}}
+\DoxyCodeLine{4 \textcolor{comment}{    2022/6/9　作成}}
+\DoxyCodeLine{5 \textcolor{comment}{*/}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef \_COMPONENT\_H\_}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define \_COMPONENT\_H\_}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{//インクルード部}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_obj_info_8h}{ObjInfo.h}}"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_object_8h}{Object.h}}"{}}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{//列挙隊宣言}}
+\DoxyCodeLine{17 \textcolor{keyword}{enum} \mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28}{COMPONENT\_UPDATE\_ORDER}} \{     \textcolor{comment}{//コンポーネントの更新順}}
+\DoxyCodeLine{18     \mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28a6baeaa21a04446e95dc80d51b3bbc927}{COM\_UPDATE\_1}} = 0,               \textcolor{comment}{//これで大丈夫だよ}}
+\DoxyCodeLine{19     \mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28a4d0904d197e4d7bf1d845f513d0a47b7}{COM\_UPDATE\_2}},                   }
+\DoxyCodeLine{20     \mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28ae363172a43aff7e3ce24e48b6b379acb}{COM\_UPDATE\_TRANSRATE}},           \textcolor{comment}{//トランスフォームコンポーネント}}
+\DoxyCodeLine{21     \mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28a060737d468f39fe5b39351fbb112ef63}{COM\_UPDATE\_COLLIDER}},         \textcolor{comment}{//衝突処理}}
+\DoxyCodeLine{22     \mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28afd655f45a6f67361484c5b8389442f3e}{COM\_UPDATE\_OFF\_SCREEN}},         \textcolor{comment}{//画面外処理}}
+\DoxyCodeLine{23     \mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28ad3122c8affdd28c161a682c33b003cba}{COM\_UPDATE\_DRAW}},             \textcolor{comment}{//描画用コンポーネント}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25     \mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28a3763f25a40a837533054fbaa8c4f95c0}{MAX\_COMPONENT}}}
+\DoxyCodeLine{26 \};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{29 \textcolor{keyword}{class }\mbox{\hyperlink{class_component}{Component}} \{}
+\DoxyCodeLine{30 \textcolor{keyword}{private}:}
+\DoxyCodeLine{31     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} m\_bDelete = \textcolor{keyword}{false};         \textcolor{comment}{//削除するかのフラグ}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{37     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 \textcolor{keyword}{public}:}
+\DoxyCodeLine{42     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{43     \mbox{\hyperlink{class_object}{Object}}* \mbox{\hyperlink{class_component_a3b174bab3a4da91c7c657ad6052ba78b}{Parent}} = \textcolor{keyword}{nullptr};                                   \textcolor{comment}{//オブジェクトの所有者}}
+\DoxyCodeLine{44     \mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28}{COMPONENT\_UPDATE\_ORDER}} \mbox{\hyperlink{class_component_af40a1a2240e4b0717804a6d60592d66e}{m\_eUpdateOrder}} = \mbox{\hyperlink{_component_8h_a7f5c175bf5601648aa014d9dd7b12f28a6baeaa21a04446e95dc80d51b3bbc927}{COM\_UPDATE\_1}};       \textcolor{comment}{//オブジェクトの更新順序}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{47     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_component_a5a9e309d0a3ab72807e8998c28941518}{m\_bDrawFlag}} = \textcolor{keyword}{true};                                 \textcolor{comment}{//描画のフラグ}}
+\DoxyCodeLine{48     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_component_a2c166a99c04988fb2ae53a70a7a6f4f1}{m\_bUpdateFlag}} = \textcolor{keyword}{true};                                 \textcolor{comment}{//更新のフラグ}}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_a1215dae17aa345fe79d5fa539452bebb}{Delete}}() \{ m\_bDelete = \textcolor{keyword}{true}; \}                           \textcolor{comment}{//このコンポーネント？を削除する}}
+\DoxyCodeLine{50     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_component_a013bb7b3333811d796df2d4ab684bc3f}{GetDeleteFlag}}() \{ \textcolor{keywordflow}{return} m\_bDelete; \}                 \textcolor{comment}{//削除フラグ}}
+\DoxyCodeLine{51     \mbox{\hyperlink{class_component_a8775db6d1a2c1afc2e77cd3c8f39da6f}{Component}}() \{\}                                             \textcolor{comment}{//コンストラクタ}}
+\DoxyCodeLine{52     \textcolor{keyword}{virtual} \mbox{\hyperlink{class_component_a2e9aa4348314d981f05f67397ad2f872}{\string~Component}}() \{\}                                       \textcolor{comment}{//(仮想関数)デストラクタ}}
+\DoxyCodeLine{53     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_a3f57807787e0015833ccffd83fb63d14}{Start}}() \{\}                                        \textcolor{comment}{//(仮想関数)初期化}}
+\DoxyCodeLine{54     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_aaf2ce6dc5752072492f790ad4c7955bb}{Update}}() \{\}                                  \textcolor{comment}{//(仮想関数)更新}}
+\DoxyCodeLine{55     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_a8622ccd5f24035d48e33292717299313}{Draw}}() \{\}                                      \textcolor{comment}{//(仮想関数)描画}}
+\DoxyCodeLine{56 }
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_component_affb738998b25ee4b6be3719e020d16f2}{OnCollisionEnter}}(\mbox{\hyperlink{class_object}{Object}}*) \{\}                 \textcolor{comment}{//どのオブジェクトが衝突したかを判定するかの関数}}
+\DoxyCodeLine{59                                                                 \textcolor{comment}{//このコンポーネントの所有者が衝突したオブジェクトのポインタを返す}}
+\DoxyCodeLine{60 \};}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

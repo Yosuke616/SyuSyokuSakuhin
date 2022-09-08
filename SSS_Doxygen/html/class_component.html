@@ -1,0 +1,436 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: Component クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-attribs">公開変数類</a> &#124;
+<a href="class_component-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">Component クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_component_8h_source.html">Component.h</a>&gt;</code></p>
+<div class="dynheader">
+Component の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_component__inherit__graph.png" border="0" usemap="#a_component_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_component_inherit__map" id="a_component_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,284,93,311"/>
+<area shape="rect" href="class_c_attack.html" title="攻撃の動きを制御する @detail 攻撃を行った者のよって挙動を変える" alt="" coords="158,5,227,32"/>
+<area shape="rect" href="class_c_collider.html" title=" " alt="" coords="155,56,230,83"/>
+<area shape="rect" href="class_c_draw2_d.html" title=" " alt="" coords="155,107,231,133"/>
+<area shape="rect" href="class_c_draw3_d.html" title=" " alt="" coords="155,157,231,184"/>
+<area shape="rect" href="class_c_draw_mesh.html" title=" " alt="" coords="147,208,239,235"/>
+<area shape="rect" href="class_c_enemy.html" title="敵の動きを制御する @detail 攻撃したり引き返したり" alt="" coords="157,259,229,285"/>
+<area shape="rect" href="class_c_gravity.html" title=" " alt="" coords="157,309,228,336"/>
+<area shape="rect" href="class_c_out_of_range.html" title=" " alt="" coords="141,360,244,387"/>
+<area shape="rect" href="class_c_player.html" title=" " alt="" coords="159,411,227,437"/>
+<area shape="rect" href="class_c_see_coll.html" title=" " alt="" coords="155,461,231,488"/>
+<area shape="rect" href="class_c_tex_scroll.html" title=" " alt="" coords="150,512,235,539"/>
+<area shape="rect" href="class_c_transform.html" title=" " alt="" coords="149,563,237,589"/>
+<area shape="rect" href="class_c_anim_mesh.html" title=" " alt="" coords="292,208,385,235"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+Component 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_component__coll__graph.png" border="0" usemap="#a_component_coll__map" alt="Collaboration graph"/></div>
+<map name="a_component_coll__map" id="a_component_coll__map">
+<area shape="rect" title=" " alt="" coords="5,95,93,121"/>
+<area shape="rect" href="class_object.html" title=" " alt="" coords="19,5,79,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a1215dae17aa345fe79d5fa539452bebb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a1215dae17aa345fe79d5fa539452bebb">Delete</a> ()</td></tr>
+<tr class="separator:a1215dae17aa345fe79d5fa539452bebb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a013bb7b3333811d796df2d4ab684bc3f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a013bb7b3333811d796df2d4ab684bc3f">GetDeleteFlag</a> ()</td></tr>
+<tr class="separator:a013bb7b3333811d796df2d4ab684bc3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8775db6d1a2c1afc2e77cd3c8f39da6f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component</a> ()</td></tr>
+<tr class="separator:a8775db6d1a2c1afc2e77cd3c8f39da6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e9aa4348314d981f05f67397ad2f872"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a2e9aa4348314d981f05f67397ad2f872">~Component</a> ()</td></tr>
+<tr class="separator:a2e9aa4348314d981f05f67397ad2f872"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f57807787e0015833ccffd83fb63d14"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a3f57807787e0015833ccffd83fb63d14">Start</a> ()</td></tr>
+<tr class="separator:a3f57807787e0015833ccffd83fb63d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf2ce6dc5752072492f790ad4c7955bb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#aaf2ce6dc5752072492f790ad4c7955bb">Update</a> ()</td></tr>
+<tr class="separator:aaf2ce6dc5752072492f790ad4c7955bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8622ccd5f24035d48e33292717299313"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a8622ccd5f24035d48e33292717299313">Draw</a> ()</td></tr>
+<tr class="separator:a8622ccd5f24035d48e33292717299313"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affb738998b25ee4b6be3719e020d16f2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#affb738998b25ee4b6be3719e020d16f2">OnCollisionEnter</a> (<a class="el" href="class_object.html">Object</a> *)</td></tr>
+<tr class="separator:affb738998b25ee4b6be3719e020d16f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+公開変数類</h2></td></tr>
+<tr class="memitem:a3b174bab3a4da91c7c657ad6052ba78b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a3b174bab3a4da91c7c657ad6052ba78b">Parent</a> = nullptr</td></tr>
+<tr class="separator:a3b174bab3a4da91c7c657ad6052ba78b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af40a1a2240e4b0717804a6d60592d66e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28">COMPONENT_UPDATE_ORDER</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#af40a1a2240e4b0717804a6d60592d66e">m_eUpdateOrder</a> = <a class="el" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a6baeaa21a04446e95dc80d51b3bbc927">COM_UPDATE_1</a></td></tr>
+<tr class="separator:af40a1a2240e4b0717804a6d60592d66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a9e309d0a3ab72807e8998c28941518"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a5a9e309d0a3ab72807e8998c28941518">m_bDrawFlag</a> = true</td></tr>
+<tr class="separator:a5a9e309d0a3ab72807e8998c28941518"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c166a99c04988fb2ae53a70a7a6f4f1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a2c166a99c04988fb2ae53a70a7a6f4f1">m_bUpdateFlag</a> = true</td></tr>
+<tr class="separator:a2c166a99c04988fb2ae53a70a7a6f4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">構築子と解体子</h2>
+<a id="a8775db6d1a2c1afc2e77cd3c8f39da6f" name="a8775db6d1a2c1afc2e77cd3c8f39da6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8775db6d1a2c1afc2e77cd3c8f39da6f">&#9670;&nbsp;</a></span>Component()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Component::Component </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2e9aa4348314d981f05f67397ad2f872" name="a2e9aa4348314d981f05f67397ad2f872"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e9aa4348314d981f05f67397ad2f872">&#9670;&nbsp;</a></span>~Component()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual Component::~Component </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a1215dae17aa345fe79d5fa539452bebb" name="a1215dae17aa345fe79d5fa539452bebb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1215dae17aa345fe79d5fa539452bebb">&#9670;&nbsp;</a></span>Delete()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Component::Delete </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8622ccd5f24035d48e33292717299313" name="a8622ccd5f24035d48e33292717299313"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8622ccd5f24035d48e33292717299313">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Component::Draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_c_out_of_range.html#a94c9046bd55118cedc702eb35aa9466d">COutOfRange</a>, <a class="el" href="class_c_anim_mesh.html#a45bca41fe56b3421b59058ce6d336366">CAnimMesh</a>, <a class="el" href="class_c_draw2_d.html#ae0459d7b8afc61916d99070a9ef167ab">CDraw2D</a>, <a class="el" href="class_c_draw3_d.html#a4e807eb965451e20de9e2c0a2fe619fa">CDraw3D</a>, <a class="el" href="class_c_draw_mesh.html#a4d4c6a30bae2d1318802f1ebf5fb22cb">CDrawMesh</a>, <a class="el" href="class_c_enemy.html#aefe3d898f9ac30f42ceac5c7d4979d2f">CEnemy</a>, <a class="el" href="class_c_player.html#a9f4de6ca09dfa30de3b06c9d548a0d8f">CPlayer</a>, <a class="el" href="class_c_see_coll.html#aede3402862cec9b72fef2fb50577478b">CSeeColl</a>, <a class="el" href="class_c_tex_scroll.html#a600ce1df5cdd43027083d7fbcb355bea">CTexScroll</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="a013bb7b3333811d796df2d4ab684bc3f" name="a013bb7b3333811d796df2d4ab684bc3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a013bb7b3333811d796df2d4ab684bc3f">&#9670;&nbsp;</a></span>GetDeleteFlag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Component::GetDeleteFlag </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_component_a013bb7b3333811d796df2d4ab684bc3f_icgraph.png" border="0" usemap="#aclass_component_a013bb7b3333811d796df2d4ab684bc3f_icgraph" alt=""/></div>
+<map name="aclass_component_a013bb7b3333811d796df2d4ab684bc3f_icgraph" id="aclass_component_a013bb7b3333811d796df2d4ab684bc3f_icgraph">
+<area shape="rect" title=" " alt="" coords="556,5,735,32"/>
+<area shape="rect" href="class_object.html#a2bac4495e863092c6367556d62666271" title="オブジェクトの更新 @detail オブジェクトが持つコンポーネントの更新" alt="" coords="399,5,508,32"/>
+<area shape="rect" href="class_stage_manager.html#afe74bc34352fd78b5b8f2dfaf551a251" title="更新処理" alt="" coords="196,5,351,32"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,5,148,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="affb738998b25ee4b6be3719e020d16f2" name="affb738998b25ee4b6be3719e020d16f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affb738998b25ee4b6be3719e020d16f2">&#9670;&nbsp;</a></span>OnCollisionEnter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Component::OnCollisionEnter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_object.html">Object</a> *&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_c_enemy.html#a39e688989d08a7feec4f5517d28ed286">CEnemy</a>, <a class="el" href="class_c_out_of_range.html#a8dc6652f55b75059b2fed0a9dea9e934">COutOfRange</a>, <a class="el" href="class_c_player.html#abede91d4fa024fae2396593ce5532b17">CPlayer</a>で再実装されています。</p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_component_affb738998b25ee4b6be3719e020d16f2_icgraph.png" border="0" usemap="#aclass_component_affb738998b25ee4b6be3719e020d16f2_icgraph" alt=""/></div>
+<map name="aclass_component_affb738998b25ee4b6be3719e020d16f2_icgraph" id="aclass_component_affb738998b25ee4b6be3719e020d16f2_icgraph">
+<area shape="rect" title=" " alt="" coords="624,56,817,83"/>
+<area shape="rect" href="class_c_collider.html#a3cc514e5726fbd81149ee96526264256" title="当たり判定を持っているオブジェクトたちの更新" alt="" coords="403,56,576,83"/>
+<area shape="rect" href="class_object_manager.html#ac6035906749a40ec3a1d685ebed11c89" title="更新処理" alt="" coords="196,56,355,83"/>
+<area shape="rect" href="class_scene_game.html#a39f13a210e99042a1361d958ead36686" title="更新処理" alt="" coords="5,5,148,32"/>
+<area shape="rect" href="class_stage_select.html#aa2796a223f0c14a63523a725957de1ef" title="更新処理" alt="" coords="5,56,148,83"/>
+<area shape="rect" href="class_scene_title.html#af1b28c5ab2cced3b7d8106ef0cd8b0ae" title=" " alt="" coords="11,107,143,133"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3f57807787e0015833ccffd83fb63d14" name="a3f57807787e0015833ccffd83fb63d14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f57807787e0015833ccffd83fb63d14">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Component::Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_c_anim_mesh.html#a4477eb0930aba2ceb6ec3976aeaa28ae">CAnimMesh</a>, <a class="el" href="class_c_attack.html#a18254cb0083b36ed25d28bd6bd89446c">CAttack</a>, <a class="el" href="class_c_collider.html#abf4ddce7c4496c1e2035f84e4650a2f3">CCollider</a>, <a class="el" href="class_c_draw2_d.html#a4556c5d5c6ea589c3f2bf385fd62bea8">CDraw2D</a>, <a class="el" href="class_c_draw3_d.html#addb8dd96fb70245aa3b9e5cdbe906148">CDraw3D</a>, <a class="el" href="class_c_draw_mesh.html#a6100f09bd115ce3f1c8a7e450600d4fc">CDrawMesh</a>, <a class="el" href="class_c_enemy.html#abc3651c176dd9f5bf044e8f41adb0532">CEnemy</a>, <a class="el" href="class_c_gravity.html#a7aa81236f314c5c01ab63570d8df0a44">CGravity</a>, <a class="el" href="class_c_out_of_range.html#a733e14aa676e57181da0e943e3c26ff1">COutOfRange</a>, <a class="el" href="class_c_player.html#aad0dcf0dbb43561b5202fb20974e43a3">CPlayer</a>, <a class="el" href="class_c_see_coll.html#ab1cc85ed730b6ab2aeb7adfb6ee59230">CSeeColl</a>, <a class="el" href="class_c_tex_scroll.html#a623943f74c9504e53a50440dffae7b96">CTexScroll</a>で再実装されています。</p>
+
+</div>
+</div>
+<a id="aaf2ce6dc5752072492f790ad4c7955bb" name="aaf2ce6dc5752072492f790ad4c7955bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf2ce6dc5752072492f790ad4c7955bb">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Component::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_c_anim_mesh.html#a052d8884ad2a80967e09b28e46a4cafa">CAnimMesh</a>, <a class="el" href="class_c_attack.html#a58d569ffdb3f1cccb5f48ca06b7840c8">CAttack</a>, <a class="el" href="class_c_collider.html#aebd65f77a9c4850eb29d703cec88152d">CCollider</a>, <a class="el" href="class_c_draw2_d.html#aafc929df900f5a322c9efa4373e0b8d9">CDraw2D</a>, <a class="el" href="class_c_draw3_d.html#aa42fcba7f1258571457c186292f91702">CDraw3D</a>, <a class="el" href="class_c_draw_mesh.html#a2371b08e617e08cf6420681f0f1dcd04">CDrawMesh</a>, <a class="el" href="class_c_enemy.html#aac23422c9e7f8b091cd91de08b73b25f">CEnemy</a>, <a class="el" href="class_c_gravity.html#a1f1deaebcbdf0e23ca4f9ab3a6e057f9">CGravity</a>, <a class="el" href="class_c_out_of_range.html#a6cf58e1026a25bc88dd598d2c10200f7">COutOfRange</a>, <a class="el" href="class_c_player.html#a4582a8020f6734842edea64909bd4b40">CPlayer</a>, <a class="el" href="class_c_see_coll.html#a2f39451e348977f12f7b1168c06c996c">CSeeColl</a>, <a class="el" href="class_c_tex_scroll.html#a1ab093fcc89dc3130a59c01eb9f456a7">CTexScroll</a>, <a class="el" href="class_c_transform.html#aee48dd10140f1955b4aa074c570ce101">CTransform</a>で再実装されています。</p>
+
+</div>
+</div>
+<h2 class="groupheader">メンバ詳解</h2>
+<a id="a5a9e309d0a3ab72807e8998c28941518" name="a5a9e309d0a3ab72807e8998c28941518"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a9e309d0a3ab72807e8998c28941518">&#9670;&nbsp;</a></span>m_bDrawFlag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Component::m_bDrawFlag = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c166a99c04988fb2ae53a70a7a6f4f1" name="a2c166a99c04988fb2ae53a70a7a6f4f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c166a99c04988fb2ae53a70a7a6f4f1">&#9670;&nbsp;</a></span>m_bUpdateFlag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Component::m_bUpdateFlag = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af40a1a2240e4b0717804a6d60592d66e" name="af40a1a2240e4b0717804a6d60592d66e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af40a1a2240e4b0717804a6d60592d66e">&#9670;&nbsp;</a></span>m_eUpdateOrder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28">COMPONENT_UPDATE_ORDER</a> Component::m_eUpdateOrder = <a class="el" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a6baeaa21a04446e95dc80d51b3bbc927">COM_UPDATE_1</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3b174bab3a4da91c7c657ad6052ba78b" name="a3b174bab3a4da91c7c657ad6052ba78b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b174bab3a4da91c7c657ad6052ba78b">&#9670;&nbsp;</a></span>Parent</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_object.html">Object</a>* Component::Parent = nullptr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="_component_8h_source.html">Component.h</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

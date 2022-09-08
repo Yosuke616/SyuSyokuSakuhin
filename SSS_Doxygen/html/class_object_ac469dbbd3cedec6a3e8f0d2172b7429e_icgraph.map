@@ -1,0 +1,4 @@
+<map id="Object::Draw" name="Object::Draw">
+<area shape="rect" id="node1" title="オブジェクトの描画 @detail オブジェクトが持つコンポーネントの描画" alt="" coords="196,5,293,32"/>
+<area shape="rect" id="node2" href="$class_stage_manager.html#ae704cc0e6a00b5b94f4974869e1d90b8" title="描画処理" alt="" coords="5,5,148,32"/>
+</map>

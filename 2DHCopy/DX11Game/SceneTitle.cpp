@@ -15,6 +15,8 @@
 #include "Draw2DComponent.h"
 #include "Draw3dComponent.h"
 
+#include "Load.h"
+
 /**定数定義**/
 
 //コンストラクタ
@@ -29,6 +31,9 @@ SceneTitle::~SceneTitle() {
 
 //初期化
 void SceneTitle::Init() {
+	//ロード画面のスレッドを作る
+	Load::Begin();
+
 	//管理クラスのインスタンスの取得
 	m_pObjectManager = ObjectManager::GetInstance();
 	m_pMenuManager = MenuManager::GetInsutance();
@@ -38,6 +43,12 @@ void SceneTitle::Init() {
 	pTexManager->AddTexture(PATH_TEX_TITLE_BACK_GROUND, TITLE_BACK_GROUND_NUM);
 	//UI関係のテクスチャも追加する
 	pTexManager->AddTexture(PATH_TEX_TITLE_BUTTON, TITLE_BUTTON_NUM);
+	pTexManager->AddTexture(PATH_TEX_BEGIN, BEGIN_TEX_NUM);
+	pTexManager->AddTexture(PATH_TEX_CONTINUE, CONTINUE_TEX_NUM);
+	pTexManager->AddTexture(PATH_TEX_END, END_TEX_NUM);
+	pTexManager->AddTexture(PATH_TEX_BGM, BGM_TEX_NUM);
+	pTexManager->AddTexture(PATH_TEX_SE, SE_TEX_NUM);
+	pTexManager->AddTexture(PATH_TEX_BRIGHTNESS, BRIGHTNESS_TEX_NUM);
 
 #pragma region ---背景
 	//オブジェクトの生成
@@ -54,9 +65,10 @@ void SceneTitle::Init() {
 #pragma endregion
 	
 	//メニューの作成
-	m_pMenuManager->Create(TITLE_STATE,-1);
 	m_pMenuManager->CreateTitleMenu();
 	
+	//ロード終了処理
+	Load::End();
 }
 
 //終了処理

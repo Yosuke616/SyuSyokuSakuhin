@@ -1,0 +1,233 @@
+\hypertarget{class_texture_manager}{}\doxysection{Texture\+Manager クラス}
+\label{class_texture_manager}\index{TextureManager@{TextureManager}}
+
+
+テクスチャを管理するクラス  
+
+
+
+
+{\ttfamily \#include $<$Texture\+Manager.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_texture_manager_a001d6d74674961db79987e3222682576}{$\sim$\+Texture\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_texture_manager_acf80525b5a1e493b08426989d2940870}{Add\+Texture}} (const char $\ast$psz\+File\+Name, int n\+Tex\+ID)
+\begin{DoxyCompactList}\small\item\em テクスチャの追加 \end{DoxyCompactList}\item 
+ID3\+D11\+Shader\+Resource\+View $\ast$ \mbox{\hyperlink{class_texture_manager_a8448501f02d76a5c2362bbed98e89728}{Get\+Texture}} (int n\+Tex\+ID)
+\begin{DoxyCompactList}\small\item\em テクスチャ取得 \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_texture_manager_a14eb42e81e5f2eda3ecf6f607bffc272}{Erase\+Texture}} (int n\+Tex\+ID)
+\begin{DoxyCompactList}\small\item\em テクスチャ削除 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_texture_manager_afbe079fdbf1dd84d61c32f4105eeda5c}{Get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em 読み込んだテクスチャの数 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} $\ast$ \mbox{\hyperlink{class_texture_manager_ab73eee48ba8c35281558094e2f84013d}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em インスタンス化 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_texture_manager_ab2ef3139e30856ee768b2e98ec5259f5}{Uninit}} ()
+\begin{DoxyCompactList}\small\item\em 終了処理 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{限定公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_texture_manager_ad76abb178b37cedf4514eb0154349935}{Texture\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em コンストラクタ \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+テクスチャを管理するクラス 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_texture_manager_ad76abb178b37cedf4514eb0154349935}\label{class_texture_manager_ad76abb178b37cedf4514eb0154349935}} 
+\index{TextureManager@{TextureManager}!TextureManager@{TextureManager}}
+\index{TextureManager@{TextureManager}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{TextureManager()}{TextureManager()}}
+{\footnotesize\ttfamily Texture\+Manager\+::\+Texture\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+コンストラクタ 
+
+コンストラクタというのは分かっている 被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_manager_ad76abb178b37cedf4514eb0154349935_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_texture_manager_a001d6d74674961db79987e3222682576}\label{class_texture_manager_a001d6d74674961db79987e3222682576}} 
+\index{TextureManager@{TextureManager}!````~TextureManager@{$\sim$TextureManager}}
+\index{````~TextureManager@{$\sim$TextureManager}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$TextureManager()}{~TextureManager()}}
+{\footnotesize\ttfamily Texture\+Manager\+::$\sim$\+Texture\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+デストラクタ 
+
+もしかしたらデストラクタだ 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_texture_manager_acf80525b5a1e493b08426989d2940870}\label{class_texture_manager_acf80525b5a1e493b08426989d2940870}} 
+\index{TextureManager@{TextureManager}!AddTexture@{AddTexture}}
+\index{AddTexture@{AddTexture}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{AddTexture()}{AddTexture()}}
+{\footnotesize\ttfamily bool Texture\+Manager\+::\+Add\+Texture (\begin{DoxyParamCaption}\item[{const char $\ast$}]{psz\+File\+Name,  }\item[{int}]{n\+Tex\+ID }\end{DoxyParamCaption})}
+
+
+
+テクスチャの追加 
+
+テクスチャを追加していく
+
+
+\begin{DoxyParams}{引数}
+{\em (char$\ast$)} & ファイルの名前が入っているポインタ \\
+\hline
+{\em (int)} & テクスチャと紐づけるキー \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+成功したか失敗したかの真偽 
+\end{DoxyReturn}
+テクスチャの情報が入っているポインタ
+
+初期化用変数
+
+謎である呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_manager_acf80525b5a1e493b08426989d2940870_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_manager_acf80525b5a1e493b08426989d2940870_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_texture_manager_a14eb42e81e5f2eda3ecf6f607bffc272}\label{class_texture_manager_a14eb42e81e5f2eda3ecf6f607bffc272}} 
+\index{TextureManager@{TextureManager}!EraseTexture@{EraseTexture}}
+\index{EraseTexture@{EraseTexture}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{EraseTexture()}{EraseTexture()}}
+{\footnotesize\ttfamily bool Texture\+Manager\+::\+Erase\+Texture (\begin{DoxyParamCaption}\item[{int}]{n\+Tex\+ID }\end{DoxyParamCaption})}
+
+
+
+テクスチャ削除 
+
+テクスチャの削除
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & テクスチャと紐づいているキー \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(bool) 消すテクスチャが歩かないかの真偽 
+\end{DoxyReturn}
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_manager_a14eb42e81e5f2eda3ecf6f607bffc272_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_texture_manager_ab73eee48ba8c35281558094e2f84013d}\label{class_texture_manager_ab73eee48ba8c35281558094e2f84013d}} 
+\index{TextureManager@{TextureManager}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_texture_manager}{Texture\+Manager}} $\ast$ Texture\+Manager\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+インスタンス化 
+
+テクスチャマネージャーのインスタンス化 呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_manager_ab73eee48ba8c35281558094e2f84013d_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_manager_ab73eee48ba8c35281558094e2f84013d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_texture_manager_afbe079fdbf1dd84d61c32f4105eeda5c}\label{class_texture_manager_afbe079fdbf1dd84d61c32f4105eeda5c}} 
+\index{TextureManager@{TextureManager}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{GetSize()}{GetSize()}}
+{\footnotesize\ttfamily int Texture\+Manager\+::\+Get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+読み込んだテクスチャの数 
+
+リストサイズ
+
+\begin{DoxyReturn}{戻り値}
+読み込まれているテクスチャの数 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_texture_manager_a8448501f02d76a5c2362bbed98e89728}\label{class_texture_manager_a8448501f02d76a5c2362bbed98e89728}} 
+\index{TextureManager@{TextureManager}!GetTexture@{GetTexture}}
+\index{GetTexture@{GetTexture}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{GetTexture()}{GetTexture()}}
+{\footnotesize\ttfamily ID3\+D11\+Shader\+Resource\+View $\ast$ Texture\+Manager\+::\+Get\+Texture (\begin{DoxyParamCaption}\item[{int}]{n\+Tex\+ID }\end{DoxyParamCaption})}
+
+
+
+テクスチャ取得 
+
+テクスチャの取得
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & テクスチャと紐づいているキー \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(ID3\+D$\sim$$\ast$)あった時使用可能なテクスチャ番号、無かった時０ 
+\end{DoxyReturn}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_manager_a8448501f02d76a5c2362bbed98e89728_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_texture_manager_ab2ef3139e30856ee768b2e98ec5259f5}\label{class_texture_manager_ab2ef3139e30856ee768b2e98ec5259f5}} 
+\index{TextureManager@{TextureManager}!Uninit@{Uninit}}
+\index{Uninit@{Uninit}!TextureManager@{TextureManager}}
+\doxysubsubsection{\texorpdfstring{Uninit()}{Uninit()}}
+{\footnotesize\ttfamily void Texture\+Manager\+::\+Uninit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+終了処理 
+
+テクスチャマネージャーの解放 被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_texture_manager_ab2ef3139e30856ee768b2e98ec5259f5_icgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_texture_manager_8h}{Texture\+Manager.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_texture_manager_8cpp}{Texture\+Manager.\+cpp}}\end{DoxyCompactItemize}

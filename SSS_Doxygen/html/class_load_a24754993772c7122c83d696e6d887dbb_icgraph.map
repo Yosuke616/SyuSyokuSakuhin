@@ -1,0 +1,6 @@
+<map id="Load::End" name="Load::End">
+<area shape="rect" id="node1" title="ロード画面は終わる" alt="" coords="172,56,253,83"/>
+<area shape="rect" id="node2" href="$class_scene_game.html#a942c6131f3f4a831791f63a5091cccfe" title="初期化" alt="" coords="5,5,124,32"/>
+<area shape="rect" id="node3" href="$class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="5,56,124,83"/>
+<area shape="rect" id="node4" href="$class_scene_title.html#a25a10fe18f8ff1f5a7e657cfe6eca671" title=" " alt="" coords="11,107,119,133"/>
+</map>

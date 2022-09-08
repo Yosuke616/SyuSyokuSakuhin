@@ -1,0 +1,138 @@
+\hypertarget{_object_8h_source}{}\doxysection{Object.\+h}
+\label{_object_8h_source}\index{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Object.h@{C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/Object.h}}
+\mbox{\hyperlink{_object_8h}{\mbox{[}詳解\mbox{]}}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{    オブジェクトのベースクラス}}
+\DoxyCodeLine{3 \textcolor{comment}{    志水陽祐}}
+\DoxyCodeLine{4 \textcolor{comment}{    2022/6/9 作成開始}}
+\DoxyCodeLine{5 \textcolor{comment}{*/}}
+\DoxyCodeLine{6 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#ifndef \_OBJECT\_H\_}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#define \_OBJECT\_H\_}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{comment}{//インクルード部}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{main_app_8h}{mainApp.h}}"{}}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{_obj_info_8h}{ObjInfo.h}}"{}}}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <list>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//前方宣言}}
+\DoxyCodeLine{18 \textcolor{keyword}{class }\mbox{\hyperlink{class_component}{Component}};}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{comment}{//クラス定義}}
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_object}{Object}} \{}
+\DoxyCodeLine{22 \textcolor{keyword}{private}:}
+\DoxyCodeLine{23     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{24     std::list<Component*> ComponentList;    \textcolor{comment}{//機能リスト}}
+\DoxyCodeLine{25     std::string     m\_szName;               \textcolor{comment}{//オブジェクトの名前}}
+\DoxyCodeLine{26     \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396}{UPDATE\_ORDER}}    m\_eUpdateOrder;         \textcolor{comment}{//更新の順番}}
+\DoxyCodeLine{27     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1d}{DRAW\_ORDER}}      m\_eDrawOrder;         \textcolor{comment}{//描画の順番}}
+\DoxyCodeLine{28     \textcolor{keywordtype}{bool}            m\_bDelete;              \textcolor{comment}{//削除フラグ}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{33     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 \textcolor{keyword}{public}:}
+\DoxyCodeLine{38     \textcolor{comment}{//メンバ変数}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40     \textcolor{comment}{//メンバ関数}}
+\DoxyCodeLine{41     \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object}}();                             \textcolor{comment}{//デフォルトコンストラクタ}}
+\DoxyCodeLine{42     \mbox{\hyperlink{class_object_a40860402e64d8008fb42329df7097cdb}{Object}}(std::string szName,                \textcolor{comment}{//イニシャライズ付きコンストラクタ}}
+\DoxyCodeLine{43         \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396}{UPDATE\_ORDER}} UpdateOrder,}
+\DoxyCodeLine{44         \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1d}{DRAW\_ORDER}} DrawOrder);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \mbox{\hyperlink{class_object_ae8f5483f459e46687bd01e6f9977afd3}{\string~Object}}();                               \textcolor{comment}{//デストラクタ}}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_ac608bdc75130f88cd292bc8cd7a016c5}{Start}}();                          \textcolor{comment}{//開始}}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_a2bac4495e863092c6367556d62666271}{Update}}();                            \textcolor{comment}{//更新}}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_ac469dbbd3cedec6a3e8f0d2172b7429e}{Draw}}();                            \textcolor{comment}{//描画}}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_a28ca54b3342ee2e6356c9388ebc7ba1d}{OnCollisionEnter}}(\mbox{\hyperlink{class_object}{Object}}*);           \textcolor{comment}{//衝突判定}}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_a118db426c87fe3625687d9bc74a8175f}{StopUpdate}}();                        \textcolor{comment}{//機能停止(更新)}}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_aa0ab975acb1c585af49bb00b43828790}{ResumeUpdate}}();                    \textcolor{comment}{//機能再開(更新)}}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_ac0c1cb0378e61ac7d6af71c8b86b6355}{Use}}();                              \textcolor{comment}{//機能再開(描画と更新)}}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_ae4a6e1076e1a372b6f3daec25e1d9aea}{NoUse}}();                          \textcolor{comment}{//機能再開(描画と更新)}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_a654b22aad99c5b182b03d97ec05fd8c1}{StopDraw}}();                        \textcolor{comment}{//描画停止}}
+\DoxyCodeLine{59     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_af6550fa9e9039b59f1cf28951b0b832e}{ResumeDraw}}();                        \textcolor{comment}{//描画再開}}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61     \textcolor{comment}{//ゲッター}}
+\DoxyCodeLine{62     \mbox{\hyperlink{_obj_info_8h_aa37876f465fe13d7c2e649f9655c5b1d}{DRAW\_ORDER}} \mbox{\hyperlink{class_object_aa6b2b605e64fdad13e3e52346353e03a}{GetDrawOrder}}();                \textcolor{comment}{//そのオブジェクトの描画順の取得}}
+\DoxyCodeLine{63     \mbox{\hyperlink{_obj_info_8h_ac809efafc1b40b8aec746b28d6ed8396}{UPDATE\_ORDER}} \mbox{\hyperlink{class_object_aa4113e76535e952da736eb7df90a1dc7}{GetUpdateOrder}}();            \textcolor{comment}{//そのオブジェクトの更新順の取得}}
+\DoxyCodeLine{65 \textcolor{comment}{}    std::list<Component*> \mbox{\hyperlink{class_object_a02814636bba2aaf6b1c264f283bed288}{GetComponentList}}();}
+\DoxyCodeLine{66 }
+\DoxyCodeLine{67     \textcolor{comment}{//セッター}}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_object_a7372ab35a58cc56b26445e7c68779f71}{Delete}}();                            \textcolor{comment}{//オブジェクトの削除}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70     \textcolor{comment}{//GetComponent}}
+\DoxyCodeLine{71     \textcolor{comment}{//オブジェクトが持っているコンポーネントを取得する}}
+\DoxyCodeLine{72     \textcolor{comment}{//コンポーネントリストから指定したポインタを取得する関数}}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74     \textcolor{keyword}{template}<\textcolor{keyword}{class} T>}
+\DoxyCodeLine{75     T* \mbox{\hyperlink{class_object_a824beb41e45f1fdecc88c15e11983156}{GetComponent}}() \{}
+\DoxyCodeLine{76         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\&\& com : ComponentList) \{}
+\DoxyCodeLine{77             \textcolor{comment}{//テンプレートで指定したクラスにキャストする}}
+\DoxyCodeLine{78             T* buff = \textcolor{keyword}{dynamic\_cast<}T*\textcolor{keyword}{>}(com);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80             \textcolor{comment}{//成功時}}
+\DoxyCodeLine{81             \textcolor{keywordflow}{if} (buff != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{82                 \textcolor{keywordflow}{return} buff;}
+\DoxyCodeLine{83             \}}
+\DoxyCodeLine{84         \}}
+\DoxyCodeLine{85         \textcolor{comment}{//失敗したとき}}
+\DoxyCodeLine{86         \textcolor{keywordflow}{return} \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{87     \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \textcolor{comment}{//AddComponent()}}
+\DoxyCodeLine{90     \textcolor{comment}{//オブジェクトにコンポーネントに追加する}}
+\DoxyCodeLine{91     \textcolor{comment}{//オブジェクトが持つコンポーネントリストに指定したコンポーネントを追加する}}
+\DoxyCodeLine{92     \textcolor{comment}{//このとき、コンポーネントの所有者のオブジェクトのポインタも指定される}}
+\DoxyCodeLine{93     \textcolor{keyword}{template}<\textcolor{keyword}{class} T>}
+\DoxyCodeLine{94     T* \mbox{\hyperlink{class_object_a6530059316c8c6ea06c66e0de393dcce}{AddComponent}}() \{}
+\DoxyCodeLine{95         T* component = \textcolor{keyword}{new} T();     \textcolor{comment}{//コンポーネントの生成}}
+\DoxyCodeLine{96         component-\/>Parent = \textcolor{keyword}{this};   \textcolor{comment}{//コンポネントの持ち主の設定}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98         \textcolor{comment}{//更新順序を決める}}
+\DoxyCodeLine{99         std::list<Component*>::iterator itr = ComponentList.begin();}
+\DoxyCodeLine{100         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto}\&\& com : ComponentList) \{}
+\DoxyCodeLine{101             \textcolor{comment}{//現在のオブジェクトの機能を取得}}
+\DoxyCodeLine{102             \mbox{\hyperlink{class_component}{Component}}* buff = (\mbox{\hyperlink{class_component}{Component}}*)com;}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104             \textcolor{comment}{//更新の優先度が同じとき、ループが抜ける}}
+\DoxyCodeLine{105             \textcolor{keywordflow}{if} (component-\/>m\_eUpdateOrder <= buff-\/>\mbox{\hyperlink{class_component_af40a1a2240e4b0717804a6d60592d66e}{m\_eUpdateOrder}}) \{}
+\DoxyCodeLine{106                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{107             \}}
+\DoxyCodeLine{108             \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{109                 \textcolor{comment}{//更新順序を遅らせる}}
+\DoxyCodeLine{110                 itr++;}
+\DoxyCodeLine{111             \}}
+\DoxyCodeLine{112         \}}
+\DoxyCodeLine{113 }
+\DoxyCodeLine{114         \textcolor{comment}{//コンポーネントリストに挿入}}
+\DoxyCodeLine{115         ComponentList.insert(itr,component);}
+\DoxyCodeLine{116         }
+\DoxyCodeLine{117         \textcolor{keywordflow}{return} component;}
+\DoxyCodeLine{118     \}}
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120     \textcolor{comment}{//名前を取得する}}
+\DoxyCodeLine{121     \textcolor{keyword}{constexpr} \textcolor{keyword}{const} std::string\& \mbox{\hyperlink{class_object_a4c8a55fbab735fc3ce4f1ef9569041ea}{GetName}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{122         \textcolor{keywordflow}{return} m\_szName;}
+\DoxyCodeLine{123     \}}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125     \textcolor{comment}{//削除フラグの取得}}
+\DoxyCodeLine{126     \textcolor{keyword}{constexpr} \textcolor{keyword}{const} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_object_ab75ac4b7289350a0ada0eee65fe23eb3}{GetDeleteFlag}}()\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{127         \textcolor{keywordflow}{return} m\_bDelete;}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129 \};}
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 }
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

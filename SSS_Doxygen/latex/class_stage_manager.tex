@@ -1,0 +1,227 @@
+\hypertarget{class_stage_manager}{}\doxysection{Stage\+Manager クラス}
+\label{class_stage_manager}\index{StageManager@{StageManager}}
+
+
+ステージを管理するためのマネージャー @detail 地形情報やどんなオブジェクトがあるかの管理  
+
+
+
+
+{\ttfamily \#include $<$Stage\+Manager.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_stage_manager_aa869d285467620baacfdf244491122d8}{$\sim$\+Stage\+Manager}} ()
+\begin{DoxyCompactList}\small\item\em デストラクタ \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stage_manager_afe74bc34352fd78b5b8f2dfaf551a251}{Update}} ()
+\begin{DoxyCompactList}\small\item\em 更新処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stage_manager_ae704cc0e6a00b5b94f4974869e1d90b8}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em 描画処理 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_stage_manager_ab85e84fb952cd4722400956dba68d2e3}{Create\+Stage}} (int Stage\+\_\+\+State)
+\begin{DoxyCompactList}\small\item\em 地形生成 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_object}{Object}} $\ast$ \mbox{\hyperlink{class_stage_manager_a3a259d33885baf98d68c28d32183143f}{Create\+Block}} (float f\+PosX, float f\+PosY, int n\+State, int n\+Block\+ID)
+\begin{DoxyCompactList}\small\item\em ステージオブジェクト生成(ゲームモード) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_object}{Object}} $\ast$ \mbox{\hyperlink{class_stage_manager_a3c2ed54764777419c69b887f4d9cb7e0}{Get\+Block}} (int n\+Num)
+\begin{DoxyCompactList}\small\item\em ブロックの番号から情報を取得する \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{静的公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_stage_manager}{Stage\+Manager}} $\ast$ \mbox{\hyperlink{class_stage_manager_a4a807be8cec5c9eca08cf3f91052ff01}{Get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em インスタンス生成 \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_stage_manager_ab0b045a1f7d98a34d1824575b7e25add}{Destroy}} ()
+\begin{DoxyCompactList}\small\item\em インスタンス破棄 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{詳解}
+ステージを管理するためのマネージャー @detail 地形情報やどんなオブジェクトがあるかの管理 
+
+インクルードガード インクルード部 クラス定義 
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_stage_manager_aa869d285467620baacfdf244491122d8}\label{class_stage_manager_aa869d285467620baacfdf244491122d8}} 
+\index{StageManager@{StageManager}!````~StageManager@{$\sim$StageManager}}
+\index{````~StageManager@{$\sim$StageManager}!StageManager@{StageManager}}
+\doxysubsubsection{\texorpdfstring{$\sim$StageManager()}{~StageManager()}}
+{\footnotesize\ttfamily Stage\+Manager\+::$\sim$\+Stage\+Manager (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+デストラクタ 
+
+ｸｯ　デストラクタに負けた・・・ 
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_stage_manager_a3a259d33885baf98d68c28d32183143f}\label{class_stage_manager_a3a259d33885baf98d68c28d32183143f}} 
+\index{StageManager@{StageManager}!CreateBlock@{CreateBlock}}
+\index{CreateBlock@{CreateBlock}!StageManager@{StageManager}}
+\doxysubsubsection{\texorpdfstring{CreateBlock()}{CreateBlock()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_object}{Object}} $\ast$ Stage\+Manager\+::\+Create\+Block (\begin{DoxyParamCaption}\item[{float}]{f\+PosX,  }\item[{float}]{f\+PosY,  }\item[{int}]{n\+State,  }\item[{int}]{n\+Block\+ID }\end{DoxyParamCaption})}
+
+
+
+ステージオブジェクト生成(ゲームモード) 
+
+ブロックの生成
+
+
+\begin{DoxyParams}{引数}
+{\em (float)} & X座標 \\
+\hline
+{\em (float)} & Y座標 \\
+\hline
+{\em (int)} & オブジェクトナンバー \\
+\hline
+{\em (int)} & ブロックと紐付いているキー \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(Object$\ast$) 作られたオブジェクトのポインタ 
+\end{DoxyReturn}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_stage_manager_a3a259d33885baf98d68c28d32183143f_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_stage_manager_a3a259d33885baf98d68c28d32183143f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_stage_manager_ab85e84fb952cd4722400956dba68d2e3}\label{class_stage_manager_ab85e84fb952cd4722400956dba68d2e3}} 
+\index{StageManager@{StageManager}!CreateStage@{CreateStage}}
+\index{CreateStage@{CreateStage}!StageManager@{StageManager}}
+\doxysubsubsection{\texorpdfstring{CreateStage()}{CreateStage()}}
+{\footnotesize\ttfamily void Stage\+Manager\+::\+Create\+Stage (\begin{DoxyParamCaption}\item[{int}]{Stage\+\_\+\+State }\end{DoxyParamCaption})}
+
+
+
+地形生成 
+
+ステージの地形の作成
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & ステージの番号(何番目のステージか) \\
+\hline
+\end{DoxyParams}
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_stage_manager_ab85e84fb952cd4722400956dba68d2e3_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_stage_manager_ab85e84fb952cd4722400956dba68d2e3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_stage_manager_ab0b045a1f7d98a34d1824575b7e25add}\label{class_stage_manager_ab0b045a1f7d98a34d1824575b7e25add}} 
+\index{StageManager@{StageManager}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!StageManager@{StageManager}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily void Stage\+Manager\+::\+Destroy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+インスタンス破棄 
+
+インスタンスの破棄 \mbox{\Hypertarget{class_stage_manager_ae704cc0e6a00b5b94f4974869e1d90b8}\label{class_stage_manager_ae704cc0e6a00b5b94f4974869e1d90b8}} 
+\index{StageManager@{StageManager}!Draw@{Draw}}
+\index{Draw@{Draw}!StageManager@{StageManager}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Stage\+Manager\+::\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+描画処理 
+
+描画するよ @detail 置きたいオブジェクトとかデバッグ用の描画 呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_stage_manager_ae704cc0e6a00b5b94f4974869e1d90b8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_stage_manager_a3c2ed54764777419c69b887f4d9cb7e0}\label{class_stage_manager_a3c2ed54764777419c69b887f4d9cb7e0}} 
+\index{StageManager@{StageManager}!GetBlock@{GetBlock}}
+\index{GetBlock@{GetBlock}!StageManager@{StageManager}}
+\doxysubsubsection{\texorpdfstring{GetBlock()}{GetBlock()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_object}{Object}} $\ast$ Stage\+Manager\+::\+Get\+Block (\begin{DoxyParamCaption}\item[{int}]{n\+Num }\end{DoxyParamCaption})}
+
+
+
+ブロックの番号から情報を取得する 
+
+idからオブジェクトの情報を取得する
+
+
+\begin{DoxyParams}{引数}
+{\em (int)} & オブジェクトと紐づいているオブジェクト \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+(Object$\ast$) 存在するかどうか 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_stage_manager_a4a807be8cec5c9eca08cf3f91052ff01}\label{class_stage_manager_a4a807be8cec5c9eca08cf3f91052ff01}} 
+\index{StageManager@{StageManager}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!StageManager@{StageManager}}
+\doxysubsubsection{\texorpdfstring{GetInstance()}{GetInstance()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_stage_manager}{Stage\+Manager}} $\ast$ Stage\+Manager\+::\+Get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+インスタンス生成 
+
+インスタンスの取得 被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=343pt]{class_stage_manager_a4a807be8cec5c9eca08cf3f91052ff01_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_stage_manager_afe74bc34352fd78b5b8f2dfaf551a251}\label{class_stage_manager_afe74bc34352fd78b5b8f2dfaf551a251}} 
+\index{StageManager@{StageManager}!Update@{Update}}
+\index{Update@{Update}!StageManager@{StageManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Stage\+Manager\+::\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+更新処理 
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_stage_manager_afe74bc34352fd78b5b8f2dfaf551a251_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=339pt]{class_stage_manager_afe74bc34352fd78b5b8f2dfaf551a251_icgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_stage_manager_8h}{Stage\+Manager.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_stage_manager_8cpp}{Stage\+Manager.\+cpp}}\end{DoxyCompactItemize}

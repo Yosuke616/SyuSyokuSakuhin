@@ -1,0 +1,686 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: CAnimMesh クラス</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">公開メンバ関数</a> &#124;
+<a href="#pub-static-methods">静的公開メンバ関数</a> &#124;
+<a href="class_c_anim_mesh-members.html">全メンバ一覧</a>  </div>
+  <div class="headertitle"><div class="title">CAnimMesh クラス</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="_anim_mesh_component_8h_source.html">AnimMeshComponent.h</a>&gt;</code></p>
+<div class="dynheader">
+CAnimMesh の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_anim_mesh__inherit__graph.png" border="0" usemap="#a_c_anim_mesh_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_c_anim_mesh_inherit__map" id="a_c_anim_mesh_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,155,99,181"/>
+<area shape="rect" href="class_c_draw_mesh.html" title=" " alt="" coords="6,80,98,107"/>
+<area shape="rect" href="class_component.html" title=" " alt="" coords="8,5,96,32"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<div class="dynheader">
+CAnimMesh 連携図</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_anim_mesh__coll__graph.png" border="0" usemap="#a_c_anim_mesh_coll__map" alt="Collaboration graph"/></div>
+<map name="a_c_anim_mesh_coll__map" id="a_c_anim_mesh_coll__map">
+<area shape="rect" title=" " alt="" coords="100,349,193,376"/>
+<area shape="rect" href="class_c_draw_mesh.html" title=" " alt="" coords="101,273,193,300"/>
+<area shape="rect" href="class_component.html" title=" " alt="" coords="5,95,93,121"/>
+<area shape="rect" href="class_c_transform.html" title=" " alt="" coords="57,184,145,211"/>
+<area shape="rect" href="class_object.html" title=" " alt="" coords="19,5,79,32"/>
+<area shape="rect" href="struct_m_e_s_h.html" title=" " alt="" coords="294,184,354,211"/>
+<area shape="rect" href="struct_m_a_t_e_r_i_a_l.html" title=" " alt="" coords="199,95,286,121"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">凡例</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+公開メンバ関数</h2></td></tr>
+<tr class="memitem:a415518ac092141649c127b0de0ecc452"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_anim_mesh.html#a415518ac092141649c127b0de0ecc452">CAnimMesh</a> ()</td></tr>
+<tr class="memdesc:a415518ac092141649c127b0de0ecc452"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="class_c_anim_mesh.html#a415518ac092141649c127b0de0ecc452">[詳解]</a><br /></td></tr>
+<tr class="separator:a415518ac092141649c127b0de0ecc452"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbe874e6310b66e4a50537b0a9073cc4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_anim_mesh.html#afbe874e6310b66e4a50537b0a9073cc4">~CAnimMesh</a> () override</td></tr>
+<tr class="memdesc:afbe874e6310b66e4a50537b0a9073cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="class_c_anim_mesh.html#afbe874e6310b66e4a50537b0a9073cc4">[詳解]</a><br /></td></tr>
+<tr class="separator:afbe874e6310b66e4a50537b0a9073cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4477eb0930aba2ceb6ec3976aeaa28ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_anim_mesh.html#a4477eb0930aba2ceb6ec3976aeaa28ae">Start</a> () override</td></tr>
+<tr class="memdesc:a4477eb0930aba2ceb6ec3976aeaa28ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化処理  <a href="class_c_anim_mesh.html#a4477eb0930aba2ceb6ec3976aeaa28ae">[詳解]</a><br /></td></tr>
+<tr class="separator:a4477eb0930aba2ceb6ec3976aeaa28ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a052d8884ad2a80967e09b28e46a4cafa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_anim_mesh.html#a052d8884ad2a80967e09b28e46a4cafa">Update</a> () override</td></tr>
+<tr class="memdesc:a052d8884ad2a80967e09b28e46a4cafa"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新処理  <a href="class_c_anim_mesh.html#a052d8884ad2a80967e09b28e46a4cafa">[詳解]</a><br /></td></tr>
+<tr class="separator:a052d8884ad2a80967e09b28e46a4cafa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45bca41fe56b3421b59058ce6d336366"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_anim_mesh.html#a45bca41fe56b3421b59058ce6d336366">Draw</a> () override</td></tr>
+<tr class="memdesc:a45bca41fe56b3421b59058ce6d336366"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画処理  <a href="class_c_anim_mesh.html#a45bca41fe56b3421b59058ce6d336366">[詳解]</a><br /></td></tr>
+<tr class="separator:a45bca41fe56b3421b59058ce6d336366"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c35d445c9ff445130cadabb575e2f13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_anim_mesh.html#a5c35d445c9ff445130cadabb575e2f13">SetSwapFrame</a> (int nCount)</td></tr>
+<tr class="memdesc:a5c35d445c9ff445130cadabb575e2f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションカウンタの設定  <a href="class_c_anim_mesh.html#a5c35d445c9ff445130cadabb575e2f13">[詳解]</a><br /></td></tr>
+<tr class="separator:a5c35d445c9ff445130cadabb575e2f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9966dcb8778d3474050f9d8bfc8addfd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_anim_mesh.html#a9966dcb8778d3474050f9d8bfc8addfd">SetLoop</a> (bool loop)</td></tr>
+<tr class="memdesc:a9966dcb8778d3474050f9d8bfc8addfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションがループするかどうかの設定  <a href="class_c_anim_mesh.html#a9966dcb8778d3474050f9d8bfc8addfd">[詳解]</a><br /></td></tr>
+<tr class="separator:a9966dcb8778d3474050f9d8bfc8addfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a68647db370f06e36abc97eab88ac1563"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_anim_mesh.html#a68647db370f06e36abc97eab88ac1563">SetVertex</a> (bool bRoL)</td></tr>
+<tr class="memdesc:a68647db370f06e36abc97eab88ac1563"><td class="mdescLeft">&#160;</td><td class="mdescRight">テクスチャを反転させる準備  <a href="class_c_anim_mesh.html#a68647db370f06e36abc97eab88ac1563">[詳解]</a><br /></td></tr>
+<tr class="separator:a68647db370f06e36abc97eab88ac1563"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f9791e44799f2dedda3756fbec20bba"><td class="memItemLeft" align="right" valign="top">HRESULT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_anim_mesh.html#a0f9791e44799f2dedda3756fbec20bba">SetMeshVertex</a> (ID3D11Device *pDevice, <a class="el" href="struct_m_e_s_h.html">MESH</a> *pMesh, <a class="el" href="struct_v_e_r_t_e_x__3_d.html">VERTEX_3D</a> vertexWk[])</td></tr>
+<tr class="memdesc:a0f9791e44799f2dedda3756fbec20bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">テクスチャを左右反転させる関数  <a href="class_c_anim_mesh.html#a0f9791e44799f2dedda3756fbec20bba">[詳解]</a><br /></td></tr>
+<tr class="separator:a0f9791e44799f2dedda3756fbec20bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_c_draw_mesh"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_c_draw_mesh')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_c_draw_mesh.html">CDrawMesh</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a396aac694e99cdb19858d20cbccada58 inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a396aac694e99cdb19858d20cbccada58">CDrawMesh</a> ()</td></tr>
+<tr class="memdesc:a396aac694e99cdb19858d20cbccada58 inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">コンストラクタ  <a href="class_c_draw_mesh.html#a396aac694e99cdb19858d20cbccada58">[詳解]</a><br /></td></tr>
+<tr class="separator:a396aac694e99cdb19858d20cbccada58 inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ed6d0cca62f35202ee9c9ff17b37efb inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a5ed6d0cca62f35202ee9c9ff17b37efb">~CDrawMesh</a> () override</td></tr>
+<tr class="memdesc:a5ed6d0cca62f35202ee9c9ff17b37efb inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">デストラクタ  <a href="class_c_draw_mesh.html#a5ed6d0cca62f35202ee9c9ff17b37efb">[詳解]</a><br /></td></tr>
+<tr class="separator:a5ed6d0cca62f35202ee9c9ff17b37efb inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6100f09bd115ce3f1c8a7e450600d4fc inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a6100f09bd115ce3f1c8a7e450600d4fc">Start</a> () override</td></tr>
+<tr class="memdesc:a6100f09bd115ce3f1c8a7e450600d4fc inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">初期化  <a href="class_c_draw_mesh.html#a6100f09bd115ce3f1c8a7e450600d4fc">[詳解]</a><br /></td></tr>
+<tr class="separator:a6100f09bd115ce3f1c8a7e450600d4fc inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2371b08e617e08cf6420681f0f1dcd04 inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a2371b08e617e08cf6420681f0f1dcd04">Update</a> () override</td></tr>
+<tr class="memdesc:a2371b08e617e08cf6420681f0f1dcd04 inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">更新  <a href="class_c_draw_mesh.html#a2371b08e617e08cf6420681f0f1dcd04">[詳解]</a><br /></td></tr>
+<tr class="separator:a2371b08e617e08cf6420681f0f1dcd04 inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d4c6a30bae2d1318802f1ebf5fb22cb inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a4d4c6a30bae2d1318802f1ebf5fb22cb">Draw</a> () override</td></tr>
+<tr class="memdesc:a4d4c6a30bae2d1318802f1ebf5fb22cb inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">描画  <a href="class_c_draw_mesh.html#a4d4c6a30bae2d1318802f1ebf5fb22cb">[詳解]</a><br /></td></tr>
+<tr class="separator:a4d4c6a30bae2d1318802f1ebf5fb22cb inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2e186b97bd1ac5d706665804d1ebe5d inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#ab2e186b97bd1ac5d706665804d1ebe5d">SetTexture</a> (ID3D11ShaderResourceView *pTex)</td></tr>
+<tr class="memdesc:ab2e186b97bd1ac5d706665804d1ebe5d inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">テクスチャのセット  <a href="class_c_draw_mesh.html#ab2e186b97bd1ac5d706665804d1ebe5d">[詳解]</a><br /></td></tr>
+<tr class="separator:ab2e186b97bd1ac5d706665804d1ebe5d inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae22c52da902e11fd2a4d14f551b398a0 inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#ae22c52da902e11fd2a4d14f551b398a0">SetUVsize</a> (XMFLOAT2 uv)</td></tr>
+<tr class="memdesc:ae22c52da902e11fd2a4d14f551b398a0 inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">テクスチャ座標  <a href="class_c_draw_mesh.html#ae22c52da902e11fd2a4d14f551b398a0">[詳解]</a><br /></td></tr>
+<tr class="separator:ae22c52da902e11fd2a4d14f551b398a0 inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a480544454f885653c931a7b9f8d9163b inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a480544454f885653c931a7b9f8d9163b">SetSize</a> (float width, float height)</td></tr>
+<tr class="memdesc:a480544454f885653c931a7b9f8d9163b inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">マスの大きさ  <a href="class_c_draw_mesh.html#a480544454f885653c931a7b9f8d9163b">[詳解]</a><br /></td></tr>
+<tr class="separator:a480544454f885653c931a7b9f8d9163b inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96c867c85492c1dc932b3b85cc596e2f inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a96c867c85492c1dc932b3b85cc596e2f">SetDiffuse</a> (XMFLOAT4 Diffuse)</td></tr>
+<tr class="memdesc:a96c867c85492c1dc932b3b85cc596e2f inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">反射光  <a href="class_c_draw_mesh.html#a96c867c85492c1dc932b3b85cc596e2f">[詳解]</a><br /></td></tr>
+<tr class="separator:a96c867c85492c1dc932b3b85cc596e2f inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac93cb85b0306060d6387f60ab9424898 inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#ac93cb85b0306060d6387f60ab9424898">SetAmbient</a> (XMFLOAT4 Ambient)</td></tr>
+<tr class="memdesc:ac93cb85b0306060d6387f60ab9424898 inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">環境光  <a href="class_c_draw_mesh.html#ac93cb85b0306060d6387f60ab9424898">[詳解]</a><br /></td></tr>
+<tr class="separator:ac93cb85b0306060d6387f60ab9424898 inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12ccdca43362b7ceb8643216d22a9885 inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a12ccdca43362b7ceb8643216d22a9885">SetSpecular</a> (XMFLOAT4 Specular)</td></tr>
+<tr class="memdesc:a12ccdca43362b7ceb8643216d22a9885 inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">鏡面反射の設定  <a href="class_c_draw_mesh.html#a12ccdca43362b7ceb8643216d22a9885">[詳解]</a><br /></td></tr>
+<tr class="separator:a12ccdca43362b7ceb8643216d22a9885 inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ccac154329340eab701883d886c3384 inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a8ccac154329340eab701883d886c3384">SetEmissive</a> (XMFLOAT4 Emissive)</td></tr>
+<tr class="memdesc:a8ccac154329340eab701883d886c3384 inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">自己発光の設定  <a href="class_c_draw_mesh.html#a8ccac154329340eab701883d886c3384">[詳解]</a><br /></td></tr>
+<tr class="separator:a8ccac154329340eab701883d886c3384 inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a395db7069e7f8eed9fab0c9c73478938 inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a395db7069e7f8eed9fab0c9c73478938">SetPower</a> (float power)</td></tr>
+<tr class="memdesc:a395db7069e7f8eed9fab0c9c73478938 inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">光沢の設定  <a href="class_c_draw_mesh.html#a395db7069e7f8eed9fab0c9c73478938">[詳解]</a><br /></td></tr>
+<tr class="separator:a395db7069e7f8eed9fab0c9c73478938 inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae267f4deeb9b7cfb3eb622a020827479 inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#ae267f4deeb9b7cfb3eb622a020827479">SetNormal</a> (float fx, float fy, float fz)</td></tr>
+<tr class="memdesc:ae267f4deeb9b7cfb3eb622a020827479 inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">法線ベクトルの設定  <a href="class_c_draw_mesh.html#ae267f4deeb9b7cfb3eb622a020827479">[詳解]</a><br /></td></tr>
+<tr class="separator:ae267f4deeb9b7cfb3eb622a020827479 inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a728f617ebfc3b942d19563bc35dd979a inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a728f617ebfc3b942d19563bc35dd979a">SetAnimFrame</a> (int Anim)</td></tr>
+<tr class="memdesc:a728f617ebfc3b942d19563bc35dd979a inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションの番号  <a href="class_c_draw_mesh.html#a728f617ebfc3b942d19563bc35dd979a">[詳解]</a><br /></td></tr>
+<tr class="separator:a728f617ebfc3b942d19563bc35dd979a inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad989ef32cc5e683f4a645e29bb7c9801 inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#ad989ef32cc5e683f4a645e29bb7c9801">SetAnimSplit</a> (int nx, int ny)</td></tr>
+<tr class="memdesc:ad989ef32cc5e683f4a645e29bb7c9801 inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">分割数設定  <a href="class_c_draw_mesh.html#ad989ef32cc5e683f4a645e29bb7c9801">[詳解]</a><br /></td></tr>
+<tr class="separator:ad989ef32cc5e683f4a645e29bb7c9801 inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a814af61d839a207caef3f7686752b64a inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a814af61d839a207caef3f7686752b64a">SetOffSet</a> (XMFLOAT2 offset)</td></tr>
+<tr class="memdesc:a814af61d839a207caef3f7686752b64a inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">オフセット  <a href="class_c_draw_mesh.html#a814af61d839a207caef3f7686752b64a">[詳解]</a><br /></td></tr>
+<tr class="separator:a814af61d839a207caef3f7686752b64a inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7a99d87984f30c7b06c8a9609e2cda3 inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#ac7a99d87984f30c7b06c8a9609e2cda3">SetColor</a> (float r, float g, float b)</td></tr>
+<tr class="memdesc:ac7a99d87984f30c7b06c8a9609e2cda3 inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">色  <a href="class_c_draw_mesh.html#ac7a99d87984f30c7b06c8a9609e2cda3">[詳解]</a><br /></td></tr>
+<tr class="separator:ac7a99d87984f30c7b06c8a9609e2cda3 inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8243f0d818993df9ff6446312041ebd inherit pub_methods_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_m_e_s_h.html">MESH</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#af8243f0d818993df9ff6446312041ebd">GetMesh</a> ()</td></tr>
+<tr class="memdesc:af8243f0d818993df9ff6446312041ebd inherit pub_methods_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">メッシュ情報の取得  <a href="class_c_draw_mesh.html#af8243f0d818993df9ff6446312041ebd">[詳解]</a><br /></td></tr>
+<tr class="separator:af8243f0d818993df9ff6446312041ebd inherit pub_methods_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_component"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_component')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_component.html">Component</a> に属する継承公開メンバ関数</td></tr>
+<tr class="memitem:a1215dae17aa345fe79d5fa539452bebb inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a1215dae17aa345fe79d5fa539452bebb">Delete</a> ()</td></tr>
+<tr class="separator:a1215dae17aa345fe79d5fa539452bebb inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a013bb7b3333811d796df2d4ab684bc3f inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a013bb7b3333811d796df2d4ab684bc3f">GetDeleteFlag</a> ()</td></tr>
+<tr class="separator:a013bb7b3333811d796df2d4ab684bc3f inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8775db6d1a2c1afc2e77cd3c8f39da6f inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a8775db6d1a2c1afc2e77cd3c8f39da6f">Component</a> ()</td></tr>
+<tr class="separator:a8775db6d1a2c1afc2e77cd3c8f39da6f inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e9aa4348314d981f05f67397ad2f872 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a2e9aa4348314d981f05f67397ad2f872">~Component</a> ()</td></tr>
+<tr class="separator:a2e9aa4348314d981f05f67397ad2f872 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f57807787e0015833ccffd83fb63d14 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a3f57807787e0015833ccffd83fb63d14">Start</a> ()</td></tr>
+<tr class="separator:a3f57807787e0015833ccffd83fb63d14 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf2ce6dc5752072492f790ad4c7955bb inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#aaf2ce6dc5752072492f790ad4c7955bb">Update</a> ()</td></tr>
+<tr class="separator:aaf2ce6dc5752072492f790ad4c7955bb inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8622ccd5f24035d48e33292717299313 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a8622ccd5f24035d48e33292717299313">Draw</a> ()</td></tr>
+<tr class="separator:a8622ccd5f24035d48e33292717299313 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affb738998b25ee4b6be3719e020d16f2 inherit pub_methods_class_component"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#affb738998b25ee4b6be3719e020d16f2">OnCollisionEnter</a> (<a class="el" href="class_object.html">Object</a> *)</td></tr>
+<tr class="separator:affb738998b25ee4b6be3719e020d16f2 inherit pub_methods_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+静的公開メンバ関数</h2></td></tr>
+<tr class="memitem:a3a4e680b70558835fa7ddcc60aca06fa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_anim_mesh.html#a3a4e680b70558835fa7ddcc60aca06fa">StartAnim</a> (ID3D11ShaderResourceView *pTex, XMFLOAT3 pos, XMFLOAT2 size, int split_x, int split_y, bool loop, int swap_frame=1, XMFLOAT3 color=XMFLOAT3(1.0f, 1.0f, 1.0f))</td></tr>
+<tr class="memdesc:a3a4e680b70558835fa7ddcc60aca06fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーションの設定  <a href="class_c_anim_mesh.html#a3a4e680b70558835fa7ddcc60aca06fa">[詳解]</a><br /></td></tr>
+<tr class="separator:a3a4e680b70558835fa7ddcc60aca06fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+その他の継承メンバ</h2></td></tr>
+<tr class="inherit_header pub_attribs_class_component"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_component')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_component.html">Component</a> に属する継承公開変数類</td></tr>
+<tr class="memitem:a3b174bab3a4da91c7c657ad6052ba78b inherit pub_attribs_class_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_object.html">Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a3b174bab3a4da91c7c657ad6052ba78b">Parent</a> = nullptr</td></tr>
+<tr class="separator:a3b174bab3a4da91c7c657ad6052ba78b inherit pub_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af40a1a2240e4b0717804a6d60592d66e inherit pub_attribs_class_component"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28">COMPONENT_UPDATE_ORDER</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#af40a1a2240e4b0717804a6d60592d66e">m_eUpdateOrder</a> = <a class="el" href="_component_8h.html#a7f5c175bf5601648aa014d9dd7b12f28a6baeaa21a04446e95dc80d51b3bbc927">COM_UPDATE_1</a></td></tr>
+<tr class="separator:af40a1a2240e4b0717804a6d60592d66e inherit pub_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a9e309d0a3ab72807e8998c28941518 inherit pub_attribs_class_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a5a9e309d0a3ab72807e8998c28941518">m_bDrawFlag</a> = true</td></tr>
+<tr class="separator:a5a9e309d0a3ab72807e8998c28941518 inherit pub_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c166a99c04988fb2ae53a70a7a6f4f1 inherit pub_attribs_class_component"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_component.html#a2c166a99c04988fb2ae53a70a7a6f4f1">m_bUpdateFlag</a> = true</td></tr>
+<tr class="separator:a2c166a99c04988fb2ae53a70a7a6f4f1 inherit pub_attribs_class_component"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_class_c_draw_mesh"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_class_c_draw_mesh')"><img src="closed.png" alt="-"/>&#160;基底クラス <a class="el" href="class_c_draw_mesh.html">CDrawMesh</a> に属する継承限定公開変数類</td></tr>
+<tr class="memitem:afce0f431333b05234c9ca5e482263946 inherit pro_attribs_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">XMFLOAT2&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#afce0f431333b05234c9ca5e482263946">m_Offset</a></td></tr>
+<tr class="memdesc:afce0f431333b05234c9ca5e482263946 inherit pro_attribs_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">オフセット  <a href="class_c_draw_mesh.html#afce0f431333b05234c9ca5e482263946">[詳解]</a><br /></td></tr>
+<tr class="separator:afce0f431333b05234c9ca5e482263946 inherit pro_attribs_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20b42efead4f057758bb32e22f03964f inherit pro_attribs_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a20b42efead4f057758bb32e22f03964f">m_fWidth</a></td></tr>
+<tr class="memdesc:a20b42efead4f057758bb32e22f03964f inherit pro_attribs_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">1マスの横幅  <a href="class_c_draw_mesh.html#a20b42efead4f057758bb32e22f03964f">[詳解]</a><br /></td></tr>
+<tr class="separator:a20b42efead4f057758bb32e22f03964f inherit pro_attribs_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69db97d620a416c44b89bcf7b718ee4e inherit pro_attribs_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a69db97d620a416c44b89bcf7b718ee4e">m_fHeight</a></td></tr>
+<tr class="memdesc:a69db97d620a416c44b89bcf7b718ee4e inherit pro_attribs_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">1マスの立幅  <a href="class_c_draw_mesh.html#a69db97d620a416c44b89bcf7b718ee4e">[詳解]</a><br /></td></tr>
+<tr class="separator:a69db97d620a416c44b89bcf7b718ee4e inherit pro_attribs_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ceff529e20037d5517dca35df49bd0e inherit pro_attribs_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">XMFLOAT3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a7ceff529e20037d5517dca35df49bd0e">m_fNormal</a></td></tr>
+<tr class="memdesc:a7ceff529e20037d5517dca35df49bd0e inherit pro_attribs_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">法線ベクトル  <a href="class_c_draw_mesh.html#a7ceff529e20037d5517dca35df49bd0e">[詳解]</a><br /></td></tr>
+<tr class="separator:a7ceff529e20037d5517dca35df49bd0e inherit pro_attribs_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac65dc3097284e2cac0bc4a8233a6dba2 inherit pro_attribs_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_m_e_s_h.html">MESH</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#ac65dc3097284e2cac0bc4a8233a6dba2">m_Mesh</a></td></tr>
+<tr class="memdesc:ac65dc3097284e2cac0bc4a8233a6dba2 inherit pro_attribs_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">メッシュ  <a href="class_c_draw_mesh.html#ac65dc3097284e2cac0bc4a8233a6dba2">[詳解]</a><br /></td></tr>
+<tr class="separator:ac65dc3097284e2cac0bc4a8233a6dba2 inherit pro_attribs_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cdd77f0bca1cb47c44eca86cc2c02e6 inherit pro_attribs_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_m_a_t_e_r_i_a_l.html">MATERIAL</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a3cdd77f0bca1cb47c44eca86cc2c02e6">m_Material</a></td></tr>
+<tr class="memdesc:a3cdd77f0bca1cb47c44eca86cc2c02e6 inherit pro_attribs_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">マテリアル  <a href="class_c_draw_mesh.html#a3cdd77f0bca1cb47c44eca86cc2c02e6">[詳解]</a><br /></td></tr>
+<tr class="separator:a3cdd77f0bca1cb47c44eca86cc2c02e6 inherit pro_attribs_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf4dae3601175f48b293de5fe37745a4 inherit pro_attribs_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_c_transform.html">CTransform</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#abf4dae3601175f48b293de5fe37745a4">m_pTransform</a></td></tr>
+<tr class="memdesc:abf4dae3601175f48b293de5fe37745a4 inherit pro_attribs_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">座標  <a href="class_c_draw_mesh.html#abf4dae3601175f48b293de5fe37745a4">[詳解]</a><br /></td></tr>
+<tr class="separator:abf4dae3601175f48b293de5fe37745a4 inherit pro_attribs_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4ab7d6042f134d468be2a080814c642 inherit pro_attribs_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#ab4ab7d6042f134d468be2a080814c642">m_nAnim</a></td></tr>
+<tr class="memdesc:ab4ab7d6042f134d468be2a080814c642 inherit pro_attribs_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">アニメーション  <a href="class_c_draw_mesh.html#ab4ab7d6042f134d468be2a080814c642">[詳解]</a><br /></td></tr>
+<tr class="separator:ab4ab7d6042f134d468be2a080814c642 inherit pro_attribs_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08b1594ec03fd1e37042baef353d855c inherit pro_attribs_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a08b1594ec03fd1e37042baef353d855c">m_nSplitX</a></td></tr>
+<tr class="memdesc:a08b1594ec03fd1e37042baef353d855c inherit pro_attribs_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">分割数X  <a href="class_c_draw_mesh.html#a08b1594ec03fd1e37042baef353d855c">[詳解]</a><br /></td></tr>
+<tr class="separator:a08b1594ec03fd1e37042baef353d855c inherit pro_attribs_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cff830b98c2bfa1a684847da5043af6 inherit pro_attribs_class_c_draw_mesh"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_draw_mesh.html#a3cff830b98c2bfa1a684847da5043af6">m_nSplitY</a></td></tr>
+<tr class="memdesc:a3cff830b98c2bfa1a684847da5043af6 inherit pro_attribs_class_c_draw_mesh"><td class="mdescLeft">&#160;</td><td class="mdescRight">分割数Y  <a href="class_c_draw_mesh.html#a3cff830b98c2bfa1a684847da5043af6">[詳解]</a><br /></td></tr>
+<tr class="separator:a3cff830b98c2bfa1a684847da5043af6 inherit pro_attribs_class_c_draw_mesh"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
+<div class="textblock"><p >インクルードガード インクルード部 前方宣言 定数定義 クラス定義 </p>
+</div><h2 class="groupheader">構築子と解体子</h2>
+<a id="a415518ac092141649c127b0de0ecc452" name="a415518ac092141649c127b0de0ecc452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a415518ac092141649c127b0de0ecc452">&#9670;&nbsp;</a></span>CAnimMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">CAnimMesh::CAnimMesh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>コンストラクタ </p>
+<p >コンストラクタ・・・生きていたのか・・・</p>
+<p >インクルード部 </p>
+
+</div>
+</div>
+<a id="afbe874e6310b66e4a50537b0a9073cc4" name="afbe874e6310b66e4a50537b0a9073cc4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbe874e6310b66e4a50537b0a9073cc4">&#9670;&nbsp;</a></span>~CAnimMesh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CAnimMesh::~CAnimMesh </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>デストラクタ </p>
+<p >別にデストラクタしても構わんのだろう？ </p>
+
+</div>
+</div>
+<h2 class="groupheader">関数詳解</h2>
+<a id="a45bca41fe56b3421b59058ce6d336366" name="a45bca41fe56b3421b59058ce6d336366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45bca41fe56b3421b59058ce6d336366">&#9670;&nbsp;</a></span>Draw()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAnimMesh::Draw </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>描画処理 </p>
+<p >描画するためのフラグ </p>
+
+<p><a class="el" href="class_component.html#a8622ccd5f24035d48e33292717299313">Component</a>を再実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_anim_mesh_a45bca41fe56b3421b59058ce6d336366_cgraph.png" border="0" usemap="#aclass_c_anim_mesh_a45bca41fe56b3421b59058ce6d336366_cgraph" alt=""/></div>
+<map name="aclass_c_anim_mesh_a45bca41fe56b3421b59058ce6d336366_cgraph" id="aclass_c_anim_mesh_a45bca41fe56b3421b59058ce6d336366_cgraph">
+<area shape="rect" title="描画処理" alt="" coords="5,183,136,209"/>
+<area shape="rect" href="mesh_8cpp.html#aebb39a303cf619d1f154ec7595c4d64b" title=" " alt="" coords="227,5,310,32"/>
+<area shape="rect" href="class_c_camera.html#a67560cf6a017ec3b8a59129be0d0100a" title=" " alt="" coords="216,56,321,83"/>
+<area shape="rect" href="class_c_light.html#a4a80a6d18305f88d251970b4f84ed1c4" title="ライトのインスタンス取得" alt="" coords="225,107,313,133"/>
+<area shape="rect" href="main_app_8cpp.html#a76385629cd459c9e0fcda690542edb07" title=" " alt="" coords="205,157,332,184"/>
+<area shape="rect" href="class_c_camera.html#a1d42e5fecad0bcdab17124b402aa1575" title=" " alt="" coords="184,208,353,235"/>
+<area shape="rect" href="main_app_8cpp.html#a15367d15c1324ebba192218982bffe3e" title=" " alt="" coords="215,259,322,285"/>
+<area shape="rect" href="class_c_light.html#a9518a3f2ef3e82b0f839f28541c06d42" title="ライトOFF" alt="" coords="203,309,334,336"/>
+<area shape="rect" href="class_c_light.html#ac7b7c97931e49a5ee4cddd829dea43e8" title="ライトON" alt="" coords="205,360,332,387"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9966dcb8778d3474050f9d8bfc8addfd" name="a9966dcb8778d3474050f9d8bfc8addfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9966dcb8778d3474050f9d8bfc8addfd">&#9670;&nbsp;</a></span>SetLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAnimMesh::SetLoop </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>loop</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>アニメーションがループするかどうかの設定 </p>
+<p >ループするかどうかの設定</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(bool)</td><td>ループするのかいしないのかいどっちなんだい </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0f9791e44799f2dedda3756fbec20bba" name="a0f9791e44799f2dedda3756fbec20bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f9791e44799f2dedda3756fbec20bba">&#9670;&nbsp;</a></span>SetMeshVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HRESULT CAnimMesh::SetMeshVertex </td>
+          <td>(</td>
+          <td class="paramtype">ID3D11Device *&#160;</td>
+          <td class="paramname"><em>pDevice</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_m_e_s_h.html">MESH</a> *&#160;</td>
+          <td class="paramname"><em>pMesh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_v_e_r_t_e_x__3_d.html">VERTEX_3D</a>&#160;</td>
+          <td class="paramname"><em>vertexWk</em>[]&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>テクスチャを左右反転させる関数 </p>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_anim_mesh_a0f9791e44799f2dedda3756fbec20bba_icgraph.png" border="0" usemap="#aclass_c_anim_mesh_a0f9791e44799f2dedda3756fbec20bba_icgraph" alt=""/></div>
+<map name="aclass_c_anim_mesh_a0f9791e44799f2dedda3756fbec20bba_icgraph" id="aclass_c_anim_mesh_a0f9791e44799f2dedda3756fbec20bba_icgraph">
+<area shape="rect" title="テクスチャを左右反転させる関数" alt="" coords="644,31,835,57"/>
+<area shape="rect" href="class_c_anim_mesh.html#a68647db370f06e36abc97eab88ac1563" title="テクスチャを反転させる準備" alt="" coords="437,31,596,57"/>
+<area shape="rect" href="class_c_player.html#a74a2ae35e6ee85f5d8db25b65fe61062" title="プレイヤーのテクスチャを変更するための関数" alt="" coords="227,31,389,57"/>
+<area shape="rect" href="class_c_player.html#abede91d4fa024fae2396593ce5532b17" title="衝突処理" alt="" coords="5,5,179,32"/>
+<area shape="rect" href="class_c_player.html#a4582a8020f6734842edea64909bd4b40" title="更新" alt="" coords="33,56,151,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5c35d445c9ff445130cadabb575e2f13" name="a5c35d445c9ff445130cadabb575e2f13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c35d445c9ff445130cadabb575e2f13">&#9670;&nbsp;</a></span>SetSwapFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAnimMesh::SetSwapFrame </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nCount</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>アニメーションカウンタの設定 </p>
+<p >セッター</p>
+<p >セッター</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(int)</td><td>どの位のカウントから始めるか </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a68647db370f06e36abc97eab88ac1563" name="a68647db370f06e36abc97eab88ac1563"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68647db370f06e36abc97eab88ac1563">&#9670;&nbsp;</a></span>SetVertex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAnimMesh::SetVertex </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>bRoL</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>テクスチャを反転させる準備 </p>
+<p >テクスチャを入れ替える準備 </p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_anim_mesh_a68647db370f06e36abc97eab88ac1563_cgraph.png" border="0" usemap="#aclass_c_anim_mesh_a68647db370f06e36abc97eab88ac1563_cgraph" alt=""/></div>
+<map name="aclass_c_anim_mesh_a68647db370f06e36abc97eab88ac1563_cgraph" id="aclass_c_anim_mesh_a68647db370f06e36abc97eab88ac1563_cgraph">
+<area shape="rect" title="テクスチャを反転させる準備" alt="" coords="5,31,164,57"/>
+<area shape="rect" href="main_app_8cpp.html#a965053cc7c41d010d359091035281310" title=" " alt="" coords="267,5,348,32"/>
+<area shape="rect" href="class_c_anim_mesh.html#a0f9791e44799f2dedda3756fbec20bba" title="テクスチャを左右反転させる関数" alt="" coords="212,56,403,83"/>
+</map>
+</div>
+<div class="dynheader">
+被呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_anim_mesh_a68647db370f06e36abc97eab88ac1563_icgraph.png" border="0" usemap="#aclass_c_anim_mesh_a68647db370f06e36abc97eab88ac1563_icgraph" alt=""/></div>
+<map name="aclass_c_anim_mesh_a68647db370f06e36abc97eab88ac1563_icgraph" id="aclass_c_anim_mesh_a68647db370f06e36abc97eab88ac1563_icgraph">
+<area shape="rect" title="テクスチャを反転させる準備" alt="" coords="437,31,596,57"/>
+<area shape="rect" href="class_c_player.html#a74a2ae35e6ee85f5d8db25b65fe61062" title="プレイヤーのテクスチャを変更するための関数" alt="" coords="227,31,389,57"/>
+<area shape="rect" href="class_c_player.html#abede91d4fa024fae2396593ce5532b17" title="衝突処理" alt="" coords="5,5,179,32"/>
+<area shape="rect" href="class_c_player.html#a4582a8020f6734842edea64909bd4b40" title="更新" alt="" coords="33,56,151,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a4477eb0930aba2ceb6ec3976aeaa28ae" name="a4477eb0930aba2ceb6ec3976aeaa28ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4477eb0930aba2ceb6ec3976aeaa28ae">&#9670;&nbsp;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAnimMesh::Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>初期化処理 </p>
+
+<p><a class="el" href="class_component.html#a3f57807787e0015833ccffd83fb63d14">Component</a>を再実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_anim_mesh_a4477eb0930aba2ceb6ec3976aeaa28ae_cgraph.png" border="0" usemap="#aclass_c_anim_mesh_a4477eb0930aba2ceb6ec3976aeaa28ae_cgraph" alt=""/></div>
+<map name="aclass_c_anim_mesh_a4477eb0930aba2ceb6ec3976aeaa28ae_cgraph" id="aclass_c_anim_mesh_a4477eb0930aba2ceb6ec3976aeaa28ae_cgraph">
+<area shape="rect" title="初期化処理" alt="" coords="5,5,135,32"/>
+<area shape="rect" href="class_object.html#a824beb41e45f1fdecc88c15e11983156" title=" " alt="" coords="183,5,337,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3a4e680b70558835fa7ddcc60aca06fa" name="a3a4e680b70558835fa7ddcc60aca06fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a4e680b70558835fa7ddcc60aca06fa">&#9670;&nbsp;</a></span>StartAnim()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAnimMesh::StartAnim </td>
+          <td>(</td>
+          <td class="paramtype">ID3D11ShaderResourceView *&#160;</td>
+          <td class="paramname"><em>pTex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">XMFLOAT3&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">XMFLOAT2&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>split_x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>split_y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>loop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>swap_frame</em> = <code>1</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">XMFLOAT3&#160;</td>
+          <td class="paramname"><em>color</em> = <code>XMFLOAT3(1.0f,&#160;1.0f,&#160;1.0f)</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>アニメーションの設定 </p>
+<p >アニメーション描画開始</p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">(ID3D11ShaderResourceView*)</td><td>テクスチャ情報 </td></tr>
+    <tr><td class="paramname">(XMFLOAT3)</td><td>オブジェクトの座標 </td></tr>
+    <tr><td class="paramname">(XMFLOAT2)</td><td>オブジェクトの描画サイズ </td></tr>
+    <tr><td class="paramname">(int)</td><td>テクスチャの分割数X </td></tr>
+    <tr><td class="paramname">(int)</td><td>テクスチャの分割数Y </td></tr>
+    <tr><td class="paramname">(int)</td><td>テクスチャの切替フレーム数 </td></tr>
+    <tr><td class="paramname">(XMFLOAT3)</td><td>色 <br  />
+ </td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_anim_mesh_a3a4e680b70558835fa7ddcc60aca06fa_cgraph.png" border="0" usemap="#aclass_c_anim_mesh_a3a4e680b70558835fa7ddcc60aca06fa_cgraph" alt=""/></div>
+<map name="aclass_c_anim_mesh_a3a4e680b70558835fa7ddcc60aca06fa_cgraph" id="aclass_c_anim_mesh_a3a4e680b70558835fa7ddcc60aca06fa_cgraph">
+<area shape="rect" title="アニメーションの設定" alt="" coords="5,69,164,96"/>
+<area shape="rect" href="class_object.html#a6530059316c8c6ea06c66e0de393dcce" title=" " alt="" coords="227,19,385,45"/>
+<area shape="rect" href="class_object_manager.html#a9d66ba3c6343372fc166ea36658cc555" title="オブジェクトを追加する" alt="" coords="217,69,395,96"/>
+<area shape="rect" href="class_object_manager.html#ad2782406e7482eeddffd1941a810d6e6" title="objectマネージャーのインスタンス化" alt="" coords="212,132,400,159"/>
+<area shape="rect" href="class_object.html#aa6b2b605e64fdad13e3e52346353e03a" title="描画順を取得する関数" alt="" coords="476,5,627,32"/>
+<area shape="rect" href="class_object.html#aa4113e76535e952da736eb7df90a1dc7" title="更新順を取得する関数" alt="" coords="470,56,633,83"/>
+<area shape="rect" href="class_object.html#ac608bdc75130f88cd292bc8cd7a016c5" title="オブジェクトの初期化 @detail オブジェクトが持つコンポーネントの初期化" alt="" coords="503,107,599,133"/>
+<area shape="rect" href="class_object_manager.html#a6fa9372c7c3a8da88412f4158ca3dfd9" title="コンストラクタ" alt="" coords="448,157,655,184"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a052d8884ad2a80967e09b28e46a4cafa" name="a052d8884ad2a80967e09b28e46a4cafa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a052d8884ad2a80967e09b28e46a4cafa">&#9670;&nbsp;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CAnimMesh::Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>更新処理 </p>
+
+<p><a class="el" href="class_component.html#aaf2ce6dc5752072492f790ad4c7955bb">Component</a>を再実装しています。</p>
+<div class="dynheader">
+呼び出し関係図:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_c_anim_mesh_a052d8884ad2a80967e09b28e46a4cafa_cgraph.png" border="0" usemap="#aclass_c_anim_mesh_a052d8884ad2a80967e09b28e46a4cafa_cgraph" alt=""/></div>
+<map name="aclass_c_anim_mesh_a052d8884ad2a80967e09b28e46a4cafa_cgraph" id="aclass_c_anim_mesh_a052d8884ad2a80967e09b28e46a4cafa_cgraph">
+<area shape="rect" title="更新処理" alt="" coords="5,5,148,32"/>
+<area shape="rect" href="class_object.html#a7372ab35a58cc56b26445e7c68779f71" title="オブジェクトの削除をする関数" alt="" coords="196,5,301,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<hr/>このクラス詳解は次のファイルから抽出されました:<ul>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="_anim_mesh_component_8h_source.html">AnimMeshComponent.h</a></li>
+<li>C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/<a class="el" href="_anim_mesh_component_8cpp.html">AnimMeshComponent.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

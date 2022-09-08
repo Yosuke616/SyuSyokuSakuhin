@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>SyuSyoSa: C:/Users/ys200/Desktop/SSS/2DHCopy/DX11Game/AttackComponent.h ソースファイル</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">SyuSyoSa
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'検索','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_04097e7ed31d937a0fb6d1db71a8b92f.html">2DHCopy</a></li><li class="navelem"><a class="el" href="dir_ceee655fb8edf4b2e834d9de1c793156.html">DX11Game</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">AttackComponent.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_attack_component_8h.html">[詳解]</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifndef _ATTACK_COMPONENT_H_</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#define _ATTACK_COMPONENT_H_</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="_component_8h.html">Component.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">class </span><a class="code hl_class" href="class_c_transform.html">CTransform</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">class </span><a class="code hl_class" href="class_object.html">Object</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">class </span><a class="code hl_class" href="class_c_collider.html">CCollider</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">class </span><a class="code hl_class" href="class_c_draw_mesh.html">CDrawMesh</a>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3">   23</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3">WHO_ATTACK</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3a74595371199e3faa61f50a8ed87fc2ac">   24</a></span>    <a class="code hl_enumvalue" href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3a74595371199e3faa61f50a8ed87fc2ac">NONE_ATTACK</a> = 0,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3ac8b70a6068adfe66f08cda4193dd9e06">   25</a></span>    <a class="code hl_enumvalue" href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3ac8b70a6068adfe66f08cda4193dd9e06">PLAYER_ATTACK</a>,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_enumvalue" href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3afdf6498aa65691370d71c0f9234cc657">MAX_WHO_ATTACK</a></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3afdf6498aa65691370d71c0f9234cc657">   28</a></span>};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_c_attack.html">   36</a></span><span class="keyword">class </span><a class="code hl_class" href="class_c_attack.html">CAttack</a> :<span class="keyword">public</span> <a class="code hl_class" href="class_component.html">Component</a> {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment"></span>    <a class="code hl_class" href="class_c_transform.html">CTransform</a>* m_pTrans;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">bool</span> m_bRoL;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_enumeration" href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3">WHO_ATTACK</a> m_eAttack;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">int</span> m_nAttackCnt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_class" href="class_object.html">Object</a>* m_pObj;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">//メンバ変数</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="comment">//メンバ関数</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="comment"></span>    <a class="code hl_function" href="class_c_attack.html#adf580d8f4e274755a87e4c31847d9199">CAttack</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <a class="code hl_function" href="class_c_attack.html#a204f549c1837b39a7727e7f6c928ec94">~CAttack</a>()<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_attack.html#a18254cb0083b36ed25d28bd6bd89446c">Start</a>()<span class="keyword">override</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_attack.html#a58d569ffdb3f1cccb5f48ca06b7840c8">Update</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_c_attack.html#a2fbd0e1b9d6b881b5f8b6793cf0bcef8">GetAttackRoL</a>();</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_attack.html#a8e7d153b84f6278ab56c18c4c99cc98b">SetAttackType</a>(<a class="code hl_enumeration" href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3">WHO_ATTACK</a> who);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_attack.html#a77cb40385ad5f079998c0bd136978174">SetRoL</a>(<span class="keywordtype">bool</span> RoL);</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_c_attack.html#a83ec8424ba28f24d59457c32937f986e">SetObject</a>(<a class="code hl_class" href="class_object.html">Object</a>* pObj);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>};</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a_attack_component_8h_html_af8ffc28d2cd8417f3614ced8708629e3"><div class="ttname"><a href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3">WHO_ATTACK</a></div><div class="ttdeci">WHO_ATTACK</div><div class="ttdef"><b>Definition:</b> AttackComponent.h:23</div></div>
+<div class="ttc" id="a_attack_component_8h_html_af8ffc28d2cd8417f3614ced8708629e3a74595371199e3faa61f50a8ed87fc2ac"><div class="ttname"><a href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3a74595371199e3faa61f50a8ed87fc2ac">NONE_ATTACK</a></div><div class="ttdeci">@ NONE_ATTACK</div><div class="ttdef"><b>Definition:</b> AttackComponent.h:24</div></div>
+<div class="ttc" id="a_attack_component_8h_html_af8ffc28d2cd8417f3614ced8708629e3ac8b70a6068adfe66f08cda4193dd9e06"><div class="ttname"><a href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3ac8b70a6068adfe66f08cda4193dd9e06">PLAYER_ATTACK</a></div><div class="ttdeci">@ PLAYER_ATTACK</div><div class="ttdef"><b>Definition:</b> AttackComponent.h:25</div></div>
+<div class="ttc" id="a_attack_component_8h_html_af8ffc28d2cd8417f3614ced8708629e3afdf6498aa65691370d71c0f9234cc657"><div class="ttname"><a href="_attack_component_8h.html#af8ffc28d2cd8417f3614ced8708629e3afdf6498aa65691370d71c0f9234cc657">MAX_WHO_ATTACK</a></div><div class="ttdeci">@ MAX_WHO_ATTACK</div><div class="ttdef"><b>Definition:</b> AttackComponent.h:27</div></div>
+<div class="ttc" id="a_component_8h_html"><div class="ttname"><a href="_component_8h.html">Component.h</a></div></div>
+<div class="ttc" id="aclass_c_attack_html"><div class="ttname"><a href="class_c_attack.html">CAttack</a></div><div class="ttdoc">攻撃の動きを制御する @detail 攻撃を行った者のよって挙動を変える</div><div class="ttdef"><b>Definition:</b> AttackComponent.h:36</div></div>
+<div class="ttc" id="aclass_c_attack_html_a18254cb0083b36ed25d28bd6bd89446c"><div class="ttname"><a href="class_c_attack.html#a18254cb0083b36ed25d28bd6bd89446c">CAttack::Start</a></div><div class="ttdeci">void Start() override</div><div class="ttdoc">初期化</div><div class="ttdef"><b>Definition:</b> AttackComponent.cpp:34</div></div>
+<div class="ttc" id="aclass_c_attack_html_a204f549c1837b39a7727e7f6c928ec94"><div class="ttname"><a href="class_c_attack.html#a204f549c1837b39a7727e7f6c928ec94">CAttack::~CAttack</a></div><div class="ttdeci">~CAttack() override</div><div class="ttdoc">デストラクタ</div><div class="ttdef"><b>Definition:</b> AttackComponent.cpp:25</div></div>
+<div class="ttc" id="aclass_c_attack_html_a2fbd0e1b9d6b881b5f8b6793cf0bcef8"><div class="ttname"><a href="class_c_attack.html#a2fbd0e1b9d6b881b5f8b6793cf0bcef8">CAttack::GetAttackRoL</a></div><div class="ttdeci">bool GetAttackRoL()</div><div class="ttdoc">左右どちらからの攻撃かを取得する</div><div class="ttdef"><b>Definition:</b> AttackComponent.cpp:103</div></div>
+<div class="ttc" id="aclass_c_attack_html_a58d569ffdb3f1cccb5f48ca06b7840c8"><div class="ttname"><a href="class_c_attack.html#a58d569ffdb3f1cccb5f48ca06b7840c8">CAttack::Update</a></div><div class="ttdeci">void Update() override</div><div class="ttdoc">更新処理</div><div class="ttdef"><b>Definition:</b> AttackComponent.cpp:53</div></div>
+<div class="ttc" id="aclass_c_attack_html_a77cb40385ad5f079998c0bd136978174"><div class="ttname"><a href="class_c_attack.html#a77cb40385ad5f079998c0bd136978174">CAttack::SetRoL</a></div><div class="ttdeci">void SetRoL(bool RoL)</div><div class="ttdoc">左右どっちを向いているかセットする関数</div><div class="ttdef"><b>Definition:</b> AttackComponent.cpp:121</div></div>
+<div class="ttc" id="aclass_c_attack_html_a83ec8424ba28f24d59457c32937f986e"><div class="ttname"><a href="class_c_attack.html#a83ec8424ba28f24d59457c32937f986e">CAttack::SetObject</a></div><div class="ttdeci">void SetObject(Object *pObj)</div><div class="ttdoc">オブジェクトの情報を取得する</div><div class="ttdef"><b>Definition:</b> AttackComponent.cpp:130</div></div>
+<div class="ttc" id="aclass_c_attack_html_a8e7d153b84f6278ab56c18c4c99cc98b"><div class="ttname"><a href="class_c_attack.html#a8e7d153b84f6278ab56c18c4c99cc98b">CAttack::SetAttackType</a></div><div class="ttdeci">void SetAttackType(WHO_ATTACK who)</div><div class="ttdoc">どの種類のオブジェクトによる攻撃かを設定する</div><div class="ttdef"><b>Definition:</b> AttackComponent.cpp:112</div></div>
+<div class="ttc" id="aclass_c_attack_html_adf580d8f4e274755a87e4c31847d9199"><div class="ttname"><a href="class_c_attack.html#adf580d8f4e274755a87e4c31847d9199">CAttack::CAttack</a></div><div class="ttdeci">CAttack()</div><div class="ttdoc">コンストラクタ</div><div class="ttdef"><b>Definition:</b> AttackComponent.cpp:15</div></div>
+<div class="ttc" id="aclass_c_collider_html"><div class="ttname"><a href="class_c_collider.html">CCollider</a></div><div class="ttdef"><b>Definition:</b> ColliderComponent.h:27</div></div>
+<div class="ttc" id="aclass_c_draw_mesh_html"><div class="ttname"><a href="class_c_draw_mesh.html">CDrawMesh</a></div><div class="ttdef"><b>Definition:</b> DrawMeshComponent.h:21</div></div>
+<div class="ttc" id="aclass_c_transform_html"><div class="ttname"><a href="class_c_transform.html">CTransform</a></div><div class="ttdef"><b>Definition:</b> TransformComponent.h:17</div></div>
+<div class="ttc" id="aclass_component_html"><div class="ttname"><a href="class_component.html">Component</a></div><div class="ttdef"><b>Definition:</b> Component.h:29</div></div>
+<div class="ttc" id="aclass_object_html"><div class="ttname"><a href="class_object.html">Object</a></div><div class="ttdef"><b>Definition:</b> Object.h:21</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築:&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<map id="CAssimpModel::SetAnimTime" name="CAssimpModel::SetAnimTime">
+<area shape="rect" id="node1" title=" " alt="" coords="567,5,763,32"/>
+<area shape="rect" id="node2" href="$class_c_draw3_d.html#a8b860e3975e265ac0c28e438181d38cb" title="アニメーションの再生フレーム設定" alt="" coords="356,5,519,32"/>
+<area shape="rect" id="node3" href="$class_animation.html#a0c6a4e940db84d4a6246fcb3ae773402" title="更新処理" alt="" coords="179,5,308,32"/>
+<area shape="rect" id="node4" href="$class_c_draw3_d.html#aa42fcba7f1258571457c186292f91702" title="更新" alt="" coords="5,5,131,32"/>
+</map>

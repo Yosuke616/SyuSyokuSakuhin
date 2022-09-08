@@ -1,0 +1,92 @@
+\hypertarget{class_c_assimp_mesh}{}\doxysection{CAssimp\+Mesh クラス}
+\label{class_c_assimp_mesh}\index{CAssimpMesh@{CAssimpMesh}}
+
+
+{\ttfamily \#include $<$Assimp\+Model.\+h$>$}
+
+\doxysubsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_c_assimp_mesh_a0407c0d669b67e0c5ea916b9afe7fd90}{CAssimp\+Mesh}} (ID3\+D11\+Device $\ast$p\+Device, \mbox{\hyperlink{class_c_assimp_model}{CAssimp\+Model}} $\ast$p\+Model, std\+::vector$<$ \mbox{\hyperlink{struct_t_assimp_vertex}{TAssimp\+Vertex}} $>$ a\+Vertex, std\+::vector$<$ UINT $>$ a\+Index, \mbox{\hyperlink{struct_t_assimp_material}{TAssimp\+Material}} \&material)
+\item 
+virtual \mbox{\hyperlink{class_c_assimp_mesh_abf56aff36d7b748bf11036ae9ca87cf6}{$\sim$\+CAssimp\+Mesh}} ()
+\item 
+void \mbox{\hyperlink{class_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa}{Draw}} (ID3\+D11\+Device\+Context $\ast$p\+DC, Direct\+X\+::\+XMFLOAT4\+X4 \&mtx\+World, \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}{EBy\+Opacity}} by\+Opacity=\mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a35cbb98affb6d66c253aefeb9d4078bc}{e\+No\+Affect}})
+\item 
+void \mbox{\hyperlink{class_c_assimp_mesh_a0b61f1fe42a80555d2f6e286016762b5}{Release}} ()
+\item 
+void \mbox{\hyperlink{class_c_assimp_mesh_aa23f916538ebc325071af295bc54c0ba}{Set\+Bone\+Matrix}} (ID3\+D11\+Device\+Context $\ast$p\+DC, XMFLOAT4\+X4 mtx\+Bone\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{構築子と解体子}
+\mbox{\Hypertarget{class_c_assimp_mesh_a0407c0d669b67e0c5ea916b9afe7fd90}\label{class_c_assimp_mesh_a0407c0d669b67e0c5ea916b9afe7fd90}} 
+\index{CAssimpMesh@{CAssimpMesh}!CAssimpMesh@{CAssimpMesh}}
+\index{CAssimpMesh@{CAssimpMesh}!CAssimpMesh@{CAssimpMesh}}
+\doxysubsubsection{\texorpdfstring{CAssimpMesh()}{CAssimpMesh()}}
+{\footnotesize\ttfamily CAssimp\+Mesh\+::\+CAssimp\+Mesh (\begin{DoxyParamCaption}\item[{ID3\+D11\+Device $\ast$}]{p\+Device,  }\item[{\mbox{\hyperlink{class_c_assimp_model}{CAssimp\+Model}} $\ast$}]{p\+Model,  }\item[{std\+::vector$<$ \mbox{\hyperlink{struct_t_assimp_vertex}{TAssimp\+Vertex}} $>$}]{a\+Vertex,  }\item[{std\+::vector$<$ UINT $>$}]{a\+Index,  }\item[{\mbox{\hyperlink{struct_t_assimp_material}{TAssimp\+Material}} \&}]{material }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_c_assimp_mesh_abf56aff36d7b748bf11036ae9ca87cf6}\label{class_c_assimp_mesh_abf56aff36d7b748bf11036ae9ca87cf6}} 
+\index{CAssimpMesh@{CAssimpMesh}!````~CAssimpMesh@{$\sim$CAssimpMesh}}
+\index{````~CAssimpMesh@{$\sim$CAssimpMesh}!CAssimpMesh@{CAssimpMesh}}
+\doxysubsubsection{\texorpdfstring{$\sim$CAssimpMesh()}{~CAssimpMesh()}}
+{\footnotesize\ttfamily CAssimp\+Mesh\+::$\sim$\+CAssimp\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+\doxysubsection{関数詳解}
+\mbox{\Hypertarget{class_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa}\label{class_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa}} 
+\index{CAssimpMesh@{CAssimpMesh}!Draw@{Draw}}
+\index{Draw@{Draw}!CAssimpMesh@{CAssimpMesh}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void CAssimp\+Mesh\+::\+Draw (\begin{DoxyParamCaption}\item[{ID3\+D11\+Device\+Context $\ast$}]{p\+DC,  }\item[{Direct\+X\+::\+XMFLOAT4\+X4 \&}]{mtx\+World,  }\item[{\mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3}{EBy\+Opacity}}}]{by\+Opacity = {\ttfamily \mbox{\hyperlink{_assimp_model_8h_acbd1753ffd33dcd5787e7028cc0e9bf3a35cbb98affb6d66c253aefeb9d4078bc}{e\+No\+Affect}}} }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa_cgraph}
+\end{center}
+\end{figure}
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_mesh_a40ccc5aa52266d7673ba52e23aad20fa_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_mesh_a0b61f1fe42a80555d2f6e286016762b5}\label{class_c_assimp_mesh_a0b61f1fe42a80555d2f6e286016762b5}} 
+\index{CAssimpMesh@{CAssimpMesh}!Release@{Release}}
+\index{Release@{Release}!CAssimpMesh@{CAssimpMesh}}
+\doxysubsubsection{\texorpdfstring{Release()}{Release()}}
+{\footnotesize\ttfamily void CAssimp\+Mesh\+::\+Release (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+呼び出し関係図\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_mesh_a0b61f1fe42a80555d2f6e286016762b5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_c_assimp_mesh_aa23f916538ebc325071af295bc54c0ba}\label{class_c_assimp_mesh_aa23f916538ebc325071af295bc54c0ba}} 
+\index{CAssimpMesh@{CAssimpMesh}!SetBoneMatrix@{SetBoneMatrix}}
+\index{SetBoneMatrix@{SetBoneMatrix}!CAssimpMesh@{CAssimpMesh}}
+\doxysubsubsection{\texorpdfstring{SetBoneMatrix()}{SetBoneMatrix()}}
+{\footnotesize\ttfamily void CAssimp\+Mesh\+::\+Set\+Bone\+Matrix (\begin{DoxyParamCaption}\item[{ID3\+D11\+Device\+Context $\ast$}]{p\+DC,  }\item[{XMFLOAT4\+X4}]{mtx\+Bone\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+被呼び出し関係図\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_c_assimp_mesh_aa23f916538ebc325071af295bc54c0ba_icgraph}
+\end{center}
+\end{figure}
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_assimp_model_8h}{Assimp\+Model.\+h}}\item 
+C\+:/\+Users/ys200/\+Desktop/\+SSS/2\+DHCopy/\+DX11\+Game/\mbox{\hyperlink{_assimp_model_8cpp}{Assimp\+Model.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="MenuManager::CreateSelectMenu" name="MenuManager::CreateSelectMenu">
+<area shape="rect" id="node1" title="ステージセレクトメニュー" alt="" coords="172,5,391,32"/>
+<area shape="rect" id="node2" href="$class_stage_select.html#a949e9de720f8072040e2f93bb586a0ba" title="初期化処理" alt="" coords="5,5,124,32"/>
+</map>
