@@ -40,6 +40,9 @@
     <Filter Include="ステージ">
       <UniqueIdentifier>{f7641ce0-fe74-4a7f-aa4e-19946e52d226}</UniqueIdentifier>
     </Filter>
+    <Filter Include="サウンド">
+      <UniqueIdentifier>{7c3fc693-d8e4-4f33-9726-0fc8cc83532b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DX11Game.rc">
@@ -183,6 +186,12 @@
     </ClCompile>
     <ClCompile Include="Load.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="BillBoardComponent.cpp">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClCompile>
+    <ClCompile Include="Sound.cpp">
+      <Filter>サウンド</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -341,6 +350,18 @@
     </ClInclude>
     <ClInclude Include="SceneStage_2.h">
       <Filter>ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="BillboardComponent.h">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundData.h">
+      <Filter>サウンド</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundData.hpp">
+      <Filter>サウンド</Filter>
+    </ClInclude>
+    <ClInclude Include="Sound.h">
+      <Filter>サウンド</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

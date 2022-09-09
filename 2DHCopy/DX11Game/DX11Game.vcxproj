@@ -172,6 +172,7 @@
     <ClCompile Include="AnimMeshComponent.cpp" />
     <ClCompile Include="AssimpModel.cpp" />
     <ClCompile Include="AttackComponent.cpp" />
+    <ClCompile Include="BillBoardComponent.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="ColliderComponent.cpp" />
     <ClCompile Include="Draw2DComponent.cpp" />
@@ -207,6 +208,7 @@
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="SeeCollComponent.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="Sound.cpp" />
     <ClCompile Include="StageManager.cpp" />
     <ClCompile Include="TexScrollComponent.cpp" />
     <ClCompile Include="Texture.cpp" />
@@ -218,6 +220,7 @@
     <ClInclude Include="AnimMeshComponent.h" />
     <ClInclude Include="AssimpModel.h" />
     <ClInclude Include="AttackComponent.h" />
+    <ClInclude Include="BillboardComponent.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="ColliderComponent.h" />
     <ClInclude Include="Component.h" />
@@ -259,6 +262,9 @@
     <ClInclude Include="SceneTitle.h" />
     <ClInclude Include="SeeCollComponent.h" />
     <ClInclude Include="Shader.h" />
+    <ClInclude Include="Sound.h" />
+    <ClInclude Include="SoundData.h" />
+    <ClInclude Include="SoundData.hpp" />
     <ClInclude Include="StageManager.h" />
     <ClInclude Include="SceneStage_2.h" />
     <ClInclude Include="TexScrollComponent.h" />

@@ -13,7 +13,7 @@
 #include "ObjInfo.h"
 #include "Camera.h"
 #include "imgui.h"
-
+#include "Sound.h"
 
 #include "Component.h"
 #include "TransformComponent.h"
@@ -114,6 +114,9 @@ void SceneGame::Init() {
 	pTexManager->AddTexture(PATH_TEX_OPTION, OPTION_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_STAGE_SELECT, STAGE_SELECT_TEX_NUM);
 
+	//矢印
+	pTexManager->AddTexture(PATH_ARROW, ARROW_NUM);
+
 	//オブジェクトの作成
 	//プレイヤー
 	Object* Box = new Object(PLAYER_NAME, UPDATE_PLAYER, DRAW_PLAYER);
@@ -123,6 +126,10 @@ void SceneGame::Init() {
 	Box->AddComponent<CPlayer>();
 	Box->AddComponent<CGravity>();
 	Box->AddComponent<CSeeColl>();
+
+	//ステージごとの設定をする
+	m_CurrentScene->Init();
+
 	//設定仮
 	DrawBox->SetTexture(pTexManager->GetTexture(DXCHAN_STAND_TEX_NUM));
 	TransBox->SetPosition(-250.0f, 100.0f);
@@ -253,27 +260,32 @@ void SceneGame::Update() {
 	//m_pMenuManager->Update();
 
 	//ポーズメニューを呼び出す
-	if (InputManager::Instance()->GetKeyPress(DIK_Q)) {
+	if (InputManager::Instance()->GetKeyTrigger(DIK_Q)) {
 		//ポーズメニューーを作ったり破棄したりする
 		if (m_bPauseMode) {
 			//オンオフをひっくり返す
-			m_bPauseMode != m_bPauseMode;
+			m_bPauseMode = false;
 			//メニューを破棄する
+			m_pMenuManager->DeleteMenu();
 
 			//オブジェクトを全て再開する
 			for (auto&& obj : m_pObjectManager->GetUpdateList()) {
 				obj->Use();
 			}
+			//カメラを再開する
+
 		}
 		else {
 			//オンオフをひっくり返す
-			m_bPauseMode != m_bPauseMode;
+			m_bPauseMode = true;
 			//メニューの作成
 			m_pMenuManager->CreatePauseMenu();
 			//オブジェクトを全て停止する
 			for (auto&& obj:m_pObjectManager->GetUpdateList()) {
 				obj->StopUpdate();
 			}
+			//カメラも停止させる
+
 		}
 		//m_bPauseMode != m_bPauseMode;
 	}
@@ -281,16 +293,21 @@ void SceneGame::Update() {
 	//ゲームモード
 	if (m_bEditMode == false) {
 		if (m_bPauseMode == false) {
+			//ゲームオブジェクト更新
+			m_pObjectManager->Update();
+		
 		}
 		else {		
 			m_pMenuManager->Update();
 		}
 
-		//ゲームオブジェクト更新
-		m_pObjectManager->Update();
 	}
 	else if (m_bEditMode == true) {
 		m_pObjectManager->UpdateEdit();
+	}
+
+	if (SceneManager::Instance()->GetScene() == SCENE_SELECT) {
+		return;
 	}
 
 	//ここでプレイヤーの速度を見る

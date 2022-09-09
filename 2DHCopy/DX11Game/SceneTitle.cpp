@@ -14,6 +14,8 @@
 #include "TransformComponent.h"
 #include "Draw2DComponent.h"
 #include "Draw3dComponent.h"
+#include "Sound.h"
+#include "SoundData.h"
 
 #include "Load.h"
 
@@ -66,6 +68,8 @@ void SceneTitle::Init() {
 	
 	//メニューの作成
 	m_pMenuManager->CreateTitleMenu();
+
+	CSound::Play(TITLE_BGM);
 	
 	//ロード終了処理
 	Load::End();
@@ -73,6 +77,9 @@ void SceneTitle::Init() {
 
 //終了処理
 void SceneTitle::Uninit() {
+	//音楽を止める
+	CSound::Stop(TITLE_BGM);
+
 	//メニューの終了
 	m_pMenuManager->Destroy();
 
@@ -97,9 +104,3 @@ void SceneTitle::Draw(){
 	//メニュー画面の更新
 	m_pMenuManager->Draw();
 }
-
-
-
-
-
-

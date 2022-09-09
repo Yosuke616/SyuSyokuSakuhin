@@ -54,6 +54,7 @@ MenuManager::~MenuManager() {
 			delete menuObject;
 		}*/
 		m_StageObjList.clear();
+		m_SelectSub.clear();
 	}
 }
 
@@ -90,6 +91,12 @@ void MenuManager::Start() {
 	}
 	//メニューリスト内のオブジェクトの初期化が終わったらイテレータを先頭に持ってくる
 	m_itr_Menu = m_MenuList.begin();
+	//ゲームシーンでブラックアウトようだったら次に持っていく
+	if (SceneManager::Instance()->GetScene() == SCENE_GAME) {
+		if ((*m_itr_Menu)->GetName() == "Black") {
+			m_itr_Menu++;
+		}
+	}
 	
 	//黒いテクスチャは透明状態にする
 	m_fBlackAlpha = 0.0f;
@@ -170,7 +177,8 @@ void MenuManager::Update() {
 			if (obj->GetComponent<CPlayer>()->GetPlayerSta() == MISS_PLAYER) {
 				MissMenu();
 			}else {
-				
+				SelectButton();
+				//PauseMenu();
 			}
 		}
 	}
@@ -286,6 +294,21 @@ void MenuManager::CreatePauseMenu() {
 	m_nCreateMenu = PAUSE_STATE;
 
 	//必要になってくるオブジェクトを追加していく
+	//黒背景を作る
+	Object* Black = new Object("Black", UPDATE_UI, DRAW_UI);
+	//コンポーネント追加
+	auto transBlack = Black->AddComponent<CTransform>();
+	auto drawBlack = Black->AddComponent<CDraw2D>();
+	//オブジェクトの設定
+	transBlack->SetPosition(0.0f, 0.0f, 0.0);
+	drawBlack->SetTexture(TextureManager::GetInstance()->GetTexture(FEAD_OUT_NUM));
+	drawBlack->SetSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+	drawBlack->SetColor(0.0f, 0.0f, 0.0f);
+	drawBlack->SetAlpha(0.5f);
+
+	//メニューリストに追加
+	AddMenu(Black);
+	
 	//再開
 	Object* Resume = new Object(UI_RESUME_NAME,UPDATE_UI,DRAW_UI);
 	//コンポーネントの追加
@@ -297,6 +320,33 @@ void MenuManager::CreatePauseMenu() {
 	D_Resume->SetSize(UI_RESUME_SIZE_X, UI_RESUME_SIZE_Y);
 	//追加
 	AddMenu(Resume);
+
+	//ステージセレクト
+	Object* Select = new Object(UI_STAGE_SELECT_NAME,UPDATE_UI,DRAW_UI);
+	//コンポーネントの追加
+	auto T_Select = Select->AddComponent<CTransform>();
+	auto D_Select = Select->AddComponent<CDraw2D>();
+	//オブジェクトの設定
+	T_Select->SetPosition(UI_STAGE_SELECT_POS_X, UI_STAGE_SELECT_POS_Y);
+	D_Select->SetTexture(TextureManager::GetInstance()->GetTexture(STAGE_SELECT_TEX_NUM));
+	D_Select->SetSize(UI_STAGE_SELECT_SIZE_X, UI_STAGE_SELECT_SIZE_Y);
+	//追加
+	AddMenu(Select);
+
+	//オプション
+	Object* OptionObj = new Object(UI_OPTION_NAME,UPDATE_UI,DRAW_UI);
+	//コンポーネントの追加
+	auto T_Option = OptionObj->AddComponent<CTransform>();
+	auto D_Option = OptionObj->AddComponent<CDraw2D>();
+	//オブジェクトの設定
+	T_Option->SetPosition(UI_OPTION_POS_X, UI_OPTION_POS_Y);
+	D_Option->SetTexture(TextureManager::GetInstance()->GetTexture(OPTION_TEX_NUM));
+	D_Option->SetSize(UI_OPTION_SIZE_X, UI_OPTION_SIZE_Y);
+	//追加
+	AddMenu(OptionObj);
+
+	//追加されたオブジェクトの初期化をする
+	Start();
 }
 #pragma endregion
 
@@ -393,6 +443,9 @@ void MenuManager::CreateSelectMenu() {
 	//オブジェクトマネージャーに追加
 	AddMenu(Push_Button);
 
+	//上下に移動する為のリストに追加する
+	m_SelectSub.push_back(Push_Button);
+
 	//UI関係の追加
 	Object* To_Title = new Object(UI_TITLE_NAME, UPDATE_UI, DRAW_UI);
 	//コンポーネントの追加
@@ -406,11 +459,16 @@ void MenuManager::CreateSelectMenu() {
 	//オブジェクトマネージャーに追加
 	AddMenu(To_Title);
 
+	//上下に移動する為のリストに追加する
+	m_SelectSub.push_back(To_Title);
+
 	//追加されたオブジェクトの初期化
 	Start();
 
 	//ステージオブジェクトのリストを動かせるイテレーターは先頭を指しておく
 	m_itr_Stage = m_StageObjList.begin();
+	//上下に移動するためのイテレータを先頭に
+	m_itr_SelectSub = m_SelectSub.begin();
 
 }
 #pragma endregion
@@ -581,6 +639,10 @@ void MenuManager::SelectButton() {
 	//色を全てデフォルトに戻しておく
 	for (auto&& menuObject : m_MenuList) {
 		menuObject->GetComponent<CDraw2D>()->SetColor(1.0f,1.0f,1.0f);
+		//メニューの黒色は黒色のままで
+		if (menuObject->GetName() == "Black") {
+			menuObject->GetComponent<CDraw2D>()->SetColor(0.0f,0.0f,0.0f);
+		}
 	}
 
 	//キー入力でボタンを選べるようにする
@@ -594,6 +656,11 @@ void MenuManager::SelectButton() {
 		else {
 			//そうでない場合は1個下げる
 			m_itr_Menu--;
+			//下げた結果背景の黒だった場合お尻に行かせる
+			if ((*m_itr_Menu)->GetName() == "Black") {
+				m_itr_Menu = (m_MenuList.end());
+				m_itr_Menu--;
+			}
 		}
 	}
 	else if(InputManager::Instance()->GetKeyTrigger(DIK_S)){
@@ -603,6 +670,10 @@ void MenuManager::SelectButton() {
 		itr--;
 		if (m_itr_Menu == itr) {
 			m_itr_Menu = m_MenuList.begin();
+			//背景の黒だった場合,さらに1つ先に進める
+			if ((*m_itr_Menu)->GetName() == "Black") {
+				m_itr_Menu++;
+			}
 		}
 		else {
 			m_itr_Menu++;
@@ -628,7 +699,7 @@ void MenuManager::SelectButton() {
 	(*m_itr_Menu)->GetComponent<CDraw2D>()->SetColor(1.0f,0.0f,0.0f);
 
 	//決定ボタンが押された時の処理
-	if (InputManager::Instance()->GetKeyTrigger(DIK_RETURN)) {
+	if (InputManager::Instance()->GetKeyTrigger(DIK_SPACE)) {
 		PushButton();
 	}
 }
@@ -655,7 +726,31 @@ void MenuManager::PushButton() {
 			PostMessage(GetMainWnd(), WM_CLOSE, 0, 0);
 		}
 		break;
-	case PAUSE_STATE:break;
+	case PAUSE_STATE:
+		if ((*m_itr_Menu)->GetName() == UI_RESUME_NAME) {
+			//ゲームを再開する
+			//オンオフをひっくり返す
+			SceneGame::GetInstance()->m_bPauseMode = false;
+			//メニューを破棄する
+			DeleteMenu();
+			//オブジェクトを全て再開する
+			for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+				obj->Use();
+			}
+			//カメラを再開する
+		
+		}
+		else if ((*m_itr_Menu)->GetName() == UI_STAGE_SELECT_NAME) {
+			//シーン遷移
+			//ステージセレクトへ移動する
+			SceneManager::Instance()->SetScene(SCENE_SELECT);
+		}
+		else if ((*m_itr_Menu)->GetName() == UI_OPTION_NAME) {
+			//今回はゲームを終わる
+			//ゲーム終了
+			PostMessage(GetMainWnd(), WM_CLOSE, 0, 0);
+		}
+		break;
 	case OPTION_STATE:break;
 	case GAMECLEAR_STATE:break;
 	case GAMEOVER_STATE:break;
@@ -678,9 +773,40 @@ void MenuManager::StageSelect() {
 		}
 		obj->GetComponent<CTransform>()->SetScale(30.0f,30.0f,30.0f);
 	}
+	//上下リストで選ばれているものは色変える
+	//そのためにまずはデフォルトに変える
+	for (auto&& obj : m_SelectSub) {
+		obj->GetComponent<CDraw2D>()->SetColor(1.0f,1.0f,1.0f);
+	}
 
 	//操作不可能フラグがオフになっている場合操作できる
 	if (!m_bRestart) {
+		//上下の移動をできるようにする
+		if (InputManager::Instance()->GetKeyTrigger(DIK_W)) {
+			//上方向に移動
+			if (m_itr_SelectSub == m_SelectSub.begin()) {
+				m_itr_SelectSub = m_SelectSub.end();
+				m_itr_SelectSub--;
+			}
+			else {
+				m_itr_SelectSub--;
+			}
+		}
+		else if (InputManager::Instance()->GetKeyTrigger(DIK_S)) {
+			//下方向に移動
+			std::list<Object*>::iterator itr = m_SelectSub.end();
+			itr--;
+			if (m_itr_SelectSub == itr) {
+				m_itr_SelectSub = m_SelectSub.begin();
+			}
+			else {
+				m_itr_SelectSub++;
+			}
+		}
+
+		//選ばれているものの色を変える
+		(*m_itr_SelectSub)->GetComponent<CDraw2D>()->SetColor(1.0f,0.0f,0.0f);
+
 		//ステージセレクトを右に動かす
 		if (InputManager::Instance()->GetKeyTrigger(DIK_D)) {
 
@@ -746,8 +872,14 @@ void MenuManager::StageSelect() {
 			}
 		}
 		//決定ボタンでステージに入れるようにする
-		if (InputManager::Instance()->GetKeyTrigger(DIK_RETURN)) {
-			StageIN();
+		//プッシュAが赤くなっているときのみステージに入る
+		if (InputManager::Instance()->GetKeyTrigger(DIK_SPACE)) {
+			if ((*m_itr_SelectSub)->GetName() == UI_PUSH_NAME) {
+				StageIN();			
+			}
+			else if((*m_itr_SelectSub)->GetName() == UI_TITLE_NAME){
+				SceneManager::Instance()->SetScene(SCENE_TITLE);
+			}
 		}
 
 	}
@@ -796,6 +928,10 @@ void MenuManager::StageIN() {
 	SceneManager::Instance()->SetScene(SCENE_GAME);
 }
 
+/**
+* @fn		MenuManager::MissMenu
+* @brief	ミスしたときに出現するメニュー
+*/
 void MenuManager::MissMenu() {
 	//やりたいこと
 	//黒を半透明状態にする

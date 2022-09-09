@@ -26,7 +26,7 @@
 
 //タイトル画面用
 #define TITLE_BACK_GROUND_NUM				(2)
-#define PATH_TEX_TITLE_BACK_GROUND			("data/texture/TitleBack.jpg")
+#define PATH_TEX_TITLE_BACK_GROUND			("data/texture/Bellboad.jpg")
 
 //ボタン
 #define TITLE_BUTTON_NUM					(3)
@@ -63,31 +63,31 @@
 
 //タイトルへ
 #define TO_TITLE_TEX_NUM					(11)
-#define PATH_TEX_TO_TITLE					("data/texture/タイトルへ.png")
+#define PATH_TEX_TO_TITLE					("data/texture/Title.png")
 
 //再開
 #define RESUME_TEX_NUM						(12)
-#define PATH_TEX_RESUME						("data/texture/再会.png")
+#define PATH_TEX_RESUME						("data/texture/Sakai.png")
 
 //オプション
 #define OPTION_TEX_NUM						(13)
-#define PATH_TEX_OPTION						("data/texture/オプション.png")
+#define PATH_TEX_OPTION						("data/texture/Option.png")
 
 //初めから
 #define BEGIN_TEX_NUM						(14)
-#define PATH_TEX_BEGIN						("data/texture/初めから.png")
+#define PATH_TEX_BEGIN						("data/texture/Begin.png")
 
 //続きから
 #define CONTINUE_TEX_NUM					(15)
-#define PATH_TEX_CONTINUE					("data/texture/続きから.png")
+#define PATH_TEX_CONTINUE					("data/texture/Continue.png")
 
 //ステージセレクト
 #define STAGE_SELECT_TEX_NUM				(16)
-#define PATH_TEX_STAGE_SELECT				("data/texture/ステージセレクト.png")
+#define PATH_TEX_STAGE_SELECT				("data/texture/Select.png")
 
 //終わる
 #define END_TEX_NUM							(17)
-#define PATH_TEX_END						("data/texture/終わる.png")
+#define PATH_TEX_END						("data/texture/End.png")
 
 //BGM
 #define BGM_TEX_NUM							(18)
@@ -98,8 +98,12 @@
 #define PATH_TEX_SE							("data/texture/se.png")
 
 //明るさ
-#define BRIGHTNESS_TEX_NUM							(20)
-#define PATH_TEX_BRIGHTNESS					("data/texture/明るさ.png")
+#define BRIGHTNESS_TEX_NUM					(20)
+#define PATH_TEX_BRIGHTNESS					("data/texture/Brightness.png")
+
+//矢印
+#define ARROW_NUM							(999)
+#define PATH_ARROW							("data/texture/Billboard_Arrow.png")
 
 
 //クラス定義
