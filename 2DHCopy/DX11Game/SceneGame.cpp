@@ -127,8 +127,6 @@ void SceneGame::Init() {
 	Box->AddComponent<CGravity>();
 	Box->AddComponent<CSeeColl>();
 
-	//ステージごとの設定をする
-	m_CurrentScene->Init();
 
 	//設定仮
 	DrawBox->SetTexture(pTexManager->GetTexture(DXCHAN_STAND_TEX_NUM));
@@ -143,6 +141,8 @@ void SceneGame::Init() {
 	DrawBox->SetLoop(true);
 
 	m_pObjectManager->AddObject(Box);	
+	//ステージごとの設定をする
+	m_CurrentScene->Init();
 
 	//UI関係の表示
 	//スコア

@@ -17,6 +17,7 @@
 #include "Draw3dComponent.h"
 #include "DrawMeshComponent.h"
 #include "AnimMeshComponent.h"
+#include "TexScrollComponent.h"
 
 #include "ColliderComponent.h"
 #include "PlayerComponent.h"
@@ -62,13 +63,22 @@ void SceneStage_1::Init() {
 	//プレイヤー状態の取得
 	Object* pPlayer = m_pObjectManager->GetGameObject(PLAYER_NAME);
 
-	//背景の描画
-	//Object* objBG = new Object("Back",UPDATE_BG,DRAW_BG);
-	////コンポーネントの追加
-	//auto transBG = objBG->AddComponent<CTransform>();
-	//auto drawBG = objBG->AddComponent<CDraw2D>();
-	////auto scrollBG = objBG->AddComponent<>();
-	////オブジェクトの追加
+	for (int i = 0;i < 2;i++) {
+		//背景の描画
+		Object* objBG = new Object("Back", UPDATE_BG, DRAW_BG);
+		//コンポーネントの追加
+		auto transBG = objBG->AddComponent<CTransform>();
+		auto drawBG = objBG->AddComponent<CDraw2D>();
+		auto scrollBG = objBG->AddComponent<CTexScroll>();
+		//オブジェクトの追加
+		transBG->SetPosition(-720 * 0.5f + i * 720, 0);
+		drawBG->SetTexture(pTexManager->GetTexture(TITLE_BACK_GROUND_NUM));
+		drawBG->SetSize(720, 720);
+		scrollBG->SetAxizX(&(pPlayer->GetComponent<CTransform>()->Pos.x));
+		scrollBG->SetScrollValueX(0.0016f);
+		//リストに追加
+		m_pObjectManager->AddObject(objBG);
+	}
 
 	//BGM再生
 	CSound::Play(TITLE_BGM);
