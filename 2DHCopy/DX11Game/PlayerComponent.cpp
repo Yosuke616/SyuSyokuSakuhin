@@ -14,6 +14,7 @@
 #include "Camera.h"
 #include "SeeCollComponent.h"
 #include "AttackComponent.h"
+#include "Sound.h"
 
 //’è”’è‹`
 /** @brief*/
@@ -354,7 +355,10 @@ void CPlayer::Update() {
 			if (!m_bAttack) {
 				CreateAttack();
 				m_bAttack = true;
+				//UŒ‚
+				CSound::Play(ATTACK_VOICE);
 			}
+
 
 			//‹ó’†‚ÅUŒ‚‚µ‚½ê‡‘¬‚³‚Í‚»‚Ì‚Ü‚Ü‚É‚·‚é
 			if (m_bJump) {

@@ -22,6 +22,7 @@
 #include "PlayerComponent.h"
 #include "GravityComponent.h"
 #include "sceneGame.h"
+#include "Sound.h"
 
 /**
 * @fn		SceneStage_1::SceneStage_1
@@ -61,6 +62,17 @@ void SceneStage_1::Init() {
 	//プレイヤー状態の取得
 	Object* pPlayer = m_pObjectManager->GetGameObject(PLAYER_NAME);
 
+	//背景の描画
+	//Object* objBG = new Object("Back",UPDATE_BG,DRAW_BG);
+	////コンポーネントの追加
+	//auto transBG = objBG->AddComponent<CTransform>();
+	//auto drawBG = objBG->AddComponent<CDraw2D>();
+	////auto scrollBG = objBG->AddComponent<>();
+	////オブジェクトの追加
+
+	//BGM再生
+	CSound::Play(TITLE_BGM);
+
 }
 
 /**
@@ -68,7 +80,7 @@ void SceneStage_1::Init() {
 * @brief	終了処理
 */
 void SceneStage_1::Uninit() {
-
+	CSound::Stop(TITLE_BGM);
 }
 
 /**

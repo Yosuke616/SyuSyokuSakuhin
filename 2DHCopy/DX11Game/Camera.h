@@ -24,7 +24,7 @@ private:
 	XMFLOAT3 m_vTarget;				// 注視点
 	XMFLOAT3 m_vUp;					// 上方ベクトル
 	XMFLOAT2 m_Limit;
-	XMFLOAT2 m_LimitY;				//Y軸方向の上限
+	XMFLOAT2 m_LimitY;				// Y軸方向の上限
 
 	XMFLOAT3 m_vSrcPos;				// 元の視点
 
@@ -42,7 +42,7 @@ private:
 	XMFLOAT4X4 m_mtxProj;			// プロジェクション マトリックス
 
 	//2022/01/08
-	XMFLOAT2 m_vScrSize;	// 画面サイズ
+	XMFLOAT2 m_vScrSize;			// 画面サイズ
 
 	XMFLOAT3 m_vAngle;				// カメラの角度
 	XMFLOAT3 m_vDestAngle;			// カメラの目的の向き
@@ -95,5 +95,8 @@ public:
 	void SetAxisX(float* px);
 	/** @brief Y軸の注視点の設定をする 2022/7/26*/
 	void SetAxisY(float* py);
+	/** @brief カメラを動かなくする 2022/9/9*/
+
+	/** @brief カメラの動きを再開する*/
 
 };

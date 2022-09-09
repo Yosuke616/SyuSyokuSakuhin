@@ -146,10 +146,14 @@ enum DRAW_ORDER {
 #define UI_RESUME_SIZE_X			(300.0f)
 #define UI_RESUME_SIZE_Y			(200.0f)
 #define UI_RESUME_POS_X				(0.0f)
-#define UI_RESUME_POS_Y				(75.0f)
+#define UI_RESUME_POS_Y				(100.0f)
 
 //オプション
 #define UI_OPTION_NAME				("UI_OPTION")
+#define UI_OPTION_SIZE_X			(400.0f)
+#define UI_OPTION_SIZE_Y			(275.0f)
+#define UI_OPTION_POS_X				(0.0f)
+#define UI_OPTION_POS_Y				(-100.0f)
 
 //初めから
 #define UI_BEGIN_NAME				("UI_BEGIN")
@@ -168,6 +172,10 @@ enum DRAW_ORDER {
 
 //ステージセレクト
 #define UI_STAGE_SELECT_NAME		("UI_STAGE_SELECT")
+#define UI_STAGE_SELECT_SIZE_X		(500.0f)
+#define UI_STAGE_SELECT_SIZE_Y		(400.0f)
+#define UI_STAGE_SELECT_POS_X		(0.0f)
+#define UI_STAGE_SELECT_POS_Y		(0.0f)
 
 //終わる
 #define UI_END_NAME					("UI_END")

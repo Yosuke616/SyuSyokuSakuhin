@@ -23,6 +23,7 @@
 #include "GravityComponent.h"
 #include "OutOfRange.h"
 #include "EnemyComponent.h"
+#include "BillboardComponent.h"
 
 
 /**列挙体宣言**/
@@ -39,6 +40,8 @@ enum MAP_CHIP{
 	GOAL = 50,			//ゴール
 
 	MISS_COLL = 99,		//ミスブロック
+
+	ARROW = 999,		//ビルボード(仮)
 
 	MAX_MAP_CHIP
 };
@@ -404,6 +407,26 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		draw->Update();
 
 		return obj;
+	}
+#pragma endregion
+#pragma region ---絶対消して役目でしょ
+	else if (nState == ARROW) {
+		//オブジェ生成
+		Object* Arr = new Object("Arr",UPDATE_UI,DRAW_UI);
+		//コンポネント
+		auto trans = Arr->AddComponent<CTransform>();
+		auto draw = Arr->AddComponent<CBillboard>();
+		Arr->AddComponent<COutOfRange>();
+		draw->SetTexture(TextureManager::GetInstance()->GetTexture(ARROW_NUM));
+		draw->SetAnimSplit(1,1);
+		draw->SetSize(E_WALK_SIZE_X, E_WALK_SIZE_Y);
+		trans->SetPosition(fPosX, fPosY + 700, 0.0f);//800
+		ObjectManager::GetInstance()->AddObject(Arr);
+
+		draw->Update();
+
+		return Arr;
+		
 	}
 #pragma endregion
 }

@@ -18,6 +18,7 @@
 #include "sceneGame.h"
 #include "Draw3dComponent.h"
 #include "AnimMeshComponent.h"
+#include "Sound.h"
 
 #include "Load.h"
 
@@ -94,6 +95,9 @@ void StageSelect::Init() {
 	//メニューの作成
 	m_pMenuManager->CreateSelectMenu();
 
+	//BGM再生
+	CSound::Play(SELECT_SE);
+
 	//ロード終了
 	Load::End();
 }
@@ -103,6 +107,8 @@ void StageSelect::Init() {
 * @brief	終了処理
 */
 void StageSelect::Uninit() {
+	//BGM停止
+	CSound::Stop(SELECT_SE);
 	//オブジェクトの終了
 	m_pObjectManager->Uninit();
 	//メニューの終了

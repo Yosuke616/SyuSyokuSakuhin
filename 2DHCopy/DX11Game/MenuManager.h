@@ -61,6 +61,10 @@ private:
 	float m_fBlackAlpha;
 	/** @brief ある程度時間がたったら初めからやり直す*/
 	int m_nChangeCnt;
+	/** @brief ステージセレクト字の上下の移動をするためのリスト*/
+	std::list<Object*> m_SelectSub;
+	/** @brief ステージセレクト時上下の移動を制御するイテレーター*/
+	std::list<Object*>::iterator m_itr_SelectSub;
 
 	//メンバ関数
 	/** @brief コンストラクタ*/
@@ -77,7 +81,6 @@ private:
 	void StageIN();
 	/** @brief ミスしたときの処理*/
 	void MissMenu();
-	/** @brief ポーズメニューの処理*/
 
 protected:
 	//メンバ変数
@@ -112,7 +115,7 @@ public:
 	std::list<Object*>& GetMenuList();
 	/** @brief 作るメニューの番号を取得する*/
 	int GetCreateMenu();
-
+	
 	/**作りたいメニューをここから下に追加していく**/
 	/** @brief タイトルメニュー*/
 	void CreateTitleMenu();

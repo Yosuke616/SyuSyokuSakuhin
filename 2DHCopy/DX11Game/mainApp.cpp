@@ -25,6 +25,8 @@
 #include "sceneGame.h"
 #include "ObjInfo.h"
 
+#include "Sound.h"
+
 #include <process.h>
 
 
@@ -346,6 +348,11 @@ HRESULT Init(HWND hWnd, BOOL bWindow)
 	hr = g_pInputManager->Init();
 	if (FAILED(hr))	MessageBox(g_hWnd, _T("dinput初期化失敗"), NULL, MB_OK);
 
+	//サウンドデータ
+	CSound::Init();
+	CSound::SetVolume_BGM(0.5f);
+	CSound::SetVolume_SE(1.0f);
+
 	//	シーンマネージャー初期化
 	g_pSceneManager = SceneManager::Instance();
 	g_pSceneManager->Init();
@@ -372,6 +379,9 @@ void Uninit()
 	ImGui_ImplDX11_Shutdown();
 	ImGui_ImplWin32_Shutdown();
 	ImGui::DestroyContext();
+
+	//サウンド処理
+	CSound::Fin();
 
 	//	入力終了処理
 	g_pInputManager->Uninit();
@@ -465,6 +475,9 @@ void Update()
 
 	//	シーン更新
 	g_pSceneManager->Update();
+
+	//サウンド更新
+	CSound::Update();
 
 }
 
