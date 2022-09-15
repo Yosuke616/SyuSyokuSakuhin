@@ -206,6 +206,7 @@
     <ClCompile Include="SceneSelect.cpp" />
     <ClCompile Include="SceneStage_1.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
+    <ClCompile Include="ScoreComponent.cpp" />
     <ClCompile Include="SeeCollComponent.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="Sound.cpp" />
@@ -213,6 +214,7 @@
     <ClCompile Include="TexScrollComponent.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="TimeComponent.cpp" />
     <ClCompile Include="TransformComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -260,6 +262,7 @@
     <ClInclude Include="SceneSelect.h" />
     <ClInclude Include="SceneStage_1.h" />
     <ClInclude Include="SceneTitle.h" />
+    <ClInclude Include="ScoreComponent.h" />
     <ClInclude Include="SeeCollComponent.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="Sound.h" />
@@ -270,6 +273,7 @@
     <ClInclude Include="TexScrollComponent.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="TimeComponent.h" />
     <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="WinUser.h" />
   </ItemGroup>

@@ -26,6 +26,8 @@
 #include "DrawMeshComponent.h"
 #include "AnimMeshComponent.h"
 #include "GravityComponent.h"
+#include "ScoreComponent.h"
+#include "TimeComponent.h"
 
 #include "Load.h"
 
@@ -85,6 +87,11 @@ void SceneGame::Init() {
 
 	//ステージセレクト画面に戻す時間
 	m_nSelectCnt = 0;
+
+	//スコアを0にする
+	m_nScore = 0;
+	//タイマーを500秒にする
+	m_nTimer = STAGE_TIME;
 
 	//ゲームオブジェクトの初期化
 
@@ -158,19 +165,25 @@ void SceneGame::Init() {
 	m_pObjectManager->AddObject(Score);
 
 	//スコア(数字)
-	Object* Score_Num = new Object(UI_MAX_SCORE_NAME,UPDATE_UI,DRAW_UI);
-	//コンポーネントの追加
-	auto T_Score_Num = Score_Num->AddComponent<CTransform>();
-	auto D_Score_Num = Score_Num->AddComponent<CDraw2D>();
-	//オブジェクトの設定
-	T_Score_Num->SetPosition(UI_NUMBER_POS_X_SCORE, UI_NUMBER_POS_Y_SCORE);
-	D_Score_Num->SetTexture(TextureManager::GetInstance()->GetTexture(NUMBER_TEX_NUM));
-	D_Score_Num->SetSize(UI_NUMBER_SIZE_X_SCORE, UI_NUMBER_SIZE_Y_SCORE);
-	//追加
-	m_pObjectManager->AddObject(Score_Num);
+	for (int i = 0;i < MAX_SCORE;i++) {
+		Object* Score_Num = new Object(UI_MAX_SCORE_NAME, UPDATE_UI, DRAW_UI);
+		//コンポーネントの追加
+		auto T_Score_Num = Score_Num->AddComponent<CTransform>();
+		auto D_Score_Num = Score_Num->AddComponent<CDraw2D>();
+		auto S_Score_NUm = Score_Num->AddComponent<CScore>();
+		//オブジェクトの設定
+		T_Score_Num->SetPosition(UI_NUMBER_POS_X_SCORE + ((MAX_SCORE-1)-i) * UI_NUMBER_SIZE_X_SCORE, UI_NUMBER_POS_Y_SCORE);
+		D_Score_Num->SetTexture(TextureManager::GetInstance()->GetTexture(NUMBER_TEX_NUM));
+		D_Score_Num->SetSize(UI_NUMBER_SIZE_X_SCORE, UI_NUMBER_SIZE_Y_SCORE);
+		D_Score_Num->SetAnimSplit(5, 2);
+		D_Score_Num->SetAnimNum(i+1);
+		S_Score_NUm->SetDigits(i);
+		//追加
+		m_pObjectManager->AddObject(Score_Num);
+	}
 
 	//ハイスコア
-	Object* Max_Score = new Object(UI_MAX_SCORE_NAME,UPDATE_UI,DRAW_UI);
+	Object* Max_Score = new Object(UI_MAX_SCORE_NAME, UPDATE_UI, DRAW_UI);
 	//コンポーネントの追加
 	auto T_MaxScore = Max_Score->AddComponent<CTransform>();
 	auto D_MaxScore = Max_Score->AddComponent<CDraw2D>();
@@ -180,18 +193,23 @@ void SceneGame::Init() {
 	D_MaxScore->SetSize(UI_MAX_SCORE_SIZE_X, UI_MAX_SCORE_SIZE_Y);
 	//追加
 	m_pObjectManager->AddObject(Max_Score);
+	
 
 	//ハイスコア(数字)
-	Object* Score_Max = new Object(UI_MAX_SCORE_NAME, UPDATE_UI, DRAW_UI);
-	//コンポーネントの追加
-	auto T_Score_Max = Score_Max->AddComponent<CTransform>();
-	auto D_Score_Max = Score_Max->AddComponent<CDraw2D>();
-	//オブジェクトの設定
-	T_Score_Max->SetPosition(UI_NUMBER_POS_X_MAX, UI_NUMBER_POS_Y_MAX);
-	D_Score_Max->SetTexture(TextureManager::GetInstance()->GetTexture(NUMBER_TEX_NUM));
-	D_Score_Max->SetSize(UI_NUMBER_SIZE_X_MAX, UI_NUMBER_SIZE_Y_MAX);
-	//追加
-	m_pObjectManager->AddObject(Score_Max);
+	for (int i = 0; i < MAX_SCORE; i++) {
+		Object* Score_Max = new Object(UI_MAX_SCORE_NAME, UPDATE_UI, DRAW_UI);
+		//コンポーネントの追加
+		auto T_Score_Max = Score_Max->AddComponent<CTransform>();
+		auto D_Score_Max = Score_Max->AddComponent<CDraw2D>();
+		//オブジェクトの設定
+		T_Score_Max->SetPosition(UI_NUMBER_POS_X_MAX + ((MAX_SCORE - 1) - i) * UI_NUMBER_SIZE_X_MAX, UI_NUMBER_POS_Y_MAX);
+		D_Score_Max->SetTexture(TextureManager::GetInstance()->GetTexture(NUMBER_TEX_NUM));
+		D_Score_Max->SetSize(UI_NUMBER_SIZE_X_MAX, UI_NUMBER_SIZE_Y_MAX);
+		D_Score_Max->SetAnimSplit(5, 2);
+		D_Score_Max->SetAnimNum(0);
+		//追加
+		m_pObjectManager->AddObject(Score_Max);
+	}
 
 	//タイム
 	Object* Timer = new Object(UI_TIMA_NAME,UPDATE_UI,DRAW_UI);
@@ -206,16 +224,30 @@ void SceneGame::Init() {
 	m_pObjectManager->AddObject(Timer);
 
 	//タイム(数字)
-	Object* Num_Timer = new Object(UI_NUMBER_NAME,UPDATE_UI,DRAW_UI);
-	//コンポーネントの追加
-	auto T_Timer_Num = Num_Timer->AddComponent<CTransform>();
-	auto D_Timer_Num = Num_Timer->AddComponent<CDraw2D>();
-	//オブジェクトの設定
-	T_Timer_Num->SetPosition(UI_NUNBER_POS_X_TIME, UI_NUNBER_POS_Y_TIME);
-	D_Timer_Num->SetTexture(TextureManager::GetInstance()->GetTexture(NUMBER_TEX_NUM));
-	D_Timer_Num->SetSize(UI_NUMBER_SIZE_X_TIME, UI_NUMBER_SIZE_Y_TIME);
-	//追加
-	m_pObjectManager->AddObject(Num_Timer);
+	for (int i = 0;i< 3;i++) {
+		Object* Num_Timer = new Object(UI_NUMBER_NAME, UPDATE_UI, DRAW_UI);
+		//コンポーネントの追加
+		auto T_Timer_Num = Num_Timer->AddComponent<CTransform>();
+		auto D_Timer_Num = Num_Timer->AddComponent<CDraw2D>();
+		//オブジェクトの設定
+		auto Timer_Num = Num_Timer->AddComponent<CTime>();
+		T_Timer_Num->SetPosition(UI_NUNBER_POS_X_TIME + (2 - i) * UI_NUMBER_SIZE_X_TIME, UI_NUNBER_POS_Y_TIME);
+		D_Timer_Num->SetTexture(TextureManager::GetInstance()->GetTexture(NUMBER_TEX_NUM));
+		D_Timer_Num->SetSize(UI_NUMBER_SIZE_X_TIME, UI_NUMBER_SIZE_Y_TIME);
+		D_Timer_Num->SetAnimSplit(5,2);
+		D_Timer_Num->SetAnimNum(0);
+		Timer_Num->SetDigits(i);
+		//時間を変えるフラグをセット(1つだけtrue)
+		if (i == 0) {
+			Timer_Num->SetTime(true);
+		}
+		else {
+			Timer_Num->SetTime(false);
+		}
+
+		//追加
+		m_pObjectManager->AddObject(Num_Timer);
+	}
 
 	//ポーズ斡旋
 	Object* Pause = new Object(UI_PAUSE_NAME,UPDATE_UI,DRAW_UI);
@@ -343,7 +375,6 @@ void SceneGame::Update() {
 			m_nSelectCnt = 0;
 		}
 	}
-	//ミスした場合の処理(移植したい) 
 
 #ifdef _DEBUG
 	//何かしらの処理をしたらステータスを変える
@@ -456,4 +487,40 @@ void SceneGame::Destroy() {
 */
 void SceneGame::SetPauseOOO(bool ooo) {
 	m_bPauseMode = ooo;
+}
+
+/**
+* @fn		SceneGame::GetScore
+* @brief	スコアを取得する
+* @return	(int)	ゲームシーンが管理しているスコア
+*/
+int SceneGame::GetScore() {
+	return m_nScore;
+}
+
+/**
+* @fn		SceneGame::SetScore
+* @brief	スコアを加算
+* @param	(int)	加算したい数値
+*/
+void SceneGame::SetScore(int num) {
+	m_nScore += num;
+}
+
+/**
+* @fn		SceneGame::GetTime
+* @brief	タイムの取得
+* @return	(int)	残り時間
+*/
+int SceneGame::GetTime() {
+	return m_nTimer;
+}
+
+/**
+* @fn		SceneGame::SetTime
+* @brief	残り時間の設定
+* @param	(int)	変えたい数値に変える
+*/
+void SceneGame::SetTime() {
+	m_nTimer--;
 }

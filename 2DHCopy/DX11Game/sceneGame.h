@@ -16,7 +16,8 @@
 #include <vector>
 #include <unordered_map>
 
-/**前方宣言**/
+/**定数定義**/
+#define STAGE_TIME	(500)
 
 //前方宣言
 class StageManager;
@@ -54,6 +55,12 @@ private:
 
 	/** @brief クリアしたときにセレクト画面に戻すまでの時間*/
 	int m_nSelectCnt;
+
+	/** @brief ステージのスコアを管理する変数*/
+	int m_nScore;
+
+	/** @brief ステージの秒数を管理する変数*/
+	int m_nTimer;
 
 	//メンバ関数
 	/** @brief コンストラクタ*/
@@ -95,6 +102,16 @@ public:
 	Stage GetStage();
 	/** @brief ポーズフラグをオンにする*/
 	void SetPauseOOO(bool ooo);
+
+	/** @brief スコアを取得する*/
+	int GetScore();
+	/** @brief スコアを加算する*/
+	void SetScore(int num);
+
+	/** @brief 秒数を取得する*/
+	int GetTime();
+	/** @brief 秒数を設定する*/
+	void SetTime();
 
 };
 
