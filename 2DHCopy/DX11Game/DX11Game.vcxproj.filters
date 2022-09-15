@@ -193,6 +193,12 @@
     <ClCompile Include="Sound.cpp">
       <Filter>サウンド</Filter>
     </ClCompile>
+    <ClCompile Include="ScoreComponent.cpp">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeComponent.cpp">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainApp.h">
@@ -362,6 +368,12 @@
     </ClInclude>
     <ClInclude Include="Sound.h">
       <Filter>サウンド</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreComponent.h">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeComponent.h">
+      <Filter>コンポーネント\創作システム</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

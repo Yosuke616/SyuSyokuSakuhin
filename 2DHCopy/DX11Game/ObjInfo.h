@@ -98,19 +98,19 @@ enum DRAW_ORDER {
 
 //数字
 #define UI_NUMBER_NAME				("UI_NAMBER")
-#define UI_NUMBER_SIZE_X_SCORE		(200.0f)
-#define UI_NUMBER_SIZE_Y_SCORE		(150.0f)
-#define UI_NUMBER_POS_X_SCORE		(-325.0f)
+#define UI_NUMBER_SIZE_X_SCORE		(50.0f)
+#define UI_NUMBER_SIZE_Y_SCORE		(50.0f)
+#define UI_NUMBER_POS_X_SCORE		(-375.0f)
 #define UI_NUMBER_POS_Y_SCORE		(325.0f)
 //ハイスコア
-#define UI_NUMBER_SIZE_X_MAX		(150.0f)
-#define UI_NUMBER_SIZE_Y_MAX		(125.0f)
-#define UI_NUMBER_POS_X_MAX			(-325.0f)
+#define UI_NUMBER_SIZE_X_MAX		(30.0f)
+#define UI_NUMBER_SIZE_Y_MAX		(30.0f)
+#define UI_NUMBER_POS_X_MAX			(-375.0f)
 #define UI_NUMBER_POS_Y_MAX			(275.0f)
 //タイム
-#define UI_NUMBER_SIZE_X_TIME		(200.0f)
-#define UI_NUMBER_SIZE_Y_TIME		(150.0f)
-#define UI_NUNBER_POS_X_TIME		(560.0f)
+#define UI_NUMBER_SIZE_X_TIME		(50.0f)
+#define UI_NUMBER_SIZE_Y_TIME		(50.0f)
+#define UI_NUNBER_POS_X_TIME		(505.0f)
 #define UI_NUNBER_POS_Y_TIME		(325.0f)
 
 //ポーズ

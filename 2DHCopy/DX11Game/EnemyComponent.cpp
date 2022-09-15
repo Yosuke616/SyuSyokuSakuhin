@@ -11,6 +11,7 @@
 #include "imgui.h"
 #include "AttackComponent.h"
 #include "SeeCollComponent.h"
+#include "sceneGame.h"
 
 /**’è”’è‹`**/
 #define MAX_ENEMY_GRAVITY	(1.0f)
@@ -144,6 +145,7 @@ void CEnemy::Update() {
 		if (m_nDeleteFlg > 5) {
 			Parent->Delete();
 			Parent->GetComponent<CSeeColl>()->DeleteCollBox();
+			SceneGame::GetInstance()->SetScore(100);
 		}
 
 		break;
