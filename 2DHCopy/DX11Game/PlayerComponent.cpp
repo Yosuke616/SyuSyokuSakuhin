@@ -41,7 +41,7 @@ CPlayer::CPlayer() :
 	m_bJump(false),							//ジャンプしているかどうか
 	m_bPawer_UP(true),						//パワーアップしているか
 	m_pAttackObj(nullptr),					//攻撃判定用のオブジェクトを指せるポインタ
-	m_ePlayer(IDLE_PLAYER){
+	m_ePlayer(START_PLAYER){
 	this->m_eUpdateOrder = COM_UPDATE_1;
 }
 
@@ -75,7 +75,7 @@ void CPlayer::Start() {
 	//攻撃フラグはオフにしておく
 	m_bAttack = false;
 	//攻撃時のクールタイム
-	m_nCoolTime = 0;
+	m_nCoolTime = 90;
 	//エアダッシュの時間は0にしておく
 	m_nDushCnt = 0;
 	//エアダッシュのクールタイムは0にしておく
@@ -177,6 +177,26 @@ void CPlayer::Update() {
 			m_ePlayer = ATTACK_PLAYER;
 			ChangeTexture();
 		}
+		break;
+#pragma endregion
+	case START_PLAYER:
+#pragma region ---スタート
+		m_pPlayer->Vel.x = VALUE_MOVE_SPEED;
+		m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_RUN_TEX_NUM));
+		m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_RUN_Y);
+		m_pDraw2D->SetAnimSplit(7, 2);
+		m_pDraw2D->SetVertex(m_bROL);
+		m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_RUN_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
+		m_pCollider->SetOffset(DXCHAN_COLL_OFFSET_RUN_X, DXCHAN_COLL_OFFSET_RUN_Y);
+
+		m_nCoolTime--;
+
+		if (m_nCoolTime <= 0) {
+			m_nCoolTime = 0;
+			m_ePlayer = IDLE_PLAYER;
+			ChangeTexture();
+		}
+
 		break;
 #pragma endregion
 	case RUN_PLAYER:
@@ -609,6 +629,12 @@ void CPlayer::Update() {
 		break;
 #pragma endregion
 	default: break;
+	}
+
+	//プレイヤーの移動制限
+	if (m_pPlayer->Pos.x < -175.0f && !(m_ePlayer == START_PLAYER)) {
+		m_pPlayer->Vel.x = 0.0f;
+		m_pPlayer->Pos.x = -175.0f + m_pPlayer->Scale.x / 2;
 	}
 
 	//攻撃のクールタイムはマイナスしておく

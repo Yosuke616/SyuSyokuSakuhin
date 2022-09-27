@@ -25,7 +25,8 @@ class StageManager;
 /*列挙体宣言***/
 /** @brief どのステージを読み込むかを決める*/
 enum Stage {
-	STAGE_1 = 1,
+	STAGE_1 = 0,
+	STAGE_1_RE,
 
 	MAX_STAGE
 };
@@ -112,7 +113,8 @@ public:
 	int GetTime();
 	/** @brief 秒数を設定する*/
 	void SetTime();
-
+	/** @brief ステージの情報が入ったベクターを返す関数*/
+	std::vector<Scene*> GetCurrentStage();
 };
 
 #endif

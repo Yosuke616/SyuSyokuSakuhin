@@ -7,6 +7,7 @@
 #include "InputManager.h"
 #include "MenuManager.h"
 #include "ModelManager.h"
+#include "SceneManager.h"
 #include "imgui.h"
 #include "Camera.h"
 
@@ -24,13 +25,20 @@
 
 /**構造体定義**/
 StageSelect::Row StageSelect::m_StageGrid;
+int StageSelect::m_nCurrentStage = 0;
+int StageSelect::m_nOldStage;
+
+/**グローバル変数**/
+CAnimMesh *g_CurrentBG = nullptr;
 
 /**
 * @fn		StageSelect::StageSelect
 * @brief	コンストラクタは二度見る
 */
 StageSelect::StageSelect() {
-	//StageSelect::Load();
+	StageSelect::Load();
+
+	m_nOldStage = STAGE_A;
 }
 
 /**
@@ -51,7 +59,7 @@ void StageSelect::Init() {
 
 	//ロードします
 	//進行状況の読込
-	//StageSelect::Load();
+	StageSelect::Load();
 
 	//管理クラス取得
 	m_pObjectManager = ObjectManager::GetInstance();
@@ -73,6 +81,8 @@ void StageSelect::Init() {
 	pModelManager->AddModel(PATH_WALK_ENEMY, WALK_ENEMY_MODEL_NUM);
 	pModelManager->AddModel(PATH_MINT_GREEN_BLOCK, MINT_GREEN_BLOCK_NUM);
 
+	m_nCurrentStage = m_nOldStage;
+
 	//必要なオブジェクトの追加
 	//動きそうに無いオブジェクトをここに生成する	
 #pragma region ---背景
@@ -92,6 +102,10 @@ void StageSelect::Init() {
 	m_pObjectManager->AddObject(objBG);
 
 #pragma endregion
+
+	//グローバル変数に値を入れる
+	g_CurrentBG = Draw_BG;
+
 	//メニューの作成
 	m_pMenuManager->CreateSelectMenu();
 
@@ -119,7 +133,39 @@ void StageSelect::Uninit() {
 * @fn		StageSelect::Update
 * @brief	更新処理
 */
-void StageSelect::Update(){
+void StageSelect::Update() {
+
+	//ステージごとに背景の雰囲気を変える
+	TextureManager *pTex = TextureManager::GetInstance();
+
+	switch (m_nCurrentStage) {
+	case STAGE_A:
+		//選ばれているステージの更新
+		m_nOldStage = STAGE_A;
+		g_CurrentBG->SetColor(0.0f,0.0f,1.0f);
+		break;
+	case STAGE_B:
+		//選ばれているステージの更新
+		m_nOldStage = STAGE_B;
+		g_CurrentBG->SetColor(0.0f, 1.0f, 0.0f);
+		break;
+	case STAGE_C:
+		//選ばれているステージの更新
+		m_nOldStage = STAGE_C;
+		g_CurrentBG->SetColor(1.0f, 0.0f, 0.0f);
+		break;
+	case STAGE_D:
+		//選ばれているステージの更新
+		m_nOldStage = STAGE_D;
+		g_CurrentBG->SetColor(1.0f, 0.0f, 1.0f);
+		break;
+	case STAGE_E:
+		//選ばれているステージの更新
+		m_nOldStage = STAGE_E;
+		g_CurrentBG->SetColor(1.0f, 1.0f, 1.0f);
+		break;
+	default: break;
+	}
 	//オブジェクトリストの更新
 	m_pObjectManager->Update();
 	//メニューの更新
@@ -139,14 +185,144 @@ void StageSelect::Draw() {
 }
 
 /**
-* @fn		StageSelect::GetSelectAble
-* @brief	ステージが選択可能かどうかを見る
-* @param	(int)	番号で識別する
-* @return	(bool)	選択できるかどうかの結果を返す
+* @fn		StageSelect::Load
+* @brief	ステージクリア状況を読み込む
+* @return	(bool)	本当に読み込めたのかな
 */
-//bool StageSelect::GetSelectAble(int stage_num) {
-//	return 0;
-//}
+bool StageSelect::Load() {
+	//クリア状況の読込
+	if (FileManager::GetInstance()->Load(STAGE_CLEAR_CSV) == false) {
+		//エラーメッセージ
+		MessageBox(GetMainWnd(), _T("select_load"), NULL, MB_OK);
+		return false;
+	}
+
+	//クリア状況を書き込む
+	ResourceCSV* CSV = (ResourceCSV*)FileManager::GetInstance()->Get(STAGE_CLEAR_CSV);
+	m_StageGrid.resize(CSV->GetRowSize());				// 行の数を設定
+	for (int y = 0; y < CSV->GetRowSize(); ++y) {
+		m_StageGrid[y].resize(CSV->GetColumnSize(y));	// 列の数を設定
+
+		for (int x = 0; x < CSV->GetColumnSize(y); x++){
+			// 要素を格納する
+			m_StageGrid[y][x] = CSV->GetInt(x, y);
+		}
+	}
+
+	//無事に返す
+	return true;
+}
+
+/**
+* @fn		StageSelect::Save
+* @brief	ステージのクリア状況を保存する
+* @return	(bool)	ステージをクリアしたら書き込む
+*/
+bool StageSelect::Save() {
+	// クリア状況の保存
+	ResourceCSV* CSV = (ResourceCSV*)FileManager::GetInstance()->Get(STAGE_CLEAR_CSV);
+	if (CSV == nullptr) { 
+		return false;
+	}
+	if (CSV->Save(STAGE_CLEAR_CSV) == false){
+		// エラーメッセージ
+		MessageBox(GetMainWnd(), _T("save_data"), NULL, MB_OK);
+		return false;
+	}
+
+	return true;
+}
+
+/**
+* @fn		StageSelect::NewGame
+* @brief	CSVファイルを初期化する
+* @return	(bool)	初期化が成功したかどうか
+*/
+bool StageSelect::NewGame() {
+	m_nOldStage = STAGE_A;
+
+	// 書き換え
+	ResourceCSV* CSV = (ResourceCSV*)FileManager::GetInstance()->Get(STAGE_CLEAR_CSV);
+
+	for (int nRow = 0; nRow < m_StageGrid.size(); nRow++){
+		for (int nColumn = 0; nColumn < m_StageGrid[nRow].size(); nColumn++){
+			CSV->SetInt(nColumn, nRow, 0);
+		}
+	}
+
+	// 最初のステージ選択は可能
+	CSV->SetInt(0, 0, 1);
+
+	StageSelect::Save();
+
+	return true;
+}
+
+/**
+* @fn		StageSelect::SaveClearinfo
+* @brief	クリア状況の保存
+* @param	(int)	何番目のステージをクリアしたか	
+* @return	(bool)	正しく保存できたかどうか
+*/
+bool StageSelect::SaveClearInfo(int nStage) {
+	// クリア状況を書き換える
+	ResourceCSV* CSV = (ResourceCSV*)FileManager::GetInstance()->Get(STAGE_CLEAR_CSV);
+	// 次のステージのフラグへ
+	int x = nStage + 1;
 
 
+	CSV->SetInt(x, 0, 1);	// (列, 行, 格納する数字)
 
+	// csvに保存
+	StageSelect::Save();
+
+	return true;
+}
+
+/**
+* @fn		StageSelect::GetSelectAble
+* @brief	ステージが選択可能かどうかを調べる
+* @param	(int)	何番目のステージが選択可能か調べる
+* @return	(bool)	選択可能かどうかを調べる
+*/
+bool StageSelect::GetSelectAble(int nStage) {
+
+	int n = nStage + 1;
+
+	if (m_StageGrid[0][n] == 0)
+	{
+		if (SceneManager::Instance()->GetScene() == SCENE_SELECT) {
+		
+		}
+		return false;
+	}
+	else {
+		return true; 
+	}
+
+
+}
+
+/**
+* @fn		StageSelect::SetCurrentStage
+* @brief	現在選ばれているステージ番号の設定
+* @param	(bool)	trueだったら+ falseなら-	
+*/
+void StageSelect::SetCurrentStage(bool num) {
+	if (num) {
+		if (m_nCurrentStage >= STAGE_E) {
+		
+		}
+		else {
+			m_nCurrentStage++;		
+		}
+	}
+	else {
+		if (m_nCurrentStage <= STAGE_A) {
+		
+		}
+		else {
+			m_nCurrentStage--;
+		}
+	}
+}

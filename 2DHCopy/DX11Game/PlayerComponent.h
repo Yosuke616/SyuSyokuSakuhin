@@ -23,6 +23,7 @@ class CAnimMesh;
 /**列挙体宣言**/
 enum PLAYER_STATE {
 	IDLE_PLAYER = 0,
+	START_PLAYER,
 	RUN_PLAYER,			//横移動
 	DUSH_PLAYER,		//エアダッシュ見たいのを作りたい（作ってない）
 	JUMP_PLAYER,		//ジャンプしている

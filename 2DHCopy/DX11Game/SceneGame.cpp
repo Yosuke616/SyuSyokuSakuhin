@@ -1,5 +1,6 @@
 //インクルード部
 #include "sceneGame.h"
+#include "SceneSelect.h"
 
 #include "ObjectManager.h"
 #include "TextureManager.h"
@@ -33,6 +34,7 @@
 
 //ステージ関係のインクルード
 #include "SceneStage_1.h"
+#include "SceneStage_1_Re.h"
 
 //静的メンバ変数
 SceneGame* SceneGame::m_pInstance = nullptr;
@@ -47,8 +49,8 @@ SceneGame::SceneGame()
 	,m_pStageManager(nullptr){
 
 	//ここでステージをリストに追加していく
-	m_GameSceneList.push_back(new SceneStage_1());
-	m_GameSceneList.push_back(new SceneStage_1());
+	m_GameSceneList.push_back(SceneStage_1::GetInstance());
+	m_GameSceneList.push_back(SceneStage_1_Re::GetInstance());
 
 	//最初のステージの設定
 	m_eStageState = STAGE_1;
@@ -111,6 +113,7 @@ void SceneGame::Init() {
 	pTexManager->AddTexture(PATH_TEX_DXCHAN_STAND, DXCHAN_STAND_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_DXCHAN_RUN, DXCHAN_RUN_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_DEBUG_BLOCK, DEBUG_BLOCK_NUM);
+	pTexManager->AddTexture(PATH_TEX_FAID_OUT, FEAD_OUT_NUM);
 	//UIの表示
 	pTexManager->AddTexture(PATH_TEX_SCORE, SCORE_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_MAX_SCORE, MAX_SCORE_TEX_NUM);
@@ -297,6 +300,15 @@ void SceneGame::Update() {
 		if (m_bPauseMode) {
 			//オンオフをひっくり返す
 			m_bPauseMode = false;
+
+			//オプションのオブジェクトが存在したらオプションフラグをオフにする
+			for (auto&& obj:m_pMenuManager->GetMenuList()) {
+				if (obj->GetUpdateOrder() == UPDATE_OPTION) {
+					m_pMenuManager->m_bOption = false;
+					break;
+				}
+			}
+
 			//メニューを破棄する
 			m_pMenuManager->DeleteMenu();
 
@@ -327,7 +339,9 @@ void SceneGame::Update() {
 		if (m_bPauseMode == false) {
 			//ゲームオブジェクト更新
 			m_pObjectManager->Update();
-		
+
+			//ステージごとの更新
+			m_CurrentScene->Update();
 		}
 		else {		
 			m_pMenuManager->Update();
@@ -371,6 +385,9 @@ void SceneGame::Update() {
 		m_nSelectCnt++;
 		//2秒で変更する
 		if (m_nSelectCnt > 120) {
+			//次のステージを解放する
+			StageSelect::SaveClearInfo(GetStage());
+
 			SceneManager::Instance()->SetScene(SCENE_SELECT);
 			m_nSelectCnt = 0;
 		}
@@ -523,4 +540,13 @@ int SceneGame::GetTime() {
 */
 void SceneGame::SetTime() {
 	m_nTimer--;
+}
+
+/**
+* @fn		SceneGame::GetCurrentStage
+* @brief	ステージの情報が入ったベクターを返す
+* @return	(vector<Scene*>)	リスト
+*/
+std::vector<Scene*> SceneGame::GetCurrentStage() {
+	return m_GameSceneList;
 }

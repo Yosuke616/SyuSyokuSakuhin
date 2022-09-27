@@ -13,6 +13,17 @@
 #include "Scene.h"
 #include <vector>
 
+/**列挙体宣言**/
+enum E_STAGE {
+	STAGE_A = 0,
+	STAGE_B,
+	STAGE_C,
+	STAGE_D,
+	STAGE_E,
+
+	STAGE_Z
+};
+
 /**クラス定義**/
 /**
 * @brief	ステージ選択用のクラス
@@ -30,12 +41,14 @@ private:
 	using Row = std::vector<Column>;	
 	/** @brief クリア状況の配列*/
 	static Row m_StageGrid;
+	/** @brief ステージセレクトに戻ったときにそこから始めるため*/
+	static int m_nOldStage;
 
 	//メンバ関数
 	///** @brief ロード*/
-	//static bool Load();
+	static bool Load();
 	///** @brief セーブ*/
-	//static bool Save();
+	static bool Save();
 
 protected:
 	//メンバ変数
@@ -44,6 +57,8 @@ protected:
 
 public:
 	//メンバ変数
+	/** @brief 現在選ばれているステージ番号*/
+	static int m_nCurrentStage;
 
 	//メンバ関数
 	/** @brief コンストラクタ*/
@@ -60,13 +75,19 @@ public:
 	void Draw() override;
 
 	///** @brief 選択可能かどうかの取得*/
-	//static bool GetSelectAble(int stage_num);
+	static bool GetSelectAble(int stage_num);
 	///** @brief 選択可能かどうかの配列の取得*/
 	//static Row GetSelectGrid();
-	///** @brief CSVファイルの取得*/
-	//static bool NewGame();
+	///** @brief CSVファイルの初期化*/
+	static bool NewGame();
 	///** @brief クリア状況の保存*/
-	//static bool SaveClearInfo(int nStage);
+	static bool SaveClearInfo(int nStage);
+
+	/**消すかもしれない**/
+	/** @brief 現在選ばれているステージ番号の設定*/
+	static void SetCurrentStage(bool);
+
+
 };
 
 #endif

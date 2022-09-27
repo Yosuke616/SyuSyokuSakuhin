@@ -25,6 +25,9 @@
 #include "EnemyComponent.h"
 #include "BillboardComponent.h"
 
+//ステージのインクルード
+#include "SceneStage_1.h"
+#include "SceneStage_1_Re.h"
 
 /**列挙体宣言**/
 /** @brief どのオブジェクトを配置するかを判別する*/
@@ -34,12 +37,16 @@ enum MAP_CHIP{
 
 	//緑
 	B_1 = 10,			//ブロック(上部) 
-	GRASS_IN = 11,		//ブロック(内部)
+	GRASS_IN = 11,		//ブロック(内部(当たり判定無し))
+	GRASS_IN_COLL = 12,	//ブロック(内部(当たり判定あり))
 
 
 	GOAL = 50,			//ゴール
 
-	MISS_COLL = 99,		//ミスブロック
+	MISS_COLL = 99,			//ミスブロック
+	STAGE_1_MISS_COLL =199,	//ステージ1イベントミス
+
+	SOCRE_UP = 200,		//所謂コイン的なやつ
 
 	ARROW = 999,		//ビルボード(仮)
 
@@ -219,6 +226,7 @@ void StageManager::CreateStage(int stage_state) {
 	//ステージの読み込む(番号によって読み込むcsvを変更)
 	switch (stage_state) {
 	case STAGE_1:this->Load(STAGE_1_CSV); break;
+	case STAGE_1_RE:this->Load(STAGE_1_RE_CSV); break;
 	default:break;
 	}
 
@@ -259,6 +267,19 @@ void StageManager::CreateStage(int stage_state) {
 	//要素数×マップチップの横幅
 	m_vStageSize.x = m_nBlock_X * MAPCHIP_WIDTH;
 	m_vStageSize.y = m_nBlock_Y * MAPCHIP_HEIGHT;
+
+	//ステージが作り終わったら選ばれているステージごとに、
+	//設定しないといけないことを設定する
+	switch (stage_state)
+	{
+	case STAGE_1:
+		//リストの中身があったら消す作業を挟む
+		SceneStage_1::GetInstance()->DeleteList();
+		SceneStage_1::GetInstance()->SetBaseInfo(ObjectManager::GetInstance()->GetUpdateList());
+		break;
+
+	default:break;
+	}
 
 }
 
@@ -306,15 +327,38 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		return obj;
 	}
 #pragma endregion
-#pragma region ---土ブロック
+#pragma region ---土ブロック(当たり判定無し) 
 	//土ブロック
 	else if (nState == GRASS_IN) {
 		Object* obj = new Object(BLOCK_NAME, UPDATE_FIELD, DRAW_FIELD);
 		//コンポーネントの追加
 		auto trans = obj->AddComponent<CTransform>();
 		auto draw = obj->AddComponent<CDraw3D>();
-		auto collider = obj->AddComponent<CCollider>();
 		auto Range = obj->AddComponent<COutOfRange>();
+		//オブジェクトの設定
+		draw->SetModel(pModelManager->GetModel(RARD_BLOCK_NUM));
+		trans->SetPosition(fPosX, fPosY + 770, 0.0f);
+		trans->SetScale(BLOCK_SIZE_X, BLOCK_SIZE_Y, BLOCK_SIZE_Z);
+		//collider->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
+		Range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
+
+		//ワールドマトリックスの更新
+		draw->Update();
+
+		return obj;
+	}
+#pragma endregion
+#pragma region ---土ブロック(当たり判定有り)
+	//土ブロック
+	else if (nState == GRASS_IN_COLL) {
+		Object* obj = new Object(BLOCK_NAME, UPDATE_FIELD, DRAW_FIELD);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDraw3D>();
+		auto Range = obj->AddComponent<COutOfRange>();
+		auto collider = obj->AddComponent<CCollider>();
 		obj->AddComponent<CSeeColl>();
 		//オブジェクトの設定
 		draw->SetModel(pModelManager->GetModel(RARD_BLOCK_NUM));
@@ -330,6 +374,7 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 
 		return obj;
 	}
+#pragma endregion
 #pragma region ---歩く敵
 	//歩く敵
 	else if(nState == ENEMY_1){
@@ -403,6 +448,30 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		//オブジェクトマネージャーに追加
 		ObjectManager::GetInstance()->AddObject(obj);
 
+		//ワールドマトリックスの更新
+		draw->Update();
+
+		return obj;
+	}
+#pragma endregion
+#pragma region ---ステージ1のミス判定
+	else if (nState == STAGE_1_MISS_COLL) {
+		//オブジェクトの生成
+		Object* obj = new Object(STAGE_1_MISS_EVENT,UPDATE_DEBUG,DRAW_DEBUG);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDrawMesh>();
+		auto collider = obj->AddComponent<CCollider>();
+		auto range = obj->AddComponent<COutOfRange>();
+		obj->AddComponent<CSeeColl>();
+		//オブジェクトの設定
+		draw->SetTexture(pTextureManager->GetTexture(DEBUG_BLOCK_NUM));
+		draw->SetSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y);
+		trans->SetPosition(fPosX, fPosY + 770.0f, 0.0f);
+		collider->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
+		range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
 		//ワールドマトリックスの更新
 		draw->Update();
 
@@ -512,6 +581,7 @@ bool StageManager::Save(int Stage) {
 	std::string file;
 	switch (Stage) {
 	case STAGE_1:file = STAGE_1_CSV; break;
+	case STAGE_1_RE:file = STAGE_1_RE_CSV; break;
 	default: break;
 	}
 
@@ -529,6 +599,7 @@ bool StageManager::Save(int Stage) {
 	else {
 		switch (Stage) {
 		case STAGE_1:MessageBox(GetMainWnd(), L"Stage_1.csvに保存しました", _T("成功"), MB_OK); break;
+		case STAGE_1_RE:MessageBox(GetMainWnd(), L"Stage_1_RE.csvに保存しました", _T("成功"), MB_OK); break;
 		default: break;
 		}
 	}

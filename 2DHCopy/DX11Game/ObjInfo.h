@@ -81,6 +81,9 @@ enum DRAW_ORDER {
 //@@@@@ ゴールの基本情報 -------------------------------------------
 #define GOAL_NAME					("Goal")
 
+/**ステージ1のミスイベント**/
+#define STAGE_1_MISS_EVENT			("Stage_1_Miss")
+
 //@@@@@ UIの基本情報 -----------------------------------------------
 //スコア
 #define UI_SCORE_NAME				("UI_SCORE")
@@ -186,11 +189,23 @@ enum DRAW_ORDER {
 
 //BGM
 #define UI_BGM_NAME					("UI_BGM")
+#define UI_BGM_SIZE_X				(300.0f)
+#define UI_BGM_SIZE_Y				(200.0f)
+#define UI_BGM_POS_X				(0.0f)
+#define UI_BGM_POS_Y				(200.0f)
 
 //SE
 #define UI_SE_NAME					("UI_SE")
+#define UI_SE_SIZE_X				(300.0f)
+#define UI_SE_SIZE_Y				(200.0f)
+#define UI_SE_POS_X					(0.0f)
+#define UI_SE_POS_Y					(0.0f)
 
 //明るさ
 #define UI_BRIGHTNESS_NAME			("UI_BRIGHTNESS")
+#define UI_BRIGHTNESS_SIZE_X		(300.0f)
+#define UI_BRIGHTNESS_SIZE_Y		(200.0f)
+#define UI_BRIGHTNESS_POS_X			(0.0f)
+#define UI_BRIGHTNESS_POS_Y			(-200.0f)
 
 #endif
