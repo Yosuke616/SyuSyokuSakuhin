@@ -15,7 +15,12 @@
 
 /**定数定義**/
 //ステージ情報
-#define STAGE_1_CSV	("Assets/Stage_1.csv")
+#define STAGE_1_CSV			("Assets/Stage_1.csv")
+#define STAGE_1_RE_CSV		("Assets/Stage_1_RE.csv")
+
+//ステージクリア情報
+#define STAGE_CLEAR_CSV		("Assets/Stage_Clear.csv")
+
 /**クラス定義**/
 /**
 * @brief	アセットに存在するファイルを管理する		

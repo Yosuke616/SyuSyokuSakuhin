@@ -16,6 +16,11 @@
 #include "ObjInfo.h"
 #include "PlayerComponent.h"
 #include "ObjectManager.h"
+#include "SceneSelect.h"
+
+/** ステージを読み込む*/
+#include "SceneStage_1.h"
+#include "SceneStage_1_Re.h"
 
 /**定数定義**/
 /** @brief ステージ選択画面のオブジェクトが、
@@ -124,7 +129,7 @@ void MenuManager::Update() {
 			case TITLE_STATE: CreateTitleMenu(); break;
 			case PAUSE_STATE: CreatePauseMenu(); break;
 			case SELECT_STATE:break;
-			case OPTION_STATE:break;
+			case OPTION_STATE: CreateOptionMenu(); break;
 			case MISS_STATE:  CreateMissMenu(); break;
 			case GAMECLEAR_STATE:break;
 			case GAMEOVER_STATE:CreateGameOverMenu(); break;
@@ -154,6 +159,14 @@ void MenuManager::Update() {
 
 	/**シーンごとの処理を追加していく**/
 
+	/** @brief オプションが開かれている場合優先する*/
+	if (m_bOption) {
+		//どのボタンが選択されているかの処理を行う
+		SelectButton();
+		//これより下の処理は行わない
+		return;
+	}
+
 	/** @brief タイトルなど始めたりボタンを選ぶやつ*/
 	//応急処置としてシーンで入るようにする
 	if (SceneManager::Instance()->GetScene() == SCENE_TITLE) {	
@@ -178,7 +191,6 @@ void MenuManager::Update() {
 				MissMenu();
 			}else {
 				SelectButton();
-				//PauseMenu();
 			}
 		}
 	}
@@ -430,6 +442,36 @@ void MenuManager::CreateSelectMenu() {
 	//ステージオブジェクトを管理するリストにも追加しておく
 	m_StageObjList.push_back(Stage3);
 
+	//ステージ4
+	Object* Stage4 = new Object("Stage_4", UPDATE_MODEL, DRAW_MODEL);
+	//コンポーネントの追加
+	auto T_Stage4 = Stage4->AddComponent<CTransform>();
+	auto D_Stage4 = Stage4->AddComponent<CDraw3D>();
+	//オブジェクトの設定
+	D_Stage4->SetModel(pModelManager->GetModel(WALK_ENEMY_MODEL_NUM));
+	T_Stage4->SetPosition(450.0f, 55.0f, -10);
+	T_Stage4->SetScale(50.0f, 50.0f, 50.0f);
+	T_Stage4->SetRotate(0.0f, 0.0f, 0.0f);
+	//オブジェクトマネージャーに追加
+	AddMenu(Stage4);
+	//ステージオブジェクトを管理するリストにも追加しておく
+	m_StageObjList.push_back(Stage4);
+
+	//ステージ5
+	Object* Stage5 = new Object("Stage_5", UPDATE_MODEL, DRAW_MODEL);
+	//コンポーネントの追加
+	auto T_Stage5 = Stage5->AddComponent<CTransform>();
+	auto D_Stage5 = Stage5->AddComponent<CDraw3D>();
+	//オブジェクトの設定
+	D_Stage5->SetModel(pModelManager->GetModel(WALK_ENEMY_MODEL_NUM));
+	T_Stage5->SetPosition(600.0f, 55.0f, -10);
+	T_Stage5->SetScale(50.0f, 50.0f, 50.0f);
+	T_Stage5->SetRotate(0.0f, 0.0f, 0.0f);
+	//オブジェクトマネージャーに追加
+	AddMenu(Stage5);
+	//ステージオブジェクトを管理するリストにも追加しておく
+	m_StageObjList.push_back(Stage5);
+
 	//UI関係の追加
 	Object* Push_Button = new Object(UI_PUSH_NAME,UPDATE_UI,DRAW_UI);
 	//コンポーネントの追加
@@ -543,9 +585,6 @@ void MenuManager::CreateMissMenu() {
 	//ミスメニューが選ばれているようにする
 	m_nCreateMenu = MISS_STATE;
 
-	//テクスチャの追加
-	TextureManager::GetInstance()->AddTexture(PATH_TEX_FAID_OUT, FEAD_OUT_NUM);
-
 	//必要になってくるオブジェクトを追加していく
 	//暗くするためのテクスチャ
 	Object* Black = new Object("Black",UPDATE_UI,DRAW_UI);
@@ -578,6 +617,85 @@ void MenuManager::CreateMissMenu() {
 	Start();
 }
 #pragma endregion
+
+/**
+* @fn		MenuManager::CreateOptionMenu
+* @brief	オプション用のメニューを作成する
+*/
+void MenuManager::CreateOptionMenu() {
+
+	//既にオプションが作られていたら作らない
+	if (m_bOption) {
+		return;
+	}
+
+	//メニューリストの削除
+	DeleteMenu();
+
+	//オプションフラグオン
+	m_bOption = true;
+
+	//オプションが選ばれているようにする
+	m_nCreateMenu = OPTION_STATE;
+
+	//必要になってくるオブジェクトを追加していく
+		//黒背景を作る
+	Object* Black = new Object("Black",UPDATE_OPTION ,DRAW_OPTION);
+	//コンポーネント追加
+	auto transBlack = Black->AddComponent<CTransform>();
+	auto drawBlack = Black->AddComponent<CDraw2D>();
+	//オブジェクトの設定
+	transBlack->SetPosition(0.0f, 0.0f, 0.0);
+	drawBlack->SetTexture(TextureManager::GetInstance()->GetTexture(FEAD_OUT_NUM));
+	drawBlack->SetSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+	drawBlack->SetColor(0.0f, 0.0f, 0.0f);
+	drawBlack->SetAlpha(0.5f);
+
+	//メニューリストに追加
+	AddMenu(Black);
+
+	//BGMの設定
+	Object* objBGM = new Object(UI_BGM_NAME, UPDATE_OPTION,DRAW_OPTION);
+	//コンポーネントの追加
+	auto transBGM = objBGM->AddComponent<CTransform>();
+	auto drawBGM = objBGM->AddComponent<CDraw2D>();
+	//オブジェクトの設定
+	transBGM->SetPosition(UI_BGM_POS_X, UI_BGM_POS_Y);
+	drawBGM->SetTexture(TextureManager::GetInstance()->GetTexture(BGM_TEX_NUM));
+	drawBGM->SetSize(UI_BGM_SIZE_X, UI_BGM_SIZE_Y);
+
+	//メニューリストに追加
+	AddMenu(objBGM);
+
+	//SEの設定
+	Object* objSE = new Object(UI_SE_NAME, UPDATE_OPTION,DRAW_OPTION);
+	//コンポーネントの追加
+	auto transSE = objSE->AddComponent<CTransform>();
+	auto drawSE = objSE->AddComponent<CDraw2D>();
+	//オブジェクトの設定
+	transSE->SetPosition(UI_SE_POS_X, UI_SE_POS_Y);
+	drawSE->SetTexture(TextureManager::GetInstance()->GetTexture(SE_TEX_NUM));
+	drawSE->SetSize(UI_SE_SIZE_X, UI_SE_SIZE_Y);
+
+	//メニューリストに追加
+	AddMenu(objSE);
+
+	//明るさの設定
+	Object* objBrightness = new Object(UI_BRIGHTNESS_NAME, UPDATE_OPTION,DRAW_OPTION);
+	//コンポーネントの追加
+	auto transBright = objBrightness->AddComponent<CTransform>();
+	auto drawBright = objBrightness->AddComponent<CDraw2D>();
+	//オブジェクトの設定
+	transBright->SetPosition(UI_BRIGHTNESS_POS_X, UI_BRIGHTNESS_POS_Y);
+	drawBright->SetTexture(TextureManager::GetInstance()->GetTexture(BRIGHTNESS_TEX_NUM));
+	drawBright->SetSize(UI_BRIGHTNESS_SIZE_X, UI_BRIGHTNESS_SIZE_Y);
+
+	//メニューリストに追加
+	AddMenu(objBrightness);
+
+	//追加されたオブジェクトの初期化
+	Start();
+}
 
 /**
 * @fn		MenuManager::AddMenu
@@ -680,21 +798,6 @@ void MenuManager::SelectButton() {
 		}
 	}
 
-	/*switch (m_nCreateMenu) {
-	case TITLE_STATE:
-		if ((*m_itr_Menu)->GetName() == "Button_Kari") {
-			(*m_itr_Menu)->GetComponent<CDraw2D>()->SetColor(0.0f,1.0f,0.0f);
-		}else if ((*m_itr_Menu)->GetName() == "Button_Kari2") {
-			(*m_itr_Menu)->GetComponent<CDraw2D>()->SetColor(0.0f, 1.0f, 0.0f);
-		}
-		else  if ((*m_itr_Menu)->GetName() == "Button_Kari3") {
-			(*m_itr_Menu)->GetComponent<CDraw2D>()->SetColor(0.0f, 1.0f, 0.0f);
-		}		
-		break;
-		
-	default:break;
-	}*/
-
 	//選ばれたボタンの色を変える
 	(*m_itr_Menu)->GetComponent<CDraw2D>()->SetColor(1.0f,0.0f,0.0f);
 
@@ -715,6 +818,9 @@ void MenuManager::PushButton() {
 	case TITLE_STATE:
 		if ((*m_itr_Menu)->GetName() == UI_BEGIN_NAME) {
 			//シーン遷移
+			//CSV初期化
+			StageSelect::NewGame();
+
 			SceneManager::Instance()->SetScene(SCENE_SELECT);
 		}
 		else if ((*m_itr_Menu)->GetName() == UI_CONTINUE_NAME) {
@@ -746,12 +852,19 @@ void MenuManager::PushButton() {
 			SceneManager::Instance()->SetScene(SCENE_SELECT);
 		}
 		else if ((*m_itr_Menu)->GetName() == UI_OPTION_NAME) {
-			//今回はゲームを終わる
-			//ゲーム終了
-			PostMessage(GetMainWnd(), WM_CLOSE, 0, 0);
+			//オプションメニューの作成
+			CreateOptionMenu();
+			
+			//PostMessage(GetMainWnd(), WM_CLOSE, 0, 0);
 		}
 		break;
-	case OPTION_STATE:break;
+	case OPTION_STATE:
+		//後で消す
+		if ((*m_itr_Menu)->GetName() == UI_BGM_NAME) {
+			DeleteOptionMenu();
+			CreatePauseMenu();
+		}
+		break;
 	case GAMECLEAR_STATE:break;
 	case GAMEOVER_STATE:break;
 	default:break;
@@ -810,6 +923,15 @@ void MenuManager::StageSelect() {
 		//ステージセレクトを右に動かす
 		if (InputManager::Instance()->GetKeyTrigger(DIK_D)) {
 
+			//ここで次のステージが選択できるじゃなかったら返す
+			//最終ステージだったら返さない
+			if (!StageSelect::GetSelectAble(StageSelect::m_nCurrentStage)) {
+				return;
+			}
+
+			//現在のステージをずらす
+			StageSelect::SetCurrentStage(true);
+
 			//操作不可能フラグを立てる
 			m_bRestart = true;
 			//作られているオブジェクトよりイテレーターが行かないようにする
@@ -842,6 +964,10 @@ void MenuManager::StageSelect() {
 			}
 		}
 		if (InputManager::Instance()->GetKeyTrigger(DIK_A)) {
+
+			//現在選ばれているステージ番号をずらす
+			StageSelect::SetCurrentStage(false);
+
 			//操作不可能フラグを立てる
 			m_bRestart = true;
 			//一番初めの値より下にいかにようにする
@@ -924,6 +1050,13 @@ void MenuManager::StageIN() {
 	else if ((*m_itr_Stage)->GetName() == "Stage_3") {
 		int i = 1 + 1;
 	}
+	else if ((*m_itr_Stage)->GetName() == "Stage_4") {
+		int i = 1 + 1;
+	}
+	else if ((*m_itr_Stage)->GetName() == "Stage_5") {
+		int i = 1 + 1;
+	}
+
 	//シーン遷移
 	SceneManager::Instance()->SetScene(SCENE_GAME);
 }
@@ -976,5 +1109,19 @@ void MenuManager::MissMenu() {
 		m_MenuList.clear();
 		//フェードアウトして初めからやり直す
 		SceneManager::Instance()->SetScene(SCENE_GAME);
+	}
+}
+
+/**
+* @fn		MenuManager::DeleteOptionMenu
+* @brief	オプションを削除する
+*/
+void MenuManager::DeleteOptionMenu() {
+	m_bOption = false;
+
+	//メニューリストの削除
+	for (auto&& obj:m_MenuList) {
+		//削除
+		obj->Delete();
 	}
 }

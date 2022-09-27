@@ -12,11 +12,18 @@
 /**インクルード部**/
 #include "Scene.h"
 #include "mainApp.h"
+#include "Object.h"
 
 /**クラス定義**/
 class SceneStage_1 :public Scene {
 private:
 	//メンバ変数
+	/** @brief プレイヤーのポインタを保存する変数*/
+	Object* m_pPlayer;
+	/** @brief インスタンス*/
+	static SceneStage_1* m_pInstance;
+	/** @brief イベントに当たったとき用のフラグ*/
+	bool m_bEventFlg;
 
 	//メンバ関数
 
@@ -27,6 +34,14 @@ protected:
 
 public:
 	//メンバ変数
+	/** @brief イベント用のオブジェクトを格納する変数*/
+	std::list<Object*> m_EventList;
+
+	//メンバ関数
+	/** @brief インスタンス生成*/
+	static SceneStage_1* GetInstance();
+	/** @brief インスタンスの破棄*/
+	static void Destroy();
 	/** @brief コンストラクタ*/
 	SceneStage_1();
 	/** @brief デストラクタ*/
@@ -40,7 +55,14 @@ public:
 	/** @brief 描画*/
 	void Draw() override;
 
-	//メンバ関数
+	/** @brief 変数の設定だよー*/
+	void SetBaseInfo(std::list<Object*>);
+	/** @brief イベント用リストに中身が入っていたら消す*/
+	void DeleteList();
+	/** @brief イベント当たり判定とプレイヤーとの当たり判定の処理*/
+	bool CollPlayer(Object* obj);
+	/** @brief イベントに当たったかどうかを判別する関数*/
+	bool GetEventFlg();
 };
 
 #endif

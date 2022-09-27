@@ -115,6 +115,8 @@ public:
 	std::list<Object*>& GetMenuList();
 	/** @brief 作るメニューの番号を取得する*/
 	int GetCreateMenu();
+	/** @brief オプションメニューを削除する*/
+	void DeleteOptionMenu();
 	
 	/**作りたいメニューをここから下に追加していく**/
 	/** @brief タイトルメニュー*/
@@ -127,6 +129,8 @@ public:
 	void CreateMissMenu();
 	/** @brief ゲームオーバーメニュー*/
 	void CreateGameOverMenu();
+	/** @brief オプションメニューの作成*/
+	void CreateOptionMenu();
 };
 
 #endif

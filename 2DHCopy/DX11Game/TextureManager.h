@@ -36,7 +36,7 @@
 #define FEAD_OUT_NUM						(4)
 #define PATH_TEX_FAID_OUT					("data/texture/BlackOut.png")
 
-//UI関係
+//UI関係--------------------------------------------------
 //スコア									
 #define SCORE_TEX_NUM						(5)
 #define PATH_TEX_SCORE						("data/texture/Score.png")
@@ -104,6 +104,10 @@
 //矢印
 #define ARROW_NUM							(999)
 #define PATH_ARROW							("data/texture/Billboard_Arrow.png")
+
+//ステージとか
+#define STAGE_1_RE_BG_TEX_NUM				(100)
+#define PATH_TEX_STAGE_1_RE_BG				("data/texture/RedFall.jpg")
 
 
 //クラス定義
