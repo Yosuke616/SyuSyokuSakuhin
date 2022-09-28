@@ -43,12 +43,14 @@ enum MAP_CHIP{
 
 	GOAL = 50,			//ゴール
 
-	MISS_COLL = 99,			//ミスブロック
-	STAGE_1_MISS_COLL =199,	//ステージ1イベントミス
+	MISS_COLL = 99,					//ミスブロック
+	STAGE_1_MISS_COLL = 199,		//ステージ1イベントミス
 
-	SOCRE_UP = 200,		//所謂コイン的なやつ
+	STAGE_1_RE_CHANGE_COLL = 299,	//オブジェクトの見た目を
 
-	ARROW = 999,		//ビルボード(仮)
+	SOCRE_UP = 2000,				//所謂コイン的なやつ
+
+	ARROW = 9999,					//ビルボード(仮)
 
 	MAX_MAP_CHIP
 };
@@ -277,7 +279,10 @@ void StageManager::CreateStage(int stage_state) {
 		SceneStage_1::GetInstance()->DeleteList();
 		SceneStage_1::GetInstance()->SetBaseInfo(ObjectManager::GetInstance()->GetUpdateList());
 		break;
-
+	case STAGE_1_RE:
+		SceneStage_1_Re::GetInstance()->DeleteList();
+		SceneStage_1_Re::GetInstance()->SetBaseInfo(ObjectManager::GetInstance()->GetUpdateList());
+		break;
 	default:break;
 	}
 
@@ -330,7 +335,7 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 #pragma region ---土ブロック(当たり判定無し) 
 	//土ブロック
 	else if (nState == GRASS_IN) {
-		Object* obj = new Object(BLOCK_NAME, UPDATE_FIELD, DRAW_FIELD);
+		Object* obj = new Object(BLOCK_RARD_NAME, UPDATE_FIELD, DRAW_FIELD);
 		//コンポーネントの追加
 		auto trans = obj->AddComponent<CTransform>();
 		auto draw = obj->AddComponent<CDraw3D>();
@@ -353,7 +358,7 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 #pragma region ---土ブロック(当たり判定有り)
 	//土ブロック
 	else if (nState == GRASS_IN_COLL) {
-		Object* obj = new Object(BLOCK_NAME, UPDATE_FIELD, DRAW_FIELD);
+		Object* obj = new Object(BLOCK_RARD_NAME, UPDATE_FIELD, DRAW_FIELD);
 		//コンポーネントの追加
 		auto trans = obj->AddComponent<CTransform>();
 		auto draw = obj->AddComponent<CDraw3D>();
@@ -458,6 +463,30 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 	else if (nState == STAGE_1_MISS_COLL) {
 		//オブジェクトの生成
 		Object* obj = new Object(STAGE_1_MISS_EVENT,UPDATE_DEBUG,DRAW_DEBUG);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDrawMesh>();
+		auto collider = obj->AddComponent<CCollider>();
+		auto range = obj->AddComponent<COutOfRange>();
+		obj->AddComponent<CSeeColl>();
+		//オブジェクトの設定
+		draw->SetTexture(pTextureManager->GetTexture(DEBUG_BLOCK_NUM));
+		draw->SetSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y);
+		trans->SetPosition(fPosX, fPosY + 770.0f, 0.0f);
+		collider->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
+		range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
+		//ワールドマトリックスの更新
+		draw->Update();
+
+		return obj;
+	}
+#pragma endregion
+#pragma region ---ステージ1(リローデッド)のイベント当たり判定
+	else if (nState == STAGE_1_RE_CHANGE_COLL) {
+		//オブジェクトの生成
+		Object* obj = new Object(STAGE_RE_1_CHANGE_COLL,UPDATE_DEBUG,DRAW_DEBUG);
 		//コンポーネントの追加
 		auto trans = obj->AddComponent<CTransform>();
 		auto draw = obj->AddComponent<CDrawMesh>();

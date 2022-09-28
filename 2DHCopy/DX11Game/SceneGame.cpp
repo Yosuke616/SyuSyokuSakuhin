@@ -105,7 +105,8 @@ void SceneGame::Init() {
 	pModelManager->AddModel(PATH_WALK_ENEMY, WALK_ENEMY_MODEL_NUM);
 	pModelManager->AddModel(PATH_MINT_GREEN_BLOCK, MINT_GREEN_BLOCK_NUM);
 	pModelManager->AddModel(PATH_RARD_BLOCK, RARD_BLOCK_NUM);
-
+	pModelManager->AddModel(PATH_GRASS_RE_BLOCK, GRASS_BLOCK_RE_NUM);
+	pModelManager->AddModel(PATH_RARD_RE_BLOCK, RARD_BLOCK_RE_NUM);
 	//テクスチャの読込
 	TextureManager* pTexManager = TextureManager::GetInstance();
 
@@ -123,6 +124,7 @@ void SceneGame::Init() {
 	pTexManager->AddTexture(PATH_TEX_RESUME, RESUME_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_OPTION, OPTION_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_STAGE_SELECT, STAGE_SELECT_TEX_NUM);
+	pTexManager->AddTexture(PATH_TEX_MOSAIC, MOSAIC_TEX_NUM);
 
 	//矢印
 	pTexManager->AddTexture(PATH_ARROW, ARROW_NUM);

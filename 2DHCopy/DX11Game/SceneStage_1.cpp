@@ -216,12 +216,3 @@ bool SceneStage_1::CollPlayer(Object* obj) {
 
 	return false;
 }
-
-/**
-* @fn		SceneStage_1::GetEventFlg
-* @brief	イベントに当たったかどうかを識別する
-* @return	(bool)	true:当たっている　false:当たっていない
-*/
-bool SceneStage_1::GetEventFlg() {
-	return m_bEventFlg;
-}

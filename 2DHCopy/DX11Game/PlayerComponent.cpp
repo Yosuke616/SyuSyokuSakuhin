@@ -750,7 +750,7 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 	bHitObj = true;
 #pragma region ---BLOCK
 	//仮(ブロック)
-	if(pObject->GetName() == BLOCK_NAME){
+	if(pObject->GetName() == BLOCK_NAME || pObject->GetName() == BLOCK_RARD_NAME){
 		//プレイヤーの情報を取得
 		auto Player = Parent->GetComponent<CCollider>();
 		auto PlayerPos = Player->GetCenterPos();

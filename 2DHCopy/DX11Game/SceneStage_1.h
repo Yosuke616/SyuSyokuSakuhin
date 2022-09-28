@@ -24,6 +24,8 @@ private:
 	static SceneStage_1* m_pInstance;
 	/** @brief イベントに当たったとき用のフラグ*/
 	bool m_bEventFlg;
+	/** @brief イベント用のオブジェクトを格納する変数*/
+	std::list<Object*> m_EventList;
 
 	//メンバ関数
 
@@ -34,8 +36,6 @@ protected:
 
 public:
 	//メンバ変数
-	/** @brief イベント用のオブジェクトを格納する変数*/
-	std::list<Object*> m_EventList;
 
 	//メンバ関数
 	/** @brief インスタンス生成*/
@@ -61,8 +61,6 @@ public:
 	void DeleteList();
 	/** @brief イベント当たり判定とプレイヤーとの当たり判定の処理*/
 	bool CollPlayer(Object* obj);
-	/** @brief イベントに当たったかどうかを判別する関数*/
-	bool GetEventFlg();
 };
 
 #endif

@@ -194,6 +194,7 @@
     <ClCompile Include="MenuManager.cpp" />
     <ClCompile Include="mesh.cpp" />
     <ClCompile Include="ModelManager.cpp" />
+    <ClCompile Include="MosaicRollComponent.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="ObjectManager.cpp" />
     <ClCompile Include="OutOfRange.cpp" />
@@ -248,6 +249,7 @@
     <ClInclude Include="MenuManager.h" />
     <ClInclude Include="mesh.h" />
     <ClInclude Include="ModelManager.h" />
+    <ClInclude Include="MosaicRollComponent.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="ObjectManager.h" />
     <ClInclude Include="ObjInfo.h" />
