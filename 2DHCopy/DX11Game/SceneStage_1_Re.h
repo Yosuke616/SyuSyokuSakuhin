@@ -12,6 +12,7 @@
 /**インクルード部**/
 #include "Scene.h"
 #include "mainApp.h"
+#include "Object.h"
 
 /**クラス定義**/
 /**
@@ -23,7 +24,9 @@ private:
 	//メンバ変数
 	/** @brief インスタンス*/
 	static SceneStage_1_Re* m_pInstance;
-
+	/** @brief 特殊当たり判定を保存する変数*/
+	std::list<Object*> m_EventList;
+	
 	//メンバ関数
 
 protected:
@@ -51,6 +54,15 @@ public:
 	void Update() override;
 	/** @brief 描画処理*/
 	void Draw() override;
+
+	/** @brief オブジェクトの描画を変えるための変数*/
+	void ChangeObject();
+	/** @brief 特殊当たり判定を保存するリスト*/
+	void SetBaseInfo(std::list<Object*>);
+	/** @brief イベント用リストに中身が入っていたら消す*/
+	void DeleteList();
+	/** @brief イベントとの当たり判定の計算*/
+	bool CollPlayer(Object* obj);
 };
 
 #endif

@@ -101,6 +101,10 @@
 #define BRIGHTNESS_TEX_NUM					(20)
 #define PATH_TEX_BRIGHTNESS					("data/texture/Brightness.png")
 
+//モザイク
+#define MOSAIC_TEX_NUM						(21)
+#define PATH_TEX_MOSAIC						("data/texture/MosaicRoll.jpg")
+
 //矢印
 #define ARROW_NUM							(999)
 #define PATH_ARROW							("data/texture/Billboard_Arrow.png")

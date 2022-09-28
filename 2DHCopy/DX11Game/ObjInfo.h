@@ -58,6 +58,7 @@ enum DRAW_ORDER {
 
 //@@@@@ ブロックの基本情報 ----------------------------------------
 #define BLOCK_NAME					("Block")
+#define BLOCK_RARD_NAME				("Block_Rard")
 #define MAPCHIP_WIDTH				(40.0f)	
 #define MAPCHIP_HEIGHT				(40.0f)	
 #define BLOCK_SIZE_X				(50.0f)
@@ -83,6 +84,8 @@ enum DRAW_ORDER {
 
 /**ステージ1のミスイベント**/
 #define STAGE_1_MISS_EVENT			("Stage_1_Miss")
+/**ステージ1(RELOADED)のテクスチャ変更用の当たり判定の名前**/
+#define STAGE_RE_1_CHANGE_COLL		("Stage_1_Re_Change_Coll")
 
 //@@@@@ UIの基本情報 -----------------------------------------------
 //スコア
