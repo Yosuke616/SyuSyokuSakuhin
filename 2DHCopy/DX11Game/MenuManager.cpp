@@ -131,6 +131,7 @@ void MenuManager::Update() {
 			case SELECT_STATE:break;
 			case OPTION_STATE: CreateOptionMenu(); break;
 			case MISS_STATE:  CreateMissMenu(); break;
+			case TIMEOUT_STATE:CreateTimeUpMenu(); break;
 			case GAMECLEAR_STATE:break;
 			case GAMEOVER_STATE:CreateGameOverMenu(); break;
 			default:break;
@@ -189,7 +190,10 @@ void MenuManager::Update() {
 			Object* obj = ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME);
 			if (obj->GetComponent<CPlayer>()->GetPlayerSta() == MISS_PLAYER) {
 				MissMenu();
-			}else {
+			}
+			else if (obj->GetComponent<CPlayer>()->GetPlayerSta() == TIMEOUT_PLAYER) {
+				TimeOutMenu();
+			} else {
 				SelectButton();
 			}
 		}
@@ -618,6 +622,64 @@ void MenuManager::CreateMissMenu() {
 }
 #pragma endregion
 
+#pragma region ---タイムアップ
+/**
+* @fn		MenuManager::CreateTimeUpMenu
+* @brief	タイムアップ用の演出
+*/
+void MenuManager::CreateTimeUpMenu() {
+	//メニューリストの削除
+	DeleteMenu();
+	//ステータスを変える
+	m_nCreateMenu = TIMEOUT_STATE;
+
+	//必要になってくるオブジェクトを追加していく
+	//暗くするためのテクスチャ
+	Object* Black = new Object("Black", UPDATE_UI, DRAW_UI);
+	//コンポーネント追加
+	auto transBlack = Black->AddComponent<CTransform>();
+	auto drawBlack = Black->AddComponent<CDraw2D>();
+	//オブジェクトの設定
+	transBlack->SetPosition(0.0f, 0.0f);
+	drawBlack->SetTexture(TextureManager::GetInstance()->GetTexture(FEAD_OUT_NUM));
+	drawBlack->SetSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+	drawBlack->SetAlpha(0.0f);
+
+	//メニューリストに追加
+	AddMenu(Black);
+
+	//文字の追加
+	for (int i = 0;i < 6;i++) {
+		Object* pText = new Object("moji", UPDATE_UI, DRAW_UI);
+		//コンポーネントの追加
+		auto trans = pText->AddComponent<CTransform>();
+		auto draw = pText->AddComponent<CDraw2D>();
+		//オブジェクトの設定
+		trans->SetPosition(-200.0f + i * 75.0f,400.0f);
+		draw->SetTexture(TextureManager::GetInstance()->GetTexture(ARROW_NUM));
+		draw->SetSize(25,25);
+		//メニューリストに追加
+		AddMenu(pText);
+	}
+
+	//最後に横線を一本出さないとダメだね
+	Object* pLine = new Object("line",UPDATE_UI,DRAW_UI);
+	//コンポーネントの追加
+	auto trans = pLine->AddComponent<CTransform>();
+	auto draw = pLine->AddComponent<CDraw2D>();
+	//オブジェクトの設定
+	trans->SetPosition(-1000.0f,0.0f);
+	draw->SetTexture(TextureManager::GetInstance()->GetTexture(ARROW_NUM));
+	draw->SetSize(500.0f, 25.0f);
+	//メニューリストに追加
+	AddMenu(pLine);
+
+	//オブジェクトの初期化をする
+	Start();
+}
+#pragma endregion
+
+#pragma region ---オプションメニュー
 /**
 * @fn		MenuManager::CreateOptionMenu
 * @brief	オプション用のメニューを作成する
@@ -696,6 +758,7 @@ void MenuManager::CreateOptionMenu() {
 	//追加されたオブジェクトの初期化
 	Start();
 }
+#pragma endregion
 
 /**
 * @fn		MenuManager::AddMenu
@@ -1124,4 +1187,96 @@ void MenuManager::DeleteOptionMenu() {
 		//削除
 		obj->Delete();
 	}
+}
+
+/**
+* @fn		MenuManager::TimeOutMenu
+* @brief	タイムアップしたときの処理
+*/
+void MenuManager::TimeOutMenu() {
+	//文字を1文字ずつ出していく
+	for (auto&& obj : m_MenuList) {
+		//黒背景の更新
+		if (obj->GetName() == "Black") {
+			auto trans = obj->GetComponent<CTransform>();
+			auto draw = obj->GetComponent<CDraw2D>();
+
+			m_fBlackAlpha += 0.1f;
+			if (m_fBlackAlpha >= 0.5f) {
+				m_fBlackAlpha = 0.5f;
+			}
+
+			draw->SetAlpha(m_fBlackAlpha);
+
+		}
+
+		//文字の更新
+		if (obj->GetName() == "moji") {
+			auto trans = obj->GetComponent<CTransform>();
+			auto draw = obj->GetComponent<CDraw2D>();
+			
+			//少しづつ下げていく
+			trans->Pos.y -= 50.0f;
+
+			//高さが0になったら次の文字に行く
+			//そうでない場合次の文字には行かない
+			if (trans->Pos.y <= 0.0f) {
+				trans->Pos.y = 0.0f;
+
+				for (auto&& moji : m_MenuList) {
+					if (moji->GetComponent<CTransform>()->Pos.y <= 0.0f) {
+						break;
+					}
+					else {
+						continue;						
+					}
+				}
+
+			}
+			else {
+				break;
+			}
+		}
+
+		//最後に横の線を出す
+		if (obj->GetName() == "line") {
+			auto trans = obj->GetComponent<CTransform>();
+			auto draw = obj->GetComponent<CDraw2D>();
+			
+			//少しづつ横に動かす
+			trans->Pos.x += 75.0f;
+
+			if (trans->Pos.x >= 0) {
+				trans->Pos.x = 0.0f;
+			}
+		}
+	}
+
+	//lineができってからシーンを変える
+	std::list<Object*>::iterator itr = m_MenuList.begin();
+
+	//イテレーターでlineを削除する
+	for (int i = 0;i < m_MenuList.size();i++,itr++) {
+		if ((* itr)->GetName() == "line") {
+			break;
+		}
+	}
+
+	if ((*itr)->GetComponent<CTransform>()->Pos.x >= 0.0f) {
+		int n = m_nChangeCnt - 50;
+		m_nChangeCnt--;
+		n--;
+
+		if (n <= 0) {
+			//オブジェクトリストの解放
+			for (auto&& menuObject : m_MenuList) {
+				delete menuObject;
+			}
+			m_MenuList.clear();
+			//フェードアウトして初めからやり直す
+			SceneManager::Instance()->SetScene(SCENE_GAME);
+		}
+
+	}
+
 }

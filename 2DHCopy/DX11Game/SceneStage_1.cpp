@@ -143,7 +143,7 @@ void SceneStage_1::Update() {
 					m_bEventFlg = true;
 					SceneGame::GetInstance()->SetStage(STAGE_1_RE);
 					auto player = ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CPlayer>();
-					player->SetPlayerState(MISS_PLAYER);
+					player->SetPlayerState(TIMEOUT_PLAYER);
 				}
 				break;
 			}

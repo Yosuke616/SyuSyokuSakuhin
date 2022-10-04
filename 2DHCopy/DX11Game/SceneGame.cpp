@@ -80,6 +80,19 @@ void SceneGame::Init() {
 	//ロード画面のスレッドを作る
 	Load::Begin();
 
+	//裏か表を判別する為の変数の設定
+	switch (m_eStageState)
+	{
+	case STAGE_1:
+		m_bLoveandLovers = true;
+		break;
+
+	case STAGE_1_RE:
+		m_bLoveandLovers = false;
+		break;
+	default:break;
+	}
+
 	//カメラを初期化する
 	CCamera::Get()->Init();
 
@@ -368,7 +381,8 @@ void SceneGame::Update() {
 			Player->GetComponent<CPlayer>()->GetPlayerSta() == ATTACK_PLAYER ||
 			Player->GetComponent<CPlayer>()->GetPlayerSta() == DUSH_PLAYER	 ||
 			Player->GetComponent<CPlayer>()->GetPlayerSta() == MISS_PLAYER	 ||
-			Player->GetComponent<CPlayer>()->GetPlayerSta() == HIT_PLAYER)
+			Player->GetComponent<CPlayer>()->GetPlayerSta() == HIT_PLAYER    ||
+			Player->GetComponent<CPlayer>()->GetPlayerSta() == TIMEOUT_PLAYER)
 			) {
 		
 		}
@@ -551,4 +565,22 @@ void SceneGame::SetTime() {
 */
 std::vector<Scene*> SceneGame::GetCurrentStage() {
 	return m_GameSceneList;
+}
+
+/** 
+* @fn		SceneGame::GetLaL
+* @brief	裏か表かを取得する関数
+* @return	(bool)	trueで表、falseで裏
+*/
+bool SceneGame::GetLaL() {
+	return m_bLoveandLovers;
+}
+
+/**
+* @fn		SceneGame::SetLaL
+* @brief	ステージ途中で裏表の逆転があったら使う
+* @param	(bool)	変化させたい方(trueで表 falseで裏)
+*/
+void SceneGame::SetLaL(bool lal) {
+	m_bLoveandLovers = lal;
 }

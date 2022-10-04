@@ -25,6 +25,7 @@ enum MENU_STATE {
 	OPTION_STATE,
 	GAMECLEAR_STATE,
 	MISS_STATE,
+	TIMEOUT_STATE,
 	GAMEOVER_STATE,
 
 	MAX_MENU
@@ -81,6 +82,8 @@ private:
 	void StageIN();
 	/** @brief ミスしたときの処理*/
 	void MissMenu();
+	/** @brief タイムアップしたときの処理*/
+	void TimeOutMenu();
 
 protected:
 	//メンバ変数
@@ -127,6 +130,8 @@ public:
 	void CreateSelectMenu();
 	/** @brief ミスメニュー*/
 	void CreateMissMenu();
+	/** @brief タイムアップ用の演出*/
+	void CreateTimeUpMenu();
 	/** @brief ゲームオーバーメニュー*/
 	void CreateGameOverMenu();
 	/** @brief オプションメニューの作成*/

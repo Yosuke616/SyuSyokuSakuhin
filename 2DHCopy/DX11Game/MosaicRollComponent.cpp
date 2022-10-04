@@ -23,6 +23,10 @@ bool MosaicRoll::m_bLoading = false;
 float MosaicRoll::m_fLoadCount = 0;
 /** @brief ロード画面のオブジェクトリスト*/
 std::vector<Object*> MosaicRoll::m_LoadObject;
+/** @brief モザイクを出し続けるためのカウンタ*/
+float MosaicRoll::m_fMosaicCnt = 0;
+/** @brief 一番最初だけ初期化する*/
+bool MosaicRoll::m_bFirstFlg = false;
 
 /**
 * @fn		MosaicRoll::MosaicRoll
@@ -45,21 +49,18 @@ MosaicRoll::~MosaicRoll() {
 * @brief	モザイクロールの初期化
 */
 void MosaicRoll::Init() {
-	//カメラの初期化
-	CCamera::Get()->Init();
-
 	//テクスチャ読込
 	TextureManager* pTexManager = TextureManager::GetInstance();
 
 	//背景
 #pragma region ---背景
 	//オブジェクト生成
-	Object* BG = new Object("Mosaic",UPDATE_BG,DRAW_BG);
+	Object* BG = new Object("Mosaic", MAX_UPDATE_ORDER, MAX_DRAW_ORDER);
 	//コンポーネント追加
 	auto draw_BG = BG->AddComponent<CAnimMesh>();
 	auto trans_BG = BG->AddComponent<CTransform>();
 	//オブジェクトの設定
-	trans_BG->SetPosition(0.0f,0.0f);
+	trans_BG->SetPosition(ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CTransform>()->Pos.x, ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CTransform>()->Pos.y);
 	draw_BG->SetTexture(TextureManager::GetInstance()->GetTexture(MOSAIC_TEX_NUM));
 	draw_BG->SetSize(SCREEN_WIDTH,SCREEN_HEIGHT);
 	draw_BG->SetAnimSplit(3,3);
@@ -191,4 +192,70 @@ unsigned __stdcall MosaicRoll::LoadScreen() {
 */
 int MosaicRoll::GetLoadCount() {
 	return m_fLoadCount;
+}
+
+/**
+* @fn		MosaicRoll::Mosaic_Damage
+* @brief	ダメージを受けたときにモザイクが流れるようにする
+*/
+void MosaicRoll::Mosaic_Damage() {
+	//一番最初だけ初期化をかける
+	if (!m_bFirstFlg) {
+		//初期化は2回も通さないぜ
+		m_bFirstFlg = true;
+		//モザイクの初期化
+		MosaicRoll::Init();
+		//時間の初期化
+		m_fMosaicCnt = 0.0f;
+
+		//全てのオブジェクトの停止
+		for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+			obj->StopUpdate();
+			obj->StopDraw();
+		}
+
+	}
+
+	while (m_bFirstFlg) {
+		//モザイクの更新をする
+		for (auto obj : m_LoadObject) {
+			obj->Update();
+		}
+
+		//スクリーン座標からワールド座標に変換
+		InputManager* Input = InputManager::Instance();
+		CCamera* pCamera = CCamera::Get();
+		XMFLOAT2 vPos = Input->GetMousePos();
+		XMMATRIX view = DirectX::XMLoadFloat4x4(&pCamera->GetViewMatrix());
+		XMMATRIX prj = DirectX::XMLoadFloat4x4(&pCamera->GetProjMatrix());
+		XMFLOAT3 vWorldPos;
+		CalcScreenToXY(&vWorldPos, vPos.x, vPos.y, SCREEN_WIDTH, SCREEN_HEIGHT, view, prj);
+
+		// バックバッファ＆Ｚバッファのクリア
+		float ClearColor[4] = { 0.117647f, 0.254902f, 0.352941f, 1.0f };
+		GetDeviceContext()->ClearRenderTargetView(GetRenderTargetView(), ClearColor);
+		GetDeviceContext()->ClearDepthStencilView(GetDepthStencilView(),
+			D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
+		
+		//モザイクの描画
+		for (auto obj : m_LoadObject) {
+			obj->Draw();
+		}
+		
+		// バックバッファとフロントバッファの入れ替え
+		GetSwapChain()->Present(0, 0);
+
+		m_fMosaicCnt += 0.5f;
+
+		if (m_fMosaicCnt > MOSAIC_FRAM * 60) {
+			m_bFirstFlg = false;
+			MosaicRoll::Uninit();
+
+			//オブジェクトを全て再開する
+			for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+				obj->Use();
+			}
+			break;
+		}
+	}
 }

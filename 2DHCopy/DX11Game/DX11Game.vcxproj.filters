@@ -203,7 +203,7 @@
       <Filter>ステージ</Filter>
     </ClCompile>
     <ClCompile Include="MosaicRollComponent.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>コンポーネント\創作システム</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

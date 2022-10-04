@@ -23,7 +23,7 @@ class CAnimMesh;
 /**列挙体宣言**/
 enum PLAYER_STATE {
 	IDLE_PLAYER = 0,
-	START_PLAYER,
+	START_PLAYER,		//スタートして移動させる
 	RUN_PLAYER,			//横移動
 	DUSH_PLAYER,		//エアダッシュ見たいのを作りたい（作ってない）
 	JUMP_PLAYER,		//ジャンプしている
@@ -31,6 +31,7 @@ enum PLAYER_STATE {
 	FALL_PLAYER,		//落下している
 	HIT_PLAYER,			//敵にヒットしたとき
 	MISS_PLAYER,		//いわゆるゲームオーバー
+	TIMEOUT_PLAYER,		//時間切れになったときの演出
 	CLEAR_PLAYER,		//クリアした状態
 	
 	STOP_PLAYER,		//プレイヤーの足を止めたいとき
