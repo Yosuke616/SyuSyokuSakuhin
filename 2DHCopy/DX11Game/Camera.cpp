@@ -18,7 +18,7 @@
 //*****************************************************************************
 namespace {
 	const float CAM_POS_P_X = 0.0f;					// カメラの視点初期位置(X座標)
-	const float CAM_POS_P_Y = 40.0f;					// カメラの視点初期位置(Y座標)
+	const float CAM_POS_P_Y = 40.0f;				// カメラの視点初期位置(Y座標)
 	const float CAM_POS_P_Z = -300.0f;				// カメラの視点初期位置(Z座標)
 	const float CAM_POS_R_X = 0.0f;					// カメラの注視点初期位置(X座標)
 	const float CAM_POS_R_Y = 0.0f;					// カメラの注視点初期位置(Y座標)
@@ -96,6 +96,17 @@ void CCamera::Init()
 	m_Limit = XMFLOAT2(0.0f, 3650.0f);
 	m_LimitY = XMFLOAT2(58.0f,1000.0f);
 
+	//ステージによって横幅とたてはばの上限を決める
+	switch (SceneGame::GetInstance()->GetStage()) {
+	case STAGE_1:
+		m_Limit = XMFLOAT2(0.0f, 3650.0f);
+		m_LimitY = XMFLOAT2(58.0f, 1000.0f);
+		break;
+	case STAGE_1_RE:
+		m_Limit = XMFLOAT2(0.0f, 4000.0f);
+		m_LimitY = XMFLOAT2(58.0f, 1000.0f);
+		break;
+	}
 
 	m_bZoom = false;
 }

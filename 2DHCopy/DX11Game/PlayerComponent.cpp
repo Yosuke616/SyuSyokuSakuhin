@@ -15,6 +15,7 @@
 #include "SeeCollComponent.h"
 #include "AttackComponent.h"
 #include "Sound.h"
+#include "MosaicRollComponent.h"
 
 //定数定義
 /** @brief*/
@@ -607,6 +608,45 @@ void CPlayer::Update() {
 		}
 		break;
 #pragma endregion
+	case TIMEOUT_PLAYER:
+#pragma region ---タイムアウトしたときの演出
+		//プレイヤー以外のオブジェクトをストップする
+		ObjectManager::GetInstance()->NoFunction();
+		Parent->Use();
+		for (auto&& block : ObjectManager::GetInstance()->GetUpdateList()) {
+			if (block->GetName() == BLOCK_NAME) {
+				block->Use();
+			}
+		}
+
+		for (auto&& block : ObjectManager::GetInstance()->GetUpdateList()) {
+			if (block->GetName() == ENEMY_NAME) {
+				block->StopUpdate();
+			}
+		}
+
+		for (auto&& block : ObjectManager::GetInstance()->GetUpdateList()) {
+			if (block->GetName() == "MISS_COLL") {
+				block->Use();
+			}
+		}
+
+		//当たり判定は生きているので
+		//地面に当たったら演出を流す
+		//落ちたらミス判定へ
+		m_nMissCnt++;
+		if (m_nMissCnt > 90) {
+			MenuManager::GetInsutance()->Create(TIMEOUT_STATE, 25);
+
+			//プレイヤーの更新を止める
+			Parent->StopUpdate();
+
+			//シーンゲームのオプションフラグをオンにする
+			SceneGame::GetInstance()->SetPauseOOO(true);
+		}
+
+		break;
+#pragma endregion
 	case CLEAR_PLAYER:
 #pragma region ---クリア
 		//やりたいこと
@@ -792,7 +832,8 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 				//敵の攻撃にヒットしている場合状態は変えない
 				if (m_ePlayer == HIT_PLAYER  ||
 					m_ePlayer == MISS_PLAYER ||
-					m_ePlayer == CLEAR_PLAYER) {
+					m_ePlayer == CLEAR_PLAYER||
+					m_ePlayer == TIMEOUT_PLAYER) {
 				
 				}
 				else {
@@ -831,6 +872,15 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 
 				}
 
+				//タイムアウトだったら専用の演出を流す
+				if (m_ePlayer == TIMEOUT_PLAYER) {
+					//時間切れ用の演出を流す
+					MenuManager::GetInsutance()->Create(TIMEOUT_STATE,25);
+
+					//シーンのオプションフラグをオンにする
+					SceneGame::GetInstance()->SetPauseOOO(true);
+				}
+
 				//プレイヤーの最新状態を保存する
 				if (m_bJump == true) {
 					g_ePlayer = m_ePlayer;
@@ -849,14 +899,6 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 				m_pPlayer->Pos.y = BlockDownLine - PlayerHalhSize.y - PlayerOffset.y;
 			}
 		}
-
-		//落下速度が一定を超えたら落下判定にする
-		//if (m_pPlayer->Vel.y == -MAX_VELOCITY) {
-		//	int i = 1;
-		//}
-		//else {
-		//	int i = 1;
-		//}
 
 		//中心座標のセット
 		PlayerPos = Player->GetCenterPos();
@@ -905,6 +947,11 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 					m_ePlayer = HIT_PLAYER;
 					g_ePlayer = m_ePlayer;
 					ChangeTexture();
+					//裏か表でジャギジャギが出るかどうかを決める
+					if (!SceneGame::GetInstance()->GetLaL()) {
+						MosaicRoll::Mosaic_Damage();
+					}
+
 				}
 			}
 			else {
@@ -946,6 +993,11 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 			g_ePlayer = m_ePlayer;		
 		}
 
+	}
+#pragma endregion
+#pragma region ---消す
+	if (pObject->GetName() == "Gomi") {
+		MosaicRoll::Mosaic_Damage();
 	}
 #pragma endregion
 }
@@ -1066,35 +1118,71 @@ int CPlayer::CollEnemy(Object* pObject) {
 * @brief	プレイヤーのステータスが変わったとき、テクスチャを変える関数
 */
 void CPlayer::ChangeTexture() {
-	//どのテクスチャに変更するかはプレイヤーの状態を見て決める
-	switch (m_ePlayer) {
-	case IDLE_PLAYER:
-		//デフォルトたち
-		m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_STAND_TEX_NUM));
-		m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_Y);
-		m_pDraw2D->SetAnimSplit(3, 3);
-		m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
-		m_pCollider->SetOffset(0.0f, 0.0f);
-		Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
-		break;
-	case RUN_PLAYER: 
-		//左右でかえましょうね　
-		//デフォルト走り
-		m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_RUN_TEX_NUM));
-		m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_RUN_Y);
-		m_pDraw2D->SetAnimSplit(7, 2);
-		m_pDraw2D->SetVertex(m_bROL);
-		m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_RUN_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
-		m_pCollider->SetOffset(DXCHAN_COLL_OFFSET_RUN_X, DXCHAN_COLL_OFFSET_RUN_Y);
-		Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
-		break;
-	case DUSH_PLAYER:m_ePlayer = m_ePlayer; break;
-	case JUMP_PLAYER:m_ePlayer = m_ePlayer; break;
-	case FALL_PLAYER:m_ePlayer = m_ePlayer; break;
-	case HIT_PLAYER:
-		break;
-	case MISS_PLAYER:break;
-	default:break;
+	if (SceneGame::GetInstance()->GetLaL()) {
+		//表ステージ
+			//どのテクスチャに変更するかはプレイヤーの状態を見て決める
+		switch (m_ePlayer) {
+		case IDLE_PLAYER:
+			//デフォルトたち
+			m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_STAND_TEX_NUM));
+			m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_Y);
+			m_pDraw2D->SetAnimSplit(3, 3);
+			m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
+			m_pCollider->SetOffset(0.0f, 0.0f);
+			Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
+			break;
+		case RUN_PLAYER:
+			//左右でかえましょうね　
+			//デフォルト走り
+			m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_RUN_TEX_NUM));
+			m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_RUN_Y);
+			m_pDraw2D->SetAnimSplit(7, 2);
+			m_pDraw2D->SetVertex(m_bROL);
+			m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_RUN_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
+			m_pCollider->SetOffset(DXCHAN_COLL_OFFSET_RUN_X, DXCHAN_COLL_OFFSET_RUN_Y);
+			Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
+			break;
+		case DUSH_PLAYER:m_ePlayer = m_ePlayer; break;
+		case JUMP_PLAYER:m_ePlayer = m_ePlayer; break;
+		case FALL_PLAYER:m_ePlayer = m_ePlayer; break;
+		case HIT_PLAYER:
+			break;
+		case MISS_PLAYER:break;
+		default:break;
+		}
+	}
+	else {
+		//裏ステージ
+		//どのテクスチャに変更するかはプレイヤーの状態を見て決める
+		switch (m_ePlayer) {
+		case IDLE_PLAYER:
+			//デフォルトたち
+			m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_STAND_TEX_NUM));
+			m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_Y);
+			m_pDraw2D->SetAnimSplit(3, 3);
+			m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
+			m_pCollider->SetOffset(0.0f, 0.0f);
+			Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
+			break;
+		case RUN_PLAYER:
+			//左右でかえましょうね　
+			//デフォルト走り
+			m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_RUN_TEX_NUM));
+			m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_RUN_Y);
+			m_pDraw2D->SetAnimSplit(7, 2);
+			m_pDraw2D->SetVertex(m_bROL);
+			m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_RUN_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
+			m_pCollider->SetOffset(DXCHAN_COLL_OFFSET_RUN_X, DXCHAN_COLL_OFFSET_RUN_Y);
+			Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
+			break;
+		case DUSH_PLAYER:m_ePlayer = m_ePlayer; break;
+		case JUMP_PLAYER:m_ePlayer = m_ePlayer; break;
+		case FALL_PLAYER:m_ePlayer = m_ePlayer; break;
+		case HIT_PLAYER:
+			break;
+		case MISS_PLAYER:break;
+		default:break;
+		}
 	}	
 }
 

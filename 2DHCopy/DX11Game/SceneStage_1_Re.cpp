@@ -107,6 +107,9 @@ void SceneStage_1_Re::Init() {
 	//BGM再生
 	CSound::Play(TITLE_BGM);
 
+	//裏表を決める
+	SceneGame::GetInstance()->SetLaL(true);
+
 }
 
 /**
@@ -186,6 +189,9 @@ void SceneStage_1_Re::ChangeObject() {
 			obj->NoUse();
 		}
 	}
+
+	//裏表を変える
+	SceneGame::GetInstance()->SetLaL(false);
 
 	//モザイク終了
 	MosaicRoll::End();

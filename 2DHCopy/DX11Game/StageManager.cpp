@@ -40,7 +40,6 @@ enum MAP_CHIP{
 	GRASS_IN = 11,		//ブロック(内部(当たり判定無し))
 	GRASS_IN_COLL = 12,	//ブロック(内部(当たり判定あり))
 
-
 	GOAL = 50,			//ゴール
 
 	MISS_COLL = 99,					//ミスブロック

@@ -63,6 +63,8 @@ private:
 	/** @brief ステージの秒数を管理する変数*/
 	int m_nTimer;
 
+	/** @brief 裏か表を判断する変数 trueで表、falseで裏*/
+	bool m_bLoveandLovers;
 	//メンバ関数
 	/** @brief コンストラクタ*/
 	SceneGame();
@@ -115,6 +117,10 @@ public:
 	void SetTime();
 	/** @brief ステージの情報が入ったベクターを返す関数*/
 	std::vector<Scene*> GetCurrentStage();
+	/** @brief 裏か表かを取得する関数*/
+	bool GetLaL();
+	/** @brief 裏か表かを途中でセットするための関数*/
+	void SetLaL(bool lal);
 };
 
 #endif

@@ -39,13 +39,12 @@ void CTime::Start() {
 */
 void CTime::Update() {
 	m_nSixCnt++;
-	//std::chrono;
 
 	//ˆê•b‚Éˆê‰ñXV‚·‚é
 	if (m_nSixCnt > 60) {
 		if (m_nTimeCnt > (STAGE_TIME + 2)) {
 			auto Player = ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME);
-			Player->GetComponent<CPlayer>()->SetPlayerState(MISS_PLAYER);
+			Player->GetComponent<CPlayer>()->SetPlayerState(TIMEOUT_PLAYER);
 		}
 
 		if (m_bSetTime) {

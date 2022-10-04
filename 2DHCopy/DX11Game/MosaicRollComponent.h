@@ -29,6 +29,10 @@ private:
 	static float m_fLoadCount;
 	/** @brief ロード画面のオブジェクトリスト*/
 	static std::vector<Object*> m_LoadObject;
+	/** @brief モザイクを出し続けるカウンタ*/
+	static float m_fMosaicCnt;
+	/** @brief 一度だけ初期化する変数*/
+	static bool m_bFirstFlg;
 
 	//メンバ関数
 	/** @brief ロード画面オブジェクトの初期化*/
@@ -58,6 +62,9 @@ public:
 	static void End();
 	/** @brief ロード画面のフレーム数取得*/
 	static int GetLoadCount();
+
+	/** @brief ダメージを受けたときのモザイク*/
+	static void Mosaic_Damage();
 };
 
 #endif
