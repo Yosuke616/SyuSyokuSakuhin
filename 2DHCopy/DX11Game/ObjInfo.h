@@ -82,6 +82,25 @@ enum DRAW_ORDER {
 //@@@@@ ゴールの基本情報 -------------------------------------------
 #define GOAL_NAME					("Goal")
 
+//アイテム-----------------------------------------------------------------------
+#define ITEM_NAME					("Item")
+//@@@@@ 小判の基本情報 -------------------------------------------
+#define KOBAN_SIZE_X				(20.0f)
+#define KOBAN_SIZE_Y				(20.0f)
+#define KOBAN_SIZE_Z				(20.0f)
+#define KOBAN_COLL_SIZE_X			(30.0f)
+#define KOBAN_COLL_SIZE_Y			(40.0f)
+#define KOBAN_COLL_SIZE_Z			(25.0f)
+
+//@@@@@ 勾玉の基本情報 -------------------------------------------
+#define MAGA_SIZE_X					(15.0f)
+#define MAGA_SIZE_Y					(15.0f)
+#define MAGA_SIZE_Z					(15.0f)
+#define MAGA_COLL_SIZE_X			(30.0f)
+#define MAGA_COLL_SIZE_Y			(30.0f)
+#define MAGA_COLL_SIZE_Z			(30.0f)
+//--------------------------------------------------------------------------------
+
 /**ステージ1のミスイベント**/
 #define STAGE_1_MISS_EVENT			("Stage_1_Miss")
 /**ステージ1(RELOADED)のテクスチャ変更用の当たり判定の名前**/

@@ -11,7 +11,6 @@
 #include "imgui.h"
 #include "AttackComponent.h"
 #include "SeeCollComponent.h"
-#include "sceneGame.h"
 
 /**’è”’è‹`**/
 #define MAX_ENEMY_GRAVITY	(1.0f)
