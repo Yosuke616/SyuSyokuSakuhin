@@ -25,7 +25,10 @@
 #define PATH_GRASS_RE_BLOCK		("data/model/Grass_Block_RE.fbx")
 #define RARD_BLOCK_RE_NUM		(4)
 #define PATH_RARD_RE_BLOCK		("data/model/Rard_Block_RE.fbx")
-
+#define KOBAN_MODEL_NUM			(5)
+#define PATH_KOBAN				("data/model/Koban.fbx")
+#define MAGA_MODEL_NUM			(6)
+#define PATH_MAGA				("data/model/Magatama.fbx")
 
 //ƒNƒ‰ƒX’è‹`
 /**

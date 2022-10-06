@@ -120,6 +120,8 @@ void SceneGame::Init() {
 	pModelManager->AddModel(PATH_RARD_BLOCK, RARD_BLOCK_NUM);
 	pModelManager->AddModel(PATH_GRASS_RE_BLOCK, GRASS_BLOCK_RE_NUM);
 	pModelManager->AddModel(PATH_RARD_RE_BLOCK, RARD_BLOCK_RE_NUM);
+	pModelManager->AddModel(PATH_KOBAN,KOBAN_MODEL_NUM);
+	pModelManager->AddModel(PATH_MAGA,MAGA_MODEL_NUM);
 	//テクスチャの読込
 	TextureManager* pTexManager = TextureManager::GetInstance();
 

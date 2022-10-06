@@ -24,6 +24,7 @@
 #include "OutOfRange.h"
 #include "EnemyComponent.h"
 #include "BillboardComponent.h"
+#include "ItemComponent.h"
 
 //ステージのインクルード
 #include "SceneStage_1.h"
@@ -41,6 +42,8 @@ enum MAP_CHIP{
 	GRASS_IN_COLL = 12,	//ブロック(内部(当たり判定あり))
 
 	GOAL = 50,			//ゴール
+	KOBAN,				//小判
+	MAGA,
 
 	MISS_COLL = 99,					//ミスブロック
 	STAGE_1_MISS_COLL = 199,		//ステージ1イベントミス
@@ -506,6 +509,60 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		return obj;
 	}
 #pragma endregion
+#pragma region ---小判
+	else if (nState == KOBAN) {
+		//オブジェクトの生成
+		Object* obj = new Object(ITEM_NAME,UPDATE_DEBUG,DRAW_DEBUG);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDraw3D>();
+		auto collider = obj->AddComponent<CCollider>();
+		auto type = obj->AddComponent<CItem>();
+		auto Range = obj->AddComponent<COutOfRange>();
+		obj->AddComponent<CSeeColl>();
+		//オブジェクトの設定
+		type->SetItem(ITEM_KOBAN);
+		draw->SetModel(pModelManager->GetModel(KOBAN_MODEL_NUM));
+		trans->SetPosition(fPosX,fPosY+770.0f,0.0f);
+		trans->SetScale(KOBAN_SIZE_X, KOBAN_SIZE_Y, KOBAN_SIZE_Z);
+		collider->SetCollisionSize(KOBAN_COLL_SIZE_X, KOBAN_COLL_SIZE_Y, KOBAN_COLL_SIZE_Z);
+		Range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
+
+		//ワールドマトリックスの更新
+		draw->Update();
+
+		return obj;
+}
+#pragma endregion
+#pragma region ---勾玉
+	else if (nState == MAGA) {
+		//オブジェクトの生成
+		Object* obj = new Object(ITEM_NAME,UPDATE_MODEL,DRAW_MODEL);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDraw3D>();
+		auto collider = obj->AddComponent<CCollider>();
+		auto type = obj->AddComponent<CItem>();
+		auto Range = obj->AddComponent<COutOfRange>();
+		obj->AddComponent<CSeeColl>();
+		//オブジェクトの設定
+		type->SetItem(ITEM_MAGA);
+		draw->SetModel(pModelManager->GetModel(MAGA_MODEL_NUM));
+		trans->SetPosition(fPosX+20.0f,fPosY + 770.0f,0.0f);
+		trans->SetScale(MAGA_SIZE_X,MAGA_SIZE_Y, MAGA_SIZE_Z);
+		collider->SetCollisionSize(MAGA_COLL_SIZE_X,MAGA_COLL_SIZE_Y,MAGA_COLL_SIZE_Z);
+		Range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
+
+		//ワールドマトリックスの更新
+		draw->Update();
+
+		return obj;
+	}
+#pragma endregion 
 #pragma region ---絶対消して役目でしょ
 	else if (nState == ARROW) {
 		//オブジェ生成

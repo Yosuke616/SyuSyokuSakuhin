@@ -101,6 +101,8 @@ private:
 	void CreateAttack();
 	/** @brief 失敗判定にぶつかったときにフラグを管理する関数*/
 	bool CollMiss(Object* pObject);
+	/** @brief アイテムにぶつかったときの反応*/
+	bool CollItem(Object* pObject);
 
 protected:
 	//メンバ変数

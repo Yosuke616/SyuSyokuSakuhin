@@ -16,6 +16,7 @@
 #include "AttackComponent.h"
 #include "Sound.h"
 #include "MosaicRollComponent.h"
+#include "ItemComponent.h"
 
 //定数定義
 /** @brief*/
@@ -65,7 +66,7 @@ void CPlayer::Start() {
 	m_pInput = InputManager::Instance();
 	g_ePlayer = m_ePlayer;
 	//パワーアップと無敵時間の初期化
-	m_bPawer_UP = true;
+	m_bPawer_UP = false;
 	m_nStar_Time = 0;
 	//初めは右を向いている
 	m_bROL = true;
@@ -984,6 +985,29 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 	}
 #pragma endregion
 
+#pragma region ---アイテム
+	if (pObject->GetName() == ITEM_NAME) {
+		if (CollItem(pObject)) {
+			//アイテムの種類で処理を変える
+			switch (pObject->GetComponent<CItem>()->GetItem())
+			{
+			case ITEM_KOBAN:
+				//スコアを加算する
+				SceneGame::GetInstance()->SetScore(200);
+				//このオブジェクトを削除する
+				pObject->Delete();
+				break;
+			case ITEM_MAGA:
+				//パワーアップさせる
+				break;
+			case ITEM_OHUDA:break;
+			default:break;
+			}
+
+
+		}
+	}
+#pragma endregion
 #pragma region ---ミス判定
 	if (pObject->GetName() == "MISS_COLL") {
 		//やらないといけないこと
@@ -1303,4 +1327,35 @@ bool CPlayer::CollMiss(Object* pObject) {
 		}
 	}
 	return false;
+}
+
+/**
+* @fn		CPlayer::CollKoban
+* @brief	アイテム(スコアアップ)に当たったときの処理
+* @param	(Object*)	当たった相手の情報が入ったポインタ
+* @return	(bool)		当たっていたらtrue 当たっていないならfalse
+*/
+bool CPlayer::CollItem(Object* obj) {
+	//プレイヤーの情報を取得
+	auto Player = Parent->GetComponent<CCollider>();
+	auto PlayerPos = Player->GetCenterPos();
+	auto PlayerSize = Player->GetColliderSize();
+	auto PlayerOffset = Player->GetOffSet();
+
+	XMFLOAT2 PlayerHalfSize = XMFLOAT2(PlayerSize.x / 2.0f, PlayerSize.y / 2.0f);
+	//当たり判定の大きさを持ってくる
+	auto collider = obj->GetComponent<CCollider>();
+	auto trans = obj->GetComponent<CTransform>();
+	XMFLOAT2 HalfSize = XMFLOAT2(collider->GetColliderSize().x / 2.0f,collider->GetColliderSize().y / 2.0f);
+	
+	if (collider->GetCenterPos().x - HalfSize.x + trans->Vel.x < m_pCollider->GetCenterPos().x + PlayerHalfSize.x + m_pPlayer->Vel.x &&
+		m_pCollider->GetCenterPos().x - PlayerHalfSize.x + m_pPlayer->Vel.x < collider->GetCenterPos().x + HalfSize.x + trans->Vel.x) {
+
+		if (collider->GetCenterPos().y - HalfSize.y + trans->Vel.y < m_pCollider->GetCenterPos().y + PlayerHalfSize.y + m_pPlayer->Vel.y &&
+			m_pCollider->GetCenterPos().y - PlayerHalfSize.y + m_pPlayer->Vel.y < collider->GetCenterPos().y + HalfSize.y + trans->Vel.y) {
+			return true;
+		}
+	}
+	return false;
+
 }
