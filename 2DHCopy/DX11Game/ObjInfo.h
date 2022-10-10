@@ -99,6 +99,15 @@ enum DRAW_ORDER {
 #define MAGA_COLL_SIZE_X			(30.0f)
 #define MAGA_COLL_SIZE_Y			(30.0f)
 #define MAGA_COLL_SIZE_Z			(30.0f)
+
+//@@@@@ お札の基本情報 -------------------------------------------
+#define OHUDA_SIZE_X				(15.0f)
+#define OHUDA_SIZE_Y				(15.0f)
+#define OHUDA_SIZE_Z				(15.0f)
+#define OHUDA_COLL_SIZE_X			(30.0f)
+#define OHUDA_COLL_SIZE_Y			(30.0f)
+#define OHUDA_COLL_SIZE_Z			(30.0f)
+
 //--------------------------------------------------------------------------------
 
 /**ステージ1のミスイベント**/

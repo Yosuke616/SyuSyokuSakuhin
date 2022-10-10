@@ -27,6 +27,7 @@
 StageSelect::Row StageSelect::m_StageGrid;
 int StageSelect::m_nCurrentStage = 0;
 int StageSelect::m_nOldStage;
+StageSelect::Column StageSelect::m_Ohuda;
 
 /**グローバル変数**/
 CAnimMesh *g_CurrentBG = nullptr;
@@ -190,6 +191,13 @@ void StageSelect::Draw() {
 * @return	(bool)	本当に読み込めたのかな
 */
 bool StageSelect::Load() {
+	//クローバー取得数の読込
+	if (FileManager::GetInstance()->Load(OHUDA_DATA_CSV) ==false){
+		//エラーメッセージ
+		MessageBox(GetMainWnd(), _T("select_load"), NULL, MB_OK);
+		return false;
+	}
+
 	//クリア状況の読込
 	if (FileManager::GetInstance()->Load(STAGE_CLEAR_CSV) == false) {
 		//エラーメッセージ
@@ -209,6 +217,14 @@ bool StageSelect::Load() {
 		}
 	}
 
+	//クローバーの取得状況を移す
+	ResourceCSV* OhudaCSV = (ResourceCSV*)FileManager::GetInstance()->Get(OHUDA_DATA_CSV);
+	m_Ohuda.clear();
+	for (int x = 0;x < OhudaCSV->GetColumnSize(0);x++) {
+		//要素を格納する
+		m_Ohuda.push_back(OhudaCSV->GetInt(x,0));
+	}
+
 	//無事に返す
 	return true;
 }
@@ -225,6 +241,17 @@ bool StageSelect::Save() {
 		return false;
 	}
 	if (CSV->Save(STAGE_CLEAR_CSV) == false){
+		// エラーメッセージ
+		MessageBox(GetMainWnd(), _T("save_data"), NULL, MB_OK);
+		return false;
+	}
+
+	//クローバーの取得状況の保存
+	ResourceCSV* OhudaCSV = (ResourceCSV*)FileManager::GetInstance()->Get(OHUDA_DATA_CSV);
+	if (OhudaCSV ==nullptr) {
+		return false;
+	}
+	if (OhudaCSV->Save(OHUDA_DATA_CSV) == false) {
 		// エラーメッセージ
 		MessageBox(GetMainWnd(), _T("save_data"), NULL, MB_OK);
 		return false;
@@ -253,6 +280,12 @@ bool StageSelect::NewGame() {
 	// 最初のステージ選択は可能
 	CSV->SetInt(0, 0, 1);
 
+	//クローバーの取得状況
+	ResourceCSV* OhudaCSV = (ResourceCSV*)FileManager::GetInstance()->Get(OHUDA_DATA_CSV);
+	for (int nColumn = 0;nColumn < m_Ohuda.size();nColumn++) {
+		OhudaCSV->SetInt(nColumn,0,0);
+	}
+
 	StageSelect::Save();
 
 	return true;
@@ -264,12 +297,17 @@ bool StageSelect::NewGame() {
 * @param	(int)	何番目のステージをクリアしたか	
 * @return	(bool)	正しく保存できたかどうか
 */
-bool StageSelect::SaveClearInfo(int nStage) {
+bool StageSelect::SaveClearInfo(int nStage,bool bOhuda) {
+	//お札のcsvを取得する
+	ResourceCSV* OhudaCSV = (ResourceCSV*)FileManager::GetInstance()->Get(OHUDA_DATA_CSV);
+	
+	//お札を書き換える
+	OhudaCSV->SetInt(nStage,0,bOhuda);
+
 	// クリア状況を書き換える
 	ResourceCSV* CSV = (ResourceCSV*)FileManager::GetInstance()->Get(STAGE_CLEAR_CSV);
 	// 次のステージのフラグへ
 	int x = nStage + 1;
-
 
 	CSV->SetInt(x, 0, 1);	// (列, 行, 格納する数字)
 
@@ -325,4 +363,25 @@ void StageSelect::SetCurrentStage(bool num) {
 			m_nCurrentStage--;
 		}
 	}
+}
+
+/**
+* @fn		StageSelect::SaveOhudaInfo
+* @brief	お札の取得情報を取得する
+* @param	(int)	どのステージかの情報を得る
+* @return	(bool)	しっかりと読み込めたかどうか
+*/
+bool StageSelect::SaveOhudaInfo(int nStage) {
+	m_Ohuda[nStage] = 1;
+
+	return true;
+}
+
+/**
+* @fn		StageSelect::GetOhuda
+* @brief	お札の情報を取得する
+* @return	(StageSelect::Column)	何列目かどうか
+*/
+StageSelect::Column StageSelect::GetOhuda() {
+	return m_Ohuda;
 }

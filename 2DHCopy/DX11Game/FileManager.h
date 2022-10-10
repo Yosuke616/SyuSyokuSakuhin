@@ -21,6 +21,10 @@
 //ステージクリア情報
 #define STAGE_CLEAR_CSV		("Assets/Stage_Clear.csv")
 
+//お札の取得情報
+#define OHUDA_DATA_CSV		("Assets/Ohuda_data.csv")
+
+
 /**クラス定義**/
 /**
 * @brief	アセットに存在するファイルを管理する		

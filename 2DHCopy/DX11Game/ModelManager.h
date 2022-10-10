@@ -29,6 +29,8 @@
 #define PATH_KOBAN				("data/model/Koban.fbx")
 #define MAGA_MODEL_NUM			(6)
 #define PATH_MAGA				("data/model/Magatama.fbx")
+#define OHUDA_MODEL_NUM			(7)
+#define PATH_OHUDA				("data/model/Ohuda.fbx")
 
 //ƒNƒ‰ƒX’è‹`
 /**

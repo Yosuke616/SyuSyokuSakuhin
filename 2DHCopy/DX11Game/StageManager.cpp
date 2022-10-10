@@ -42,8 +42,9 @@ enum MAP_CHIP{
 	GRASS_IN_COLL = 12,	//ブロック(内部(当たり判定あり))
 
 	GOAL = 50,			//ゴール
-	KOBAN,				//小判
-	MAGA,
+	KOBAN,				//小判(スコアアップアイテム)
+	MAGA,				//勾玉(パワーアップアイテム)
+	OHUDA,				//お札(キーアイテム)
 
 	MISS_COLL = 99,					//ミスブロック
 	STAGE_1_MISS_COLL = 199,		//ステージ1イベントミス
@@ -563,6 +564,32 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		return obj;
 	}
 #pragma endregion 
+#pragma region ---お札
+	else if (nState == OHUDA) {
+		//オブジェクトの生成
+		Object* obj = new Object(ITEM_NAME,UPDATE_MODEL,DRAW_MODEL);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDraw3D>();
+		auto collider = obj->AddComponent<CCollider>();
+		auto type = obj->AddComponent<CItem>();
+		auto Range = obj->AddComponent<COutOfRange>();
+		obj->AddComponent<CSeeColl>();
+		//オブジェクトの設定
+		type->SetItem(ITEM_OHUDA);
+		draw->SetModel(pModelManager->GetModel(OHUDA_MODEL_NUM));
+		trans->SetPosition(fPosX + 20.0f, fPosY + 770.0f, 0.0f);
+		trans->SetScale(OHUDA_SIZE_X, OHUDA_SIZE_Y, OHUDA_SIZE_Z);
+		collider->SetCollisionSize(OHUDA_COLL_SIZE_X, OHUDA_COLL_SIZE_Y, OHUDA_COLL_SIZE_Z);
+		Range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
+		//ワールドマトリックスの更新
+		draw->Update();
+
+		return obj;
+	}
+#pragma endregion
 #pragma region ---絶対消して役目でしょ
 	else if (nState == ARROW) {
 		//オブジェ生成

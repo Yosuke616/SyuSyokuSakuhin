@@ -122,6 +122,7 @@ void SceneGame::Init() {
 	pModelManager->AddModel(PATH_RARD_RE_BLOCK, RARD_BLOCK_RE_NUM);
 	pModelManager->AddModel(PATH_KOBAN,KOBAN_MODEL_NUM);
 	pModelManager->AddModel(PATH_MAGA,MAGA_MODEL_NUM);
+	pModelManager->AddModel(PATH_OHUDA, OHUDA_MODEL_NUM);
 	//テクスチャの読込
 	TextureManager* pTexManager = TextureManager::GetInstance();
 
@@ -140,6 +141,7 @@ void SceneGame::Init() {
 	pTexManager->AddTexture(PATH_TEX_OPTION, OPTION_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_STAGE_SELECT, STAGE_SELECT_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_MOSAIC, MOSAIC_TEX_NUM);
+	pTexManager->AddTexture(PATH_TEX_CIRCLE, CIRCLE_TEX_NUM);
 
 	//矢印
 	pTexManager->AddTexture(PATH_ARROW, ARROW_NUM);
@@ -404,7 +406,8 @@ void SceneGame::Update() {
 		//2秒で変更する
 		if (m_nSelectCnt > 120) {
 			//次のステージを解放する
-			StageSelect::SaveClearInfo(GetStage());
+			//
+			StageSelect::SaveClearInfo(GetStage(),ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CPlayer>()->GetOhuda());
 
 			SceneManager::Instance()->SetScene(SCENE_SELECT);
 			m_nSelectCnt = 0;
