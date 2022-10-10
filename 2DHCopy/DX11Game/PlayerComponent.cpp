@@ -3,6 +3,8 @@
 #include "InputManager.h"
 #include "ObjectManager.h"
 #include "TextureManager.h"
+#include "FileManager.h"
+#include "ResourceCSV.h"
 #include "imgui.h"
 
 #include "TransformComponent.h"
@@ -17,6 +19,7 @@
 #include "Sound.h"
 #include "MosaicRollComponent.h"
 #include "ItemComponent.h"
+#include "CircleComponent.h"
 
 //定数定義
 /** @brief*/
@@ -43,8 +46,17 @@ CPlayer::CPlayer() :
 	m_bJump(false),							//ジャンプしているかどうか
 	m_bPawer_UP(true),						//パワーアップしているか
 	m_pAttackObj(nullptr),					//攻撃判定用のオブジェクトを指せるポインタ
+	m_pMaga(nullptr),						//勾玉のオブジェクト
 	m_ePlayer(START_PLAYER){
 	this->m_eUpdateOrder = COM_UPDATE_1;
+
+	//お札の取得情報をfalseにする
+	m_bOhuda = false;
+	//お札の取得情報の確認
+	ResourceCSV* OhudaCSV = (ResourceCSV*)FileManager::GetInstance()->Get(OHUDA_DATA_CSV);
+	int nStage = SceneGame::GetInstance()->GetStage();
+
+	m_bOhuda = OhudaCSV->GetInt(nStage,0);
 }
 
 /**
@@ -90,6 +102,8 @@ void CPlayer::Start() {
 	m_nMissCnt = 0;
 	//クリアしたフラグはオフにしておく
 	m_bClearFlg = false;
+	//勾玉を持っているか
+	m_pMaga = nullptr;
 }
 
 /**
@@ -533,7 +547,12 @@ void CPlayer::Update() {
 					//プレイヤーがパワーアップ状態ならパワーダウンさせる
 					if (m_bPawer_UP) {
 						//パワーアップ状態を解除する
-						m_bPawer_UP = false;					
+						m_bPawer_UP = false;	
+						//勾玉を削除する
+						m_pMaga->Delete();
+
+						//プレイヤーのバリアみたいなのを消す
+						ObjectManager::GetInstance()->GetGameObject("sarcle")->Delete();
 					}
 					else {
 						//ミス状態にする
@@ -998,9 +1017,47 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 				pObject->Delete();
 				break;
 			case ITEM_MAGA:
-				//パワーアップさせる
+				if (!m_bPawer_UP) {
+					//パワーアップさせる
+					m_bPawer_UP = true;
+					//アイテムを取得した判定をする
+					pObject->GetComponent<CItem>()->SetPlayer(true);
+					//オブジェクトの設定
+					m_pMaga = pObject;
+					//当たり判定を削除する
+					m_pMaga->GetComponent<CCollider>()->m_bUpdateFlag = false;
+
+					//円を作成する
+					Object* obj = new Object("sarcle",UPDATE_UI,DRAW_UI);
+					//コンポーネントを追加していく
+					auto trans = obj->AddComponent<CTransform>();
+					auto draw = obj->AddComponent<CAnimMesh>();
+					obj->AddComponent<CCircle>();
+					//オブジェクトの設定
+					trans->SetPosition(m_pPlayer->Pos.x,m_pPlayer->Pos.y);
+					draw->SetTexture(TextureManager::GetInstance()->GetTexture(CIRCLE_TEX_NUM));
+					draw->SetSize(160.0f,160.0f);
+					draw->SetLoop(true);
+					
+					//オブジェクトの追加
+					ObjectManager::GetInstance()->AddObject(obj);
+				}
+				else {
+					//削除する
+					pObject->Delete();
+					//スコアたくさん
+					SceneGame::GetInstance()->SetScore(1000);
+				}
 				break;
-			case ITEM_OHUDA:break;
+			case ITEM_OHUDA:
+				//セーブする
+				//ステージごとに1つ一個だけ存在する
+				m_bOhuda = true;
+
+				//お札を削除する
+				pObject->Delete();
+
+				break;
 			default:break;
 			}
 
@@ -1358,4 +1415,13 @@ bool CPlayer::CollItem(Object* obj) {
 	}
 	return false;
 
+}
+
+/**
+* @fn		CPlayer::GetOhuda
+* @brief	お札を取得したかどうか
+* @return	(bool)	プレイヤーが持っているかどうか
+*/
+bool CPlayer::GetOhuda() {
+	return m_bOhuda;
 }

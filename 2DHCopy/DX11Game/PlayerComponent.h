@@ -94,6 +94,12 @@ private:
 	/** @brief ステージセレクトに行くための時間(所謂ディレイ)*/
 	bool m_bClearFlg;
 
+	/** @brief アイテムを取得したときに設定する*/
+	Object* m_pMaga;
+	/** @bried お札を取得しているか*/
+	bool m_bOhuda;
+
+
 	//メンバ関数
 	/** @brief プレイヤーがどの方向から敵に当たったかを判別*/
 	int CollEnemy(Object* pObject);
@@ -141,6 +147,8 @@ public:
 	PLAYER_STATE GetPlayerSta();
 	/** @brief クリアしたかどうかを取得する関数*/
 	bool GetClearFlg();
+	/** @brief お札を取得したかどうかを取得する*/
+	bool GetOhuda();
 };
 
 

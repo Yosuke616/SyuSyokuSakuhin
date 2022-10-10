@@ -105,6 +105,10 @@
 #define MOSAIC_TEX_NUM						(21)
 #define PATH_TEX_MOSAIC						("data/texture/MosaicRoll.jpg")
 
+//円
+#define CIRCLE_TEX_NUM						(22)
+#define PATH_TEX_CIRCLE						("data/texture/circle.png")
+
 //矢印
 #define ARROW_NUM							(999)
 #define PATH_ARROW							("data/texture/Billboard_Arrow.png")

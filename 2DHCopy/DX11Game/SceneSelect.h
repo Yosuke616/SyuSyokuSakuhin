@@ -43,6 +43,8 @@ private:
 	static Row m_StageGrid;
 	/** @brief ステージセレクトに戻ったときにそこから始めるため*/
 	static int m_nOldStage;
+	/** @brief お札の取得情報*/
+	static Column m_Ohuda;
 
 	//メンバ関数
 	///** @brief ロード*/
@@ -78,10 +80,14 @@ public:
 	static bool GetSelectAble(int stage_num);
 	///** @brief 選択可能かどうかの配列の取得*/
 	//static Row GetSelectGrid();
-	///** @brief CSVファイルの初期化*/
+	/** @brief CSVファイルの初期化*/
 	static bool NewGame();
-	///** @brief クリア状況の保存*/
-	static bool SaveClearInfo(int nStage);
+	/** @brief クリア状況の保存*/
+	static bool SaveClearInfo(int nStage,bool bOhuda);
+	/** @brief お札の取得情報*/
+	static bool SaveOhudaInfo(int nStage);
+	/** @brief お札の取得情報の取得*/
+	static Column GetOhuda();
 
 	/**消すかもしれない**/
 	/** @brief 現在選ばれているステージ番号の設定*/

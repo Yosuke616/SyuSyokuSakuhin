@@ -49,6 +49,15 @@ private:
 	/** @brief 上下に移動させるフラグ
 			   trueで上　falseで下*/
 	bool m_bUpDown;
+	/** @brief パワーアップアイテムが取得されたかのフラグ*/
+	bool m_bPlayer;
+	/** @brief 指定の場所に付いたかついていないかを判定するフラグ
+			   falseでつていない　trueでついている*/
+	bool m_bSetUp;
+	/** @brief 一度だけ逆向きに設定する*/
+	bool m_bFirstBlad;
+	/** @brief 回転させるための変数*/
+	float m_fRotTime;
 
 	//メンバ関数
 
@@ -77,6 +86,8 @@ public:
 	void SetItem(ITEM_TYPE type);
 	/** @brief アイテムの種類の取得*/
 	ITEM_TYPE GetItem();
+	/** @brief プレイヤーに取得されたかを設定する*/
+	void SetPlayer(bool player);
 
 };
 
