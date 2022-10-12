@@ -115,6 +115,9 @@ enum DRAW_ORDER {
 /**ステージ1(RELOADED)のテクスチャ変更用の当たり判定の名前**/
 #define STAGE_RE_1_CHANGE_COLL		("Stage_1_Re_Change_Coll")
 
+//@@@@@ WARPの基本情報 -----------------------------------------------
+#define WARP_NAME					("warp")
+
 //@@@@@ UIの基本情報 -----------------------------------------------
 //スコア
 #define UI_SCORE_NAME				("UI_SCORE")

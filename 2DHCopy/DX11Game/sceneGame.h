@@ -121,6 +121,8 @@ public:
 	bool GetLaL();
 	/** @brief 裏か表かを途中でセットするための関数*/
 	void SetLaL(bool lal);
+	/** @brief 現在どのステージかどうかを取得する*/
+	Scene* GetStageCurrent();
 };
 
 #endif

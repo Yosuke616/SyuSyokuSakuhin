@@ -251,6 +251,23 @@ bool SceneStage_1_Re::CollPlayer(Object* obj){
 			return true;
 		}
 	}
-
 	return false;
+}
+
+/**
+* @fn		SceneStage_1_Re::GetOhuda
+* @brief	‚¨D‚ğæ“¾‚µ‚½‚©‚Ìƒtƒ‰ƒO
+* @return	(bool)	‚¨D‚ğæ“¾‚µ‚Ä‚¢‚é‚©
+*/
+bool SceneStage_1_Re::GetOhuda() {
+	return m_bOhuda;
+}
+
+/**
+* @fn		SceneStage_1_Re::SetOhuda
+* @brief	‚¨D‚ğæ“¾‚Å‚«‚Ä‚¢‚é‚©‚ğƒZƒbƒg‚·‚éŠÖ”
+* @param	(bool)	‚¨D‚ğæ“¾‚Å‚«‚Ä‚¢‚é‚©‚Ç‚¤‚©‚ÌŠÖ”
+*/
+void SceneStage_1_Re::SetOhuda(bool bOhuda) {
+	m_bOhuda = bOhuda;
 }

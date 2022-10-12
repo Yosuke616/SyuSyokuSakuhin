@@ -47,9 +47,10 @@ enum MAP_CHIP{
 	OHUDA,				//お札(キーアイテム)
 
 	MISS_COLL = 99,					//ミスブロック
+	WARP,							//ステージごとにワープの条件を変える
 	STAGE_1_MISS_COLL = 199,		//ステージ1イベントミス
 
-	STAGE_1_RE_CHANGE_COLL = 299,	//オブジェクトの見た目を
+	STAGE_1_RE_CHANGE_COLL = 299,	//オブジェクトの見た目を変えるためのイベント
 
 	SOCRE_UP = 2000,				//所謂コイン的なやつ
 
@@ -460,6 +461,21 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		draw->Update();
 
 		return obj;
+	}
+#pragma endregion
+#pragma region ---ワープ地点を生成
+	else if (nState == WARP) {
+		//オブジェクトの生成
+		Object* obj = new Object(WARP_NAME,UPDATE_UI,DRAW_UI);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDraw3D>();
+		auto collider = obj->AddComponent<CCollider>();
+		obj->AddComponent<COutOfRange>();
+		obj->AddComponent<CSeeColl>();
+		//オブジェクトの設定
+
+		
 	}
 #pragma endregion
 #pragma region ---ステージ1のミス判定

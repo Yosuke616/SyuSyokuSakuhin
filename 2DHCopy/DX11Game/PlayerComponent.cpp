@@ -21,6 +21,8 @@
 #include "ItemComponent.h"
 #include "CircleComponent.h"
 
+#include "SceneStage_1.h"
+
 //定数定義
 /** @brief*/
 #define MAX_PLAYER_GRAVITY		(1.0f)	//プレイヤーに加わる重力の最大値	
@@ -796,6 +798,7 @@ void CPlayer::Draw() {
 	Text("P_STATE : %d",g_ePlayer);
 	Text("DCool   : %d",m_nDushCoolTime);
 	Text("ADFlg   : %d",m_bAirDushFlg);
+	Text("OhudaFlg: %d",m_bOhuda);
 	End();
 #endif // _DEBUG
 }
@@ -1053,6 +1056,15 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 				//セーブする
 				//ステージごとに1つ一個だけ存在する
 				m_bOhuda = true;
+
+				//ステージごとに処理を変える
+				switch (SceneGame::GetInstance()->GetStage()) {
+				case STAGE_1:
+					SceneStage_1::GetInstance()->SetOhuda(true);
+					break;
+				case STAGE_1_RE:break;
+				default: break;
+				}
 
 				//お札を削除する
 				pObject->Delete();

@@ -26,6 +26,8 @@ private:
 	bool m_bEventFlg;
 	/** @brief イベント用のオブジェクトを格納する変数*/
 	std::list<Object*> m_EventList;
+	/** @brief お札を取っているかどうかの取得*/
+	bool m_bOhuda;
 
 	//メンバ関数
 
@@ -61,6 +63,10 @@ public:
 	void DeleteList();
 	/** @brief イベント当たり判定とプレイヤーとの当たり判定の処理*/
 	bool CollPlayer(Object* obj);
+	/** @brief お札を取得したかを取得する*/
+	bool GetOhuda();
+	/** @brief お札を取得したかを設定する*/
+	void SetOhuda(bool bOhuda);
 };
 
 #endif

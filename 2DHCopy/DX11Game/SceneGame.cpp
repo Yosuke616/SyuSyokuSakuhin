@@ -406,9 +406,18 @@ void SceneGame::Update() {
 		//2秒で変更する
 		if (m_nSelectCnt > 120) {
 			//次のステージを解放する
-			//
-			StageSelect::SaveClearInfo(GetStage(),ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CPlayer>()->GetOhuda());
+			//ステージごとに内容を派生させる
+			switch (m_eStageState) {
+			case STAGE_1:
+				//ここに入ることは無いから入ったらエラー
 
+				break;
+			case STAGE_1_RE:
+				StageSelect::SaveClearInfo(m_eStageState-1,SceneStage_1_Re::GetInstance()->GetOhuda());				
+				break;
+
+			default:break;
+			}
 			SceneManager::Instance()->SetScene(SCENE_SELECT);
 			m_nSelectCnt = 0;
 		}
@@ -588,4 +597,13 @@ bool SceneGame::GetLaL() {
 */
 void SceneGame::SetLaL(bool lal) {
 	m_bLoveandLovers = lal;
+}
+
+/**
+* @fn		SceneGame::GetStageCurrent
+* @brief	ステージごとの関数を使えるようにする
+* @return	(Scene*)	現在のステージの取得
+*/
+Scene* SceneGame::GetStageCurrent() {
+	return m_CurrentScene;
 }
