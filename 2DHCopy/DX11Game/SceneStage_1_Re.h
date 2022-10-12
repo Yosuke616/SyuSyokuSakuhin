@@ -26,6 +26,8 @@ private:
 	static SceneStage_1_Re* m_pInstance;
 	/** @brief 特殊当たり判定を保存する変数*/
 	std::list<Object*> m_EventList;
+	/** @brief お札を取得したかどうかのフラグ*/
+	bool m_bOhuda;
 	
 	//メンバ関数
 
@@ -63,6 +65,10 @@ public:
 	void DeleteList();
 	/** @brief イベントとの当たり判定の計算*/
 	bool CollPlayer(Object* obj);
+	/** @brief お札を取得したかの情報を送る*/
+	bool GetOhuda();
+	/** @brief お札を取得したかを設定する*/
+	void SetOhuda(bool bOhuda);
 };
 
 #endif

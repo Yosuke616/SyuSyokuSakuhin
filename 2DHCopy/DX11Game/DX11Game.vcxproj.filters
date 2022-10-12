@@ -211,6 +211,9 @@
     <ClCompile Include="CircleComponent.cpp">
       <Filter>コンポーネント\創作システム</Filter>
     </ClCompile>
+    <ClCompile Include="WarpComponent.cpp">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainApp.h">
@@ -394,6 +397,9 @@
       <Filter>コンポーネント\創作システム</Filter>
     </ClInclude>
     <ClInclude Include="CircleComponent.h">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClInclude>
+    <ClInclude Include="WarpComponent.h">
       <Filter>コンポーネント\創作システム</Filter>
     </ClInclude>
   </ItemGroup>

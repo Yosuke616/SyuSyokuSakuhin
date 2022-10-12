@@ -24,6 +24,8 @@
 #include "sceneGame.h"
 #include "Sound.h"
 
+#include "SceneStage_1_Re.h"
+
 /**静的メンバ変数**/
 SceneStage_1* SceneStage_1::m_pInstance = nullptr;
 
@@ -108,6 +110,9 @@ void SceneStage_1::Init() {
 	//イベントフラグをオフにする
 	m_bEventFlg = false;
 
+	//お札を取得しているかどうかのフラグ
+	m_bOhuda = false;
+
 	//BGM再生
 	CSound::Play(TITLE_BGM);
 
@@ -141,6 +146,8 @@ void SceneStage_1::Update() {
 					//プレイヤーをミス状態にする
 					//ステージの読込先を変える
 					m_bEventFlg = true;
+					//変更先ステージにお札をとったか同課の情報を送る
+					SceneStage_1_Re::GetInstance()->SetOhuda(m_bOhuda);
 					SceneGame::GetInstance()->SetStage(STAGE_1_RE);
 					auto player = ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CPlayer>();
 					player->SetPlayerState(TIMEOUT_PLAYER);
@@ -215,4 +222,22 @@ bool SceneStage_1::CollPlayer(Object* obj) {
 	}
 
 	return false;
+}
+
+/**
+* @fn		SceneStage_1::GetOhuda
+* @brief	お札を取得したかどうかの設定
+* @return	(bool)	取得したかどうか
+*/
+bool SceneStage_1::GetOhuda() {
+	return m_bOhuda;
+}
+
+/**
+* @fn		SceneStage_1::SetOhuda
+* @brief	お札を取得したかどうかを設定する
+* @param	(bool)	設定したい値
+*/
+void SceneStage_1::SetOhuda(bool bOhuda) {
+	m_bOhuda = bOhuda;
 }
