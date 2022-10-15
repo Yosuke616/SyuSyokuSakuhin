@@ -1236,7 +1236,17 @@ void CPlayer::ChangeTexture() {
 			Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
 			break;
 		case DUSH_PLAYER:m_ePlayer = m_ePlayer; break;
-		case JUMP_PLAYER:m_ePlayer = m_ePlayer; break;
+		case JUMP_PLAYER:
+			//左右で変えましょうね
+			//デフォルトジャンプ
+			m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_JUMP_TEX_NUM));
+			m_pDraw2D->SetSize(DXCHAN_SIZE_JUMP_X, DXCHAN_SIZE_JUMP_Y);
+			m_pDraw2D->SetAnimSplit(6,3);
+			m_pDraw2D->SetVertex(m_bROL);
+			m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_JUMP_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
+			m_pCollider->SetOffset(DXCHAN_COLL_OFFSET_JUMP_X, DXCHAN_COLL_OFFSET_JUMP_Y);
+			Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
+			m_ePlayer = m_ePlayer; break;
 		case FALL_PLAYER:m_ePlayer = m_ePlayer; break;
 		case HIT_PLAYER:
 			break;

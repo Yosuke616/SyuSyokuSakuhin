@@ -29,12 +29,11 @@ private:
 	//メンバ変数
 	/** @brief 座標とかの設定*/
 	CTransform* m_pTransform;
-	/** @brief モデルとかの設定*/
-	CDraw3D* m_pDraw;
 	/** @brief 当たり判定の情報*/
 	CCollider* m_pCollider;
 
 	//メンバ関数
+	bool CollPlayer(Object* pObject);
 
 protected:
 	//メンバ変数
@@ -55,7 +54,6 @@ public:
 	void Draw() override;
 	/** @brief 当たり判定の処理*/
 	void OnCollisionEnter(Object* pObject)override;
-
 
 	//メンバ関数
 
