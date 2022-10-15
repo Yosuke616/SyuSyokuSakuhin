@@ -42,12 +42,17 @@ enum DRAW_ORDER {
 #define DXCHAN_SIZE_X				(100.0f)
 #define DXCHAN_SIZE_Y				(100.0f)
 #define DXCHAN_SIZE_RUN_Y			(95.0f)
+#define DXCHAN_SIZE_JUMP_X			(90.0f)
+#define DXCHAN_SIZE_JUMP_Y			(90.0f)
 #define DXCHAN_COLL_SIZE_X			(25.0f)
 #define DXCHAN_COLL_SIZE_Y			(80.0f)
 #define DXCHAN_COLL_SIZE_Z			(100.0f)
 #define DXCHAN_COLL_SIZE_RUN_X		(55.0f)
+#define DXCHAN_COLL_SIZE_JUMP_X		(40.0f)
 #define DXCHAN_COLL_OFFSET_RUN_X	(-8.0f)
 #define DXCHAN_COLL_OFFSET_RUN_Y	(-2.0f)
+#define DXCHAN_COLL_OFFSET_JUMP_X	(4.0f)
+#define DXCHAN_COLL_OFFSET_JUMP_Y	(0.0f)
 
 //çUåÇópèÓïÒ
 #define ATTACK_NAME					("Attack")

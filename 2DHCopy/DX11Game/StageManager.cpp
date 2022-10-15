@@ -25,6 +25,7 @@
 #include "EnemyComponent.h"
 #include "BillboardComponent.h"
 #include "ItemComponent.h"
+#include "WarpComponent.h"
 
 //ステージのインクルード
 #include "SceneStage_1.h"
@@ -469,13 +470,17 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		Object* obj = new Object(WARP_NAME,UPDATE_UI,DRAW_UI);
 		//コンポーネントの追加
 		auto trans = obj->AddComponent<CTransform>();
-		auto draw = obj->AddComponent<CDraw3D>();
 		auto collider = obj->AddComponent<CCollider>();
+		auto warp = obj->AddComponent<CWarp>();
 		obj->AddComponent<COutOfRange>();
 		obj->AddComponent<CSeeColl>();
 		//オブジェクトの設定
-
+		trans->SetPosition(fPosX,fPosY + 770.0f,0.0f);
+		collider->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
 		
+		return obj;
 	}
 #pragma endregion
 #pragma region ---ステージ1のミス判定
