@@ -99,16 +99,17 @@ private:
 	/** @bried お札を取得しているか*/
 	bool m_bOhuda;
 
+	/** @brief ワープ地点にいるときはジャンプできなくする*/
+	bool m_bWarpPoint;
 
 	//メンバ関数
-	/** @brief プレイヤーがどの方向から敵に当たったかを判別*/
-	int CollEnemy(Object* pObject);
 	/** @brief 攻撃ボタンが押された際に専用オブジェクトの生成*/
 	void CreateAttack();
-	/** @brief 失敗判定にぶつかったときにフラグを管理する関数*/
-	bool CollMiss(Object* pObject);
-	/** @brief アイテムにぶつかったときの反応*/
-	bool CollItem(Object* pObject);
+	/** @brief プレイヤーがどの方向から敵に当たったかを判別*/
+	int CollEnemy(Object* pObject);
+
+	/** @brief 触れたかどうかについての判定*/
+	bool CollBox(Object* pObject);
 
 protected:
 	//メンバ変数
@@ -149,6 +150,8 @@ public:
 	bool GetClearFlg();
 	/** @brief お札を取得したかどうかを取得する*/
 	bool GetOhuda();
+	/** @brief ワープポイントに触れたかどうかを設定する*/
+	void SetWarpPoint(bool bPoint);
 };
 
 

@@ -3,10 +3,18 @@
 #include "ObjectManager.h"
 #include "ModelManager.h"
 #include "InputManager.h"
+#include "TextureManager.h"
+
+#include "Object.h"
+#include "ObjInfo.h"
 
 #include "TransformComponent.h"
 #include "ColliderComponent.h"
+#include "Draw2DComponent.h"
+#include "AnimMeshComponent.h"
+#include "PlayerComponent.h"
 #include "sceneGame.h"
+#include "Camera.h"
 #include "imgui.h"
 
 /**
@@ -33,8 +41,7 @@ CWarp::~CWarp() {
 void CWarp::Start() {
 	m_pTransform = Parent->GetComponent<CTransform>();
 	m_pCollider = Parent->GetComponent<CCollider>();
-
-
+	m_bWarpFlg = false;
 }
 
 /**
@@ -42,7 +49,50 @@ void CWarp::Start() {
 * @brief	更新処理
 */
 void CWarp::Update() {
+	//ワープフラグがオンになったら処理を開始する
+	if (m_bWarpFlg) {
+		//ステージごとにどうワープさせるかは決める
 
+		//やりたいこと
+		//画面を真っ暗にさせる(フェードアウト) 
+		//オブジェクトの更新を止める
+		//描画の更新を止める
+		//UIの表示を消す
+		//プレイヤーとカメラの位置を飛ばす(4580,-573.139771+770)
+		//注視点をなくす(固定カメラにする)
+		//背景を変更する
+		//更新と描画の再開
+		//UIの表示を再開
+		//フェードインさせる
+
+		switch (SceneGame::GetInstance()->GetStage()) {
+		case STAGE_1:
+			//ここはフェードアウトに変えたい
+			//今回は仮に真っ黒で覆う
+			CreateBlak();
+
+			//全てのオブジェクトの更新をストップする
+			for (auto&& obj :ObjectManager::GetInstance()->GetUpdateList()) {
+				if (obj->GetName() == WARP_NAME) {
+					continue;
+				}
+				obj->StopUpdate();
+			}
+			//UI描画もストップする
+			for (auto&& obj:ObjectManager::GetInstance()->GetDrawList()) {
+				if (obj->GetDrawOrder() == DRAW_UI|| obj->GetDrawOrder() == DRAW_MODEL) {
+					obj->StopDraw();
+				}
+			}
+
+			ChangeCamera();
+
+			//一度設定を変えたらフラグを戻して入らないようにする
+			//m_bWarpFlg;
+			break;
+		case STAGE_1_RE:break;
+		}
+	}
 }
 
 /**
@@ -59,49 +109,50 @@ void CWarp::Draw() {
 * @param	(Object*)	当たった相手やで
 */
 void CWarp::OnCollisionEnter(Object* pObject) {
-	if (CollPlayer(pObject)) {
-		//シーンごとにどうワープさせるかを考える
-		switch (SceneGame::GetInstance()->GetStage())
-		{
-		case STAGE_1:
-			if (InputManager::Instance()->GetKeyTrigger(DIK_W)) {
-				int i = 1 + 10;
-			}
-			break;
-		case STAGE_1_RE:break;
-		default:break;
-		}
-	}
+	
 }
 
 /**
-* @fn		CWarp::CollPlayer
-* @brief	プレイヤーとの当たり判定の処理
-* @param	(Object*)	プレイヤーと当たった時かどうか
-* @return	(bool)		当たったかどうか
+* @fn		CWarp::SetWarp
+* @brief	ワープしたかどうかをセットする関数
+* @param	(bool)	trueでワープを開始する
 */
-bool CWarp::CollPlayer(Object* pObject) {
-	if (pObject->GetName() == PLAYER_NAME) {
-		//プレイヤーの情報を取得
-		auto Player = pObject->GetComponent<CTransform>();
-		auto PlayerColl = pObject->GetComponent<CCollider>();
-		auto PlayerPos = PlayerColl->GetCenterPos();
-		auto PlayerSize = PlayerColl->GetColliderSize();
-		auto PlayerOffSet = PlayerColl->GetOffSet();
+void CWarp::SetWarp(bool bWarp) {
+	m_bWarpFlg = bWarp;
+}
 
-		//プレイヤーの半分の大きさを取得
-		XMFLOAT2 PlayerHalfSize = XMFLOAT2(PlayerSize.x / 2, PlayerSize.y / 2);
+/**
+* @fn		CWarp::CreateBlack
+* @brief	黒背景を作成する後で消す
+*/
+void CWarp::CreateBlak() {
+	Object* black = new Object("black_outoooo", UPDATE_DEBUG, DRAW_DEBUG);
+	//コンポーネントの追加
+	auto trans = black->AddComponent<CTransform>();
+	auto draw = black->AddComponent<CDraw2D>();
+	//オブジェクトの設定
+	draw->SetColor(0.0f, 0.0f, 0.0f);
+	draw->SetSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+	//リストに追加
+	ObjectManager::GetInstance()->AddObject(black);
+}
 
-		XMFLOAT2 WarpHalfSize = XMFLOAT2(m_pCollider->GetColliderSize().x / 2.0f, m_pCollider->GetColliderSize().y / 2.0f);
+/**
+* @fn		CWarp::ChangeCamera
+* @brief	カメラの注視点を切って、カメラとプレイヤーの座標を変更する
+*/
+void CWarp::ChangeCamera() {
+	//プレイヤーのオブジェクトのポインタを取得する
+	Object* obj = ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME);
 
-		if (m_pCollider->GetCenterPos().x - WarpHalfSize.x + m_pTransform->Vel.x < PlayerPos.x + PlayerHalfSize.x + Player->Vel.x &&
-			PlayerPos.x - PlayerHalfSize.x + Player->Vel.x < m_pCollider->GetCenterPos().x + WarpHalfSize.x + m_pTransform->Vel.x) {
+	obj->GetComponent<CTransform>()->Pos.x = 4580;
 
-			if (m_pCollider->GetCenterPos().y - WarpHalfSize.y + m_pTransform->Vel.y < PlayerPos.y + PlayerHalfSize.y + Player->Vel.y &&
-				PlayerPos.y - PlayerHalfSize.y + Player->Vel.y < m_pCollider->GetCenterPos().y + WarpHalfSize.y + m_pTransform->Vel.y) {
-				return true;
-			}
-		}
-	}
-	return false;
+	//カメラの注視点をオフにする
+	//
+	CCamera::Get()->SetAxisX(nullptr);
+
+	//ワープしている先かどうかのフラグを持っておいた方がいいかも
+	//ステージにごとにワープ先にいるかどうかのフラグを持たせて
+	//カメラのソースでリミットを変化させる
+
 }
