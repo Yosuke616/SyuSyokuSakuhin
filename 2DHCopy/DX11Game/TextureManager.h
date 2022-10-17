@@ -22,6 +22,8 @@
 #define PATH_TEX_DXCHAN_RUN					("data/texture/Run_Def.PNG")
 #define DXCHAN_JUMP_TEX_NUM					(502)
 #define PATH_TEX_DXCHAN_JUMP				("data/texture/Jump_Def.png")
+#define DXCHAN_FALL_TEX_NUM					(503)
+#define PATH_TEX_DXCAHN_FALL				("data/texture/FALL_PLAYER.PNG")
 
 #define DEBUG_BLOCK_NUM						(1)
 #define PATH_TEX_DEBUG_BLOCK				("data/texture/Debug.jpg")

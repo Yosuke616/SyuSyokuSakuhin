@@ -467,7 +467,7 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 #pragma region ---ワープ地点を生成
 	else if (nState == WARP) {
 		//オブジェクトの生成
-		Object* obj = new Object(WARP_NAME,UPDATE_UI,DRAW_UI);
+		Object* obj = new Object(WARP_NAME,UPDATE_DEBUG,DRAW_DEBUG);
 		//コンポーネントの追加
 		auto trans = obj->AddComponent<CTransform>();
 		auto collider = obj->AddComponent<CCollider>();

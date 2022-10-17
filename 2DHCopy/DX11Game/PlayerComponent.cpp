@@ -20,6 +20,7 @@
 #include "MosaicRollComponent.h"
 #include "ItemComponent.h"
 #include "CircleComponent.h"
+#include "WarpComponent.h"
 
 #include "SceneStage_1.h"
 
@@ -106,6 +107,9 @@ void CPlayer::Start() {
 	m_bClearFlg = false;
 	//勾玉を持っているか
 	m_pMaga = nullptr;
+	//ワープ地点にいるときはジャンプできなくさせる
+	//falseでジャンプできる trueでジャンプ出来ない
+	m_bWarpPoint = false;
 }
 
 /**
@@ -334,6 +338,10 @@ void CPlayer::Update() {
 	case JUMP_PLAYER:
 #pragma region ---ジャンプ
 		////ある程度上げたらくわえた力を消す
+		if (m_bWarpPoint) {
+			m_ePlayer = IDLE_PLAYER;
+			break;
+		}
 
 		//初速を加える
 		if (!m_bJump) {
@@ -776,6 +784,8 @@ void CPlayer::Update() {
 		Parent->GetComponent<CGravity>()->m_bUpdateFlag = true;
 	}
 #endif
+	//ワープフラグをオフにしておく
+	m_bWarpPoint = false;
 }
 
 /**
@@ -997,7 +1007,7 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 
 #pragma region ---クリア判定
 	if (pObject->GetName() == GOAL_NAME) {
-		if (CollEnemy(pObject)) {
+		if (CollBox(pObject)) {
 			//プレイヤーの状態を変える
 			m_ePlayer = CLEAR_PLAYER;
 			g_ePlayer = m_ePlayer;
@@ -1009,7 +1019,7 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 
 #pragma region ---アイテム
 	if (pObject->GetName() == ITEM_NAME) {
-		if (CollItem(pObject)) {
+		if (CollBox(pObject)) {
 			//アイテムの種類で処理を変える
 			switch (pObject->GetComponent<CItem>()->GetItem())
 			{
@@ -1077,11 +1087,31 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 		}
 	}
 #pragma endregion
+#pragma region ---ワープ判定
+	if (pObject->GetName() == WARP_NAME) {
+		//当たったときの処理を記入する
+		if (CollBox(pObject)) {
+			m_bWarpPoint = true;
+
+			//シーンごとにワープの条件を変える
+			switch (SceneGame::GetInstance()->GetStage())
+			{
+			case STAGE_1:
+				if (InputManager::Instance()->GetKeyTrigger(DIK_W)) {
+					pObject->GetComponent<CWarp>()->SetWarp(true);
+				}
+				break;
+			case STAGE_1_RE:break;
+			default:break;
+			}
+		}
+	}
+#pragma endregion
 #pragma region ---ミス判定
 	if (pObject->GetName() == "MISS_COLL") {
 		//やらないといけないこと
 		//ミス用のメニューを作成する
-		if (CollMiss(pObject)) {
+		if (CollBox(pObject)) {
 			m_ePlayer = MISS_PLAYER;
 			g_ePlayer = m_ePlayer;		
 		}
@@ -1212,8 +1242,25 @@ int CPlayer::CollEnemy(Object* pObject) {
 */
 void CPlayer::ChangeTexture() {
 	if (SceneGame::GetInstance()->GetLaL()) {
+		//ワープ地点にいるときだけプレイヤーのステータスを変更する
+		if (m_bWarpPoint) {
+			if (m_ePlayer == JUMP_PLAYER) {
+				m_ePlayer = IDLE_PLAYER;
+				if (m_pInput->GetKeyPress(DIK_A) || m_pInput->GetKeyPress(DIK_D)) {
+					m_ePlayer = RUN_PLAYER;
+				}
+			}
+			else if (m_ePlayer == FALL_PLAYER) {
+				return;
+			}
+			else if (m_ePlayer == RUN_PLAYER) {
+				
+				return;
+			}
+		}
+
 		//表ステージ
-			//どのテクスチャに変更するかはプレイヤーの状態を見て決める
+		//どのテクスチャに変更するかはプレイヤーの状態を見て決める
 		switch (m_ePlayer) {
 		case IDLE_PLAYER:
 			//デフォルトたち
@@ -1247,7 +1294,15 @@ void CPlayer::ChangeTexture() {
 			m_pCollider->SetOffset(DXCHAN_COLL_OFFSET_JUMP_X, DXCHAN_COLL_OFFSET_JUMP_Y);
 			Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
 			m_ePlayer = m_ePlayer; break;
-		case FALL_PLAYER:m_ePlayer = m_ePlayer; break;
+		case FALL_PLAYER:
+			m_pDraw2D->SetTexture(TextureManager::GetInstance()->GetTexture(DXCHAN_FALL_TEX_NUM));
+			m_pDraw2D->SetSize(DXCHAN_SIZE_X, DXCHAN_SIZE_Y);
+			m_pDraw2D->SetAnimSplit(1, 1);
+			m_pDraw2D->SetVertex(m_bROL);
+			m_pCollider->SetCollisionSize(DXCHAN_COLL_SIZE_X, DXCHAN_COLL_SIZE_Y, DXCHAN_COLL_SIZE_Z);
+			m_pCollider->SetOffset(0.0f, 0.0f);
+			Parent->GetComponent<CSeeColl>()->SetCollBox(m_pCollider->GetColliderSize(), m_pCollider->GetOffSet());
+			m_ePlayer = m_ePlayer; break;
 		case HIT_PLAYER:
 			break;
 		case MISS_PLAYER:break;
@@ -1379,42 +1434,31 @@ bool CPlayer::GetClearFlg() {
 }
 
 /**
-* @fn		CPlayer::CollMiss
-* @brief	落下用当たり判定とぶつかったらフラグを変える
-* @return	(Object*)	何にぶつかったら(ここではミス判定)
+* @fn		CPlayer::GetOhuda
+* @brief	お札を取得したかどうか
+* @return	(bool)	プレイヤーが持っているかどうか
 */
-bool CPlayer::CollMiss(Object* pObject) {
-	//プレイヤーの情報を取得
-	auto Player = Parent->GetComponent<CCollider>();
-	auto PlayerPos = Player->GetCenterPos();
-	auto PlayerSize = Player->GetColliderSize();
-	auto PlayerOffset = Player->GetOffSet();
-
-	XMFLOAT2 PlayerHalfSize = XMFLOAT2(PlayerSize.x / 2.0f, PlayerSize.y / 2.0f);
-	//当たり判定の大きさを持ってくる
-	auto Enemy = pObject->GetComponent<CCollider>();
-	auto TEnemy = pObject->GetComponent<CTransform>();
-	XMFLOAT2 EnemyHalfSize = XMFLOAT2(Enemy->GetColliderSize().x / 2.0f, Enemy->GetColliderSize().y / 2.0f);
-
-	if (Enemy->GetCenterPos().x - EnemyHalfSize.x + TEnemy->Vel.x < m_pCollider->GetCenterPos().x + PlayerHalfSize.x + m_pPlayer->Vel.x &&
-		m_pCollider->GetCenterPos().x - PlayerHalfSize.x + m_pPlayer->Vel.x < Enemy->GetCenterPos().x + EnemyHalfSize.x + TEnemy->Vel.x) {
-
-		if (Enemy->GetCenterPos().y - EnemyHalfSize.y + TEnemy->Vel.y < m_pCollider->GetCenterPos().y + PlayerHalfSize.y + m_pPlayer->Vel.y &&
-			m_pCollider->GetCenterPos().y - PlayerHalfSize.y + m_pPlayer->Vel.y < Enemy->GetCenterPos().y + EnemyHalfSize.y + TEnemy->Vel.y) {
-			m_bAirDead = true;
-			return true;
-		}
-	}
-	return false;
+bool CPlayer::GetOhuda() {
+	return m_bOhuda;
 }
 
 /**
-* @fn		CPlayer::CollKoban
-* @brief	アイテム(スコアアップ)に当たったときの処理
-* @param	(Object*)	当たった相手の情報が入ったポインタ
-* @return	(bool)		当たっていたらtrue 当たっていないならfalse
+* @fn		CPlayer::SetWarpPoint
+* @brief	プレイヤーがワープポイントに触れているかどうか設定する
+* @param	(bool)	ワープポイントに触れていたらtrue 触れていなかったらfalse
 */
-bool CPlayer::CollItem(Object* obj) {
+void CPlayer::SetWarpPoint(bool bPoint) {
+	m_bWarpPoint = bPoint;
+}
+
+/**---------------------------当たり判定用---------------------------**/
+/**
+* @fn		CPlayer::CollBox
+* @brief	矩形同士の簡単な当たり判定
+* @param	(Object*)	当たった先のオブジェクト
+* @return	(bool)		当たったかどうかの判定を返す
+*/
+bool CPlayer::CollBox(Object* pObject) {
 	//プレイヤーの情報を取得
 	auto Player = Parent->GetComponent<CCollider>();
 	auto PlayerPos = Player->GetCenterPos();
@@ -1422,11 +1466,12 @@ bool CPlayer::CollItem(Object* obj) {
 	auto PlayerOffset = Player->GetOffSet();
 
 	XMFLOAT2 PlayerHalfSize = XMFLOAT2(PlayerSize.x / 2.0f, PlayerSize.y / 2.0f);
-	//当たり判定の大きさを持ってくる
-	auto collider = obj->GetComponent<CCollider>();
-	auto trans = obj->GetComponent<CTransform>();
-	XMFLOAT2 HalfSize = XMFLOAT2(collider->GetColliderSize().x / 2.0f,collider->GetColliderSize().y / 2.0f);
-	
+
+	//相手方の情報を設定する
+	auto collider = pObject->GetComponent<CCollider>();
+	auto trans = pObject->GetComponent<CTransform>();
+	XMFLOAT2 HalfSize = XMFLOAT2(collider->GetColliderSize().x / 2.0f, collider->GetColliderSize().y / 2.0f);
+
 	if (collider->GetCenterPos().x - HalfSize.x + trans->Vel.x < m_pCollider->GetCenterPos().x + PlayerHalfSize.x + m_pPlayer->Vel.x &&
 		m_pCollider->GetCenterPos().x - PlayerHalfSize.x + m_pPlayer->Vel.x < collider->GetCenterPos().x + HalfSize.x + trans->Vel.x) {
 
@@ -1437,13 +1482,4 @@ bool CPlayer::CollItem(Object* obj) {
 	}
 	return false;
 
-}
-
-/**
-* @fn		CPlayer::GetOhuda
-* @brief	お札を取得したかどうか
-* @return	(bool)	プレイヤーが持っているかどうか
-*/
-bool CPlayer::GetOhuda() {
-	return m_bOhuda;
 }

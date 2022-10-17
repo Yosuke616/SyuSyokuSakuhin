@@ -130,6 +130,7 @@ void SceneGame::Init() {
 	pTexManager->AddTexture(PATH_TEX_DXCHAN_STAND, DXCHAN_STAND_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_DXCHAN_RUN, DXCHAN_RUN_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_DXCHAN_JUMP, DXCHAN_JUMP_TEX_NUM);
+	pTexManager->AddTexture(PATH_TEX_DXCAHN_FALL, DXCHAN_FALL_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_DEBUG_BLOCK, DEBUG_BLOCK_NUM);
 	pTexManager->AddTexture(PATH_TEX_FAID_OUT, FEAD_OUT_NUM);
 	//UI‚Ì•\Ž¦

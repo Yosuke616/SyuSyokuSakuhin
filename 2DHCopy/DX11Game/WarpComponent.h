@@ -31,9 +31,14 @@ private:
 	CTransform* m_pTransform;
 	/** @brief 当たり判定の情報*/
 	CCollider* m_pCollider;
+	/** @brief ワープするかどうかのフラグ*/
+	bool m_bWarpFlg;
 
 	//メンバ関数
-	bool CollPlayer(Object* pObject);
+	/** @brief 仮の関数後で消す*/
+	void CreateBlak();
+	/** @brief カメラの注視点を切ってプレイヤーと一緒に座標を動かす*/
+	void ChangeCamera();
 
 protected:
 	//メンバ変数
@@ -56,7 +61,7 @@ public:
 	void OnCollisionEnter(Object* pObject)override;
 
 	//メンバ関数
-
+	void SetWarp(bool bWarp);
 };
 
 #endif
