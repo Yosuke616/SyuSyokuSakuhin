@@ -180,6 +180,8 @@
     <ClCompile Include="Draw3DComponent.cpp" />
     <ClCompile Include="DrawMeshComponent.cpp" />
     <ClCompile Include="EnemyComponent.cpp" />
+    <ClCompile Include="fade.cpp" />
+    <ClCompile Include="fadePolygon.cpp" />
     <ClCompile Include="FileManager.cpp" />
     <ClCompile Include="GravityComponent.cpp" />
     <ClCompile Include="imgui.cpp" />
@@ -236,6 +238,8 @@
     <ClInclude Include="Draw3dComponent.h" />
     <ClInclude Include="DrawMeshComponent.h" />
     <ClInclude Include="EnemyComponent.h" />
+    <ClInclude Include="fade.h" />
+    <ClInclude Include="fadePolygon.h" />
     <ClInclude Include="FileManager.h" />
     <ClInclude Include="GravityComponent.h" />
     <ClInclude Include="imconfig.h" />

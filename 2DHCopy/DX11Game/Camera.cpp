@@ -13,6 +13,8 @@
 #include "TexScrollComponent.h"
 #include "SceneManager.h"
 
+#include "SceneStage_1.h"
+
 //*****************************************************************************
 // グローバル変数
 //*****************************************************************************
@@ -99,12 +101,12 @@ void CCamera::Init()
 	//ステージによって横幅とたてはばの上限を決める
 	switch (SceneGame::GetInstance()->GetStage()) {
 	case STAGE_1:
-		m_Limit = XMFLOAT2(0.0f, 3650.0f);
-		m_LimitY = XMFLOAT2(58.0f, 1000.0f);
+		m_Limit = XMFLOAT2(STAGE_1_REMIT_MIN, STAGE_1_REMIT_MAX);
+		m_LimitY = XMFLOAT2(STAGE_REMIT_Y_MIN, STAGE_REMIT_Y_MAX);
 		break;
 	case STAGE_1_RE:
-		m_Limit = XMFLOAT2(0.0f, 4000.0f);
-		m_LimitY = XMFLOAT2(58.0f, 1000.0f);
+		m_Limit = XMFLOAT2(STAGE_1_RE_REMIT_MIN, STAGE_1_RE_REMIT_MAX);
+		m_LimitY = XMFLOAT2(STAGE_REMIT_Y_MIN, STAGE_REMIT_Y_MAX);
 		break;
 	}
 
@@ -265,6 +267,21 @@ void CCamera::Update()
 			m_vPos.x -= 2.0f;
 			m_vTarget.x -= 2.0f;
 		}
+	}
+
+	//ステージの移動限界
+	switch (SceneGame::GetInstance()->GetStage()) {
+	case STAGE_1:
+		if (SceneStage_1::GetInstance()->GetWarpPoint() == 0) {
+			m_Limit.x = STAGE_1_REMIT_MIN;
+			m_Limit.y = STAGE_1_REMIT_MAX;
+		}
+		else if (SceneStage_1::GetInstance()->GetWarpPoint() == 1) {
+			m_Limit.x = STAGE_1_WARP_MIN;
+			m_Limit.y = STAGE_1_WARP_MAX;
+		}
+		break;
+	case STAGE_1_RE:break;
 	}
 
 	//X軸の話し

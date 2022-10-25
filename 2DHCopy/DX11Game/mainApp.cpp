@@ -26,6 +26,7 @@
 #include "ObjInfo.h"
 
 #include "Sound.h"
+#include "fadePolygon.h"
 
 #include <process.h>
 
@@ -326,6 +327,10 @@ HRESULT Init(HWND hWnd, BOOL bWindow)
 	hr = InitPolygon(g_pDevice);
 	if (FAILED(hr)) return hr;
 
+	//フェード用hrポリゴン初期化
+	hr = InitFadePolygon(g_pDevice);
+	if (FAILED(hr))return hr;
+
 	// メッシュ初期化
 	hr = InitMesh();
 	if (FAILED(hr)) return hr;
@@ -391,6 +396,9 @@ void Uninit()
 
 	// Assimp用シェーダ終了処理
 	CAssimpModel::UninitShader();
+
+	//フェード用ポリゴン表示終了処理
+	UninitFadePolygon();
 
 	// ポリゴン表示終了処理
 	UninitPolygon();

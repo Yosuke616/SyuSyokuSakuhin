@@ -471,6 +471,13 @@ void SceneGame::Draw() {
 
 #ifdef _DEBUG
 	//CCamera::Get()->Draw();
+
+	using namespace ImGui;
+
+	Begin("Camera");
+	Text("Pos : %3.0f,%3.0f,%3.0f",CCamera::Get()->GetPos().x, CCamera::Get()->GetPos().y, CCamera::Get()->GetPos().z);
+	End();
+
 #endif
 }
 

@@ -214,6 +214,12 @@
     <ClCompile Include="WarpComponent.cpp">
       <Filter>コンポーネント\創作システム</Filter>
     </ClCompile>
+    <ClCompile Include="fadePolygon.cpp">
+      <Filter>オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="fade.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainApp.h">
@@ -401,6 +407,12 @@
     </ClInclude>
     <ClInclude Include="WarpComponent.h">
       <Filter>コンポーネント\創作システム</Filter>
+    </ClInclude>
+    <ClInclude Include="fadePolygon.h">
+      <Filter>オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="fade.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

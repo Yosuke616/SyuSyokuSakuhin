@@ -9,7 +9,19 @@
 
 class CTransform;
 
+/**定数定義**/
 #define GOAL_POS_Z	(-200.0f)
+//ステージごとの限界の値
+#define STAGE_REMIT_Y_MIN		(58.0f)		//ステージ共通？の高さの最小値
+#define STAGE_REMIT_Y_MAX		(1000.0f)	//ステージ共通？の高さの最大値
+#define STAGE_1_REMIT_MIN		(0.0f)		//ステージ1の左端
+#define STAGE_1_REMIT_MAX		(3650.0f)	//ステージ1の右端
+#define STAGE_1_WARP_MIN		(4500.0f)		//ワープ先のミニマム
+#define STAGE_1_WARP_MAX		(4550.0f)
+
+
+#define STAGE_1_RE_REMIT_MIN	(0.0f)		//ステージ1(裏)の左端
+#define STAGE_1_RE_REMIT_MAX	(4000.0f)	//ステージ1(裏)の右端
 
 class CCamera
 {
