@@ -49,9 +49,13 @@ enum MAP_CHIP{
 
 	MISS_COLL = 99,					//ミスブロック
 	WARP,							//ステージごとにワープの条件を変える
+	WARP_POS_0,						//ワープ先のポイント(一つ目)
+	WARP_POS_1,						//ワープ先のポイント(二つ目)
 	STAGE_1_MISS_COLL = 199,		//ステージ1イベントミス
 
 	STAGE_1_RE_CHANGE_COLL = 299,	//オブジェクトの見た目を変えるためのイベント
+	STAGE_1_RE_CAMERA_MOVE,			//カメラを引きにする関数
+	STAGE_1_RE_BOSS,				//ボス
 
 	SOCRE_UP = 2000,				//所謂コイン的なやつ
 
@@ -483,6 +487,36 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		return obj;
 	}
 #pragma endregion
+#pragma region ---ワープ先0番
+	else if (nState == WARP_POS_0) {
+		//オブジェクトの生成
+		Object* obj = new Object(WARP_NUMBER_0,UPDATE_DEBUG,DRAW_DEBUG);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		obj->AddComponent<COutOfRange>();
+		//オブジェクトの設定
+		trans->SetPosition(fPosX, fPosY + 770.0f, 0.0f);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
+
+		return obj;
+	}
+#pragma endregion
+#pragma region ---ワープ先1番
+	else if (nState == WARP_POS_1) {
+	//オブジェクトの生成
+	Object* obj = new Object(WARP_NUMBER_1, UPDATE_DEBUG, DRAW_DEBUG);
+	//コンポーネントの追加
+	auto trans = obj->AddComponent<CTransform>();
+	obj->AddComponent<COutOfRange>();
+	//オブジェクトの設定
+	trans->SetPosition(fPosX, fPosY + 770.0f, 0.0f);
+	//オブジェクトマネージャーに追加
+	ObjectManager::GetInstance()->AddObject(obj);
+
+	return obj;
+	}
+#pragma endregion
 #pragma region ---ステージ1のミス判定
 	else if (nState == STAGE_1_MISS_COLL) {
 		//オブジェクトの生成
@@ -529,6 +563,53 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		draw->Update();
 
 		return obj;
+	}
+#pragma endregion
+#pragma region ---ステージ1(リローデッド)のカメラを引く判定
+	else if (nState == STAGE_1_RE_CAMERA_MOVE) {
+		//オブジェクトの生成
+		Object* obj = new Object(CAMERA_MOVE_NAME,UPDATE_DEBUG,DRAW_DEBUG);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDrawMesh>();
+		auto collider = obj->AddComponent<CCollider>();
+		auto range = obj->AddComponent<COutOfRange>();
+		obj->AddComponent<CSeeColl>();
+		//オブジェクトの設定
+		draw->SetTexture(pTextureManager->GetTexture(DEBUG_BLOCK_NUM));
+		draw->SetSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y);
+		trans->SetPosition(fPosX, fPosY + 770.0f, 0.0f);
+		collider->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
+		range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
+		//ワールドマトリックスの更新
+		draw->Update();
+
+		return obj;
+	}
+#pragma endregion
+#pragma region ---ボス
+	else if (nState == STAGE_1_RE_BOSS) {
+		//オブジェクトの生成
+		Object* obj = new Object(BOSS_NAME,UPDATE_MODEL,DRAW_MODEL);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDraw3D>();
+		auto collider = obj->AddComponent<CCollider>();
+		obj->AddComponent<CSeeColl>();
+		obj->AddComponent<COutOfRange>();
+		//obj->AddComponent<CGravity>();
+		//敵専用コンポーネント
+		obj->AddComponent<CEnemy>();
+		//オブジェクトの設定
+		draw->SetModel(pModelManager->GetModel(WALK_ENEMY_MODEL_NUM));
+		trans->SetPosition(fPosX,fPosY + 850.0f);
+		trans->SetScale(75.0f,75.0f,75.0f);
+		collider->SetCollisionSize(85.0f,85.0f,85.0f);
+		obj->GetComponent<CEnemy>()->SetEnemyType(BOSS_ENEMY_RE_1);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
 	}
 #pragma endregion
 #pragma region ---小判

@@ -9,7 +9,19 @@
 
 class CTransform;
 
+/**定数定義**/
 #define GOAL_POS_Z	(-200.0f)
+//ステージごとの限界の値
+#define STAGE_REMIT_Y_MIN		(58.0f)		//ステージ共通？の高さの最小値
+#define STAGE_REMIT_Y_MAX		(1000.0f)	//ステージ共通？の高さの最大値
+#define STAGE_1_REMIT_MIN		(0.0f)		//ステージ1の左端
+#define STAGE_1_REMIT_MAX		(3650.0f)	//ステージ1の右端
+#define STAGE_1_WARP_MIN		(4500.0f)		//ワープ先のミニマム
+#define STAGE_1_WARP_MAX		(4550.0f)
+
+
+#define STAGE_1_RE_REMIT_MIN	(0.0f)		//ステージ1(裏)の左端
+#define STAGE_1_RE_REMIT_MAX	(4000.0f)	//ステージ1(裏)の右端
 
 class CCamera
 {
@@ -50,6 +62,10 @@ private:
 	float m_fLengthInterval;		// カメラの視点と注視点の距離
 
 	static CCamera* m_pCamera;		// 現在のカメラ
+
+	/** @brief カメラを引かせるかどうかのフラグを設定する*/
+	bool m_bCameraMove;
+
 
 public:
 	CCamera();						//	コンストラクタ
@@ -95,8 +111,7 @@ public:
 	void SetAxisX(float* px);
 	/** @brief Y軸の注視点の設定をする 2022/7/26*/
 	void SetAxisY(float* py);
-	/** @brief カメラを動かなくする 2022/9/9*/
-
-	/** @brief カメラの動きを再開する*/
+	/** @brief カメラが引いていくかどうかをセットする*/
+	void SetCameraMove(bool bMove);
 
 };

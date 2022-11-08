@@ -116,6 +116,8 @@ void SceneStage_1::Init() {
 	//BGM再生
 	CSound::Play(TITLE_BGM);
 
+	//ワープ先は0にしておく
+	m_nWarpPoint = 0;
 }
 
 /**
@@ -240,4 +242,22 @@ bool SceneStage_1::GetOhuda() {
 */
 void SceneStage_1::SetOhuda(bool bOhuda) {
 	m_bOhuda = bOhuda;
+}
+
+/**
+* @fn		SceneStage_1::SetWarpPoint
+* @brief	ワープ先を指定する為の関数
+* @param	(int)	何番目のワープ先に移動しているかの引数
+*/
+void SceneStage_1::SetWarpPoint(int nWarpPoint) {
+	m_nWarpPoint = nWarpPoint;
+}
+
+/**
+* @fn		SceneStage_1::GetWarpPoint
+* @brief	どこのワープ先に存在するかを取得する関数
+* @return	(int)	どこのワープ先に存在するかを取得する
+*/
+int SceneStage_1::GetWarpPoint() {
+	return m_nWarpPoint;
 }

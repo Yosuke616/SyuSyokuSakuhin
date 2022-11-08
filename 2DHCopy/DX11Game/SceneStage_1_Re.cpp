@@ -55,7 +55,8 @@ void SceneStage_1_Re::Destroy() {
 * @fn		SceneStage_1_Re::SceneStage_1_Re
 * @brief	コンストラクタにより脳が破壊された
 */
-SceneStage_1_Re::SceneStage_1_Re() {
+SceneStage_1_Re::SceneStage_1_Re()
+	:m_nBossHP(5){
 
 }
 
@@ -110,6 +111,8 @@ void SceneStage_1_Re::Init() {
 	//裏表を決める
 	SceneGame::GetInstance()->SetLaL(true);
 
+	//ボスのHPの設定
+	m_nBossHP = 5;
 }
 
 /**
@@ -134,12 +137,25 @@ void SceneStage_1_Re::Update() {
 				if (comp == obj->GetComponent<COutOfRange>()) {
 					continue;
 				}
-				//当たり判定用の関数を呼ぶ
-				if (CollPlayer(obj)) {
-					ChangeObject();
+				if (obj->GetName() == STAGE_RE_1_CHANGE_COLL) {
+					//当たり判定用の関数を呼ぶ
+					if (CollPlayer(obj)) {
+						ChangeObject();
+					}
+				}
+				else if (obj->GetName() == CAMERA_MOVE_NAME) {
+					if (CollPlayer(obj)) {
+						CCamera::Get()->SetCameraMove(true);
+					}
 				}
 			}
 		}
+	}
+
+	//ボスが消えたかどうかを判別する
+	if (m_nBossHP <= 0) {
+		//カメラの注視点を元に戻す
+		CCamera::Get()->SetCameraMove(false);
 	}
 }
 
@@ -204,7 +220,7 @@ void SceneStage_1_Re::ChangeObject() {
 */
 void SceneStage_1_Re::SetBaseInfo(std::list<Object*> objList) {
 	for (auto&& obj : objList) {
-		if (obj->GetName() == STAGE_RE_1_CHANGE_COLL) {
+		if (obj->GetName() == STAGE_RE_1_CHANGE_COLL || obj->GetName() == CAMERA_MOVE_NAME) {
 			m_EventList.push_back(obj);
 		}
 	}
@@ -270,4 +286,21 @@ bool SceneStage_1_Re::GetOhuda() {
 */
 void SceneStage_1_Re::SetOhuda(bool bOhuda) {
 	m_bOhuda = bOhuda;
+}
+
+/**
+* @fn		SceneStage_1_Re::SetBossHP
+* @brief	ボスのHPを減らしていく関数
+*/
+void SceneStage_1_Re::SetBossHP() {
+	m_nBossHP--;
+}
+
+/**
+* @fn		SceneStage_1_Re::GetBossHP
+* @brief	ボスのHPを取得するための関数
+* @return	(int)	ボスのHP
+*/
+int SceneStage_1_Re::GetBossHP() {
+	return m_nBossHP;
 }

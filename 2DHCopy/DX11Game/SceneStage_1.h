@@ -28,6 +28,9 @@ private:
 	std::list<Object*> m_EventList;
 	/** @brief お札を取っているかどうかの取得*/
 	bool m_bOhuda;
+	/** @brief ワープ先にいるかどうか
+			   0でデフォルト 1でワープ先*/
+	int m_nWarpPoint;
 
 	//メンバ関数
 
@@ -67,6 +70,10 @@ public:
 	bool GetOhuda();
 	/** @brief お札を取得したかを設定する*/
 	void SetOhuda(bool bOhuda);
+	/** @brief どこのワープ先に移動したかを設定する*/
+	void SetWarpPoint(int);
+	/** @brief どこのワープ先にプレイヤーが存在するかを取得する*/
+	int GetWarpPoint();
 };
 
 #endif

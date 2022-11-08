@@ -6,6 +6,8 @@
 #include "sceneGame.h"
 #include "SceneSelect.h"
 
+#include "fade.h"
+
 //追加されていったシーンの情報を追加していく
 
 //静的メンバ変数
@@ -58,6 +60,9 @@ void SceneManager::Init() {
 	//初めのシーンを選択する
 	SetScene(SCENE_TITLE);
 
+	//フェードの初期化
+	InitFade();
+
 }
 
 //更新
@@ -65,17 +70,24 @@ void SceneManager::Update(){
 	//シーン更新
 	//選ばれているポインタに入っているシーンの更新
 	m_CurrentScene->Update();
+
+	//フェードイン/アウトの更新
+	UpdateFade();
 }
 
 //描画
 void SceneManager::Draw() {
 	//　シーン描画
 	m_CurrentScene->Draw();
-
+	//フェードの描画
+	DrawFade();
 }
 
 //終了
 void SceneManager::Uninit() {
+	//フェードの終了
+	UninitFade();
+
 	//インスタンスの破棄
 	SceneManager::Destroy();
 }

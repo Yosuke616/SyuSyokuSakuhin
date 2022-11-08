@@ -22,6 +22,7 @@ class CDraw3D;
 //敵の種類
 enum ENEMY_TYPE {
 	ENEMY_WALK = 0,
+	BOSS_ENEMY_RE_1,
 
 	MAX_ENEMY_TYPE
 };
@@ -50,6 +51,10 @@ private:
 	CCollider* m_pCollider;
 	/** @brief 左右のどちらを向いているか(trueだったら左へ行く)*/
 	bool m_bRightorLeft;
+	/** @brief 敵がジャンプしているかどうか*/
+	bool m_bJump;
+	/** @brief ボスの無敵時間*/
+	int m_nDMGCool;
 	/** @brief 過去座標の保存*/
 	XMFLOAT2 m_OldPos;
 	/** @brief 敵の種類を管理する変数*/

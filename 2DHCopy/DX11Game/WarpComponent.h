@@ -33,10 +33,10 @@ private:
 	CCollider* m_pCollider;
 	/** @brief ワープするかどうかのフラグ*/
 	bool m_bWarpFlg;
+	/** @brief 開始時に存在した場所を保存しておく変数*/
+	XMFLOAT3 m_StartPos;
 
 	//メンバ関数
-	/** @brief 仮の関数後で消す*/
-	void CreateBlak();
 	/** @brief カメラの注視点を切ってプレイヤーと一緒に座標を動かす*/
 	void ChangeCamera();
 

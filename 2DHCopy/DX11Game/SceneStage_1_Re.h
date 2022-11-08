@@ -28,7 +28,12 @@ private:
 	std::list<Object*> m_EventList;
 	/** @brief お札を取得したかどうかのフラグ*/
 	bool m_bOhuda;
-	
+	/** @brief ボスを倒しているかどうかのフラグ*/
+	bool m_bBossBreak;
+	/** @brief ボスを取得して管理する変数*/
+	Object* m_pBossObj;
+	/** @brief ボスのHPの管理*/
+	int m_nBossHP;
 	//メンバ関数
 
 protected:
@@ -69,6 +74,11 @@ public:
 	bool GetOhuda();
 	/** @brief お札を取得したかを設定する*/
 	void SetOhuda(bool bOhuda);
+
+	/** @brief ボスのHPを設定するための関数*/
+	void SetBossHP();
+	/** @brief ボスのHPを取得するための関数*/
+	int GetBossHP();
 };
 
 #endif

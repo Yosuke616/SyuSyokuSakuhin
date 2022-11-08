@@ -37,6 +37,9 @@ enum DRAW_ORDER {
 	MAX_DRAW_ORDER
 };
 
+//@@@@@ カメラ用処理       ----------------------------------------
+#define CAMERA_MOVE_NAME			("CameraMove")
+
 //@@@@@ ディエックスちゃん ----------------------------------------
 #define PLAYER_NAME					("DXchan")
 #define DXCHAN_SIZE_X				(100.0f)
@@ -84,6 +87,8 @@ enum DRAW_ORDER {
 #define E_WALK_COLL_Y				(38.5f)
 #define E_WALK_COLL_Z				(50.0f)
 
+#define BOSS_NAME					("Boss")
+
 //@@@@@ ゴールの基本情報 -------------------------------------------
 #define GOAL_NAME					("Goal")
 
@@ -122,6 +127,8 @@ enum DRAW_ORDER {
 
 //@@@@@ WARPの基本情報 -----------------------------------------------
 #define WARP_NAME					("warp")
+#define WARP_NUMBER_0				("warp_0")
+#define WARP_NUMBER_1				("warp_1")
 
 //@@@@@ UIの基本情報 -----------------------------------------------
 //スコア

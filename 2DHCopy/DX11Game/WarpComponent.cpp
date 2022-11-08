@@ -16,6 +16,9 @@
 #include "sceneGame.h"
 #include "Camera.h"
 #include "imgui.h"
+#include "fade.h"
+
+#include "SceneStage_1.h"
 
 /**
 * @fn		CWarp::CWarp
@@ -42,6 +45,7 @@ void CWarp::Start() {
 	m_pTransform = Parent->GetComponent<CTransform>();
 	m_pCollider = Parent->GetComponent<CCollider>();
 	m_bWarpFlg = false;
+	m_StartPos = m_pTransform->Pos;
 }
 
 /**
@@ -68,27 +72,44 @@ void CWarp::Update() {
 		switch (SceneGame::GetInstance()->GetStage()) {
 		case STAGE_1:
 			//ここはフェードアウトに変えたい
-			//今回は仮に真っ黒で覆う
-			CreateBlak();
+			if (GetFade() == FADE_IN) {
 
-			//全てのオブジェクトの更新をストップする
-			for (auto&& obj :ObjectManager::GetInstance()->GetUpdateList()) {
-				if (obj->GetName() == WARP_NAME) {
-					continue;
+				ChangeCamera();
+				//オブジェクトを再開させる
+				for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+					obj->Use();
 				}
-				obj->StopUpdate();
+				//最後にプレイヤーの状態を変更させる
+				ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CPlayer>()->SetPlayerState(IDLE_PLAYER);
+
+				//一度設定を変えたらフラグを戻して入らないようにする
+				m_bWarpFlg = false;
+
+				break;
 			}
-			//UI描画もストップする
-			for (auto&& obj:ObjectManager::GetInstance()->GetDrawList()) {
-				if (obj->GetDrawOrder() == DRAW_UI|| obj->GetDrawOrder() == DRAW_MODEL) {
-					obj->StopDraw();
+
+			if (GetFade() != FADE_OUT) {
+				StartFadeOut(0);
+				
+				//プレイヤーの状態をワープしている状態にする
+				Object* player = ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME);
+				player->GetComponent<CPlayer>()->SetPlayerState(WARP_PLAYER);
+
+				//動いているオブジェクトの更新をストップする
+				for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+					if (obj->GetName() == WARP_NAME ||obj->GetName() == BLOCK_NAME || obj->GetName() == BLOCK_RARD_NAME || obj->GetName() == PLAYER_NAME) {
+						continue;
+					}
+					obj->StopUpdate();
 				}
+				//UI描画もストップする
+				for (auto&& obj : ObjectManager::GetInstance()->GetDrawList()) {
+					if (obj->GetDrawOrder() == DRAW_UI) {
+						obj->StopDraw();
+					}
+				}
+				break;
 			}
-
-			ChangeCamera();
-
-			//一度設定を変えたらフラグを戻して入らないようにする
-			//m_bWarpFlg;
 			break;
 		case STAGE_1_RE:break;
 		}
@@ -122,22 +143,6 @@ void CWarp::SetWarp(bool bWarp) {
 }
 
 /**
-* @fn		CWarp::CreateBlack
-* @brief	黒背景を作成する後で消す
-*/
-void CWarp::CreateBlak() {
-	Object* black = new Object("black_outoooo", UPDATE_DEBUG, DRAW_DEBUG);
-	//コンポーネントの追加
-	auto trans = black->AddComponent<CTransform>();
-	auto draw = black->AddComponent<CDraw2D>();
-	//オブジェクトの設定
-	draw->SetColor(0.0f, 0.0f, 0.0f);
-	draw->SetSize(SCREEN_WIDTH, SCREEN_HEIGHT);
-	//リストに追加
-	ObjectManager::GetInstance()->AddObject(black);
-}
-
-/**
 * @fn		CWarp::ChangeCamera
 * @brief	カメラの注視点を切って、カメラとプレイヤーの座標を変更する
 */
@@ -145,14 +150,41 @@ void CWarp::ChangeCamera() {
 	//プレイヤーのオブジェクトのポインタを取得する
 	Object* obj = ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME);
 
-	obj->GetComponent<CTransform>()->Pos.x = 4580;
+	//ステージ(ワープ先かどうかも判定を取る)ごとに場所を変える
+	switch (SceneGame::GetInstance()->GetStage())
+	{
+	case STAGE_1:
+		if (SceneStage_1::GetInstance()->GetWarpPoint() == 0) { 
+			//0番に飛ばすぜ
+			auto point = ObjectManager::GetInstance()->GetGameObject(WARP_NUMBER_0)->GetComponent<CTransform>();
 
-	//カメラの注視点をオフにする
-	//
-	CCamera::Get()->SetAxisX(nullptr);
+			//カメラの座標をセットする
+			CCamera::Get()->SetPos(point->Pos.x, obj->GetComponent<CTransform>()->Pos.y, -300.0f);
+			obj->GetComponent<CTransform>()->Pos.x = point->Pos.x+20;
+			obj->GetComponent<CTransform>()->Pos.y = point->Pos.y+50;
+			//このオブジェクトを移動させる
+			m_pTransform->Pos.x = 4400;
+			m_pTransform->Pos.y = 75;
+			//カメラの移動限界を変更する
+			SceneStage_1::GetInstance()->SetWarpPoint(1);
+		}
+		else if(SceneStage_1::GetInstance()->GetWarpPoint() == 1){
+			//0番に飛ばすぜ
+			auto point = ObjectManager::GetInstance()->GetGameObject(WARP_NUMBER_1)->GetComponent<CTransform>();
 
-	//ワープしている先かどうかのフラグを持っておいた方がいいかも
-	//ステージにごとにワープ先にいるかどうかのフラグを持たせて
-	//カメラのソースでリミットを変化させる
+			//カメラの座標をセットする
+			CCamera::Get()->SetPos(point->Pos.x, obj->GetComponent<CTransform>()->Pos.y, -300.0f);
+			obj->GetComponent<CTransform>()->Pos.x = point->Pos.x;
+			obj->GetComponent<CTransform>()->Pos.y = point->Pos.y+50;
+			//このオブジェクトを移動させる
+			m_pTransform->Pos.x = m_StartPos.x;
+			m_pTransform->Pos.y = m_StartPos.y;
+			//カメラの移動限界を変更する
+			SceneStage_1::GetInstance()->SetWarpPoint(0);
+		}
+		break;
+	case STAGE_1_RE:break;
 
+	default:break;
+	}
 }
