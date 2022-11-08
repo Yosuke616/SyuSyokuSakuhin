@@ -12,6 +12,8 @@
 #include "AttackComponent.h"
 #include "SeeCollComponent.h"
 
+#include "SceneStage_1_Re.h"
+
 /**定数定義**/
 #define MAX_ENEMY_GRAVITY	(1.0f)
 #define VALUE_MOVE_ENEMY	(1.5f)
@@ -47,6 +49,10 @@ void CEnemy::Start() {
 	m_pDraw		 = Parent->GetComponent<CDraw3D>();
 	m_pCollider	 = Parent->GetComponent<CCollider>();
 	m_bRightorLeft = true;
+	//falseでジャンプしていない
+	m_bJump = false;
+	//無敵時間
+	m_nDMGCool = 0;
 	m_eEnemy_State = ENEMY_DEFAULT;
 	m_bStopCom = false;
 	m_bStopVel = false;
@@ -80,7 +86,31 @@ void CEnemy::Update() {
 				m_pTransform->SetRotate(0.0f, -90.0f, 0.0f);
 			}
 			break;
+		case BOSS_ENEMY_RE_1:
+			//ジャンプしながら移動する
+			if (!m_bJump) {
+				//重力のコンポーネントのをオフにする
+				m_pTransform->Vel.y = 5.5f;
+				m_bJump = true;
+			}
+			else {
+				m_pTransform->Vel.y -= 0.13;
+				if (m_pTransform->Vel.y < -8.0f) {
+				}
+			}
 
+			//trueだったら左へ
+			if (m_bRightorLeft) {
+				//一生左に動き続ける人生
+				m_pTransform->Vel.x = -VALUE_MOVE_ENEMY;
+				m_pTransform->SetRotate(0.0f, 90.0f, 0.0f);
+			}
+			else {
+				//右にも移動できる知能はあったらしい
+				m_pTransform->Vel.x = VALUE_MOVE_ENEMY;
+				m_pTransform->SetRotate(0.0f, -90.0f, 0.0f);
+			}
+			break;
 		default:break;
 		}
 		break;
@@ -145,10 +175,23 @@ void CEnemy::Update() {
 			Parent->Delete();
 			Parent->GetComponent<CSeeColl>()->DeleteCollBox();
 			SceneGame::GetInstance()->SetScore(100);
+
+			//ボスだったらポインタをヌルにする
+			if(Parent->GetName() == BOSS_NAME){
+				Parent = nullptr;
+				return;
+			}
+
 		}
 
 		break;
 	default:break;
+	}
+
+	//ダメージを受けたかどうかの無敵時間を減らしていく
+	m_nDMGCool--;
+	if (m_nDMGCool <= 0) {
+		m_nDMGCool = 0;
 	}
 }
 
@@ -181,6 +224,36 @@ void CEnemy::Draw() {
 	else {
 		TAssimpMaterial* pMaterial = m_pDraw->GetModel()->GetMate();
 		pMaterial->Kd = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+	}
+
+	if (m_eEnemy_Type == BOSS_ENEMY_RE_1) {
+		if (m_nDMGCool > 0) {
+			TAssimpMaterial* pMaterial_Boss = m_pDraw->GetModel()->GetMate();
+			switch (SceneStage_1_Re::GetInstance()->GetBossHP())
+			{
+			case 4:
+				//モデルの色を変える
+				pMaterial_Boss->Kd = XMFLOAT4(0.75f, 0.0f, 0.25f, 0.75f);
+				break;
+			case 3:
+				//モデルの色を変える
+				pMaterial_Boss->Kd = XMFLOAT4(0.5f, 0.0f, 0.5f, 0.75f);
+				break;
+			case 2:
+				//モデルの色を変える
+				pMaterial_Boss->Kd = XMFLOAT4(0.25f, 0.0f, 0.75f, 0.75f);
+				break;
+			case 1:
+				//モデルの色を変える
+				pMaterial_Boss->Kd = XMFLOAT4(0.0f, 0.0f, 1.0f, 0.75f);
+				break;
+			default:break;
+			}
+		}
+		else {
+			TAssimpMaterial* pMaterial_Boss = m_pDraw->GetModel()->GetMate();
+			pMaterial_Boss->Kd = XMFLOAT4(1.0f, 1.0f, 1.0f, 1.0f);
+		}
 	}
 
 #ifdef _DEBUG
@@ -241,6 +314,13 @@ void CEnemy::OnCollisionEnter(Object* pObject) {
 
 				//座標補正
 				m_pTransform->Pos.y = BlockUpLine + EnemyHalhSize.y - EnemyOffset.y;
+
+				//ジャンプを再びできるようにする
+				if (m_bJump) {
+					m_bJump = false;
+					//Parent->GetComponent<CGravity>()->SetUse(true);
+				}
+
 			}
 			/** @brief 頭ごっつんこ状態である*/
 			else if (BlockDownLine >= m_OldPos.y + EnemyHalhSize.y &&	//前フレームはめり込んでいない
@@ -292,28 +372,50 @@ void CEnemy::OnCollisionEnter(Object* pObject) {
 	}
 #pragma endregion
 	//プレイヤーの攻撃
-	if (pObject->GetName() == ATTACK_NAME) {
-		//敵の情報を取得
-		auto Enemy = Parent->GetComponent<CCollider>();
-		auto EnemyPos = Enemy->GetCenterPos();
-		auto EnemySize = Enemy->GetColliderSize();
-		auto EnemyOffset = Enemy->GetOffSet();
-		//半分の大きさ
-		XMFLOAT2 EnemyHalhSize = XMFLOAT2(EnemySize.x * 0.5f, EnemySize.y *0.5f);
+	//無敵時間だった場合攻撃は当たらない
+	if (m_nDMGCool <= 0) {
+		if (pObject->GetName() == ATTACK_NAME) {
+			//敵の情報を取得
+			auto Enemy = Parent->GetComponent<CCollider>();
+			auto EnemyPos = Enemy->GetCenterPos();
+			auto EnemySize = Enemy->GetColliderSize();
+			auto EnemyOffset = Enemy->GetOffSet();
+			//半分の大きさ
+			XMFLOAT2 EnemyHalhSize = XMFLOAT2(EnemySize.x * 0.5f, EnemySize.y *0.5f);
 
-		//当たり判定の情報
-		auto TAttack = pObject->GetComponent<CTransform>();
-		auto cAttack = pObject->GetComponent<CCollider>();
-		//半分の大きさ
-		XMFLOAT2 AttackHalfSize = XMFLOAT2(cAttack->GetColliderSize().x/2.0f,cAttack->GetColliderSize().y/2.0f);
+			//当たり判定の情報
+			auto TAttack = pObject->GetComponent<CTransform>();
+			auto cAttack = pObject->GetComponent<CCollider>();
+			//半分の大きさ
+			XMFLOAT2 AttackHalfSize = XMFLOAT2(cAttack->GetColliderSize().x / 2.0f, cAttack->GetColliderSize().y / 2.0f);
 
-		if (cAttack->GetCenterPos().x - AttackHalfSize.x + TAttack->Vel.x < m_pCollider->GetCenterPos().x + EnemyHalhSize.x + m_pTransform->Vel.x &&
-			m_pCollider->GetCenterPos().x - EnemyHalhSize.x + m_pTransform->Vel.x < cAttack->GetCenterPos().x + AttackHalfSize.x + TAttack->Vel.x) {
-			if (cAttack->GetCenterPos().y - AttackHalfSize.y + TAttack->Vel.y < m_pCollider->GetCenterPos().y + EnemyHalhSize.y + m_pTransform->Vel.y &&
-				m_pCollider->GetCenterPos().y - EnemyHalhSize.y + m_pTransform->Vel.y < cAttack->GetCenterPos().y + AttackHalfSize.y + TAttack->Vel.y) {
-				//攻撃がヒットしたので敵オブジェクトを削除する
-				m_eEnemy_State = ENEMY_DELETE;
-				m_bRoL = pObject->GetComponent<CAttack>()->GetAttackRoL();
+			if (cAttack->GetCenterPos().x - AttackHalfSize.x + TAttack->Vel.x < m_pCollider->GetCenterPos().x + EnemyHalhSize.x + m_pTransform->Vel.x &&
+				m_pCollider->GetCenterPos().x - EnemyHalhSize.x + m_pTransform->Vel.x < cAttack->GetCenterPos().x + AttackHalfSize.x + TAttack->Vel.x) {
+				if (cAttack->GetCenterPos().y - AttackHalfSize.y + TAttack->Vel.y < m_pCollider->GetCenterPos().y + EnemyHalhSize.y + m_pTransform->Vel.y &&
+					m_pCollider->GetCenterPos().y - EnemyHalhSize.y + m_pTransform->Vel.y < cAttack->GetCenterPos().y + AttackHalfSize.y + TAttack->Vel.y) {
+					//攻撃がヒットしたので敵オブジェクトを削除する
+					//敵ごとに変える
+					switch (m_eEnemy_Type)
+					{
+					case ENEMY_WALK:
+						m_eEnemy_State = ENEMY_DELETE;
+						m_bRoL = pObject->GetComponent<CAttack>()->GetAttackRoL();
+						break;
+					case BOSS_ENEMY_RE_1:
+						//HPを減らす
+						SceneStage_1_Re::GetInstance()->SetBossHP();
+						//無敵時間を作成する
+						m_nDMGCool = 180;
+						//HPを取得して場合によっては削除する
+						if (SceneStage_1_Re::GetInstance()->GetBossHP() <= 0) {
+							m_eEnemy_State = ENEMY_DELETE;
+							m_bRoL = pObject->GetComponent<CAttack>()->GetAttackRoL();
+						}
+						break;
+					default:break;
+					}
+
+				}
 			}
 		}
 	}

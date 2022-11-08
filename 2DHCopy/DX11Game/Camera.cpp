@@ -12,8 +12,10 @@
 #include "sceneGame.h"
 #include "TexScrollComponent.h"
 #include "SceneManager.h"
+#include "TexScrollComponent.h"
 
 #include "SceneStage_1.h"
+#include "SceneStage_1_Re.h"
 
 //*****************************************************************************
 // グローバル変数
@@ -200,7 +202,7 @@ void CCamera::Update()
 			m_vDestTarget.y = *m_pPosY;
 
 			// 視点を徐々に移動先に近づける
-			m_vPos.y = m_vPos.y * 0.9f + m_vDestPos.y * 0.1f;
+			m_vPos.y = m_vPos.y ;
 
 			// 注視点を徐々に移動先に近づける
 			m_vTarget.y = m_vTarget.y * 0.9f + m_vDestTarget.y * 0.1f;
@@ -330,6 +332,32 @@ void CCamera::Update()
 		SetAxisY(nullptr);
 		m_vPos.y = m_LimitY.y;
 		m_vTarget.y = m_LimitY.y;
+	}
+
+	//カメラを引かせるフラグが立っていたらカメラを引く
+	if (m_bCameraMove) {
+		switch (SceneGame::GetInstance()->GetStage())
+		{
+		case STAGE_1_RE:
+			//背景をストップする
+			CTexScroll::Scroll(false);
+			SetAxisX(nullptr);
+			SetAxisY(nullptr);
+			m_vPos.x = 3775.0f;
+			m_vPos.y = 125.0f;
+			m_vPos.z = -425.0f;
+			m_vTarget.x = 3775.0f;
+			m_vTarget.y = 125.0f;
+			break;
+		default:
+			break;
+		}
+	}
+	else {
+		m_vPos.z += 10;
+		if (m_vPos.z > -300) {
+			m_vPos.z = -300;
+		}
 	}
 
 	// マトリックスに更新
@@ -595,4 +623,13 @@ void CCamera::SetDestPos(float CameraposZ)
 	m_vDestTarget.z = CameraposZ;
 
 	m_vDestPos.x = m_vDestTarget.x;
+}
+
+/**
+* @fn		CCamera::SetCameraMove
+* @brief	カメラが引いていくかどうか
+* @param	(bool)	カメラが引きます
+*/
+void CCamera::SetCameraMove(bool bCamera) {
+	m_bCameraMove = bCamera;
 }

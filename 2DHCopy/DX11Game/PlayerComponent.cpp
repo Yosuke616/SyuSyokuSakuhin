@@ -337,12 +337,12 @@ void CPlayer::Update() {
 #pragma endregion
 	case JUMP_PLAYER:
 #pragma region ---ジャンプ
-		////ある程度上げたらくわえた力を消す
 		if (m_bWarpPoint) {
 			m_ePlayer = IDLE_PLAYER;
 			break;
 		}
 
+		////ある程度上げたらくわえた力を消す
 		//初速を加える
 		if (!m_bJump) {
 			//重力のコンポーネントの機能をオフにする
@@ -698,6 +698,12 @@ void CPlayer::Update() {
 
 		break;
 #pragma endregion
+	case WARP_PLAYER:
+#pragma region ---ワープ
+		//ワープ用のテクスチャに変える
+		//動けなくする
+
+#pragma endregion
 	default: break;
 	}
 
@@ -965,7 +971,7 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 	//無敵時間の場合敵とは当たらない
 	if (m_nStar_Time <= 0) {
 		//敵と分類されるものに当たった場合
-		if (pObject->GetName() == ENEMY_NAME) {
+		if (pObject->GetName() == ENEMY_NAME || pObject->GetName() == BOSS_NAME) {
 			//パワーアップ状態かそうでないかで処理内容を決める
 			if (m_bPawer_UP) {
 				//吹き飛ばす向きを決める

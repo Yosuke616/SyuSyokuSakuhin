@@ -33,6 +33,7 @@ enum PLAYER_STATE {
 	MISS_PLAYER,		//いわゆるゲームオーバー
 	TIMEOUT_PLAYER,		//時間切れになったときの演出
 	CLEAR_PLAYER,		//クリアした状態
+	WARP_PLAYER,		//ワープ状態しているとき
 	
 	STOP_PLAYER,		//プレイヤーの足を止めたいとき
 

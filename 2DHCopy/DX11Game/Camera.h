@@ -63,6 +63,10 @@ private:
 
 	static CCamera* m_pCamera;		// 現在のカメラ
 
+	/** @brief カメラを引かせるかどうかのフラグを設定する*/
+	bool m_bCameraMove;
+
+
 public:
 	CCamera();						//	コンストラクタ
 	void Init();					//	初期化
@@ -107,8 +111,7 @@ public:
 	void SetAxisX(float* px);
 	/** @brief Y軸の注視点の設定をする 2022/7/26*/
 	void SetAxisY(float* py);
-	/** @brief カメラを動かなくする 2022/9/9*/
-
-	/** @brief カメラの動きを再開する*/
+	/** @brief カメラが引いていくかどうかをセットする*/
+	void SetCameraMove(bool bMove);
 
 };
