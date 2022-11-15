@@ -677,6 +677,16 @@ void CPlayer::Update() {
 
 		break;
 #pragma endregion
+	case EVENT_TIME_OUT:
+#pragma region ---イベント用時間切れ
+		//横移動は出来なくする
+		//ジャンプは出来ない
+		//テクスチャは死ぬやつにする
+
+		//シーンゲームのオプションをオンにする
+		
+		break;
+#pragma endregion
 	case CLEAR_PLAYER:
 #pragma region ---クリア
 		//やりたいこと
@@ -829,7 +839,7 @@ void CPlayer::OnCollisionEnter(Object* pObject) {
 	bHitObj = true;
 #pragma region ---BLOCK
 	//仮(ブロック)
-	if(pObject->GetName() == BLOCK_NAME || pObject->GetName() == BLOCK_RARD_NAME){
+	if(pObject->GetName() == BLOCK_NAME || pObject->GetName() == BLOCK_RARD_NAME || pObject->GetName() == BLOCK_BREAK_NAME){
 		//プレイヤーの情報を取得
 		auto Player = Parent->GetComponent<CCollider>();
 		auto PlayerPos = Player->GetCenterPos();
@@ -1437,6 +1447,14 @@ PLAYER_STATE CPlayer::GetPlayerSta() {
 */
 bool CPlayer::GetClearFlg() {
 	return m_bClearFlg;
+}
+
+/**
+* @fn		CPlayer::SetClaer
+* @brief	クリアしたかどうかをセットできるのである	
+*/
+void CPlayer::SetClearFlg() {
+	m_bClearFlg = true;
 }
 
 /**

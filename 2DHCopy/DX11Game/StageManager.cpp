@@ -56,6 +56,8 @@ enum MAP_CHIP{
 	STAGE_1_RE_CHANGE_COLL = 299,	//オブジェクトの見た目を変えるためのイベント
 	STAGE_1_RE_CAMERA_MOVE,			//カメラを引きにする関数
 	STAGE_1_RE_BOSS,				//ボス
+	STAGE_1_RE_BREAK_BLOCK,			//壊れるブロックの番号
+	STAGE_1_RE_CLEAR_COLL,			//裏ステージでのクリア判定
 
 	SOCRE_UP = 2000,				//所謂コイン的なやつ
 
@@ -610,6 +612,54 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 		obj->GetComponent<CEnemy>()->SetEnemyType(BOSS_ENEMY_RE_1);
 		//オブジェクトマネージャーに追加
 		ObjectManager::GetInstance()->AddObject(obj);
+	}
+#pragma endregion
+#pragma region ---壊れるブロック
+	else if (nState == STAGE_1_RE_BREAK_BLOCK) {
+		Object* obj = new Object(BLOCK_BREAK_NAME, UPDATE_FIELD, DRAW_FIELD);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDraw3D>();
+		auto collider = obj->AddComponent<CCollider>();
+		auto Range = obj->AddComponent<COutOfRange>();
+		obj->AddComponent<CSeeColl>();
+		//オブジェクトの設定
+		draw->SetModel(pModelManager->GetModel(RARD_BLOCK_RE_NUM));
+		trans->SetPosition(fPosX, fPosY + 770, 0.0f);
+		trans->SetScale(BLOCK_SIZE_X, BLOCK_SIZE_Y, BLOCK_SIZE_Z);
+		collider->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
+		Range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
+
+		//ワールドマトリックスの更新
+		draw->Update();
+
+		return obj;
+	}
+#pragma endregion
+#pragma region ---クリア用当たり判定
+	else if(nState == STAGE_1_RE_CLEAR_COLL){
+		//オブジェクトの生成
+		Object* obj = new Object(STAGE_RE_1_GOAL_COLL, UPDATE_DEBUG, DRAW_DEBUG);
+		//コンポーネントの追加
+		auto trans = obj->AddComponent<CTransform>();
+		auto draw = obj->AddComponent<CDrawMesh>();
+		auto collider = obj->AddComponent<CCollider>();
+		auto range = obj->AddComponent<COutOfRange>();
+		obj->AddComponent<CSeeColl>();
+		//オブジェクトの設定
+		draw->SetTexture(pTextureManager->GetTexture(DEBUG_BLOCK_NUM));
+		draw->SetSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y);
+		trans->SetPosition(fPosX, fPosY + 770.0f, 0.0f);
+		collider->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
+		range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
+		//オブジェクトマネージャーに追加
+		ObjectManager::GetInstance()->AddObject(obj);
+		//ワールドマトリックスの更新
+		draw->Update();
+
+		return obj;
 	}
 #pragma endregion
 #pragma region ---小判

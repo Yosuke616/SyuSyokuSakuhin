@@ -30,12 +30,26 @@ private:
 	bool m_bOhuda;
 	/** @brief ボスを倒しているかどうかのフラグ*/
 	bool m_bBossBreak;
-	/** @brief ボスを取得して管理する変数*/
-	Object* m_pBossObj;
+	/** @brief 一度だけブロックを壊すフラグ*/
+	bool m_bBreak;
 	/** @brief ボスのHPの管理*/
 	int m_nBossHP;
-	//メンバ関数
+	/** @brief ゴールフラグに触れたかの判定*/
+	bool m_bGoalFlg;
+	/** @brief イベント当たり判定に入ったかどうかのフラグ*/
+	bool m_bEventTimeOut;
+	/** @brief クリアまでの流れ*/
+	bool m_bEventGoal;
+	/** @brief 一度だけオブジェクトをチェンジするフラグ*/
+	bool m_bFirstChange;
+	/** @brief クリアに至るまでの秒数*/
+	int m_nTime;
 
+	//メンバ関数
+	/** @brief タイムアウト用の物を作る*/
+	void CreateTimeOut();
+	/** @brief タイムアウトを動かす*/
+	void EventTimeOut();
 protected:
 	//メンバ変数
 
@@ -66,6 +80,8 @@ public:
 	void ChangeObject();
 	/** @brief 特殊当たり判定を保存するリスト*/
 	void SetBaseInfo(std::list<Object*>);
+	/** @brief ゴール用の当たり判定*/
+	void GoalColl();
 	/** @brief イベント用リストに中身が入っていたら消す*/
 	void DeleteList();
 	/** @brief イベントとの当たり判定の計算*/

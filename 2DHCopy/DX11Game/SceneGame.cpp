@@ -30,6 +30,9 @@
 #include "ScoreComponent.h"
 #include "TimeComponent.h"
 
+//後で消すかも
+#include "MosaicRollComponent.h"
+
 #include "Load.h"
 
 //ステージ関係のインクルード
@@ -388,7 +391,8 @@ void SceneGame::Update() {
 			Player->GetComponent<CPlayer>()->GetPlayerSta() == DUSH_PLAYER	 ||
 			Player->GetComponent<CPlayer>()->GetPlayerSta() == MISS_PLAYER	 ||
 			Player->GetComponent<CPlayer>()->GetPlayerSta() == HIT_PLAYER    ||
-			Player->GetComponent<CPlayer>()->GetPlayerSta() == TIMEOUT_PLAYER)
+			Player->GetComponent<CPlayer>()->GetPlayerSta() == TIMEOUT_PLAYER||
+			Player->GetComponent<CPlayer>()->GetPlayerSta() == EVENT_TIME_OUT)
 			) {
 		
 		}
@@ -406,6 +410,7 @@ void SceneGame::Update() {
 		//セレクト画面に移動するまでの時間を計測
 		m_nSelectCnt++;
 		//2秒で変更する
+
 		if (m_nSelectCnt > 120) {
 			//次のステージを解放する
 			//ステージごとに内容を派生させる
@@ -449,6 +454,12 @@ void SceneGame::Update() {
 		//シーン遷移
 		SceneManager::Instance()->SetScene(SCENE_TITLE);
 	}
+
+	//モザイクを流す
+	if (InputManager::Instance()->GetKeyTrigger(DIK_9)) {
+		MosaicRoll::Mosaic(10.0f);
+	}
+
 #endif
 
 }

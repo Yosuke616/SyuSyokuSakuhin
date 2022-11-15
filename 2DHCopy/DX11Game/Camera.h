@@ -21,7 +21,7 @@ class CTransform;
 
 
 #define STAGE_1_RE_REMIT_MIN	(0.0f)		//ステージ1(裏)の左端
-#define STAGE_1_RE_REMIT_MAX	(4000.0f)	//ステージ1(裏)の右端
+#define STAGE_1_RE_REMIT_MAX	(4550.0f)	//ステージ1(裏)の右端
 
 class CCamera
 {
