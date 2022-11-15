@@ -113,6 +113,19 @@ void SceneStage_1_Re::Init() {
 
 	//ボスのHPの設定
 	m_nBossHP = 5;
+
+	//一度だけ足場を壊すフラグ
+	m_bBreak = false;
+	//ゴールフラグはオフにする
+	m_bGoalFlg = false;
+	//イベントタイムアウトはオフにしておく
+	m_bEventTimeOut = false;
+	//ゴールフラグ
+	m_bGoalFlg = false;
+	//一度だけオブジェクトを変えるフラグ
+	m_bFirstChange = false;
+	//時間は０だよ
+	m_nTime = 0;
 }
 
 /**
@@ -128,6 +141,43 @@ void SceneStage_1_Re::Uninit() {
 * @brief	更新処理
 */
 void SceneStage_1_Re::Update() {
+	//イベントタイムアウトに入ったら関数を動かす
+	if (m_bEventTimeOut) {
+		//他のオブジェクトの更新も止める
+		for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+			if (obj->GetName() == ENEMY_NAME) {
+				obj->StopUpdate();
+			}
+		}
+		//プレイヤーの動きを止める
+		ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CPlayer>()->SetPlayerState(EVENT_TIME_OUT);
+		//プレイヤーの重力を削除する
+		ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CGravity>()->SetUse(false);
+
+		//作ったイベントタイムアップを動かす
+		EventTimeOut();
+		
+		if (m_bEventGoal) {
+			//時間を足す
+			m_nTime++;
+
+			//プレイヤーを右側に動かし続ける
+			ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CTransform>()->Pos.x += 2.5f;
+
+			//クリア判定にする
+			ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CPlayer>()->SetClearFlg();
+
+
+			if (m_nTime == 15) {
+				MosaicRoll::Mosaic(0.25f);
+			}
+			else if (m_nTime == 45) {
+				MosaicRoll::Mosaic(0.5f);
+			}
+		}
+		return;
+	}
+
 	//リストの中身が更新されているかを判別する
 	for (auto&& obj : m_EventList) {
 		for (auto&& comp : obj->GetComponentList()) {
@@ -148,6 +198,15 @@ void SceneStage_1_Re::Update() {
 						CCamera::Get()->SetCameraMove(true);
 					}
 				}
+				else if (obj->GetName() == STAGE_RE_1_GOAL_COLL) {
+					if (CollPlayer(obj)) {
+						//一回だけ通るようにする
+						if (!m_bGoalFlg) {
+							GoalColl();
+							m_bGoalFlg = true;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -156,6 +215,21 @@ void SceneStage_1_Re::Update() {
 	if (m_nBossHP <= 0) {
 		//カメラの注視点を元に戻す
 		CCamera::Get()->SetCameraMove(false);
+
+		if (!m_bBreak) {
+			//足場を削除する
+			for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+				if (obj->GetName() == BLOCK_BREAK_NAME) {
+					obj->Delete();
+				}
+			}
+		
+			//モザイクをかけ足場を一つ減らす
+			MosaicRoll::Mosaic_Damage();
+			m_bBreak = true;
+		}
+
+
 	}
 }
 
@@ -174,25 +248,52 @@ void SceneStage_1_Re::Draw() {
 void SceneStage_1_Re::ChangeObject() {
 	//モザイクを流す
 	MosaicRoll::Begin();
-
+	
 	//全てのオブジェクトの更新を止める
 	for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
 		obj->StopUpdate();
 	}
-	//更新リストからUI更新以外の物を全て色を変える(仮処置)
-	for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
-		if (obj->GetName() == "Back") {
-			obj->GetComponent<CDraw2D>()->SetTexture(TextureManager::GetInstance()->GetTexture(STAGE_1_RE_BG_TEX_NUM));
+
+	//裏か表化で変更するオブジェクト先を変更する
+	if (SceneGame::GetInstance()->GetLaL()) {
+		//更新リストからUI更新以外の物を全て色を変える(仮処置)
+		for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+			if (obj->GetName() == "Back") {
+				obj->GetComponent<CDraw2D>()->SetTexture(TextureManager::GetInstance()->GetTexture(STAGE_1_RE_BG_TEX_NUM));
+			}
+			else if (obj->GetName() == BLOCK_NAME) {
+				obj->GetComponent<CDraw3D>()->SetModel(ModelManager::GetInstance()->GetModel(GRASS_BLOCK_RE_NUM));
+			}
+			else if (obj->GetName() == BLOCK_RARD_NAME) {
+				obj->GetComponent<CDraw3D>()->SetModel(ModelManager::GetInstance()->GetModel(RARD_BLOCK_RE_NUM));
+			}
+			else if (obj->GetName() == BLOCK_BREAK_NAME) {
+				obj->GetComponent<CDraw3D>()->SetModel(ModelManager::GetInstance()->GetModel(RARD_BLOCK_RE_NUM));
+			}
 		}
-		else if(obj->GetName() == BLOCK_NAME){
-			obj->GetComponent<CDraw3D>()->SetModel(ModelManager::GetInstance()->GetModel(GRASS_BLOCK_RE_NUM));
-		}
-		else if (obj->GetName() == BLOCK_RARD_NAME) {
-			obj->GetComponent<CDraw3D>()->SetModel(ModelManager::GetInstance()->GetModel(RARD_BLOCK_RE_NUM));
-		}
+		//裏表を変える
+		SceneGame::GetInstance()->SetLaL(false);
 	}
-
-
+	else {
+		//更新リストからUI更新以外の物を全て色を変える(仮処置)
+		for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+			if (obj->GetName() == "Back") {
+				obj->GetComponent<CDraw2D>()->SetTexture(TextureManager::GetInstance()->GetTexture(TITLE_BACK_GROUND_NUM));
+			}
+			else if (obj->GetName() == BLOCK_NAME) {
+				obj->GetComponent<CDraw3D>()->SetModel(ModelManager::GetInstance()->GetModel(MINT_GREEN_BLOCK_NUM));
+			}
+			else if (obj->GetName() == BLOCK_RARD_NAME) {
+				obj->GetComponent<CDraw3D>()->SetModel(ModelManager::GetInstance()->GetModel(RARD_BLOCK_NUM));
+			}
+			else if (obj->GetName() == BLOCK_BREAK_NAME) {
+				obj->GetComponent<CDraw3D>()->SetModel(ModelManager::GetInstance()->GetModel(RARD_BLOCK_NUM));
+			}
+		}
+		//裏表を変える
+		SceneGame::GetInstance()->SetLaL(true);
+	}
+	
 	//更新再開
 	//オブジェクトを全て再開する
 	for (auto&& obj : m_pObjectManager->GetUpdateList()) {
@@ -206,11 +307,20 @@ void SceneStage_1_Re::ChangeObject() {
 		}
 	}
 
-	//裏表を変える
-	SceneGame::GetInstance()->SetLaL(false);
-
 	//モザイク終了
 	MosaicRoll::End();
+}
+
+/**
+* @fn
+* @brief
+*/
+void SceneStage_1_Re::GoalColl() {
+	//やりたいことタイムアップ風にする(プレイヤーのテクスチャを変更したり)
+	//とりあえずタイムアップメニューを作成する
+	//ステージの見た目を全て表にする
+	m_bEventTimeOut = true;
+	CreateTimeOut();
 }
 
 /**
@@ -220,7 +330,7 @@ void SceneStage_1_Re::ChangeObject() {
 */
 void SceneStage_1_Re::SetBaseInfo(std::list<Object*> objList) {
 	for (auto&& obj : objList) {
-		if (obj->GetName() == STAGE_RE_1_CHANGE_COLL || obj->GetName() == CAMERA_MOVE_NAME) {
+		if (obj->GetName() == STAGE_RE_1_CHANGE_COLL || obj->GetName() == CAMERA_MOVE_NAME || obj->GetName() == STAGE_RE_1_GOAL_COLL) {
 			m_EventList.push_back(obj);
 		}
 	}
@@ -303,4 +413,87 @@ void SceneStage_1_Re::SetBossHP() {
 */
 int SceneStage_1_Re::GetBossHP() {
 	return m_nBossHP;
+}
+
+/**
+* @fn		SceneStage_1_Re::CreateTimeOut
+* @brief	時間切れのようなやつ
+*/
+void SceneStage_1_Re::CreateTimeOut() {
+	//文字を追加する
+	for (int i = 0;i < 6;i++) {
+		Object* pText = new Object("Event_Moji",UPDATE_UI,DRAW_UI);
+		//コンポーネントの追加
+		auto trans = pText->AddComponent<CTransform>();
+		auto draw = pText->AddComponent<CDraw2D>();
+		//オブジェクトの設定
+		trans->SetPosition(-200.0f + i * 75.0f,400.0f);
+		draw->SetTexture(TextureManager::GetInstance()->GetTexture(ARROW_NUM));
+		draw->SetSize(25,25);
+		//オブジェクトリストに追加
+		ObjectManager::GetInstance()->AddObject(pText);
+	}
+
+	//最後に横線を一本出さないとダメだね
+	Object* pLine = new Object("Event_Line", UPDATE_UI, DRAW_UI);
+	//コンポーネントの追加
+	auto trans = pLine->AddComponent<CTransform>();
+	auto draw = pLine->AddComponent<CDraw2D>();
+	//オブジェクトの設定
+	trans->SetPosition(-1000.0f, 0.0f);
+	draw->SetTexture(TextureManager::GetInstance()->GetTexture(ARROW_NUM));
+	draw->SetSize(500.0f, 25.0f);
+	//メニューリストに追加
+	ObjectManager::GetInstance()->AddObject(pLine);
+}
+
+/**
+* @fn		SceneStage_1_Re::EventTimeOut
+* @brief	イベント用のタイムアップ
+*/
+void SceneStage_1_Re::EventTimeOut() {
+	//文字の出し方
+	for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+		if (obj->GetName() == "Event_Moji") {
+			auto trans = obj->GetComponent<CTransform>();
+			auto draw = obj->GetComponent<CDraw2D>();
+
+			//少しづつ下げていく
+			trans->Pos.y -= 50.0f;
+
+			//高さが0になったら次の文字に行く
+			//そうでない場合次の文字には行かない
+			if (trans->Pos.y <= 0.0f) {
+				trans->Pos.y = 0.0f;
+			}
+			else {
+				break;			
+			}
+		}
+		
+		//最後に横の線を出す
+		if (obj->GetName() == "Event_Line") {
+			auto trans = obj->GetComponent<CTransform>();
+			auto draw = obj->GetComponent<CDraw2D>();
+
+			//少しずつ横に動かす
+			trans->Pos.x += 75.0f;
+
+			if (trans->Pos.x >= 0) {
+				trans->Pos.x = 0.0f;
+				m_bEventGoal = true;
+				if (!m_bFirstChange) {
+					ChangeObject();
+					m_bFirstChange = true;
+					//文字とかのUIを消す
+					for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+						if (obj->GetName() == "Event_Moji"||obj->GetName() == "Event_Line") {
+							obj->Delete();
+						}
+					}
+					//クリアの文字を出したい
+				}
+			}
+		}
+	}
 }

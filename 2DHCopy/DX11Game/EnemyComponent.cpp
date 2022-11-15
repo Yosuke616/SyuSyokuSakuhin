@@ -276,7 +276,7 @@ void CEnemy::Draw() {
 void CEnemy::OnCollisionEnter(Object* pObject) {
 	//仮(ブロック)
 #pragma region ---ブロック
-	if (pObject->GetName() == BLOCK_NAME) {
+	if (pObject->GetName() == BLOCK_NAME || pObject->GetName() == BLOCK_BREAK_NAME || pObject->GetName() == BLOCK_RARD_NAME) {
 		//敵の情報を取得
 		auto Enemy = Parent->GetComponent<CCollider>();
 		auto EnemyPos = Enemy->GetCenterPos();

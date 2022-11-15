@@ -17,6 +17,7 @@
 #include "PlayerComponent.h"
 #include "ObjectManager.h"
 #include "SceneSelect.h"
+#include "MosaicRollComponent.h"
 
 /** ステージを読み込む*/
 #include "SceneStage_1.h"
@@ -193,7 +194,10 @@ void MenuManager::Update() {
 			}
 			else if (obj->GetComponent<CPlayer>()->GetPlayerSta() == TIMEOUT_PLAYER) {
 				TimeOutMenu();
-			} else {
+			}
+			else if (obj->GetComponent<CPlayer>()->GetPlayerSta() == EVENT_TIME_OUT) {
+				//EventTimeOut();
+			}else {
 				SelectButton();
 			}
 		}
@@ -214,11 +218,11 @@ void MenuManager::Draw() {
 #ifdef _DEBUG /**imguiでデバッグのやつを出す**/
 	using namespace ImGui;
 
-	SetNextWindowSize(ImVec2(120, 160), ImGuiCond_FirstUseEver);
+	/*SetNextWindowSize(ImVec2(120, 160), ImGuiCond_FirstUseEver);
 	SetNextWindowPos(ImVec2(0, 0), ImGuiCond_FirstUseEver, ImVec2(0, 0));
 	Begin("Button_State");
 	Text("B_STATE : %d", m_MenuList.size());
-	End();
+	End();*/
 
 #endif
 }
@@ -1222,16 +1226,6 @@ void MenuManager::TimeOutMenu() {
 			//そうでない場合次の文字には行かない
 			if (trans->Pos.y <= 0.0f) {
 				trans->Pos.y = 0.0f;
-
-				for (auto&& moji : m_MenuList) {
-					if (moji->GetComponent<CTransform>()->Pos.y <= 0.0f) {
-						break;
-					}
-					else {
-						continue;						
-					}
-				}
-
 			}
 			else {
 				break;

@@ -35,6 +35,8 @@ enum PLAYER_STATE {
 	CLEAR_PLAYER,		//クリアした状態
 	WARP_PLAYER,		//ワープ状態しているとき
 	
+	EVENT_TIME_OUT,		//イベント用の時間切れ
+
 	STOP_PLAYER,		//プレイヤーの足を止めたいとき
 
 	MAX_PLAYER
@@ -149,6 +151,8 @@ public:
 	PLAYER_STATE GetPlayerSta();
 	/** @brief クリアしたかどうかを取得する関数*/
 	bool GetClearFlg();
+	/** @brief クリアしたかどうかを設定する*/
+	void SetClearFlg();
 	/** @brief お札を取得したかどうかを取得する*/
 	bool GetOhuda();
 	/** @brief ワープポイントに触れたかどうかを設定する*/

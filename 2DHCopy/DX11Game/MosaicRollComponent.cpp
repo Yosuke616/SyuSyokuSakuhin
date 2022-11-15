@@ -259,3 +259,70 @@ void MosaicRoll::Mosaic_Damage() {
 		}
 	}
 }
+
+/**
+* @fn		MosaicRoll::Mosaic
+* @brief	いつでもいい感じの時間モザイクを流せる
+* @param	(float)	モザイクをどの位のフレーム流したいか			
+*/
+void MosaicRoll::Mosaic(float Num) {
+	//一番最初だけ初期化をかける
+	if (!m_bFirstFlg) {
+		//初期化は2回も通さないぜ
+		m_bFirstFlg = true;
+		//モザイクの初期化
+		MosaicRoll::Init();
+		//時間の初期化
+		m_fMosaicCnt = 0.0f;
+
+		//全てのオブジェクトの停止
+		for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+			obj->StopUpdate();
+			obj->StopDraw();
+		}
+
+	}
+
+	while (m_bFirstFlg) {
+		//モザイクの更新をする
+		for (auto obj : m_LoadObject) {
+			obj->Update();
+		}
+
+		//スクリーン座標からワールド座標に変換
+		InputManager* Input = InputManager::Instance();
+		CCamera* pCamera = CCamera::Get();
+		XMFLOAT2 vPos = Input->GetMousePos();
+		XMMATRIX view = DirectX::XMLoadFloat4x4(&pCamera->GetViewMatrix());
+		XMMATRIX prj = DirectX::XMLoadFloat4x4(&pCamera->GetProjMatrix());
+		XMFLOAT3 vWorldPos;
+		CalcScreenToXY(&vWorldPos, vPos.x, vPos.y, SCREEN_WIDTH, SCREEN_HEIGHT, view, prj);
+
+		// バックバッファ＆Ｚバッファのクリア
+		float ClearColor[4] = { 0.117647f, 0.254902f, 0.352941f, 1.0f };
+		GetDeviceContext()->ClearRenderTargetView(GetRenderTargetView(), ClearColor);
+		GetDeviceContext()->ClearDepthStencilView(GetDepthStencilView(),
+			D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
+
+		//モザイクの描画
+		for (auto obj : m_LoadObject) {
+			obj->Draw();
+		}
+
+		// バックバッファとフロントバッファの入れ替え
+		GetSwapChain()->Present(0, 0);
+
+		m_fMosaicCnt += 0.5f;
+
+		if (m_fMosaicCnt > Num * 60) {
+			m_bFirstFlg = false;
+			MosaicRoll::Uninit();
+
+			//オブジェクトを全て再開する
+			for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+				obj->Use();
+			}
+			break;
+		}
+	}
+}

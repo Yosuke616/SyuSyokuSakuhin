@@ -65,6 +65,8 @@ public:
 
 	/** @brief ダメージを受けたときのモザイク*/
 	static void Mosaic_Damage();
+	/** @brief 任意のタイミング(秒数)でモザイクを流せるようにする*/
+	static void Mosaic(float Num);
 };
 
 #endif
