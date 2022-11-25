@@ -96,8 +96,6 @@ void SceneGame::Init() {
 	default:break;
 	}
 
-	//カメラを初期化する
-	CCamera::Get()->Init();
 
 	//編集モードとポーズフラグをオフにする
 	m_bEditMode = false;
@@ -175,6 +173,8 @@ void SceneGame::Init() {
 	DrawBox->SetLoop(true);
 
 	m_pObjectManager->AddObject(Box);	
+	//カメラを初期化する
+	CCamera::Get()->Init();
 	//ステージごとの設定をする
 	m_CurrentScene->Init();
 
@@ -290,6 +290,9 @@ void SceneGame::Init() {
 
 	//ステージを作る
 	m_pStageManager->CreateStage(m_eStageState);
+
+	//カメラの初期化をする
+	//CCamera::Get()->Init();
 
 	//ロードの終了
 	Load::End();
