@@ -45,6 +45,9 @@ private:
 	/** @brief クリアに至るまでの秒数*/
 	int m_nTime;
 
+	/** @brief アップデートを吹き飛ばす変数*/
+	bool m_bSkipUpdate;
+
 	//メンバ関数
 	/** @brief タイムアウト用の物を作る*/
 	void CreateTimeOut();

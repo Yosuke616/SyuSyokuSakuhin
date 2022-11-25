@@ -56,7 +56,7 @@ void SceneStage_1_Re::Destroy() {
 * @brief	コンストラクタにより脳が破壊された
 */
 SceneStage_1_Re::SceneStage_1_Re()
-	:m_nBossHP(5){
+	:m_nBossHP(5),m_bSkipUpdate(true){
 
 }
 
@@ -126,6 +126,9 @@ void SceneStage_1_Re::Init() {
 	m_bFirstChange = false;
 	//時間は０だよ
 	m_nTime = 0;
+
+	//アップデートに入れるようにする
+	m_bSkipUpdate = false;
 }
 
 /**
@@ -134,6 +137,11 @@ void SceneStage_1_Re::Init() {
 */
 void SceneStage_1_Re::Uninit() {
 	CSound::Stop(TITLE_BGM);
+
+	//イベントタイムアウトはオフにしておく
+	m_bEventTimeOut = false;
+	//アップデートスキップ
+	m_bSkipUpdate = true;
 }
 
 /**
@@ -141,95 +149,97 @@ void SceneStage_1_Re::Uninit() {
 * @brief	更新処理
 */
 void SceneStage_1_Re::Update() {
-	//イベントタイムアウトに入ったら関数を動かす
-	if (m_bEventTimeOut) {
-		//他のオブジェクトの更新も止める
-		for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
-			if (obj->GetName() == ENEMY_NAME) {
-				obj->StopUpdate();
+	if (!m_bSkipUpdate) {
+		//イベントタイムアウトに入ったら関数を動かす
+		if (m_bEventTimeOut) {
+			//他のオブジェクトの更新も止める
+			for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+				if (obj->GetName() == ENEMY_NAME) {
+					obj->StopUpdate();
+				}
 			}
+			//プレイヤーの動きを止める
+			ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CPlayer>()->SetPlayerState(EVENT_TIME_OUT);
+			//プレイヤーの重力を削除する
+			ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CGravity>()->SetUse(false);
+
+			//作ったイベントタイムアップを動かす
+			EventTimeOut();
+
+			if (m_bEventGoal) {
+				//時間を足す
+				m_nTime++;
+
+				//プレイヤーを右側に動かし続ける
+				ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CTransform>()->Pos.x += 2.5f;
+
+				//クリア判定にする
+				ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CPlayer>()->SetClearFlg();
+
+
+				if (m_nTime == 15) {
+					MosaicRoll::Mosaic(0.25f);
+				}
+				else if (m_nTime == 45) {
+					MosaicRoll::Mosaic(0.5f);
+				}
+			}
+			return;
 		}
-		//プレイヤーの動きを止める
-		ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CPlayer>()->SetPlayerState(EVENT_TIME_OUT);
-		//プレイヤーの重力を削除する
-		ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CGravity>()->SetUse(false);
 
-		//作ったイベントタイムアップを動かす
-		EventTimeOut();
-		
-		if (m_bEventGoal) {
-			//時間を足す
-			m_nTime++;
-
-			//プレイヤーを右側に動かし続ける
-			ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CTransform>()->Pos.x += 2.5f;
-
-			//クリア判定にする
-			ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME)->GetComponent<CPlayer>()->SetClearFlg();
-
-
-			if (m_nTime == 15) {
-				MosaicRoll::Mosaic(0.25f);
-			}
-			else if (m_nTime == 45) {
-				MosaicRoll::Mosaic(0.5f);
-			}
-		}
-		return;
-	}
-
-	//リストの中身が更新されているかを判別する
-	for (auto&& obj : m_EventList) {
-		for (auto&& comp : obj->GetComponentList()) {
-			//更新されているかを判別する
-			if (comp->m_bUpdateFlag) {
-				//画面外にどうか調べる奴はスキップ
-				if (comp == obj->GetComponent<COutOfRange>()) {
-					continue;
-				}
-				if (obj->GetName() == STAGE_RE_1_CHANGE_COLL) {
-					//当たり判定用の関数を呼ぶ
-					if (CollPlayer(obj)) {
-						ChangeObject();
+		//リストの中身が更新されているかを判別する
+		for (auto&& obj : m_EventList) {
+			for (auto&& comp : obj->GetComponentList()) {
+				//更新されているかを判別する
+				if (comp->m_bUpdateFlag) {
+					//画面外にどうか調べる奴はスキップ
+					if (comp == obj->GetComponent<COutOfRange>()) {
+						continue;
 					}
-				}
-				else if (obj->GetName() == CAMERA_MOVE_NAME) {
-					if (CollPlayer(obj)) {
-						CCamera::Get()->SetCameraMove(true);
+					if (obj->GetName() == STAGE_RE_1_CHANGE_COLL) {
+						//当たり判定用の関数を呼ぶ
+						if (CollPlayer(obj)) {
+							ChangeObject();
+						}
 					}
-				}
-				else if (obj->GetName() == STAGE_RE_1_GOAL_COLL) {
-					if (CollPlayer(obj)) {
-						//一回だけ通るようにする
-						if (!m_bGoalFlg) {
-							GoalColl();
-							m_bGoalFlg = true;
+					else if (obj->GetName() == CAMERA_MOVE_NAME) {
+						if (CollPlayer(obj)) {
+							CCamera::Get()->SetCameraMove(true);
+						}
+					}
+					else if (obj->GetName() == STAGE_RE_1_GOAL_COLL) {
+						if (CollPlayer(obj)) {
+							//一回だけ通るようにする
+							if (!m_bGoalFlg) {
+								GoalColl();
+								m_bGoalFlg = true;
+							}
 						}
 					}
 				}
 			}
 		}
-	}
 
-	//ボスが消えたかどうかを判別する
-	if (m_nBossHP <= 0) {
-		//カメラの注視点を元に戻す
-		CCamera::Get()->SetCameraMove(false);
+		//ボスが消えたかどうかを判別する
+		if (m_nBossHP <= 0) {
+			//カメラの注視点を元に戻す
+			CCamera::Get()->SetCameraMove(false);
 
-		if (!m_bBreak) {
-			//足場を削除する
-			for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
-				if (obj->GetName() == BLOCK_BREAK_NAME) {
-					obj->Delete();
+			if (!m_bBreak) {
+				//足場を削除する
+				for (auto&& obj : ObjectManager::GetInstance()->GetUpdateList()) {
+					if (obj->GetName() == BLOCK_BREAK_NAME) {
+						obj->Delete();
+					}
 				}
+
+				//モザイクをかけ足場を一つ減らす
+				MosaicRoll::Mosaic_Damage();
+				m_bBreak = true;
 			}
-		
-			//モザイクをかけ足場を一つ減らす
-			MosaicRoll::Mosaic_Damage();
-			m_bBreak = true;
+
+
 		}
-
-
 	}
 }
 

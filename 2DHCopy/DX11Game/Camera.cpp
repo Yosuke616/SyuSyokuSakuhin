@@ -64,6 +64,8 @@ CCamera::CCamera()
 // 初期化
 void CCamera::Init()
 {
+	m_pPosX = nullptr;
+
 	m_vPos = XMFLOAT3(CAM_POS_P_X, CAM_POS_P_Y, CAM_POS_P_Z);	// 視点
 	m_vTarget = XMFLOAT3(CAM_POS_R_X, CAM_POS_R_Y, CAM_POS_R_Z);// 注視点
 	m_vUp = XMFLOAT3(0.0f, 1.0f, 0.0f);							// 上方ベクトル
@@ -112,7 +114,25 @@ void CCamera::Init()
 		break;
 	}
 
+	if (!m_bZoom && GetAxisX() == nullptr && (m_vPos.x >= 0.0f || m_Limit.y <= m_vPos.x))
+	{
+		//	プレイヤーに注視点を合わせる
+		auto player = ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME);
+		if (player)	SetAxisX(&player->GetComponent<CTransform>()->Pos.x);
+
+	}
+
+	if (1) {
+		//プレイヤーに注視点を合わせる
+		auto player = ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME);
+		if (player) {
+			SetAxisY(&player->GetComponent<CTransform>()->Pos.y);
+		}
+	}
+
 	m_bZoom = false;
+
+	m_bCameraMove = false;
 }
 
 // 更新
@@ -148,6 +168,8 @@ void CCamera::Update()
 			m_vDestAngle = XMFLOAT3(0.0f, 0.0f, 0.0f);
 		}
 #endif // _DEBUG
+		
+
 
 #pragma region --- 慣性
 		// 目的の角度までの差分Y
@@ -191,6 +213,7 @@ void CCamera::Update()
 
 			// 視点を徐々に移動先に近づける
 			m_vPos.x = m_vPos.x * 0.9f + m_vDestPos.x * 0.1f;
+			//m_vPos.x = m_vPos.x;
 
 			// 注視点を徐々に移動先に近づける
 			m_vTarget.x = m_vTarget.x * 0.9f + m_vDestTarget.x * 0.1f;
@@ -206,9 +229,6 @@ void CCamera::Update()
 
 			// 注視点を徐々に移動先に近づける
 			m_vTarget.y = m_vTarget.y * 0.9f + m_vDestTarget.y * 0.1f;
-
-
-
 		}
 
 		// 2022/01/16 カメラ　ズーム
@@ -241,8 +261,18 @@ void CCamera::Update()
 			//	プレイヤーに注視点を合わせる
 			auto player = ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME);
 			if (player)	SetAxisX(&player->GetComponent<CTransform>()->Pos.x);
-
+		
 		}
+
+		//if (1) {
+		//	//	プレイヤーに注視点を合わせる
+		//	auto player = ObjectManager::GetInstance()->GetGameObject(PLAYER_NAME);
+		//	if (player)	SetAxisX(&player->GetComponent<CTransform>()->Pos.x);
+
+		//	//ライン越えしたら注視点を解除する
+		//	
+
+		//}
 
 		// y軸、ステージごとの上限や下限を超えない限りプレイヤーに追従し続ける
 		// 2022/7/26現在は条件は存在しない/**過ちのmistake**

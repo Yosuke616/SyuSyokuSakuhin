@@ -198,7 +198,8 @@ void MenuManager::Update() {
 			else if (obj->GetComponent<CPlayer>()->GetPlayerSta() == EVENT_TIME_OUT) {
 				//EventTimeOut();
 			}else {
-				SelectButton();
+				//‰½‚ğ€‘Ì‚©‚ª‚æ‚­‚í‚©‚ç‚È‚¢@ê‡‚É‚æ‚Á‚Ä‚Í•œŠˆ‚³‚¹‚é
+				//SelectButton();
 			}
 		}
 	}
