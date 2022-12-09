@@ -27,6 +27,7 @@ class StageManager;
 enum Stage {
 	STAGE_1 = 0,
 	STAGE_1_RE,
+	STAGE_2,
 
 	MAX_STAGE
 };

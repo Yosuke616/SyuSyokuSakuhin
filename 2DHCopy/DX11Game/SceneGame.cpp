@@ -38,6 +38,7 @@
 //ステージ関係のインクルード
 #include "SceneStage_1.h"
 #include "SceneStage_1_Re.h"
+#include "SceneStage_2.h"
 
 //静的メンバ変数
 SceneGame* SceneGame::m_pInstance = nullptr;
@@ -54,6 +55,7 @@ SceneGame::SceneGame()
 	//ここでステージをリストに追加していく
 	m_GameSceneList.push_back(SceneStage_1::GetInstance());
 	m_GameSceneList.push_back(SceneStage_1_Re::GetInstance());
+	m_GameSceneList.push_back(SceneStage_2::GetInstance());
 
 	//最初のステージの設定
 	m_eStageState = STAGE_1;
@@ -425,6 +427,8 @@ void SceneGame::Update() {
 			case STAGE_1_RE:
 				StageSelect::SaveClearInfo(m_eStageState-1,SceneStage_1_Re::GetInstance()->GetOhuda());				
 				break;
+			case STAGE_2:
+				StageSelect::SaveClearInfo(m_eStageState-1,true);
 
 			default:break;
 			}

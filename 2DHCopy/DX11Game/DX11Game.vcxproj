@@ -48,7 +48,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -211,6 +211,7 @@
     <ClCompile Include="SceneSelect.cpp" />
     <ClCompile Include="SceneStage_1.cpp" />
     <ClCompile Include="SceneStage_1_Re.cpp" />
+    <ClCompile Include="SceneStage_2.cpp" />
     <ClCompile Include="SceneTitle.cpp" />
     <ClCompile Include="ScoreComponent.cpp" />
     <ClCompile Include="SeeCollComponent.cpp" />
