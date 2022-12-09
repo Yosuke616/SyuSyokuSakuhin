@@ -22,6 +22,7 @@
 /** ステージを読み込む*/
 #include "SceneStage_1.h"
 #include "SceneStage_1_Re.h"
+#include "SceneStage_2.h"
 
 /**定数定義**/
 /** @brief ステージ選択画面のオブジェクトが、
@@ -33,6 +34,18 @@
 /**静的メンバ変数**/
 MenuManager* MenuManager::m_pInstance = nullptr;
 bool MenuManager::m_bOption = false;
+
+/**グルーバル変数**/
+/** @brief 何番目のステージに入ったかどうかを保存しておく変数*/
+/**
+* @detail 番号でどのステージかを判別する
+*	0.	ステージ1
+*	1.	ステージ2
+*   2.	ステージ3
+*	3.	ステージ4
+*	4.	ステージ5
+*/
+int g_nSelectStageNum = 0;
 
 /**
 * @fn		MenuManager::MenuManager
@@ -377,6 +390,17 @@ void MenuManager::CreatePauseMenu() {
 * @brief	ステージセレクトメニューの作成
 */
 void MenuManager::CreateSelectMenu() {
+
+	//ステージがどれだけ動いたかを初期化する
+	m_nStageMoveCnt = 0;
+	m_fStageMove_1 = 0.0f;
+	m_fStageMove_2 = 0.0f;
+	m_fStageMove_3 = 0.0f;
+	m_fStageMove_4 = 0.0f;
+	m_fStageMove_5 = 0.0f;
+	//ステージを動かすかどうかを管理する変数の初期化
+	m_bStageMoveFlg = true;
+
 	//オブジェクトリストの削除
 	DeleteMenu();
 	//ステージセレクトメニューが選ばれているようにする
@@ -413,7 +437,7 @@ void MenuManager::CreateSelectMenu() {
 	auto D_Stage1 = Stage1->AddComponent<CDraw3D>();
 	//オブジェクトの設定
 	D_Stage1->SetModel(pModelManager->GetModel(WALK_ENEMY_MODEL_NUM));
-	T_Stage1->SetPosition(0.0f,55.0f,-10);
+	T_Stage1->SetPosition(0.0f - (g_nSelectStageNum * 150.0f), 55.0f, -10);
 	T_Stage1->SetScale(50.0f,50.0f,50.0f);
 	T_Stage1->SetRotate(0.0f,0.0f,0.0f);
 	//オブジェクトマネージャーに追加
@@ -428,7 +452,7 @@ void MenuManager::CreateSelectMenu() {
 	auto D_Stage2 = Stage2->AddComponent<CDraw3D>();
 	//オブジェクトの設定
 	D_Stage2->SetModel(pModelManager->GetModel(WALK_ENEMY_MODEL_NUM));
-	T_Stage2->SetPosition(150.0f, 55.0f, -10);
+	T_Stage2->SetPosition(150.0f - (g_nSelectStageNum * 150.0f), 55.0f, -10);
 	T_Stage2->SetScale(50.0f, 50.0f, 50.0f);
 	T_Stage2->SetRotate(0.0f, 0.0f, 0.0f);
 	//オブジェクトマネージャーに追加
@@ -443,7 +467,7 @@ void MenuManager::CreateSelectMenu() {
 	auto D_Stage3 = Stage3->AddComponent<CDraw3D>();
 	//オブジェクトの設定
 	D_Stage3->SetModel(pModelManager->GetModel(WALK_ENEMY_MODEL_NUM));
-	T_Stage3->SetPosition(300.0f, 55.0f, -10);
+	T_Stage3->SetPosition(300.0f - (g_nSelectStageNum * 150.0f), 55.0f, -10);
 	T_Stage3->SetScale(50.0f, 50.0f, 50.0f);
 	T_Stage3->SetRotate(0.0f, 0.0f, 0.0f);
 	//オブジェクトマネージャーに追加
@@ -458,7 +482,7 @@ void MenuManager::CreateSelectMenu() {
 	auto D_Stage4 = Stage4->AddComponent<CDraw3D>();
 	//オブジェクトの設定
 	D_Stage4->SetModel(pModelManager->GetModel(WALK_ENEMY_MODEL_NUM));
-	T_Stage4->SetPosition(450.0f, 55.0f, -10);
+	T_Stage4->SetPosition(450.0f - (g_nSelectStageNum * 150.0f), 55.0f, -10);
 	T_Stage4->SetScale(50.0f, 50.0f, 50.0f);
 	T_Stage4->SetRotate(0.0f, 0.0f, 0.0f);
 	//オブジェクトマネージャーに追加
@@ -473,7 +497,7 @@ void MenuManager::CreateSelectMenu() {
 	auto D_Stage5 = Stage5->AddComponent<CDraw3D>();
 	//オブジェクトの設定
 	D_Stage5->SetModel(pModelManager->GetModel(WALK_ENEMY_MODEL_NUM));
-	T_Stage5->SetPosition(600.0f, 55.0f, -10);
+	T_Stage5->SetPosition(600.0f - (g_nSelectStageNum * 150.0f), 55.0f, -10);
 	T_Stage5->SetScale(50.0f, 50.0f, 50.0f);
 	T_Stage5->SetRotate(0.0f, 0.0f, 0.0f);
 	//オブジェクトマネージャーに追加
@@ -520,6 +544,71 @@ void MenuManager::CreateSelectMenu() {
 	m_itr_Stage = m_StageObjList.begin();
 	//上下に移動するためのイテレータを先頭に
 	m_itr_SelectSub = m_SelectSub.begin();
+
+	//最後に選ばれているステージをイテレーターで管理する
+
+	//ステージセレクト
+	for (int i = 0;i < g_nSelectStageNum;i++) {
+		m_itr_Stage++;
+	}
+
+	//while (m_bStageMoveFlg) {
+	//	if (g_nSelectStageNum == 0) {
+	//		break;
+	//	}
+	//
+	//	//グローバル変数の番号を取得してどこから始めるを決める
+	//	for (auto&& obj : m_StageObjList) {
+	//		obj->GetComponent<CTransform>()->Vel.x -= STAGEOBJ_VEL;
+	//		if (obj->GetName() == "Stage_1") {
+	//			m_fStageMove_1 += STAGEOBJ_VEL;
+	//			if (m_fStageMove_1 >= MAX_OBJ_MOVE) {
+	//				obj->GetComponent<CTransform>()->Vel.x = 0.0f;
+	//				m_nStageMoveCnt++;
+	//				m_fStageMove_1 = 0;
+	//			}
+	//		}
+	//		else if (obj->GetName() == "Stage_2") {
+	//			m_fStageMove_2 += STAGEOBJ_VEL;
+	//			if (m_fStageMove_2 >= MAX_OBJ_MOVE) {
+	//				obj->GetComponent<CTransform>()->Vel.x = 0.0f;
+	//				m_nStageMoveCnt++;
+	//				m_fStageMove_2 = 0;
+	//			}
+	//		}
+	//		else if (obj->GetName() == "Stage_3") {
+	//			m_fStageMove_3 += STAGEOBJ_VEL;
+	//			if (m_fStageMove_3 >= MAX_OBJ_MOVE) {
+	//				obj->GetComponent<CTransform>()->Vel.x = 0.0f;
+	//				m_nStageMoveCnt++;
+	//				m_fStageMove_3 = 0;
+	//			}
+	//		}
+	//		else if (obj->GetName() == "Stage_4") {
+	//			m_fStageMove_4 += STAGEOBJ_VEL;
+	//			if (m_fStageMove_4 >= MAX_OBJ_MOVE) {
+	//				obj->GetComponent<CTransform>()->Vel.x = 0.0f;
+	//				m_nStageMoveCnt++;
+	//				m_fStageMove_4 = 0;
+	//			}
+	//		}
+	//		else if (obj->GetName() == "Stage_5") {
+	//			m_fStageMove_5 += STAGEOBJ_VEL;
+	//			if (m_fStageMove_5 >= MAX_OBJ_MOVE) {
+	//				obj->GetComponent<CTransform>()->Vel.x = 0.0f;
+	//				m_nStageMoveCnt++;
+	//				m_fStageMove_5 = 0;
+	//			}
+	//		}
+	//
+	//		if (m_nStageMoveCnt >= (5 * g_nSelectStageNum)) {
+	//			m_nStageMoveCnt = 0;
+	//			m_bStageMoveFlg = false;
+	//			break;
+	//		}
+	//	}
+	//
+	//}
 
 }
 #pragma endregion
@@ -1109,20 +1198,28 @@ void MenuManager::StageSelect() {
 void MenuManager::StageIN() {
 	if ((*m_itr_Stage)->GetName() == "Stage_1") {
 		SceneGame::GetInstance()->SetStage(STAGE_1);
-		
-		int i = 1 + 1;
+		//どこのステージが選ばれているか保存する
+		g_nSelectStageNum = 0;
 	}
 	else if ((*m_itr_Stage)->GetName() == "Stage_2") {
-		int i = 1 + 1;
+		SceneGame::GetInstance()->SetStage(STAGE_2);
+		//どこのステージが選ばれているか保存する
+		g_nSelectStageNum = 1;
 	}
 	else if ((*m_itr_Stage)->GetName() == "Stage_3") {
 		int i = 1 + 1;
+		//どこのステージが選ばれているか保存する
+		g_nSelectStageNum = 2;
 	}
 	else if ((*m_itr_Stage)->GetName() == "Stage_4") {
 		int i = 1 + 1;
+		//どこのステージが選ばれているか保存する
+		g_nSelectStageNum = 3;
 	}
 	else if ((*m_itr_Stage)->GetName() == "Stage_5") {
 		int i = 1 + 1;
+		//どこのステージが選ばれているか保存する
+		g_nSelectStageNum = 4;
 	}
 
 	//シーン遷移
@@ -1275,3 +1372,9 @@ void MenuManager::TimeOutMenu() {
 	}
 
 }
+
+/**
+* @fn		MenuManager::SetSelectStage
+* @brief	選ばれているステージを設定
+*/
+//void MenuManager:

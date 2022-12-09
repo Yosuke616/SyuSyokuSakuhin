@@ -66,6 +66,17 @@ private:
 	std::list<Object*> m_SelectSub;
 	/** @brief ステージセレクト時上下の移動を制御するイテレーター*/
 	std::list<Object*>::iterator m_itr_SelectSub;
+	/** @brief はじめステージをどれだけ動かしたかを管理する変数*/
+	int m_nStageMoveCnt;
+	/** @brief 各ステージどれだけ移動させているか*/
+	float m_fStageMove_1;
+	float m_fStageMove_2;
+	float m_fStageMove_3;
+	float m_fStageMove_4;
+	float m_fStageMove_5;
+
+	/** @brief 選ばれているステージ分がちゃんと動いたかを判別する変数*/
+	bool m_bStageMoveFlg;
 
 	//メンバ関数
 	/** @brief コンストラクタ*/
@@ -136,6 +147,8 @@ public:
 	void CreateGameOverMenu();
 	/** @brief オプションメニューの作成*/
 	void CreateOptionMenu();
+	/** @brief 選ばれているステージを設定する*/
+	void SetSelectStage(int Stage);
 };
 
 #endif

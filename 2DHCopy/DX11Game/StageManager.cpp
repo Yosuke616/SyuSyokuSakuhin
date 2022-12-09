@@ -30,6 +30,7 @@
 //ステージのインクルード
 #include "SceneStage_1.h"
 #include "SceneStage_1_Re.h"
+#include "SceneStage_2.h"
 
 /**列挙体宣言**/
 /** @brief どのオブジェクトを配置するかを判別する*/
@@ -240,6 +241,7 @@ void StageManager::CreateStage(int stage_state) {
 	switch (stage_state) {
 	case STAGE_1:this->Load(STAGE_1_CSV); break;
 	case STAGE_1_RE:this->Load(STAGE_1_RE_CSV); break;
+	case STAGE_2:this->Load(STAGE_2_CSV); break;
 	default:break;
 	}
 
@@ -293,6 +295,9 @@ void StageManager::CreateStage(int stage_state) {
 	case STAGE_1_RE:
 		SceneStage_1_Re::GetInstance()->DeleteList();
 		SceneStage_1_Re::GetInstance()->SetBaseInfo(ObjectManager::GetInstance()->GetUpdateList());
+		break;
+	case STAGE_2:
+		
 		break;
 	default:break;
 	}
@@ -846,6 +851,7 @@ bool StageManager::Save(int Stage) {
 	switch (Stage) {
 	case STAGE_1:file = STAGE_1_CSV; break;
 	case STAGE_1_RE:file = STAGE_1_RE_CSV; break;
+	case STAGE_2:file = STAGE_2_CSV; break;
 	default: break;
 	}
 
@@ -864,6 +870,7 @@ bool StageManager::Save(int Stage) {
 		switch (Stage) {
 		case STAGE_1:MessageBox(GetMainWnd(), L"Stage_1.csvに保存しました", _T("成功"), MB_OK); break;
 		case STAGE_1_RE:MessageBox(GetMainWnd(), L"Stage_1_RE.csvに保存しました", _T("成功"), MB_OK); break;
+		case STAGE_2:MessageBox(GetMainWnd(), L"Stage_2.csvに保存しました", _T("成功"), MB_OK); break;
 		default: break;
 		}
 	}
