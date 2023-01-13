@@ -121,6 +121,29 @@
 #define STAGE_1_RE_BG_TEX_NUM				(100)
 #define PATH_TEX_STAGE_1_RE_BG				("data/texture/RedFall.jpg")
 
+#pragma region ---タイトル
+
+//八
+#define EIGHT_TITLE_TEX_NUM					(200)
+#define PATH_TEX_EIGHT_TITLE				("data/texture/eightwhite.png")
+//雲
+#define CLOUD_TITLE_TEX_NUM					(201)
+#define PATH_TEX_CLOUD_TITLE				("data/texture/cloudwhite.png")
+//ノ
+#define NO_TITLE_TEX_NUM					(202)
+#define PATH_TEX_NO_TITLE					("data/texture/NOwhite.png")
+//巫
+#define	MI_TITLE_TEX_NUM					(203)
+#define PATH_TEX_MI_TITLE					("data/texture/MI.png")
+//女
+#define GIRL_TITLE_TEX_NUM					(204)
+#define PATH_TEX_GIRL_TEX					("data/texture/girl.png")
+
+#pragma endregion
+
+//夜空(仮)
+#define KARIYOZORA_TEX_NUM					(1000)
+#define PATH_TEX_KARIYOZORA					("data/texture/KARIYOZORA.jpg")
 
 //クラス定義
 /**

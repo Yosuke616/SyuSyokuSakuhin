@@ -210,15 +210,15 @@ enum DRAW_ORDER {
 #define UI_BEGIN_NAME				("UI_BEGIN")
 #define UI_BEGIN_SIZE_X				(300.0f)
 #define UI_BEGIN_SIZE_Y				(200.0f)
-#define UI_BEGIN_POS_X				(400.0f)
-#define UI_BEGIN_POS_Y				(-100.0f)
+#define UI_BEGIN_POS_X				(450.0f)
+#define UI_BEGIN_POS_Y				(25.0f)
 
 //続きから
 #define UI_CONTINUE_NAME			("UI_CONTINUE")
 #define UI_CONTINUE_SIZE_X			(300.0f)
 #define UI_CONTINUE_SIZE_Y			(200.0f)
-#define UI_CONTINUE_POS_X			(400.0f)
-#define UI_CONTINUE_POS_Y			(-175.0f)
+#define UI_CONTINUE_POS_X			(450.0f)
+#define UI_CONTINUE_POS_Y			(-50.0f)
 
 
 //ステージセレクト
@@ -232,8 +232,8 @@ enum DRAW_ORDER {
 #define UI_END_NAME					("UI_END")
 #define UI_END_SIZE_X				(300.0f)
 #define UI_END_SIZE_Y				(200.0f)
-#define UI_END_POS_X				(400.0f)
-#define UI_END_POS_Y				(-250.0f)
+#define UI_END_POS_X				(450.0f)
+#define UI_END_POS_Y				(-125.0f)
 
 //BGM
 #define UI_BGM_NAME					("UI_BGM")
@@ -255,5 +255,12 @@ enum DRAW_ORDER {
 #define UI_BRIGHTNESS_SIZE_Y		(200.0f)
 #define UI_BRIGHTNESS_POS_X			(0.0f)
 #define UI_BRIGHTNESS_POS_Y			(-200.0f)
+
+#pragma region ---タイトル
+#define TITLE_WHITE_NAME			("TITLE_WHITE")
+#define TITLE_PURPLE_NAME			("TITLE_PURPLE")
+#define TITLE_WHITE_SIZE_X			(400.0f)
+#define TITLE_WHITE_SIZE_Y			(400.0f)
+#pragma endregion
 
 #endif

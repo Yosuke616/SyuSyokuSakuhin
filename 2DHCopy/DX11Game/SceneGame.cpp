@@ -95,6 +95,8 @@ void SceneGame::Init() {
 	case STAGE_1_RE:
 		m_bLoveandLovers = false;
 		break;
+	case  STAGE_2:
+		m_bLoveandLovers = true;
 	default:break;
 	}
 

@@ -60,6 +60,12 @@ enum MAP_CHIP{
 	STAGE_1_RE_BREAK_BLOCK,			//壊れるブロックの番号
 	STAGE_1_RE_CLEAR_COLL,			//裏ステージでのクリア判定
 
+	STAGE_2_EVENT_WARP = 399,		//ワープしたときのイベントを作動させるオブジェクト
+	STAGE_2_BREAK_BLOCK_UP,			//消え去るブロック上面
+	STAGE_2_BREAK_BLOCK_DOWN_COLL,	//消え去るブロック下面(当たり判定あり)
+	STAGE_2_BREAK_BLOCK_DOWN,		//消え去るブロック下面(当たり判定無し)
+
+
 	SOCRE_UP = 2000,				//所謂コイン的なやつ
 
 	ARROW = 9999,					//ビルボード(仮)
@@ -647,25 +653,41 @@ Object* StageManager::CreateBlock(float fPosX,float fPosY,int nState,int nBlockI
 	else if(nState == STAGE_1_RE_CLEAR_COLL){
 		//オブジェクトの生成
 		Object* obj = new Object(STAGE_RE_1_GOAL_COLL, UPDATE_DEBUG, DRAW_DEBUG);
+
 		//コンポーネントの追加
 		auto trans = obj->AddComponent<CTransform>();
 		auto draw = obj->AddComponent<CDrawMesh>();
 		auto collider = obj->AddComponent<CCollider>();
 		auto range = obj->AddComponent<COutOfRange>();
 		obj->AddComponent<CSeeColl>();
+
 		//オブジェクトの設定
 		draw->SetTexture(pTextureManager->GetTexture(DEBUG_BLOCK_NUM));
 		draw->SetSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y);
 		trans->SetPosition(fPosX, fPosY + 770.0f, 0.0f);
 		collider->SetCollisionSize(BLOCK_COLL_SIZE_X, BLOCK_COLL_SIZE_Y, BLOCK_COLL_SIZE_Z);
 		range->SetLimitRange(BLOCK_OUT_RANGE_X, BLOCK_OUT_RANGE_Y);
+
 		//オブジェクトマネージャーに追加
 		ObjectManager::GetInstance()->AddObject(obj);
+		
 		//ワールドマトリックスの更新
 		draw->Update();
 
 		return obj;
 	}
+#pragma endregion
+#pragma region ---ステージ2の消え去るブロック
+	//else if (STAGE_2_BREAK_BLOCK_UP) {
+	//	//オブジェクトの生成
+	//	//Object* obj = new Object();
+
+	//	//コンポーネントの追加
+
+	//	//オブジェクトの設定
+
+	//	//オブジェクトマネージャーに追加
+	//}
 #pragma endregion
 #pragma region ---小判
 	else if (nState == KOBAN) {
