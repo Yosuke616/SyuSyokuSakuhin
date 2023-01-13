@@ -223,6 +223,9 @@
     <ClCompile Include="SceneStage_2.cpp">
       <Filter>ステージ</Filter>
     </ClCompile>
+    <ClCompile Include="TITLEComponent.cpp">
+      <Filter>コンポーネント\創作システム</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mainApp.h">
@@ -419,6 +422,9 @@
     </ClInclude>
     <ClInclude Include="SceneStage_2.h">
       <Filter>ステージ</Filter>
+    </ClInclude>
+    <ClInclude Include="TITLEComponent.h">
+      <Filter>コンポーネント\創作システム</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

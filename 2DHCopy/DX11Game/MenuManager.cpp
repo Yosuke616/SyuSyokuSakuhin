@@ -290,7 +290,6 @@ void MenuManager::CreateTitleMenu() {
 	transButton2->SetPosition(UI_CONTINUE_POS_X, UI_CONTINUE_POS_Y);
 	drawButton2->SetTexture(TextureManager::GetInstance()->GetTexture(CONTINUE_TEX_NUM));
 	drawButton2->SetSize(UI_CONTINUE_SIZE_X, UI_CONTINUE_SIZE_Y);
-
 	//メニューリストに追加
 	AddMenu(pButton2);
 	//***************************************************************************************************

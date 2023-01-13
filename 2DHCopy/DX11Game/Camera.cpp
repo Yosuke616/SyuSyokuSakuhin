@@ -112,6 +112,9 @@ void CCamera::Init()
 		m_Limit = XMFLOAT2(STAGE_1_RE_REMIT_MIN, STAGE_1_RE_REMIT_MAX);
 		m_LimitY = XMFLOAT2(STAGE_REMIT_Y_MIN, STAGE_REMIT_Y_MAX);
 		break;
+	case STAGE_2:
+		m_Limit = XMFLOAT2(STAGE_1_RE_REMIT_MIN, 2450.0f);
+		m_LimitY = XMFLOAT2(0, STAGE_REMIT_Y_MAX);
 	}
 
 	if (!m_bZoom && GetAxisX() == nullptr && (m_vPos.x >= 0.0f || m_Limit.y <= m_vPos.x))
