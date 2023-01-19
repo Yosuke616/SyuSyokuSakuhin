@@ -28,6 +28,23 @@ private:
 	CDraw2D* m_pDraw2D;
 	/** @brief 描画情報 メッシュ*/
 	CAnimMesh* m_pDrawMesh;
+	/** @brief 流れ星落ちている判定*/
+	bool m_bFallStar;
+	/** @brief 流れ星のスタート地点*/
+	XMFLOAT2 m_StartPos;
+	/** @brief 流れ星の終点地点*/
+	XMFLOAT2 m_EndPos;
+
+	/** @brief スタート地点のオブジェクトのポインタを取得する*/
+	Object* m_StartObj;
+	/** @brief 終了地点のオブジェクトのポインタを取得する*/
+	Object* m_EndObj;
+	/** @brief 生成したオブジェクトを指しておくポインタ*/
+	Object* m_StarObj;
+	/** @brief 何秒かに一回流れ星を出すためのカウンター*/
+	int m_nStarCnt;
+	/** @brief 一度だけオブジェクトを生成するフラグ*/
+	bool m_bStarCre;
 
 	//メンバ関数
 

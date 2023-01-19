@@ -87,6 +87,7 @@ void Load::Init() {
 	for (auto object:m_LoadObject) {
 		object->Start();
 	}
+
 }
 
 /**
