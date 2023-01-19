@@ -40,7 +40,7 @@ typedef struct {
 	float		Power;			// Sharpness if specular highlight
 } MATERIAL;
 
-typedef struct {
+struct MESH{
 	ID3D11Buffer* pVertexBuffer;			// 頂点バッファインターフェースへのポインタ
 	ID3D11Buffer* pIndexBuffer;				// インデックスバッファインターフェースへのポインタ
 	int nNumVertex;							// 総頂点数	
@@ -57,7 +57,12 @@ typedef struct {
 
 	MATERIAL* pMaterial;					// マテリアル
 	float fAlpha;							// 頂点カラーα最小値
-} MESH;
+
+	MESH()
+	{
+		pTexture = nullptr;
+	}
+};
 
 //*****************************************************************************
 // プロトタイプ宣言

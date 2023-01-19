@@ -40,12 +40,12 @@ SceneTitle::~SceneTitle() {
 void SceneTitle::Init() {
 	//ロード画面のスレッドを作る
 	Load::Begin();
-
+	
 	//管理クラスのインスタンスの取得
 	m_pObjectManager = ObjectManager::GetInstance();
 	m_pMenuManager = MenuManager::GetInsutance();
 	TextureManager* pTexManager = TextureManager::GetInstance();
-
+	
 	//背景のテクスチャ
 	pTexManager->AddTexture(PATH_TEX_TITLE_BACK_GROUND, TITLE_BACK_GROUND_NUM);
 	//UI関係のテクスチャも追加する
@@ -56,11 +56,11 @@ void SceneTitle::Init() {
 	pTexManager->AddTexture(PATH_TEX_BGM, BGM_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_SE, SE_TEX_NUM);
 	pTexManager->AddTexture(PATH_TEX_BRIGHTNESS, BRIGHTNESS_TEX_NUM);
-
+	
 	//矢印
 	pTexManager->AddTexture(PATH_ARROW, ARROW_NUM);
 	pTexManager->AddTexture(PATH_TEX_KARIYOZORA,KARIYOZORA_TEX_NUM);
-
+	
 	//背景用オブジェクト
 	ModelManager::GetInstance()->AddModel(PATH_MINT_GREEN_BLOCK, MINT_GREEN_BLOCK_NUM);
 	ModelManager::GetInstance()->AddModel(PATH_RARD_BLOCK, RARD_BLOCK_NUM);
@@ -85,6 +85,8 @@ void SceneTitle::Init() {
 	m_pObjectManager->AddObject(objBG);
 
 #pragma endregion
+
+	
 
 #pragma region ---地面表面
 	for (int i = 0; i < 16;i++) {
@@ -207,12 +209,42 @@ void SceneTitle::Init() {
 	m_pObjectManager->AddObject(GIRL_TITLE);
 
 #pragma endregion
+	
+#pragma region ---開始地点と終了地点
+	//オブジェクトの生成(終了地点)
+	Object* objEnd_TITLE = new Object("TITLE_End_Pos", UPDATE_DEBUG, DRAW_DEBUG);
+	//コンポーネントの追加
+	auto objEnd_Trans = objEnd_TITLE->AddComponent<CTransform>();
+	auto objEnd_Draw = objEnd_TITLE->AddComponent<CAnimMesh>();
+	objEnd_TITLE->AddComponent<CTITLE>();
+	//オブジェクトの設定
+	objEnd_Draw->SetColor(1.0f, 1.0f, 0.0f);
+	objEnd_Trans->SetPosition(0.0f, -100.0f);
+	objEnd_Draw->SetSize(10.0f, 10.0f);
+	objEnd_Draw->SetLoop(true);
+	//オブジェクトマネージャーに追加
+	ObjectManager::GetInstance()->AddObject(objEnd_TITLE);
+
+	//オブジェクトの生成(開始地点)
+	Object* objStart = new Object("TITLE_Start_Pos",UPDATE_DEBUG,DRAW_DEBUG);
+	//コンポーネントの追加
+	auto objStart_Trans = objStart->AddComponent<CTransform>();
+	auto objStart_Draw = objStart->AddComponent<CAnimMesh>();
+	objStart->AddComponent<CTITLE>();
+	//オブジェクトの設定
+	objStart_Draw->SetColor(1.0f,1.0f,0.0f);
+	objStart_Trans->SetPosition(0.0f,250.0f);
+	objStart_Draw->SetSize(10.0f,10.0f);
+	objStart_Draw->SetLoop(true);
+	//オブジェクトマネージャーに追加
+	ObjectManager::GetInstance()->AddObject(objStart);
+#pragma endregion
 
 	//メニューの作成
 	m_pMenuManager->CreateTitleMenu();
-
-	CSound::Play(TITLE_BGM);
 	
+	CSound::Play(TITLE_BGM);
+
 	//ロード終了処理
 	Load::End();
 }
